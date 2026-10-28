@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1320" height="620" viewBox="0 0 1320 620" role="img" aria-labelledby="title description">
+  <title id="title">Agent track: a MAF agent keeps the task board up to date</title>
+  <desc id="description">At the second stand-up, the agent calls get_board, which loads three open cards into its context. It reads the transcript in order. Fire alarm test is on the board, so it calls update_card with done. The readings are on the board, so update_card with progress and the note Made a start. The contractor booking is on the board, so update_card with blocked and the note Waiting on supplier. Ordering parts for the Atlas is not on the board, so it calls find_equipment, which returns Air Compressor 1, then create_card. A remark about testing the long belt has no card and is not a new job, so it makes no call. The board then becomes the starting point for the next stand-up.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071b33"/><stop offset="1" stop-color="#102d4c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#071b33" flood-opacity=".13"/></filter>
+    <marker id="arrowgrey" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bec7d3"/></marker>
+    <style>
+      @keyframes k2 { 0% { opacity: 0 } 16% { opacity: 0 } 17.2% { opacity: 1 } 27% { opacity: 1 } 28.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o1 { opacity: 0; animation: k2 20s infinite; }
+      @keyframes k4 { 0% { opacity: 0 } 28% { opacity: 0 } 29.2% { opacity: 1 } 39% { opacity: 1 } 40.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o3 { opacity: 0; animation: k4 20s infinite; }
+      @keyframes k6 { 0% { opacity: 0 } 40% { opacity: 0 } 41.2% { opacity: 1 } 51% { opacity: 1 } 52.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o5 { opacity: 0; animation: k6 20s infinite; }
+      @keyframes k8 { 0% { opacity: 0 } 52% { opacity: 0 } 53.2% { opacity: 1 } 71% { opacity: 1 } 72.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o7 { opacity: 0; animation: k8 20s infinite; }
+      @keyframes k10 { 0% { opacity: 0 } 72% { opacity: 0 } 73.2% { opacity: 1 } 81% { opacity: 1 } 82.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o9 { opacity: 0; animation: k10 20s infinite; }
+      @keyframes k12 { 0% { opacity: 0 } 6% { opacity: 0 } 7.2% { opacity: 1 } 13% { opacity: 1 } 14.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o11 { opacity: 0; animation: k12 20s infinite; }
+      @keyframes k14 { 0% { opacity: 0 } 55% { opacity: 0 } 56.2% { opacity: 1 } 61% { opacity: 1 } 62.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o13 { opacity: 0; animation: k14 20s infinite; }
+      @keyframes k16 { 0% { opacity: 0 } 62% { opacity: 0 } 63.2% { opacity: 1 } 69% { opacity: 1 } 70.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o15 { opacity: 0; animation: k16 20s infinite; }
+      @keyframes k18 { 0% { opacity: 0 } 19% { opacity: 0 } 20.2% { opacity: 1 } 26% { opacity: 1 } 27.2% { opacity: 0 } 31% { opacity: 0 } 32.2% { opacity: 1 } 38% { opacity: 1 } 39.2% { opacity: 0 } 43% { opacity: 0 } 44.2% { opacity: 1 } 50% { opacity: 1 } 51.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o17 { opacity: 0; animation: k18 20s infinite; }
+      @keyframes k20 { 0% { opacity: 0 } 0% { opacity: 0 } 1.2% { opacity: 1 } 11% { opacity: 1 } 12.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o19 { opacity: 0; animation: k20 20s infinite; }
+      @keyframes k22 { 0% { opacity: 0 } 11% { opacity: 0 } 12.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o21 { opacity: 0; animation: k22 20s infinite; }
+      @keyframes k24 { 0% { opacity: 0 } 0% { opacity: 0 } 1.2% { opacity: 1 } 15% { opacity: 1 } 16.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o23 { opacity: 0; animation: k24 20s infinite; }
+      @keyframes k26 { 0% { opacity: 0 } 16% { opacity: 0 } 17.2% { opacity: 1 } 27% { opacity: 1 } 28.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o25 { opacity: 0; animation: k26 20s infinite; }
+      @keyframes k28 { 0% { opacity: 0 } 28% { opacity: 0 } 29.2% { opacity: 1 } 39% { opacity: 1 } 40.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o27 { opacity: 0; animation: k28 20s infinite; }
+      @keyframes k30 { 0% { opacity: 0 } 40% { opacity: 0 } 41.2% { opacity: 1 } 51% { opacity: 1 } 52.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o29 { opacity: 0; animation: k30 20s infinite; }
+      @keyframes k32 { 0% { opacity: 0 } 52% { opacity: 0 } 53.2% { opacity: 1 } 71% { opacity: 1 } 72.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o31 { opacity: 0; animation: k32 20s infinite; }
+      @keyframes k34 { 0% { opacity: 0 } 72% { opacity: 0 } 73.2% { opacity: 1 } 81% { opacity: 1 } 82.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o33 { opacity: 0; animation: k34 20s infinite; }
+      @keyframes k36 { 0% { opacity: 0 } 82% { opacity: 0 } 83.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o35 { opacity: 0; animation: k36 20s infinite; }
+      @keyframes k38 { 0% { opacity: 0 } 11% { opacity: 0 } 12.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o37 { opacity: 0; animation: k38 20s infinite; }
+      @keyframes k40 { 0% { opacity: 0 } 21% { opacity: 0 } 22.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o39 { opacity: 0; animation: k40 20s infinite; }
+      @keyframes k42 { 0% { opacity: 0 } 33% { opacity: 0 } 34.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o41 { opacity: 0; animation: k42 20s infinite; }
+      @keyframes k44 { 0% { opacity: 0 } 45% { opacity: 0 } 46.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o43 { opacity: 0; animation: k44 20s infinite; }
+      @keyframes k46 { 0% { opacity: 0 } 58% { opacity: 0 } 59.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o45 { opacity: 0; animation: k46 20s infinite; }
+      @keyframes k48 { 0% { opacity: 0 } 65% { opacity: 0 } 66.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o47 { opacity: 0; animation: k48 20s infinite; }
+      @keyframes k50 { 0% { transform: translate(775px, 280px) } 22% { transform: translate(775px, 280px) } 25.5% { transform: translate(1162px, 214px) } 100% { transform: translate(1162px, 214px) } }
+      .m49 { transform: translate(775px, 280px); animation: k50 20s infinite; }
+      @keyframes k52 { 0% { fill: #8a94a6 } 24% { fill: #8a94a6 } 25.5% { fill: #107c41 } 100% { fill: #107c41 } }
+      .f51 { fill: #8a94a6; animation: k52 20s infinite; }
+      @keyframes k54 { 0% { opacity: 0 } 22% { opacity: 0 } 23.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o53 { opacity: 0; animation: k54 20s infinite; }
+      @keyframes k56 { 0% { opacity: 0 } 25% { opacity: 0 } 26.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o55 { opacity: 0; animation: k56 20s infinite; }
+      @keyframes k58 { 0% { opacity: 0 } 0% { opacity: 0 } 1.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o57 { opacity: 0; animation: k58 20s infinite; }
+      @keyframes k60 { 0% { transform: translate(775px, 214px) } 34% { transform: translate(775px, 214px) } 37.5% { transform: translate(904px, 214px) } 100% { transform: translate(904px, 214px) } }
+      .m59 { transform: translate(775px, 214px); animation: k60 20s infinite; }
+      @keyframes k62 { 0% { fill: #8a94a6 } 36% { fill: #8a94a6 } 37.5% { fill: #0f5cc0 } 100% { fill: #0f5cc0 } }
+      .f61 { fill: #8a94a6; animation: k62 20s infinite; }
+      @keyframes k64 { 0% { opacity: 0 } 34% { opacity: 0 } 35.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o63 { opacity: 0; animation: k64 20s infinite; }
+      @keyframes k66 { 0% { opacity: 0 } 37% { opacity: 0 } 38.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o65 { opacity: 0; animation: k66 20s infinite; }
+      @keyframes k68 { 0% { opacity: 0 } 0% { opacity: 0 } 1.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o67 { opacity: 0; animation: k68 20s infinite; }
+      @keyframes k70 { 0% { transform: translate(775px, 346px) } 46% { transform: translate(775px, 346px) } 49.5% { transform: translate(1033px, 214px) } 100% { transform: translate(1033px, 214px) } }
+      .m69 { transform: translate(775px, 346px); animation: k70 20s infinite; }
+      @keyframes k72 { 0% { fill: #8a94a6 } 48% { fill: #8a94a6 } 49.5% { fill: #c42b1c } 100% { fill: #c42b1c } }
+      .f71 { fill: #8a94a6; animation: k72 20s infinite; }
+      @keyframes k74 { 0% { opacity: 0 } 46% { opacity: 0 } 47.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o73 { opacity: 0; animation: k74 20s infinite; }
+      @keyframes k76 { 0% { opacity: 0 } 49% { opacity: 0 } 50.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o75 { opacity: 0; animation: k76 20s infinite; }
+      @keyframes k78 { 0% { opacity: 0 } 0% { opacity: 0 } 1.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o77 { opacity: 0; animation: k78 20s infinite; }
+      .m79 { transform: translate(775px, 214px); }
+      @keyframes k81 { 0% { opacity: 0 } 66% { opacity: 0 } 67.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o80 { opacity: 0; animation: k81 20s infinite; }
+      @keyframes k83 { 0% { opacity: 0 } 66% { opacity: 0 } 67.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o82 { opacity: 0; animation: k83 20s infinite; }
+      @keyframes k84 { 0% { stroke-dashoffset: 100; opacity: 1 } 82% { stroke-dashoffset: 100; opacity: 1 } 88% { stroke-dashoffset: 0; opacity: 1 } 94% { stroke-dashoffset: 0; opacity: 1 } 97% { stroke-dashoffset: 0; opacity: 0 } 100% { stroke-dashoffset: 100; opacity: 0 } }
+      .loopdraw { stroke-dasharray: 100; stroke-dashoffset: 100; animation: k84 20s infinite; }
+      @keyframes k86 { 0% { opacity: 0 } 88% { opacity: 0 } 89.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o85 { opacity: 0; animation: k86 20s infinite; }
+      @keyframes k88 { 0% { opacity: 0 } 84% { opacity: 0 } 85.2% { opacity: 1 } 94% { opacity: 1 } 95.2% { opacity: 0 } 100% { opacity: 0 } }
+      .o87 { opacity: 0; animation: k88 20s infinite; }
+      @media (prefers-reduced-motion: reduce) { .dot { display: none; } svg * { animation-delay: -18.00s !important; animation-play-state: paused !important; } }
+    </style>
+  </defs>
+  <rect width="1320" height="620" rx="18" fill="#f5f7fa"/>
+  <path d="M0 18Q0 0 18 0h1284q18 0 18 18v74H0z" fill="url(#header)"/>
+  <g fill="#fff" font-family="Segoe UI, Arial, sans-serif">
+    <text x="42" y="45" font-size="27" font-weight="700">Agent track: the board is the agent's memory</text>
+    <text x="42" y="72" font-size="14" fill="#b6c5d7">A MAF agent reads the stand-up, checks the board through tools, and decides for itself: update what exists, create what doesn't.</text>
+  </g>
+  <g transform="translate(1188 22)" fill="none" stroke="#64b5f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="26" cy="26" r="20"/><path d="M18 26h16M26 18v16"/><path d="M52 10l14 0M52 26l18 0M52 42l14 0"/>
+  </g>
+<g font-family="Segoe UI, Arial, sans-serif">
+  <rect x="30" y="104" width="420" height="28" rx="14" fill="#0f5cc0"/>
+  <text x="240" y="122" font-size="11.5" fill="#fff" font-weight="700" text-anchor="middle">Stand-up 2 · the agent starts from yesterday's board (3 open cards)</text>
+  <rect x="1152" y="104" width="138" height="28" rx="14" fill="#fff" stroke="#bec7d3" stroke-dasharray="4 4"/>
+  <text x="1221" y="122" font-size="11" fill="#596579" font-weight="600" text-anchor="middle">design only · not built</text>
+</g>
+<g font-family="Segoe UI, Arial, sans-serif">
+  <g filter="url(#shadow)"><rect x="30" y="146" width="250" height="384" rx="12" fill="#fff" stroke="#bec7d3"/></g>
+  <text x="48" y="174" font-size="15" fill="#172033" font-weight="700">Stand-up 2 · Tue 24 Feb</text>
+  <text x="48" y="192" font-size="11" fill="#596579">the agent reads it in order</text>
+<rect class="o1" x="40" y="213" width="230" height="22" rx="5" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.2"/>
+<rect class="o3" x="40" y="239" width="230" height="22" rx="5" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.2"/>
+<rect class="o5" x="40" y="265" width="230" height="38" rx="5" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.2"/>
+<rect class="o7" x="40" y="307" width="230" height="48" rx="5" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.2"/>
+<rect class="o9" x="40" y="359" width="230" height="22" rx="5" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.2"/>
+<text x="48" y="228" font-size="11.5" fill="#172033"><tspan font-weight="700" fill="#f7630c">Tomasz:</tspan> Fire alarm test's done.</text>
+<text x="48" y="254" font-size="11.5" fill="#172033"><tspan font-weight="700" fill="#f7630c">Tomasz:</tspan> Started the readings.</text>
+<text x="48" y="280" font-size="11.5" fill="#172033"><tspan font-weight="700" fill="#107c41">Hannah:</tspan> Can't book the contractor,</text>
+<text x="48" y="296" font-size="11.5" fill="#172033">supplier's not answering.</text>
+<text x="48" y="322" font-size="11.5" fill="#172033"><tspan font-weight="700" fill="#0f5cc0">Sarah:</tspan> Marc, order Atlas parts?</text>
+<text x="48" y="348" font-size="11.5" fill="#172033"><tspan font-weight="700" fill="#b4009e">Marcus:</tspan> Yep, on it.</text>
+<text x="48" y="374" font-size="11.5" fill="#172033"><tspan font-weight="700" fill="#8764b8">Grace:</tspan> Tested the long belt, fine.</text>
+<text x="48" y="410" font-size="11" fill="#596579">…chit-chat, sign-off</text>
+</g>
+<g font-family="Segoe UI, Arial, sans-serif">
+  <g filter="url(#shadow)"><rect x="304" y="146" width="430" height="384" rx="12" fill="#fff" stroke="#bec7d3"/></g>
+  <text x="322" y="174" font-size="15" fill="#172033" font-weight="700">MAF agent</text>
+  <text x="322" y="192" font-size="11" fill="#596579">GPT-5.6 Luna · reads the transcript itself</text>
+  <text x="322" y="216" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">TOOLS</text>
+<rect x="322" y="224" width="70" height="22" rx="11" fill="#eef2f7" stroke="#bec7d3"/>
+<text x="357.0" y="239" font-size="10.5" fill="#596579" font-weight="600" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">get_board</text>
+<g class="o11"><rect x="322" y="224" width="70" height="22" rx="11" fill="#0f5cc0"/><text x="357.0" y="239" font-size="10.5" fill="#fff" font-weight="700" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">get_board</text></g>
+<rect x="400" y="224" width="104" height="22" rx="11" fill="#eef2f7" stroke="#bec7d3"/>
+<text x="452.0" y="239" font-size="10.5" fill="#596579" font-weight="600" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">find_equipment</text>
+<g class="o13"><rect x="400" y="224" width="104" height="22" rx="11" fill="#0f5cc0"/><text x="452.0" y="239" font-size="10.5" fill="#fff" font-weight="700" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">find_equipment</text></g>
+<rect x="512" y="224" width="86" height="22" rx="11" fill="#eef2f7" stroke="#bec7d3"/>
+<text x="555.0" y="239" font-size="10.5" fill="#596579" font-weight="600" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">create_card</text>
+<g class="o15"><rect x="512" y="224" width="86" height="22" rx="11" fill="#0f5cc0"/><text x="555.0" y="239" font-size="10.5" fill="#fff" font-weight="700" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">create_card</text></g>
+<rect x="322" y="252" width="86" height="22" rx="11" fill="#eef2f7" stroke="#bec7d3"/>
+<text x="365.0" y="267" font-size="10.5" fill="#596579" font-weight="600" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">update_card</text>
+<g class="o17"><rect x="322" y="252" width="86" height="22" rx="11" fill="#0f5cc0"/><text x="365.0" y="267" font-size="10.5" fill="#fff" font-weight="700" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">update_card</text></g>
+<rect x="416" y="252" width="86" height="22" rx="11" fill="#eef2f7" stroke="#bec7d3"/>
+<text x="459.0" y="267" font-size="10.5" fill="#596579" font-weight="600" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">add_comment</text>
+<rect x="510" y="252" width="86" height="22" rx="11" fill="#eef2f7" stroke="#bec7d3"/>
+<text x="553.0" y="267" font-size="10.5" fill="#596579" font-weight="600" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">cancel_card</text>
+<text x="612" y="267" font-size="10" fill="#596579">(not needed today)</text>
+<rect x="322" y="286" width="394" height="50" rx="8" fill="#f7f9fc" stroke="#bec7d3"/>
+<text x="332" y="302" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">IN CONTEXT</text>
+<g class="o19"><text x="332" y="324" font-size="11.5" fill="#596579">Board not loaded yet</text></g>
+<g class="o21"><text x="332" y="324" font-size="11" fill="#172033" font-weight="600">Board: #1 GT1 readings · #2 Fire alarm test · #3 Book contractor</text></g>
+<text x="322" y="358" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">DECIDING</text>
+<g class="o23"><text x="322" y="378" font-size="12" fill="#596579" font-weight="600">First, load the board</text></g>
+<g class="o25"><text x="322" y="378" font-size="12" fill="#172033" font-weight="600">“Fire alarm test's done” → on the board? yes, #2 → done</text></g>
+<g class="o27"><text x="322" y="378" font-size="12" fill="#172033" font-weight="600">“Started the readings” → yes, #1 → progress</text></g>
+<g class="o29"><text x="322" y="378" font-size="12" fill="#172033" font-weight="600">“Can't book the contractor” → yes, #3 → blocked</text></g>
+<g class="o31"><text x="322" y="378" font-size="12" fill="#5c2d91" font-weight="600">“order Atlas parts” → on the board? no → new card</text></g>
+<g class="o33"><text x="322" y="378" font-size="12" fill="#596579" font-weight="600">“Tested the long belt” → no card, not a new job → skip</text></g>
+<g class="o35"><text x="322" y="378" font-size="12" fill="#107c41" font-weight="600">Finished: 4 changes from 6 tool calls, each with a quote</text></g>
+<text x="322" y="404" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">TOOL CALLS</text>
+<g class="o37"><text x="322" y="424.0" font-size="10.5" fill="#172033" font-family="Consolas, 'Courier New', monospace">1. get_board() → 3 open cards</text></g>
+<g class="o39"><text x="322" y="441.5" font-size="10.5" fill="#107c41" font-family="Consolas, 'Courier New', monospace">2. update_card(#2, done) ✓</text></g>
+<g class="o41"><text x="322" y="459.0" font-size="10.5" fill="#0f5cc0" font-family="Consolas, 'Courier New', monospace">3. update_card(#1, progress, "Made a start") ✓</text></g>
+<g class="o43"><text x="322" y="476.5" font-size="10.5" fill="#c42b1c" font-family="Consolas, 'Courier New', monospace">4. update_card(#3, blocked, "Waiting on supplier") ✓</text></g>
+<g class="o45"><text x="322" y="494.0" font-size="10.5" fill="#172033" font-family="Consolas, 'Courier New', monospace">5. find_equipment("the Atlas") → AIR-C-01</text></g>
+<g class="o47"><text x="322" y="511.5" font-size="10.5" fill="#5c2d91" font-family="Consolas, 'Courier New', monospace">6. create_card("Order spare parts", Marcus, AIR-C-01) ✓</text></g>
+</g>
+<g font-family="Segoe UI, Arial, sans-serif"><g filter="url(#shadow)"><rect x="758" y="146" width="532" height="384" rx="12" fill="#fff" stroke="#bec7d3"/></g>
+<text x="776" y="174" font-size="15" fill="#172033" font-weight="700">Task board</text>
+<text x="1272" y="174" font-size="11" fill="#596579" text-anchor="end">the agent's memory between stand-ups</text>
+<rect x="770" y="184" width="119" height="334" rx="10" fill="#eef2f7"/>
+<text x="780" y="202" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">TO DO</text>
+<rect x="899" y="184" width="119" height="334" rx="10" fill="#eef2f7"/>
+<text x="909" y="202" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">IN PROGRESS</text>
+<rect x="1028" y="184" width="119" height="334" rx="10" fill="#eef2f7"/>
+<text x="1038" y="202" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">BLOCKED</text>
+<rect x="1157" y="184" width="119" height="334" rx="10" fill="#eef2f7"/>
+<text x="1167" y="202" font-size="10" fill="#596579" font-weight="700" letter-spacing=".06em">DONE</text>
+<g class="m49"><g class="o57">
+    <rect width="109" height="58" rx="8" fill="#fff" stroke="#bec7d3"/>
+    <rect class="f51" x="0" y="8" width="4" height="42" rx="2" fill="#8a94a6"/>
+    <text x="10" y="19" font-size="10.5" fill="#172033" font-weight="700">Fire alarm test</text>
+    <text x="10" y="34" font-size="9.5" fill="#596579">#2 · Tomasz</text>
+    <g class="o55"><text x="10" y="50" font-size="9.5" fill="#107c41" font-weight="600">✓ Done</text></g>
+    <g class="o53"><rect x="54.199999999999996" y="-7" width="49.800000000000004" height="14" rx="7" fill="#0f5cc0"/>
+    <text x="79.1" y="3.5" font-size="9" fill="#fff" font-weight="700" text-anchor="middle">Updated</text></g>
+  </g></g>
+<g class="m59"><g class="o67">
+    <rect width="109" height="58" rx="8" fill="#fff" stroke="#bec7d3"/>
+    <rect class="f61" x="0" y="8" width="4" height="42" rx="2" fill="#8a94a6"/>
+    <text x="10" y="19" font-size="10.5" fill="#172033" font-weight="700">GT1 readings</text>
+    <text x="10" y="34" font-size="9.5" fill="#596579">#1 · Tomasz</text>
+    <g class="o65"><text x="10" y="50" font-size="9.5" fill="#0f5cc0" font-weight="600">“Made a start”</text></g>
+    <g class="o63"><rect x="54.199999999999996" y="-7" width="49.800000000000004" height="14" rx="7" fill="#0f5cc0"/>
+    <text x="79.1" y="3.5" font-size="9" fill="#fff" font-weight="700" text-anchor="middle">Updated</text></g>
+  </g></g>
+<g class="m69"><g class="o77">
+    <rect width="109" height="58" rx="8" fill="#fff" stroke="#bec7d3"/>
+    <rect class="f71" x="0" y="8" width="4" height="42" rx="2" fill="#8a94a6"/>
+    <text x="10" y="19" font-size="10.5" fill="#172033" font-weight="700">Book contractor</text>
+    <text x="10" y="34" font-size="9.5" fill="#596579">#3 · Hannah</text>
+    <g class="o75"><text x="10" y="50" font-size="9.5" fill="#c42b1c" font-weight="600">Waiting on supplier</text></g>
+    <g class="o73"><rect x="54.199999999999996" y="-7" width="49.800000000000004" height="14" rx="7" fill="#0f5cc0"/>
+    <text x="79.1" y="3.5" font-size="9" fill="#fff" font-weight="700" text-anchor="middle">Updated</text></g>
+  </g></g>
+<g class="m79"><g class="o82">
+    <rect width="109" height="58" rx="8" fill="#fff" stroke="#bec7d3"/>
+    <rect class="" x="0" y="8" width="4" height="42" rx="2" fill="#8a94a6"/>
+    <text x="10" y="19" font-size="10.5" fill="#172033" font-weight="700">Order spare parts</text>
+    <text x="10" y="34" font-size="9.5" fill="#596579">#4 · Marcus · AC1</text>
+    
+    <g class="o80"><rect x="75.8" y="-7" width="28.200000000000003" height="14" rx="7" fill="#5c2d91"/>
+    <text x="89.9" y="3.5" font-size="9" fill="#fff" font-weight="700" text-anchor="middle">New</text></g>
+  </g></g>
+</g>
+<g fill="none" stroke="#bec7d3" stroke-width="2" stroke-dasharray="4 5">
+  <path id="read" d="M280 300 C292 300 292 380 304 380"/>
+  <path id="load" d="M758 250 C746 250 746 316 734 316"/>
+  <path id="act" d="M734 450 C746 450 746 380 758 380"/>
+</g>
+<path d="M1024 530 V548 Q1024 562 1010 562 H533 Q519 562 519 548 V542" fill="none" stroke="#bec7d3" stroke-width="2" stroke-dasharray="4 5" marker-end="url(#arrowgrey)"/>
+<path id="loop" class="loopdraw" d="M1024 530 V548 Q1024 562 1010 562 H533 Q519 562 519 548 V542" pathLength="100" fill="none" stroke="#0f5cc0" stroke-width="2.5"/>
+<path class="o85" d="M511.5 546 L519 532 L526.5 546 z" fill="#0f5cc0"/>
+<circle class="dot" r="4.5" fill="#8a94a6" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.0700;0.1100;1"><mpath href="#load" xlink:href="#load"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.0700;0.0740;0.1060;0.1100;1"/></circle>
+<circle class="dot" r="4.5" fill="#8a94a6" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.0780;0.1180;1"><mpath href="#load" xlink:href="#load"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.0780;0.0820;0.1140;0.1180;1"/></circle>
+<circle class="dot" r="4.5" fill="#8a94a6" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.0860;0.1260;1"><mpath href="#load" xlink:href="#load"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.0860;0.0900;0.1220;0.1260;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1600;0.1900;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1600;0.1640;0.1860;0.1900;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1680;0.1980;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1680;0.1720;0.1940;0.1980;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.2800;0.3100;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2800;0.2840;0.3060;0.3100;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.2880;0.3180;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2880;0.2920;0.3140;0.3180;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4000;0.4300;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4000;0.4040;0.4260;0.4300;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4080;0.4380;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4080;0.4120;0.4340;0.4380;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5200;0.5500;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5200;0.5240;0.5460;0.5500;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5280;0.5580;1"><mpath href="#read" xlink:href="#read"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5280;0.5320;0.5540;0.5580;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1900;0.2200;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1900;0.1940;0.2160;0.2200;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1980;0.2280;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1980;0.2020;0.2240;0.2280;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.2060;0.2360;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2060;0.2100;0.2320;0.2360;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3100;0.3400;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3100;0.3140;0.3360;0.3400;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3180;0.3480;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3180;0.3220;0.3440;0.3480;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3260;0.3560;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3260;0.3300;0.3520;0.3560;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4300;0.4600;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4300;0.4340;0.4560;0.4600;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4380;0.4680;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4380;0.4420;0.4640;0.4680;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4460;0.4760;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4460;0.4500;0.4720;0.4760;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6200;0.6500;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6200;0.6240;0.6460;0.6500;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6280;0.6580;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6280;0.6320;0.6540;0.6580;1"/></circle>
+<circle class="dot" r="4.5" fill="#0f5cc0" opacity="0"><animateMotion dur="20s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6360;0.6660;1"><mpath href="#act" xlink:href="#act"/></animateMotion><animate attributeName="opacity" dur="20s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6360;0.6400;0.6620;0.6660;1"/></circle>
+<g class="o87" font-family="Segoe UI, Arial, sans-serif"><text x="771" y="590" font-size="12.5" fill="#0f5cc0" font-weight="600" text-anchor="middle">Next stand-up: get_board() returns this board, so the agent starts from what it built</text></g>
+<g font-family="Segoe UI, Arial, sans-serif"><text x="30" y="612" font-size="11" fill="#596579">Design only. It reuses the board track's data, scoring and UI, and GPT-5.6 Luna like the pipeline. It will be compared on updates right, wrong closes, duplicates, cost and run-to-run spread.</text></g>
+</svg>

@@ -1,0 +1,801 @@
+{
+ "id": "a075",
+ "date": "2026-05-22",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p02",
+  "p12",
+  "p10",
+  "p06",
+  "p05",
+  "p04",
+  "p03"
+ ],
+ "chair_id": "p02",
+ "gold_tasks": [
+  {
+   "id": "a075-t1",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    47,
+    48
+   ]
+  },
+  {
+   "id": "a075-t2",
+   "summary": "Replace the seals on the Boiler Feedwater Pump",
+   "spoken_action": "replace the seals on the boiler feed pump",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "boiler feed pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-29",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    30,
+    44
+   ]
+  },
+  {
+   "id": "a075-t3",
+   "summary": "Sort the permit to work and isolation for the Line 3 Chiller",
+   "spoken_action": "sort the permit to work and isolation for the Line 3 Chiller",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27
+   ]
+  },
+  {
+   "id": "a075-t4",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-25",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    51,
+    52,
+    53
+   ]
+  },
+  {
+   "id": "a075-t5",
+   "summary": "Grease and check the bearings on the Line 3 Screw and Barrel",
+   "spoken_action": "grease and check the bearings on the line 3 barrel",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tom",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": null,
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "id": "a075-t6",
+   "summary": "Chase the purchase order for the Site Water System",
+   "spoken_action": "chase the purchase order for the water system",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "water system",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "id": "a075-t7",
+   "summary": "Investigate the pressure drop on the Boiler Feedwater Pump",
+   "spoken_action": "investigate the pressure drop on the Boiler Feedwater Pump",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "Boiler Feedwater Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44,
+    45
+   ]
+  },
+  {
+   "id": "a075-t8",
+   "summary": "Clear the jam and check the sensors on the Palletiser",
+   "spoken_action": "clear the jam and check the sensors on the palletizer",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide Adeyemi",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the palletizer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "top priority please",
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    35,
+    36
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "signed off the inspection on the wrapper on Tuesday",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "finished the repair on the Palletiser last night",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "Palletiser",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "finished the repair on the line 2 robot last night",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "line 2 robot",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "saw the pressure on the line one HPU dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line one HPU",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "can't get to the Line 1 Mould Temperature Controller until production gives us a window",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "Line 1 Mould Temperature Controller",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p03",
+   "text_hint": "we were going to replace the belt on the line 3 barrel but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.46,
+   "end": 10.76,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Morning, everyone. Friday the twenty-second. Can you all hear me, or am I doing the silent film again?"
+  },
+  {
+   "start": 11.93,
+   "end": 16.83,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "We can hear you. Um, more importantly, there's a birthday cake in the office."
+  },
+  {
+   "start": 17.46,
+   "end": 20.96,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's the clearest bit of communication we've had all week."
+  },
+  {
+   "start": 22.74,
+   "end": 28.34,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And the charity bake sale on Friday — today. Dangerous day to have forgotten your breakfast."
+  },
+  {
+   "start": 30.45,
+   "end": 32.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Forgotten? That's a deliberate strategy."
+  },
+  {
+   "start": 34.38,
+   "end": 38.58,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "The cake's already been cut, before anyone thinks I'm organising something here."
+  },
+  {
+   "start": 39.35,
+   "end": 42.15,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, excellent. Cake situation understood. Finished stuff first?"
+  },
+  {
+   "start": 42.92,
+   "end": 48.87,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, I signed off the inspection on the wrapper on Tuesday. That's closed, nothing new off that."
+  },
+  {
+   "start": 50.96,
+   "end": 54.11,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Cheers, Grace. That can stay in the done pile."
+  },
+  {
+   "start": 55.98,
+   "end": 60.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I finished the repair on the Palletiser last night as well. That repair's complete."
+  },
+  {
+   "start": 61.71,
+   "end": 68.36,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, although there's the jam on the palletizer to talk about. Not saying your finished repair is still open."
+  },
+  {
+   "start": 68.87,
+   "end": 72.72,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "No, exactly. The repair from last night is done. Separate conversation."
+  },
+  {
+   "start": 74.01,
+   "end": 81.01,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I finished the repair on the line 2 robot last night. That's done too, not another one for today."
+  },
+  {
+   "start": 82.18,
+   "end": 85.68,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Lovely. Any observations before we get into the actual jobs?"
+  },
+  {
+   "start": 86.62,
+   "end": 94.67,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I saw the pressure on the line one HPU dip for a few minutes, it came back on its own. Just an observation."
+  },
+  {
+   "start": 95.08,
+   "end": 98.58,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, so that's not a new investigation being allocated here."
+  },
+  {
+   "start": 100.86,
+   "end": 104.71,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Correct. It recovered on its own; just giving you the picture."
+  },
+  {
+   "start": 106.7,
+   "end": 113.35,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And I can't get to the Line 1 Mould Temperature Controller until production gives us a window. Still blocked."
+  },
+  {
+   "start": 115.27,
+   "end": 119.12,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, there's no window confirmed for that. Can't pretend there is."
+  },
+  {
+   "start": 121.02,
+   "end": 123.47,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Understood. Blocked, not a commitment for today."
+  },
+  {
+   "start": 124.58,
+   "end": 132.98,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Oh, and we were going to replace the belt on the line 3 barrel but that's been pushed to next month so ignore it."
+  },
+  {
+   "start": 135.07,
+   "end": 138.22,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "The belt, yeah. Bearings are a separate thing, though?"
+  },
+  {
+   "start": 139.79,
+   "end": 147.14,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "They are. Tom, can you grease and check the bearings on the line 3 barrel today? No belt replacement in that."
+  },
+  {
+   "start": 149.45,
+   "end": 155.4,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, I'll grease and check the bearings on the line 3 barrel today. Just the bearings, understood."
+  },
+  {
+   "start": 157.51,
+   "end": 158.91,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Thanks, Tom. That's agreed."
+  },
+  {
+   "start": 161.38,
+   "end": 171.53,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, I'll sort the permit to work and isolation for the Line 3 Chiller by the end of the week. That's holding production up so it needs doing first."
+  },
+  {
+   "start": 171.91,
+   "end": 177.86,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Thanks, Callum. By the end of the week, and first for you because it's holding production up."
+  },
+  {
+   "start": 179.23,
+   "end": 182.73,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly. I'll take the permit to work and isolation, yes."
+  },
+  {
+   "start": 184.81,
+   "end": 190.06,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll replace the seals on the boiler feed pump on Friday. It's urgent, that one."
+  },
+  {
+   "start": 190.38,
+   "end": 195.98,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay, Grace. The seals on the boiler feed pump, on Friday — today — and urgent."
+  },
+  {
+   "start": 196.87,
+   "end": 198.62,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, today. I'll take that."
+  },
+  {
+   "start": 199.88,
+   "end": 204.08,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right. Definitely not everything in the 'when you fancy it' category, then."
+  },
+  {
+   "start": 204.58,
+   "end": 211.23,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Definitely not. Olumide Adeyemi, can you clear the jam and check the sensors on the palletizer? Top priority please."
+  },
+  {
+   "start": 213.4,
+   "end": 219.7,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll clear the jam and check the sensors on the palletizer. I'll take it as top priority."
+  },
+  {
+   "start": 220.02,
+   "end": 225.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, talking over you — just keeping that distinct from the repair I finished last night."
+  },
+  {
+   "start": 227.27,
+   "end": 231.82,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, understood. I'm taking the jam and sensor check, not reopening your repair."
+  },
+  {
+   "start": 232.42,
+   "end": 234.52,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Good. Top priority for that, agreed."
+  },
+  {
+   "start": 235.39,
+   "end": 240.64,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "On the buying side, I'll chase the purchase order for the water system this morning."
+  },
+  {
+   "start": 241.35,
+   "end": 245.55,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Is that an urgent chase, or just whenever you get a chance?"
+  },
+  {
+   "start": 246.48,
+   "end": 252.08,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Whenever you get a chance sort of priority. I'll fit the chase in this morning, though."
+  },
+  {
+   "start": 254.51,
+   "end": 260.46,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay, PR. Purchase order for the water system, this morning, whenever you get a chance. Got it."
+  },
+  {
+   "start": 261.75,
+   "end": 263.85,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Cheers. That's the chase covered, then."
+  },
+  {
+   "start": 265.2,
+   "end": 272.9,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I've got the pressure one as well. I'll investigate the pressure drop on the Boiler Feedwater Pump by the 28th. Normal priority."
+  },
+  {
+   "start": 273.98,
+   "end": 280.28,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just so I've got that straight, normal priority for the investigation, rather than the urgency on the seals?"
+  },
+  {
+   "start": 281.01,
+   "end": 286.96,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes. Normal priority for the pressure-drop investigation, by the 28th. The seal replacement is the urgent one."
+  },
+  {
+   "start": 287.39,
+   "end": 289.84,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Thanks, Grace. Separate entries, separate priorities. Clear."
+  },
+  {
+   "start": 291.01,
+   "end": 294.86,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I'll organise the toolbox talk for the team after lunch."
+  },
+  {
+   "start": 296.61,
+   "end": 303.61,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Thanks, PR. Whenever you get a chance after lunch — that doesn't need to jump ahead of the urgent stuff."
+  },
+  {
+   "start": 304.6,
+   "end": 309.15,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll organise it after lunch, whenever I get a chance. That's fine."
+  },
+  {
+   "start": 310.66,
+   "end": 313.81,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Toolbox talk versus cake. Tough audience you've got there."
+  },
+  {
+   "start": 315.73,
+   "end": 320.28,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "It's organising the talk, not a promise of cake with every safety message."
+  },
+  {
+   "start": 322.37,
+   "end": 327.27,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And I'll send the shift handover report round Monday. No rush on that one."
+  },
+  {
+   "start": 329.38,
+   "end": 333.58,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Monday for the report, Davey? Not expecting it in amongst all this?"
+  },
+  {
+   "start": 335.98,
+   "end": 339.13,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's right. I'll send it round Monday, no rush."
+  },
+  {
+   "start": 339.57,
+   "end": 343.77,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Good. For a second I thought we'd somehow got to Monday already."
+  },
+  {
+   "start": 344.67,
+   "end": 348.87,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Don't do that. I've only just mentally arrived at Friday's bake sale."
+  },
+  {
+   "start": 350.62,
+   "end": 354.82,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right. And nothing's quietly slipped in from the blocked or cancelled list?"
+  },
+  {
+   "start": 356.5,
+   "end": 362.8,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No. Line 1 Mould Temperature Controller is still blocked on access. Not down as something I'm doing today."
+  },
+  {
+   "start": 363.28,
+   "end": 370.63,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And the belt replacement on the line 3 barrel is still pushed to next month. Not part of today's bearings job."
+  },
+  {
+   "start": 372.33,
+   "end": 375.48,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Good. Any crossed wires on what we've actually agreed?"
+  },
+  {
+   "start": 377.9,
+   "end": 382.45,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No, all clear from me. Urgent seals and normal-priority pressure investigation, kept separate."
+  },
+  {
+   "start": 383.22,
+   "end": 388.47,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Lovely. Thanks, everyone. I'll let you get off Teams before the cake discussion starts again."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

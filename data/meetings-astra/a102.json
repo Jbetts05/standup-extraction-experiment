@@ -1,0 +1,752 @@
+{
+ "id": "a102",
+ "date": "2026-03-09",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p03",
+  "p05",
+  "p11",
+  "p02",
+  "p09",
+  "p08"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a102-t1",
+   "summary": "Sort the permit to work and isolation for the Main Water Isolation Valve",
+   "spoken_action": "sort the permit to work and isolation for the big valve by the gate",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "the big valve by the gate",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-09",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    17,
+    18,
+    19,
+    61
+   ]
+  },
+  {
+   "id": "a102-t2",
+   "summary": "Do a site visit at Kestrel Hydraulics Leeds with the contractor",
+   "spoken_action": "do a site visit at Kestrel with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s04",
+    "text": "Kestrel",
+    "split": "seen"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    59
+   ]
+  },
+  {
+   "id": "a102-t3",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-12",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    62
+   ]
+  },
+  {
+   "id": "a102-t4",
+   "summary": "Run a function test on the Compressed Air Dryer",
+   "spoken_action": "run a function test on the dryer",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Pri",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    44,
+    63
+   ]
+  },
+  {
+   "id": "a102-t5",
+   "summary": "Recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "recalibrate the sensors on the GT2 water valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-09",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "tested the air dryer yesterday and it's all fine now",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "air dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "signed off the inspection on the 11kV Switchboard on Tuesday",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV Switchboard",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p05",
+   "text_hint": "noticed the water ring was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "WTR",
+    "text": "the water ring",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p03",
+   "text_hint": "heard a slight rattle from the big valve by the gate, nothing to action yet",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "the big valve by the gate",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p08",
+   "text_hint": "can't get to the palletizer until production gives us a window",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the palletizer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p03",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the CT1",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p01",
+   "text_hint": "we were going to replace the belt on the trucks but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the trucks",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.64,
+   "end": 9.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, all. Everyone survive the weekend? My grand plans for the garden lasted about ten minutes before the rain arrived."
+  },
+  {
+   "start": 10.55,
+   "end": 15.1,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Ten minutes? You did better than us. Didn't even get the chairs out."
+  },
+  {
+   "start": 17.54,
+   "end": 26.64,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'd settle for the heating in the portakabin making its mind up. Coat on, coat off, all morning. Just having a moan, not reporting a job."
+  },
+  {
+   "start": 27.73,
+   "end": 30.88,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "That's the deluxe climate control. Two settings, both wrong."
+  },
+  {
+   "start": 32.96,
+   "end": 38.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the weather forecast. Monday the ninth, morning stand-up. What's already closed out?"
+  },
+  {
+   "start": 39.79,
+   "end": 44.69,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, I tested the air dryer yesterday and it's all fine now. That's finished."
+  },
+  {
+   "start": 46.64,
+   "end": 50.49,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "That's the air dryer test done, then? Nothing outstanding from that?"
+  },
+  {
+   "start": 52.38,
+   "end": 53.78,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Correct. Done and dusted."
+  },
+  {
+   "start": 54.83,
+   "end": 63.23,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And I signed off the inspection on the 11kV Switchboard on Tuesday. That's old news, really, but it was still coming up in conversation."
+  },
+  {
+   "start": 65.18,
+   "end": 67.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Last Tuesday, yeah? We're talking completed work."
+  },
+  {
+   "start": 68.04,
+   "end": 71.54,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, last Tuesday. Signed off, not another inspection for today."
+  },
+  {
+   "start": 72.04,
+   "end": 78.69,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "One observation as well: noticed the water ring was running a bit warm on nights but it settled down."
+  },
+  {
+   "start": 79.76,
+   "end": 83.96,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Settled back down, yeah. Not something we're opening work on from that."
+  },
+  {
+   "start": 84.8,
+   "end": 87.25,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly. Just passing on what I saw."
+  },
+  {
+   "start": 88.01,
+   "end": 97.11,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I heard a slight rattle from the big valve by the gate, nothing to action yet. Before that turns into a strip-down on someone's list."
+  },
+  {
+   "start": 98.16,
+   "end": 100.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. The rattle itself isn't a new job."
+  },
+  {
+   "start": 102.34,
+   "end": 104.79,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, just an observation at this point."
+  },
+  {
+   "start": 106.85,
+   "end": 114.2,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Separate from that noise, I'll sort the permit to work and isolation for the big valve by the gate by 11am."
+  },
+  {
+   "start": 115.81,
+   "end": 121.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace Liu. Permit to work and isolation for the big valve by the gate, by 11am."
+  },
+  {
+   "start": 123.7,
+   "end": 125.45,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, that's mine. By 11am."
+  },
+  {
+   "start": 127.02,
+   "end": 132.27,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just keeping the distinction clear—permit and isolation, not me being volunteered to chase the rattle?"
+  },
+  {
+   "start": 134.48,
+   "end": 136.93,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly. No extra investigation being added there."
+  },
+  {
+   "start": 138.61,
+   "end": 141.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. What have we got that's still blocked?"
+  },
+  {
+   "start": 143.57,
+   "end": 149.87,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I can't get to the palletizer until production gives us a window. Still stuck on that, I'm afraid."
+  },
+  {
+   "start": 150.87,
+   "end": 155.77,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There's no window confirmed. So it's not a commitment we can put into today."
+  },
+  {
+   "start": 156.56,
+   "end": 159.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, stays blocked. We're not pretending that's going ahead."
+  },
+  {
+   "start": 160.33,
+   "end": 164.53,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Um, the supplier still hasn't confirmed the delivery for the CT1 either."
+  },
+  {
+   "start": 165.06,
+   "end": 168.56,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, no confirmed delivery date. Nothing firm to plan against."
+  },
+  {
+   "start": 169.48,
+   "end": 172.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Blocker noted, no assumption that it's arriving today."
+  },
+  {
+   "start": 173.84,
+   "end": 177.34,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "A delivery date would be a lovely novelty, wouldn't it?"
+  },
+  {
+   "start": 179.17,
+   "end": 188.27,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And we were going to replace the belt on the trucks but that's been pushed to next month, so ignore it. Cancelled out of today's work."
+  },
+  {
+   "start": 189.42,
+   "end": 192.22,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "One less ghost job following us round, then."
+  },
+  {
+   "start": 193.19,
+   "end": 195.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Not quietly putting it back in."
+  },
+  {
+   "start": 196.51,
+   "end": 201.76,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "On the admin bit, I'll sort the training records for the new starters by Thursday."
+  },
+  {
+   "start": 204.02,
+   "end": 207.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Marcus. Training records for the new starters, by Thursday."
+  },
+  {
+   "start": 209.84,
+   "end": 213.34,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep, I'll take that. Thursday, not claiming they're finished already."
+  },
+  {
+   "start": 214.92,
+   "end": 219.12,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's the records themselves you're talking about, rather than extra training sessions?"
+  },
+  {
+   "start": 219.66,
+   "end": 222.46,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "The records, yeah. That's the job I'm taking."
+  },
+  {
+   "start": 223.31,
+   "end": 224.71,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Got you. By Thursday."
+  },
+  {
+   "start": 225.9,
+   "end": 230.8,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I'll run a function test on the dryer. No rush on that one."
+  },
+  {
+   "start": 232.34,
+   "end": 236.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Pri has the function test on the dryer. No rush."
+  },
+  {
+   "start": 237.17,
+   "end": 242.07,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah. And that's separate from the air dryer test we were just talking about."
+  },
+  {
+   "start": 243.37,
+   "end": 246.87,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep—my air dryer test is finished. We're not reopening that."
+  },
+  {
+   "start": 247.21,
+   "end": 252.11,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Sorry, talked over you there. Heard 'dryer' twice and thought Teams had started looping."
+  },
+  {
+   "start": 252.95,
+   "end": 259.25,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, just us being us. I'll do the function test on the dryer, no rush, no deadline added."
+  },
+  {
+   "start": 260.74,
+   "end": 270.19,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There's also a site visit at Kestrel with the contractor that needs doing. Not an emergency but don't let it slip. It hasn't got anyone against it."
+  },
+  {
+   "start": 271.31,
+   "end": 275.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Is anyone able to take that site visit at Kestrel with the contractor?"
+  },
+  {
+   "start": 278.2,
+   "end": 279.95,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I can't take it on."
+  },
+  {
+   "start": 281.54,
+   "end": 283.99,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I can't commit to that either, sorry."
+  },
+  {
+   "start": 285.51,
+   "end": 287.96,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No, not one I can pick up."
+  },
+  {
+   "start": 290.08,
+   "end": 294.28,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Still nobody, then. I'm raising the gap, not volunteering for the visit."
+  },
+  {
+   "start": 295.73,
+   "end": 302.03,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. We agree it needs doing, but Kestrel stays unallocated. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 304.32,
+   "end": 313.77,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Other gap: the sensors on the GT2 water valve need recalibrating this afternoon. It matters but it's not urgent. Nobody's got that as far as I know."
+  },
+  {
+   "start": 315.45,
+   "end": 321.05,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, did you say this afternoon, but not urgent? Just making sure I've heard both bits."
+  },
+  {
+   "start": 321.96,
+   "end": 330.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah. Recalibrate the sensors on the GT2 water valve this afternoon. It matters but it's not urgent. I'm flagging it, not taking it."
+  },
+  {
+   "start": 330.97,
+   "end": 332.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Any taker for that recalibration?"
+  },
+  {
+   "start": 333.29,
+   "end": 338.54,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I can't put my name to it. Don't want my question sounding like an offer."
+  },
+  {
+   "start": 338.98,
+   "end": 340.38,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Nor me, I'm afraid."
+  },
+  {
+   "start": 340.7,
+   "end": 349.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's unowned as well. The sensors on the GT2 water valve need recalibrating this afternoon; it matters but it's not urgent. No owner agreed."
+  },
+  {
+   "start": 351.68,
+   "end": 359.03,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Agreed. Both that and the site visit at Kestrel with the contractor remain unallocated. Not putting either against someone by default."
+  },
+  {
+   "start": 360.01,
+   "end": 366.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. For the three things people have taken, just give me a quick yes on what you've committed to."
+  },
+  {
+   "start": 368.28,
+   "end": 374.58,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep. I'll sort the permit to work and isolation for the big valve by the gate by 11am."
+  },
+  {
+   "start": 376.58,
+   "end": 380.43,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I'll sort the training records for the new starters by Thursday."
+  },
+  {
+   "start": 381.49,
+   "end": 385.34,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I'll run a function test on the dryer. No rush."
+  },
+  {
+   "start": 385.66,
+   "end": 388.81,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Lovely. And my portakabin moan remains strictly a moan."
+  },
+  {
+   "start": 389.19,
+   "end": 393.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Duly recorded as British conversation, not maintenance. Thanks, everyone. We'll leave it there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

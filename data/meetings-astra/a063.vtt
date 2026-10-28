@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00:05.669 --> 00:00:11.619
+<v Sarah Okafor>Morning, everyone. Can you hear me over that noise? Someone's got their mic open on the floor.</v>
+
+00:00:13.490 --> 00:00:18.739
+<v Fiona Doyle>Yeah, got you. I'm hiding in the canteen, staring at the broken coffee machine. Again.</v>
+
+00:00:19.370 --> 00:00:24.269
+<v Callum Reid>You've got the charity bake sale on Friday, though. Today. Cake instead of coffee.</v>
+
+00:00:24.670 --> 00:00:27.820
+<v Grace Liu>That's not a substitute, Callum. That's a separate requirement.</v>
+
+00:00:28.210 --> 00:00:33.460
+<v Sarah Okafor>Right, before we get into nutritional engineering—Friday 30 October. Let's do the finished bits first.</v>
+
+00:00:35.520 --> 00:00:39.369
+<v Priya Raman>Yeah so, tested the CT1 yesterday and it's all fine now.</v>
+
+00:00:40.159 --> 00:00:42.960
+<v Hannah Price>That's the one that was giving you grief?</v>
+
+00:00:44.009 --> 00:00:46.810
+<v Priya Raman>That's it. Finished, nothing carried over from that.</v>
+
+00:00:48.259 --> 00:00:54.210
+<v Sarah Okafor>And I tested the air compressor yesterday and it's all fine now. That one's closed as well.</v>
+
+00:00:56.570 --> 00:01:00.420
+<v Marcus Hale>Lovely. Makes a change hearing a list of things that work.</v>
+
+00:01:02.850 --> 00:01:09.500
+<v Hannah Price>One more for that list: already swapped the filter on the boiler yesterday. Done, not another job for today.</v>
+
+00:01:11.879 --> 00:01:13.980
+<v Sarah Okafor>Cheers. Useful to separate those out.</v>
+
+00:01:15.709 --> 00:01:24.459
+<v Fiona Doyle>Just an observation from me—I saw the pressure on the Main Water Isolation Valve dip for a few minutes. It came back on its own.</v>
+
+00:01:26.189 --> 00:01:28.640
+<v Marcus Hale>So it recovered without anyone touching anything?</v>
+
+00:01:29.810 --> 00:01:34.359
+<v Fiona Doyle>Yeah. Just passing on what I saw, not raising a job from it.</v>
+
+00:01:36.480 --> 00:01:43.480
+<v Sarah Okafor>Similar sort of thing: noticed the Gas Turbine 2 was running a bit warm on nights but it settled down.</v>
+
+00:01:44.099 --> 00:01:46.900
+<v Marcus Hale>Right, settled rather than still climbing. Got you.</v>
+
+00:01:48.510 --> 00:01:50.959
+<v Sarah Okafor>Exactly. Observation only, no new action there.</v>
+
+00:01:52.060 --> 00:01:58.359
+<v Priya Raman>Less good news, we're still waiting on parts for the CV01. Nothing we can do until they arrive.</v>
+
+00:02:00.129 --> 00:02:05.379
+<v Callum Reid>Nothing on the repair, you mean? We've still got the near miss hanging over us.</v>
+
+00:02:06.480 --> 00:02:11.379
+<v Priya Raman>Yeah, sorry, the physical repair. That's blocked on parts. Different thing from the write-up.</v>
+
+00:02:12.330 --> 00:02:18.629
+<v Sarah Okafor>I'll write up the near miss at the CV01. That's holding production up so it needs doing first.</v>
+
+00:02:20.479 --> 00:02:26.080
+<v Grace Liu>Right, Sarah Okafor on the near miss write-up, first priority. Not claiming the repair's suddenly available.</v>
+
+00:02:26.419 --> 00:02:30.620
+<v Sarah Okafor>Exactly, I'll do the write-up. The parts situation stays as it is.</v>
+
+00:02:31.039 --> 00:02:35.590
+<v Hannah Price>And I can't get to the IM1 until production gives us a window.</v>
+
+00:02:38.009 --> 00:02:42.210
+<v Callum Reid>There isn't a window available to give you at the moment, no.</v>
+
+00:02:44.530 --> 00:02:48.379
+<v Hannah Price>Okay. Still blocked then, not something I'm committing to do today.</v>
+
+00:02:50.490 --> 00:02:59.939
+<v Sarah Okafor>We also need someone to update the risk assessment for work on the booster pump by 11am. Not an emergency but don't let it slip. Any capacity?</v>
+
+00:03:01.960 --> 00:03:09.310
+<v Grace Liu>Um, I haven't got the capacity to take that on. Don't put it against me just because it's a risk assessment.</v>
+
+00:03:10.479 --> 00:03:12.930
+<v Sarah Okafor>Understood. Anyone else able to own that?</v>
+
+00:03:14.689 --> 00:03:17.490
+<v Fiona Doyle>Not me, sorry. I can't promise that one.</v>
+
+00:03:19.189 --> 00:03:25.139
+<v Sarah Okafor>Right. Nobody taking it, then. It's still needed by 11am, and it's unowned—not quietly allocated to Grace.</v>
+
+00:03:27.509 --> 00:03:33.810
+<v Sarah Okafor>Marcus, can you inspect the line one HPU for leaks next week? That one's safety critical, straight away.</v>
+
+00:03:34.689 --> 00:03:40.289
+<v Marcus Hale>Next week, yeah? Just checking the 'straight away' bit isn't you moving it into this morning.</v>
+
+00:03:41.789 --> 00:03:49.840
+<v Sarah Okafor>No, next week is still the timing. Safety critical, straight away when that work comes up next week, not something to leave sitting.</v>
+
+00:03:51.289 --> 00:03:56.539
+<v Marcus Hale>Understood. I'll inspect the line one HPU for leaks next week, with that safety-critical urgency.</v>
+
+00:03:58.960 --> 00:04:03.159
+<v Priya Raman>Yeah, that distinction makes sense. Timing and priority aren't the same box.</v>
+
+00:04:05.349 --> 00:04:11.300
+<v Sarah Okafor>Marcus, can you also run the monthly fire alarm test next Tuesday? Normal priority for that one.</v>
+
+00:04:12.620 --> 00:04:17.519
+<v Marcus Hale>Yeah, I'll run the monthly fire alarm test next Tuesday. Normal priority, got it.</v>
+
+00:04:20.000 --> 00:04:24.550
+<v Fiona Doyle>Next Tuesday's the 3rd, just so we're all looking at the same week.</v>
+
+00:04:25.220 --> 00:04:27.670
+<v Sarah Okafor>Yep. End of October's disappeared on us.</v>
+
+00:04:29.379 --> 00:04:34.279
+<v Fiona Doyle>While we're on dates, I'll send the shift handover report round on the 3rd.</v>
+
+00:04:36.670 --> 00:04:39.819
+<v Sarah Okafor>Thanks, Fiona. The shift handover report, on the 3rd.</v>
+
+00:04:40.949 --> 00:04:43.050
+<v Fiona Doyle>Yep, I'll send it round then.</v>
+
+00:04:45.439 --> 00:04:50.339
+<v Callum Reid>We've still got the jam on the palletiser, too. That's the other production hold-up.</v>
+
+00:04:50.910 --> 00:04:58.959
+<v Fiona Doyle>I'll clear the jam and check the sensors on the palletiser at half two. That's holding production up so it needs doing first.</v>
+
+00:05:01.199 --> 00:05:06.100
+<v Priya Raman>Sorry, talked over the end there—you're taking both the jam and the sensor checks?</v>
+
+00:05:07.129 --> 00:05:12.730
+<v Fiona Doyle>Both, yeah. I'll clear the jam and check the sensors on the palletiser. At half two.</v>
+
+00:05:13.560 --> 00:05:20.910
+<v Sarah Okafor>Okay, Fiona has both. Half two stays the timing, and it's first priority at that slot because it's holding production up.</v>
+
+00:05:22.569 --> 00:05:27.819
+<v Callum Reid>Yeah, that's the priority from production. Not a 'have a look if you're passing' one.</v>
+
+00:05:29.399 --> 00:05:33.949
+<v Grace Liu>On the spares, I'll order spare parts for the big boiler on Friday.</v>
+
+00:05:34.379 --> 00:05:36.829
+<v Marcus Hale>That's not an emergency order, is it?</v>
+
+00:05:37.470 --> 00:05:44.470
+<v Grace Liu>No, not an emergency but don't let it slip. I'll get the order for the big boiler placed on Friday.</v>
+
+00:05:45.870 --> 00:05:48.319
+<v Sarah Okafor>Thanks, Grace. Friday as in today, yes?</v>
+
+00:05:49.519 --> 00:05:52.670
+<v Grace Liu>Yes, today. My head's still halfway through Thursday, apparently.</v>
+
+00:05:53.430 --> 00:05:59.029
+<v Sarah Okafor>And Grace Liu, can you sort the training records for the new starters today? Low priority.</v>
+
+00:06:00.779 --> 00:06:05.680
+<v Grace Liu>Yeah, I'll sort the training records for the new starters today. Low priority, understood.</v>
+
+00:06:07.500 --> 00:06:10.649
+<v Hannah Price>So that's not jumping ahead of the production hold-ups?</v>
+
+00:06:11.180 --> 00:06:15.379
+<v Sarah Okafor>No, definitely low priority. Still today, but it doesn't jump the queue.</v>
+
+00:06:17.660 --> 00:06:20.110
+<v Grace Liu>Fine, that's clear. I've got that one.</v>
+
+00:06:21.389 --> 00:06:28.389
+<v Sarah Okafor>And the blocked items stay blocked. Mentioning them in the stand-up hasn't magically made parts or a production window appear.</v>
+
+00:06:29.189 --> 00:06:35.839
+<v Hannah Price>Sadly not. And the filter I mentioned is finished, so don't drag that back into the open list either.</v>
+
+00:06:36.850 --> 00:06:41.050
+<v Priya Raman>Same for CT1. Yesterday's good news is allowed to stay good news.</v>
+
+00:06:43.360 --> 00:06:47.560
+<v Fiona Doyle>Unlike the coffee machine. That's just become part of the furniture now.</v>
+
+00:06:48.410 --> 00:06:50.860
+<v Callum Reid>Cake, I'm telling you. Much less disappointing.</v>
+
+00:06:51.750 --> 00:06:57.350
+<v Sarah Okafor>Right, thanks all. We've been clear about what's taken and what isn't. Let's leave it there.</v>

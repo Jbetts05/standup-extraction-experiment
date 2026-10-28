@@ -1,0 +1,726 @@
+{
+ "id": "a100",
+ "date": "2026-02-09",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p06",
+  "p03",
+  "p04",
+  "p12",
+  "p10",
+  "p01",
+  "p11"
+ ],
+ "chair_id": "p06",
+ "gold_tasks": [
+  {
+   "id": "a100-t1",
+   "summary": "Schedule downtime for the Line 2 Safety Guard Interlock with production",
+   "spoken_action": "schedule downtime for the door switch on two with production",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "the door switch on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "low priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    62
+   ]
+  },
+  {
+   "id": "a100-t2",
+   "summary": "Book a contractor to look at the Site Water System",
+   "spoken_action": "book a contractor to look at the water ring",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "the water ring",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-09",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": "p01",
+   "evidence": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    53
+   ]
+  },
+  {
+   "id": "a100-t3",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-10",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    24,
+    54
+   ]
+  },
+  {
+   "id": "a100-t4",
+   "summary": "Sort the permit to work and isolation for the Injection Moulding Line 2",
+   "spoken_action": "sort the permit to work and isolation for the Arburg",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "the Arburg",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-13",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    55
+   ]
+  },
+  {
+   "id": "a100-t5",
+   "summary": "Investigate the pressure drop on the Air Compressor 1",
+   "spoken_action": "investigate the pressure drop on the air compressor",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Pri",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "air compressor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-09",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": null,
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    49,
+    50
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "already swapped the filter on the tower yesterday",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "the tower",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "signed off the inspection on the water ring on Tuesday",
+   "component": {
+    "entity_id": "WTR",
+    "text": "the water ring",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "already swapped the filter on the GT2 water valve yesterday",
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 water valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "heard a slight rattle from the big valve by the gate, nothing to action yet",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "the big valve by the gate",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the Atlas until production gives us a window",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the desiccant unit until production gives us a window",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the desiccant unit",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.34,
+   "end": 10.94,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Morning, all. Monday the ninth, and it's still raining sideways. Anyone actually manage their weekend plans?"
+  },
+  {
+   "start": 12.39,
+   "end": 19.04,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Planned a walk. Got as far as the car, saw the weather, went back in. Very successful weekend, really."
+  },
+  {
+   "start": 20.39,
+   "end": 22.49,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good preventative maintenance on your boots."
+  },
+  {
+   "start": 24.46,
+   "end": 29.01,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly. I stood beside a football pitch getting soaked. Yours sounds better, Jamie."
+  },
+  {
+   "start": 31.22,
+   "end": 34.37,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Are we all on? Teams says someone's still connecting."
+  },
+  {
+   "start": 35.58,
+   "end": 40.48,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's me twice. Phone's in, laptop's thinking about it. You can hear me, yeah?"
+  },
+  {
+   "start": 42.13,
+   "end": 45.98,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, you're fine. Right, quick run through what's already finished first."
+  },
+  {
+   "start": 48.4,
+   "end": 53.65,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Already swapped the filter on the tower yesterday. That's done, not something for this morning."
+  },
+  {
+   "start": 54.15,
+   "end": 57.3,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That was the one showing on the old handover?"
+  },
+  {
+   "start": 58.61,
+   "end": 61.06,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, same one. Old entry, finished job."
+  },
+  {
+   "start": 62.97,
+   "end": 68.92,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And I already swapped the filter on the GT2 water valve yesterday. That one's done as well."
+  },
+  {
+   "start": 70.97,
+   "end": 76.57,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "While we're on old entries, I signed off the inspection on the water ring on Tuesday."
+  },
+  {
+   "start": 77.53,
+   "end": 82.08,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Last Tuesday, yeah? So that's a completed inspection, not one waiting on us."
+  },
+  {
+   "start": 83.78,
+   "end": 87.28,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Exactly. Signed off. Don't put it back in the pile."
+  },
+  {
+   "start": 89.17,
+   "end": 98.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Different thing on the water ring, though. Boss, if you've got a spare minute, can you book a contractor to look at the water ring by 11am?"
+  },
+  {
+   "start": 100.6,
+   "end": 107.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I can't take that, sorry. I'm tied up on the production side this morning; I'd only end up sitting on it."
+  },
+  {
+   "start": 109.6,
+   "end": 114.5,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Is that the booking needed by eleven, rather than someone physically here by eleven?"
+  },
+  {
+   "start": 116.91,
+   "end": 125.66,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, the booking. Jamie, can you take that instead—book a contractor to look at the water ring by 11am, if you've got a spare minute?"
+  },
+  {
+   "start": 126.09,
+   "end": 132.39,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll take it off boss. I'll book a contractor to look at the water ring by 11am."
+  },
+  {
+   "start": 133.83,
+   "end": 140.48,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And just to separate those two things, my inspection being signed off doesn't mean this contractor booking's already done."
+  },
+  {
+   "start": 142.81,
+   "end": 145.61,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Understood. Booking's mine; I'm not reopening your inspection."
+  },
+  {
+   "start": 146.25,
+   "end": 149.05,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right. Anything to add on the new starters?"
+  },
+  {
+   "start": 149.81,
+   "end": 159.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, I'll sort the training records for the new starters. That's in the whenever you get a chance category, but I'll have them ready tomorrow at 9:30."
+  },
+  {
+   "start": 160.03,
+   "end": 163.18,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Cheers, boss. Tomorrow at 9:30 for the records, then."
+  },
+  {
+   "start": 165.29,
+   "end": 168.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's it. Not making it a drop-everything job."
+  },
+  {
+   "start": 169.38,
+   "end": 176.73,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Access-wise, we can't get to the Atlas until production gives us a window. Still blocked, no work on that agreed here."
+  },
+  {
+   "start": 178.75,
+   "end": 181.9,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, so it's not secretly available because it's Monday?"
+  },
+  {
+   "start": 184.23,
+   "end": 190.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sadly not. And we can't get to the desiccant unit until production gives us a window either. Same blocker."
+  },
+  {
+   "start": 192.41,
+   "end": 196.96,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, without a window there's nothing to get into on either of those."
+  },
+  {
+   "start": 198.7,
+   "end": 202.55,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly. Just carrying the blockers, not handing either job out today."
+  },
+  {
+   "start": 203.56,
+   "end": 210.21,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "One observation from me: heard a slight rattle from the big valve by the gate, nothing to action yet."
+  },
+  {
+   "start": 212.29,
+   "end": 215.44,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Just a noise you've noticed, not a strip-down request?"
+  },
+  {
+   "start": 216.95,
+   "end": 219.75,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Just the observation. Nothing to action yet, honestly."
+  },
+  {
+   "start": 221.68,
+   "end": 230.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "There's also downtime to schedule with production for the door switch on two. Low priority, needs scheduling by the 28th. That hasn't got an owner."
+  },
+  {
+   "start": 232.45,
+   "end": 238.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's agreeing the downtime with production, rather than saying the switch work itself is due then?"
+  },
+  {
+   "start": 239.41,
+   "end": 245.71,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah. Schedule downtime for the door switch on two with production by the 28th. That's the outstanding bit."
+  },
+  {
+   "start": 247.11,
+   "end": 253.76,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I can't volunteer for the scheduling side. Don't put my name against it just because I mentioned the handover."
+  },
+  {
+   "start": 254.74,
+   "end": 259.99,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "No, fair. Nobody's taken that, so it stays unowned. Low priority, but still needs doing."
+  },
+  {
+   "start": 261.79,
+   "end": 269.84,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "For my bit, I'll sort the permit to work and isolation for the Arburg by the end of the week. That's fairly important."
+  },
+  {
+   "start": 272.26,
+   "end": 276.11,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Cheers, Cal. Permit to work and isolation both with you, then?"
+  },
+  {
+   "start": 278.27,
+   "end": 282.82,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, both with me for the Arburg. By the end of the week."
+  },
+  {
+   "start": 283.31,
+   "end": 289.96,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, so that commitment's the permit and isolation, not a general promise that every job on it is finished."
+  },
+  {
+   "start": 290.28,
+   "end": 294.48,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Correct. Let's not accidentally promise the whole factory while we're at it."
+  },
+  {
+   "start": 295.89,
+   "end": 300.79,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Pri, can you investigate the pressure drop on the air compressor today at 2pm?"
+  },
+  {
+   "start": 301.8,
+   "end": 306.35,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll investigate the pressure drop on the air compressor today at 2pm."
+  },
+  {
+   "start": 307.4,
+   "end": 311.6,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Investigation, yeah? We're not calling it a failed part at this stage."
+  },
+  {
+   "start": 312.3,
+   "end": 317.55,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, exactly. It's a pressure drop to investigate, not a replacement I've already decided on."
+  },
+  {
+   "start": 318.95,
+   "end": 325.6,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, I was talking over you there. That's what I was going to say—bit early to name a part."
+  },
+  {
+   "start": 327.49,
+   "end": 332.04,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah. Otherwise we end up diagnosing it by committee over a crackly microphone."
+  },
+  {
+   "start": 332.86,
+   "end": 337.41,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "All right. Today at 2pm for that, Pri. Keeping that time as agreed."
+  },
+  {
+   "start": 338.47,
+   "end": 339.67,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, two today."
+  },
+  {
+   "start": 340.77,
+   "end": 348.82,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Just checking I followed the water ring bit with the audio cutting out. Completed inspection and a new contractor booking are separate entries?"
+  },
+  {
+   "start": 350.7,
+   "end": 354.9,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yes. Inspection signed off on Tuesday, finished. No repeat inspection agreed here."
+  },
+  {
+   "start": 355.39,
+   "end": 360.99,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And I've accepted the contractor booking for the water ring, by 11am. That's the live one."
+  },
+  {
+   "start": 361.87,
+   "end": 369.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And training records for the new starters are mine, tomorrow at 9:30. The whenever you get a chance one, not an urgent escalation."
+  },
+  {
+   "start": 371.93,
+   "end": 378.93,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good. I've got the fairly important permit to work and isolation for the Arburg, by the end of the week."
+  },
+  {
+   "start": 379.59,
+   "end": 384.84,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's clear. Atlas and desiccant unit still blocked, so neither's suddenly appeared on my list."
+  },
+  {
+   "start": 385.54,
+   "end": 389.39,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And my tower filter's finished. Rattle was information only. That's me."
+  },
+  {
+   "start": 390.97,
+   "end": 395.52,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Fine from quality. Much easier when finished work doesn't keep coming round again."
+  },
+  {
+   "start": 397.81,
+   "end": 401.31,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Like my weekend walk. Still pending, depending on the weather."
+  },
+  {
+   "start": 403.27,
+   "end": 406.77,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Not putting a deadline on that. We'd never hit it."
+  },
+  {
+   "start": 407.29,
+   "end": 410.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "You'd need a production window and a waterproof."
+  },
+  {
+   "start": 410.63,
+   "end": 420.08,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Last thing for clarity: scheduling downtime with production for the door switch on two stays unowned, low priority, by the 28th. Nobody's accepted it in this meeting."
+  },
+  {
+   "start": 420.43,
+   "end": 422.18,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, that's us. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

@@ -1,0 +1,760 @@
+{
+ "id": "a062",
+ "date": "2026-03-06",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p11",
+  "p03",
+  "p04",
+  "p08",
+  "p06",
+  "p07"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a062-t1",
+   "summary": "Do the lock-out tag-out sign-off on the Main Water Isolation Valve",
+   "spoken_action": "do the lock-out tag-out sign-off on the MV01",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "MV01",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-11",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    32,
+    33,
+    57
+   ]
+  },
+  {
+   "id": "a062-t2",
+   "summary": "Schedule downtime for the Line 1 Hydraulic Power Unit with production",
+   "spoken_action": "schedule downtime for the Line 1 Hydraulic Power Unit with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "Line 1 Hydraulic Power Unit",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-12",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    31,
+    55
+   ]
+  },
+  {
+   "id": "a062-t3",
+   "summary": "Check the guarding on the Injection Moulding Line 1",
+   "spoken_action": "check the guarding on the Injection Moulding Line 1",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tom",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "Injection Moulding Line 1",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-06",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    56
+   ]
+  },
+  {
+   "id": "a062-t4",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the Forklift Fleet",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "Forklift Fleet",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-10",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    42,
+    57
+   ]
+  },
+  {
+   "id": "a062-t5",
+   "summary": "Swap the filter on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "swap the filter on the line one HPU",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line one HPU",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-06",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    31,
+    32,
+    55
+   ]
+  },
+  {
+   "id": "a062-t6",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    55
+   ]
+  },
+  {
+   "id": "a062-t7",
+   "summary": "Sort the permit to work and isolation for the Injection Moulding Line 3",
+   "spoken_action": "sort the permit to work and isolation for the line 3",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM3",
+    "text": "line 3",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-06",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    52,
+    53,
+    58
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "tested the 11kV board yesterday and it's all fine now",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "finished the repair on the CT1 last night",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "noticed the palletizer was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the palletizer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "can't get to the line three until production gives us a window",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.35,
+   "end": 11.0,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Friday the sixth of March. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 11.95,
+   "end": 15.45,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, got you. Bit tinny, but that's probably this headset."
+  },
+  {
+   "start": 17.73,
+   "end": 22.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Before we start— the football last night. Honestly, ninety minutes I'm not getting back."
+  },
+  {
+   "start": 24.09,
+   "end": 27.24,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "You say that every Friday. Still watch it, though."
+  },
+  {
+   "start": 29.45,
+   "end": 37.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And the broken coffee machine in the canteen isn't helping. That's a moan, by the way, not another job for this meeting."
+  },
+  {
+   "start": 38.04,
+   "end": 45.74,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Try the heating in the portakabin. I'm sat here in my coat. Also just moaning, before anyone puts my name against anything."
+  },
+  {
+   "start": 47.0,
+   "end": 50.15,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Very efficient meeting so far. Football, coffee, being cold."
+  },
+  {
+   "start": 51.32,
+   "end": 54.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, yeah, factory stuff. Anything already closed out first?"
+  },
+  {
+   "start": 55.07,
+   "end": 59.62,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I tested the 11kV board yesterday and it's all fine now. That's done."
+  },
+  {
+   "start": 61.16,
+   "end": 66.41,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, so that's a completed item, not another test we're trying to fit in today?"
+  },
+  {
+   "start": 68.34,
+   "end": 70.44,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Exactly. Just giving you the result."
+  },
+  {
+   "start": 71.01,
+   "end": 75.91,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I finished the repair on the CT1 last night. That's closed as well."
+  },
+  {
+   "start": 77.1,
+   "end": 80.95,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Good. Two things off rather than six things on, for once."
+  },
+  {
+   "start": 83.1,
+   "end": 89.05,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Just an observation from nights: noticed the palletizer was running a bit warm, but it settled down."
+  },
+  {
+   "start": 90.35,
+   "end": 93.15,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Settled before the end of nights, you mean?"
+  },
+  {
+   "start": 95.39,
+   "end": 99.59,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah. Not raising any work off that, just passing on what happened."
+  },
+  {
+   "start": 101.09,
+   "end": 107.74,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And my existing blocker hasn't changed. I can't get to the line three until production gives us a window."
+  },
+  {
+   "start": 110.22,
+   "end": 114.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Still blocked, then; that's not a fresh instruction to go in today."
+  },
+  {
+   "start": 116.5,
+   "end": 124.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Han, can you do the lock-out tag-out sign-off on the MV01 by Wednesday? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 126.0,
+   "end": 131.95,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll do the lock-out tag-out sign-off on the MV01 by Wednesday. Understood on doing that first."
+  },
+  {
+   "start": 133.03,
+   "end": 134.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Han. That's agreed."
+  },
+  {
+   "start": 135.88,
+   "end": 141.83,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Um, I'll check the guarding on the Injection Moulding Line 1 this morning. Normal priority, that one."
+  },
+  {
+   "start": 143.19,
+   "end": 147.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Tom. Guarding on the Injection Moulding Line 1, this morning, normal priority."
+  },
+  {
+   "start": 148.34,
+   "end": 150.44,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep. That's the one I'm taking."
+  },
+  {
+   "start": 151.98,
+   "end": 155.48,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, talked over the end of that. Heard you now."
+  },
+  {
+   "start": 157.42,
+   "end": 166.52,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah so, I'll schedule downtime for the Line 1 Hydraulic Power Unit with production by Thursday. Not an emergency but don't let it slip—I've got that."
+  },
+  {
+   "start": 168.66,
+   "end": 172.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Cal. By Thursday for getting the downtime scheduled, agreed."
+  },
+  {
+   "start": 174.48,
+   "end": 179.03,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly, that's the scheduling bit. Not saying all the work happens on Thursday."
+  },
+  {
+   "start": 181.33,
+   "end": 190.08,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Separate from that, Callum, can you swap the filter on the line one HPU by 11am? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 191.81,
+   "end": 197.76,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll swap the filter on the line one HPU by 11am. That gets the urgent slot."
+  },
+  {
+   "start": 199.84,
+   "end": 204.39,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, I nearly bundled those together in my head. Two separate commitments, then."
+  },
+  {
+   "start": 205.29,
+   "end": 211.24,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah. Filter by 11am; scheduling the downtime by Thursday. Not waiting for Thursday to do the filter."
+  },
+  {
+   "start": 211.66,
+   "end": 216.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. The filter and the MV01 sign-off are the production-holding ones, not routine items."
+  },
+  {
+   "start": 218.8,
+   "end": 222.65,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, I've got the MV01 sign-off first on mine, by Wednesday."
+  },
+  {
+   "start": 223.84,
+   "end": 229.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Callum, can you send the shift handover report round as well, whenever you get a chance?"
+  },
+  {
+   "start": 230.73,
+   "end": 235.98,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll send the shift handover report round whenever I get a chance. Got it."
+  },
+  {
+   "start": 237.32,
+   "end": 239.07,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "The glamorous side of production."
+  },
+  {
+   "start": 239.47,
+   "end": 241.92,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Living the dream. Mostly in a spreadsheet."
+  },
+  {
+   "start": 244.03,
+   "end": 248.93,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I'll do the pre-use checks on the Forklift Fleet next Tuesday. Normal priority."
+  },
+  {
+   "start": 250.24,
+   "end": 254.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Hannah. Forklift Fleet pre-use checks next Tuesday, normal priority, agreed."
+  },
+  {
+   "start": 256.14,
+   "end": 257.89,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, next Tuesday for mine."
+  },
+  {
+   "start": 258.83,
+   "end": 262.33,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, was that Tuesday or Thursday? Teams swallowed the middle."
+  },
+  {
+   "start": 263.48,
+   "end": 266.63,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Tuesday. The Forklift Fleet pre-use checks are next Tuesday."
+  },
+  {
+   "start": 268.62,
+   "end": 278.77,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "There's still the permit gap, though. Someone needs to sort the permit to work and isolation for the line 3 at half two. That one's safety critical, straight away."
+  },
+  {
+   "start": 280.26,
+   "end": 287.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Who can take that? At half two is the timing, but sorting that safety-critical gap needs attention straight away."
+  },
+  {
+   "start": 288.84,
+   "end": 295.49,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I can't take it. Like I said, can't get to the line three until production gives us a window."
+  },
+  {
+   "start": 297.48,
+   "end": 303.43,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'm not taking ownership of that either. Don't put it against me because I'm on the call."
+  },
+  {
+   "start": 304.94,
+   "end": 307.74,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "No offer from me on that one, sorry."
+  },
+  {
+   "start": 309.15,
+   "end": 311.95,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "So we haven't actually got anyone accepting it?"
+  },
+  {
+   "start": 313.0,
+   "end": 317.55,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No. I'm flagging the gap, not volunteering for the permit or the isolation."
+  },
+  {
+   "start": 318.95,
+   "end": 329.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hearing no taker. The permit to work and isolation for the line 3 at half two is still unowned. That one's safety critical, straight away—not something we're calling covered."
+  },
+  {
+   "start": 329.69,
+   "end": 334.59,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, don't want a mention in a stand-up being mistaken for a signed permit."
+  },
+  {
+   "start": 335.94,
+   "end": 338.74,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Exactly. Still a gap, not an agreed isolation."
+  },
+  {
+   "start": 339.38,
+   "end": 343.58,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Nobody's accepted that one, and this conversation isn't authorisation to proceed."
+  },
+  {
+   "start": 344.5,
+   "end": 350.1,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right. That's clear now. Bit of a difference between being on the list and being sorted."
+  },
+  {
+   "start": 352.22,
+   "end": 367.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Mine are clear: filter on the line one HPU by 11am, first because it's holding production up. Schedule downtime for the Line 1 Hydraulic Power Unit with production by Thursday—not an emergency, but don't let it slip. Handover report whenever I get a chance."
+  },
+  {
+   "start": 368.36,
+   "end": 376.76,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And I'll check the guarding on the Injection Moulding Line 1 this morning, normal priority. The line three access is still blocked, separate thing."
+  },
+  {
+   "start": 378.1,
+   "end": 388.25,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I've got the lock-out tag-out sign-off on the MV01 by Wednesday, first because it's holding production up. And the pre-use checks on the Forklift Fleet next Tuesday, normal priority."
+  },
+  {
+   "start": 389.26,
+   "end": 395.91,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Those commitments are agreed; the line 3 permit and isolation remains unowned. That's the position, no pretending otherwise."
+  },
+  {
+   "start": 396.67,
+   "end": 397.87,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep. Heard."
+  },
+  {
+   "start": 400.36,
+   "end": 407.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, thanks all. And no, this call has not magically fixed the coffee machine either. See you on the floor."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

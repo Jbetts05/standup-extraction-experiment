@@ -1,0 +1,760 @@
+{
+ "id": "a060",
+ "date": "2026-05-21",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p05",
+  "p09",
+  "p07",
+  "p11",
+  "p04",
+  "p08"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a060-t1",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the forklifts",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "forklifts",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-27",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    56,
+    57
+   ]
+  },
+  {
+   "id": "a060-t2",
+   "summary": "Replace the seals on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "replace the seals on the GT2 water valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-21",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    55
+   ]
+  },
+  {
+   "id": "a060-t3",
+   "summary": "Chase the purchase order for the 11kV Switchboard",
+   "spoken_action": "chase the purchase order for the HV board",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "the HV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    28,
+    55
+   ]
+  },
+  {
+   "id": "a060-t4",
+   "summary": "Take vibration readings on the Water Booster Pump",
+   "spoken_action": "take vibration readings on the Water Booster Pump",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-27",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": "p05",
+   "evidence": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    53,
+    54
+   ]
+  },
+  {
+   "id": "a060-t5",
+   "summary": "Grease and check the bearings on the Main Outfeed Conveyor",
+   "spoken_action": "grease and check the bearings on the CV01",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "CV01",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-26",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    56,
+    57
+   ]
+  },
+  {
+   "id": "a060-t6",
+   "summary": "Run a function test on the Line 2 Safety Guard Interlock",
+   "spoken_action": "run a function test on the guard switch on two",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marc",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "guard switch on two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "low priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    53,
+    54
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "already swapped the filter on the palletiser yesterday",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "palletiser",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "tested the Line 1 Hydraulic Power Unit yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "Line 1 Hydraulic Power Unit",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "finished the repair on the CT1 last night",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "noticed the GT1 Fuel Gas Valve was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "GT1 Fuel Gas Valve",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "heard a slight rattle from the Injection Moulding Line 1, nothing to action yet",
+   "component": {
+    "entity_id": "IM1",
+    "text": "Injection Moulding Line 1",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p08",
+   "text_hint": "can't get to the compressor one until production gives us a window",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.6,
+   "end": 9.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Thursday the twenty-first. Can you all hear me, or am I doing the Teams mime again?"
+  },
+  {
+   "start": 10.53,
+   "end": 15.78,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, you're fine. Sorry, only just sat down. Traffic on the ring road was ridiculous."
+  },
+  {
+   "start": 17.64,
+   "end": 22.19,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Same queue, probably. Plenty of time to admire the back of a bus."
+  },
+  {
+   "start": 23.32,
+   "end": 32.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "At least your bus probably wasn't as hot as the portakabin. The heating in there, honestly. Tropical. Just moaning, before anyone puts my name against it."
+  },
+  {
+   "start": 34.15,
+   "end": 38.0,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "There's a birthday cake in the office, if that improves matters."
+  },
+  {
+   "start": 39.95,
+   "end": 42.75,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Depends whether it's survived being in that heat."
+  },
+  {
+   "start": 43.35,
+   "end": 47.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the cake meeting. Couple of closed bits first."
+  },
+  {
+   "start": 49.92,
+   "end": 55.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Already swapped the filter on the palletiser yesterday. That's done, not another job for today."
+  },
+  {
+   "start": 56.53,
+   "end": 60.38,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, that's the one I thought was still showing. Done, understood."
+  },
+  {
+   "start": 60.93,
+   "end": 67.58,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And tested the Line 1 Hydraulic Power Unit yesterday and it's all fine now. That one's closed as well."
+  },
+  {
+   "start": 69.33,
+   "end": 72.13,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Lovely. No outstanding bit hanging off that, then."
+  },
+  {
+   "start": 72.66,
+   "end": 77.91,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Quality side, finished the repair on the CT1 last night. Nothing left on that repair."
+  },
+  {
+   "start": 78.65,
+   "end": 80.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, another closed one."
+  },
+  {
+   "start": 81.74,
+   "end": 91.19,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Um, just an observation from nights: noticed the GT1 Fuel Gas Valve was running a bit warm, but it settled down. Not raising a job off that."
+  },
+  {
+   "start": 92.42,
+   "end": 95.22,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, so, settled rather than still climbing. Understood."
+  },
+  {
+   "start": 95.55,
+   "end": 103.95,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Similar sort of thing, I heard a slight rattle from the Injection Moulding Line 1. Nothing to action yet, just mentioning what I heard."
+  },
+  {
+   "start": 106.32,
+   "end": 109.82,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Both observations, neither going down as a new action."
+  },
+  {
+   "start": 110.35,
+   "end": 116.65,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And the other one hasn't moved: can't get to the compressor one until production gives us a window."
+  },
+  {
+   "start": 118.21,
+   "end": 123.11,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, there's no window available on the schedule. Still blocked, not a booked job."
+  },
+  {
+   "start": 125.21,
+   "end": 129.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. We're not agreeing to get that done today when there's no access."
+  },
+  {
+   "start": 131.06,
+   "end": 141.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "On what I can take, I'll replace the seals on the GT2 water valve by end of day. Not an emergency but don't let it slip, that's how I'm treating it."
+  },
+  {
+   "start": 144.11,
+   "end": 149.01,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Just the seals on the GT2 water valve, yeah? Not changing the whole valve?"
+  },
+  {
+   "start": 150.69,
+   "end": 156.29,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, just the seals. I'll do the replacement, not just stick it on somebody else's list."
+  },
+  {
+   "start": 156.99,
+   "end": 163.29,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Fiona. Yours, by end of day. Not an emergency, but it does need to stay on track."
+  },
+  {
+   "start": 164.7,
+   "end": 165.9,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, agreed."
+  },
+  {
+   "start": 166.21,
+   "end": 173.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Fiona Doyle, can you chase the purchase order for the HV board tomorrow, if you've got a spare minute?"
+  },
+  {
+   "start": 173.9,
+   "end": 179.85,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yes, I'll chase the purchase order for the HV board tomorrow, if I've got a spare minute."
+  },
+  {
+   "start": 181.87,
+   "end": 186.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. Definitely the spare-minute one, not something to bump the seals for."
+  },
+  {
+   "start": 187.51,
+   "end": 188.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Got you. Different urgency."
+  },
+  {
+   "start": 189.79,
+   "end": 195.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Grace Liu, can you take vibration readings on the Water Booster Pump by Wednesday? It's urgent."
+  },
+  {
+   "start": 197.11,
+   "end": 202.71,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Sorry, no, I can't take that. I haven't got the capacity to commit to the readings."
+  },
+  {
+   "start": 204.06,
+   "end": 212.46,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, thanks for being straight. Marcus, can I hand that to you instead? Vibration readings on the Water Booster Pump, by Wednesday. It's urgent."
+  },
+  {
+   "start": 213.41,
+   "end": 221.81,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I'll take it from Grace Liu. I'll take vibration readings on the Water Booster Pump by Wednesday, and I've got that it's urgent."
+  },
+  {
+   "start": 222.11,
+   "end": 227.36,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, talking over you—readings only on that one, we're not agreeing an overhaul or anything?"
+  },
+  {
+   "start": 229.36,
+   "end": 231.81,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Readings only, yeah. That's what I'm taking."
+  },
+  {
+   "start": 232.17,
+   "end": 234.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Keep the scope as it is."
+  },
+  {
+   "start": 235.04,
+   "end": 241.69,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While I'm on, I'll run a function test on the guard switch on two tomorrow. Low priority, that one."
+  },
+  {
+   "start": 243.98,
+   "end": 249.58,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That's the routine function test, isn't it? Not saying we've got a failed guard in use?"
+  },
+  {
+   "start": 250.09,
+   "end": 253.24,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, routine function test. I'm not reporting a failure."
+  },
+  {
+   "start": 255.57,
+   "end": 260.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Marc, the guard switch on two is yours for tomorrow, low priority."
+  },
+  {
+   "start": 261.82,
+   "end": 263.02,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep, agreed."
+  },
+  {
+   "start": 263.97,
+   "end": 270.97,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We've also got to do the pre-use checks on the forklifts by Wednesday. Fairly important. Anyone able to take that?"
+  },
+  {
+   "start": 271.4,
+   "end": 276.3,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "It does need someone against it. I'm not volunteering, though; I can't take it."
+  },
+  {
+   "start": 278.75,
+   "end": 283.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone else for the forklifts? Don't want to mistake silence for a yes."
+  },
+  {
+   "start": 284.59,
+   "end": 287.39,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Not me, sorry. Can't commit to those checks."
+  },
+  {
+   "start": 288.76,
+   "end": 290.86,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I can't add that one either."
+  },
+  {
+   "start": 292.54,
+   "end": 298.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, pre-use checks on the forklifts remain unallocated. Still needed by Wednesday, fairly important, but nobody's taken them."
+  },
+  {
+   "start": 301.32,
+   "end": 309.37,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "There's also grease and check the bearings on the CV01. Next Tuesday, normal priority. Needs doing, but I'm raising it, not taking it."
+  },
+  {
+   "start": 311.16,
+   "end": 313.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Any takers for the CV01 bearings?"
+  },
+  {
+   "start": 314.96,
+   "end": 317.41,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No room for that on mine, sorry."
+  },
+  {
+   "start": 318.74,
+   "end": 324.34,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nor mine. I know it sounds like my sort of job, but I can't accept it."
+  },
+  {
+   "start": 326.36,
+   "end": 332.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Grease and check the bearings on the CV01 stays without an owner. Next Tuesday, normal priority."
+  },
+  {
+   "start": 333.36,
+   "end": 337.21,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's clear. A couple of gaps, rather than pretending everything's covered."
+  },
+  {
+   "start": 339.59,
+   "end": 350.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep. And just keeping the two priorities separate, Marcus has the urgent Water Booster Pump readings; Marc has the low-priority guard switch on two test. Same person, before Teams gets confused."
+  },
+  {
+   "start": 352.9,
+   "end": 357.1,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Both me, unfortunately for me. Pump by Wednesday, guard test tomorrow. Agreed."
+  },
+  {
+   "start": 359.26,
+   "end": 369.06,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And mine's seals on the GT2 water valve by end of day, then the purchase order for the HV board tomorrow if I've got a spare minute. Clear."
+  },
+  {
+   "start": 370.79,
+   "end": 376.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Nobody against the forklifts or the CV01. Those are gaps, not quiet assignments to anyone."
+  },
+  {
+   "start": 378.34,
+   "end": 380.79,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, that's the distinction. No assumed volunteers."
+  },
+  {
+   "start": 381.45,
+   "end": 385.3,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Much less ambiguity over who's interested in the cake, I suspect."
+  },
+  {
+   "start": 385.93,
+   "end": 387.68,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Normal priority. Unless it's chocolate."
+  },
+  {
+   "start": 388.02,
+   "end": 392.22,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's us. No more jobs hidden in the banter. Thanks, everyone."
+  },
+  {
+   "start": 393.56,
+   "end": 394.76,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Cheers, all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

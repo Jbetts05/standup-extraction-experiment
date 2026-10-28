@@ -1,0 +1,717 @@
+{
+ "id": "a013",
+ "date": "2026-09-23",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p12",
+  "p08",
+  "p11",
+  "p05",
+  "p07",
+  "p04"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a013-t1",
+   "summary": "Check the guarding on the Injection Moulding Line 3",
+   "spoken_action": "check the guarding on the IM3",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie Brennan",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM3",
+    "text": "IM3",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    54
+   ]
+  },
+  {
+   "id": "a013-t2",
+   "summary": "Recalibrate the sensors on the Line 3 Chiller",
+   "spoken_action": "recalibrate the sensors on the Line 3 Chiller",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marc",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-23",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    55
+   ]
+  },
+  {
+   "id": "a013-t3",
+   "summary": "Do the lock-out tag-out sign-off on the GT1 Fuel Gas Valve",
+   "spoken_action": "do the lock-out tag-out sign-off on the turbine one gas valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "turbine one gas valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    56
+   ]
+  },
+  {
+   "id": "a013-t4",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-24",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": "p08",
+   "evidence": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    54
+   ]
+  },
+  {
+   "id": "a013-t5",
+   "summary": "Take vibration readings on the GT1 Compressor Section",
+   "spoken_action": "take vibration readings on the turbine one compressor",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "turbine one compressor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-23",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p08",
+   "text_hint": "already swapped the filter on the Line 2 Safety Guard Interlock yesterday",
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "Line 2 Safety Guard Interlock",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p04",
+   "text_hint": "signed off the inspection on the AC1 on Tuesday",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "AC1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "noticed the line three was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p08",
+   "text_hint": "heard a slight rattle from the line 1 mould temp, nothing to action yet",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "can't get to the gas turbine two until production gives us a window",
+   "component": {
+    "entity_id": "GT2",
+    "text": "gas turbine two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p11",
+   "text_hint": "we were going to replace the belt on the line 2 robot but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "line 2 robot",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.63,
+   "end": 10.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Wednesday the 23rd. Can you all hear me, or am I talking to the little spinning circle again?"
+  },
+  {
+   "start": 11.69,
+   "end": 18.34,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "We've got you. More importantly, whose new car is that in the car park? Very shiny for this place."
+  },
+  {
+   "start": 19.43,
+   "end": 24.68,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Someone's new car, definitely not mine. Mine's the one with the permanently illuminated engine light."
+  },
+  {
+   "start": 25.56,
+   "end": 28.01,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's not a fault, that's mood lighting."
+  },
+  {
+   "start": 28.39,
+   "end": 32.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this turns into a car clinic. Finished bits first, please."
+  },
+  {
+   "start": 33.1,
+   "end": 38.35,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, so I already swapped the filter on the Line 2 Safety Guard Interlock yesterday."
+  },
+  {
+   "start": 38.8,
+   "end": 42.3,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's finished, then? Not something still hanging over from yesterday?"
+  },
+  {
+   "start": 43.42,
+   "end": 47.62,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Finished, yeah. Just reporting it, not putting it back on the list."
+  },
+  {
+   "start": 48.92,
+   "end": 54.17,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And I signed off the inspection on the AC1 on Tuesday. That's closed as well."
+  },
+  {
+   "start": 54.59,
+   "end": 58.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Two things we don't need to go round again."
+  },
+  {
+   "start": 58.71,
+   "end": 64.66,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Um, I noticed the line three was running a bit warm on nights, but it settled down."
+  },
+  {
+   "start": 66.34,
+   "end": 70.54,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Settled before the end of nights? Sorry, you clipped a bit there."
+  },
+  {
+   "start": 72.06,
+   "end": 76.61,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, it settled down. Just an observation, nothing I'm raising as new work."
+  },
+  {
+   "start": 78.0,
+   "end": 85.0,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Same sort of thing from me: heard a slight rattle from the line 1 mould temp. Nothing to action yet."
+  },
+  {
+   "start": 86.39,
+   "end": 90.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, observations only on those. Not treating either as an extra job."
+  },
+  {
+   "start": 92.36,
+   "end": 98.31,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "The other one, I can't get to the gas turbine two until production gives us a window."
+  },
+  {
+   "start": 99.69,
+   "end": 103.54,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Still blocked, then. We're not allocating that as work for today."
+  },
+  {
+   "start": 105.05,
+   "end": 107.85,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Exactly. Without the window, it's not going anywhere."
+  },
+  {
+   "start": 109.37,
+   "end": 117.42,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And we were going to replace the belt on the line 2 robot, but that's been pushed to next month, so ignore it."
+  },
+  {
+   "start": 117.96,
+   "end": 121.11,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right, so that isn't lurking on today's list either?"
+  },
+  {
+   "start": 122.02,
+   "end": 124.82,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No. Off today's list. Next month, not now."
+  },
+  {
+   "start": 126.49,
+   "end": 133.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Actual actions, then. Jamie Brennan, can you check the guarding on the IM3 on the 3rd? It's fairly important."
+  },
+  {
+   "start": 133.79,
+   "end": 137.64,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, just checking the guarding on the IM3, that's the scope?"
+  },
+  {
+   "start": 140.06,
+   "end": 142.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right, the guarding check. On the 3rd."
+  },
+  {
+   "start": 144.95,
+   "end": 149.5,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Okay, I'll check the guarding on the IM3 on the 3rd. Got it."
+  },
+  {
+   "start": 150.37,
+   "end": 155.62,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And fairly important, as you said. Don't want that bit getting lost in the audio."
+  },
+  {
+   "start": 157.66,
+   "end": 160.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, fairly important. That's the priority for that one."
+  },
+  {
+   "start": 161.6,
+   "end": 167.9,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I'll recalibrate the sensors on the Line 3 Chiller today at 2pm. It matters but it's not urgent."
+  },
+  {
+   "start": 169.96,
+   "end": 173.81,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Marc, that's an actual recalibration, rather than just comparing the readings?"
+  },
+  {
+   "start": 175.74,
+   "end": 178.54,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, recalibrate the sensors. That's what I'm taking."
+  },
+  {
+   "start": 180.51,
+   "end": 182.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, today at 2pm, Marc?"
+  },
+  {
+   "start": 183.05,
+   "end": 184.45,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Today at 2pm, yep."
+  },
+  {
+   "start": 185.51,
+   "end": 189.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Got you. Matters, but not urgent. I heard the distinction."
+  },
+  {
+   "start": 189.89,
+   "end": 193.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Gas valve sign-off next, different priority on this one."
+  },
+  {
+   "start": 195.71,
+   "end": 202.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll do the lock-out tag-out sign-off on the turbine one gas valve on the 3rd. Drop everything for that one."
+  },
+  {
+   "start": 204.09,
+   "end": 206.89,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Saz, sorry—on the 3rd for that sign-off, yes?"
+  },
+  {
+   "start": 207.37,
+   "end": 212.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, on the 3rd. Mine, and drop everything for that one. The date hasn't changed."
+  },
+  {
+   "start": 213.44,
+   "end": 216.59,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Understood. Date and priority are two separate bits there."
+  },
+  {
+   "start": 217.85,
+   "end": 224.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Marc, can you organise the toolbox talk for the team tomorrow? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 226.03,
+   "end": 231.98,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Ah, no, sorry. I can't take that one as well. Haven't got the capacity to own it."
+  },
+  {
+   "start": 232.5,
+   "end": 240.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fair enough. Jamie, can you take that instead—organise the toolbox talk for the team tomorrow? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 241.12,
+   "end": 246.02,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll take it instead. I'll organise the toolbox talk for the team tomorrow."
+  },
+  {
+   "start": 247.45,
+   "end": 250.95,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, I spoke over the end there. Tomorrow, not today?"
+  },
+  {
+   "start": 252.15,
+   "end": 256.35,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Tomorrow, yeah. And understood: not an emergency, but don't let it slip."
+  },
+  {
+   "start": 258.39,
+   "end": 265.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "One still needing an owner: take vibration readings on the turbine one compressor today. Normal priority. Anyone able to take that?"
+  },
+  {
+   "start": 267.11,
+   "end": 271.31,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I can't take it, sorry. Don't put my name against that one."
+  },
+  {
+   "start": 272.21,
+   "end": 274.66,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Nor me. Same capacity problem, I'm afraid."
+  },
+  {
+   "start": 275.77,
+   "end": 277.87,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Can't take that on top, no."
+  },
+  {
+   "start": 278.39,
+   "end": 280.84,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I can't commit to that today either."
+  },
+  {
+   "start": 283.33,
+   "end": 285.43,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Not one I can take, sorry."
+  },
+  {
+   "start": 286.81,
+   "end": 288.91,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No, I can't own that one."
+  },
+  {
+   "start": 289.48,
+   "end": 298.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I haven't got capacity for it either. So the vibration readings on the turbine one compressor are still needed today, normal priority, but nobody owns them."
+  },
+  {
+   "start": 299.38,
+   "end": 304.63,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, leave that visibly unowned. Better than it looking agreed to someone when it isn't."
+  },
+  {
+   "start": 306.25,
+   "end": 309.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Needed, but unallocated. No name against it."
+  },
+  {
+   "start": 309.79,
+   "end": 321.34,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Just so I've not muddled mine: guarding on the IM3 on the 3rd, fairly important. Organise the toolbox talk for the team tomorrow, not an emergency but don't let it slip. Both accepted."
+  },
+  {
+   "start": 322.69,
+   "end": 328.99,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And mine's recalibrate the sensors on the Line 3 Chiller today at 2pm. Matters but it's not urgent."
+  },
+  {
+   "start": 331.04,
+   "end": 338.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes. And I'll do the lock-out tag-out sign-off on the turbine one gas valve on the 3rd. Drop everything for that one."
+  },
+  {
+   "start": 339.31,
+   "end": 343.86,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Fine. And the gas turbine two stays blocked, not quietly added to mine."
+  },
+  {
+   "start": 345.5,
+   "end": 350.4,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Same with the line 2 robot belt: pushed to next month. Not today's work."
+  },
+  {
+   "start": 351.71,
+   "end": 354.86,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Good. Still no confession about the new car, then."
+  },
+  {
+   "start": 355.57,
+   "end": 358.72,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Whoever owns it is probably pretending their microphone's broken."
+  },
+  {
+   "start": 359.83,
+   "end": 362.98,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Probably the sensible approach. Right, thanks all. That's us."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

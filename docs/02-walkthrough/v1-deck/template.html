@@ -1,0 +1,1427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stand-up Extraction Experiment · Walkthrough</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+
+/* soft tints derived from the theme tokens */
+:root, html[data-theme="dark"] {
+  --ok: var(--cp-success);
+  --bad: var(--cp-danger);
+  --warn: var(--cp-warning);
+  --ok-soft: color-mix(in srgb, var(--cp-success) 10%, transparent);
+  --bad-soft: color-mix(in srgb, var(--cp-danger) 9%, transparent);
+  --warn-soft: color-mix(in srgb, var(--cp-warning) 14%, transparent);
+  --link-soft: color-mix(in srgb, var(--cp-link) 10%, transparent);
+  --line: var(--cp-border);
+  --font: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: Consolas, "Courier New", Courier, monospace;
+  --r: 0.625rem;
+  --card-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: var(--font); background: var(--cp-bg-elevated); color: var(--cp-text);
+  font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased;
+  display: grid; grid-template-rows: 56px 1fr 52px; grid-template-columns: 248px 1fr;
+  grid-template-areas: "top top" "rail main" "rail foot";
+}
+button, select { font: inherit; color: inherit; }
+code, .mono { font-family: var(--mono); font-size: 12px; }
+
+/* ---------- chrome ---------- */
+.top {
+  grid-area: top; display: flex; align-items: center; gap: 16px; padding: 0 20px;
+  border-bottom: 1px solid var(--line); background: var(--cp-surface);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; }
+.brand-mark { width: 22px; height: 22px; border-radius: 6px; background: var(--cp-text); position: relative; }
+.brand-mark::after { content: ""; position: absolute; inset: 6px 5px; border-top: 2px solid var(--cp-surface);
+  border-bottom: 2px solid var(--cp-surface); }
+.brand small { color: var(--cp-text-soft); font-weight: 400; }
+.top .spacer { flex: 1; }
+.meeting-pick { display: flex; align-items: center; gap: 8px; color: var(--cp-text-muted); font-size: 13px; }
+select, .btn {
+  height: 32px; border: 1px solid var(--line); background: var(--cp-surface); border-radius: var(--r);
+  padding: 0 10px; cursor: pointer;
+}
+select:hover, .btn:hover { border-color: var(--cp-border-strong); }
+.btn.primary { background: var(--cp-text); color: var(--cp-surface); border-color: var(--cp-text); }
+.btn.primary:hover { opacity: .88; }
+.btn[disabled] { opacity: .4; cursor: default; }
+.counter { font-family: var(--mono); font-size: 12px; color: var(--cp-text-soft); }
+
+.rail {
+  grid-area: rail; border-right: 1px solid var(--line); background: var(--cp-surface);
+  padding: 16px 12px; overflow-y: auto;
+}
+.rail h6 { margin: 18px 10px 6px; font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--cp-text-soft); }
+.rail h6:first-child { margin-top: 4px; }
+.rail a {
+  display: flex; gap: 10px; align-items: baseline; padding: 6px 10px; border-radius: 8px;
+  color: var(--cp-text-muted); text-decoration: none; font-size: 13px; cursor: pointer;
+}
+.rail a:hover { background: var(--cp-surface-soft); color: var(--cp-text); }
+.rail a.on { background: var(--cp-accent-soft); color: var(--cp-text); font-weight: 600; }
+.rail a span { font-family: var(--mono); font-size: 11px; color: var(--cp-text-soft); min-width: 18px; }
+.rail a.on span { color: var(--cp-accent); }
+
+main {
+  grid-area: main; overflow-y: auto; position: relative; background: var(--cp-bg-elevated);
+}
+.slide { max-width: 1240px; margin: 0 auto; padding: 36px 40px 56px; animation: rise .28s ease; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.foot {
+  grid-area: foot; display: flex; align-items: center; gap: 12px; padding: 0 20px;
+  border-top: 1px solid var(--line); background: var(--cp-surface);
+}
+.progress { flex: 1; height: 3px; border-radius: 3px; background: var(--cp-surface-soft); overflow: hidden; }
+.progress i { display: block; height: 100%; width: 100%; background: var(--cp-accent); transform-origin: left;
+  transition: transform .25s ease; }
+.hint { font-size: 12px; color: var(--cp-text-soft); }
+kbd { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px;
+  border-radius: 5px; padding: 0 5px; background: var(--cp-surface); }
+
+/* ---------- slide typography ---------- */
+.eyebrow { font: 600 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--cp-accent); }
+h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.025em; margin: 10px 0 10px; font-weight: 650; }
+h2 { font-size: 17px; letter-spacing: -0.01em; margin: 0 0 12px; font-weight: 600; }
+h3 { font-size: 14px; margin: 0 0 8px; font-weight: 600; }
+.lede { font-size: 16px; color: var(--cp-text-muted); max-width: 820px; margin: 0 0 28px; }
+.muted { color: var(--cp-text-muted); }
+.soft { color: var(--cp-text-soft); }
+.small { font-size: 12px; }
+
+/* ---------- building blocks ---------- */
+.card { background: var(--cp-surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+.card.flat { box-shadow: none; }
+.card.tint { background: var(--cp-surface-soft); }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; align-items: start; }
+.split.wide { grid-template-columns: minmax(0, 1fr) 420px; }
+.sticky { position: sticky; top: 20px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.stack > * + * { margin-top: 12px; }
+
+.stat { padding: 16px 18px; }
+.stat b { display: block; font-size: 28px; letter-spacing: -0.03em; font-weight: 650; line-height: 1.1; }
+.stat span { color: var(--cp-text-muted); font-size: 13px; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--cp-surface); font-size: 12px; color: var(--cp-text-muted);
+  white-space: nowrap;
+}
+.chip.heldout { border-style: dashed; border-color: var(--cp-accent); color: var(--cp-accent); background: var(--cp-accent-soft); }
+.chip.ok { border-color: transparent; background: var(--ok-soft); color: var(--ok); }
+.chip.bad { border-color: transparent; background: var(--bad-soft); color: var(--bad); }
+.chip.warn { border-color: transparent; background: var(--warn-soft); color: var(--cp-text); }
+.chip.acc { border-color: transparent; background: var(--cp-accent-soft); color: var(--cp-accent); }
+.chip.link { border-color: transparent; background: var(--link-soft); color: var(--cp-link); }
+.chip.solid { background: var(--cp-text); color: var(--cp-surface); border-color: var(--cp-text); }
+.tid { font: 600 11px/20px var(--mono); padding: 0 6px; border-radius: 6px; background: var(--cp-text);
+  color: var(--cp-surface); display: inline-block; }
+.tid.ghost { background: var(--cp-surface-soft); color: var(--cp-text-muted); }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+
+.said { font-size: 12px; color: var(--cp-text-soft); }
+.said q { font-style: italic; }
+.said q::before { content: "\201C"; } .said q::after { content: "\201D"; }
+q { quotes: none; }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.t th { text-align: left; font: 600 11px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--cp-text-soft); padding: 10px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.t td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t tr.click { cursor: pointer; }
+table.t tr.click:hover td { background: var(--cp-surface-soft); }
+
+.table-tools { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--line); background: var(--cp-surface); }
+.table-tools .search { min-width: 220px; height: 30px; }
+.table-count { font-size: 12px; color: var(--cp-text-soft); white-space: nowrap; }
+th.sortable { cursor: pointer; user-select: none; }
+th.sortable:hover { color: var(--cp-text); }
+th.sortable .sort-ind { color: var(--cp-accent); font-size: 10px; margin-left: 4px; }
+.rank-tools { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--line); background: var(--cp-surface); flex-wrap: wrap; }
+.rank-tools .search { min-width: 220px; height: 30px; }
+.rank-sort { height: 28px; border: 1px solid var(--line); background: var(--cp-surface); color: var(--cp-text-muted); border-radius: var(--r); padding: 0 8px; cursor: pointer; }
+.rank-sort.on { background: var(--cp-text); color: var(--cp-surface); border-color: var(--cp-text); }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.callout { border-left: 2px solid var(--cp-accent); padding: 4px 0 4px 14px; color: var(--cp-text-muted); }
+.callout b { color: var(--cp-text); }
+
+.bar { height: 8px; border-radius: 8px; background: var(--cp-surface-soft); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 8px; }
+
+/* model / service labels */
+.svc { display: flex; flex-direction: column; gap: 1px; }
+.svc b { font-weight: 600; }
+.svc em { font-style: normal; font-size: 12px; color: var(--cp-text-soft); }
+.where { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-family: var(--mono);
+  color: var(--cp-text-soft); text-transform: uppercase; letter-spacing: .05em; }
+.pipe { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 13px; }
+.pipe .k { font: 600 10px/18px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--cp-text-soft); }
+
+/* control bar */
+.controls { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 20px;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--cp-surface); }
+.control { display: flex; flex-direction: column; gap: 6px; }
+.control label { font: 600 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--cp-text-soft); }
+.control select { min-width: 280px; }
+.control .desc { font-size: 12px; color: var(--cp-text-muted); max-width: 420px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.seg button { border: 0; background: var(--cp-surface); padding: 0 12px; height: 30px; cursor: pointer;
+  border-right: 1px solid var(--line); font-size: 13px; color: var(--cp-text-muted); }
+.seg button:last-child { border-right: 0; }
+.seg button.on { background: var(--cp-text); color: var(--cp-surface); }
+
+/* flow diagram */
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin: 8px 0 28px; }
+.flow .step { position: relative; padding: 16px 18px 18px; border: 1px solid var(--line); background: var(--cp-surface);
+  margin-right: 28px; border-radius: 16px; }
+.flow .step:last-child { margin-right: 0; }
+.flow .step:not(:last-child)::after { content: ""; position: absolute; right: -22px; top: 50%; width: 16px;
+  border-top: 1px dashed var(--cp-border-strong); }
+.flow .step:not(:last-child)::before { content: ""; position: absolute; right: -24px; top: calc(50% - 4px);
+  border: 4px solid transparent; border-left-color: var(--cp-border-strong); }
+.flow .n { font: 600 11px/1 var(--mono); color: var(--cp-accent); }
+.flow h3 { margin: 8px 0 4px; }
+.flow p { margin: 0; font-size: 12.5px; color: var(--cp-text-muted); }
+
+/* long content: slides grow and the page scrolls; long lists get their own scroll box */
+.scroll { max-height: 560px; overflow: auto; border: 1px solid var(--line); border-radius: 16px;
+  background: var(--cp-surface); }
+.scroll.tall { max-height: 680px; }
+.scroll table.t th { position: sticky; top: 0; background: var(--cp-surface); z-index: 1; }
+.scroll > .pad { padding: 14px 16px; }
+</style>
+<style>
+/* vocabulary tree */
+.tree, .tree ul { list-style: none; margin: 0; padding: 0; }
+.tree ul { margin-left: 14px; padding-left: 14px; border-left: 1px solid var(--line); }
+.tree li { padding: 5px 0; }
+.tree .node { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tree .node b { font-weight: 600; }
+.tree .kind { font: 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--cp-text-soft); }
+
+/* answer-key task cards */
+.task { display: flex; flex-direction: column; gap: 10px; }
+.task-h { display: flex; gap: 8px; align-items: center; }
+.task-sum { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+dl.kv { display: grid; grid-template-columns: 92px 1fr; gap: 6px 12px; margin: 0; font-size: 13px; }
+dl.kv dt { color: var(--cp-text-soft); font: 600 10px/20px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+dl.kv dd { margin: 0; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+/* transcript */
+.transcript { padding: 6px 0; }
+.turn { display: grid; grid-template-columns: 52px 30px 1fr; gap: 10px; padding: 8px 16px; align-items: start;
+  border-left: 2px solid transparent; transition: opacity .15s ease, background-color .15s ease; }
+.turn .ts { font: 11px/22px var(--mono); color: var(--cp-text-soft); }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--cp-surface-soft); border: 1px solid var(--line);
+  display: grid; place-items: center; font: 600 10px/1 var(--font); color: var(--cp-text-muted); }
+.turn .who { font-weight: 600; font-size: 13px; }
+.turn .who small { font-weight: 400; color: var(--cp-text-soft); margin-left: 6px; }
+.turn .txt { color: var(--cp-text); }
+.turn.job { background: var(--cp-accent-soft); border-left-color: var(--cp-accent); }
+.turn.hit { background: var(--link-soft); border-left-color: var(--cp-link); }
+.focusing .turn { opacity: .28; }
+.focusing .turn.focus { opacity: 1; }
+.list-item { padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; background: var(--cp-surface); }
+.list-item:hover, .list-item.on { border-color: var(--cp-text); }
+.list-item + .list-item { margin-top: 8px; }
+
+/* checks */
+.check { display: inline-flex; gap: 6px; align-items: center; font-size: 12.5px; }
+.tick { width: 16px; height: 16px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 10px;
+  font-weight: 700; flex: none; }
+.tick.ok { background: var(--ok-soft); color: var(--ok); }
+.tick.bad { background: var(--bad-soft); color: var(--bad); }
+.tick.na { background: var(--cp-surface-soft); color: var(--cp-text-soft); }
+
+/* extraction cards */
+.xcard { border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; background: var(--cp-surface); }
+.xcard.fp { background: var(--cp-surface-soft); }
+.xcard + .xcard { margin-top: 10px; }
+.xcard blockquote { margin: 8px 0 10px; padding-left: 12px; border-left: 2px solid var(--line); color: var(--cp-text-muted);
+  font-size: 13px; }
+.fields { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.field { border: 1px solid var(--line); border-radius: 10px; padding: 6px 8px; min-height: 48px; }
+.field .k { font: 600 9.5px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--cp-text-soft); }
+.field .v { font-size: 12.5px; word-break: break-word; }
+.field .v.none { color: var(--cp-text-soft); }
+
+/* normalisation cells */
+.cell { border-radius: 10px; padding: 6px 8px; min-width: 110px; }
+.cell.ok { background: var(--ok-soft); }
+.cell.bad { background: var(--bad-soft); }
+.cell.na { background: var(--cp-surface-soft); }
+.cell .val { font-weight: 600; font-size: 12.5px; }
+.cell .val code { font-weight: 400; color: var(--cp-text-soft); font-size: 11px; margin-left: 4px; }
+.cell .exp { font-size: 11.5px; color: var(--bad); margin-top: 2px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--cp-text-muted); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.sw { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+
+/* scoring rows */
+.score-row { display: grid; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 300px; gap: 12px; align-items: center;
+  padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.score-row:last-child { border-bottom: 0; }
+.arrow { color: var(--cp-text-soft); text-align: center; }
+.ticks { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+
+/* ranked bars */
+.rank { display: grid; grid-template-columns: 28px minmax(0, 1.6fr) minmax(120px, 1fr) 64px 74px 60px; gap: 12px;
+  align-items: center; padding: 9px 14px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.rank:hover { background: var(--cp-surface-soft); }
+.rank:last-child { border-bottom: 0; }
+.rank .i { font: 11px/1 var(--mono); color: var(--cp-text-soft); }
+
+/* charts */
+svg text { font-family: var(--font); }
+.chart .axis line, .chart .axis path { stroke: var(--line); }
+.chart .grid line { stroke: var(--line); stroke-dasharray: 2 4; }
+.chart .lbl { fill: var(--cp-text-soft); font-size: 11px; }
+.chart .pt { cursor: pointer; transition: r .1s ease; }
+.tip { position: fixed; pointer-events: none; background: var(--cp-panel-strong); border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px; font-size: 12px; box-shadow: var(--card-shadow); z-index: 10; max-width: 320px;
+  display: none; }
+.pair-bars { display: grid; gap: 4px; }
+.pair-bars .bar { height: 10px; }
+.big { font-size: 44px; font-weight: 650; letter-spacing: -0.04em; line-height: 1; }
+
+/* responsive: narrow windows stack columns and drop the rail */
+@media (max-width: 1180px) {
+  .split, .split.wide { grid-template-columns: minmax(0, 1fr); }
+  .sticky { position: static; }
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: minmax(0, 1fr); }
+  .flow { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .flow .step { margin-right: 0; }
+  .flow .step::before, .flow .step::after { display: none; }
+  .score-row { grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr); }
+  .score-row .ticks { grid-column: 1 / -1; justify-content: flex-start; }
+}
+@media (max-width: 900px) {
+  body { grid-template-columns: 0 1fr; }
+  .rail { display: none; }
+  .slide { padding: 24px 18px 40px; }
+  h1 { font-size: 26px; }
+  .g2, .g4 { grid-template-columns: minmax(0, 1fr); }
+  .control, .control select { min-width: 0; width: 100%; }
+  .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rank { grid-template-columns: 22px minmax(0, 1fr) 60px; }
+  .rank .bar, .rank .num.small { display: none; }
+  .brand small, .hint { display: none; }
+  .meeting-pick select { max-width: 180px; }
+  .card table.t { display: block; overflow-x: auto; }
+}
+</style>
+<style>
+/* ---------- v2: scope, local controls, prompts, galleries ---------- */
+.scope { display: inline-flex; align-items: center; gap: 8px; height: 26px; padding: 0 10px 0 8px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--cp-surface); font-size: 12px; color: var(--cp-text-muted); margin-bottom: 14px; }
+.scope i { width: 8px; height: 8px; border-radius: 50%; background: var(--cp-accent); display: inline-block; }
+.scope.global i { background: var(--cp-text-soft); }
+.scope.one i { background: var(--cp-link); }
+.scope b { color: var(--cp-text); font-weight: 600; }
+.head-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.control select.wide { min-width: 360px; }
+.control select.narrow { min-width: 200px; }
+pre.prompt { margin: 0; white-space: pre-wrap; font: 12px/1.55 var(--mono); color: var(--cp-text); background: var(--cp-surface-soft);
+  border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; max-height: 420px; overflow: auto; }
+details.fold { border: 1px solid var(--line); border-radius: 14px; background: var(--cp-surface); }
+details.fold > summary { cursor: pointer; padding: 12px 16px; list-style: none; display: flex; gap: 10px; align-items: center; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary::before { content: "›"; color: var(--cp-text-soft); transition: transform .15s ease; display: inline-block; }
+details.fold[open] > summary::before { transform: rotate(90deg); }
+details.fold > .inner { padding: 0 16px 16px; }
+details.fold + details.fold { margin-top: 10px; }
+.cands { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.cands .chip { height: 20px; font-size: 11px; }
+.cands .chip.pick { background: var(--cp-text); color: var(--cp-surface); border-color: var(--cp-text); }
+.cands .chip.gold { box-shadow: inset 0 0 0 1.5px var(--cp-success); }
+.meeting-tag { font: 600 10.5px/18px var(--mono); padding: 0 6px; border-radius: 5px; border: 1px solid var(--line);
+  color: var(--cp-text-muted); background: var(--cp-surface); }
+.pm { font-size: 11px; color: var(--cp-text-soft); font-weight: 400; margin-left: 3px; }
+.search { height: 32px; border: 1px solid var(--line); border-radius: var(--r); padding: 0 10px; min-width: 240px;
+  background: var(--cp-surface); color: var(--cp-text); font: inherit; }
+.errbar { stroke: var(--cp-text-soft); stroke-width: 1; }
+.kpi-note { font-size: 11.5px; color: var(--cp-text-soft); margin-top: 4px; }
+.stack-bar { display: flex; height: 10px; border-radius: 10px; overflow: hidden; background: var(--cp-surface-soft); }
+.stack-bar i { display: block; height: 100%; }
+.nick { display: grid; grid-template-columns: 200px 1fr; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.nick:last-child { border-bottom: 0; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="brand-mark"></div>Stand-up Extraction Experiment <small>· walkthrough</small></div>
+  <div class="spacer"></div>
+  <span class="soft small" id="gen"></span>
+  <button class="btn" id="theme" title="Toggle light / dark">◐</button>
+</header>
+<nav class="rail" id="rail"></nav>
+<main id="main"><section class="slide"><p class="muted">Loading data…</p></section></main>
+<footer class="foot">
+  <button class="btn" id="prev">← Back</button>
+  <div class="progress"><i id="bar"></i></div>
+  <span class="counter" id="counter"></span>
+  <span class="hint"><kbd>←</kbd> <kbd>→</kbd> to move</span>
+  <button class="btn primary" id="next">Next →</button>
+</footer>
+<div class="tip" id="tip"></div>
+<script id="payload" type="application/octet-stream">__DATA_GZ_B64__</script>
+<script>
+/* ===================================================================== helpers */
+let D = null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pct = v => v == null || isNaN(v) ? "–" : Math.round(v * 100) + "%";
+const usd = v => v == null ? "?" : v === 0 ? "$0" : v < 0.01 ? "$" + v.toFixed(4) : v < 1 ? "$" + v.toFixed(3) : "$" + v.toFixed(2);
+const sec = v => v == null ? "–" : v < 10 ? v.toFixed(1) + " s" : Math.round(v) + " s";
+const moe = (p, n) => 1.96 * Math.sqrt(Math.max(p * (1 - p), 1e-9) / Math.max(n, 1));
+const pm = (p, n) => `<span class="pm">±${Math.round(100 * moe(p, n))}</span>`;
+const fmtDate = iso => iso ? new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) : null;
+const longDate = iso => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+const initials = n => n.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+const tnum = gid => "T" + gid.split("-t").pop();
+const sum = a => a.reduce((x, y) => x + (y || 0), 0);
+
+/* ============================================================ naming catalogue
+   Every method is shown by what it actually is and where it runs. */
+const MODEL = {
+  "gpt-5.4":         { name: "GPT-5.4",         vendor: "OpenAI",  res: "Foundry resource A" },
+  "gpt-6-astra":     { name: "GPT-6 Astra",     vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-6-sol":       { name: "GPT-6 Sol",       vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-6-luna":      { name: "GPT-6 Luna",      vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-5.6-sol":     { name: "GPT-5.6 Sol",     vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-5.6-terra":   { name: "GPT-5.6 Terra",   vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-5.6-luna":    { name: "GPT-5.6 Luna",    vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-5.4-mini":    { name: "GPT-5.4 mini",    vendor: "OpenAI",  res: "Foundry resource B" },
+  "gpt-5.2":         { name: "GPT-5.2",         vendor: "OpenAI",  res: "Foundry resource B" },
+  "grok-4.6":        { name: "Grok 4.6",        vendor: "xAI",     res: "Foundry resource B" },
+  "mistral-large-3": { name: "Mistral Large 3", vendor: "Mistral", res: "Foundry resource B" },
+};
+const modelOf = m => MODEL[m] || { name: m, vendor: "", res: "" };
+const foundry = m => `Azure AI Foundry · ${modelOf(m).res}`;
+const EMB = "OpenAI text-embedding-3-large (Foundry · Foundry resource B)";
+
+const LOCAL_EX = {
+  rules:         { name: "Regex rules", tech: "hand-written Python patterns", where: "Local · CPU",
+                   how: "Looks for “I’ll…”, “Dave, can you…”, “someone needs to…”; skips past tense, blockers and banter; pulls equipment nouns, deadlines and urgency words." },
+  gliner:        { name: "GLiNER 2.5 base, zero-shot", tech: "fastino/gliner2.5-base-v1, as downloaded", where: "Local · CPU",
+                   how: "Classifies every turn as action item / status update / small talk, then tags equipment, person, deadline, site and urgency spans in action items. Ownership by the same conversation rules as regex." },
+  gliner_decide: { name: "GLiNER 2.5 Decide, zero-shot", tech: "fastino/GLiNER2.5-Decide (340M classification-specialist checkpoint), as downloaded", where: "Local · CPU",
+                   how: "Same pipeline and labels as GLiNER 2.5 base, using the classification-specialist GLiNER 2.5 checkpoint." },
+  gliner_ft:     { name: "GLiNER 2.5 base, fine-tuned (12 meetings)", tech: "gliner2.5-base-v1 fine-tuned on the 12 GPT-5.4 training meetings", where: "Local · CPU",
+                   how: "Turn classifier (“new job” / “not a job”) and span tagger trained on a very small number of example turns." },
+  gliner_ft_all: { name: "GLiNER 2.5 base, fine-tuned (112 meetings)", tech: "gliner2.5-base-v1 fine-tuned on all 112 training meetings (GPT-5.4 + GPT-6 Astra)", where: "Local · CPU",
+                   how: "Same recipe on all training meetings from both writers, one epoch, best checkpoint kept." },
+};
+const LOCAL_NO = {
+  alias:         { name: "Exact alias lookup", tech: "official names + known nicknames", where: "Local · CPU",
+                   how: "Links a mention only if it is (or contains) a known name or nickname. Can never handle an unseen nickname." },
+  fuzzy:         { name: "Fuzzy text match", tech: "rapidfuzz WRatio", where: "Local · CPU",
+                   how: "Character-level similarity against every known name; tolerates typos and word order, not meaning." },
+  embedding:     { name: "Embedding match · MiniLM", tech: "sentence-transformers/all-MiniLM-L6-v2 (22M params)", where: "Local · CPU",
+                   how: "Nearest known name by meaning. Acceptance threshold calibrated by leaving each known alias out (never on test data)." },
+  embedding_oai: { name: "Embedding match · OpenAI", tech: "text-embedding-3-large (3072-dim)", where: "Azure AI Foundry · Foundry resource B",
+                   how: "Nearest known name by meaning with a much larger embedding model. Same calibration rule as MiniLM. Vectors cached." },
+  classifier:    { name: "Trained text classifier", tech: "TF-IDF + logistic regression (scikit-learn)", where: "Local · CPU",
+                   how: "Trained on known names plus the 112 training meetings’ mentions; category and priority learned from the training jobs." },
+  gliner:        { name: "GLiNER 2.5 base picks from a shortlist", tech: `fuzzy + ${EMB} shortlist → gliner2.5-base-v1`, where: "Local · CPU (+ Foundry embeddings)",
+                   how: "Fuzzy and embedding retrieval give ~10 candidates; GLiNER 2.5 base zero-shot classification chooses one." },
+  gliner_decide: { name: "GLiNER 2.5 Decide picks from a shortlist", tech: `fuzzy + ${EMB} shortlist → fastino/GLiNER2.5-Decide`, where: "Local · CPU (+ Foundry embeddings)",
+                   how: "Same shortlist; the Decide checkpoint chooses one, and sets category and priority." },
+  passthrough:   { name: "Keep the IDs from the one-call LLM", tech: "no second model", where: "—",
+                   how: "The one-call LLM already returned IDs; they are kept only if it also returned the words they came from." },
+};
+function exInfo(ex) {
+  if (LOCAL_EX[ex]) return { ...LOCAL_EX[ex], fam: "local" };
+  const [base, m] = ex.split("@"), mo = modelOf(m);
+  if (base === "llm_direct") return { name: `${mo.name} · one call`, tech: `${mo.vendor} ${mo.name}, vocabulary in the prompt, returns IDs`,
+    where: foundry(m), fam: "llm", how: "One call reads the transcript together with every person, site and piece of equipment (known nicknames only) and returns jobs with official IDs directly." };
+  return { name: mo.name, tech: `${mo.vendor} ${mo.name}, fixed JSON schema`, where: foundry(m), fam: "llm",
+    how: "One call per meeting returns every job with the words as said (owner, equipment, site, deadline, urgency) plus the quote it came from. No IDs yet." };
+}
+function noInfo(no) {
+  if (LOCAL_NO[no]) return { ...LOCAL_NO[no], fam: no === "passthrough" ? "none" : "local" };
+  const m = no.split("@")[1], mo = modelOf(m);
+  return { name: `${mo.name} picks from a shortlist`, tech: `fuzzy + ${EMB} shortlist → ${mo.vendor} ${mo.name}`, where: foundry(m), fam: "llm",
+    how: `Fuzzy and embedding retrieval give ~10 candidates (plus parent equipment); ${mo.name} chooses one per mention, or none, and sets category and priority. One call per meeting.` };
+}
+function family(ex, no) {
+  if (ex.startsWith("llm_direct")) return "one";
+  const a = ex.startsWith("llm@"), b = no.startsWith("llm@");
+  return a && b ? "two" : !a && !b ? "local" : "mixed";
+}
+const FAM = {
+  local: { label: "No LLM", c: "var(--cp-success)" },
+  two:   { label: "LLM extracts, same LLM matches", c: "var(--cp-accent)" },
+  one:   { label: "LLM does both in one call", c: "var(--cp-link)" },
+  mixed: { label: "Local extract + LLM match, or vice versa", c: "var(--cp-warning)" },
+};
+const svc = (info, compact) => `<span class="svc"><b>${esc(info.name)}</b>${compact ? "" : `<em>${esc(info.tech)}</em>`}<span class="where">${esc(info.where)}</span></span>`;
+function pipeHTML(ex, no) {
+  const e = exInfo(ex), n = noInfo(no);
+  return `<div class="pipe"><span class="k">Extract</span><span><b>${esc(e.name)}</b> <span class="soft small">· ${esc(e.where)}</span></span>
+    <span class="k">Match</span><span><b>${esc(n.name)}</b> <span class="soft small">· ${esc(n.where)}</span></span></div>`;
+}
+const pipeText = (ex, no) => no === "passthrough" ? `${exInfo(ex).name} (extract + match)` : `${exInfo(ex).name} → ${noInfo(no).name}`;
+</script>
+<script>
+/* ======================================================================= state */
+const ENT = {};
+let MEET = {};
+const nm = id => id ? (ENT[id]?.name ?? id) : null;
+const S = { i: 0, set: null, dataMeeting: null, pipeMeeting: "all", ex: null, no: null, onlyJobs: false, fam: "all",
+            dsSet: "all", dsSplit: "all", dsQuery: "", recv: "extract" };
+
+/* =========================================================== table enhancer */
+const TABLE_UI = { tables: {}, focus: null };
+const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
+function parseSortValue(raw) {
+  const original = raw == null ? "" : String(raw).replace(/\s+/g, " ").trim();
+  if (!original || original === "–" || original === "?" || /^n\/a$/i.test(original)) return { missing: true, type: "missing", value: null, text: "" };
+  const s = original.replace(/[−]/g, "-");
+  let m = s.match(/^\$\s*([+-]?[\d,]+(?:\.\d+)?)/);
+  if (m) return { missing: false, type: "number", value: Number(m[1].replace(/,/g, "")), text: original };
+  m = s.match(/^([+-]?[\d,]+(?:\.\d+)?)\s*%/);
+  if (m) return { missing: false, type: "number", value: Number(m[1].replace(/,/g, "")), text: original };
+  m = s.match(/^([+-]?[\d,]+(?:\.\d+)?)\s*s(?:ec(?:onds?)?)?\b/i);
+  if (m) return { missing: false, type: "number", value: Number(m[1].replace(/,/g, "")), text: original };
+  if (/^[+-]?[\d,]+(?:\.\d+)?$/.test(s)) return { missing: false, type: "number", value: Number(s.replace(/,/g, "")), text: original };
+  const d = Date.parse(s);
+  if (!Number.isNaN(d) && /\b\d{1,2}\b|\b\d{4}\b|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec/i.test(s)) return { missing: false, type: "number", value: d, text: original };
+  return { missing: false, type: "text", value: original.toLocaleLowerCase(), text: original };
+}
+window.parseSortValue = parseSortValue;
+window.deckSortValue = raw => { const v = parseSortValue(raw); return v.missing ? null : v.value; };
+window.deckNaturalCompare = (a, b) => collator.compare(String(a), String(b));
+function sortCellValue(cell) { return parseSortValue(cell?.dataset?.sort ?? cell?.textContent ?? ""); }
+function cmpSort(a, b, dir) {
+  if (a.missing && b.missing) return 0;
+  if (a.missing) return 1;
+  if (b.missing) return -1;
+  const c = a.type === "number" && b.type === "number" ? a.value - b.value : collator.compare(String(a.value), String(b.value));
+  return dir === "desc" ? -c : c;
+}
+const cssEsc = v => (window.CSS?.escape ? CSS.escape(v) : String(v).replace(/[^a-zA-Z0-9_-]/g, "\\$&"));
+function tableState(id) { return TABLE_UI.tables[id] ||= { col: null, dir: null, filter: "" }; }
+function captureTableFocus() {
+  const a = document.activeElement;
+  if (a?.classList?.contains("table-filter")) TABLE_UI.focus = { id: a.dataset.table, start: a.selectionStart, end: a.selectionEnd };
+  else TABLE_UI.focus = null;
+}
+function tableRows(table) {
+  const body = table.tBodies?.[0] || table;
+  const all = Array.from(body.rows || []);
+  const header = table.tHead?.rows?.[0] || all.find(r => r.querySelector?.("th"));
+  return { body, header, rows: all.filter(r => r !== header) };
+}
+function rowText(row) { return (row.textContent || "").replace(/\s+/g, " ").toLocaleLowerCase(); }
+function applyTable(table) {
+  const id = table.dataset.table;
+  if (!id) return;
+  const st = tableState(id), { body, header, rows } = tableRows(table);
+  if (!body || !header) return;
+  let ordered = [...rows];
+  if (st.col != null && st.dir && !table.dataset.nosort) {
+    ordered.sort((ra, rb) => {
+      const c = cmpSort(sortCellValue(ra.cells[st.col]), sortCellValue(rb.cells[st.col]), st.dir);
+      return c || ((+ra.dataset.orig || 0) - (+rb.dataset.orig || 0));
+    });
+  } else ordered.sort((a, b) => (+a.dataset.orig || 0) - (+b.dataset.orig || 0));
+  ordered.forEach(r => body.appendChild(r));
+  const q = (st.filter || "").trim().toLocaleLowerCase();
+  let shown = 0;
+  ordered.forEach(r => { const ok = !q || rowText(r).includes(q); r.style.display = ok ? "" : "none"; if (ok) shown++; });
+  table.parentElement?.querySelector?.(`.table-count[data-table="${cssEsc(id)}"]`)?.replaceChildren(document.createTextNode(`${shown} of ${rows.length} rows`));
+  Array.from(header.cells || []).forEach((th, i) => {
+    th.classList.toggle("sortable", !table.dataset.nosort);
+    const old = th.querySelector(".sort-ind"); if (old) old.remove();
+    if (st.col === i && st.dir) th.insertAdjacentHTML("beforeend", `<span class="sort-ind">${st.dir === "asc" ? "▲" : "▼"}</span>`);
+  });
+}
+function enhanceTables(root = document) {
+  const tables = Array.from(root.querySelectorAll?.("table.t[data-table]") || []);
+  tables.forEach(table => {
+    const id = table.dataset.table;
+    const { header, rows } = tableRows(table);
+    if (!header) return;
+    rows.forEach((r, i) => { if (!r.dataset.orig) r.dataset.orig = String(i); });
+    const st = tableState(id);
+    if (!table.dataset.nosort) Array.from(header.cells || []).forEach((th, i) => {
+      th.classList.add("sortable");
+      th.onclick = e => { e.stopPropagation(); const s = tableState(id); if (s.col !== i) { s.col = i; s.dir = "asc"; } else if (s.dir === "asc") s.dir = "desc"; else { s.col = null; s.dir = null; } applyTable(table); };
+    });
+    if (rows.length > 10 && !table.dataset.nofilter && !table.previousElementSibling?.classList?.contains("table-tools")) {
+      const tools = document.createElement("div"); tools.className = "table-tools";
+      tools.innerHTML = `<input class="search table-filter" data-table="${esc(id)}" placeholder="Filter rows…" value="${esc(st.filter)}"><span class="table-count" data-table="${esc(id)}"></span>`;
+      table.parentNode.insertBefore(tools, table);
+      const input = tools.querySelector("input");
+      input.addEventListener("input", e => { const s = tableState(id); s.filter = e.target.value; applyTable(table); });
+    }
+    applyTable(table);
+  });
+  enhanceRankLists(root);
+  if (TABLE_UI.focus) {
+    const input = root.querySelector?.(`.table-filter[data-table="${cssEsc(TABLE_UI.focus.id)}"]`);
+    if (input) { input.focus(); input.setSelectionRange(TABLE_UI.focus.start ?? input.value.length, TABLE_UI.focus.end ?? input.value.length); }
+  }
+}
+function rankState(id) { return TABLE_UI.tables[id] ||= { col: null, dir: null, filter: "" }; }
+function applyRankList(box) {
+  const id = box.dataset.rankList, st = rankState(id), rows = Array.from(box.querySelectorAll(":scope > .rank"));
+  let ordered = [...rows];
+  if (st.col && st.dir) ordered.sort((a, b) => cmpSort(parseSortValue(a.dataset["sort" + st.col[0].toUpperCase() + st.col.slice(1)]), parseSortValue(b.dataset["sort" + st.col[0].toUpperCase() + st.col.slice(1)]), st.dir) || ((+a.dataset.orig || 0) - (+b.dataset.orig || 0)));
+  else ordered.sort((a, b) => (+a.dataset.orig || 0) - (+b.dataset.orig || 0));
+  ordered.forEach(r => box.appendChild(r));
+  const q = (st.filter || "").trim().toLocaleLowerCase(); let shown = 0;
+  ordered.forEach(r => { const ok = !q || rowText(r).includes(q); r.style.display = ok ? "" : "none"; if (ok) shown++; });
+  box.querySelector?.(`.table-count[data-table="${cssEsc(id)}"]`)?.replaceChildren(document.createTextNode(`${shown} of ${rows.length} rows`));
+  box.querySelectorAll?.(".rank-sort").forEach(b => { b.classList.toggle("on", st.col === b.dataset.col && !!st.dir); b.textContent = b.dataset.label + (st.col === b.dataset.col && st.dir ? (st.dir === "asc" ? " ▲" : " ▼") : ""); });
+}
+function enhanceRankLists(root = document) {
+  Array.from(root.querySelectorAll?.("[data-rank-list]") || []).forEach(box => {
+    const id = box.dataset.rankList, rows = Array.from(box.querySelectorAll(":scope > .rank"));
+    rows.forEach((r, i) => { if (!r.dataset.orig) r.dataset.orig = String(i); });
+    const st = rankState(id);
+    if (!box.querySelector(":scope > .rank-tools")) {
+      const tools = document.createElement("div"); tools.className = "rank-tools";
+      tools.innerHTML = `<input class="search table-filter" data-table="${esc(id)}" placeholder="Filter rows…" value="${esc(st.filter)}"><span class="table-count" data-table="${esc(id)}"></span>` +
+        [["pipeline", "Pipeline"], ["ready", "Ready"], ["cost", "$/mtg"], ["seconds", "s/mtg"]].map(([c, l]) => `<button class="rank-sort" data-col="${c}" data-label="${l}" type="button">${l}</button>`).join("");
+      box.insertBefore(tools, box.firstChild);
+      tools.querySelector("input").addEventListener("input", e => { rankState(id).filter = e.target.value; applyRankList(box); });
+      tools.querySelectorAll(".rank-sort").forEach(btn => btn.addEventListener("click", e => { e.stopPropagation(); const s = rankState(id), c = btn.dataset.col; if (s.col !== c) { s.col = c; s.dir = "asc"; } else if (s.dir === "asc") s.dir = "desc"; else { s.col = null; s.dir = null; } applyRankList(box); }));
+    }
+    applyRankList(box);
+  });
+}
+
+const SETS = () => Object.keys(D.sets);
+const SET = () => D.sets[S.set];
+const jobsIn = set => sum(D.sets[set].meetings.map(m => m.gold.length));
+const setLabel = set => `${D.sets[set].label} test set · ${D.sets[set].meetings.length} meetings · ${jobsIn(set)} jobs`;
+const testMeetings = () => SET().meetings;
+const pipeMeetings = () => S.pipeMeeting === "all" ? testMeetings() : testMeetings().filter(m => m.id === S.pipeMeeting);
+const goldOf = mid => Object.fromEntries(MEET[mid].gold.map(g => [g.id, g]));
+const XR = (mid, ex = S.ex) => SET().extractions[mid]?.[ex];
+const PR = (mid, ex = S.ex, no = S.no) => SET().pipelines[mid]?.[`${ex}|${no}`];
+const LBROW = (ex, no, set = S.set) => D.sets[set].leaderboard.find(r => r.extractor === ex && r.normaliser === no);
+function extractorsIn(set = S.set) {
+  const seen = [];
+  D.sets[set].leaderboard.forEach(r => { if (!seen.includes(r.extractor)) seen.push(r.extractor); });
+  const order = e => e.startsWith("llm_direct@") ? 2 : e.startsWith("llm@") ? 1 : 0;
+  return seen.sort((a, b) => order(a) - order(b));
+}
+const normalisersFor = (ex, set = S.set) => D.sets[set].leaderboard.filter(r => r.extractor === ex).map(r => r.normaliser);
+const defaultNo = ex => ex.startsWith("llm_direct") ? "passthrough" : ex.startsWith("llm@") ? ex : "classifier";
+function setEx(ex) { S.ex = ex; if (!normalisersFor(ex).includes(S.no)) S.no = normalisersFor(ex).includes(defaultNo(ex)) ? defaultNo(ex) : normalisersFor(ex)[0]; }
+function ensurePipe() { if (!extractorsIn().includes(S.ex)) setEx(extractorsIn().includes("llm@gpt-5.4") ? "llm@gpt-5.4" : extractorsIn()[0]);
+  if (S.pipeMeeting !== "all" && !testMeetings().some(m => m.id === S.pipeMeeting)) S.pipeMeeting = "all"; }
+
+/* ---------- scope badges: every slide states exactly what data it shows ---------- */
+const scope = (kind, html) => `<div class="scope ${kind}"><i></i>${html}</div>`;
+const scopeGlobal = txt => scope("global", `Scope · <b>${txt}</b>`);
+const scopeSet = () => scope("", `Scope · <b>${esc(setLabel(S.set))}</b>`);
+const scopePipe = () => S.pipeMeeting === "all" ? scopeSet()
+  : scope("one", `Scope · <b>one meeting, ${esc(S.pipeMeeting)}</b> <span class="soft">· from the ${esc(setLabel(S.set))}</span>`);
+
+/* ---------- local controls ---------- */
+function setControl(label = "Test set") {
+  return `<div class="control"><label>${label}</label><select class="wide" data-act="set">${SETS().map(s =>
+    `<option value="${s}" ${s === S.set ? "selected" : ""}>${esc(setLabel(s))}</option>`).join("")}</select>
+    <div class="desc">Transcripts written by ${esc(modelOf(D.sets[S.set].writer).name)}.</div></div>`;
+}
+function pipeMeetingControl() {
+  return `<div class="control"><label>Meeting</label><select class="narrow" data-act="pmeeting">
+    <option value="all" ${S.pipeMeeting === "all" ? "selected" : ""}>All ${testMeetings().length} test meetings</option>
+    ${testMeetings().map(m => `<option value="${m.id}" ${m.id === S.pipeMeeting ? "selected" : ""}>${m.id} · ${fmtDate(m.date)} · ${m.gold.length} jobs</option>`).join("")}</select></div>`;
+}
+function dataMeetingControl() {
+  const groups = {};
+  D.meetings.forEach(m => (groups[`${D.sets[m.set]?.label ?? m.set} · ${m.split}`] ||= []).push(m));
+  return `<div class="control"><label>Meeting</label><select class="wide" data-act="dmeeting">${Object.entries(groups).map(([g, ms]) =>
+    `<optgroup label="${esc(g)} (${ms.length})">${ms.map(m => `<option value="${m.id}" ${m.id === S.dataMeeting ? "selected" : ""}>${m.id} · ${fmtDate(m.date)} · ${m.gold.length} jobs · ${m.turns.length} turns</option>`).join("")}</optgroup>`).join("")}</select></div>`;
+}
+function exSelect() {
+  const ex = extractorsIn(), opt = e => `<option value="${e}" ${e === S.ex ? "selected" : ""}>${esc(exInfo(e).name)} — ${esc(exInfo(e).where)}</option>`;
+  return `<select class="wide" data-act="ex">
+    <optgroup label="Local models (no LLM, $0)">${ex.filter(e => !e.startsWith("llm")).map(opt).join("")}</optgroup>
+    <optgroup label="LLM extracts the words as said (a second step matches them)">${ex.filter(e => e.startsWith("llm@")).map(opt).join("")}</optgroup>
+    <optgroup label="LLM does extraction and matching in one call">${ex.filter(e => e.startsWith("llm_direct@")).map(opt).join("")}</optgroup></select>`;
+}
+function exControl() {
+  const e = exInfo(S.ex);
+  return `<div class="control"><label>Step 1 · Extract with</label>${exSelect()}<div class="desc">${esc(e.tech)}. ${esc(e.how)}</div></div>`;
+}
+function noControl() {
+  const n = noInfo(S.no), list = normalisersFor(S.ex);
+  return `<div class="control"><label>Step 2 · Match with</label><select class="wide" data-act="no">${list.map(x =>
+    `<option value="${x}" ${x === S.no ? "selected" : ""}>${esc(noInfo(x).name)} — ${esc(noInfo(x).where)}</option>`).join("")}</select>
+    <div class="desc">${esc(n.tech)}. ${esc(n.how)}</div></div>`;
+}
+const controls = (...parts) => `<div class="controls">${parts.join("")}</div>`;
+const splitChip = s => s === "heldout" ? `<span class="chip heldout">held-out nickname</span>`
+  : s === "seen" ? `<span class="chip">known nickname</span>` : s === "name" ? `<span class="chip">official name</span>` : "";
+const mtag = mid => `<span class="meeting-tag">${esc(mid)}</span>`;
+
+/* ======================================================================= slides */
+const SLIDES = [];
+const slide = (group, title, render) => SLIDES.push({ group, title, render });
+const head = (eyebrow, title, lede, badge = "") => `<div class="eyebrow">${eyebrow}</div><h1>${title}</h1>${badge}${lede ? `<p class="lede">${lede}</p>` : ""}`;
+</script>
+<script>
+/* ================================================================== OVERVIEW */
+const LOCAL = "Local · CPU", FREE = "$0";
+const LLM_LIST = "GPT-6 Astra / Sol / Luna, GPT-5.6 Sol / Terra / Luna, GPT-5.4, GPT-5.4 mini, GPT-5.2 (OpenAI), Grok 4.6 (xAI), Mistral Large 3 (Mistral)";
+function inventory() {
+  const g = D.generation, gcost = w => g[w] ? usd(g[w].cost) + " total" : "per token";
+  return [
+    ["A · Data", [
+      ["Answer-key sampler", "Python (<code>generate/scenario.py</code>): attendees, 5–9 jobs from 25 templates, nicknames, deadlines, decoys. No model.", LOCAL, FREE],
+      ["Transcript writer #1", "<b>GPT-5.4</b> (OpenAI), strict JSON schema; wrote the first 20 meetings", "Azure AI Foundry · Foundry resource A", gcost("gpt-5.4")],
+      ["Transcript writer #2", "<b>GPT-6 Astra</b> (OpenAI), same prompt; wrote 120 more meetings so the test set isn’t graded by its own writer; all passed validation first attempt", "Azure AI Foundry · Foundry resource B", gcost("gpt-6-astra")],
+      ["Transcript validator", "Python (<code>generate/validate.py</code>): checks every job is really in its turns; failures retried up to 3×", LOCAL, FREE],
+      ["Date rules", "Python (<code>dates.py</code>): “by Thursday”, “half two” → date / time; shared by generator, matchers and scoring", LOCAL, FREE],
+    ]],
+    ["B · Extract", [
+      ["Regex rules", "Hand-written Python patterns: commitments, requests, hand-overs, equipment nouns, deadlines, urgency", LOCAL, FREE],
+      ["GLiNER 2.5 base, zero-shot", "<code>fastino/gliner2.5-base-v1</code> (Hugging Face), as downloaded", LOCAL, FREE],
+      ["GLiNER 2.5 Decide, zero-shot", "<code>fastino/GLiNER2.5-Decide</code> (340M), the classification-specialist GLiNER 2.5 checkpoint", LOCAL, FREE],
+      ["GLiNER 2.5 base, fine-tuned ×2", "Once on 12 meetings, once on 112 meetings (gliner2 trainer, CPU)", LOCAL, FREE],
+      ["11 LLMs · extract words", `${LLM_LIST}. One call per meeting, returns jobs with the words as said`, "Azure AI Foundry · Foundry resource A (GPT-5.4) + Foundry resource B", "per token"],
+      ["11 LLMs · one call", "The same 11 models with the vocabulary in the prompt, returning official IDs directly (no step C)", "Azure AI Foundry", "per token"],
+    ]],
+    ["C · Match", [
+      ["Exact alias lookup", "Python: official names + known nicknames", LOCAL, FREE],
+      ["Fuzzy text match", "<code>rapidfuzz</code> WRatio character similarity", LOCAL, FREE],
+      ["Embedding match · MiniLM", "<code>sentence-transformers/all-MiniLM-L6-v2</code> (22M params)", LOCAL, FREE],
+      ["Embedding match · OpenAI", "<code>text-embedding-3-large</code>; also builds every shortlist below", "Azure AI Foundry · Foundry resource B", usd(D.embedding_usage.cost) + " total"],
+      ["Trained text classifier", "<code>scikit-learn</code> TF-IDF + logistic regression on the training meetings", LOCAL, FREE],
+      ["GLiNER 2.5 base / Decide pick from a shortlist", "fuzzy + OpenAI-embedding shortlist (~10 candidates) → GLiNER 2.5 zero-shot choice", LOCAL, FREE],
+      ["11 LLMs pick from a shortlist", "same shortlist → the same LLM that extracted; also sets category and priority", "Azure AI Foundry", "per token"],
+    ]],
+    ["D · Score", [
+      ["Job pairing", "<code>scipy</code> Hungarian assignment on quote overlap, wording (<code>rapidfuzz</code>), equipment and owner", LOCAL, FREE],
+      ["Field scoring + report", "Python: six-field check, dashboard-ready, cost = tokens × list price, latency, margins of error", LOCAL, FREE],
+    ]],
+  ];
+}
+const primarySet = () => SETS().sort((a, b) => jobsIn(b) - jobsIn(a))[0];
+
+slide("Overview", "The question", () => {
+  const p = primarySet(), nPipes = D.sets[p].leaderboard.length;
+  return head("01 · Overview", "Which method turns a stand-up into dashboard-ready jobs?",
+    "People say “Dave, can you swap the filter on the cold unit by Thursday?” — the dashboard needs <b>owner = David Whitfield</b>, <b>equipment = IM3-CHL</b>, <b>due = a date</b>. Two problems: find the jobs (extraction) and map everyday words to official names (matching). This deck shows every step on the real experiment data, and exactly which model or service does what.",
+    scopeGlobal(`the whole experiment · ${D.meetings.length} meetings`)) + `
+  <div class="flow">
+    <div class="step"><div class="n">A</div><h3>Synthetic meetings</h3><p>Answer key first; <b>GPT-5.4</b> and <b>GPT-6 Astra</b> write Teams transcripts around it.</p></div>
+    <div class="step"><div class="n">B</div><h3>Extract</h3><p>Regex, GLiNER 2.5 (4 variants, local) or one of 11 Foundry LLMs pull out jobs as said.</p></div>
+    <div class="step"><div class="n">C</div><h3>Match</h3><p>Words → official IDs: alias, fuzzy, 2 embedding models, classifier, GLiNER, or an LLM.</p></div>
+    <div class="step"><div class="n">D</div><h3>Score</h3><p>Against the answer key; a job counts only if all six fields are right.</p></div>
+    <div class="step"><div class="n">E</div><h3>Compare</h3><p>Quality ± margin of error, cost and latency for every combination.</p></div>
+  </div>
+  <div class="callout" style="margin-bottom:16px"><b>Matrix rule:</b> LLM extractors are paired with local matchers or the same model's LLM matcher; <code>llm_direct@model</code> pairs only with passthrough; CPU-heavy GLiNER matchers run only with local extractors, while matching-only still scores every matcher on every gold mention.</div>
+  <div class="grid g4">
+    <div class="card stat"><b>${D.meetings.length}</b><span>synthetic stand-ups · ${D.train_count} train · ${sum(SETS().map(s => D.sets[s].meetings.length))} test, by 2 writers</span></div>
+    <div class="card stat"><b>${sum(SETS().map(jobsIn))}</b><span>real jobs across both test sets (${SETS().map(s => jobsIn(s) + " " + D.sets[s].label).join(" · ")})</span></div>
+    <div class="card stat"><b>${nPipes}</b><span>extract → match combinations scored per test set</span></div>
+    <div class="card stat"><b>11 + 5</b><span>Foundry LLMs + local extractors (regex, 4 GLiNER 2.5 variants)</span></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h2>Everything used, by step</h2>
+    <p class="small muted" style="margin:-4px 0 12px">Local components run on this laptop’s 4-core CPU (no GPU) at no cost. Foundry components are paid per token.</p>
+    <div class="scroll"><table class="t" data-table="Overview:inventory" data-nosort data-nofilter><tr><th>Step</th><th>Component</th><th>What it is</th><th>Where it runs</th><th class="num">Cost</th></tr>
+    ${inventory().map(([step, rows]) => rows.map((r, i) => `<tr>${i === 0 ? `<td rowspan="${rows.length}"><span class="chip solid">${step}</span></td>` : ""}
+      <td><b>${r[0]}</b></td><td class="muted">${r[1]}</td><td><span class="where">${r[2]}</span></td><td class="num small">${r[3]}</td></tr>`).join("")).join("")}</table></div></div>
+  <details class="fold" style="margin-top:16px"><summary><b>Foundry model details</b> <span class="soft small">· the 11 LLMs and the embedding model</span></summary><div class="inner">
+    <table class="t" data-table="Overview:models"><tr><th>Model</th><th>Vendor</th><th>Foundry resource · deployment</th><th>API</th><th class="num">Timeout</th><th class="num">Price in / out per 1M tokens</th></tr>
+    ${D.models.map(m => `<tr><td><b>${esc(modelOf(m.id).name)}</b></td><td>${esc(modelOf(m.id).vendor)}</td>
+      <td><code>${esc(modelOf(m.id).res)}</code> · <code>${esc(m.deployment)}</code></td>
+      <td>${m.api === "responses" ? "Responses API, strict JSON schema" : "Chat Completions, JSON mode (schema in prompt, validated, retried)"}</td>
+      <td class="num">${m.timeout} s</td><td class="num">${m.price ? "$" + m.price[0] + " / $" + m.price[1] : "?"}</td></tr>`).join("")}
+    ${D.embeddings.map(e => `<tr><td><b>${esc(e.id)}</b></td><td>OpenAI</td><td><code>Foundry resource B</code> · <code>${esc(e.deployment)}</code></td>
+      <td>Embeddings API · ${e.dimensions} dimensions · vectors cached on disk</td><td class="num">240 s</td><td class="num">$${e.price} / —</td></tr>`).join("")}</table></div></details>`;
+});
+
+slide("Overview", "How it’s measured", () => {
+  const rows = SETS().map(s => { const n = jobsIn(s); return `<tr><td>${esc(D.sets[s].label)} test set</td><td class="num">${D.sets[s].meetings.length}</td><td class="num">${n}</td>
+    <td class="num">±${Math.round(100 * moe(0.6, n))} pts</td><td class="num">±${Math.round(100 * moe(0.3, n))} pts</td></tr>`; }).join("");
+  return head("02 · Overview", "How every result in this deck is measured",
+    "The same scoring code runs on every method. Nothing is hand-graded.", scopeGlobal("method definitions, apply to every slide")) + `
+  <div class="grid g2">
+    <div class="card"><h2>1 · Pair each returned job with a real job</h2>
+      <p class="muted small" style="margin-top:0">One-to-one Hungarian assignment per meeting. A pair needs a similarity of at least 0.45:</p>
+      ${[["Quote lands on the job’s turns (±1 turn)", 50], ["Summary wording overlap (rapidfuzz token-set)", 30], ["Same equipment (or its parent)", 10], ["Same owner", 10]]
+        .map(([l, w]) => `<div class="row" style="flex-wrap:nowrap;margin-bottom:6px"><span class="small" style="flex:1">${l}</span><div class="bar" style="width:140px"><i style="width:${w * 2}%;background:var(--cp-accent)"></i></div><b class="num small" style="width:36px">${w}%</b></div>`).join("")}
+      <p class="small muted">Unpaired returned jobs are <b>not real jobs</b> (false positives); unpaired real jobs are <b>missed</b>.</p></div>
+    <div class="card"><h2>2 · Check six fields on every pair</h2>
+      <dl class="kv"><dt>Owner</dt><dd>person ID exactly right (or correctly empty)</dd><dt>Equipment</dt><dd>asset ID exactly right; the parent asset earns 0.5 in the “hierarchy” column only</dd>
+        <dt>Site</dt><dd>site ID exactly right (or correctly empty)</dd><dt>Due date</dt><dd>resolved date equal to the answer key</dd>
+        <dt>Priority</dt><dd>P1 / P2 / P3; nothing said → P2 by the business rule</dd><dt>Category</dt><dd>operations / safety / organisation</dd></dl>
+      <div class="callout" style="margin-top:12px"><b>Dashboard-ready</b> = real jobs found with all six right ÷ all real jobs. It is the share that could go on the dashboard with no human fix.</div></div>
+    <div class="card"><h2>3 · Margins of error</h2>
+      <p class="muted small" style="margin-top:0">Scores are proportions of a finite set of jobs, so every score carries a 95% margin of error. Differences smaller than the margin are ties.</p>
+      <table class="t" data-table="How it’s measured:margins"><tr><th>Test set</th><th class="num">Meetings</th><th class="num">Jobs</th><th class="num">± at 60%</th><th class="num">± at 30%</th></tr>${rows}</table></div>
+    <div class="card"><h2>4 · Cost, latency and failures</h2>
+      <dl class="kv"><dt>Cost</dt><dd>tokens reported by Foundry × list price in <code>data/models.yaml</code>; local models $0</dd>
+        <dt>Latency</dt><dd>API or CPU time per meeting, extraction + matching, recorded at call time (replays reuse the recorded time)</dd>
+        <dt>Failures</dt><dd>a call that times out or returns invalid JSON three times scores as “found nothing” for that meeting, and is counted and shown</dd>
+        <dt>Leakage</dt><dd>held-out nicknames appear only in test meetings; no matcher, prompt or training step ever sees them</dd></dl></div>
+  </div>`;
+});
+</script>
+<script>
+/* ====================================================================== DATA */
+slide("Data", "Business vocabulary", () => {
+  const o = D.ontology, kids = {};
+  o.assets.forEach(a => (kids[a.parent || "_"] ||= []).push(a));
+  const node = a => `<li><div class="node"><b>${esc(a.name)}</b><code class="soft">${esc(a.id)}</code>
+      ${a.aliases.map(x => `<span class="chip">${esc(x)}</span>`).join("")}${a.heldout.map(x => `<span class="chip heldout">${esc(x)}</span>`).join("")}</div>
+      ${kids[a.id] ? `<ul>${kids[a.id].map(node).join("")}</ul>` : ""}</li>`;
+  return head("03 · Data", "The business vocabulary",
+    `The fictional <b>${esc(D.plant.name)}</b> plant (<code>data/ontology.yaml</code>). Every matcher sees official names and <span class="chip">known nicknames</span>. <span class="chip heldout">held-out nicknames</span> are hidden from every method and appear only in test meetings, to test words nobody has seen.`,
+    scopeGlobal("the vocabulary shared by every meeting and method")) + `
+  <div class="grid g3" style="margin-bottom:16px">
+    <div class="card"><h2>Categories</h2>${o.categories.map(c => `<div style="margin-bottom:8px"><span class="chip solid">${c.id}</span> <span class="muted small">${esc(c.description)}</span></div>`).join("")}</div>
+    <div class="card"><h2>Priorities</h2>${o.priorities.map(p => `<div style="margin-bottom:8px"><span class="chip solid">P${p.id}</span> <span class="muted small">${esc(p.description)}</span></div>`).join("")}
+      <div class="callout small">Rule: if nobody says how urgent it is, priority is 2.</div></div>
+    <div class="card"><h2>Sites</h2>${o.sites.map(s => `<div style="margin-bottom:8px"><b>${esc(s.name)}</b> <code class="soft">${s.id}</code><br>${s.aliases.map(x => `<span class="chip">${esc(x)}</span>`).join(" ")} ${s.heldout.map(x => `<span class="chip heldout">${esc(x)}</span>`).join(" ")}</div>`).join("")}</div>
+  </div>
+  <div class="grid g2">
+    <div><h2>People</h2><div class="scroll"><table class="t" data-table="Business vocabulary:people"><tr><th>Person</th><th>Role</th><th>Known</th><th>Held-out</th></tr>
+      ${o.people.map(p => `<tr><td><b>${esc(p.name)}</b> <code class="soft">${p.id}</code></td><td class="muted">${esc(p.role || "")}</td>
+      <td>${p.aliases.map(x => `<span class="chip">${esc(x)}</span>`).join(" ")}</td><td>${p.heldout.map(x => `<span class="chip heldout">${esc(x)}</span>`).join(" ")}</td></tr>`).join("")}</table></div></div>
+    <div><h2>Equipment hierarchy <span class="soft small">· ${o.assets.length} assets</span></h2><div class="scroll"><div class="pad"><ul class="tree">${(kids._ || []).map(node).join("")}</ul></div></div>
+      <p class="small muted">When two sibling parts tie, matchers fall back to the parent; scoring gives the parent half credit in the hierarchy column only.</p></div>
+  </div>`;
+});
+
+slide("Data", "Datasets", () => {
+  const q = S.dsQuery.toLowerCase();
+  const rows = D.meetings.filter(m => (S.dsSet === "all" || m.set === S.dsSet) && (S.dsSplit === "all" || m.split === S.dsSplit)
+    && (!q || m.id.includes(q) || m.gold.some(g => (g.summary + " " + (g.component.text || "") + " " + (g.owner.text || "")).toLowerCase().includes(q))));
+  const writers = [...new Set(D.meetings.map(m => m.set))].map(s => {
+    const ms = D.meetings.filter(m => m.set === s), w = ms[0].writer, g = D.generation[w] || {};
+    const first = ms.filter(m => (m.notes[0] || "").includes("attempt 1")).length;
+    return `<div class="card"><div class="eyebrow" style="color:var(--cp-text-soft)">${esc(D.sets[s]?.label ?? s)}</div>
+      <div class="row" style="margin:8px 0"><b style="font-size:22px">${ms.length}</b><span class="muted small">meetings · ${ms.filter(m => m.split === "train").length} train / ${ms.filter(m => m.split === "test").length} test</span></div>
+      <dl class="kv"><dt>Writer</dt><dd>${svc({ name: modelOf(w).name, tech: modelOf(w).vendor, where: foundry(w) }, true)}</dd>
+        <dt>Jobs</dt><dd>${sum(ms.map(m => m.gold.length))} real jobs · ${sum(ms.map(m => m.distractors.length))} decoys</dd>
+        <dt>Turns</dt><dd>~${Math.round(sum(ms.map(m => m.turns.length)) / ms.length)} per meeting</dd>
+        <dt>Validation</dt><dd>${first}/${ms.length} passed first attempt</dd>
+        <dt>Cost</dt><dd>${g.cost != null ? `<b>${usd(g.cost)}</b> · ${(g.input_tokens || 0).toLocaleString()} in / ${(g.output_tokens || 0).toLocaleString()} out tokens` : "–"}</dd></dl></div>`;
+  }).join("");
+  return head("04 · Data", "Every meeting, from both writers",
+    `Training meetings (used only to fine-tune GLiNER and train the text classifier) and test meetings (used only for scoring). Click any row to open that meeting on the next three slides.`,
+    scopeGlobal(`all ${D.meetings.length} meetings, both writers, train and test`)) + `
+  <div class="grid g2" style="margin-bottom:16px">${writers}</div>
+  <div class="row" style="margin-bottom:10px">
+    <div class="seg">${[["all", "All writers"], ...SETS().map(s => [s, D.sets[s].label])].map(([k, l]) => `<button data-act="dsset" data-v="${k}" class="${S.dsSet === k ? "on" : ""}">${esc(l)}</button>`).join("")}</div>
+    <div class="seg">${[["all", "Train + test"], ["train", "Train"], ["test", "Test"]].map(([k, l]) => `<button data-act="dssplit" data-v="${k}" class="${S.dsSplit === k ? "on" : ""}">${l}</button>`).join("")}</div>
+    <input class="search" id="dsq" placeholder="Search jobs, equipment, people…" value="${esc(S.dsQuery)}">
+    <span class="soft small">${rows.length} meetings · ${sum(rows.map(m => m.gold.length))} jobs</span></div>
+  <div class="scroll tall"><table class="t" data-table="Datasets:meetings"><tr><th>Meeting</th><th>Writer</th><th>Split</th><th>Date</th><th class="num">Turns</th><th class="num">Jobs</th><th>Jobs in this meeting</th></tr>
+    ${rows.map(m => `<tr class="click" data-act="openmeeting" data-id="${m.id}"><td>${mtag(m.id)}</td><td class="small">${esc(modelOf(m.writer).name)}</td>
+      <td><span class="chip ${m.split === "test" ? "acc" : ""}">${m.split}</span></td><td class="small">${fmtDate(m.date)}</td><td class="num">${m.turns.length}</td><td class="num">${m.gold.length}</td>
+      <td class="small muted">${m.gold.map(g => esc(g.summary)).join(" · ")}</td></tr>`).join("")}</table></div>`;
+});
+
+function meetingHeader(m) {
+  return `<div class="row" style="margin-bottom:18px">${mtag(m.id)}<b>${longDate(m.date)}</b>
+    <span class="chip ${m.split === "test" ? "acc" : ""}">${m.split} meeting</span><span class="chip">written by ${esc(modelOf(m.writer).name)}</span>
+    <span class="chip">${m.turns.length} turns</span><span class="chip">${m.gold.length} real jobs</span>
+    <span class="soft">·</span>${m.attendees.map(a => `<span class="chip">${a === m.chair ? "★ " : ""}${esc(nm(a))}</span>`).join("")}</div>`;
+}
+const DM = () => MEET[S.dataMeeting];
+const scopeData = () => scope("one", `Scope · <b>one meeting, ${esc(S.dataMeeting)}</b> <span class="soft">· choose any of the ${D.meetings.length} meetings</span>`);
+function goldCard(g) {
+  const who = x => x ? esc(nm(x)) : "—";
+  const men = x => x.id ? `<dd><b>${esc(nm(x.id))}</b> <code class="soft">${x.id}</code> <span class="said">said as <q>${esc(x.text)}</q></span> ${splitChip(x.split)}</dd>` : `<dd class="soft">none</dd>`;
+  return `<div class="card task"><div class="task-h"><span class="tid">${tnum(g.id)}</span><span class="chip">${g.category}</span><span class="chip">P${g.priority}</span>
+      ${g.reassigned_from ? `<span class="chip warn">handed over</span>` : ""}${!g.owner.id ? `<span class="chip warn">no owner yet</span>` : ""}</div>
+    <div class="task-sum">${esc(g.summary)}</div><div class="said">spoken as <q>${esc(g.spoken)}</q></div>
+    <dl class="kv"><dt>Owner</dt>${men(g.owner)}<dt>Equipment</dt>${men(g.component)}<dt>Site</dt>${men(g.site)}
+      <dt>Due</dt><dd>${g.due_date ? `<b>${fmtDate(g.due_date)}${g.due_time ? " " + g.due_time : ""}</b> <span class="said">said as <q>${esc(g.due_mention)}</q></span>` : `<span class="soft">no deadline</span>`}</dd>
+      <dt>Priority</dt><dd><b>P${g.priority}</b> ${g.priority_cue ? `<span class="said">said as <q>${esc(g.priority_cue)}</q></span>` : `<span class="said">nothing said → default</span>`}</dd>
+      <dt>Asked by</dt><dd>${g.assigned_by ? who(g.assigned_by) : "volunteered"}${g.reassigned_from ? ` · first given to ${who(g.reassigned_from)}` : ""}</dd></dl></div>`;
+}
+slide("Data", "Answer key", () => {
+  const m = DM();
+  return head("05 · Data", "The answer key comes first",
+    "For each meeting the sampler (<code>generate/scenario.py</code>, plain Python, no model) picks the attendees, then 5–9 jobs from 25 engineering templates, each with an owner, equipment, maybe a site, a deadline phrase and an urgency phrase, and decides <i>how</i> each thing will be referred to. It also adds decoys that must <b>not</b> become jobs.", scopeData()) +
+    controls(dataMeetingControl()) + meetingHeader(m) + `
+  <div class="split"><div class="grid g2">${m.gold.map(goldCard).join("")}</div>
+    <div class="sticky stack"><div class="card"><h2>Decoys in this meeting</h2>${m.distractors.map(d => `<div style="margin-bottom:10px"><span class="chip ${d.kind === "chitchat" ? "" : "warn"}">${d.kind}</span>
+        <span class="small muted"> ${esc(nm(d.sid))}</span><div class="small">${esc(d.text)}</div></div>`).join("")}</div>
+      <div class="card tint small"><h3>Why answer-key-first?</h3><p class="muted" style="margin:0">The truth is exact: every job, how it was phrased and which turns contain it. No human labelling, no ambiguity in scoring.</p></div></div></div>`;
+});
+
+slide("Data", "Transcript", () => {
+  const m = DM(), byTurn = {};
+  m.gold.forEach(g => g.evidence.forEach(i => (byTurn[i] ||= []).push(g.id)));
+  const turns = m.turns.map((t, i) => {
+    const gs = byTurn[i] || [];
+    if (S.onlyJobs && !gs.length) return "";
+    return `<div class="turn ${gs.length ? "job" : ""}" data-turn="${i}" data-gold="${gs.join(" ")}">
+      <span class="ts">${String(Math.floor(t.t / 60)).padStart(2, "0")}:${String(t.t % 60).padStart(2, "0")}</span><span class="avatar">${initials(t.who)}</span>
+      <div><div class="who">${esc(t.who)}<small>turn ${i}</small> ${gs.map(g => `<span class="tid">${tnum(g)}</span>`).join(" ")}</div><div class="txt">${esc(t.text)}</div></div></div>`;
+  }).join("");
+  const w = modelOf(m.writer), P = D.prompts.writer;
+  return head("06 · Data", "The synthetic Teams transcript",
+    `<b>${esc(w.name)}</b> (${esc(w.vendor)}, ${esc(foundry(m.writer))}) received the answer key as a plan and wrote the conversation. It also reported which turns state each job. Highlighted turns contain a real job; everything else is noise the extractors must ignore.`, scopeData()) +
+    controls(dataMeetingControl()) + meetingHeader(m) + `
+  <details class="fold" style="margin-bottom:14px"><summary><b>Exactly what ${esc(w.name)} was told</b> <span class="soft small">· system instructions + output schema (the plan JSON is this meeting’s answer key)</span></summary>
+    <div class="inner grid g2"><pre class="prompt">${esc(P.instructions)}</pre><pre class="prompt">${esc(JSON.stringify(P.schema, null, 2))}</pre></div></details>
+  <div class="split"><div>
+      <div class="row" style="margin-bottom:10px"><div class="seg"><button data-act="jobs" data-v="0" class="${S.onlyJobs ? "" : "on"}">All ${m.turns.length} turns</button><button data-act="jobs" data-v="1" class="${S.onlyJobs ? "on" : ""}">Only the ${Object.keys(byTurn).length} job turns</button></div>
+      <span class="soft small">Hover a job on the right to spotlight its turns.</span></div>
+      <div class="scroll tall transcript" id="transcript">${turns}</div></div>
+    <div class="sticky"><h2>Real jobs (answer key)</h2>${m.gold.map(g => `<div class="list-item" data-focus="${g.id}"><div class="row"><span class="tid">${tnum(g.id)}</span><b class="small">${esc(g.summary)}</b></div>
+      <div class="said" style="margin-top:4px">turns ${g.evidence.join(", ")} · ${g.owner.id ? esc(nm(g.owner.id)) : "no owner"}</div></div>`).join("")}</div></div>`;
+});
+
+slide("Data", "Validation", () => {
+  const m = DM();
+  const rows = m.gold.map(g => `<tr><td><span class="tid">${tnum(g.id)}</span></td><td><b>${esc(g.summary)}</b><div class="said">turns ${g.evidence.join(", ")}</div></td>
+    <td>${g.checks.map(c => `<div class="check" style="margin:2px 8px 2px 0"><span class="tick ${c.turn != null ? "ok" : "bad"}">${c.turn != null ? "✓" : "✗"}</span>
+      <span class="soft">${c.what}</span> <q>${esc(c.phrase)}</q> <span class="soft">${c.turn != null ? "→ turn " + c.turn : "not found"}</span></div>`).join("")}
+      ${g.due_date ? `<div class="check"><span class="tick ok">✓</span><span class="soft">date</span> <q>${esc(g.due_mention)}</q> <span class="soft">resolves to ${fmtDate(g.due_date)}${g.due_time ? " " + g.due_time : ""}</span></div>` : ""}</td></tr>`).join("");
+  const all = D.meetings, first = all.filter(x => (x.notes[0] || "").includes("attempt 1")).length;
+  return head("07 · Data", "Every transcript is checked against its answer key",
+    `An LLM-written transcript can drift from the plan. <code>generate/validate.py</code> (plain Python) checks that each job’s equipment words, site, owner and deadline appear in or next to the turns the writer said contain it, and that the deadline resolves to the right date. Failures go back to the writer with the problems listed, up to 3 attempts.`, scopeData()) +
+    controls(dataMeetingControl()) + meetingHeader(m) + `
+  <div class="split"><div class="scroll"><table class="t" data-table="Validation:checks"><tr><th></th><th>Job</th><th>Checks for this job</th></tr>${rows}</table></div>
+    <div class="sticky stack"><div class="card"><h2>Generation loop</h2>
+        <div class="check" style="margin-bottom:8px"><span class="tick na">1</span>Sample answer key <span class="soft small">· Python</span></div>
+        <div class="check" style="margin-bottom:8px"><span class="tick na">2</span>Write transcript <span class="soft small">· ${esc(modelOf(m.writer).name)} · ${esc(modelOf(m.writer).res)}</span></div>
+        <div class="check" style="margin-bottom:8px"><span class="tick na">3</span>Validate <span class="soft small">· Python</span></div>
+        <div class="check"><span class="tick na">4</span>Retry with feedback, max 3</div></div>
+      <div class="card tint"><h3>This meeting</h3><p class="muted small" style="margin:0">${esc((m.notes || []).join("; ") || "accepted")}.</p>
+        <h3 style="margin-top:12px">All ${all.length} meetings</h3><p class="muted small" style="margin:0">${first} passed on the first attempt; every meeting passed within 3.</p></div></div></div>`;
+});
+</script>
+<script>
+/* ================================================================== PIPELINE */
+const shortlistBased = no => no.startsWith("llm@") || no === "gliner" || no === "gliner_decide";
+function recvExample() {
+  const m = testMeetings()[0];
+  const hdr = `Meeting date: ${m.date} (${m.weekday})\nAttendees: ${m.attendees.map(nm).join(", ")}\n\nTranscript:\n` +
+    m.turns.slice(0, 6).map(t => `[00:${String(Math.floor(t.t / 60)).padStart(2, "0")}:${String(t.t % 60).padStart(2, "0")}] ${t.who}: ${t.text}`).join("\n") + `\n… ${m.turns.length - 6} more turns`;
+  return { m, hdr };
+}
+slide("Pipeline", "What each method receives", () => {
+  const P = D.prompts, { m, hdr } = recvExample();
+  const ex = SET().extractions[m.id]?.["llm@gpt-5.4"] || Object.values(SET().extractions[m.id] || {})[0];
+  const sl = SET().shortlists?.[m.id]?.["llm@gpt-5.4"]?.[0] || {};
+  const t0 = ex?.tasks?.[0];
+  const matchPayload = t0 ? JSON.stringify({ attendee_ids: m.attendees, tasks: [{ task_index: 0, summary: t0.summary, evidence: t0.quote,
+    owner_words: t0.owner, owner_candidates: (sl.owner || []).map(id => ({ id, name: nm(id) })),
+    component_words: t0.component, component_candidates: (sl.component || []).map(id => ({ id, name: nm(id), parent: ENT[id]?.parent ?? null })),
+    site_words: t0.site, site_candidates: (sl.site || []).map(id => ({ id, name: nm(id) })), priority_words: t0.urgency }] }, null, 1) : "–";
+  const tabs = [["extract", "LLM extract"], ["direct", "LLM one call"], ["match", "LLM match"], ["local", "Local models"]];
+  const pane = {
+    extract: `<div class="grid g2"><div class="stack"><h3>System instructions (identical for all 11 LLMs)</h3><pre class="prompt">${esc(P.extract.instructions)}</pre></div>
+      <div class="stack"><h3>Input: a real example from ${mtag(m.id)}</h3><pre class="prompt">${esc(hdr)}</pre>
+      <h3>Output: strict JSON schema</h3><pre class="prompt">${esc(JSON.stringify(P.extract.schema, null, 2))}</pre></div></div>`,
+    direct: `<div class="grid g2"><div class="stack"><h3>System instructions</h3><pre class="prompt">${esc(P.direct.instructions)}</pre>
+      <p class="small muted">…followed by the full vocabulary as JSON (${P.direct.vocab_chars.toLocaleString()} characters: every person, site and asset with official name, ID, parent and <b>known</b> nicknames; held-out nicknames are never included).</p></div>
+      <div class="stack"><h3>Input</h3><pre class="prompt">${esc(hdr)}</pre><h3>Output schema</h3><pre class="prompt">${esc(JSON.stringify(P.direct.schema, null, 2))}</pre></div></div>`,
+    match: `<div class="grid g2"><div class="stack"><h3>System instructions (identical for all 11 LLMs)</h3><pre class="prompt">${esc(P.match.instructions)}</pre></div>
+      <div class="stack"><h3>Input: one real job from ${mtag(m.id)} with its shortlists</h3><pre class="prompt">${esc(matchPayload)}</pre>
+      <p class="small muted">Shortlists = fuzzy text match and ${esc(EMB)} top hits, interleaved to ~10 candidates, plus parent equipment. All jobs in a meeting go in one call.</p>
+      <h3>Output schema</h3><pre class="prompt">${esc(JSON.stringify(P.match.schema, null, 2))}</pre></div></div>`,
+    local: `<div class="scroll"><table class="t" data-table="What each method receives:local"><tr><th>Method</th><th>Receives</th><th>Returns</th></tr>
+      ${Object.entries(LOCAL_EX).map(([k, v]) => `<tr><td>${svc(v)}</td><td class="small muted">each transcript turn as plain text, plus speaker names</td><td class="small">${esc(v.how)}</td></tr>`).join("")}
+      ${Object.entries(LOCAL_NO).filter(([k]) => k !== "passthrough").map(([k, v]) => `<tr><td>${svc(v)}</td><td class="small muted">one extracted mention at a time (e.g. <q>the cold unit</q>) + attendee list${k.startsWith("gliner") ? " + the ~10-candidate shortlist" : ""}${k === "classifier" ? "; trained beforehand on the 112 training meetings" : ""}</td><td class="small">${esc(v.how)}</td></tr>`).join("")}</table></div>`,
+  };
+  return head("08 · Pipeline", "Exactly what each method receives",
+    "Nothing hidden: these are the literal instructions, inputs and output schemas sent to the Foundry models, and what the local models are given.", scopeSet()) +
+    controls(setControl()) + `
+  <div class="seg" style="margin-bottom:14px">${tabs.map(([k, l]) => `<button data-act="recv" data-v="${k}" class="${S.recv === k ? "on" : ""}">${l}</button>`).join("")}</div>${pane[S.recv]}`;
+});
+
+slide("Pipeline", "Extract", () => {
+  ensurePipe();
+  const ms = pipeMeetings();
+  let nRet = 0, nTp = 0, nGold = 0, nFp = 0, secs = 0, cost = 0, tin = 0, tout = 0, errs = 0;
+  const blocks = ms.map(m => {
+    const x = XR(m.id), p = PR(m.id), byPred = {}, byGold = {};
+    if (!x || !p) return "";
+    p.pairs.forEach(q => { byPred[q.pred] = q; byGold[q.gold] = q; });
+    nRet += x.tasks.length; nTp += p.pairs.length; nGold += m.gold.length; nFp += x.tasks.length - p.pairs.length;
+    secs += x.seconds; cost += x.cost || 0; tin += x.tokens[0]; tout += x.tokens[1]; errs += x.error ? 1 : 0;
+    const cards = x.tasks.map((t, i) => { const hit = byPred[i];
+      const ids = Object.keys(t.ids || {}).length ? `<div class="said" style="margin-top:8px">IDs returned directly: ${Object.entries(t.ids).map(([k, v]) => `${k} <code>${esc(v)}</code> (${esc(nm(v))})`).join(" · ")}</div>` : "";
+      return `<div class="xcard ${hit ? "" : "fp"}"><div class="row"><span class="tid ghost">#${i + 1}</span>
+        ${hit ? `<span class="chip ok">real job ${tnum(hit.gold)}</span>` : `<span class="chip bad">not a real job</span>`}
+        <span class="soft small">${t.turn != null ? "quote found at turn " + t.turn : "quote not found in transcript"}</span></div>
+        <div class="task-sum" style="margin-top:8px">${esc(t.summary)}</div>${t.quote ? `<blockquote>${esc(t.quote)}</blockquote>` : ""}
+        <div class="fields">${fld("Owner (said)", t.owner)}${fld("Equipment (said)", t.component)}${fld("Site (said)", t.site)}${fld("Deadline (said)", t.due)}${fld("Urgency (said)", t.urgency)}</div>${ids}</div>`; }).join("");
+    const missed = m.gold.filter(g => !byGold[g.id]);
+    return `<div style="margin-bottom:18px"><div class="row" style="margin-bottom:8px">${mtag(m.id)}<b class="small">${fmtDate(m.date)}</b>
+        <span class="soft small">${x.tasks.length} returned · ${p.pairs.length}/${m.gold.length} real jobs found · ${sec(x.seconds)}${x.cost ? " · " + usd(x.cost) : ""}</span>
+        ${x.error ? `<span class="chip bad">call failed: ${esc(x.error.slice(0, 80))}</span>` : ""}</div>
+      ${cards || `<p class="muted small">Nothing extracted.</p>`}
+      ${missed.length ? `<div class="xcard" style="border-style:dashed"><b class="small">Missed:</b> ${missed.map(g => `<span class="tid">${tnum(g.id)}</span> <span class="small">${esc(g.summary)}</span>`).join(" · ")}</div>` : ""}</div>`;
+  }).join("");
+  return head("09 · Pipeline", "Step 1: extract the jobs, in the words people used",
+    "The extractor sees only the transcript, meeting date and attendee names, never the answer key. It returns each job with the words exactly as said. No IDs yet (except the one-call LLMs, which return IDs directly).", scopePipe()) +
+    controls(setControl(), pipeMeetingControl(), exControl()) + `
+  <div class="grid g4" style="margin-bottom:16px">
+    <div class="card stat"><b>${nRet}</b><span>jobs returned across ${ms.length} meeting${ms.length > 1 ? "s" : ""}</span></div>
+    <div class="card stat"><b>${nTp} <span class="soft" style="font-size:16px">/ ${nGold}</span></b><span>real jobs found · ${nGold - nTp} missed</span></div>
+    <div class="card stat"><b>${nFp}</b><span>returned but not real jobs${errs ? ` · ${errs} failed calls` : ""}</span></div>
+    <div class="card stat"><b>${sec(secs / Math.max(ms.length, 1))}</b><span>per meeting · ${tin ? `${usd(cost / ms.length)}/meeting · ${Math.round(tin / ms.length).toLocaleString()} in / ${Math.round(tout / ms.length).toLocaleString()} out tokens` : "local · $0"}</span></div>
+  </div><div class="scroll tall"><div class="pad">${blocks}</div></div>`;
+});
+const fld = (k, v, none = "—") => `<div class="field"><div class="k">${k}</div><div class="v ${v ? "" : "none"}">${v ? esc(v) : none}</div></div>`;
+
+function cell(said, predId, goldVal, show, matched, heldout, cands) {
+  const ok = matched && predId === goldVal, cls = !matched ? "na" : ok ? "ok" : "bad";
+  const cl = cands && cands.length ? `<div class="cands">${cands.map(c => `<span class="chip ${c === predId ? "pick" : ""} ${matched && c === goldVal ? "gold" : ""}" title="${esc(nm(c))}">${esc(c)}</span>`).join("")}</div>` : "";
+  return `<td><div class="cell ${cls}">${said ? `<div class="said"><q>${esc(said)}</q></div>` : `<div class="said">nothing said</div>`}
+    <div class="val">${show(predId)}</div>${matched && !ok ? `<div class="exp">expected ${show(goldVal)}</div>` : ""}
+    ${heldout ? `<span class="chip heldout" style="margin-top:4px;height:18px">held-out</span>` : ""}${cl}</div></td>`;
+}
+slide("Pipeline", "Match", () => {
+  ensurePipe();
+  const ms = pipeMeetings(), showC = shortlistBased(S.no);
+  const idv = id => id ? `${esc(nm(id))}<code>${esc(id)}</code>` : `<span class="soft">none</span>`;
+  const datev = d => d ? esc(fmtDate(d)) : `<span class="soft">none</span>`;
+  const counts = { owner: 0, component: 0, site: 0, due_date: 0, priority: 0, category: 0 }; let nPairs = 0;
+  const rows = ms.map(m => {
+    const x = XR(m.id), p = PR(m.id); if (!x || !p) return "";
+    const G = goldOf(m.id), byPred = {}; p.pairs.forEach(q => { byPred[q.pred] = q; nPairs++; Object.keys(counts).forEach(k => counts[k] += q.scores[k] === 1 ? 1 : 0); });
+    const sl = SET().shortlists?.[m.id]?.[S.ex] || [];
+    return x.tasks.map((t, i) => {
+      const pr = p.preds[i] || {}, hit = byPred[i], g = hit ? G[hit.gold] : null, c = showC ? (sl[i] || {}) : {};
+      return `<tr><td style="min-width:200px">${S.pipeMeeting === "all" ? mtag(m.id) + " " : ""}${hit ? `<span class="tid">${tnum(hit.gold)}</span>` : `<span class="chip bad">not a real job</span>`}
+          <div class="small" style="margin-top:6px"><b>${esc(t.summary)}</b></div></td>
+        ${cell(t.owner, pr.owner, g?.owner.id ?? null, idv, !!hit, g?.owner.split === "heldout", c.owner)}
+        ${cell(t.component, pr.component, g?.component.id ?? null, idv, !!hit, g?.component.split === "heldout", c.component)}
+        ${cell(t.site, pr.site, g?.site.id ?? null, idv, !!hit, g?.site.split === "heldout", c.site)}
+        ${cell(t.due, pr.due_date, g?.due_date ?? null, datev, !!hit)}
+        ${cell(t.urgency, pr.priority, g?.priority ?? null, v => v ? "P" + v : `<span class="soft">none</span>`, !!hit)}
+        ${cell(null, pr.category, g?.category ?? null, v => v ? esc(v) : `<span class="soft">none</span>`, !!hit)}</tr>`;
+    }).join("");
+  }).join("");
+  return head("10 · Pipeline", "Step 2: match the words to official names",
+    `Each mention becomes an official ID; the deadline becomes a date (in code, same rules everywhere); category and priority follow the business rubric. Green = matches the answer key, red = wrong (expected shown), grey = not a real job.${showC ? " Chips under each cell are the shortlist this matcher chose from: <b>black</b> = its pick, <b>green outline</b> = the correct answer. Shortlists are fuzzy + OpenAI text-embedding-3-large by default." : ""}`, scopePipe()) +
+    controls(setControl(), pipeMeetingControl(), exControl(), noControl()) + `
+  <div class="row" style="margin-bottom:12px">${pipeHTML(S.ex, S.no)}<span style="flex:1"></span>
+    ${Object.entries(counts).map(([k, n]) => `<span class="chip">${k.replace("_date", "")} ${n}/${nPairs}</span>`).join("")}</div>
+  <div class="scroll tall"><table class="t" data-table="Match:fields"><tr><th>Job</th><th>Owner</th><th>Equipment</th><th>Site</th><th>Due</th><th>Priority</th><th>Category</th></tr>
+    ${rows || `<tr><td colspan="7" class="muted">Nothing to match.</td></tr>`}</table></div>
+  <div class="legend" style="margin-top:10px"><span><i class="sw" style="background:var(--ok-soft)"></i>correct</span><span><i class="sw" style="background:var(--bad-soft)"></i>wrong</span>
+    <span><i class="sw" style="background:var(--cp-surface-soft)"></i>not a real job</span><span><span class="chip heldout" style="height:18px">held-out</span> the answer key used a nickname no method has seen</span></div>`;
+});
+
+slide("Pipeline", "Score", () => {
+  ensurePipe();
+  const ms = pipeMeetings(), F = [["owner", "Owner"], ["component", "Equip."], ["site", "Site"], ["due_date", "Due"], ["priority", "Prio."], ["category", "Cat."]];
+  let ready = 0, gold = 0, ret = 0, tp = 0, secs = 0, cost = 0, fails = 0;
+  const rows = ms.map(m => {
+    const x = XR(m.id), p = PR(m.id); if (!x || !p) return "";
+    const byGold = {}; p.pairs.forEach(q => byGold[q.gold] = q);
+    ready += p.ready; gold += m.gold.length; ret += x.tasks.length; tp += p.pairs.length; secs += p.seconds; cost += p.cost || 0; fails += p.failed ? 1 : 0;
+    return m.gold.map(g => { const h = byGold[g.id], t = h ? x.tasks[h.pred] : null;
+      return `<div class="score-row"><div><div class="row">${S.pipeMeeting === "all" ? mtag(m.id) : ""}<span class="tid">${tnum(g.id)}</span><b class="small">${esc(g.summary)}</b></div></div><div class="arrow">→</div>
+        <div>${t ? `<span class="tid ghost">#${h.pred + 1}</span> <span class="small">${esc(t.summary)}</span>` : `<span class="chip bad">missed</span>`}</div>
+        <div class="ticks">${h ? F.map(([k, l]) => `<span class="chip ${h.scores[k] === 1 ? "ok" : "bad"}">${h.scores[k] === 1 ? "✓" : "✗"} ${l}</span>`).join("") + (h.scores.all_fields === 1 ? `<span class="chip solid">dashboard-ready</span>` : "") : ""}</div></div>`; }).join("");
+  }).join("");
+  const prec = ret ? tp / ret : 0, rec = gold ? tp / gold : 0, f1 = prec + rec ? 2 * prec * rec / (prec + rec) : 0, n = ms.length || 1;
+  return head("11 · Pipeline", "Step 3: score against the answer key",
+    "Each returned job is paired with at most one real job, then six fields are checked. A job is <b>dashboard-ready</b> only if all six are right. See slide 02 for the exact rules.", scopePipe()) +
+    controls(setControl(), pipeMeetingControl(), exControl(), noControl()) + `
+  <div class="grid g4" style="margin-bottom:16px">
+    <div class="card stat"><b style="color:var(--cp-accent)">${ready} / ${gold}</b><span>dashboard-ready · ${pct(ready / gold)} ${pm(ready / gold, gold)}</span></div>
+    <div class="card stat"><b>${pct(f1)}</b><span>task F1 · precision ${pct(prec)} · recall ${pct(rec)}</span></div>
+    <div class="card stat"><b>${sec(secs / n)}</b><span>per meeting (extract + match)${fails ? ` · ${fails} failed` : ""}</span></div>
+    <div class="card stat"><b>${usd(cost / n)}</b><span>per meeting · ${usd(cost)} for ${n} meeting${n > 1 ? "s" : ""}</span></div>
+  </div><div class="scroll tall">${rows}</div>`;
+});
+
+slide("Pipeline", "Every pipeline", () => {
+  ensurePipe();
+  const ms = pipeMeetings(), gold = sum(ms.map(m => m.gold.length));
+  const keys = [...new Set(ms.flatMap(m => Object.keys(SET().pipelines[m.id] || {})))];
+  const list = keys.map(k => { const [ex, no] = k.split("|"); const recs = ms.map(m => SET().pipelines[m.id]?.[k]).filter(Boolean);
+      return { ex, no, fam: family(ex, no), ready: sum(recs.map(r => r.ready)), cost: sum(recs.map(r => r.cost)) / recs.length, secs: sum(recs.map(r => r.seconds)) / recs.length, fails: recs.filter(r => r.failed).length }; })
+    .filter(r => S.fam === "all" || r.fam === S.fam).sort((a, b) => b.ready - a.ready || (a.cost ?? 9) - (b.cost ?? 9));
+  return head("12 · Pipeline", S.pipeMeeting === "all" ? "Every pipeline, on the whole test set" : "Every pipeline, on one meeting",
+    "All extract → match combinations ranked by dashboard-ready jobs. Click a row to open it in step 3.", scopePipe()) +
+    controls(setControl(), pipeMeetingControl()) + `
+  <div class="row" style="margin-bottom:12px"><div class="seg">${[["all", "All"], ...Object.entries(FAM).map(([k, v]) => [k, v.label])].map(([k, l]) =>
+      `<button data-act="fam" data-v="${k}" class="${S.fam === k ? "on" : ""}">${l}</button>`).join("")}</div><span class="soft small">${list.length} pipelines · ${gold} real jobs</span></div>
+  <div class="scroll tall" data-rank-list="Every pipeline:rank">${list.map((r, i) => `<div class="rank" data-act="open" data-ex="${r.ex}" data-no="${r.no}" data-sort-pipeline="${esc(pipeText(r.ex, r.no))}" data-sort-ready="${100 * r.ready / gold}" data-sort-cost="${r.cost ?? ""}" data-sort-seconds="${r.secs ?? ""}"><span class="i">${i + 1}</span>${pipeHTML(r.ex, r.no)}
+      <div class="bar"><i style="width:${100 * r.ready / gold}%;background:${FAM[r.fam].c}"></i></div>
+      <b class="num">${pct(r.ready / gold)}${S.pipeMeeting === "all" ? pm(r.ready / gold, gold) : ""}</b><span class="num small muted">${usd(r.cost)}</span><span class="num small muted">${sec(r.secs)}${r.fails ? ` · ${r.fails}✗` : ""}</span></div>`).join("")}</div>`;
+});
+</script>
+<script>
+/* =================================================================== RESULTS */
+const LB = (set = S.set) => D.sets[set].leaderboard.map(r => ({ ...r, fam: family(r.extractor, r.normaliser) }));
+const nJobs = (set = S.set) => D.sets[set].meta.gold_tasks || jobsIn(set);
+function frontier(rows) {
+  const k = rows.filter(r => r.cost_per_meeting != null);
+  return new Set(k.filter(r => !k.some(o => o.dashboard_ready >= r.dashboard_ready && o.cost_per_meeting <= r.cost_per_meeting &&
+    (o.dashboard_ready > r.dashboard_ready || o.cost_per_meeting < r.cost_per_meeting))).map(r => r.extractor + "|" + r.normaliser));
+}
+function verdicts(rows) {
+  const best = [...rows].sort((a, b) => b.dashboard_ready - a.dashboard_ready)[0];
+  const good = rows.filter(r => r.cost_per_meeting != null && r.dashboard_ready >= best.dashboard_ready - 0.05);
+  const value = [...good].sort((a, b) => a.cost_per_meeting - b.cost_per_meeting)[0];
+  const fast = rows.filter(r => r.dashboard_ready >= best.dashboard_ready - 0.10).sort((a, b) => a.seconds_per_meeting - b.seconds_per_meeting)[0];
+  const local = rows.filter(r => r.fam === "local").sort((a, b) => b.dashboard_ready - a.dashboard_ready)[0];
+  return [["Best quality", best], ["Best value · within 5 pts, cheapest", value], ["Fastest · within 10 pts", fast], ["Best with no LLM", local]].filter(x => x[1]);
+}
+const vcard = ([l, r], n) => `<div class="card"><div class="eyebrow" style="color:var(--cp-text-soft)">${l}</div>
+  <div style="margin:10px 0 8px">${pipeHTML(r.extractor, r.normaliser)}</div><div class="row"><b style="font-size:22px">${pct(r.dashboard_ready)}</b>${pm(r.dashboard_ready, n)}
+  <span class="muted small">${usd(r.cost_per_meeting)} · ${sec(r.seconds_per_meeting)} per meeting</span></div></div>`;
+
+slide("Results", "Leaderboard", () => {
+  const rows = LB(), n = nJobs(), fr = frontier(rows), W = 760, H = 440, pad = { l: 56, r: 16, t: 16, b: 44 };
+  const lx = v => Math.log10(v), x0 = lx(0.0005), x1 = lx(1), lane = pad.l + 18;
+  const X_ = c => c === 0 ? lane : pad.l + 46 + (lx(Math.max(c, 0.0005)) - x0) / (x1 - x0) * (W - pad.l - 46 - pad.r);
+  const ymax = Math.min(1, Math.ceil((Math.max(...rows.map(r => r.dashboard_ready)) + 0.15) * 5) / 5);
+  const Y_ = v => pad.t + (1 - v / ymax) * (H - pad.t - pad.b);
+  const front = rows.filter(r => fr.has(r.extractor + "|" + r.normaliser)).sort((a, b) => a.cost_per_meeting - b.cost_per_meeting);
+  const pts = rows.filter(r => r.cost_per_meeting != null).map(r => { const f = fr.has(r.extractor + "|" + r.normaliser), e = moe(r.dashboard_ready, n), x = X_(r.cost_per_meeting);
+    return `${f ? `<line class="errbar" x1="${x}" x2="${x}" y1="${Y_(Math.min(ymax, r.dashboard_ready + e))}" y2="${Y_(Math.max(0, r.dashboard_ready - e))}"/>` : ""}
+      <circle class="pt" cx="${x}" cy="${Y_(r.dashboard_ready)}" r="${f ? 6 : 4.5}" fill="${FAM[r.fam].c}" fill-opacity="${f ? 1 : .5}" stroke="var(--cp-surface)" stroke-width="1.5"
+      data-tip="${esc(`<b>${pct(r.dashboard_ready)}</b> ±${Math.round(100 * e)} dashboard-ready · ${usd(r.cost_per_meeting)}/meeting · ${sec(r.seconds_per_meeting)}/meeting<br>` + pipeText(r.extractor, r.normaliser))}"
+      data-act="open" data-ex="${r.extractor}" data-no="${r.normaliser}"/>`; }).join("");
+  const ticks = [0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1].map(c => `<g><line x1="${X_(c)}" x2="${X_(c)}" y1="${pad.t}" y2="${H - pad.b}"/><text class="lbl" x="${X_(c)}" y="${H - pad.b + 16}" text-anchor="middle">$${c}</text></g>`).join("");
+  const yt = [...Array(Math.round(ymax * 5) + 1).keys()].map(i => i / 5).map(v => `<g><line x1="${pad.l}" x2="${W - pad.r}" y1="${Y_(v)}" y2="${Y_(v)}"/><text class="lbl" x="${pad.l - 8}" y="${Y_(v) + 4}" text-anchor="end">${Math.round(v * 100)}%</text></g>`).join("");
+  const top = [...rows].sort((a, b) => b.dashboard_ready - a.dashboard_ready);
+  return head("13 · Results", "Quality against cost, whole test set",
+    "Each dot is one extract → match combination scored on every meeting in the chosen test set. Up is better, left is cheaper. Large dots sit on the <b>frontier</b> (nothing else is both better and cheaper) and carry their margin of error. Hover for details, click to inspect.", scopeSet()) +
+    controls(setControl()) + `
+  <div class="grid g4" style="margin-bottom:16px">${verdicts(rows).map(v => vcard(v, n)).join("")}</div>
+  <div class="split wide"><div class="card"><svg class="chart" viewBox="0 0 ${W} ${H}" width="100%"><g class="grid">${yt}</g><g class="grid">${ticks}</g>
+      <text class="lbl" x="${lane}" y="${H - pad.b + 16}" text-anchor="middle">$0</text><line x1="${lane + 14}" x2="${lane + 14}" y1="${pad.t}" y2="${H - pad.b}" stroke="var(--line)"/>
+      <polyline fill="none" stroke="var(--cp-text-soft)" stroke-dasharray="3 3" points="${front.map(r => X_(r.cost_per_meeting) + "," + Y_(r.dashboard_ready)).join(" ")}"/>${pts}
+      <text class="lbl" x="${W / 2}" y="${H - 6}" text-anchor="middle">cost per meeting (log scale)</text>
+      <text class="lbl" transform="translate(14 ${H / 2}) rotate(-90)" text-anchor="middle">dashboard-ready</text></svg>
+      <div class="legend">${Object.values(FAM).map(f => `<span><i class="dot" style="background:${f.c}"></i>${f.label}</span>`).join("")}</div></div>
+    <div><h2>All ${top.length} pipelines</h2><div class="scroll tall"><table class="t" data-table="Leaderboard:all-pipelines"><tr><th>#</th><th>Pipeline</th><th class="num">Ready</th><th class="num">$/mtg</th><th class="num">s/mtg</th></tr>
+      ${top.map((r, i) => `<tr class="click" data-act="open" data-ex="${r.extractor}" data-no="${r.normaliser}"><td class="soft">${i + 1}${fr.has(r.extractor + "|" + r.normaliser) ? " ★" : ""}</td>
+        <td data-sort="${esc(pipeText(r.extractor, r.normaliser))}">${pipeHTML(r.extractor, r.normaliser)}${r.errors ? `<span class="chip bad" style="margin-top:4px">${r.errors} failed calls</span>` : ""}</td>
+        <td class="num" data-sort="${r.dashboard_ready * 100}"><b>${pct(r.dashboard_ready)}</b>${pm(r.dashboard_ready, n)}</td><td class="num" data-sort="${r.cost_per_meeting ?? ""}">${usd(r.cost_per_meeting)}</td><td class="num" data-sort="${r.seconds_per_meeting ?? ""}">${sec(r.seconds_per_meeting)}</td></tr>`).join("")}</table></div></div></div>`;
+});
+
+slide("Results", "Does the writer matter?", () => {
+  const ss = SETS(); if (ss.length < 2) return head("14 · Results", "Does the writer matter?", "Only one test set is currently embedded in this export, so the writer-bias comparison degrades gracefully here. Re-render after both result files are present to compare GPT-5.4-written and GPT-6 Astra-written tests.", scopeGlobal("writer comparison · needs both test sets"));
+  const [a, b] = ss.sort((x, y) => jobsIn(x) - jobsIn(y)), na = nJobs(a), nb = nJobs(b);
+  const A = Object.fromEntries(LB(a).map(r => [r.extractor + "|" + r.normaliser, r])), B = Object.fromEntries(LB(b).map(r => [r.extractor + "|" + r.normaliser, r]));
+  const keys = Object.keys(A).filter(k => B[k]), W = 520, H = 520, pad = 50, sc = v => pad + v * (W - 2 * pad), sy = v => H - pad - v * (H - 2 * pad);
+  const own = k => { const m = k.split("|")[0].split("@")[1]; return m === D.sets[a].writer ? a : m === D.sets[b].writer ? b : null; };
+  const pts = keys.map(k => { const r = A[k], s = B[k], o = own(k);
+    return `<circle class="pt" cx="${sc(r.dashboard_ready)}" cy="${sy(s.dashboard_ready)}" r="${o ? 6 : 4}" fill="${o === a ? "var(--cp-accent)" : o === b ? "var(--cp-link)" : "var(--cp-text-soft)"}" fill-opacity="${o ? 1 : .45}"
+      data-tip="${esc(`${pipeText(r.extractor, r.normaliser)}<br>${D.sets[a].label}: <b>${pct(r.dashboard_ready)}</b> ±${Math.round(100 * moe(r.dashboard_ready, na))} · ${D.sets[b].label}: <b>${pct(s.dashboard_ready)}</b> ±${Math.round(100 * moe(s.dashboard_ready, nb))}`)}"/>`; }).join("");
+  const grid = [0, .2, .4, .6, .8, 1].map(v => `<line x1="${sc(v)}" x2="${sc(v)}" y1="${sy(0)}" y2="${sy(1)}"/><line x1="${sc(0)}" x2="${sc(1)}" y1="${sy(v)}" y2="${sy(v)}"/>
+    <text class="lbl" x="${sc(v)}" y="${sy(0) + 16}" text-anchor="middle">${v * 100}%</text><text class="lbl" x="${sc(0) - 8}" y="${sy(v) + 4}" text-anchor="end">${v * 100}%</text>`).join("");
+  const twoStep = D.models.map(m => ({ m: m.id, ra: A[`llm@${m.id}|llm@${m.id}`], rb: B[`llm@${m.id}|llm@${m.id}`] })).filter(x => x.ra && x.rb);
+  const rank = (set, rows) => [...rows].sort((x, y) => (set === a ? y.ra.dashboard_ready - x.ra.dashboard_ready : y.rb.dashboard_ready - x.rb.dashboard_ready)).map(x => x.m);
+  const ra = rank(a, twoStep), rb = rank(b, twoStep);
+  return head("14 · Results", "Does the writer matter?",
+    `Every pipeline scored on both test sets. The ${esc(D.sets[a].label)} set could favour ${esc(modelOf(D.sets[a].writer).name)} (it wrote those transcripts); the ${esc(D.sets[b].label)} set could favour ${esc(modelOf(D.sets[b].writer).name)}. Points on the diagonal score the same on both; a writer’s own model sitting well above the diagonal only on its own set would mean familiarity, not skill.`,
+    scopeGlobal(`both test sets · ${D.sets[a].meetings.length} + ${D.sets[b].meetings.length} meetings · ${na} + ${nb} jobs`)) + `
+  <div class="split wide"><div class="card"><svg class="chart" viewBox="0 0 ${W} ${H}" width="100%"><g class="grid">${grid}</g>
+      <line x1="${sc(0)}" y1="${sy(0)}" x2="${sc(1)}" y2="${sy(1)}" stroke="var(--cp-border-strong)" stroke-dasharray="4 4"/>${pts}
+      <text class="lbl" x="${W / 2}" y="${H - 8}" text-anchor="middle">dashboard-ready on the ${esc(D.sets[a].label)} set (${na} jobs)</text>
+      <text class="lbl" transform="translate(14 ${H / 2}) rotate(-90)" text-anchor="middle">dashboard-ready on the ${esc(D.sets[b].label)} set (${nb} jobs)</text></svg>
+      <div class="legend"><span><i class="dot" style="background:var(--cp-accent)"></i>uses ${esc(modelOf(D.sets[a].writer).name)} (wrote the ${esc(D.sets[a].label)} set)</span>
+        <span><i class="dot" style="background:var(--cp-link)"></i>uses ${esc(modelOf(D.sets[b].writer).name)} (wrote the ${esc(D.sets[b].label)} set)</span><span><i class="dot" style="background:var(--cp-text-soft)"></i>other</span></div></div>
+    <div><h2>Two-step LLM pipelines on each set</h2><div class="scroll tall"><table class="t" data-table="Does the writer matter:two-step"><tr><th>Model</th><th class="num">${esc(D.sets[a].label)}</th><th class="num">Rank</th><th class="num">${esc(D.sets[b].label)}</th><th class="num">Rank</th></tr>
+      ${[...twoStep].sort((x, y) => y.rb.dashboard_ready - x.rb.dashboard_ready).map(x => `<tr><td><b>${esc(modelOf(x.m).name)}</b>${x.m === D.sets[a].writer || x.m === D.sets[b].writer ? ` <span class="chip acc">writer</span>` : ""}</td>
+        <td class="num">${pct(x.ra.dashboard_ready)}${pm(x.ra.dashboard_ready, na)}</td><td class="num">${ra.indexOf(x.m) + 1}</td>
+        <td class="num"><b>${pct(x.rb.dashboard_ready)}</b>${pm(x.rb.dashboard_ready, nb)}</td><td class="num">${rb.indexOf(x.m) + 1}</td></tr>`).join("")}</table></div></div></div>`;
+});
+
+slide("Results", "Foundry models", () => {
+  const n = nJobs(), nrm = Object.fromEntries(SET().normalise.map(r => [r.normaliser, r]));
+  const rows = D.models.map(m => ({ m: m.id, two: LBROW("llm@" + m.id, "llm@" + m.id), one: LBROW("llm_direct@" + m.id, "passthrough"), nn: nrm["llm@" + m.id] }))
+    .sort((a, b) => (b.two?.dashboard_ready ?? 0) - (a.two?.dashboard_ready ?? 0));
+  const bar = (r, c) => r ? `<div class="row" style="gap:8px;flex-wrap:nowrap"><div class="bar" style="flex:1"><i style="width:${r.dashboard_ready * 125}%;background:${c}"></i></div><b class="num" style="width:62px">${pct(r.dashboard_ready)}${pm(r.dashboard_ready, n)}</b></div>` : "–";
+  return head("15 · Results", "Foundry models head to head",
+    "Same prompts, same meetings. <b>Two steps</b> = the model extracts the words, then the same model picks each official name from a shortlist. <b>One call</b> = the model sees the whole vocabulary and returns IDs directly; IDs are kept only when the model also returned the words they came from. <b>Held-out matching</b> = given the correct words, how often it matched a never-seen equipment nickname. Grok has a 600 s timeout (others 240 s), and failures score as found nothing.", scopeSet()) +
+    controls(setControl()) + `
+  <div class="scroll tall"><table class="t" data-table="Foundry models:models"><tr><th>Model · where it runs</th><th style="width:22%">Two steps · dashboard-ready</th><th class="num">Two-step $/mtg</th><th class="num">Two-step s/mtg</th>
+      <th style="width:22%">One call · dashboard-ready</th><th class="num">One-call $/mtg</th><th class="num">One-call s/mtg</th><th class="num">Held-out matching</th></tr>
+    ${rows.map(r => `<tr><td><span class="svc"><b>${esc(modelOf(r.m).name)}</b><em>${esc(modelOf(r.m).vendor)}</em><span class="where">${esc(foundry(r.m))}</span></span></td>
+      <td data-sort="${r.two ? r.two.dashboard_ready * 100 : ""}">${bar(r.two, "var(--cp-accent)")}${r.two?.errors ? `<span class="chip bad">${r.two.errors}/${r.two.meetings} calls failed</span>` : ""}</td>
+      <td class="num small" data-sort="${r.two?.cost_per_meeting ?? ""}">${r.two ? usd(r.two.cost_per_meeting) : "–"}</td><td class="num small" data-sort="${r.two?.seconds_per_meeting ?? ""}">${r.two ? sec(r.two.seconds_per_meeting) : "–"}</td>
+      <td data-sort="${r.one ? r.one.dashboard_ready * 100 : ""}">${bar(r.one, "var(--cp-link)")}${r.one?.errors ? `<span class="chip bad">${r.one.errors}/${r.one.meetings} calls failed</span>` : ""}</td>
+      <td class="num small" data-sort="${r.one?.cost_per_meeting ?? ""}">${r.one ? usd(r.one.cost_per_meeting) : "–"}</td><td class="num small" data-sort="${r.one?.seconds_per_meeting ?? ""}">${r.one ? sec(r.one.seconds_per_meeting) : "–"}</td>
+      <td class="num" data-sort="${r.nn?.["component@heldout"] != null ? r.nn["component@heldout"] * 100 : ""}"><b>${pct(r.nn?.["component@heldout"])}</b></td></tr>`).join("")}</table></div>
+  <div class="callout" style="margin-top:12px"><b>Failure handling:</b> Grok 4.6 often hits its 600 s timeout on full transcripts; failed calls are included and score as found nothing. For Mistral Large 3 one-call rows, returned IDs are kept only if the source words were also returned, so IDs cannot appear from nowhere.</div>`;
+});
+
+slide("Results", "Matching only", () => {
+  const rows = [...SET().normalise].sort((a, b) => (b["component@heldout"] ?? 0) - (a["component@heldout"] ?? 0));
+  const nHeld = rows[0]?.["n_component@heldout"] || 0;
+  const held = []; testMeetings().forEach(m => m.gold.forEach(g => { if (g.component.split === "heldout") held.push({ m, g }); }));
+  const order = rows.map(r => r.normaliser);
+  const gallery = held.map(({ m, g }) => `<div class="nick"><div><q><b>${esc(g.component.text)}</b></q><div class="said" style="margin-top:4px">${mtag(m.id)} · correct: <b>${esc(nm(g.component.id))}</b> <code>${esc(g.component.id)}</code></div></div>
+    <div class="row" style="gap:4px">${order.map(no => { const p = SET().picks?.[m.id]?.[no]?.find(x => x.gold === g.id); const v = p?.component, ok = v === g.component.id, par = v && ENT[g.component.id]?.parent === v;
+      return `<span class="chip ${ok ? "ok" : par ? "warn" : "bad"}" title="${esc(noInfo(no).name)} → ${esc(v ? nm(v) : "none")}">${esc(noInfo(no).name.replace(" picks from a shortlist", ""))}: ${esc(v || "none")}</span>`; }).join("")}</div></div>`).join("");
+  return head("16 · Results", "Matching on its own: where nicknames break things",
+    "Every matcher gets the <b>correct words</b> straight from the answer key, so extraction errors can’t interfere. Known names are easy for everyone; the gap opens on nicknames nobody has seen.", scopeSet()) +
+    controls(setControl()) + `
+  <div class="scroll"><table class="t" data-table="Matching only:matchers"><tr><th>Matcher · where it runs</th><th style="width:22%">Equipment, known names</th><th style="width:22%">Equipment, held-out (${nHeld})</th>
+      <th class="num">Person held-out</th><th class="num">Category</th><th class="num">Priority</th><th class="num">$/mtg</th><th class="num">s/mtg</th></tr>
+    ${rows.map(r => { const n = noInfo(r.normaliser); return `<tr><td>${svc(n, true)}</td>
+      <td><div class="row" style="flex-wrap:nowrap"><div class="bar" style="flex:1"><i style="width:${100 * (r["component@known"] ?? 0)}%;background:var(--cp-text-soft)"></i></div><span class="num" style="width:40px">${pct(r["component@known"])}</span></div></td>
+      <td><div class="row" style="flex-wrap:nowrap"><div class="bar" style="flex:1"><i style="width:${100 * (r["component@heldout"] ?? 0)}%;background:var(--cp-accent)"></i></div><b class="num" style="width:62px">${pct(r["component@heldout"])}${pm(r["component@heldout"] ?? 0, nHeld)}</b></div></td>
+      <td class="num">${pct(r["owner@heldout"])}</td><td class="num">${pct(r.category)}</td><td class="num">${pct(r.priority)}</td><td class="num small">${usd(r.cost_per_meeting)}</td><td class="num small">${sec(r.seconds_per_meeting)}</td></tr>`; }).join("")}</table></div>
+  <h2 style="margin-top:22px">Every held-out equipment nickname in this test set, and what each matcher chose</h2>
+  <p class="small muted" style="margin-top:-6px">Green = right · amber = its parent asset (half credit) · red = wrong or none. Hover a chip for the full name.</p>
+  <div class="scroll tall">${gallery || `<p class="pad muted">No held-out nicknames in this set.</p>`}</div>`;
+});
+
+slide("Results", "GLiNER family", () => {
+  const n = nJobs(), V = ["gliner", "gliner_decide", "gliner_ft", "gliner_ft_all"].filter(e => LBROW(e, "classifier"));
+  const ft = D.finetune, rules = LBROW("rules", "classifier");
+  const M = [["Task F1", "f1"], ["Precision · returned jobs that were real", "precision"], ["Recall · real jobs found", "recall"], ["Dashboard-ready", "dashboard_ready"]];
+  const train = k => { const f = ft[k] || {}; return `<dl class="kv"><dt>Meetings</dt><dd>${f.meetings ?? (k === "gliner_ft" ? 12 : k === "gliner_ft_all" ? D.train_count : "–")}</dd><dt>Examples</dt><dd>${f.examples != null ? f.examples.toLocaleString() + " turns" : "–"}</dd>
+      <dt>Epochs</dt><dd>${f.epochs ?? (k === "gliner_ft" ? 5 : k === "gliner_ft_all" ? 1 : "–")}</dd><dt>Time</dt><dd>${f.seconds ? Math.round(f.seconds / 60) + " min on CPU" : "–"}</dd>
+      <dt>Eval loss</dt><dd>${(f.eval_loss || []).map(v => v.toFixed(1)).join(" → ") || "–"}</dd></dl>`; };
+  const f12 = ft.gliner_ft || {}, fall = ft.gliner_ft_all || {};
+  const ex12 = f12.examples != null ? f12.examples.toLocaleString() : "a very small number of";
+  const exAll = fall.examples != null ? fall.examples.toLocaleString() : "many more";
+  const mt12 = f12.meetings ?? 12, mtAll = fall.meetings ?? D.train_count;
+  const ratio = f12.examples && fall.examples ? `~${Math.round(fall.examples / f12.examples)}× more` : "substantially more";
+  const stepNote = fall.examples ? `${fall.examples.toLocaleString()} example turns (each job turn + sampled non-job turns), one epoch = 266 steps, eval every 90 steps, best checkpoint kept` : "one epoch, eval every 90 steps, best checkpoint kept";
+  return head("17 · Results", "GLiNER 2.5: zero-shot, Decide, and fine-tuned on 12 vs 112 meetings",
+    "Four local variants, all feeding the same trained text classifier for matching, so only extraction differs. Regex rules shown for reference.", scopeSet()) +
+    controls(setControl()) + `
+  <div class="card"><table class="t" data-table="GLiNER family:metrics"><tr><th>Metric</th>${V.map(e => `<th class="num">${esc(exInfo(e).name)}</th>`).join("")}<th class="num soft">Regex rules</th></tr>
+    ${M.map(([l, k]) => `<tr><td>${l}</td>${V.map(e => `<td class="num"><b>${pct(LBROW(e, "classifier")?.[k])}</b>${k === "dashboard_ready" ? pm(LBROW(e, "classifier")[k], n) : ""}</td>`).join("")}<td class="num soft">${pct(rules?.[k])}</td></tr>`).join("")}
+    <tr><td>Time per meeting (CPU)</td>${V.map(e => `<td class="num">${sec(LBROW(e, "classifier")?.seconds_per_meeting)}</td>`).join("")}<td class="num soft">${sec(rules?.seconds_per_meeting)}</td></tr></table></div>
+  <div class="grid g2" style="margin-top:16px"><div class="card"><h2>Fine-tune A · 12 meetings</h2>${train("gliner_ft")}</div><div class="card"><h2>Fine-tune B · 112 meetings</h2>${train("gliner_ft_all")}</div></div>
+  <div class="callout" style="margin-top:16px"><b>How much data is this?</b> Fine-tune A saw ${mt12} meetings (${ex12} example turns) — far too little to conclude anything about fine-tuning. Fine-tune B uses ${mtAll} training meetings from every writer (${exAll} example turns, ${ratio}); ${stepNote}. Both are CPU-only runs on 4 cores with no GPU and no hyper-parameter search, so treat these as a lower bound on what fine-tuning can do.</div>
+  <div class="row" style="margin-top:16px">${V.map(e => `<button class="btn" data-act="try" data-ex="${e}">See ${esc(exInfo(e).name)} →</button>`).join("")}</div>`;
+});
+
+slide("Results", "Cost & latency", () => {
+  const rows = LB(), n = SET().meetings.length;
+  const g = D.generation, gen = Object.entries(g).map(([w, v]) => `<tr><td>${esc(modelOf(w).name)} · ${esc(foundry(w))}</td><td class="num">${v.calls}</td>
+    <td class="num">${v.input_tokens.toLocaleString()} / ${v.output_tokens.toLocaleString()}</td><td class="num">${Math.round(v.seconds / 60)} min</td><td class="num"><b>${usd(v.cost)}</b></td></tr>`).join("");
+  // Real spend on this test set: every distinct extraction call + every matching call.
+  let exSpend = 0, noSpend = 0;
+  Object.entries(SET().extractions).forEach(([mid, exs]) => Object.values(exs).forEach(x => exSpend += x.cost || 0));
+  Object.entries(SET().pipelines).forEach(([mid, ps]) => Object.entries(ps).forEach(([k, p]) => { const x = SET().extractions[mid]?.[k.split("|")[0]]; noSpend += Math.max(0, (p.cost || 0) - (x?.cost || 0)); }));
+  const top = [...rows].filter(r => r.fam !== "mixed").sort((a, b) => b.dashboard_ready - a.dashboard_ready).slice(0, 14);
+  const maxS = Math.max(...top.map(r => r.seconds_per_meeting)), maxC = Math.max(...top.map(r => r.cost_per_meeting || 0));
+  return head("18 · Results", "What it cost and how long it took",
+    "One-off costs (writing the meetings) are separate from running costs (what a pipeline would cost per stand-up in production). Latency is split into extraction and matching.", scopeSet()) +
+    controls(setControl()) + `
+  <div class="grid g3" style="margin-bottom:16px">
+    <div class="card stat"><b>${usd(sum(Object.values(g).map(v => v.cost)))}</b><span>writing all ${D.meetings.length} meetings (one-off)</span></div>
+    <div class="card stat"><b>${usd(exSpend + noSpend)}</b><span>running every pipeline on this test set (${usd(exSpend)} extraction + ${usd(noSpend)} matching)</span></div>
+    <div class="card stat"><b>${usd(D.embedding_usage.cost)}</b><span>OpenAI embeddings · ${(D.embedding_usage.tokens || 0).toLocaleString()} tokens · ${D.embedding_usage.vectors} cached vectors</span></div></div>
+  <div class="grid g2"><div class="card"><h2>Top pipelines: cost and time per meeting</h2>
+    ${top.map(r => { const recs = testMeetings().map(m => SET().pipelines[m.id]?.[r.extractor + "|" + r.normaliser]).filter(Boolean);
+      const ms_ = sum(recs.map(x => x.match_seconds)) / Math.max(recs.length, 1), es = r.seconds_per_meeting - ms_;
+      return `<div style="margin-bottom:12px"><div class="small"><b>${esc(pipeText(r.extractor, r.normaliser))}</b> <span class="soft">· ${pct(r.dashboard_ready)}</span></div>
+      <div class="row" style="flex-wrap:nowrap;gap:8px"><div class="stack-bar" style="flex:1" title="extract ${sec(es)} · match ${sec(ms_)}"><i style="width:${100 * es / maxS}%;background:var(--cp-text-soft)"></i><i style="width:${100 * ms_ / maxS}%;background:var(--cp-accent)"></i></div><span class="num small" style="width:52px">${sec(r.seconds_per_meeting)}</span>
+      <div class="bar" style="width:90px"><i style="width:${100 * (r.cost_per_meeting || 0) / maxC}%;background:var(--cp-link)"></i></div><span class="num small" style="width:56px">${usd(r.cost_per_meeting)}</span></div></div>`; }).join("")}
+    <div class="legend"><span><i class="sw" style="background:var(--cp-text-soft)"></i>extract time</span><span><i class="sw" style="background:var(--cp-accent)"></i>match time</span><span><i class="sw" style="background:var(--cp-link)"></i>$ per meeting</span></div></div>
+    <div class="card"><h2>One-off: writing the synthetic meetings</h2><table class="t" data-table="Cost & latency:generation"><tr><th>Writer</th><th class="num">Calls</th><th class="num">Tokens in / out</th><th class="num">API time</th><th class="num">Cost</th></tr>${gen}</table>
+      <p class="small muted">GPT-6 Astra bills its hidden reasoning as output tokens, so it cost ~${g["gpt-6-astra"] && g["gpt-5.4"] ? Math.round((g["gpt-6-astra"].cost / g["gpt-6-astra"].calls) / (g["gpt-5.4"].cost / g["gpt-5.4"].calls)) : "?"}× more per meeting than GPT-5.4.</p>
+      <h2 style="margin-top:16px">Per stand-up in production</h2><p class="small muted" style="margin:0">A plant running one stand-up a day on the best-value pipeline would spend about <b>${usd((verdicts(rows)[1]?.[1]?.cost_per_meeting || 0) * 250)}</b> a year (250 working days).</p></div></div>`;
+});
+
+slide("Results", "Takeaways", () => {
+  const rows = LB(), n = nJobs(), v = verdicts(rows), best = v[0][1], value = v[1]?.[1], local = v.find(x => x[0].startsWith("Best with no"))?.[1];
+  const card = (t, body) => `<div class="card"><h2>${t}</h2><p class="muted" style="margin:0">${body}</p></div>`;
+  const nr = Object.fromEntries(SET().normalise.map(r => [r.normaliser, r]));
+  const llmHeld = D.models.map(m => nr["llm@" + m.id]?.["component@heldout"]).filter(x => x != null);
+  const llmHeldRange = llmHeld.length ? `${pct(Math.min(...llmHeld))}–${pct(Math.max(...llmHeld))}` : "not available in this export";
+  const twoWins = D.models.filter(m => { const a = LBROW("llm@" + m.id, "llm@" + m.id), b = LBROW("llm_direct@" + m.id, "passthrough"); return a && b && !a.errors && a.dashboard_ready > b.dashboard_ready; }).length;
+  const twoN = D.models.filter(m => { const a = LBROW("llm@" + m.id, "llm@" + m.id), b = LBROW("llm_direct@" + m.id, "passthrough"); return a && b && !a.errors; }).length;
+  return head("19 · Results", "What we learned", "", scopeSet()) + controls(setControl()) + `
+  <div class="grid g2">
+    ${card("Split the job in two", `Letting the LLM copy the words, then matching them from a shortlist, beat one call doing everything for <b>${twoWins} of ${twoN}</b> models that ran without failures. It is also easier to debug: you can see which step failed.`)}
+    ${card("Nicknames are the hard part", `On unseen equipment nicknames, LLM matchers get ${llmHeldRange}, the OpenAI embedding model ${pct(nr.embedding_oai?.["component@heldout"])}, MiniLM ${pct(nr.embedding?.["component@heldout"])}, fuzzy ${pct(nr.fuzzy?.["component@heldout"])}, exact lookup ${pct(nr.alias?.["component@heldout"])}. Growing the nickname list from human corrections is the cheapest improvement.`)}
+    ${card("Best result", `${esc(pipeText(best.extractor, best.normaliser))} reaches <b>${pct(best.dashboard_ready)}</b> ±${Math.round(100 * moe(best.dashboard_ready, n))} for ${usd(best.cost_per_meeting)} per meeting.${value ? ` Within 5 points and cheapest: ${esc(pipeText(value.extractor, value.normaliser))} at ${pct(value.dashboard_ready)} for ${usd(value.cost_per_meeting)}.` : ""}`)}
+    ${card("Local is a real baseline", local ? `${esc(pipeText(local.extractor, local.normaliser))} reaches ${pct(local.dashboard_ready)} at $0 in ${sec(local.seconds_per_meeting)}: a useful fallback and a floor any paid option must beat.` : "–")}
+  </div>
+  <div class="card" style="margin-top:16px"><h2>Caveats</h2><ul class="small muted" style="margin:0;padding-left:18px">
+    <li>${n} real jobs in this test set: differences smaller than the ± margin are ties.</li>
+    <li>Synthetic transcripts are cleaner than real ones; treat this as a ranking, not a forecast of production accuracy.</li>
+    <li>Fine-tuning was one CPU run per data size, with no tuning; GLiNER results are a lower bound.</li>
+    <li>Grok 4.6 timed out on many full transcripts even with a 600 s limit; its rows count failures as “found nothing”.</li></ul></div>`;
+});
+
+/* ======================================================================= render */
+function renderRail() {
+  let html = "", g = "";
+  SLIDES.forEach((s, i) => { if (s.group !== g) { g = s.group; html += `<h6>${g}</h6>`; }
+    html += `<a data-go="${i}" class="${i === S.i ? "on" : ""}"><span>${String(i + 1).padStart(2, "0")}</span>${s.title}</a>`; });
+  $("#rail").innerHTML = html;
+}
+function render(keepScroll) {
+  captureTableFocus();
+  const main = $("#main"), top = main.scrollTop;
+  try { main.innerHTML = `<section class="slide">${SLIDES[S.i].render()}</section>`; }
+  catch (e) { main.innerHTML = `<section class="slide"><p class="muted">This slide could not render: ${esc(e.message)}</p></section>`; console.error(e); }
+  main.scrollTop = keepScroll ? top : 0;
+  enhanceTables(main);
+  renderRail();
+  $("#counter").textContent = `${String(S.i + 1).padStart(2, "0")} / ${SLIDES.length}`;
+  $("#bar").style.transform = `scaleX(${(S.i + 1) / SLIDES.length})`;
+  $("#prev").disabled = S.i === 0; $("#next").disabled = S.i === SLIDES.length - 1;
+  history.replaceState(null, "", `#${S.i + 1}`);
+}
+function go(i) { S.i = Math.max(0, Math.min(SLIDES.length - 1, i)); render(); }
+const slideIndex = title => SLIDES.findIndex(s => s.title === title);
+
+async function load() {
+  const b64 = $("#payload").textContent.trim();
+  const bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+  return JSON.parse(await new Response(stream).text());
+}
+async function boot() {
+  try { D = await load(); } catch (e) { $("#main").innerHTML = `<section class="slide"><p>No data embedded (${esc(e.message)}). Run <code>standup-exp walkthrough</code>.</p></section>`; return; }
+  D.ontology.people.forEach(e => ENT[e.id] = { ...e, type: "person" });
+  D.ontology.sites.forEach(e => ENT[e.id] = { ...e, type: "site" });
+  D.ontology.assets.forEach(e => ENT[e.id] = { ...e, type: "asset" });
+  MEET = Object.fromEntries(D.meetings.map(m => [m.id, m]));
+  S.set = primarySet(); S.dataMeeting = SET().meetings[0].id; ensurePipe();
+  $("#gen").textContent = `data exported ${D.generated.replace("T", " ")}`;
+  $("#prev").onclick = () => go(S.i - 1); $("#next").onclick = () => go(S.i + 1);
+  $("#theme").onclick = () => { const h = document.documentElement; h.dataset.theme = h.dataset.theme === "dark" ? "light" : "dark"; };
+  document.addEventListener("keydown", e => {
+    if (["SELECT", "INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
+    if (e.key === "ArrowRight" || e.key === "PageDown") go(S.i + 1);
+    if (e.key === "ArrowLeft" || e.key === "PageUp") go(S.i - 1);
+  });
+  document.addEventListener("change", e => {
+    const a = e.target.dataset.act;
+    if (a === "set") { S.set = e.target.value; ensurePipe(); render(true); }
+    if (a === "pmeeting") { S.pipeMeeting = e.target.value; render(true); }
+    if (a === "dmeeting") { S.dataMeeting = e.target.value; render(true); }
+    if (a === "ex") { setEx(e.target.value); render(true); }
+    if (a === "no") { S.no = e.target.value; render(true); }
+  });
+  document.addEventListener("input", e => { if (e.target.id === "dsq") { S.dsQuery = e.target.value; const pos = e.target.selectionStart; render(true);
+    const el = $("#dsq"); if (el) { el.focus(); el.setSelectionRange(pos, pos); } } });
+  document.addEventListener("click", e => {
+    const el = e.target.closest("[data-go],[data-act]"); if (!el) return;
+    if (el.dataset.go) return go(+el.dataset.go);
+    const a = el.dataset.act;
+    if (a === "jobs") { S.onlyJobs = el.dataset.v === "1"; render(true); }
+    if (a === "fam") { S.fam = el.dataset.v; render(true); }
+    if (a === "recv") { S.recv = el.dataset.v; render(true); }
+    if (a === "dsset") { S.dsSet = el.dataset.v; render(true); }
+    if (a === "dssplit") { S.dsSplit = el.dataset.v; render(true); }
+    if (a === "openmeeting") { S.dataMeeting = el.dataset.id; go(slideIndex("Answer key")); }
+    if (a === "open") { setEx(el.dataset.ex); S.no = el.dataset.no; go(slideIndex("Score")); }
+    if (a === "try") { setEx(el.dataset.ex); go(slideIndex("Extract")); }
+  });
+  document.addEventListener("mouseover", e => {
+    const it = e.target.closest("[data-focus]"), tr = $("#transcript"); if (!tr) return;
+    tr.classList.toggle("focusing", !!it);
+    tr.querySelectorAll(".turn").forEach(t => t.classList.toggle("focus", !!it && t.dataset.gold.split(" ").includes(it.dataset.focus)));
+  });
+  document.addEventListener("click", e => {
+    const it = e.target.closest("[data-focus]"), tr = $("#transcript"); if (!it || !tr) return;
+    const first = [...tr.querySelectorAll(".turn")].find(t => t.dataset.gold.split(" ").includes(it.dataset.focus));
+    if (first) tr.scrollTo({ top: first.offsetTop - 80, behavior: "smooth" });
+  });
+  const tip = $("#tip");
+  document.addEventListener("mousemove", e => {
+    const p = e.target.closest("[data-tip]"); if (!p) { tip.style.display = "none"; return; }
+    tip.innerHTML = p.dataset.tip; tip.style.display = "block";
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - 340) + "px"; tip.style.top = (e.clientY + 14) + "px";
+  });
+  const h = parseInt(location.hash.slice(1), 10);
+  S.i = h >= 1 && h <= SLIDES.length ? h - 1 : 0;
+  render();
+}
+boot();
+</script>
+
+
+
+
+
+
+</body>
+</html>

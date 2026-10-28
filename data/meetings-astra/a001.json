@@ -1,0 +1,704 @@
+{
+ "id": "a001",
+ "date": "2026-09-28",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p02",
+  "p04",
+  "p12",
+  "p11",
+  "p10",
+  "p09"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a001-t1",
+   "summary": "Do the lock-out tag-out sign-off on the Fire Alarm Panel",
+   "spoken_action": "do the lock-out tag-out sign-off on the fire panel",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-29",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    14,
+    15,
+    16,
+    17,
+    52
+   ]
+  },
+  {
+   "id": "a001-t2",
+   "summary": "Write up the near miss at the Palletiser",
+   "spoken_action": "write up the near miss at the palletiser",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "palletiser",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-28",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    55,
+    56
+   ]
+  },
+  {
+   "id": "a001-t3",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    54
+   ]
+  },
+  {
+   "id": "a001-t4",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah Price",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-28",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    29,
+    31,
+    53
+   ]
+  },
+  {
+   "id": "a001-t5",
+   "summary": "Update the risk assessment for work on the Palletiser",
+   "spoken_action": "update the risk assessment for work on the Palletiser",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah Price",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "Palletiser",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    53
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p02",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "signed off the inspection on the relief valve on Tuesday",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "relief valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "signed off the inspection on the fire alarm panel on Tuesday",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire alarm panel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "already swapped the filter on the turbine one gas valve yesterday",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "turbine one gas valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p02",
+   "text_hint": "saw the pressure on the stretch wrapper dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p12",
+   "text_hint": "heard a slight rattle from the forklifts, nothing to action yet",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "forklifts",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "still waiting on parts for the GT1, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "GT1",
+    "text": "GT1",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.09,
+   "end": 6.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, all. Monday the twenty-eighth. Everyone on? Bit of an echo from somewhere."
+  },
+  {
+   "start": 8.21,
+   "end": 17.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's probably me. There, headset in. I was going to ask about weekend plans, then remembered it's Monday. Mine were a washout anyway, with that weather."
+  },
+  {
+   "start": 17.89,
+   "end": 21.74,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Same. Put the washing out, brought the washing in. Full itinerary."
+  },
+  {
+   "start": 22.68,
+   "end": 27.23,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Better entertainment than the football last night. Ninety minutes I'm not getting back."
+  },
+  {
+   "start": 29.24,
+   "end": 31.34,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "You say that every Monday, though."
+  },
+  {
+   "start": 32.51,
+   "end": 38.46,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, just connected. Traffic on the ring road was ridiculous. More time sitting there than actually driving."
+  },
+  {
+   "start": 38.98,
+   "end": 43.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "You're here now. Right, let's separate what's finished from what we're actually agreeing."
+  },
+  {
+   "start": 44.08,
+   "end": 51.43,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, I signed off the inspection on the relief valve on Tuesday. That's done, not something still on my list."
+  },
+  {
+   "start": 53.75,
+   "end": 54.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, closed item."
+  },
+  {
+   "start": 56.65,
+   "end": 62.95,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I signed off the inspection on the fire alarm panel on Tuesday. That one's finished as well."
+  },
+  {
+   "start": 64.84,
+   "end": 67.29,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, so the inspection isn't still outstanding?"
+  },
+  {
+   "start": 68.97,
+   "end": 71.77,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No, inspection signed off. Just clearing that up."
+  },
+  {
+   "start": 73.55,
+   "end": 80.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Also, we already swapped the filter on the turbine one gas valve yesterday. Don't carry that forward as another job."
+  },
+  {
+   "start": 81.19,
+   "end": 83.64,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, understood. Old line, not new work."
+  },
+  {
+   "start": 85.97,
+   "end": 94.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Olumide, can you do the lock-out tag-out sign-off on the fire panel tomorrow at 9:30? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 95.63,
+   "end": 101.58,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll do the lock-out tag-out sign-off on the fire panel tomorrow at 9:30. First priority, understood."
+  },
+  {
+   "start": 103.67,
+   "end": 110.32,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "So that stays at the top because of the production hold, rather than just sitting with the routine stuff?"
+  },
+  {
+   "start": 111.09,
+   "end": 114.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Needs doing first, and the sign-off is tomorrow at 9:30."
+  },
+  {
+   "start": 117.06,
+   "end": 125.46,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "While we're on plant status, I saw the pressure on the stretch wrapper dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 126.94,
+   "end": 129.04,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Came back without anyone touching it?"
+  },
+  {
+   "start": 130.27,
+   "end": 134.12,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah. Just an observation, I'm not putting a job against it."
+  },
+  {
+   "start": 135.86,
+   "end": 141.81,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Similar sort of thing from me: heard a slight rattle from the forklifts. Nothing to action yet."
+  },
+  {
+   "start": 142.68,
+   "end": 146.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, both observations. Neither's a new task out of this meeting."
+  },
+  {
+   "start": 147.24,
+   "end": 152.84,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And we're still waiting on parts for the GT1. Nothing we can do until they arrive."
+  },
+  {
+   "start": 154.63,
+   "end": 160.23,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, that's the blocker. Can't do much with an empty space where the parts should be."
+  },
+  {
+   "start": 161.21,
+   "end": 163.66,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. Blocked, not available work for today."
+  },
+  {
+   "start": 165.21,
+   "end": 168.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. What else have we got on the safety side?"
+  },
+  {
+   "start": 170.44,
+   "end": 178.49,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll run the monthly fire alarm test this afternoon. Not an emergency but don't let it slip — that's where I'd put it."
+  },
+  {
+   "start": 179.7,
+   "end": 183.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Hannah Price. Monthly fire alarm test with you this afternoon, then."
+  },
+  {
+   "start": 185.58,
+   "end": 189.43,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, I'll do it. Routine, but it isn't getting pushed out."
+  },
+  {
+   "start": 190.72,
+   "end": 194.92,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, talking over you — that's separate from the inspection you mentioned?"
+  },
+  {
+   "start": 195.55,
+   "end": 200.8,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, separate. Tuesday's inspection is finished; this is the monthly fire alarm test this afternoon."
+  },
+  {
+   "start": 201.56,
+   "end": 207.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah Price, can you also update the risk assessment for work on the Palletiser? Normal priority."
+  },
+  {
+   "start": 207.68,
+   "end": 212.93,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, I'll update the risk assessment for work on the Palletiser. Normal priority, that's fine."
+  },
+  {
+   "start": 213.97,
+   "end": 217.82,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Have you put a deadline against that, or just the priority?"
+  },
+  {
+   "start": 218.78,
+   "end": 221.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just normal priority. No deadline set for that one."
+  },
+  {
+   "start": 222.25,
+   "end": 225.4,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, got it. Separate entry from the alarm test."
+  },
+  {
+   "start": 227.03,
+   "end": 232.63,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And the near miss at the palletiser — that's a separate write-up as well, isn't it?"
+  },
+  {
+   "start": 234.34,
+   "end": 243.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes. We need someone to write up the near miss at the palletiser after lunch. It matters but it's not urgent. Anyone able to take that?"
+  },
+  {
+   "start": 245.21,
+   "end": 250.46,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Um, I'm not volunteering for that as well. My yes was for the risk assessment."
+  },
+  {
+   "start": 252.39,
+   "end": 257.99,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And I was only asking which bit of paperwork we meant. I'm not taking the write-up."
+  },
+  {
+   "start": 258.58,
+   "end": 260.68,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No taker, then. That's still unallocated."
+  },
+  {
+   "start": 263.15,
+   "end": 270.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, it needs doing after lunch, but nobody owns it. Let's be clear about that rather than pretend it's covered."
+  },
+  {
+   "start": 270.5,
+   "end": 274.35,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah. A quiet Teams call doesn't count as someone saying yes."
+  },
+  {
+   "start": 275.63,
+   "end": 281.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Quite. Davey, can you send the shift handover report round next Tuesday, if you've got a spare minute?"
+  },
+  {
+   "start": 282.82,
+   "end": 287.37,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, I'll send the shift handover report round next Tuesday. Spare-minute job, understood."
+  },
+  {
+   "start": 289.64,
+   "end": 293.14,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Next Tuesday for that one, not bundled into this afternoon?"
+  },
+  {
+   "start": 294.04,
+   "end": 300.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct, next Tuesday. If you've got a spare minute — not something to bump the priority work for."
+  },
+  {
+   "start": 302.27,
+   "end": 304.37,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Fine by me. I've got that."
+  },
+  {
+   "start": 305.41,
+   "end": 308.21,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "More useful reading than the match report, anyway."
+  },
+  {
+   "start": 308.91,
+   "end": 311.01,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Low bar, mate. Very low bar."
+  },
+  {
+   "start": 313.09,
+   "end": 316.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, quick read-back of what we've actually agreed, then we're done."
+  },
+  {
+   "start": 317.87,
+   "end": 324.87,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Mine's the lock-out tag-out sign-off on the fire panel, tomorrow at 9:30. Needs doing first because it's holding production up."
+  },
+  {
+   "start": 326.44,
+   "end": 338.34,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll run the monthly fire alarm test this afternoon — not an emergency, but no slipping it. And I'll update the risk assessment for work on the Palletiser at normal priority, no deadline set."
+  },
+  {
+   "start": 339.21,
+   "end": 344.46,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I'll send the shift handover report round next Tuesday, if I've got a spare minute."
+  },
+  {
+   "start": 345.7,
+   "end": 353.4,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And the near miss at the palletiser write-up is needed after lunch, matters but isn't urgent, and still has nobody against it."
+  },
+  {
+   "start": 354.98,
+   "end": 359.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes. That's an open need, not an accepted task for anyone here."
+  },
+  {
+   "start": 360.96,
+   "end": 364.46,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Nothing assigned out of the forklifts rattle either. Observation only."
+  },
+  {
+   "start": 366.34,
+   "end": 370.19,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And GT1 stays blocked on parts. No work agreed on that."
+  },
+  {
+   "start": 371.36,
+   "end": 374.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, that's clear. Thanks, everyone. We'll leave it there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

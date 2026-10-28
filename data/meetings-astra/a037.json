@@ -1,0 +1,803 @@
+{
+ "id": "a037",
+ "date": "2026-04-02",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p02",
+  "p09",
+  "p07",
+  "p03",
+  "p04",
+  "p11"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a037-t1",
+   "summary": "Go to Northfield Substation to pick up the replacement parts for the Line 3 Screw and Barrel",
+   "spoken_action": "go to Northfield Substation to pick up the replacement parts for the line 3 barrel",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield Substation",
+    "split": "name"
+   },
+   "due_date": "2026-04-02",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": "p04",
+   "evidence": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "id": "a037-t2",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-02",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "id": "a037-t3",
+   "summary": "Grease and check the bearings on the Air Compressor 1",
+   "spoken_action": "grease and check the bearings on the Air Compressor 1",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "Air Compressor 1",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-03",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "id": "a037-t4",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41
+   ]
+  },
+  {
+   "id": "a037-t5",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-02",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "no rush",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31
+   ]
+  },
+  {
+   "id": "a037-t6",
+   "summary": "Recalibrate the sensors on the Line 3 Chiller",
+   "spoken_action": "recalibrate the sensors on the chiller on three",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "chiller on three",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-07",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37
+   ]
+  },
+  {
+   "id": "a037-t7",
+   "summary": "Check the guarding on the Line 2 Safety Guard Interlock",
+   "spoken_action": "check the guarding on the Line 2 Safety Guard Interlock",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "Line 2 Safety Guard Interlock",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-03",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "top priority please",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    25
+   ]
+  },
+  {
+   "id": "a037-t8",
+   "summary": "Order spare parts for the Water Booster Pump",
+   "spoken_action": "order spare parts for the booster pump",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz Nowak",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52,
+    53,
+    54
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p02",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "tested the cooling tower yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "cooling tower",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "finished the repair on the line 2 robot last night",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "line 2 robot",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "saw the pressure on the trucks dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the trucks",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p03",
+   "text_hint": "saw the pressure on the stretch wrapper dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "can't get to the Fire Alarm Panel until production gives us a window",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "Fire Alarm Panel",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.46,
+   "end": 9.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Thursday the 2nd of April. Can you hear me all right? Teams reckons my microphone's somewhere else."
+  },
+  {
+   "start": 10.6,
+   "end": 18.65,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, you're there. I was just saying, weekend plans are looking a bit soggy. Supposed to be going walking, but that weather forecast..."
+  },
+  {
+   "start": 19.1,
+   "end": 22.95,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Perfect weather for looking at a hill through a pub window."
+  },
+  {
+   "start": 24.84,
+   "end": 32.19,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And we've got the charity bake sale on Friday. My contribution's already made. Whether it qualifies as cake is another matter."
+  },
+  {
+   "start": 33.43,
+   "end": 37.63,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "As long as we don't need a hardness test before cutting it."
+  },
+  {
+   "start": 38.09,
+   "end": 41.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a quality incident. What's already closed out?"
+  },
+  {
+   "start": 43.79,
+   "end": 50.09,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I tested the cooling tower yesterday and it's all fine now. That's finished, nothing outstanding from that test."
+  },
+  {
+   "start": 51.1,
+   "end": 53.9,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Lovely. One bit of kit behaving itself, then."
+  },
+  {
+   "start": 55.44,
+   "end": 61.04,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I finished the repair on the line 2 robot last night. That's done as well."
+  },
+  {
+   "start": 61.67,
+   "end": 65.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, both closed. Not rolling either of those into today's work."
+  },
+  {
+   "start": 67.39,
+   "end": 78.59,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Just an observation as well: saw the pressure on the trucks dip for a few minutes. It came back on its own. No repair request from me, just saying what I saw."
+  },
+  {
+   "start": 78.91,
+   "end": 81.01,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Observation, not a new job."
+  },
+  {
+   "start": 82.69,
+   "end": 95.64,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Similar sort of thing here, though I'm not saying it's connected. Saw the pressure on the stretch wrapper dip for a few minutes; it came back on its own. Nothing I'm proposing off the back of that."
+  },
+  {
+   "start": 96.14,
+   "end": 101.74,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, two dips doesn't automatically mean the same fault. Easy to join dots that aren't there."
+  },
+  {
+   "start": 103.3,
+   "end": 109.95,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Um, my blocker hasn't changed. I can't get to the Fire Alarm Panel until production gives us a window."
+  },
+  {
+   "start": 111.06,
+   "end": 115.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that stays blocked. We're not calling that a fresh commitment for today."
+  },
+  {
+   "start": 116.92,
+   "end": 127.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomasz Nowak, can you go to Northfield Substation to pick up the replacement parts for the line 3 barrel today at 2pm? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 128.6,
+   "end": 134.9,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, no, I can't commit to going off site at that time. Don't leave the collection with me."
+  },
+  {
+   "start": 137.15,
+   "end": 149.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, handing that to PR instead. Can you go to Northfield Substation to pick up the replacement parts for the line 3 barrel today at 2pm? Same thing: not an emergency but don't let it slip."
+  },
+  {
+   "start": 150.54,
+   "end": 156.14,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll take that. Northfield Substation today at 2pm, replacement parts for the line 3 barrel."
+  },
+  {
+   "start": 156.94,
+   "end": 161.14,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That's the collection only, isn't it? We're not bundling fitting into that?"
+  },
+  {
+   "start": 162.06,
+   "end": 166.96,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Correct, collection only. I'm not committing to fitting them as part of that run."
+  },
+  {
+   "start": 168.28,
+   "end": 175.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "PR, also, can you check the guarding on the Line 2 Safety Guard Interlock first thing tomorrow? Top priority please."
+  },
+  {
+   "start": 176.05,
+   "end": 182.7,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yes, I'll check the guarding on the Line 2 Safety Guard Interlock first thing tomorrow. That's my top priority."
+  },
+  {
+   "start": 184.66,
+   "end": 188.51,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Sorry, talking over you there—guarding check, rather than another robot repair?"
+  },
+  {
+   "start": 190.18,
+   "end": 196.13,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, the guarding on the Line 2 Safety Guard Interlock. Separate from the repair that's already finished."
+  },
+  {
+   "start": 197.89,
+   "end": 204.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah, can you send the shift handover report round at half two? It matters but it's not urgent."
+  },
+  {
+   "start": 204.74,
+   "end": 210.69,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, I'll send the shift handover report round at half two. Important, but not an urgent one."
+  },
+  {
+   "start": 213.08,
+   "end": 218.68,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And yes, I heard half two, not half twelve. My audio did a little wobble then."
+  },
+  {
+   "start": 219.94,
+   "end": 224.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Half two, that's right. For once it's Teams and not me mumbling."
+  },
+  {
+   "start": 224.46,
+   "end": 230.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona Doyle, can you sort the training records for the new starters by end of day? No rush."
+  },
+  {
+   "start": 231.46,
+   "end": 237.41,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yes, I'll sort the training records for the new starters by end of day. No rush, understood."
+  },
+  {
+   "start": 238.24,
+   "end": 242.09,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Full name. Sounds like you're being called into the head's office."
+  },
+  {
+   "start": 244.19,
+   "end": 247.34,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Only if you've seen the state of my handwriting."
+  },
+  {
+   "start": 249.17,
+   "end": 254.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Fi, can you recalibrate the sensors on the chiller on three next Tuesday? Normal priority."
+  },
+  {
+   "start": 255.85,
+   "end": 260.75,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I'll recalibrate the sensors on the chiller on three next Tuesday, normal priority."
+  },
+  {
+   "start": 262.25,
+   "end": 266.1,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, did that come through as recalibrate? Lost half a word."
+  },
+  {
+   "start": 266.52,
+   "end": 269.67,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Recalibrate, yeah. Not just looking at the displayed values."
+  },
+  {
+   "start": 270.34,
+   "end": 271.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Anything from process?"
+  },
+  {
+   "start": 272.39,
+   "end": 279.04,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah so, I'll organise the toolbox talk for the team on the 3rd. It matters but it's not urgent."
+  },
+  {
+   "start": 280.99,
+   "end": 285.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Aisha. Toolbox talk for the team on the 3rd, with you organising it."
+  },
+  {
+   "start": 286.2,
+   "end": 290.75,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "That's right, I'll organise it. Not trying to squeeze it into this stand-up."
+  },
+  {
+   "start": 293.0,
+   "end": 295.45,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Good, because my tea's already reaching ambient."
+  },
+  {
+   "start": 296.08,
+   "end": 298.53,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "There's your engineering unit for meeting duration."
+  },
+  {
+   "start": 300.38,
+   "end": 310.18,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "One thing still needing an owner: grease and check the bearings on the Air Compressor 1 tomorrow at 9:30. That's needing doing, not something that's already been done."
+  },
+  {
+   "start": 311.96,
+   "end": 315.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone able to take that bearing grease and check?"
+  },
+  {
+   "start": 315.95,
+   "end": 318.05,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I can't take it on. Sorry."
+  },
+  {
+   "start": 319.74,
+   "end": 324.29,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I'm flagging the gap, not volunteering. I can't commit to that slot either."
+  },
+  {
+   "start": 326.72,
+   "end": 334.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Grease and check the bearings on the Air Compressor 1, tomorrow at 9:30, remains unowned. No pretending we've covered it."
+  },
+  {
+   "start": 336.0,
+   "end": 340.2,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, nobody against that one. An open requirement, not an accepted job."
+  },
+  {
+   "start": 342.28,
+   "end": 351.03,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "What I can take is the ordering. I'll order spare parts for the booster pump—whenever you get a chance sort of priority, no fixed date."
+  },
+  {
+   "start": 351.42,
+   "end": 357.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Tomasz Nowak. Ordering spare parts for the booster pump is yours, whenever you get a chance."
+  },
+  {
+   "start": 358.2,
+   "end": 361.0,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, I'll do the ordering on that basis."
+  },
+  {
+   "start": 361.59,
+   "end": 364.39,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just spares, then, not a whole booster pump?"
+  },
+  {
+   "start": 364.87,
+   "end": 368.72,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Just spare parts for the booster pump. Not a pump replacement."
+  },
+  {
+   "start": 369.97,
+   "end": 376.27,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's clear. And the Fire Alarm Panel is still blocked, not quietly added to anyone else's list."
+  },
+  {
+   "start": 376.85,
+   "end": 379.65,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Exactly. Without that production window, there's no access."
+  },
+  {
+   "start": 381.01,
+   "end": 386.61,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And those pressure dips stay as observations. I don't want anyone thinking I raised another repair."
+  },
+  {
+   "start": 387.62,
+   "end": 392.87,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Same for the stretch wrapper. It recovered on its own; that's all I was reporting."
+  },
+  {
+   "start": 394.69,
+   "end": 399.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. We've kept the completed work, observations and the blocker separate from the agreed jobs."
+  },
+  {
+   "start": 402.06,
+   "end": 405.21,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Lovely. Back to watching the forecast get worse, then."
+  },
+  {
+   "start": 406.95,
+   "end": 410.1,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Still reckon the pub window's the technically sound option."
+  },
+  {
+   "start": 410.84,
+   "end": 414.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "On that expert advice, we'll leave it there. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

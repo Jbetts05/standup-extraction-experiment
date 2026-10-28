@@ -1,0 +1,745 @@
+{
+ "id": "a106",
+ "date": "2026-10-06",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p07",
+  "p04",
+  "p05",
+  "p10",
+  "p11",
+  "p09"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a106-t1",
+   "summary": "Schedule downtime for the Gas Turbine 2 with production",
+   "spoken_action": "schedule downtime for the turbine two with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tommo",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT2",
+    "text": "turbine two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-13",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "id": "a106-t2",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the counterbalances",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the counterbalances",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "top priority please",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    29,
+    30,
+    32,
+    49
+   ]
+  },
+  {
+   "id": "a106-t3",
+   "summary": "Order spare parts for the GT2 Inlet Water Injection Valve",
+   "spoken_action": "order spare parts for the little water valve on two",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Ash",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "the little water valve on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-12",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": "p10",
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "a106-t4",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    42,
+    43,
+    45
+   ]
+  },
+  {
+   "id": "a106-t5",
+   "summary": "Investigate the pressure drop on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "investigate the pressure drop on the line one HPU",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Doyler",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line one HPU",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-12",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    48,
+    49,
+    50,
+    51,
+    52
+   ]
+  },
+  {
+   "id": "a106-t6",
+   "summary": "Chase the purchase order for the Compressed Air Dryer",
+   "spoken_action": "chase the purchase order for the desiccant unit",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the desiccant unit",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    53,
+    54,
+    56,
+    57
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "tested the Atlas yesterday and it's all fine now",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "already swapped the filter on the Atlas yesterday",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "noticed the Water Booster Pump was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p07",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the 11kV board",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p01",
+   "text_hint": "the shutdown on the power pack on one is cancelled now, production need it running",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "the power pack on one",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.64,
+   "end": 9.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Tuesday the sixth. Can you all hear me over that fan?"
+  },
+  {
+   "start": 10.15,
+   "end": 15.4,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, just. Sorry I'm a bit flustered, traffic on the ring road was absolutely ridiculous."
+  },
+  {
+   "start": 16.44,
+   "end": 19.24,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "So, normal traffic on the ring road, then?"
+  },
+  {
+   "start": 20.68,
+   "end": 24.88,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Pretty much. Had ages to look at the same bloke's brake lights."
+  },
+  {
+   "start": 26.58,
+   "end": 30.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Well, there's a birthday cake in the office, if that improves things."
+  },
+  {
+   "start": 33.13,
+   "end": 36.28,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Depends. Proper cake or one of those healthy ones?"
+  },
+  {
+   "start": 37.84,
+   "end": 42.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Proper cake. Right, before this becomes the cake meeting—what's already closed out? Atlas?"
+  },
+  {
+   "start": 43.74,
+   "end": 47.94,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I already swapped the filter on the Atlas yesterday. That's done."
+  },
+  {
+   "start": 49.53,
+   "end": 53.38,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I tested the Atlas yesterday and it's all fine now."
+  },
+  {
+   "start": 54.35,
+   "end": 59.25,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, you both came through together a bit. Filter changed and tested, both finished?"
+  },
+  {
+   "start": 60.84,
+   "end": 63.64,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Both finished, yeah. Nothing outstanding from that test."
+  },
+  {
+   "start": 65.04,
+   "end": 67.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Closed, not another job for today."
+  },
+  {
+   "start": 69.87,
+   "end": 77.22,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Only an observation from me: noticed the Water Booster Pump was running a bit warm on nights, but it settled down."
+  },
+  {
+   "start": 77.73,
+   "end": 80.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Settled while it was still running, you mean?"
+  },
+  {
+   "start": 81.12,
+   "end": 85.67,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah. Not raising a job off it, just passing on what nights said."
+  },
+  {
+   "start": 87.56,
+   "end": 88.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, observation only."
+  },
+  {
+   "start": 90.4,
+   "end": 96.0,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Um, the supplier still hasn't confirmed the delivery for the 11kV board. Same blocker as before."
+  },
+  {
+   "start": 97.83,
+   "end": 101.33,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "So there's still no confirmed delivery to put against it?"
+  },
+  {
+   "start": 101.99,
+   "end": 107.24,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "No. Still blocked, no change. I'm not announcing a date or a new action there."
+  },
+  {
+   "start": 107.92,
+   "end": 113.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. And the shutdown on the power pack on one is cancelled now, production need it running."
+  },
+  {
+   "start": 115.73,
+   "end": 118.88,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, cancelled altogether, not just moved a few hours?"
+  },
+  {
+   "start": 120.57,
+   "end": 124.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cancelled. No shutdown work on that coming out of this meeting."
+  },
+  {
+   "start": 126.41,
+   "end": 127.61,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, clear."
+  },
+  {
+   "start": 128.94,
+   "end": 133.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tommo, can you schedule downtime for the turbine two with production, by next Tuesday?"
+  },
+  {
+   "start": 134.63,
+   "end": 141.63,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah—just to be clear, you want the downtime arranged by next Tuesday, not me assuming that's the actual outage day?"
+  },
+  {
+   "start": 142.37,
+   "end": 148.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Agree the downtime with production by next Tuesday. We're not fixing the outage day on this call."
+  },
+  {
+   "start": 149.29,
+   "end": 153.84,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, I'll schedule downtime for the turbine two with production by next Tuesday."
+  },
+  {
+   "start": 155.84,
+   "end": 161.09,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, better than us putting a slot in and calling it agreed when it isn't."
+  },
+  {
+   "start": 161.43,
+   "end": 165.98,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Quite. A coloured square isn't permission, much as we'd like it to be."
+  },
+  {
+   "start": 167.33,
+   "end": 171.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fi, can you do the pre-use checks on the counterbalances? Top priority please."
+  },
+  {
+   "start": 173.87,
+   "end": 178.42,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, I'll do the pre-use checks on the counterbalances. That's my top priority."
+  },
+  {
+   "start": 180.05,
+   "end": 184.95,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, pre-use being the important bit there. Not paperwork after they've already been used."
+  },
+  {
+   "start": 186.03,
+   "end": 187.78,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Absolutely. Checks before use, understood."
+  },
+  {
+   "start": 188.24,
+   "end": 194.54,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Next, spares. Can you order spare parts for the little water valve on two? Next week, no rush."
+  },
+  {
+   "start": 196.12,
+   "end": 202.77,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Me? Sorry, no, I can't take that one on. I haven't got the capacity for the ordering as well."
+  },
+  {
+   "start": 203.17,
+   "end": 210.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Ash, can you take that instead—order spare parts for the little water valve on two next week? No rush."
+  },
+  {
+   "start": 212.47,
+   "end": 218.77,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, I'll take it instead. I'll order spare parts for the little water valve on two next week."
+  },
+  {
+   "start": 219.24,
+   "end": 223.44,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Cheers. And that's not suddenly an urgent one because it's changed hands?"
+  },
+  {
+   "start": 225.79,
+   "end": 228.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, same as before. No rush, next week."
+  },
+  {
+   "start": 230.42,
+   "end": 232.17,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Fine by me. That's clear."
+  },
+  {
+   "start": 233.75,
+   "end": 241.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We've also got the shift handover report to send round. Whenever you get a chance sort of thing, not an urgent one."
+  },
+  {
+   "start": 243.25,
+   "end": 245.7,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll send the shift handover report round."
+  },
+  {
+   "start": 246.29,
+   "end": 248.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace. Whenever you get a chance."
+  },
+  {
+   "start": 249.98,
+   "end": 253.48,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, understood. Not putting it ahead of the priority checks."
+  },
+  {
+   "start": 254.07,
+   "end": 258.97,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, did you say the test report or the shift handover report? Audio clipped."
+  },
+  {
+   "start": 260.57,
+   "end": 264.77,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Shift handover report. The Atlas test is finished, that wasn't another action."
+  },
+  {
+   "start": 265.45,
+   "end": 270.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Doyler, can you investigate the pressure drop on the line one HPU by Monday?"
+  },
+  {
+   "start": 271.3,
+   "end": 276.9,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep. Fi for the checks, Doyler for the pressure drop. Sadly still only one of me."
+  },
+  {
+   "start": 278.69,
+   "end": 283.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I know, the budget won't stretch to a second one. Monday for that investigation."
+  },
+  {
+   "start": 284.08,
+   "end": 290.73,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Okay, I'll investigate the pressure drop on the line one HPU by Monday. The counterbalances checks stay top priority."
+  },
+  {
+   "start": 293.03,
+   "end": 296.88,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Investigation only at this point, yeah? Not agreeing a strip-down here?"
+  },
+  {
+   "start": 298.92,
+   "end": 303.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct, investigate the pressure drop. We're not adding a strip-down to it."
+  },
+  {
+   "start": 304.25,
+   "end": 306.0,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, that's what I've got."
+  },
+  {
+   "start": 307.15,
+   "end": 311.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Han, can you chase the purchase order for the desiccant unit by 11am?"
+  },
+  {
+   "start": 312.48,
+   "end": 316.68,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll chase the purchase order for the desiccant unit by 11am."
+  },
+  {
+   "start": 317.29,
+   "end": 322.54,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And that's separate from my supplier delivery blocker, just so we don't muddle the two?"
+  },
+  {
+   "start": 323.32,
+   "end": 329.27,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, separate. The 11kV board is still blocked; this is the purchase order for the desiccant unit."
+  },
+  {
+   "start": 330.14,
+   "end": 335.74,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Got it. Chase by 11am, not a promise that the order will be released by then."
+  },
+  {
+   "start": 336.96,
+   "end": 341.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. That's the six actions covered, and the cancelled shutdown stays cancelled."
+  },
+  {
+   "start": 343.31,
+   "end": 348.21,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That last bit came through beautifully. Teams apparently likes us more at the end."
+  },
+  {
+   "start": 349.04,
+   "end": 352.54,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Either that or the fan's finally stopped competing with you."
+  },
+  {
+   "start": 353.5,
+   "end": 357.0,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I heard cake perfectly at the start, to be fair."
+  },
+  {
+   "start": 359.26,
+   "end": 361.36,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Selective hearing. Very common engineering condition."
+  },
+  {
+   "start": 361.74,
+   "end": 365.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, on that highly technical note, thanks everyone. End there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

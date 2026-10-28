@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stand-up Extraction Experiment · Report</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+/* derived tokens: always mixed from --cp-* */
+:root, html[data-theme="dark"] {
+  --ok-soft: color-mix(in srgb, var(--cp-success) 16%, transparent);
+  --bad-soft: color-mix(in srgb, var(--cp-danger) 14%, transparent);
+  --warn-soft: color-mix(in srgb, var(--cp-warning) 18%, transparent);
+  --link-soft: color-mix(in srgb, var(--cp-link) 14%, transparent);
+  --card-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--cp-bg); color: var(--cp-text); font: 14px/1.5 "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+code, pre, .mono { font-family: Consolas, "Courier New", Courier, monospace; font-size: 12.5px; }
+a { color: var(--cp-link); cursor: pointer; text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 26px; line-height: 1.25; margin: 4px 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 17px; margin: 0 0 10px; }
+h3 { font-size: 14px; margin: 0 0 8px; }
+p { margin: 0 0 10px; }
+.muted { color: var(--cp-text-muted); } .soft { color: var(--cp-text-soft); } .small { font-size: 12.5px; } .tiny { font-size: 11.5px; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--cp-accent); }
+.lede { color: var(--cp-text-muted); font-size: 15px; max-width: 900px; }
+
+/* ---------- chrome */
+header.top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 16px; padding: 10px 24px;
+  background: var(--cp-bg-elevated); border-bottom: 1px solid var(--cp-border); flex-wrap: wrap; }
+.brand { font-weight: 700; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--cp-accent); display: inline-block; }
+nav.tabs { display: flex; gap: 2px; flex-wrap: wrap; }
+nav.tabs button { border: 0; background: transparent; color: var(--cp-text-muted); font: inherit; font-weight: 600; padding: 7px 12px; border-radius: 10px; cursor: pointer; }
+nav.tabs button:hover { background: var(--cp-surface-soft); color: var(--cp-text); }
+nav.tabs button.on { background: var(--cp-accent-soft); color: var(--cp-accent); }
+.spacer { flex: 1; }
+.scopebar { display: flex; align-items: center; gap: 8px; padding: 8px 24px; background: var(--cp-surface); border-bottom: 1px solid var(--cp-border); font-size: 12.5px; flex-wrap: wrap; }
+.scopebar b { color: var(--cp-text); }
+main { max-width: 1320px; margin: 0 auto; padding: 24px 24px 80px; }
+
+/* ---------- primitives */
+.btn { border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 10px; cursor: pointer; }
+.btn:hover { border-color: var(--cp-border-strong); }
+.btn.primary { background: var(--cp-accent); border-color: var(--cp-accent); color: var(--cp-accent-fg); }
+.btn.primary:hover { background: var(--cp-accent-hover); }
+.btn.small { padding: 3px 9px; font-size: 12px; }
+select, input[type=search], input[type=number] { font: inherit; font-size: 13px; padding: 5px 9px; border-radius: 10px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); }
+select { max-width: 100%; }
+.seg { display: inline-flex; border: 1px solid var(--cp-border); border-radius: 10px; overflow: hidden; background: var(--cp-surface); }
+.seg button { border: 0; background: transparent; color: var(--cp-text-muted); font: inherit; font-size: 12.5px; padding: 5px 11px; cursor: pointer; border-right: 1px solid var(--cp-border); }
+.seg button:last-child { border-right: 0; }
+.seg button.on { background: var(--cp-accent-soft); color: var(--cp-accent); font-weight: 600; }
+.row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } }
+.card { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; padding: 16px 18px; box-shadow: var(--card-shadow); }
+.card.tint { background: var(--cp-accent-soft); border-color: transparent; box-shadow: none; }
+.section { margin-top: 32px; }
+.section > .sh { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.section > .sh h2 { margin: 0; }
+.chip { display: inline-flex; align-items: center; gap: 4px; height: 21px; padding: 0 8px; border-radius: 999px; font-size: 11.5px; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); color: var(--cp-text-muted); white-space: nowrap; }
+.chip.ok { background: var(--ok-soft); border-color: transparent; color: var(--cp-text); }
+.chip.bad { background: var(--bad-soft); border-color: transparent; color: var(--cp-text); }
+.chip.warn { background: var(--warn-soft); border-color: transparent; color: var(--cp-text); }
+.chip.acc { background: var(--cp-accent-soft); border-color: transparent; color: var(--cp-accent); font-weight: 600; }
+.chip.link { background: var(--link-soft); border-color: transparent; color: var(--cp-text); }
+.chip.solid { background: var(--cp-text); color: var(--cp-surface); border-color: transparent; }
+.chip.held { border-style: dashed; border-color: var(--cp-accent); color: var(--cp-accent); background: transparent; }
+.callout { border: 1px solid var(--cp-border); background: var(--cp-accent-soft); padding: 10px 14px; border-radius: 10px; font-size: 13px; }
+.callout.warn { background: var(--warn-soft); }
+.scroll { overflow: auto; } .tall { max-height: 640px; }
+details.fold { border: 1px solid var(--cp-border); border-radius: 10px; background: var(--cp-surface); }
+details.fold > summary { cursor: pointer; padding: 9px 14px; font-size: 13px; }
+details.fold > .inner { padding: 0 14px 14px; }
+pre.prompt { white-space: pre-wrap; word-break: break-word; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 10px; padding: 12px; max-height: 360px; overflow: auto; margin: 0; }
+dl.kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; font-size: 13px; }
+dl.kv dt { color: var(--cp-text-soft); } dl.kv dd { margin: 0; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--cp-text-muted); margin-top: 8px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+
+/* ---------- tables */
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.t th { text-align: left; font-weight: 600; font-size: 11.5px; color: var(--cp-text-soft); text-transform: uppercase; letter-spacing: .04em; padding: 8px 10px; border-bottom: 1px solid var(--cp-border-strong); position: sticky; top: 0; background: var(--cp-surface); z-index: 1; white-space: nowrap; }
+table.t th[data-sort] { cursor: pointer; } table.t th[data-sort]:hover { color: var(--cp-text); }
+table.t th.sorted::after { content: " ▾"; } table.t th.sorted.asc::after { content: " ▴"; }
+table.t td { padding: 8px 10px; border-bottom: 1px solid var(--cp-border); vertical-align: top; }
+table.t tr.click { cursor: pointer; } table.t tr.click:hover td { background: var(--cp-surface-soft); }
+table.t tr.hl td { background: var(--cp-highlight); }
+table.t.compact td { padding: 5px 8px; }
+
+/* ---------- statistics visuals */
+.ci { color: var(--cp-text-soft); font-size: 11.5px; white-space: nowrap; }
+.forest { position: relative; height: 22px; min-width: 120px; }
+.forest .track { position: absolute; left: 0; right: 0; top: 10px; height: 2px; background: var(--cp-border); }
+.forest .whisk { position: absolute; top: 6px; height: 10px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; }
+.forest .whisk::after { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 2px; background: currentColor; }
+.forest .dot { position: absolute; top: 5px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: currentColor; border: 2px solid var(--cp-surface); }
+.forest .tick { position: absolute; top: 0; bottom: 0; border-left: 1px dashed var(--cp-text-soft); }
+.forest .tick.bar { border-left: 2px solid var(--cp-warning); }
+.grp { font-size: 11.5px; font-weight: 600; display: inline-block; max-width: 128px; padding: 2px 8px; border-radius: 10px; border: 1px solid currentColor; background: var(--cp-surface); line-height: 1.35; }
+.grp.top { color: var(--cp-accent); } .grp.above { color: var(--cp-success); } .grp.same { color: var(--cp-text-soft); } .grp.below { color: var(--cp-danger); } .grp.base { color: var(--cp-text); }
+.outcome { display: flex; height: 14px; border-radius: 4px; overflow: hidden; min-width: 160px; background: var(--cp-surface-soft); }
+.outcome i { display: block; height: 100%; }
+.heat { text-align: center; font-variant-numeric: tabular-nums; border-radius: 6px; padding: 4px 2px; font-size: 12.5px; }
+svg.chart { display: block; width: 100%; height: auto; }
+svg.chart .gridl line { stroke: var(--cp-border); }
+svg.chart text { fill: var(--cp-text-soft); font-size: 11px; }
+svg.chart .pt { cursor: pointer; }
+svg.chart .pt:hover { stroke: var(--cp-text); stroke-width: 2; }
+
+/* ---------- summary */
+.decision { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 1000px) { .decision { grid-template-columns: 1fr; } }
+.big { font-size: 34px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.kpi .lbl { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--cp-text-soft); }
+.kpi .pipe-name { font-weight: 600; margin: 6px 0 8px; min-height: 40px; }
+ul.ev { margin: 0; padding-left: 18px; } ul.ev li { margin-bottom: 8px; }
+
+/* ---------- explorer */
+.xsplit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 16px; align-items: start; }
+@media (max-width: 1100px) { .xsplit { grid-template-columns: 1fr; } }
+.sticky { position: sticky; top: 118px; }
+.transcript { position: relative; max-height: calc(100vh - 170px); overflow: auto; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); }
+.turn { display: grid; grid-template-columns: 44px 1fr; gap: 8px; padding: 7px 12px; border-bottom: 1px solid var(--cp-border); font-size: 13px; }
+.turn .ts { color: var(--cp-text-soft); font-size: 11px; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.turn .who { font-weight: 600; font-size: 12.5px; }
+.turn .who small { font-weight: 400; color: var(--cp-text-soft); margin-left: 6px; }
+.turn.gold { background: var(--ok-soft); }
+.turn.decoy { background: var(--warn-soft); }
+.turn.focus { outline: 2px solid var(--cp-accent); outline-offset: -2px; background: var(--cp-highlight); }
+.turn.dim { opacity: .45; }
+.tid { display: inline-block; font-size: 11px; font-weight: 700; padding: 0 6px; border-radius: 6px; background: var(--cp-text); color: var(--cp-surface); }
+.tid.x { background: var(--cp-link); }
+.tid.fp { background: var(--cp-danger); }
+.job { border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); margin-bottom: 12px; box-shadow: var(--card-shadow); cursor: pointer; }
+.job.focus { border-color: var(--cp-accent); box-shadow: 0 0 0 2px var(--cp-accent-soft); }
+.job .jh { display: flex; align-items: center; gap: 8px; padding: 10px 14px 6px; flex-wrap: wrap; }
+.job .js { padding: 0 14px 8px; }
+.job table.f { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.job table.f th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--cp-text-soft); font-weight: 600; padding: 4px 14px; border-top: 1px solid var(--cp-border); }
+.job table.f td { padding: 5px 14px; border-top: 1px solid var(--cp-border); vertical-align: top; }
+.job table.f td:first-child { color: var(--cp-text-soft); width: 90px; }
+.said { color: var(--cp-text-soft); font-size: 12px; }
+.said q { color: var(--cp-text-muted); font-style: italic; }
+.v-ok { color: var(--cp-success); font-weight: 700; } .v-bad { color: var(--cp-danger); font-weight: 700; }
+blockquote { margin: 6px 0 0; padding: 4px 10px; border-left: 1px solid var(--cp-border-strong); color: var(--cp-text-muted); font-size: 12.5px; }
+.cands { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 4px; }
+.cands .chip { height: 18px; font-size: 10.5px; padding: 0 6px; }
+.cands .chip.pick { background: var(--cp-text); color: var(--cp-surface); }
+.cands .chip.gold { outline: 2px solid var(--cp-success); }
+/* ---------- transcript drawer */
+.scrim { position: fixed; inset: 0; background: color-mix(in srgb, var(--cp-text) 28%, transparent); opacity: 0; pointer-events: none; transition: opacity .18s; z-index: 40; }
+.scrim.open { opacity: 1; pointer-events: auto; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(640px, 94vw); background: var(--cp-bg-elevated); border-left: 1px solid var(--cp-border); box-shadow: var(--cp-shadow);
+  transform: translateX(100%); transition: transform .22s ease; z-index: 41; display: flex; flex-direction: column; }
+.drawer.open { transform: none; }
+.drawer .dh { padding: 14px 18px 10px; border-bottom: 1px solid var(--cp-border); background: var(--cp-surface); }
+.drawer .db { flex: 1; overflow: auto; position: relative; }
+.drawer .df { padding: 10px 18px; border-top: 1px solid var(--cp-border); background: var(--cp-surface); display: flex; gap: 8px; align-items: center; }
+.drawer .jobchips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.drawer .jobchips button { border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); font: inherit; font-size: 12px; border-radius: 10px; padding: 3px 8px; cursor: pointer; max-width: 100%; text-align: left; }
+.drawer .jobchips button.on { border-color: var(--cp-accent); background: var(--cp-accent-soft); }
+@media (prefers-reduced-motion: reduce) { .drawer, .scrim { transition: none; } }
+ul.tree, ul.tree ul { list-style: none; margin: 0; padding-left: 16px; } ul.tree { padding-left: 0; }
+ul.tree li { margin: 3px 0; font-size: 12.5px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><i></i>Stand-up Extraction Experiment</div>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="spacer"></div>
+  <span class="soft tiny" id="gen"></span>
+  <button class="btn small" id="theme" title="Toggle light / dark">◐</button>
+</header>
+<div class="scopebar" id="scopebar"></div>
+<main id="main"><p class="muted">Loading data…</p></main>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true"></aside>
+<script id="payload" type="application/octet-stream">__DATA_GZ_B64__</script>
+<script>
+/* ============================================================== helpers */
+let D = null;
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pct = v => v == null || isNaN(v) ? "–" : Math.round(v * 100) + "%";
+const pts = v => v == null || isNaN(v) ? "–" : (v > 0 ? "+" : v < 0 ? "−" : "±") + Math.abs(Math.round(v * 100)) + " pts";
+const usd = v => v == null ? "–" : v === 0 ? "$0" : v < 0.01 ? "$" + v.toFixed(4) : v < 1 ? "$" + v.toFixed(3) : "$" + v.toFixed(2);
+const sec = v => v == null ? "–" : v < 10 ? v.toFixed(1) + " s" : Math.round(v) + " s";
+const sum = a => a.reduce((x, y) => x + (y || 0), 0);
+const fmtDate = iso => iso ? new Date(iso + "T00:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) : null;
+const tnum = gid => "T" + gid.split("-t").pop();
+const FIELDS = [["owner", "Owner"], ["component", "Equipment"], ["site", "Site"], ["due_date", "Due date"], ["priority", "Priority"], ["category", "Category"]];
+const ENT = {};
+const nm = id => id == null ? null : ENT[id]?.name || id;
+
+/* ===================================================== naming catalogue */
+const MODEL = {
+  "gpt-5.4": { name: "GPT-5.4", vendor: "OpenAI", res: "Foundry resource A" },
+  "gpt-6-astra": { name: "GPT-6 Astra", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-6-sol": { name: "GPT-6 Sol", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-6-luna": { name: "GPT-6 Luna", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-5.6-sol": { name: "GPT-5.6 Sol", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-5.6-terra": { name: "GPT-5.6 Terra", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-5.6-luna": { name: "GPT-5.6 Luna", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-5.4-mini": { name: "GPT-5.4 mini", vendor: "OpenAI", res: "Foundry resource B" },
+  "gpt-5.2": { name: "GPT-5.2", vendor: "OpenAI", res: "Foundry resource B" },
+  "grok-4.6": { name: "Grok 4.6", vendor: "xAI", res: "Foundry resource B" },
+  "mistral-large-3": { name: "Mistral Large 3", vendor: "Mistral", res: "Foundry resource B" },
+};
+const modelOf = m => MODEL[m] || { name: m, vendor: "", res: "" };
+const LOCAL_EX = {
+  rules: { name: "Regex rules (no model)", detail: "hand-written Python patterns", how: "Hand-written Python patterns for commitments, requests, hand-overs, equipment nouns, deadlines and urgency." },
+  gliner: { name: "gliner2.5-base-v1 (zero-shot)", detail: "fastino/gliner2.5-base-v1, as downloaded", how: "Classifies each turn, then tags equipment, person, deadline, site and urgency spans." },
+  gliner_decide: { name: "GLiNER2.5-Decide (zero-shot)", detail: "fastino/GLiNER2.5-Decide, 340M, as downloaded", how: "Same pipeline as gliner2.5-base-v1 with the classification-specialist checkpoint." },
+  gliner_ft: { name: "gliner2.5-base-v1 fine-tuned (12 mtgs)", detail: "fine-tuned on 12 training meetings", how: "Turn classifier and span tagger fine-tuned on 12 training meetings." },
+  gliner_ft_all: { name: "gliner2.5-base-v1 fine-tuned (112 mtgs)", detail: "fine-tuned on all 112 training meetings", how: "Same recipe on all 112 training meetings." },
+};
+const LOCAL_NO = {
+  alias: { name: "Exact alias lookup (no model)", detail: "official names + known nicknames", how: "Links a mention only if it is, or contains, a known name or nickname." },
+  fuzzy: { name: "rapidfuzz WRatio string match", detail: "character similarity, no model", how: "rapidfuzz character similarity against every known name." },
+  embedding: { name: "all-MiniLM-L6-v2 similarity", detail: "sentence-transformers, 22M params", how: "Nearest known name by meaning (sentence-transformers/all-MiniLM-L6-v2, local)." },
+  embedding_oai: { name: "text-embedding-3-large similarity", detail: "OpenAI, 3072 dims", how: "Nearest known name by meaning (OpenAI text-embedding-3-large, Foundry)." },
+  classifier: { name: "TF-IDF + logistic regression", detail: "scikit-learn, trained on the 112 training meetings", how: "scikit-learn TF-IDF + logistic regression trained on known names and the training meetings." },
+  gliner: { name: "gliner2.5-base-v1 picks from shortlist", detail: "shortlist: rapidfuzz + text-embedding-3-large", how: "rapidfuzz + text-embedding-3-large shortlist; gliner2.5-base-v1 chooses one." },
+  gliner_decide: { name: "GLiNER2.5-Decide picks from shortlist", detail: "shortlist: rapidfuzz + text-embedding-3-large", how: "Same shortlist; GLiNER2.5-Decide chooses one." },
+  passthrough: { name: "IDs from the same call", detail: "", how: "The one-call LLM already returned IDs." },
+};
+const isLLM = k => k.startsWith("llm@") || k.startsWith("llm_direct@");
+const exName = ex => LOCAL_EX[ex]?.name || (ex.startsWith("llm_direct@") ? `${modelOf(ex.split("@")[1]).name} (one call)` : modelOf(ex.split("@")[1]).name);
+const noName = no => LOCAL_NO[no]?.name || `${modelOf(no.split("@")[1]).name} picks from shortlist`;
+const exWhere = ex => isLLM(ex) ? `Foundry · ${modelOf(ex.split("@")[1]).res}` : `Local CPU · ${LOCAL_EX[ex]?.detail || ""}`;
+const noWhere = no => no.startsWith("llm@") ? `Foundry · ${modelOf(no.split("@")[1]).res} · shortlist: rapidfuzz + text-embedding-3-large`
+  : no === "embedding_oai" ? `Foundry · Foundry resource B · ${LOCAL_NO[no].detail}` : no === "passthrough" ? "—" : `Local CPU · ${LOCAL_NO[no]?.detail || ""}`;
+const pName = k => { const [ex, no] = k.split("|"); return no === "passthrough" ? exName(ex) : `${exName(ex)} → ${noName(no)}`; };
+function family(k) {
+  const [ex, no] = k.split("|");
+  if (ex.startsWith("llm_direct")) return "one";
+  const a = ex.startsWith("llm@"), b = no.startsWith("llm@");
+  return a && b ? "two" : !a && !b ? "local" : "mixed";
+}
+const FAM = {
+  local: { label: "No LLM", c: "var(--cp-success)" },
+  two: { label: "LLM extracts, LLM matches", c: "var(--cp-accent)" },
+  one: { label: "LLM does both in one call", c: "var(--cp-link)" },
+  mixed: { label: "Mixed local + LLM", c: "var(--cp-warning)" },
+};
+const short = w => w.split(" · ").slice(0, 2).join(" · ");
+const pipeCell = k => { const [ex, no] = k.split("|");
+  return `<div style="min-width:240px" title="${esc(`extract: ${exWhere(ex)}${no !== "passthrough" ? `\nmatch: ${noWhere(no)}` : ""}`)}"><div><b>${esc(pName(k))}</b></div>
+    <div class="tiny soft">extract: ${esc(short(exWhere(ex)))}${no !== "passthrough" ? ` · match: ${esc(short(noWhere(no)))}` : ""}</div></div>`; };
+const GROUPS = {
+  top: { label: "Close to #1", tip: "Can't be separated from the top-scoring pipeline: the paired 95% interval of the gap includes 0. This does NOT prove it is as good; it may just be noisier." },
+  above: { label: "Behind #1, beats regex", tip: "Clearly behind the top-scoring pipeline, and clearly better than the no-LLM regex baseline" },
+  same: { label: "No better than regex", tip: "Clearly behind the top-scoring pipeline, and can't be separated from the no-LLM regex baseline" },
+  below: { label: "Worse than regex", tip: "Clearly worse than the no-LLM regex baseline" },
+  base: { label: "The baseline", tip: "The reference every Δ is measured against: Regex rules → TF-IDF + logistic regression, the best no-LLM, $0 pipeline" },
+};
+
+/* ============================================================== state */
+const S = { tab: "summary", scope: null, bar: 0.8, margin: 0.05, fam: "all", sort: { k: "dr", asc: false },
+  A: null, B: null, cmp: "ready", mid: null, pipe: null, dsWriter: "all", dsSplit: "test", dsQ: "", onlyJobs: false, focus: null };
+const TABS = [["summary", "Summary"], ["results", "Results"], ["compare", "Compare"], ["explore", "Data explorer"], ["method", "Method"], ["appendix", "Appendix"]];
+
+/* ============================================ scope + statistics engine
+   Unit of resampling = meeting (jobs inside a meeting are not independent).
+   Every pipeline is resampled on the same meetings, so differences are paired. */
+const B_REPS = 2000;
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const quant = (s, q) => { const i = (s.length - 1) * q, lo = Math.floor(i); return s[lo] + (s[Math.ceil(i)] - s[lo]) * (i - lo); };
+const ci = arr => { const s = Float64Array.from(arr).sort(); return { lo: quant(s, 0.025), hi: quant(s, 0.975) }; };
+const SETS = () => Object.keys(D.sets);
+const setLabel = s => D.sets[s]?.label || `${modelOf(D.meetings.find(m => m.set === s)?.writer).name}-written`;
+const CACHE = {};
+const SC = () => CACHE[S.scope + "|" + S.margin] ||= buildScope(S.scope);
+
+function buildScope(scope) {
+  const sets = scope === "pooled" ? SETS() : [scope];
+  const units = sets.flatMap(s => D.sets[s].meetings.map(m => ({ s, m, n: m.gold.length })));
+  const keySets = sets.map(s => new Set(D.sets[s].leaderboard.map(r => r.extractor + "|" + r.normaliser)));
+  const keys = [...keySets[0]].filter(k => keySets.every(ks => ks.has(k)));
+  const gold = sum(units.map(u => u.n));
+  // stratified (by test set) meeting bootstrap, shared by every pipeline
+  const r = rng(20260925), idx = [];
+  const bySet = sets.map(s => units.map((u, i) => u.s === s ? i : -1).filter(i => i >= 0));
+  for (let b = 0; b < B_REPS; b++) idx.push(bySet.flatMap(ix => ix.map(() => ix[Math.floor(r() * ix.length)])));
+  const goldRep = idx.map(ix => sum(ix.map(i => units[i].n)));
+  const P = {};
+  keys.forEach(k => {
+    const [ex] = k.split("|");
+    const per = units.map(u => {
+      const rec = D.sets[u.s].pipelines[u.m.id]?.[k], x = D.sets[u.s].extractions[u.m.id]?.[ex];
+      const f = Object.fromEntries(FIELDS.map(([fk]) => [fk, 0])); let one = 0, many = 0;
+      (rec?.pairs || []).forEach(q => { const w = FIELDS.filter(([fk]) => q.scores[fk] !== 1).length; FIELDS.forEach(([fk]) => f[fk] += q.scores[fk] === 1 ? 1 : 0); if (w === 1) one++; else if (w > 1) many++; });
+      return { ready: rec?.ready || 0, tp: rec?.pairs.length || 0, ret: rec ? rec.preds.length : x?.tasks.length || 0, f, one, many, failed: !!(rec?.failed || x?.error) };
+    });
+    const lbs = sets.map(s => D.sets[s].leaderboard.find(r => r.extractor + "|" + r.normaliser === k));
+    const wMeet = sets.map(s => D.sets[s].meetings.length);
+    const wavg = key => lbs.some(l => l[key] == null) ? null : sum(lbs.map((l, i) => l[key] * wMeet[i])) / sum(wMeet);
+    const ready = sum(per.map(p => p.ready)), tp = sum(per.map(p => p.tp)), ret = sum(per.map(p => p.ret));
+    const prec = ret ? tp / ret : 0, rec = gold ? tp / gold : 0;
+    const reps = new Float64Array(B_REPS);
+    idx.forEach((ix, b) => { let s = 0; ix.forEach(i => s += per[i].ready); reps[b] = s / goldRep[b]; });
+    P[k] = { k, fam: family(k), per, ready, gold, tp, ret, dr: ready / gold, prec, rec, f1: prec + rec ? 2 * prec * rec / (prec + rec) : 0,
+      fields: Object.fromEntries(FIELDS.map(([fk]) => [fk, sum(per.map(p => p.f[fk]))])), one: sum(per.map(p => p.one)), many: sum(per.map(p => p.many)),
+      cost: wavg("cost_per_meeting"), secs: wavg("seconds_per_meeting"), errors: sum(lbs.map(l => l.errors || 0)), reps, ci: ci(reps) };
+  });
+  const list = Object.values(P);
+  const best = [...list].sort((a, b) => b.dr - a.dr || (a.cost ?? 9) - (b.cost ?? 9))[0];
+  const base = P["rules|classifier"] || [...list].filter(p => p.fam === "local").sort((a, b) => b.dr - a.dr)[0] || best;
+  const diff = (a, b) => ci(a.reps.map((v, i) => v - b.reps[i]));
+  list.forEach(p => {
+    p.vsBase = { d: p.dr - base.dr, ...diff(p, base) };
+    p.vsBest = { d: best.dr - p.dr, ...diff(best, p) };
+    p.group = p === base ? "base" : p === best || p.vsBest.lo <= 0 ? "top" : p.vsBase.lo > 0 ? "above" : p.vsBase.hi < 0 ? "below" : "same";
+  });
+  const topGroup = list.filter(p => p.group === "top" || (p === base && p.vsBest.lo <= 0));
+  // Recommendation = highest score. Cost is shown as an explicit trade-off (the frontier), never auto-optimised:
+  // at these prices, "cheapest within N points" buys fractions of a cent with real accuracy.
+  const rec = best;
+  let top = -1;
+  const frontier = [...list].filter(p => p.cost != null).sort((a, b) => a.cost - b.cost || b.dr - a.dr)
+    .filter(p => p.dr > top ? (top = p.dr, true) : false).filter(p => p.dr >= base.dr).sort((a, b) => b.dr - a.dr);
+  const alt = [...list].filter(p => p !== best && p.cost != null && p.cost < best.cost && p.dr >= best.dr - 0.05 - 1e-9).sort((a, b) => a.cost - b.cost)[0];
+  const local = [...list].filter(p => p.fam === "local").sort((a, b) => b.dr - a.dr)[0];
+  // matching-only results, weighted across sets by mention counts
+  const nmap = {};
+  sets.forEach(s => D.sets[s].normalise.forEach(r => { const o = nmap[r.normaliser] ||= { normaliser: r.normaliser, cost: 0, secs: 0, m: 0 };
+    Object.keys(r).forEach(key => { if (key.startsWith("n_")) { const mk = key.slice(2), n = r[key] || 0; o["n_" + mk] = (o["n_" + mk] || 0) + n; o["s_" + mk] = (o["s_" + mk] || 0) + (r[mk] ?? 0) * n; } });
+    o.cost += (r.cost_per_meeting || 0) * r.meetings; o.secs += (r.seconds_per_meeting || 0) * r.meetings; o.m += r.meetings; }));
+  const norm = Object.values(nmap).map(o => { const g = mk => o["n_" + mk] ? o["s_" + mk] / o["n_" + mk] : null;
+    return { ...o, g, cost: o.cost / o.m, secs: o.secs / o.m }; });
+  return { sets, units, gold, keys, P, list, best, base, rec, local, alt, frontier, topGroup, diff, norm, meetings: units.length };
+}
+const fGroup = p => `<span class="grp ${p.group}" title="${esc(GROUPS[p.group].tip)}">${GROUPS[p.group].label}</span>`;
+const ciTxt = c => `<span class="ci">${pct(c.lo)}–${pct(c.hi)}</span>`;
+const dTxt = d => `<b>${pts(d.d)}</b> <span class="ci">${pts(d.lo)} to ${pts(d.hi)}</span>`;
+function forest(p, sc) {
+  const lo = Math.max(0, Math.floor((Math.min(...sc.list.map(q => q.ci.lo), sc.base.dr) - 0.03) * 10) / 10), hi = Math.min(1, Math.ceil((Math.max(...sc.list.map(q => q.ci.hi), S.bar) + 0.03) * 10) / 10);
+  const L = v => `${Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100))}%`, col = p.group === "top" ? "var(--cp-accent)" : p.group === "below" ? "var(--cp-danger)" : "var(--cp-text-muted)";
+  return `<div class="forest" style="color:${col}" title="${esc(`${pct(p.dr)} (95% interval ${pct(p.ci.lo)}–${pct(p.ci.hi)})`)}"><div class="track"></div>
+    <div class="tick" style="left:${L(sc.base.dr)}" title="baseline"></div><div class="tick bar" style="left:${L(S.bar)}" title="ship bar"></div>
+    <div class="whisk" style="left:${L(p.ci.lo)};width:calc(${L(p.ci.hi)} - ${L(p.ci.lo)})"></div><div class="dot" style="left:${L(p.dr)}"></div></div>`;
+}
+</script>
+<script>
+/* ============================================================== SUMMARY */
+function kpi(label, p, sc, note = "") {
+  return `<div class="card kpi"><div class="lbl">${label}</div><div class="pipe-name">${esc(pName(p.k))}</div>
+    <div class="row" style="gap:8px;align-items:baseline"><span class="big">${pct(p.dr)}</span>${ciTxt(p.ci)}</div>
+    <div class="small muted" style="margin-top:4px">${p === sc.base ? "reference" : `${pts(p.vsBase.d)} vs baseline`} · ${usd(p.cost)} · ${sec(p.secs)} per meeting</div>
+    ${note ? `<div class="tiny soft" style="margin-top:6px">${note}</div>` : ""}</div>`;
+}
+// A failed extraction call is shared by every pipeline built on it, so count distinct calls, not pipeline rows.
+function failures(sc) {
+  const keys = new Set(sc.keys), exs = new Set(sc.keys.map(k => k.split("|")[0]));
+  let ex = 0, match = 0; const models = new Set(), msgs = new Set();
+  sc.units.forEach(u => { const S_ = D.sets[u.s];
+    Object.entries(S_.extractions[u.m.id] || {}).forEach(([e, x]) => { if (x.error && exs.has(e)) { ex++; models.add(e.split("@")[1] || e); msgs.add(x.error); } });
+    Object.entries(S_.pipelines[u.m.id] || {}).forEach(([k, r]) => { const [e, n] = k.split("|");
+      if (keys.has(k) && r.failed && !S_.extractions[u.m.id]?.[e]?.error) { match++; models.add(n.split("@")[1] || n); } }); });
+  const affected = sum(sc.list.map(p => p.errors));
+  const why = [...msgs].some(m => /no recorded reply|timed out/i.test(m)) ? "no reply came back (the call hit its time limit or lost the connection), so nothing was recorded. A re-run with a 30-minute limit failed on the same meetings again" : [...msgs][0] || "";
+  return { calls: ex + match, ex, match, affected, models: [...models].map(m => modelOf(m).name), why };
+}
+function worstField(p) {
+  const lost = FIELDS.map(([fk, l]) => [l, p.tp - p.fields[fk]]).sort((a, b) => b[1] - a[1]);
+  return { missed: p.gold - p.tp, lost };
+}
+function renderSummary() {
+  const sc = SC(), { best, base, rec, local, list } = sc;
+  const meets = list.filter(p => p.ci.lo >= S.bar), maybe = list.filter(p => p.dr >= S.bar && p.ci.lo < S.bar);
+  const barMsg = meets.length ? `<b>${meets.length}</b> pipeline${meets.length > 1 ? "s confidently clear" : " confidently clears"} the ${pct(S.bar)} bar.`
+    : maybe.length ? `No pipeline confidently clears ${pct(S.bar)}; ${maybe.length} reach it on the point estimate only.`
+    : `<b>No pipeline reaches ${pct(S.bar)}.</b> The best is ${pct(best.dr)} (95% interval up to ${pct(best.ci.hi)}), so a human review step is still needed.`;
+  const wf = worstField(rec);
+  const twoOne = D.models.map(m => [m.id, sc.P[`llm@${m.id}|llm@${m.id}`], sc.P[`llm_direct@${m.id}|passthrough`]]).filter(x => x[1] && x[2])
+    .map(([m, a, b]) => ({ m, d: { d: a.dr - b.dr, ...sc.diff(a, b) } }));
+  const tw = twoOne.filter(x => x.d.lo > 0).length, ow = twoOne.filter(x => x.d.hi < 0).length;
+  const heldBest = [...sc.norm].filter(n => n.g("component@heldout") != null).sort((a, b) => b.g("component@heldout") - a.g("component@heldout"))[0];
+  const alias = sc.norm.find(n => n.normaliser === "alias");
+  const setLbl = sc.sets.map(s => D.sets[s].label).join(" + ");
+  const missingSets = [...new Set(D.meetings.map(m => m.set))].filter(s => !D.sets[s]);
+  return `<div class="eyebrow">Experiment summary</div>
+  <h1>Which pipeline turns a stand-up transcript into dashboard-ready jobs?</h1>
+  <p class="lede">People say <q>Dave, can you swap the filter on the cold unit by Thursday?</q>. The dashboard needs an owner ID, an equipment ID, a due date, a priority and a category.
+    Each pipeline has to <b>extract</b> the jobs and <b>match</b> everyday words to official IDs. It is scored on how many real jobs come out with all six fields right: <b>dashboard-ready</b>.</p>
+  <div class="decision section" style="margin-top:18px">
+    <div class="card"><div class="eyebrow">Recommendation</div>
+      <h2 style="font-size:21px;margin:8px 0 6px">${esc(pName(rec.k))}</h2>
+      <p class="muted">It has the <b>highest dashboard-ready score</b> of ${list.length} pipelines. Running it costs <b>${usd(rec.cost)}</b> and ${sec(rec.secs)} per meeting, about <b>${usd((rec.cost || 0) * 250)}</b> a year for one stand-up a day.
+        At that price, cost is not a reason to accept fewer correct jobs. Cheaper options are listed below as trade-offs, not picked for you.</p>
+      <div class="row" style="gap:18px;margin:10px 0 12px"><div><div class="big">${pct(rec.dr)}</div><div class="tiny soft">dashboard-ready</div></div>
+        <div><div class="small">${ciTxt(rec.ci)}</div><div class="tiny soft">95% interval</div></div>
+        <div><div class="small"><b>${pts(rec.vsBase.d)}</b></div><div class="tiny soft">vs no-LLM baseline</div></div></div>
+      <div class="callout ${meets.length ? "" : "warn"}"><div class="row" style="gap:8px"><span>Ship bar</span>
+              <input type="number" id="bar" min="10" max="100" step="5" value="${Math.round(S.bar * 100)}" style="width:70px"><span>% dashboard-ready ·</span> <span>${barMsg}</span></div>
+        <div class="tiny soft" style="margin-top:4px">The bar is an assumption to argue about, not a finding. Set it to what the business would accept without human review.</div></div>
+      <div class="row" style="margin-top:14px"><button class="btn primary" data-go="results">See the scorecard</button>
+        <button class="btn" data-cmp="${rec.k}" data-cmpb="${base.k}">Compare with baseline</button>
+        <button class="btn" data-go="explore">Open the meetings</button></div></div>
+    <div class="card"><h2>What the evidence supports</h2><ul class="ev small">
+      <li><b>Many gaps can't be resolved yet.</b> With ${sc.gold} jobs in ${sc.meetings} meetings, ${sc.topGroup.length} of ${list.length} pipelines can't be separated from the best. That does not make them equal: some are consistently a few points behind, others are just noisier.</li>
+      ${twoOne.length ? `<li><b>Two steps vs one call:</b> ${tw || ow ? `extracting the words and then matching beats one call that does both for ${tw} of ${twoOne.length} models and loses for ${ow}; the rest are ties.` : `for all ${twoOne.length} models compared, extracting then matching and doing both in one call are statistically tied on this data.`}</li>` : ""}
+      ${heldBest && alias ? `<li><b>Nicknames nobody has seen are the hard part.</b> Given the correct words, the best matcher (${esc(noName(heldBest.normaliser))}) gets ${pct(heldBest.g("component@heldout"))} of unseen equipment nicknames, while exact lookup gets ${pct(alias.g("component@heldout"))}.</li>` : ""}
+      <li><b>Where the recommended pipeline loses jobs:</b> ${wf.missed ? `${wf.missed} missed completely; of the rest, ` : "it finds every real job; "}most errors are ${wf.lost.filter(x => x[1]).slice(0, 2).map(([l, n]) => `${l.toLowerCase()} (${n} wrong)`).join(" and ") || "none"}. <a data-go="results">See all fields</a></li>
+      ${local ? `<li><b>A $0 local option exists:</b> ${esc(pName(local.k))} reaches ${pct(local.dr)} in ${sec(local.secs)}. Any paid pipeline has to beat that.</li>` : ""}</ul>
+      <h2 style="margin-top:16px">Caveats</h2><ul class="ev small muted">
+      <li>Scope: <b>${esc(setLbl)}</b> test set${sc.sets.length > 1 ? "s" : ""}, ${sc.meetings} meetings, ${sc.gold} real jobs, ${list.length} pipelines.</li>
+      ${missingSets.length ? `<li class="v-bad" style="font-weight:400">This export has no scored results for the ${missingSets.map(s => `<b>${esc(setLabel(s))}</b>`).join(", ")} set. The writer-bias check (does the model that wrote a transcript score better on it?) can't be run yet.</li>` : ""}
+      <li>Synthetic transcripts are cleaner than real ones. Read this as a ranking, not a forecast of production accuracy.</li>
+      ${(f => f.calls ? `<li><b>${f.calls} model calls failed</b> (${f.ex} extraction, ${f.match} matching), all ${esc(f.models.join(", "))}: ${esc(f.why)}. Because one failed extraction is shared by every pipeline built on it, this touches ${f.affected} pipeline-meeting results, each scored as “found nothing”.</li>` : "")(failures(sc))}</ul></div>
+  </div>
+  <div class="section"><div class="sh"><h2>Headline pipelines</h2><span class="soft small">95% intervals from a meeting-level bootstrap</span></div>
+    <div class="grid g4">${kpi("Recommended", rec, sc, "Highest score")}${sc.alt ? kpi("Cheaper alternative", sc.alt, sc, `Cheapest within 5 pts: gives up ${pts(-sc.alt.vsBest.d)} to save ${usd((best.cost - sc.alt.cost) * 250)} a year`) : ""}
+    ${local ? kpi("Best with no LLM", local, sc, "Runs on a laptop CPU") : ""}${kpi("Baseline", base, sc, "Every other change is measured against this")}</div></div>
+  <div class="section"><div class="sh"><h2>If cost matters: what each cheaper option gives up</h2><span class="soft small">the cost–quality frontier: every pipeline here is the best available at or below its price · one stand-up a day, 250 days</span></div>
+    <div class="card" style="padding:0"><table class="t"><tr><th>Pipeline</th><th class="num">Dashboard-ready</th><th class="num">vs recommended (paired 95%)</th><th class="num">$ / meeting</th><th class="num">$ / year</th><th class="num">Saves / year</th><th class="num">Jobs lost / year*</th></tr>
+      ${sc.frontier.map(p => { const lost = (best.dr - p.dr) * (sc.gold / sc.meetings) * 250;
+        return `<tr class="${p === rec ? "hl" : ""}"><td>${pipeCell(p.k)}${p === rec ? `<div class="tiny soft">recommended</div>` : ""}</td><td class="num"><b>${pct(p.dr)}</b> ${ciTxt(p.ci)}</td>
+        <td class="num">${p === rec ? "—" : `${pts(-p.vsBest.d)} <span class="ci">${pts(-p.vsBest.hi)} to ${pts(-p.vsBest.lo)}</span>`}</td><td class="num">${usd(p.cost)}</td><td class="num">${usd(p.cost * 250)}</td>
+        <td class="num">${p === rec ? "—" : usd((best.cost - p.cost) * 250)}</td><td class="num">${p === rec ? "—" : Math.round(lost)}</td></tr>`; }).join("")}</table></div>
+    <p class="tiny soft" style="margin-top:6px">* extra jobs a year that would need a human fix, at the observed ${(sc.gold / sc.meetings).toFixed(1)} real jobs per meeting.</p></div>`;
+}
+
+/* ============================================================== RESULTS */
+function famSeg() {
+  return `<div class="seg">${[["all", "All"], ...Object.entries(FAM).map(([k, v]) => [k, v.label])].map(([k, l]) => `<button data-fam="${k}" class="${S.fam === k ? "on" : ""}">${esc(l)}</button>`).join("")}</div>`;
+}
+const SORTS = { dr: p => p.dr, d: p => p.vsBase.d, f1: p => p.f1, prec: p => p.prec, rec: p => p.rec, cost: p => p.cost ?? 1e9, secs: p => p.secs ?? 1e9, name: p => pName(p.k) };
+function sorted(list) { const f = SORTS[S.sort.k]; return [...list].sort((a, b) => { const x = f(a), y = f(b); return (x < y ? -1 : x > y ? 1 : 0) * (S.sort.asc ? 1 : -1); }); }
+const th = (k, l, cls = "") => `<th data-sort="${k}" class="${cls} ${S.sort.k === k ? "sorted" + (S.sort.asc ? " asc" : "") : ""}">${l}</th>`;
+function renderResults() {
+  const sc = SC(), rows = sorted(sc.list.filter(p => S.fam === "all" || p.fam === S.fam));
+  const score = `<div class="scroll" style="max-height:620px"><table class="t"><tr><th title="Two paired comparisons: against the best pipeline and against the baseline">Verdict</th>${th("name", "Pipeline")}<th style="width:16%">Dashboard-ready · 95% interval</th>${th("dr", "Est.", "num")}
+      ${th("d", `Δ vs baseline<div class="tiny soft" style="text-transform:none;letter-spacing:0;font-weight:400;white-space:normal;max-width:170px;margin-left:auto">${esc(pName(sc.base.k))}</div>`, "num")}${th("f1", "Job F1", "num")}${th("prec", "Precision", "num")}${th("rec", "Recall", "num")}${th("cost", "$ / mtg", "num")}${th("secs", "s / mtg", "num")}<th></th></tr>
+    ${rows.map(p => `<tr class="${p === sc.rec ? "hl" : ""}"><td>${fGroup(p)}${p === sc.rec ? `<div class="tiny soft">recommended</div>` : ""}</td><td>${pipeCell(p.k)}${p.errors ? `<span class="chip bad" style="margin-top:3px" title="The model call timed out on these meetings; they are scored as found nothing">failed on ${p.errors} of ${sc.meetings} meetings</span>` : ""}</td>
+      <td>${forest(p, sc)}</td><td class="num"><b>${pct(p.dr)}</b><div>${ciTxt(p.ci)}</div></td><td class="num">${p === sc.base ? `<span class="soft">—</span>` : dTxt(p.vsBase)}</td>
+      <td class="num">${pct(p.f1)}</td><td class="num">${pct(p.prec)}</td><td class="num">${pct(p.rec)}</td><td class="num">${usd(p.cost)}</td><td class="num">${sec(p.secs)}</td>
+      <td><button class="btn small" data-cmp="${p.k}" data-cmpb="${(p === sc.best ? sc.base : sc.best).k}" title="Compare job by job">Compare</button></td></tr>`).join("")}</table></div>
+    <div class="legend"><span><i style="background:var(--cp-accent)"></i>close to #1</span><span><i style="background:var(--cp-text-muted)"></i>other</span>
+      <span><i style="background:transparent;border-left:1px dashed var(--cp-text-soft);border-radius:0"></i>baseline</span><span><i style="background:var(--cp-warning);width:3px"></i>ship bar (${pct(S.bar)})</span></div>`;
+  return `<div class="eyebrow">Results · scorecard</div><h1>Every pipeline, measured against a baseline</h1>
+  <p class="lede">Primary metric: <b>dashboard-ready</b>, the share of real jobs found with all six fields right. Baseline: <b>${esc(pName(sc.base.k))}</b>, the best no-LLM option at $0.
+    The <b>Verdict</b> column combines two paired comparisons: against the best pipeline and against the baseline. <span class="grp top">Close to #1</span> means the data can't tell it apart from the top-scoring pipeline, not that it has been shown to be as good. "Regex" in a verdict always means the baseline above. The recommendation is simply the highest score; cheaper options are shown as trade-offs on the Summary.</p>
+  <div class="row" style="margin:14px 0">${famSeg()}<span class="soft small">${rows.length} of ${sc.list.length} pipelines · ${sc.gold} jobs · ${sc.meetings} meetings · click a column to sort</span></div>
+  ${score}
+  <div class="section"><div class="sh"><h2>Quality against cost</h2><span class="soft small">up = better, left = cheaper · whiskers = 95% interval · filled = close to #1 · click a dot to compare it with the best</span></div>
+    <div class="card">${frontierSVG(sc, rows)}<div class="legend">${Object.values(FAM).map(f => `<span><i style="background:${f.c};border-radius:50%"></i>${f.label}</span>`).join("")}</div></div></div>
+  <div class="section"><div class="sh"><h2>Where jobs are lost</h2><span class="soft small">outcome of every real job · field columns = % correct among jobs that were found</span></div>${diagTable(sc, rows)}</div>
+  <div class="section"><div class="sh"><h2>Matching on its own: known vs unseen nicknames</h2><span class="soft small">each matcher gets the correct words from the answer key, so extraction errors are excluded</span></div>${nickTable(sc)}</div>
+  <div class="section"><div class="sh"><h2>Robustness: does the transcript writer matter?</h2></div>${writerCheck()}</div>`;
+}
+function frontierSVG(sc, rows) {
+  const W = 900, H = 380, pad = { l: 52, r: 18, t: 14, b: 40 }, pts_ = rows.filter(p => p.cost != null);
+  const pos = pts_.filter(p => p.cost > 0).map(p => p.cost), lx = Math.log10;
+  const x0 = lx(pos.length ? Math.min(...pos) / 2 : 0.001), x1 = lx(pos.length ? Math.max(...pos) * 2 : 1), lane = pad.l + 22;
+  const X = c => c === 0 ? lane : pad.l + 56 + (lx(c) - x0) / (x1 - x0) * (W - pad.l - 56 - pad.r);
+  const ymin = Math.max(0, Math.floor((Math.min(...rows.map(p => p.ci.lo)) - 0.05) * 10) / 10), ymax = Math.min(1, Math.ceil((Math.max(...rows.map(p => p.ci.hi), S.bar) + 0.02) * 10) / 10);
+  const Y = v => pad.t + (1 - (v - ymin) / (ymax - ymin)) * (H - pad.t - pad.b);
+  const placed = [], POS = {};
+  [...pts_].sort((a, b) => a.cost - b.cost || b.dr - a.dr).forEach(p => { let x = X(p.cost); const y = Y(p.dr);
+    while (placed.some(q => Math.hypot(q[0] - x, q[1] - y) < 11)) x += 11; placed.push([x, y]); POS[p.k] = x; });
+  const XP = p => POS[p.k];
+  const yt = []; for (let v = ymin; v <= ymax + 1e-9; v += 0.1) yt.push(v);
+  const xt = [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1].filter(c => lx(c) >= x0 && lx(c) <= x1);
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}"><g class="gridl">${yt.map(v => `<line x1="${pad.l}" x2="${W - pad.r}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${pad.l - 8}" y="${Y(v) + 4}" text-anchor="end">${Math.round(v * 100)}%</text>`).join("")}
+    ${xt.map(c => `<line x1="${X(c)}" x2="${X(c)}" y1="${pad.t}" y2="${H - pad.b}"/><text x="${X(c)}" y="${H - pad.b + 16}" text-anchor="middle">$${c}</text>`).join("")}</g>
+    <text x="${lane}" y="${H - pad.b + 16}" text-anchor="middle">$0</text>
+    <line x1="${pad.l}" x2="${W - pad.r}" y1="${Y(sc.base.dr)}" y2="${Y(sc.base.dr)}" stroke="var(--cp-text-soft)" stroke-dasharray="4 4"/><text x="${W - pad.r}" y="${Y(sc.base.dr) - 5}" text-anchor="end">baseline</text>
+    ${S.bar >= ymin && S.bar <= ymax ? `<line x1="${pad.l}" x2="${W - pad.r}" y1="${Y(S.bar)}" y2="${Y(S.bar)}" stroke="var(--cp-warning)" stroke-width="2"/><text x="${W - pad.r}" y="${Y(S.bar) - 5}" text-anchor="end">ship bar ${pct(S.bar)}</text>` : ""}
+    ${pts_.map(p => `<line x1="${XP(p)}" x2="${XP(p)}" y1="${Y(p.ci.hi)}" y2="${Y(p.ci.lo)}" stroke="${FAM[p.fam].c}" stroke-opacity=".5" stroke-width="1.5" pointer-events="none"/>`).join("")}
+    ${[...pts_].sort((a, b) => (a.group === "top") - (b.group === "top")).map(p => { const x = XP(p), c = FAM[p.fam].c, top = p.group === "top";
+      return `<circle class="pt" cx="${x}" cy="${Y(p.dr)}" r="${top ? 6.5 : 5}" fill="${top ? c : "var(--cp-surface)"}" stroke="${c}" stroke-width="2" data-cmp="${p.k}" data-cmpb="${(p === sc.best ? sc.base : sc.best).k}">
+      <title>${esc(`${pName(p.k)}\n${pct(p.dr)} (${pct(p.ci.lo)}–${pct(p.ci.hi)}) · ${usd(p.cost)}/meeting · ${sec(p.secs)} · ${GROUPS[p.group].label}`)}</title></circle>`; }).join("")}
+    <text x="${W / 2}" y="${H - 6}" text-anchor="middle">cost per meeting (log scale)</text><text transform="translate(12 ${H / 2}) rotate(-90)" text-anchor="middle">dashboard-ready</text></svg>`;
+}
+const heat = v => v == null ? `<div class="heat soft">–</div>` : `<div class="heat" style="background:color-mix(in srgb, color-mix(in srgb, var(--cp-success) ${Math.round(Math.max(0, (v - 0.5) * 2) * 100)}%, var(--cp-danger)) ${Math.round(Math.abs(v - 0.75) * 60 + 12)}%, transparent)">${pct(v)}</div>`;
+function diagTable(sc, rows) {
+  const O = [["ready", "all six right", "var(--cp-success)"], ["one", "one field wrong", "var(--cp-warning)"], ["many", "2+ fields wrong", "var(--cp-danger)"], ["missed", "missed", "var(--cp-border-strong)"]];
+  return `<div class="scroll" style="max-height:560px"><table class="t compact"><tr><th>Pipeline</th><th style="width:22%">Outcome of each real job</th><th class="num">Found</th>${FIELDS.map(([, l]) => `<th class="num">${l}</th>`).join("")}<th class="num" title="returned jobs that were not real jobs, per meeting">Not real / mtg</th></tr>
+    ${[...rows].sort((a, b) => b.dr - a.dr).map(p => { const o = { ready: p.ready, one: p.one, many: p.many, missed: p.gold - p.tp };
+      return `<tr><td>${pipeCell(p.k)}</td><td><div class="outcome" title="${esc(O.map(([k, l]) => `${l}: ${o[k]}`).join(" · "))}">${O.map(([k, , c]) => `<i style="width:${100 * o[k] / p.gold}%;background:${c}"></i>`).join("")}</div>
+        <div class="tiny soft" style="margin-top:3px">${o.ready} ready · ${o.one} one wrong · ${o.many} 2+ wrong · ${o.missed} missed</div></td>
+        <td>${heat(p.rec)}</td>${FIELDS.map(([fk]) => `<td>${heat(p.tp ? p.fields[fk] / p.tp : null)}</td>`).join("")}<td class="num">${((p.ret - p.tp) / sc.meetings).toFixed(1)}</td></tr>`; }).join("")}</table></div>
+    <div class="legend">${O.map(([, l, c]) => `<span><i style="background:${c}"></i>${l}</span>`).join("")}</div>`;
+}
+function nickTable(sc) {
+  const C = [["component@known", "Equip. known"], ["component@heldout", "Equip. unseen"], ["owner@known", "Person known"], ["owner@heldout", "Person unseen"], ["site@known", "Site known"], ["site@heldout", "Site unseen"], ["category", "Category"], ["priority", "Priority"]];
+  const rows = [...sc.norm].sort((a, b) => (b.g("component@heldout") ?? 0) - (a.g("component@heldout") ?? 0));
+  const n = sc.norm[0] || { };
+  return `<div class="scroll"><table class="t compact"><tr><th>Matcher</th>${C.map(([k, l]) => `<th class="num">${l}<div class="tiny soft" style="text-transform:none">n=${n["n_" + k] ?? "–"}</div></th>`).join("")}<th class="num">$ / mtg</th></tr>
+    ${rows.map(r => `<tr><td><b>${esc(noName(r.normaliser))}</b><div class="tiny soft">${esc(noWhere(r.normaliser))}</div></td>${C.map(([k]) => `<td>${heat(r.g(k))}</td>`).join("")}<td class="num">${usd(r.cost)}</td></tr>`).join("")}</table></div>
+    <p class="small muted" style="margin-top:8px">Unseen = nicknames kept out of every prompt, vocabulary and training set, which appear only in test meetings. With few unseen mentions per column, treat gaps under ~20 points as noise.</p>`;
+}
+function writerCheck() {
+  const ss = SETS();
+  if (ss.length < 2) {
+    const all = [...new Set(D.meetings.map(m => m.set))];
+    return `<div class="callout warn">Only the <b>${esc(D.sets[ss[0]].label)}</b> test set is scored in this export (${all.length} writer sets exist in the data).
+      The comparison that would show whether a model scores better on transcripts it wrote itself needs both sets. Re-run the other set and rebuild; this panel then shows each pipeline's score on both sets side by side, with the paired difference.</div>`;
+  }
+  const [a, b] = ss, A = CACHE[a] ||= buildScope(a), Bs = CACHE[b] ||= buildScope(b);
+  const keys = A.keys.filter(k => Bs.P[k]);
+  return `<div class="scroll tall"><table class="t compact"><tr><th>Pipeline</th><th class="num">${esc(D.sets[a].label)}</th><th class="num">${esc(D.sets[b].label)}</th><th class="num">Gap</th></tr>
+    ${keys.sort((x, y) => Bs.P[y].dr - Bs.P[x].dr).map(k => `<tr><td>${pipeCell(k)}</td><td class="num">${pct(A.P[k].dr)} ${ciTxt(A.P[k].ci)}</td><td class="num">${pct(Bs.P[k].dr)} ${ciTxt(Bs.P[k].ci)}</td><td class="num">${pts(Bs.P[k].dr - A.P[k].dr)}</td></tr>`).join("")}</table></div>`;
+}
+</script>
+<script>
+/* ============================================================== shared job helpers */
+const GOLDV = (g, fk) => fk === "owner" || fk === "component" || fk === "site" ? g[fk].id : g[fk];
+function showV(fk, v) {
+  if (v == null || v === "") return `<span class="soft">none</span>`;
+  if (fk === "owner" || fk === "component" || fk === "site") return `${esc(nm(v))} <code class="soft">${esc(v)}</code>`;
+  if (fk === "due_date") return esc(fmtDate(v));
+  if (fk === "priority") return "P" + esc(v);
+  return esc(v);
+}
+function outcome(s, m, k, g) {
+  const rec = D.sets[s]?.pipelines[m.id]?.[k]; if (!rec) return null;
+  const pair = rec.pairs.find(q => q.gold === g.id);
+  if (!pair) return { status: "missed", rec };
+  const ex = k.split("|")[0];
+  return { status: pair.scores.all_fields === 1 ? "ready" : "partial", pair, pred: rec.preds[pair.pred], task: D.sets[s].extractions[m.id]?.[ex]?.tasks[pair.pred], rec };
+}
+const STATUS = { ready: ["ok", "✓ dashboard-ready"], partial: ["warn", "found, field wrong"], missed: ["bad", "✗ missed"] };
+const stChip = o => o ? `<span class="chip ${STATUS[o.status][0]}">${STATUS[o.status][1]}</span>` : `<span class="chip">not run</span>`;
+const mtag = (id, extra = "") => `<a data-open="${id}" class="mono" title="Open this meeting in the data explorer"${extra}>${esc(id)}</a>`;
+
+/* ============================================================== COMPARE */
+function renderCompare() {
+  const sc = SC(), ord = [...sc.list].sort((a, b) => b.dr - a.dr);
+  if (!sc.P[S.A]) S.A = sc.rec.k; if (!sc.P[S.B] || S.B === S.A) S.B = (S.A === sc.base.k ? sc.best : sc.base).k;
+  const A = sc.P[S.A], Bp = sc.P[S.B], d = { d: A.dr - Bp.dr, ...sc.diff(A, Bp) };
+  const opt = sel => ord.map(p => `<option value="${esc(p.k)}" ${p.k === sel ? "selected" : ""}>${esc(pName(p.k))} · ${pct(p.dr)}</option>`).join("");
+  const q = { both: 0, a: 0, b: 0, none: 0 }, jobs = [];
+  sc.units.forEach(u => u.m.gold.forEach(g => { const oa = outcome(u.s, u.m, S.A, g), ob = outcome(u.s, u.m, S.B, g);
+    const ra = oa?.status === "ready", rb = ob?.status === "ready"; q[ra && rb ? "both" : ra ? "a" : rb ? "b" : "none"]++;
+    const anyDiff = ra !== rb || oa?.status !== ob?.status || FIELDS.some(([fk]) => oa?.pred?.[fk] !== ob?.pred?.[fk]);
+    if (S.cmp === "all" || (S.cmp === "ready" && ra !== rb) || (S.cmp === "any" && anyDiff)) jobs.push({ u, g, oa, ob }); }));
+  const verdict = d.lo > 0 ? `<b>A is better</b>: the whole interval is above zero.` : d.hi < 0 ? `<b>B is better</b>: the whole interval is below zero.` : `<b>Can't tell them apart</b> on this data: the interval includes zero.`;
+  const cellAB = (o, fk, g) => { if (!o || o.status === "missed") return `<span class="soft">–</span>`; const ok = o.pair.scores[fk] === 1;
+    return `<span class="${ok ? "v-ok" : "v-bad"}">${ok ? "✓" : "✗"}</span> ${showV(fk, o.pred?.[fk])}`; };
+  return `<div class="eyebrow">Compare two pipelines</div><h1>Job by job: where does A beat B?</h1>
+  <p class="lede">Both pipelines run on the same real jobs, so the comparison is paired: only jobs where they disagree tell you anything. This works like side-by-side run comparison in eval tools.</p>
+  <div class="grid g2" style="margin:14px 0"><label class="small"><b>A</b> <select id="selA">${opt(S.A)}</select></label><label class="small"><b>B</b> <select id="selB">${opt(S.B)}</select></label></div>
+  <div class="grid g4">
+    <div class="card kpi"><div class="lbl">A · dashboard-ready</div><div class="big">${pct(A.dr)}</div>${ciTxt(A.ci)}<div class="tiny soft">${usd(A.cost)} · ${sec(A.secs)} per meeting</div></div>
+    <div class="card kpi"><div class="lbl">B · dashboard-ready</div><div class="big">${pct(Bp.dr)}</div>${ciTxt(Bp.ci)}<div class="tiny soft">${usd(Bp.cost)} · ${sec(Bp.secs)} per meeting</div></div>
+    <div class="card kpi"><div class="lbl">A − B (paired)</div><div class="big">${pts(d.d)}</div><span class="ci">95% interval ${pts(d.lo)} to ${pts(d.hi)}</span><div class="tiny soft" style="margin-top:4px">${verdict}</div></div>
+    <div class="card kpi"><div class="lbl">Agreement on ${sc.gold} jobs</div><table class="t compact" style="margin-top:6px"><tr><td></td><td class="num tiny soft">B ready</td><td class="num tiny soft">B not</td></tr>
+      <tr><td class="tiny soft">A ready</td><td class="num">${q.both}</td><td class="num"><b class="v-ok">${q.a}</b></td></tr><tr><td class="tiny soft">A not</td><td class="num"><b class="v-bad">${q.b}</b></td><td class="num">${q.none}</td></tr></table></div></div>
+  <div class="section"><div class="sh"><h2>Field by field</h2><span class="soft small">% of all ${sc.gold} real jobs with this field right (missed jobs count as wrong)</span></div>
+    <div class="card"><table class="t compact"><tr><th></th><th class="num">Found</th>${FIELDS.map(([, l]) => `<th class="num">${l}</th>`).join("")}<th class="num">All six</th></tr>
+      ${[["A", A], ["B", Bp]].map(([l, p]) => `<tr><td><b>${l}</b></td><td class="num">${pct(p.tp / p.gold)}</td>${FIELDS.map(([fk]) => `<td class="num">${pct(p.fields[fk] / p.gold)}</td>`).join("")}<td class="num"><b>${pct(p.dr)}</b></td></tr>`).join("")}
+      <tr><td class="soft">A − B</td><td class="num soft">${pts((A.tp - Bp.tp) / A.gold)}</td>${FIELDS.map(([fk]) => `<td class="num soft">${pts((A.fields[fk] - Bp.fields[fk]) / A.gold)}</td>`).join("")}<td class="num"><b>${pts(d.d)}</b></td></tr></table></div></div>
+  <div class="section"><div class="sh"><h2>The jobs behind the difference</h2>
+    <div class="seg">${[["ready", "Dashboard-ready differs"], ["any", "Any output differs"], ["all", "All jobs"]].map(([k, l]) => `<button data-cmpf="${k}" class="${S.cmp === k ? "on" : ""}">${l}</button>`).join("")}</div>
+    <span class="soft small">${jobs.length} jobs · click a meeting ID to see the transcript</span></div>
+    <div class="scroll" style="max-height:700px"><table class="t compact"><tr><th>Meeting</th><th>Real job (answer key)</th><th>A</th><th>B</th>${FIELDS.map(([, l]) => `<th>${l}</th>`).join("")}</tr>
+      ${jobs.map(({ u, g, oa, ob }) => `<tr><td>${mtag(u.m.id, ` data-p="${esc(S.A)}" data-f="${g.id}"`)} <span class="tid">${tnum(g.id)}</span><div><a class="tiny" data-drawer="${u.m.id}" data-f="${g.id}">transcript</a></div></td><td style="min-width:200px"><b class="small">${esc(g.summary)}</b></td><td>${stChip(oa)}</td><td>${stChip(ob)}</td>
+        ${FIELDS.map(([fk]) => `<td class="small" style="min-width:120px"><div class="tiny soft">key: ${showV(fk, GOLDV(g, fk))}</div><div><b class="tiny">A</b> ${cellAB(oa, fk, g)}</div><div><b class="tiny">B</b> ${cellAB(ob, fk, g)}</div></td>`).join("")}</tr>`).join("")
+        || `<tr><td colspan="10" class="muted">No jobs match this filter.</td></tr>`}</table></div></div>`;
+}
+
+/* ============================================================== DATA EXPLORER */
+function renderExplore() { const m = S.mid && D.meetings.find(x => x.id === S.mid); return m ? meetingView(m) : datasetView(); }
+function datasetView() {
+  const q = S.dsQ.toLowerCase(), groups = [...new Set(D.meetings.map(m => m.set))];
+  const rows = D.meetings.filter(m => (S.dsWriter === "all" || m.set === S.dsWriter) && (S.dsSplit === "all" || m.split === S.dsSplit)
+    && (!q || m.id.includes(q) || m.gold.some(g => (g.summary + " " + (g.component.text || "") + " " + (g.owner.text || "")).toLowerCase().includes(q))));
+  const card = s => { const ms = D.meetings.filter(m => m.set === s), w = ms[0].writer, g = D.generation[w] || {}, scored = !!D.sets[s];
+    const first = ms.filter(m => (m.notes[0] || "").includes("attempt 1")).length;
+    return `<div class="card"><div class="row"><b>${esc(setLabel(s))}</b>${scored ? `<span class="chip ok">scored in this export</span>` : `<span class="chip warn">not scored in this export</span>`}</div>
+      <dl class="kv" style="margin-top:8px"><dt>Writer</dt><dd>${esc(modelOf(w).name)} · Foundry ${esc(modelOf(w).res)}</dd><dt>Meetings</dt><dd>${ms.length} · ${ms.filter(m => m.split === "train").length} train / ${ms.filter(m => m.split === "test").length} test</dd>
+        <dt>Real jobs</dt><dd>${sum(ms.map(m => m.gold.length))} · plus ${sum(ms.map(m => m.distractors.length))} decoys</dd><dt>Validation</dt><dd>${first}/${ms.length} passed first attempt</dd>
+        <dt>Writing cost</dt><dd>${g.cost != null ? usd(g.cost) : "–"}</dd></dl></div>`; };
+  return `<div class="eyebrow">Data explorer</div><h1>Every meeting: the raw transcript, the answer key and what each pipeline extracted</h1>
+  <p class="lede">Pick a meeting to see the transcript next to its answer key. For scored test meetings, choose any pipeline to see the words it pulled out, the IDs it matched and every field it got right or wrong.</p>
+  <div class="grid g${Math.min(groups.length, 3)}" style="margin:16px 0">${groups.map(card).join("")}</div>
+  <div class="row" style="margin-bottom:10px"><div class="seg">${[["all", "All writers"], ...groups.map(s => [s, setLabel(s)])].map(([k, l]) => `<button data-dsw="${k}" class="${S.dsWriter === k ? "on" : ""}">${esc(l)}</button>`).join("")}</div>
+    <div class="seg">${[["test", "Test"], ["train", "Train"], ["all", "Train + test"]].map(([k, l]) => `<button data-dss="${k}" class="${S.dsSplit === k ? "on" : ""}">${l}</button>`).join("")}</div>
+    <input type="search" id="dsq" placeholder="Search jobs, equipment, people…" value="${esc(S.dsQ)}"><span class="soft small">${rows.length} meetings · ${sum(rows.map(m => m.gold.length))} jobs</span></div>
+  <div class="card" style="padding:0"><div class="scroll" style="max-height:620px"><table class="t"><tr><th>Meeting</th><th>Writer</th><th>Split</th><th>Scored</th><th>Date</th><th class="num">Turns</th><th class="num">Jobs</th><th class="num">Decoys</th><th>Jobs in this meeting</th><th></th></tr>
+    ${rows.map(m => `<tr class="click" data-open="${m.id}"><td class="mono">${m.id}</td><td class="small">${esc(modelOf(m.writer).name)}</td><td><span class="chip ${m.split === "test" ? "acc" : ""}">${m.split}</span></td>
+      <td>${D.sets[m.set]?.pipelines[m.id] ? `<span class="chip ok">✓ ${Object.keys(D.sets[m.set].pipelines[m.id]).length} pipelines</span>` : `<span class="soft small">–</span>`}</td>
+      <td class="small">${fmtDate(m.date)}</td><td class="num">${m.turns.length}</td><td class="num">${m.gold.length}</td><td class="num">${m.distractors.length}</td><td class="small muted">${m.gold.map(g => esc(g.summary)).join(" · ")}</td>
+      <td><button class="btn small" data-drawer="${m.id}" style="white-space:nowrap" title="Read the transcript without leaving this list">View transcript</button></td></tr>`).join("")}</table></div></div>`;
+}
+function promptFor(m, ex) {
+  const input = `Meeting date: ${m.date} (${m.weekday})\nAttendees: ${m.attendees.map(nm).join(", ")}\n\nTranscript:\n` +
+    m.turns.map(t => `[00:${String(Math.floor(t.t / 60)).padStart(2, "0")}:${String(t.t % 60).padStart(2, "0")}] ${t.who}: ${t.text}`).join("\n");
+  if (ex.startsWith("llm_direct@")) return `<div class="grid g2"><div><h3>Instructions</h3><pre class="prompt">${esc(D.prompts.direct.instructions)}</pre>
+    <p class="tiny soft">…plus the vocabulary as JSON (${(D.prompts.direct.vocab_chars || 0).toLocaleString()} characters, known nicknames only).</p></div><div><h3>Input for ${m.id}</h3><pre class="prompt">${esc(input)}</pre></div></div>`;
+  if (ex.startsWith("llm@")) return `<div class="grid g2"><div><h3>Instructions (same for every LLM)</h3><pre class="prompt">${esc(D.prompts.extract.instructions)}</pre></div><div><h3>Input for ${m.id}</h3><pre class="prompt">${esc(input)}</pre></div></div>`;
+  return `<p class="small muted">${esc(LOCAL_EX[ex]?.how || "Local method")} It reads each turn as plain text plus the speaker names, with no prompt.</p>`;
+}
+function meetingView(m) {
+  const sd = D.sets[m.set], pl = sd?.pipelines[m.id], sc = SC();
+  const keys = pl ? Object.keys(pl).sort((a, b) => (sc.P[b]?.dr ?? -1) - (sc.P[a]?.dr ?? -1)) : [];
+  if (pl && !pl[S.pipe]) S.pipe = pl[sc.rec.k] ? sc.rec.k : keys[0];
+  const k = pl ? S.pipe : null, ex = k?.split("|")[0], rec = pl?.[k], x = sd?.extractions[m.id]?.[ex];
+  const shortOK = k && (k.split("|")[1].startsWith("llm@") || k.split("|")[1].startsWith("gliner"));
+  const sl = sd?.shortlists?.[m.id]?.[ex] || [];
+  const byTurn = {}; m.gold.forEach(g => g.evidence.forEach(i => (byTurn[i] ||= []).push(g.id)));
+  const predOfGold = {}, goldOfPred = {}; (rec?.pairs || []).forEach(q => { predOfGold[q.gold] = q.pred; goldOfPred[q.pred] = q.gold; });
+  const xTurn = {}; (x?.tasks || []).forEach((t, i) => { if (t.turn != null) (xTurn[t.turn] ||= []).push(i); });
+  const decoyTurn = new Set(m.turns.map((t, i) => m.distractors.some(d => d.sid === t.sid && (t.text.includes(d.text) || d.text.includes(t.text))) ? i : -1).filter(i => i >= 0));
+  const all = D.meetings.filter(z => z.set === m.set && z.split === m.split), at = all.indexOf(m);
+  const turns = m.turns.map((t, i) => { const gs = byTurn[i] || [], xs = xTurn[i] || [];
+    if (S.onlyJobs && !gs.length && !xs.length) return "";
+    return `<div class="turn ${gs.length ? "gold" : decoyTurn.has(i) ? "decoy" : ""}" data-turn="${i}" data-gold="${gs.join(" ")}" data-x="${xs.join(" ")}">
+      <span class="ts">${String(Math.floor(t.t / 60)).padStart(2, "0")}:${String(t.t % 60).padStart(2, "0")}</span>
+      <div><div class="who">${esc(t.who)}<small>turn ${i}</small> ${gs.map(g => `<span class="tid" title="real job (answer key)">${tnum(g)}</span>`).join(" ")}
+        ${xs.map(j => `<span class="tid ${goldOfPred[j] ? "x" : "fp"}" title="${goldOfPred[j] ? "extracted, paired with " + tnum(goldOfPred[j]) : "extracted, not a real job"}">#${j + 1}</span>`).join(" ")}${decoyTurn.has(i) ? ` <span class="chip warn" style="height:17px">decoy</span>` : ""}</div>
+        <div>${esc(t.text)}</div></div></div>`; }).join("");
+  const said = (txt, split) => txt ? `<div class="said">said as <q>${esc(txt)}</q> ${split === "heldout" ? `<span class="chip held" style="height:17px" title="nickname hidden from every method">unseen nickname</span>` : ""}</div>` : "";
+  const keyCell = (g, fk) => {
+    if (fk === "owner" || fk === "component" || fk === "site") return g[fk].id ? `${showV(fk, g[fk].id)}${said(g[fk].text, g[fk].split)}` : `<span class="soft">none</span>`;
+    if (fk === "due_date") return g.due_date ? `${showV(fk, g.due_date)}${g.due_time ? " " + esc(g.due_time) : ""}${said(g.due_mention)}` : `<span class="soft">no deadline</span>`;
+    if (fk === "priority") return `P${g.priority}${g.priority_cue ? said(g.priority_cue) : `<div class="said">nothing said → default P2</div>`}`;
+    return esc(g.category);
+  };
+  const WORD = { owner: "owner", component: "component", site: "site", due_date: "due", priority: "urgency" };
+  const jobCard = g => {
+    const o = rec ? outcome(m.set, m, k, g) : null, t = o?.task, pi = predOfGold[g.id];
+    const body = FIELDS.map(([fk, l]) => { const ok = o?.pair?.scores[fk] === 1, c = shortOK && pi != null ? sl[pi]?.[fk] : null;
+      return `<tr><td>${l}</td><td>${keyCell(g, fk)}</td>${rec ? `<td>${o?.status === "missed" ? `<span class="soft">–</span>` : WORD[fk] ? (t?.[WORD[fk]] ? `<q>${esc(t[WORD[fk]])}</q>` : `<span class="soft">nothing</span>`) : `<span class="soft">n/a</span>`}</td>
+        <td>${o?.status === "missed" ? `<span class="soft">–</span>` : `<span class="${ok ? "v-ok" : "v-bad"}">${ok ? "✓" : "✗"}</span> ${showV(fk, o.pred?.[fk])}`}
+        ${c?.length ? `<div class="cands" title="shortlist the matcher chose from">${c.slice(0, 10).map(id => `<span class="chip ${id === o.pred?.[fk] ? "pick" : ""} ${id === GOLDV(g, fk) ? "gold" : ""}" title="${esc(nm(id))}">${esc(id)}</span>`).join("")}</div>` : ""}</td>` : ""}</tr>`; }).join("");
+    return `<div class="job ${S.focus === g.id ? "focus" : ""}" data-focus="${g.id}"><div class="jh"><span class="tid">${tnum(g.id)}</span><b>${esc(g.summary)}</b><span class="spacer"></span>${rec ? stChip(o) : ""}
+        <span class="chip">${esc(g.category)}</span>${g.reassigned_from ? `<span class="chip warn">handed over</span>` : ""}</div>
+      <div class="js said">spoken as <q>${esc(g.spoken)}</q> · turns ${g.evidence.join(", ")}${t?.quote ? `<blockquote title="quote the extractor returned${t.turn != null ? ", found at turn " + t.turn : ""}">#${pi + 1} ${esc(t.quote)}</blockquote>` : ""}</div>
+      <table class="f"><tr><th></th><th>Answer key</th>${rec ? `<th>Extracted words</th><th>Matched ID</th>` : ""}</tr>${body}</table>
+      <details class="js" style="padding-top:6px"><summary class="tiny soft">Validation checks for this job</summary>${g.checks.map(c => `<div class="tiny"><span class="${c.turn != null ? "v-ok" : "v-bad"}">${c.turn != null ? "✓" : "✗"}</span> ${esc(c.what)} <q>${esc(c.phrase)}</q> ${c.turn != null ? "→ turn " + c.turn : "not found"}</div>`).join("")}</details></div>`;
+  };
+  const fps = rec ? rec.preds.map((p, i) => i).filter(i => goldOfPred[i] == null) : [];
+  const nReady = rec ? rec.ready : 0;
+  return `<div class="row" style="margin-bottom:10px"><button class="btn small" data-back>← All meetings</button>
+      <button class="btn small" ${at > 0 ? `data-open="${all[at - 1].id}"` : "disabled"}>‹ prev</button><button class="btn small" ${at < all.length - 1 ? `data-open="${all[at + 1].id}"` : "disabled"}>next ›</button>
+      <span class="soft small">${at + 1} of ${all.length} ${m.split} meetings by ${esc(modelOf(m.writer).name)}</span></div>
+  <h1 class="mono" style="font-size:22px">${m.id} <span class="soft" style="font-family:'Segoe UI',sans-serif;font-size:16px;font-weight:400">· ${fmtDate(m.date)} · ${m.turns.length} turns · ${m.gold.length} real jobs · ${m.distractors.length} decoys</span></h1>
+  <div class="row" style="margin-bottom:12px"><span class="chip ${m.split === "test" ? "acc" : ""}">${m.split}</span><span class="chip">written by ${esc(modelOf(m.writer).name)}</span>${m.attendees.map(a => `<span class="chip">${a === m.chair ? "★ " : ""}${esc(nm(a))}</span>`).join("")}</div>
+  ${pl ? `<div class="card" style="margin-bottom:14px"><div class="row"><label class="small"><b>Pipeline</b> <select id="selP">${keys.map(kk => `<option value="${esc(kk)}" ${kk === k ? "selected" : ""}>${esc(pName(kk))}${sc.P[kk] ? " · " + pct(sc.P[kk].dr) + " overall" : ""}</option>`).join("")}</select></label>
+      <span class="small"><b>${nReady}/${m.gold.length}</b> dashboard-ready · ${rec.pairs.length} found · ${fps.length} not real · ${sec(rec.seconds)} · ${usd(rec.cost)}</span>${x?.error ? `<span class="chip bad">call failed: ${esc(x.error.slice(0, 80))}</span>` : ""}
+      <button class="btn small" data-cmp="${esc(k)}" data-cmpb="${esc((k === sc.base.k ? sc.best : sc.base).k)}">Compare this pipeline</button></div>
+    <details class="fold" style="margin-top:10px"><summary><b>Exactly what the extractor received</b> <span class="soft small">· ${esc(exName(ex))}</span></summary><div class="inner">${promptFor(m, ex)}</div></details></div>`
+    : `<div class="callout" style="margin-bottom:14px">${m.split === "train" ? "Training meeting: used only to fine-tune gliner2.5-base-v1 and train the TF-IDF + logistic regression matcher, never scored." : "This test meeting's writer set is not scored in this export."} Only the transcript and answer key are shown.</div>`}
+  <div class="xsplit"><div class="sticky"><div class="row" style="margin-bottom:8px"><h2 style="margin:0">Raw transcript</h2><span class="spacer"></span>
+      <div class="seg"><button data-jobs="0" class="${S.onlyJobs ? "" : "on"}">All turns</button><button data-jobs="1" class="${S.onlyJobs ? "on" : ""}">Job turns only</button></div></div>
+      <div class="transcript" id="transcript">${turns}</div>
+      <div class="legend"><span><i style="background:var(--ok-soft)"></i>turn states a real job (T#)</span><span><i style="background:var(--warn-soft)"></i>decoy</span>${pl ? `<span><span class="tid x">#n</span> extracted & paired</span><span><span class="tid fp">#n</span> extracted, not a real job</span>` : ""}</div></div>
+    <div><h2>Real jobs: answer key${pl ? " vs this pipeline" : ""}</h2><p class="tiny soft" style="margin-top:-4px">Click a job to highlight its turns in the transcript.</p>${m.gold.map(jobCard).join("")}
+      ${pl ? `<h2 style="margin-top:18px">Returned but not real jobs <span class="soft small">· ${fps.length}</span></h2>${fps.map(i => { const t = x?.tasks[i] || {}, p = rec.preds[i] || {};
+        return `<div class="job" data-xfocus="${t.turn ?? ""}"><div class="jh"><span class="tid fp">#${i + 1}</span><b class="small">${esc(t.summary || "")}</b><span class="spacer"></span><span class="chip bad">not a real job</span></div>
+          <div class="js said">${t.turn != null ? "quote at turn " + t.turn : "quote not found in transcript"}${t.quote ? `<blockquote>${esc(t.quote)}</blockquote>` : ""}
+          <div style="margin-top:6px">${FIELDS.map(([fk, l]) => `${l}: ${showV(fk, p[fk])}`).join(" · ")}</div></div></div>`; }).join("") || `<p class="small muted">None.</p>`}` : ""}
+      <h2 style="margin-top:18px">Decoys the pipeline had to ignore <span class="soft small">· ${m.distractors.length}</span></h2>
+      <div class="card">${m.distractors.map(d => `<div style="margin-bottom:8px"><span class="chip warn">${esc(d.kind)}</span> <span class="small soft">${esc(nm(d.sid))}</span><div class="small">${esc(d.text)}</div></div>`).join("")}</div></div></div>`;
+}
+function applyFocus(scroll = true) {
+  const tr = $("#transcript"); if (!tr) return;
+  $$(".job[data-focus]").forEach(el => el.classList.toggle("focus", el.dataset.focus === S.focus));
+  let pi = null; if (S.focus && S.pipe) { const m = D.meetings.find(z => z.id === S.mid); const q = D.sets[m.set]?.pipelines[m.id]?.[S.pipe]?.pairs.find(p => p.gold === S.focus); pi = q?.pred ?? null; }
+  const hits = $$(".turn", tr).filter(t => S.focus && (t.dataset.gold.split(" ").includes(S.focus) || (pi != null && t.dataset.x.split(" ").includes(String(pi)))));
+  $$(".turn", tr).forEach(t => { t.classList.toggle("focus", hits.includes(t)); t.classList.toggle("dim", !!S.focus && !hits.includes(t)); });
+  if (scroll && hits[0]) tr.scrollTo({ top: hits[0].offsetTop - 40, behavior: "smooth" });
+}
+</script>
+<script>
+/* ============================================================== METHOD */
+function renderMethod() {
+  const sc = SC(), b = sc.best, naive = 1.96 * Math.sqrt(b.dr * (1 - b.dr) / sc.gold);
+  const exs = [...new Set(sc.keys.map(k => k.split("|")[0]))], nos = [...new Set(sc.keys.map(k => k.split("|")[1]))];
+  const card = (t, body) => `<div class="card"><h3>${t}</h3><div class="small muted">${body}</div></div>`;
+  return `<div class="eyebrow">Method · design document</div><h1>How the experiment was designed and how every number is computed</h1>
+  <p class="lede">This section follows the structure of an experiment design doc: what was tested, on what, how success is measured and what could make the result wrong.</p>
+  <div class="grid g3" style="margin-top:16px">
+    ${card("Question", "Which extract → match pipeline gives the highest share of stand-up jobs that can go on the dashboard with no human fix, at acceptable cost and latency?")}
+    ${card("Hypotheses", "H1: LLM pipelines beat the $0 local baseline. H2: two steps (extract the words, then match) beat one call that does both. H3: unseen nicknames are the main source of matching errors.")}
+    ${card("Unit and sample", `Unit of analysis: real job. Unit of resampling: meeting. This scope: ${sc.meetings} test meetings, ${sc.gold} jobs, ${sc.keys.length} pipelines. Training meetings (${D.train_count}) are never scored.`)}
+    ${card("Primary metric", "<b>Dashboard-ready</b> = real jobs found with all six fields right ÷ all real jobs.")}
+    ${card("Secondary metrics", "Job precision, recall and F1; accuracy per field; matching-only accuracy on known vs unseen nicknames.")}
+    ${card("Guardrails", "Cost per meeting (tokens × list price), latency per meeting, failed calls (scored as found nothing). Baseline: " + esc(pName(sc.base.k)) + ".")}
+  </div>
+  <div class="section"><div class="sh"><h2>Pipeline</h2></div><div class="grid g4">
+    ${[["A · Data", "Python samples an answer key (5–9 jobs, nicknames, deadlines, decoys). An LLM writes the Teams transcript around it and Python validates it (max 3 attempts)."],
+       ["B · Extract", "Regex, GLiNER 2.5 variants or an LLM return each job with the words as said, plus the quote it came from."],
+       ["C · Match", "Words become official IDs via alias lookup, fuzzy match, embeddings, a trained classifier, GLiNER or an LLM choosing from a shortlist. Dates are resolved in code."],
+       ["D · Score", "Returned jobs are paired one-to-one with real jobs, then six fields are checked against the answer key."]].map(([t, x]) => card(t, x)).join("")}</div></div>
+  <div class="section"><div class="sh"><h2>Scoring rules</h2></div><div class="grid g2">
+    ${card("1 · Pairing", "Hungarian assignment per meeting on a similarity score, minimum 0.45: quote lands on the job’s turns ±1 (50%), summary wording overlap (30%), same equipment or its parent (10%), same owner (10%). Unpaired returned jobs are <b>not real jobs</b>; unpaired real jobs are <b>missed</b>.")}
+    ${card("2 · Six fields", "Owner, equipment and site: exact ID, or correctly empty. Due date: resolved date equals the key. Priority: P1–P3, and P2 if nothing was said. Category: operations / safety / organisation. The parent asset earns half credit in a separate hierarchy column only.")}</div></div>
+  <div class="section"><div class="sh"><h2>Statistics</h2></div><div class="grid g2">
+    ${card("Intervals", `95% percentile intervals from ${B_REPS.toLocaleString()} bootstrap resamples of <b>meetings</b>, stratified by test set. Jobs in the same meeting share a transcript and writer, so they are not independent. Resampling whole meetings respects that structure, where the old per-job formula assumes every job is independent.`)}
+    ${card("Paired differences", "Every pipeline is scored on the same resampled meetings, so the gap between two pipelines has its own interval. That is tighter and more honest than checking whether two separate ± margins overlap.")}
+    ${card("Groups and the recommendation", `Each pipeline gets two paired comparisons: one against the top-scoring pipeline (#1) and one against the baseline (${esc(pName(sc.base.k))}, called "regex" in verdicts). <b>Close to #1</b>: the gap to #1 includes 0. <b>Behind #1, beats regex</b>: clearly behind #1 and clearly above the baseline. <b>No better than regex</b>: clearly behind #1, and the gap to the baseline includes 0. <b>Worse than regex</b>: clearly below the baseline. Failing to separate two pipelines is not evidence that they are equal, so groups are not used to recommend. <b>Recommendation</b>: the highest point estimate. Cost is never optimised automatically. The Summary lists the cost–quality frontier, with what each cheaper option gives up in points, jobs a year and dollars a year, so the trade-off is an explicit decision.`)}
+    ${card("What this changes here", `For the best pipeline (${pct(b.dr)}), the old per-job margin is ±${Math.round(naive * 100)} pts (${Math.round(naive * 200)} pts wide). The meeting bootstrap gives ${pct(b.ci.lo)}–${pct(b.ci.hi)} (${Math.round((b.ci.hi - b.ci.lo) * 100)} pts wide). The bigger gain is the <b>paired</b> gap between pipelines. Caution: with only ${sc.meetings} meetings, a percentile bootstrap tends to be too narrow. Scoring ${sc.meetings < 20 ? "at least 20–30" : "more"} meetings is the most effective way to make the ranking trustworthy.`)}</div></div>
+  <div class="section"><div class="sh"><h2>Validity</h2></div><div class="grid g2">
+    ${card("Leakage controls", "Held-out nicknames appear only in test meetings; no prompt, vocabulary, training step or calibration sees them. The answer key is written before the transcript, so the truth is exact. Test meetings never feed training.")}
+    ${card("Threats to validity", `Synthetic transcripts are cleaner than real ones. The transcript writer may favour its own model family (needs both writer sets). Only ${sc.meetings} meetings are scored in this scope. Fine-tuning was one CPU run with no tuning. Prices are list prices at run time.`)}</div></div>
+  <div class="section"><div class="sh"><h2>Coverage: which combinations were run</h2><span class="soft small">rows = extractor, columns = matcher · blank = not run by design</span></div>
+    <div class="card scroll"><table class="t compact"><tr><th></th>${nos.map(n => `<th class="num" style="white-space:normal;max-width:90px">${esc(noName(n))}</th>`).join("")}</tr>
+      ${exs.map(e => `<tr><td><b>${esc(exName(e))}</b></td>${nos.map(n => { const p = sc.P[e + "|" + n]; return `<td>${p ? heat(p.dr) : ""}</td>`; }).join("")}</tr>`).join("")}</table></div></div>
+  <div class="section"><div class="sh"><h2>Glossary</h2></div><div class="card"><dl class="kv">
+    <dt>Job</dt><dd>One action someone commits to or is asked to do in the stand-up (the code calls it a task).</dd>
+    <dt>Extractor</dt><dd>Finds jobs and returns the words as spoken.</dd><dt>Matcher</dt><dd>Turns those words into official IDs (the code calls it a normaliser).</dd>
+    <dt>Pipeline</dt><dd>One extractor followed by one matcher.</dd><dt>Equipment</dt><dd>An asset in the plant hierarchy (the code calls it a component).</dd>
+    <dt>Unseen nickname</dt><dd>A held-out alias that appears only in test meetings.</dd><dt>Dashboard-ready</dt><dd>Found, with all six fields right.</dd>
+    <dt>Decoy</dt><dd>A sentence that sounds like a job but is not one (status update, past work, chit-chat).</dd></dl></div></div>`;
+}
+
+/* ============================================================== APPENDIX */
+function renderAppendix() {
+  const o = D.ontology, kids = {}; o.assets.forEach(a => (kids[a.parent || "_"] ||= []).push(a));
+  const chips = (a, h) => a.map(x => `<span class="chip">${esc(x)}</span>`).join(" ") + " " + h.map(x => `<span class="chip held">${esc(x)}</span>`).join(" ");
+  const node = a => `<li><b>${esc(a.name)}</b> <code class="soft">${esc(a.id)}</code> ${chips(a.aliases, a.heldout)}${kids[a.id] ? `<ul>${kids[a.id].map(node).join("")}</ul>` : ""}</li>`;
+  const prompt = (t, p) => `<details class="fold" style="margin-bottom:8px"><summary><b>${t}</b></summary><div class="inner grid g2"><pre class="prompt">${esc(p.instructions)}</pre><pre class="prompt">${esc(JSON.stringify(p.schema, null, 2))}</pre></div></details>`;
+  const used = new Set(SETS().flatMap(s => D.sets[s].leaderboard.flatMap(r => [r.extractor, r.normaliser])).map(x => x.split("@")[1]).filter(Boolean));
+  return `<div class="eyebrow">Appendix</div><h1>Reference material</h1>
+  <p class="lede">Vocabulary, models, prompts and costs. The original slide deck is still at <a href="../v1-deck/index.html">docs/02-walkthrough/v1-deck/index.html</a>.</p>
+  <div class="section"><div class="sh"><h2>Business vocabulary · ${esc(D.plant.name)}</h2><span class="soft small"><span class="chip">known nickname</span> <span class="chip held">unseen nickname (test only)</span></span></div>
+    <div class="grid g2"><div class="card"><h3>People</h3><table class="t compact">${o.people.map(p => `<tr><td><b>${esc(p.name)}</b> <code class="soft">${p.id}</code><div class="tiny soft">${esc(p.role || "")}</div></td><td>${chips(p.aliases, p.heldout)}</td></tr>`).join("")}</table>
+      <h3 style="margin-top:14px">Sites</h3><table class="t compact">${o.sites.map(s => `<tr><td><b>${esc(s.name)}</b> <code class="soft">${s.id}</code></td><td>${chips(s.aliases, s.heldout)}</td></tr>`).join("")}</table>
+      <h3 style="margin-top:14px">Categories & priorities</h3>${o.categories.map(c => `<div class="small"><span class="chip solid">${c.id}</span> ${esc(c.description)}</div>`).join("")}${o.priorities.map(p => `<div class="small" style="margin-top:4px"><span class="chip solid">P${p.id}</span> ${esc(p.description)}</div>`).join("")}</div>
+      <div class="card"><h3>Equipment hierarchy · ${o.assets.length} assets</h3><div class="scroll" style="max-height:640px"><ul class="tree">${(kids._ || []).map(node).join("")}</ul></div></div></div></div>
+  <div class="section"><div class="sh"><h2>Models</h2><span class="soft small">configured in data/models.yaml · <b>bold</b> = used by a pipeline in this export</span></div>
+    <div class="card scroll"><table class="t compact"><tr><th>Model</th><th>Vendor</th><th>Deployment</th><th>API</th><th class="num">Timeout</th><th class="num">$ in / out per 1M</th></tr>
+      ${D.models.map(m => `<tr><td>${used.has(m.id) ? `<b>${esc(modelOf(m.id).name)}</b>` : `<span class="soft">${esc(modelOf(m.id).name)}</span>`}</td><td>${esc(modelOf(m.id).vendor)}</td><td><code>${esc(modelOf(m.id).res)}</code> · <code>${esc(m.deployment)}</code></td>
+        <td class="small">${m.api === "responses" ? "Responses, strict schema" : "Chat Completions, JSON mode"}</td><td class="num">${m.timeout} s</td><td class="num">${m.price ? "$" + m.price[0] + " / $" + m.price[1] : "–"}</td></tr>`).join("")}
+      ${D.embeddings.map(e => `<tr><td><b>${esc(e.id)}</b></td><td>OpenAI</td><td><code>${esc(e.deployment)}</code></td><td class="small">Embeddings · ${e.dimensions} dims</td><td></td><td class="num">$${e.price} / –</td></tr>`).join("")}</table></div></div>
+  <div class="section"><div class="sh"><h2>One-off costs</h2></div><div class="card"><table class="t compact"><tr><th>Item</th><th class="num">Calls</th><th class="num">Tokens in / out</th><th class="num">Cost</th></tr>
+    ${Object.entries(D.generation).map(([w, v]) => `<tr><td>Writing transcripts · ${esc(modelOf(w).name)}</td><td class="num">${v.calls}</td><td class="num">${v.input_tokens.toLocaleString()} / ${v.output_tokens.toLocaleString()}</td><td class="num">${usd(v.cost)}</td></tr>`).join("")}
+    <tr><td>Embeddings · ${esc(D.embedding_usage.model)} (${D.embedding_usage.vectors} cached vectors)</td><td class="num">${D.embedding_usage.calls}</td><td class="num">${(D.embedding_usage.tokens || 0).toLocaleString()}</td><td class="num">${usd(D.embedding_usage.cost)}</td></tr></table></div></div>
+  <div class="section"><div class="sh"><h2>Prompts and output schemas</h2></div>
+    ${prompt("Transcript writer", D.prompts.writer)}${prompt("LLM extract (words as said)", D.prompts.extract)}${prompt("LLM one call (vocabulary in prompt)", D.prompts.direct)}${prompt("LLM match (choose from shortlist)", D.prompts.match)}</div>
+  <div class="section"><div class="sh"><h2>Export</h2></div><p class="small muted">Generated ${esc(D.generated)} · ${D.meetings.length} meetings · ${SETS().length} scored test set${SETS().length > 1 ? "s" : ""}: ${SETS().map(s => `${esc(D.sets[s].label)} (${D.sets[s].meta.meetings} meetings, run <code>${esc(String(D.sets[s].meta.run_dir || "").split(/[\\/]/).pop())}</code>)`).join(", ")}.</p></div>`;
+}
+
+/* ============================================================== transcript drawer */
+const DR = { mid: null, only: false, focus: null, from: null };
+function drawerHTML() {
+  const m = D.meetings.find(z => z.id === DR.mid); if (!m) return "";
+  const byTurn = {}; m.gold.forEach(g => g.evidence.forEach(i => (byTurn[i] ||= []).push(g.id)));
+  const decoy = new Set(m.turns.map((t, i) => m.distractors.some(d => d.sid === t.sid && (t.text.includes(d.text) || d.text.includes(t.text))) ? i : -1).filter(i => i >= 0));
+  const turns = m.turns.map((t, i) => { const gs = byTurn[i] || [];
+    if (DR.only && !gs.length) return "";
+    return `<div class="turn ${gs.length ? "gold" : decoy.has(i) ? "decoy" : ""}" data-turn="${i}" data-gold="${gs.join(" ")}">
+      <span class="ts">${String(Math.floor(t.t / 60)).padStart(2, "0")}:${String(t.t % 60).padStart(2, "0")}</span>
+      <div><div class="who">${esc(t.who)}<small>turn ${i}</small> ${gs.map(g => `<span class="tid">${tnum(g)}</span>`).join(" ")}${decoy.has(i) ? ` <span class="chip warn" style="height:17px">decoy</span>` : ""}</div><div>${esc(t.text)}</div></div></div>`; }).join("");
+  return `<div class="dh"><div class="row"><h2 id="drawerTitle" class="mono" style="margin:0">${m.id}</h2><span class="soft small">${fmtDate(m.date)} · ${m.turns.length} turns · ${m.gold.length} real jobs</span>
+      <span class="spacer"></span><button class="btn small" data-dclose aria-label="Close transcript">✕</button></div>
+    <div class="row" style="margin-top:6px"><span class="chip ${m.split === "test" ? "acc" : ""}">${m.split}</span><span class="chip">written by ${esc(modelOf(m.writer).name)}</span>
+      <div class="seg" style="margin-left:auto"><button data-donly="0" class="${DR.only ? "" : "on"}">All turns</button><button data-donly="1" class="${DR.only ? "on" : ""}">Job turns only</button></div></div>
+    <div class="jobchips">${m.gold.map(g => `<button data-dfocus="${g.id}" class="${DR.focus === g.id ? "on" : ""}" title="Highlight the turns for this job"><span class="tid">${tnum(g.id)}</span> ${esc(g.summary)}</button>`).join("")}</div></div>
+  <div class="db" id="dtranscript">${turns}</div>
+  <div class="df"><span class="legend" style="margin:0"><span><i style="background:var(--ok-soft)"></i>states a real job</span><span><i style="background:var(--warn-soft)"></i>decoy</span></span>
+    <span class="spacer"></span><button class="btn small primary" data-open="${m.id}" data-dclose-nav>Open full meeting view →</button></div>`;
+}
+function drawerFocus(scroll = true) {
+  const box = $("#dtranscript"); if (!box) return;
+  $$(".jobchips button", $("#drawer")).forEach(b => b.classList.toggle("on", b.dataset.dfocus === DR.focus));
+  const hits = $$(".turn", box).filter(el => DR.focus && el.dataset.gold.split(" ").includes(DR.focus));
+  $$(".turn", box).forEach(el => { el.classList.toggle("focus", hits.includes(el)); el.classList.toggle("dim", !!DR.focus && !hits.includes(el)); });
+  if (scroll && hits[0]) box.scrollTo({ top: hits[0].offsetTop - 40, behavior: "smooth" });
+}
+function openDrawer(mid, focus, from) {
+  Object.assign(DR, { mid, focus: focus || null, from: from || null });
+  const d = $("#drawer"); d.innerHTML = drawerHTML(); d.classList.add("open"); d.setAttribute("aria-hidden", "false");
+  $("#scrim").classList.add("open"); document.body.style.overflow = "hidden";
+  $("[data-dclose]", d).focus(); requestAnimationFrame(() => drawerFocus());
+}
+function closeDrawer() {
+  const d = $("#drawer"); if (!d.classList.contains("open")) return;
+  d.classList.remove("open"); d.setAttribute("aria-hidden", "true"); $("#scrim").classList.remove("open"); document.body.style.overflow = "";
+  DR.from?.focus?.(); DR.mid = null;
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+$("#scrim").addEventListener("click", closeDrawer);
+
+/* ============================================================== router */
+const VIEWS = { summary: renderSummary, results: renderResults, compare: renderCompare, explore: renderExplore, method: renderMethod, appendix: renderAppendix };
+function writeHash(push) {
+  const p = new URLSearchParams({ tab: S.tab });
+  if (S.scope !== SETS()[0] || SETS().length > 1) p.set("scope", S.scope);
+  if (S.tab === "compare") { p.set("a", S.A || ""); p.set("b", S.B || ""); }
+  if (S.tab === "explore" && S.mid) { p.set("m", S.mid); if (S.pipe) p.set("p", S.pipe); if (S.focus) p.set("f", S.focus); }
+  const h = "#" + p.toString(); if (h !== location.hash) history[push ? "pushState" : "replaceState"](null, "", h);
+}
+function readHash() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  if (VIEWS[p.get("tab")]) S.tab = p.get("tab");
+  const sc = p.get("scope"); if (sc && (sc === "pooled" || D.sets[sc])) S.scope = sc;
+  if (p.get("a")) S.A = p.get("a"); if (p.get("b")) S.B = p.get("b");
+  S.mid = p.get("m"); if (p.get("p")) S.pipe = p.get("p"); S.focus = p.get("f");
+}
+function render({ push = false, keepScroll = false } = {}) {
+  const sc = SC(), y = window.scrollY;
+  $("#tabs").innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" class="${S.tab === k ? "on" : ""}">${l}</button>`).join("");
+  const opts = [...(SETS().length > 1 ? [["pooled", "All test sets, pooled"]] : []), ...SETS().map(s => [s, `${D.sets[s].label} test set`])];
+  $("#scopebar").innerHTML = `<span class="soft">Scope</span> <select id="scope">${opts.map(([k, l]) => `<option value="${k}" ${k === S.scope ? "selected" : ""}>${esc(l)}</option>`).join("")}</select>
+    <span><b>${sc.meetings}</b> meetings · <b>${sc.gold}</b> real jobs · <b>${sc.list.length}</b> pipelines</span><span class="spacer"></span>
+    <span class="soft" title="Primary metric">Dashboard-ready = real jobs found with all six fields right ÷ all real jobs · intervals are 95%, meeting bootstrap</span>`;
+  try { $("#main").innerHTML = VIEWS[S.tab](); } catch (e) { console.error(e); $("#main").innerHTML = `<p class="v-bad">This view could not render: ${esc(e.message)}</p>`; }
+  window.scrollTo(0, keepScroll ? y : 0);
+  if (S.tab === "explore" && S.focus) applyFocus();
+  writeHash(push);
+}
+const go = (tab, extra = {}) => { Object.assign(S, extra, { tab }); render({ push: true }); };
+document.addEventListener("click", e => {
+  const dt = e.target.closest("[data-drawer],[data-dclose],[data-donly],[data-dfocus]");
+  if (dt) { e.preventDefault(); e.stopPropagation(); const d = dt.dataset;
+    if (d.drawer) return openDrawer(d.drawer, d.f, dt);
+    if (d.dclose !== undefined) return closeDrawer();
+    if (d.donly) { DR.only = d.donly === "1"; $("#drawer").innerHTML = drawerHTML(); return drawerFocus(false); }
+    if (d.dfocus) { DR.focus = DR.focus === d.dfocus ? null : d.dfocus; return drawerFocus(); } }
+  if (e.target.closest("[data-dclose-nav]")) closeDrawer();
+  const t = e.target.closest("[data-tab],[data-go],[data-cmp],[data-fam],[data-sort],[data-cmpf],[data-open],[data-back],[data-dsw],[data-dss],[data-jobs],[data-focus],[data-xfocus],#theme");
+  if (!t || t.disabled) return;
+  const d = t.dataset;
+  if (t.id === "theme") { const h = document.documentElement; h.dataset.theme = h.dataset.theme === "dark" ? "light" : "dark"; return; }
+  if (d.tab) return go(d.tab);
+  if (d.go) return go(d.go, d.go === "explore" ? { mid: null } : {});
+  if (d.cmp) return go("compare", { A: d.cmp, B: d.cmpb });
+  if (d.fam) { S.fam = d.fam; return render({ keepScroll: true }); }
+  if (d.sort) { S.sort = S.sort.k === d.sort ? { k: d.sort, asc: !S.sort.asc } : { k: d.sort, asc: d.sort === "name" || d.sort === "cost" || d.sort === "secs" }; return render({ keepScroll: true }); }
+  if (d.cmpf) { S.cmp = d.cmpf; return render({ keepScroll: true }); }
+  if (d.open) { e.preventDefault(); return go("explore", { mid: d.open, focus: d.f || null, ...(d.p ? { pipe: d.p } : {}) }); }
+  if (d.back !== undefined) return go("explore", { mid: null, focus: null });
+  if (d.dsw) { S.dsWriter = d.dsw; return render({ keepScroll: true }); }
+  if (d.dss) { S.dsSplit = d.dss; return render({ keepScroll: true }); }
+  if (d.jobs) { S.onlyJobs = d.jobs === "1"; render({ keepScroll: true }); return applyFocus(false); }
+  if (d.focus) { if (e.target.closest("details,select,a")) return; S.focus = S.focus === d.focus ? null : d.focus; applyFocus(); return writeHash(false); }
+  if (d.xfocus !== undefined && d.xfocus !== "") { S.focus = null; applyFocus(false); const tr = $("#transcript"), el = $(`.turn[data-turn="${d.xfocus}"]`, tr);
+    $$(".turn", tr).forEach(x => x.classList.toggle("focus", x === el)); if (el) tr.scrollTo({ top: el.offsetTop - 40, behavior: "smooth" }); }
+});
+document.addEventListener("change", e => {
+  const id = e.target.id, v = e.target.value;
+  if (id === "scope") { S.scope = v; return render({ keepScroll: true }); }
+  if (id === "bar") { S.bar = Math.max(0.1, Math.min(1, (+v || 80) / 100)); return render({ keepScroll: true }); }
+  if (id === "selA") { S.A = v; return render({ keepScroll: true }); }
+  if (id === "selB") { S.B = v; return render({ keepScroll: true }); }
+  if (id === "selP") { S.pipe = v; return render({ keepScroll: true }); }
+});
+let dsT = null;
+document.addEventListener("input", e => {
+  if (e.target.id !== "dsq") return;
+  clearTimeout(dsT); dsT = setTimeout(() => { S.dsQ = e.target.value; render({ keepScroll: true }); const i = $("#dsq"); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 200);
+});
+window.addEventListener("popstate", () => { readHash(); render(); });
+
+async function load() {
+  const bytes = Uint8Array.from(atob($("#payload").textContent.trim()), c => c.charCodeAt(0));
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+  return JSON.parse(await new Response(stream).text());
+}
+(async () => {
+  try { D = await load(); } catch (e) { $("#main").innerHTML = `<p class="v-bad">Could not load the embedded data. Build with <code>python docs/02-walkthrough/v2-report/build.py</code>.</p>`; return; }
+  [...D.ontology.people, ...D.ontology.sites, ...D.ontology.assets].forEach(x => ENT[x.id] = x);
+  S.scope = SETS().length > 1 ? "pooled" : SETS()[0];
+  readHash();
+  $("#gen").textContent = `data exported ${D.generated}`;
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board pipeline · dataset &amp; traces</title>
+<link rel="icon" href="data:,">
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    let stored = null;
+    try { stored = localStorage.getItem("boardTheme"); } catch (e) { /* storage blocked on file:// */ }
+    const theme =
+      param || stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+:root, html[data-theme="dark"] {
+  --fs-s: 12px; --fs-m: 14px; --fs-l: 19px;
+  --ok-soft: color-mix(in srgb, var(--cp-success) 16%, transparent);
+  --bad-soft: color-mix(in srgb, var(--cp-danger) 14%, transparent);
+  --warn-soft: color-mix(in srgb, var(--cp-warning) 18%, transparent);
+  --link-soft: color-mix(in srgb, var(--cp-link) 14%, transparent);
+  --card-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--cp-bg); color: var(--cp-text); font: var(--fs-m)/1.45 "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+.mono, pre, code { font-family: Consolas, "Courier New", Courier, monospace; font-size: var(--fs-s); }
+.muted { color: var(--cp-text-muted); } .small { font-size: var(--fs-s); }
+button, select, input { font: inherit; }
+a { color: var(--cp-link); text-decoration: none; } a:hover { text-decoration: underline; }
+header.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 10px 20px; background: var(--cp-bg-elevated); border-bottom: 1px solid var(--cp-border); }
+.brand { font-weight: 700; display: flex; align-items: center; gap: 9px; white-space: nowrap; }
+.brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--cp-accent); display: inline-block; }
+.spacer { flex: 1; }
+.btn { border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); padding: 5px 11px; border-radius: 10px; cursor: pointer; font-size: var(--fs-s); }
+.btn:hover:not(:disabled) { border-color: var(--cp-border-strong); }
+.btn:disabled { opacity: .45; cursor: default; }
+select, input[type=search] { padding: 5px 9px; border-radius: 10px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); font-size: var(--fs-s); }
+main { max-width: 1700px; margin: 0 auto; padding: 14px 20px 60px; }
+.lede { color: var(--cp-text-muted); margin: 0 0 12px; max-width: 1100px; }
+.stats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.stat { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 10px; padding: 6px 11px; font-size: var(--fs-s); }
+.stat b { font-size: var(--fs-l); margin-right: 5px; font-variant-numeric: tabular-nums; }
+button.stat { cursor: pointer; text-align: left; color: inherit; }
+button.stat:hover { border-color: var(--cp-border-strong); }
+button.stat.on { border-color: var(--cp-accent); box-shadow: 0 0 0 1px var(--cp-accent); }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; font-size: var(--fs-s); color: var(--cp-text-muted); }
+.tablewrap { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; box-shadow: var(--card-shadow); overflow: auto; max-height: calc(100vh - 290px); }
+table { border-collapse: collapse; width: 100%; font-size: var(--fs-s); }
+th { position: sticky; top: 0; background: var(--cp-surface-soft); text-align: left; font-weight: 600; color: var(--cp-text-muted); padding: 8px 10px; border-bottom: 1px solid var(--cp-border); white-space: nowrap; z-index: 1; }
+td { padding: 7px 10px; border-bottom: 1px solid var(--cp-border); vertical-align: top; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--cp-surface-soft); }
+tbody tr.sel { background: var(--cp-highlight); }
+td.q { max-width: 300px; color: var(--cp-text-muted); font-style: italic; }
+td.clip { max-width: 260px; }
+.chip { display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border-radius: 999px; font-size: var(--fs-s); background: var(--cp-surface-soft); border: 1px solid var(--cp-border); color: var(--cp-text-muted); white-space: nowrap; font-style: normal; }
+.chip.acc { background: var(--cp-accent-soft); border-color: transparent; color: var(--cp-accent); font-weight: 600; }
+.chip.ok { background: var(--ok-soft); border-color: transparent; color: var(--cp-text); }
+.chip.bad { background: var(--bad-soft); border-color: transparent; color: var(--cp-text); }
+.chip.warn { background: var(--warn-soft); border-color: transparent; color: var(--cp-text); }
+.chip.link { background: var(--link-soft); border-color: transparent; color: var(--cp-text); }
+.res { font-weight: 700; font-size: var(--fs-m); }
+.res.ok { color: var(--cp-success); } .res.bad { color: var(--cp-danger); }
+/* drawer */
+.scrim { position: fixed; inset: 0; background: rgba(0,0,0,.28); z-index: 30; display: none; }
+.scrim.on { display: block; }
+aside.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(1440px, 96vw); z-index: 31; background: var(--cp-bg);
+  border-left: 1px solid var(--cp-border); box-shadow: var(--cp-shadow); transform: translateX(102%); transition: transform .22s ease-out;
+  display: flex; flex-direction: column; }
+aside.drawer.on { transform: none; }
+@media (prefers-reduced-motion: reduce) { aside.drawer { transition: none; } }
+.dhead { padding: 12px 18px; border-bottom: 1px solid var(--cp-border); background: var(--cp-bg-elevated); display: flex; gap: 12px; align-items: flex-start; }
+.dhead h2 { font-size: var(--fs-l); margin: 2px 0 2px; }
+.lineage { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; padding: 12px 18px; border-bottom: 1px solid var(--cp-border); }
+.lin { border: 1px solid var(--cp-border); background: var(--cp-surface); border-radius: 10px; padding: 7px 9px; font-size: var(--fs-s); cursor: pointer; text-align: left; color: inherit; min-width: 0; }
+.lin:hover { border-color: var(--cp-border-strong); }
+.lin.ok { border-color: color-mix(in srgb, var(--cp-success) 55%, var(--cp-border)); }
+.lin.bad { border-color: var(--cp-danger); background: var(--bad-soft); }
+.lin.on { box-shadow: 0 0 0 2px var(--cp-accent); }
+.lin .h { font-weight: 600; color: var(--cp-text-muted); display: flex; justify-content: space-between; gap: 4px; }
+.lin .b { margin-top: 3px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.dbody { flex: 1; min-height: 0; display: grid; grid-template-columns: 390px minmax(0, 1fr); }
+.spans { border-right: 1px solid var(--cp-border); overflow: auto; padding: 8px; background: var(--cp-bg-elevated); }
+.treehead { display: flex; justify-content: space-between; font-size: var(--fs-s); color: var(--cp-text-muted); margin: 2px 6px 8px; }
+.span { display: block; width: 100%; text-align: left; border: 1px solid transparent; background: none; color: inherit; border-radius: 10px; padding: 6px 8px 7px; cursor: pointer; margin-bottom: 2px; position: relative; }
+.span.d1 { padding-left: 24px; }
+.span.d1::before { content: ""; position: absolute; left: 12px; top: -2px; bottom: -2px; border-left: 1px solid var(--cp-border-strong); opacity: .5; }
+.span:hover { background: var(--cp-surface-soft); }
+.span.on { background: var(--cp-surface); border-color: var(--cp-accent); }
+.span .t { display: flex; gap: 6px; align-items: center; font-size: var(--fs-s); font-weight: 600; }
+.span .t .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.span .t .dur { font-weight: 400; color: var(--cp-text-muted); font-variant-numeric: tabular-nums; }
+.span .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--cp-border-strong); }
+.span .dot.ok { background: var(--cp-success); } .span .dot.bad { background: var(--cp-danger); }
+.span .sub { font-size: 11px; color: var(--cp-text-muted); margin: 2px 0 0 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kind { flex: none; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 1px 5px; border-radius: 4px;
+  background: var(--cp-surface-soft); border: 1px solid var(--cp-border); color: var(--cp-text-muted); }
+.kind.k-llm { background: var(--link-soft); border-color: transparent; color: var(--cp-text); }
+.kind.k-root, .kind.k-eval { background: var(--cp-accent-soft); border-color: transparent; color: var(--cp-accent); }
+.track { position: relative; height: 5px; margin: 5px 0 0 15px; background: var(--cp-surface-soft); border-radius: 3px; overflow: hidden; }
+.track i { position: absolute; top: 0; bottom: 0; border-radius: 3px; background: var(--cp-border-strong); }
+.span.k-llm .track i { background: var(--cp-link); }
+.span.k-root .track i { background: var(--cp-accent); opacity: .55; }
+.shead h3 { margin: 2px 0 6px; }
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--cp-border); margin: 10px 0 12px; }
+.tabs button { border: none; background: none; color: var(--cp-text-muted); padding: 7px 12px; cursor: pointer; font-size: var(--fs-s); font-weight: 600;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs button:hover { color: var(--cp-text); }
+.tabs button.on { color: var(--cp-text); border-bottom-color: var(--cp-accent); }
+.msg { border: 1px solid var(--cp-border); border-radius: 10px; background: var(--cp-surface); margin-bottom: 8px; overflow: hidden; }
+.msg .mh { display: flex; gap: 8px; align-items: center; padding: 5px 10px; border-bottom: 1px solid var(--cp-border); background: var(--cp-surface-soft); }
+.msg .role { font-weight: 700; font-size: var(--fs-s); text-transform: uppercase; letter-spacing: .05em; }
+.msg.system .role { color: var(--cp-text-muted); } .msg.user .role { color: var(--cp-link); } .msg.assistant .role { color: var(--cp-accent); }
+.msg .mh .btn { margin-left: auto; }
+.msg .body { position: relative; margin: 0; padding: 10px 12px; white-space: pre-wrap; word-break: break-word; font-family: Consolas, "Courier New", Courier, monospace;
+  font-size: var(--fs-s); max-height: 340px; overflow: auto; }
+.msg .body.clamp { max-height: 150px; }
+.msg.full .body { max-height: none; }
+mark.blk { background: var(--link-soft); outline: none; border-radius: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.callout { border: 1px solid var(--cp-border); border-radius: 10px; background: var(--cp-surface); padding: 10px 12px; margin-bottom: 12px; }
+.callout.bad { border-color: var(--cp-danger); } .callout.ok { border-color: color-mix(in srgb, var(--cp-success) 60%, var(--cp-border)); }
+.callout .ch { font-size: var(--fs-s); font-weight: 700; color: var(--cp-text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+.callout .big { font-size: 15px; font-weight: 600; }
+.callout h4 { margin-top: 10px; }
+.reason { margin-top: 8px; padding: 8px 10px; border-radius: 8px; background: var(--cp-surface-soft); }
+.kvt td:first-child { color: var(--cp-text-muted); width: 170px; }
+.btn.xs { padding: 2px 8px; font-size: 11px; }
+details.fmt { margin: 0 0 8px; }
+.story { list-style: none; padding: 0; margin: 0; }
+.story li { display: grid; grid-template-columns: 20px 200px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--cp-border); font-size: var(--fs-s); }
+button.lnk { border: none; background: none; color: var(--cp-link); padding: 0; cursor: pointer; text-align: left; font: inherit; font-weight: 600; }
+button.lnk:hover { text-decoration: underline; }
+.attrs td:first-child { font-family: Consolas, "Courier New", Courier, monospace; color: var(--cp-text-muted); white-space: nowrap; width: 1%; }
+pre.tall { max-height: none; }
+.detail { overflow: auto; padding: 14px 18px 40px; }
+.detail h3 { font-size: var(--fs-l); margin: 0 0 4px; }
+.detail h4 { margin: 14px 0 6px; font-size: var(--fs-s); text-transform: uppercase; letter-spacing: .06em; color: var(--cp-text-muted); }
+.kv { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
+pre { background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 10px; padding: 10px 12px; margin: 0; white-space: pre-wrap; word-break: break-word; max-height: 420px; overflow: auto; }
+pre.mine { border-left: 3px solid var(--cp-link); background: var(--cp-surface); }
+mark { background: color-mix(in srgb, var(--cp-link) 16%, transparent); color: inherit; outline: 2px solid var(--cp-link); border-radius: 3px; }
+details { border: 1px solid var(--cp-border); border-radius: 10px; background: var(--cp-surface); margin-top: 8px; }
+details > summary { cursor: pointer; padding: 8px 12px; font-size: var(--fs-s); font-weight: 600; }
+details > pre, details > .in { margin: 0 10px 10px; }
+.tbl { width: 100%; border-collapse: collapse; font-size: var(--fs-s); margin-top: 4px; }
+.tbl th { position: static; background: none; padding: 5px 8px; }
+.tbl td { padding: 5px 8px; }
+.tbl tr.badrow td { background: var(--bad-soft); }
+.tbl tr.hitrow td { background: var(--ok-soft); font-weight: 600; }
+.note { border: 1px solid var(--cp-border); background: var(--cp-surface); border-radius: 10px; padding: 9px 12px; font-size: var(--fs-s); }
+.note.bad { border-color: var(--cp-danger); background: var(--bad-soft); }
+.note.ok { border-color: color-mix(in srgb, var(--cp-success) 55%, var(--cp-border)); background: var(--ok-soft); }
+.stepnav { display: flex; gap: 6px; align-items: center; }
+.turnlist .turn { padding: 3px 6px; border-radius: 6px; font-size: var(--fs-s); }
+.turnlist .turn.hit { background: var(--link-soft); outline: 1.5px solid var(--cp-link); }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><i></i>Board pipeline · dataset &amp; traces</div>
+  <div class="small muted" id="runmeta"></div>
+  <div class="spacer"></div>
+  <a class="small" href="../mock-board/index.html">Board view</a>
+  <span class="small muted" title="Run: standup-exp board demo">Live demo: <code>standup-exp board demo</code></span>
+  <button class="btn" id="theme"></button>
+</header>
+
+<main>
+  <p class="lede">Every row is one item from the answer key: a true new job or a true update. Rows marked <i>not in the answer key</i>
+    are things the pipeline extracted that the answer key doesn't have. Each row is followed through the pipeline and checked at every stage:
+    raw text → extracted → matched to master data → board context → pick and rule → board result. Click a row to open its <b>trace</b>, laid out like a Foundry trace: a root span for the decision, then a span for every step. Model calls show the system and user messages that went in and the assistant message that came out, with this row's part highlighted; code steps show their arguments and result.</p>
+  <div class="stats" id="stats"></div>
+  <div class="filters">
+    Team <select id="fTeam"></select>
+    Stand-up <select id="fDay"></select>
+    Type <select id="fKind"><option value="all">All rows</option><option value="gold">Answer-key items</option><option value="new">New jobs</option><option value="update">Updates</option><option value="extra">Not in the answer key</option></select>
+    Result <select id="fRes"><option value="all">All</option><option value="bad">Wrong</option><option value="ok">Right</option></select>
+    Failed at <select id="fFail"><option value="all">Any stage</option></select>
+    <input type="search" id="fText" placeholder="Search text, ids, names…" aria-label="Search">
+    <span id="count"></span>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Where</th><th>Expected (answer key)</th><th>Raw text</th><th>Step 1 · extracted</th><th>Step 1 · matched</th><th>Step 2–3 · decision</th><th>Failed at</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Trace" role="dialog" aria-modal="true">
+  <div class="dhead">
+    <div style="flex:1;min-width:0" id="dtitle"></div>
+    <div class="stepnav">
+      <button class="btn" id="prevRow" title="Previous row (↑)">↑ Row</button>
+      <button class="btn" id="nextRow" title="Next row (↓)">↓ Row</button>
+      <button class="btn" id="prevSpan" title="Previous step (←)">‹ Step</button>
+      <button class="btn" id="nextSpan" title="Next step (→)">Step ›</button>
+      <button class="btn" id="close" title="Close (Esc)">Close</button>
+    </div>
+  </div>
+  <div class="lineage" id="lineage"></div>
+  <div class="dbody"><nav class="spans" id="spans" aria-label="Trace steps"></nav><section class="detail" id="detail"></section></div>
+</aside>
+
+<script id="payload" type="application/octet-stream">__DATA_GZ_B64__</script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const J = x => esc(JSON.stringify(x, null, 2));
+const pct = (a, b) => b ? `${Math.round(100 * a / b)}%` : "–";
+const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtDate = iso => { if (!iso) return ""; const d = new Date(String(iso).slice(0, 10) + "T12:00:00"); return `${DOW[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`; };
+const SAID_CLS = {new: "acc", done: "ok", blocked: "bad", cancelled: "bad", reassigned: "warn", due_changed: "warn"};
+const ACT = {create: ["Created", "acc"], update: ["Updated", "ok"], comment: ["Commented", "warn"], ignore: ["Ignored", ""]};
+const STAGE = {extract: "Step 1 · extract", normalise: "Step 1 · match", context: "Step 2 · context", decide: "Step 3 · pick/rule", result: "Board result"};
+const KIND = {new: "new job", progress: "progress", done: "done", blocked: "blocked", cancelled: "cancelled", reassigned: "reassigned", due_changed: "new due date", extra: "not in answer key"};
+let D, SU = {}, TEAMS = [], VIEW = [], S = {row: null, span: 0, tab: "io", statFilter: null};
+
+const person = id => id ? (D.people[id] || id) : "unassigned";
+const asset = id => id ? (D.assets[id]?.name || id) : "";
+const group = r => r.kind === "new" || r.kind === "extra" ? r.kind : "update";
+const teamNo = sid => TEAMS.indexOf(sid) + 1;
+const where = r => `Team ${teamNo(r.series)} · SU ${r.day}`;
+const stage = (r, key) => r.stages.find(s => s.key === key);
+const parse = s => { try { return JSON.parse(s); } catch (e) { return null; } };
+
+// ---------------------------------------------------------------- dataset table
+function rowText(r) {
+  const m = r.m || {};
+  return [r.id, r.expected.summary, m.summary, m.quote, stage(r, "raw")?.text, person(m.speaker_id), person(m.owner_id), asset(m.component_id),
+    m.owner_words, m.component_words, r.decision?.rule].join(" ").toLowerCase();
+}
+
+function filtered() {
+  const f = {team: $("#fTeam").value, day: $("#fDay").value, kind: $("#fKind").value, res: $("#fRes").value, fail: $("#fFail").value,
+    text: $("#fText").value.trim().toLowerCase()};
+  return D.rows.filter(r => (f.team === "all" || r.series === f.team) && (f.day === "all" || String(r.day) === f.day)
+    && (f.kind === "all" || group(r) === f.kind || (f.kind === "gold" && r.kind !== "extra")) && (f.res === "all" || r.status === f.res)
+    && (f.fail === "all" || r.failed_at === f.fail) && (!f.text || rowText(r).includes(f.text)));
+}
+
+function renderStats() {
+  const gold = D.rows.filter(r => r.kind !== "extra"), extra = D.rows.filter(r => r.kind === "extra");
+  const bad = gold.filter(r => r.status === "bad"), by = {};
+  bad.forEach(r => { by[r.failed_at] = (by[r.failed_at] || 0) + 1; });
+  const nw = gold.filter(r => r.kind === "new"), up = gold.filter(r => r.kind !== "new");
+  const m = D.meta.metrics;
+  const btn = (key, value, label) => `<button class="stat ${S.statFilter === key ? "on" : ""}" data-f="${key}"><b>${esc(value)}</b>${esc(label)}</button>`;
+  $("#stats").innerHTML = [
+    `<div class="stat"><b>${gold.length}</b>answer-key items across ${D.standups.length} stand-ups</div>`,
+    btn("ok", pct(gold.length - bad.length, gold.length), `right end to end (${gold.length - bad.length})`),
+    btn("new-ok", pct(nw.filter(r => r.status === "ok").length, nw.length), `of ${nw.length} new jobs right`),
+    btn("upd-ok", pct(up.filter(r => r.status === "ok").length, up.length), `of ${up.length} updates right`),
+    ...Object.entries(STAGE).filter(([k]) => by[k]).map(([k, l]) => btn("fail-" + k, by[k], `wrong at ${l}`)),
+    btn("extra", `${extra.filter(r => r.status === "ok").length}/${extra.length}`, "extra mentions handled safely"),
+    `<div class="stat"><b>$${(m.cost_per_stand_up || 0).toFixed(4)}</b>per stand-up</div>`,
+  ].join("");
+}
+
+function applyStat(key) {
+  S.statFilter = S.statFilter === key ? null : key;
+  const set = (k, r, fl) => { $("#fKind").value = k; $("#fRes").value = r; $("#fFail").value = fl; };
+  const k = S.statFilter;
+  if (!k) set("all", "all", "all");
+  else if (k === "ok") set("gold", "ok", "all");
+  else if (k === "new-ok") set("new", "all", "all");
+  else if (k === "upd-ok") set("update", "all", "all");
+  else if (k === "extra") set("extra", "all", "all");
+  else set("gold", "bad", k.slice(5));
+  renderStats(); renderTable();
+}
+
+function cellMatched(r) {
+  const m = r.m; if (!m) return "";
+  const bits = [m.owner_id && `<span>${esc(person(m.owner_id))}</span>`, m.component_id && `<span>${esc(asset(m.component_id))}</span>`,
+    m.due_date && `<span>due ${esc(fmtDate(m.due_date))}</span>`, m.new_owner_id && `<span>→ ${esc(person(m.new_owner_id))}</span>`].filter(Boolean);
+  const st = stage(r, "normalise");
+  return `${bits.join(" · ")}${st?.status === "bad" ? ` <span class="chip bad">${esc(st.text)}</span>` : ""}`;
+}
+
+function renderTable() {
+  VIEW = filtered();
+  $("#count").textContent = `${VIEW.length} of ${D.rows.length} rows`;
+  $("#rows").innerHTML = VIEW.map((r, k) => {
+    const m = r.m, dec = r.decision, a = dec && ACT[dec.action];
+    const exp = r.kind === "extra" ? `<span class="chip">not in answer key</span>`
+      : `<span class="chip ${SAID_CLS[r.kind] || ""}">${esc(KIND[r.kind])}</span> ${esc(r.expected.summary)}${r.kind !== "new" && r.expected.our_number ? ` <span class="muted">(#${r.expected.our_number})</span>` : ""}`;
+    return `<tr data-k="${k}" class="${S.row === r.id ? "sel" : ""}">
+      <td><span class="res ${r.status}" aria-label="${r.status === "ok" ? "right" : "wrong"}">${r.status === "ok" ? "&#10003;" : "&#10007;"}</span></td>
+      <td class="mono" style="white-space:nowrap">${esc(where(r))}</td>
+      <td class="clip">${exp}</td>
+      <td class="q">${esc((stage(r, "raw")?.text || "").slice(0, 150))}</td>
+      <td class="clip">${m ? `<span class="chip ${SAID_CLS[m.said] || ""}">${esc(m.said.replace("_", " "))}</span> ${esc(m.summary)}` : `<span class="chip bad">not extracted</span>`}</td>
+      <td class="clip">${cellMatched(r)}</td>
+      <td>${a ? `<span class="chip ${a[1]}">${a[0]}</span> ${r.card_after?.number ? `#${r.card_after.number}` : ""}` : ""}</td>
+      <td>${r.failed_at ? `<span class="chip bad">${esc(STAGE[r.failed_at])}</span>` : ""}</td></tr>`;
+  }).join("") || `<tr><td colspan="8" class="muted">No rows match these filters.</td></tr>`;
+}
+
+// ---------------------------------------------------------------- trace
+// One trace per row, laid out like a Foundry (OpenTelemetry GenAI) trace: a root span for the decision and one child
+// span per operation. Model calls ("chat") show the messages sent and returned; code steps ("execute_tool") show
+// their arguments and result.
+const KINDS = {root: "decision", llm: "LLM", code: "tool", db: "db", eval: "eval", skip: "skipped"};
+const CODE_FN = {shortlist: "LLMNormaliser.shortlist_ids", context: "board.context.context_for", pick: "ContextPipeline._pick",
+  rules: "ContextPipeline.run_day", write: "BoardStore.commit", eval: "board.evaluate.score_series"};
+const TABS = [["io", "Input & output"], ["attrs", "Attributes"], ["json", "Raw span"]];
+const fmtS = s => s >= 1 ? `${s.toFixed(1)} s` : s > 0 ? `${Math.round(s * 1000)} ms` : "–";
+const fmtT = t => `${Math.floor(t / 60)}:${String(Math.round(t) % 60).padStart(2, "0")}`;
+const num = id => id && D.card_numbers[id] ? `#${D.card_numbers[id]}` : (id || "none");
+
+function spansFor(r) {
+  const su = SU[r.standup], st = key => stage(r, key)?.status, model = su.calls[0]?.model || D.meta.model;
+  const llm = (id, step, title, fn, stg, status) => ({id, kind: "llm", step, title, name: `chat ${model}`, fn,
+    call: su.calls.findIndex(c => c.step === id), stage: stg, status, depth: 1});
+  const tool = (id, step, title, fn, stg, status, kind = "code") => ({id, kind, step, title, name: `execute_tool ${fn}`, fn, stage: stg, status, depth: 1});
+  const out = [{id: "root", kind: "root", title: r.kind === "extra" ? "Mention not in the answer key" : "Decision for this item",
+    name: `decision ${r.m?.mention_id || r.id}`, stage: "raw", status: r.status, depth: 0},
+    llm("extract", "Step 1", "Extract mentions", "standup_mentions", "extract", st("extract"))];
+  if (r.m) {
+    const bad = (stage(r, "normalise")?.fields || []).filter(f => !f.ok), ns = st("normalise");
+    out.push(tool("shortlist", "Step 1", "Shortlist candidates", "shortlist_candidates", "normalise",
+      bad.some(f => f.shortlist === false) ? "bad" : ns === "bad" ? "ok" : ns));
+    out.push(llm("match", "Step 1", "Link to master data", "link_tasks", "normalise",
+      ns === "bad" && !bad.some(f => f.shortlist !== false) ? "ok" : ns));
+    out.push(tool("context", "Step 2", "Pull board context", "pull_board_context", "context", st("context")));
+    const picked = r.decision.context_card_ids.length > 0;
+    out.push(picked ? llm("pick", "Step 3", "Pick the card", "board_pick", "decide", st("decide"))
+      : {...tool("pick", "Step 3", "Pick the card (skipped)", "board_pick", "decide", "na", "skip"), name: "skipped · no cards to pick from"});
+    // the rules are fixed code: when a model pick was wrong they applied correctly, so the pick span carries the error
+    out.push(tool("rules", "Rules", "Decide the action", "apply_rules", "decide", picked && st("decide") === "bad" ? "na" : st("decide")));
+    out.push({...tool("write", "Write", "Write to the database", "commit", "write", "na", "db"), name: "db.write cards, card_history"});
+  }
+  out.push({...tool("eval", "Evaluate", "Check against the answer key", "score", "result", r.status, "eval"), name: "evaluate answer_key"});
+  let t = 0;
+  out.slice(1).forEach(s => { s.start = t; s.dur = s.kind === "llm" ? (su.calls[s.call]?.seconds || 0) : 0; t += s.dur; });
+  Object.assign(out[0], {start: 0, dur: t});
+  return out;
+}
+
+function openRow(id, spanId) {
+  const r = D.rows.find(x => x.id === id); if (!r) return;
+  S.row = id;
+  const spans = spansFor(r);
+  S.span = spanId ? spans.findIndex(s => s.id === spanId) : spans.findIndex(s => s.status === "bad" && s.kind !== "root" && s.kind !== "eval");
+  if (S.span < 0) S.span = 0;
+  $("#drawer").classList.add("on"); $("#scrim").classList.add("on");
+  renderDrawer(); renderTable();
+  history.replaceState(null, "", `#row=${encodeURIComponent(id)}&span=${spans[S.span].id}`);
+}
+
+function closeDrawer() {
+  $("#drawer").classList.remove("on"); $("#scrim").classList.remove("on");
+  const id = S.row; S.row = null; renderTable(); history.replaceState(null, "", location.pathname + location.search);
+  document.querySelector(`#rows tr[data-k="${VIEW.findIndex(r => r.id === id)}"]`)?.focus();
+}
+
+function moveRow(d) {
+  if (!S.row) return;
+  const k = VIEW.findIndex(r => r.id === S.row), n = VIEW[k + d];
+  if (n) openRow(n.id);
+}
+
+function moveSpan(d) {
+  const r = D.rows.find(x => x.id === S.row); if (!r) return;
+  const spans = spansFor(r);
+  S.span = Math.max(0, Math.min(spans.length - 1, S.span + d));
+  renderDrawer();
+  history.replaceState(null, "", `#row=${encodeURIComponent(r.id)}&span=${spans[S.span].id}`);
+}
+
+function renderDrawer() {
+  const r = D.rows.find(x => x.id === S.row), su = SU[r.standup], spans = spansFor(r);
+  const k = VIEW.findIndex(x => x.id === r.id);
+  $("#prevRow").disabled = k <= 0; $("#nextRow").disabled = k < 0 || k >= VIEW.length - 1;
+  $("#prevSpan").disabled = S.span === 0; $("#nextSpan").disabled = S.span === spans.length - 1;
+  const res = stage(r, "result");
+  $("#dtitle").innerHTML = `<div class="small muted mono">${esc(r.id)} · ${esc(where(r))} · ${esc(fmtDate(su.date))}</div>
+    <h2>${r.kind === "extra" ? "Not in the answer key: " + esc(r.m?.summary || "") : esc(r.expected.summary)}</h2>
+    <div class="kv"><span class="chip ${SAID_CLS[r.kind] || ""}">expected: ${esc(KIND[r.kind])}</span>
+      <span class="chip ${r.status}">${r.status === "ok" ? "&#10003; right" : "&#10007; wrong"} · ${esc(res.text)}</span>
+      ${r.failed_at ? `<span class="chip bad">failed at ${esc(STAGE[r.failed_at])}</span>` : ""}
+      ${(r.expected.tags || []).map(t => `<span class="chip">${esc(t.replace("_", " "))}</span>`).join("")}</div>`;
+  $("#lineage").innerHTML = r.stages.map(s => {
+    const target = spans.findIndex(x => x.stage === s.key);
+    const icon = s.status === "ok" ? "&#10003;" : s.status === "bad" ? "&#10007;" : s.status === "skip" ? "–" : "";
+    return `<button class="lin ${s.status} ${spans[S.span].stage === s.key ? "on" : ""}" data-span="${target}">
+      <div class="h"><span>${esc(s.label)}</span><span>${icon}</span></div><div class="b">${esc(s.text)}</div></button>`;
+  }).join("");
+  const total = spans[0].dur || 1;
+  $("#spans").innerHTML = `<div class="treehead"><span>Trace · ${spans.length} spans · ← → to step</span><span>${fmtS(spans[0].dur)}</span></div>`
+    + spans.map((x, i) => {
+      const c = x.kind === "llm" ? su.calls[x.call] : null;
+      const dot = x.status === "ok" ? "ok" : x.status === "bad" ? "bad" : "";
+      const sub = x.kind === "root" ? `${esc(su.id)} · ${spans.filter(s => s.kind === "llm").length} model calls, ${spans.filter(s => s.kind !== "llm" && s.kind !== "root").length} code steps`
+        : `${esc(x.step)} · <span class="mono">${esc(x.name)}</span>${c ? ` · ${(c.input_tokens + c.output_tokens).toLocaleString()} tok` : ""}`;
+      const left = Math.min(99.2, 100 * x.start / total), width = Math.max(0.8, 100 * x.dur / total);
+      return `<button class="span d${x.depth} k-${x.kind} ${i === S.span ? "on" : ""}" data-i="${i}">
+        <div class="t"><span class="dot ${dot}"></span><span class="kind k-${x.kind}">${KINDS[x.kind]}</span><span class="nm">${esc(x.title)}</span><span class="dur">${fmtS(x.dur)}</span></div>
+        <div class="sub">${sub}</div>
+        <div class="track"><i style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%"></i></div></button>`;
+    }).join("");
+  renderDetail();
+}
+
+function renderDetail() {
+  const r = D.rows.find(x => x.id === S.row), su = SU[r.standup], spans = spansFor(r), sp = spans[S.span];
+  const c = sp.kind === "llm" ? su.calls[sp.call] : null;
+  const whole = sp.kind === "root" || sp.kind === "eval";
+  const status = sp.status === "ok" ? `<span class="chip ok">&#10003; ${whole ? "right end to end" : "right"}</span>`
+    : sp.status === "bad" ? `<span class="chip bad">&#10007; ${whole ? "wrong end to end" : "went wrong here"}</span>` : "";
+  const chips = [`<span class="kind k-${sp.kind}">${KINDS[sp.kind]}</span>`, status, sp.dur ? `<span class="chip">${fmtS(sp.dur)}</span>` : "",
+    c ? `<span class="chip">${c.input_tokens.toLocaleString()} in · ${c.output_tokens.toLocaleString()} out tokens</span><span class="chip">$${(c.cost_usd || 0).toFixed(5)}</span>
+      <span class="chip">${c.cached ? "replayed from cache" : "live call"}</span>` : "",
+    sp.kind === "code" ? `<span class="chip">plain code, no model</span>` : ""].join("");
+  const body = S.tab === "attrs" ? attrTable(attrsFor(r, sp, su)) : S.tab === "json" ? `<pre class="tall">${J(rawSpan(r, sp, su))}</pre>` : spanIO(r, sp, su);
+  $("#detail").innerHTML = `<div class="shead"><div class="small muted mono">${esc(sp.name)}${sp.kind === "llm" ? " · " + esc(sp.fn) : ""}</div>
+    <h3>${esc(sp.step ? sp.step + " · " : "")}${esc(sp.title)}</h3><div class="kv">${chips}</div></div>
+    <div class="tabs" role="tablist">${TABS.map(([key, label]) => `<button role="tab" data-tab="${key}" class="${S.tab === key ? "on" : ""}" aria-selected="${S.tab === key}">${label}</button>`).join("")}</div>
+    ${body}`;
+  $("#detail").scrollTop = 0;
+  document.querySelectorAll("#detail .msg .body").forEach(b => { const mk = b.querySelector("mark"); if (mk) b.scrollTop = Math.max(0, mk.offsetTop - 30); });
+}
+
+// pretty-print JSON, wrapping the objects that belong to this row in <mark class="blk">
+function ppJSON(v, pred) {
+  if (typeof v === "string") return esc(v);
+  const pp = (x, ind) => {
+    const nx = ind + "  ";
+    if (Array.isArray(x)) return x.length ? "[\n" + x.map(y => nx + pp(y, nx)).join(",\n") + "\n" + ind + "]" : "[]";
+    if (x && typeof x === "object") {
+      const keys = Object.keys(x);
+      if (!keys.length) return "{}";
+      const body = "{\n" + keys.map(k => nx + esc(JSON.stringify(k)) + ": " + pp(x[k], nx)).join(",\n") + "\n" + ind + "}";
+      return pred && pred(x) ? `<mark class="blk">${body}</mark>` : body;
+    }
+    return esc(JSON.stringify(x));
+  };
+  return pp(v, "");
+}
+
+function markIn(text, needle) {
+  const t = String(text || ""), n = String(needle || "").trim();
+  const i = n ? t.toLowerCase().indexOf(n.toLowerCase().slice(0, 80)) : -1;
+  if (i < 0) return esc(t);
+  const end = Math.min(t.length, i + n.length);
+  return esc(t.slice(0, i)) + "<mark>" + esc(t.slice(i, end)) + "</mark>" + esc(t.slice(end));
+}
+
+function msg(role, label, meta, html, clamp) {
+  return `<div class="msg ${role}"><div class="mh"><span class="role">${role}</span><span class="small muted">${esc(label)} · ${esc(meta)}</span>
+    <button class="btn xs" data-expand>Expand</button></div><div class="body ${clamp ? "clamp" : ""}">${html}</div></div>`;
+}
+// ---------------------------------------------------------------- span input & output
+function spanIO(r, sp, su) {
+  const c = sp.kind === "llm" ? su.calls[sp.call] : null;
+  if (sp.kind === "llm" && !c) return `<div class="note">No trace was recorded for this call.</div>`;
+  if (sp.kind === "llm") return chatIO(r, sp, c, su);
+  if (sp.id === "root") return rootIO(r, su);
+  const d = toolData(r, sp, su);
+  return `<p class="muted small">${d.about}</p>${d.callout || ""}
+    <h4>${esc(d.inLabel || "Input · arguments")}</h4><pre>${J(d.args)}</pre>
+    <h4>${esc(d.outLabel || "Output · result")}</h4>${d.html}`;
+}
+
+function chatIO(r, sp, c, su) {
+  const instr = D.texts[c.instructions] || "", schema = D.texts[c.schema] || "", i = r.mention;
+  const ids = [i, r.owner_task].filter(x => x !== null && x !== undefined);
+  let callout, input, output, why = "";
+  if (sp.id === "extract") {
+    const mine = r.m ? c.output.mentions?.[i] : null;
+    callout = extractCallout(r, mine);
+    input = markIn(c.input, r.m?.quote || stage(r, "raw").text);
+    output = ppJSON(c.output, o => o === mine);
+  } else if (sp.id === "match") {
+    callout = matchCallout(r, c, ids);
+    input = ppJSON(parse(c.input) ?? c.input, o => ids.includes(o.task_index) && "summary" in o);
+    output = ppJSON(c.output, o => ids.includes(o.task_index) && !("summary" in o));
+  } else {
+    callout = pickCallout(r, c);
+    input = ppJSON(parse(c.input) ?? c.input, o => o.mention === i && "cards" in o);
+    output = ppJSON(c.output, o => o.mention === i && "card" in o);
+    why = " The schema makes the model write its <code>reason</code> before it names the card, so the reason above is its own account of this pick.";
+  }
+  const n = D.rows.filter(x => x.standup === su.id && x.m).length;
+  return `${callout}
+    <h4>Input · sent to the ${esc(c.api)} API</h4>
+    ${msg("system", "instructions", `${instr.length.toLocaleString()} chars`, esc(instr), true)}
+    ${msg("user", "input", `${c.input.length.toLocaleString()} chars`, input)}
+    <details class="fmt"><summary>response_format · json_schema “${esc(c.name)}”, strict: the model can only reply in this shape</summary><pre>${esc(schema)}</pre></details>
+    <h4>Output · returned by the model</h4>
+    ${msg("assistant", "output_text (JSON)", `${c.output_tokens.toLocaleString()} tokens`, output)}
+    <p class="small muted">One call per stand-up handles all ${n} mentions of ${esc(su.id)}; the highlighted parts are this row's.
+      GPT-5.6 Luna reasons before it answers, but this deployment returns no reasoning summary, so the trace holds exactly what went in and what came out.${why}</p>`;
+}
+
+function extractCallout(r, mine) {
+  const st = stage(r, "extract");
+  if (!mine) return `<div class="callout bad"><div class="ch">This row</div>No record for this item in the output: Step 1 missed it.</div>`;
+  const rows = [["speaker", mine.speaker], ["owner (as said)", mine.owner_mention], ["new owner (as said)", mine.new_owner_mention],
+    ["equipment (as said)", mine.component_mention], ["site (as said)", mine.site_mention],
+    ["due (as said)", mine.due_mention && `“${mine.due_mention}” → ${mine.due_date || "?"}${mine.due_time ? " " + mine.due_time : ""}`],
+    ["priority", mine.priority != null ? `${mine.priority}${mine.priority_mention ? ` (“${mine.priority_mention}”)` : ""}` : null],
+    ["category", mine.category], ["note", mine.note], ["confidence", mine.confidence]]
+    .filter(([, v]) => v !== null && v !== undefined && v !== "");
+  return `<div class="callout ${st.status}"><div class="ch">This row in the model's output</div>
+    <div class="big"><span class="chip ${SAID_CLS[mine.said] || ""}">said: ${esc(mine.said.replace("_", " "))}</span> ${esc(mine.summary)}</div>
+    <table class="tbl kvt">${rows.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}</table>
+    <div class="reason">Evidence: “${esc(mine.evidence_quote)}”</div>
+    ${st.status === "bad" ? `<div class="small" style="margin-top:6px">${esc(st.text)}</div>` : ""}</div>`;
+}
+
+function matchCallout(r, c, ids) {
+  const tasks = parse(c.input)?.tasks || [], st = stage(r, "normalise"), isNew = r.m?.said === "new", lines = [];
+  const cands = xs => (xs || []).map(x => x.name).join(", ") || "–";
+  ids.forEach((ti, k) => {
+    const t = tasks.find(x => x.task_index === ti), ch = (c.output.choices || []).find(x => x.task_index === ti);
+    if (!t || !ch) return;
+    if (k > 0) { lines.push(["new owner", t.owner_words, cands(t.owner_candidates), person(ch.owner_id)]); return; }
+    lines.push(["owner", t.owner_words, cands(t.owner_candidates), ch.owner_id ? person(ch.owner_id) : "none"]);
+    lines.push(["equipment", t.component_words, cands(t.component_candidates), asset(ch.component_id) || "none"]);
+    if (t.site_words) lines.push(["site", t.site_words, cands(t.site_candidates), ch.site_id ? D.sites[ch.site_id] : "none"]);
+    if (isNew) {
+      lines.push(["priority", t.priority_words, "1–3 rubric in the prompt", ch.priority]);
+      lines.push(["category", "", "operations / safety / organisation", ch.category]);
+    }
+  });
+  return `<div class="callout ${st?.status || ""}"><div class="ch">This row: what the matcher chose</div>
+    <table class="tbl"><tr><th>Field</th><th>Words said</th><th>Candidates shown to the model</th><th>Chose</th></tr>
+      ${lines.map(([f, w, s, g]) => `<tr><td>${esc(f)}</td><td>${w ? `“${esc(w)}”` : ""}</td><td class="muted">${esc(s)}</td><td><b>${esc(g ?? "none")}</b></td></tr>`).join("")}</table>
+    ${st?.fields?.length ? `<h4>Checked against the answer key</h4>${fieldTable(st)}` : ""}</div>`;
+}
+
+function pickCallout(r, c) {
+  const st = stage(r, "decide"), pk = (c.output.picks || []).find(p => p.mention === r.mention);
+  const cards = stage(r, "context")?.cards || [];
+  const label = id => { const x = cards.find(k => k.id === id); return x ? `${num(id)} ${x.summary}` : num(id); };
+  const chose = !pk ? "no pick returned (treated as none)" : pk.card === "none" ? `none of its ${cards.length} cards` : label(pk.card);
+  return `<div class="callout ${st.status}"><div class="ch">This row's decision</div>
+    <div class="big">mention ${r.mention} → ${esc(chose)}</div>
+    ${pk?.reason ? `<div class="reason">Model's reason: “${esc(pk.reason)}”</div>` : `<div class="small muted">No reason recorded for this pick.</div>`}
+    <div class="small" style="margin-top:6px">${esc(st.text)}</div></div>`;
+}
+function rootIO(r, su) {
+  const raw = stage(r, "raw"), d = r.decision, spans = spansFor(r);
+  const turns = (raw.turns || []).map(t => su.transcript[t]).filter(Boolean);
+  const said = turns.length ? turns.map(u => `<div class="turn hit"><span class="muted mono">[${fmtT(u.t)}]</span> <b>${esc(person(u.who))}:</b> ${esc(u.text)}</div>`).join("")
+    : `<div class="muted small">${esc(raw.text)}</div>`;
+  const story = r.stages.filter(s => s.key !== "raw").map(s => {
+    const icon = s.status === "ok" ? "&#10003;" : s.status === "bad" ? "&#10007;" : s.status === "skip" ? "–" : "·";
+    const extra = s.key === "decide" ? `${s.reason ? `<br><i>Model's reason: “${esc(s.reason)}”</i>` : ""}${s.rule ? `<br><span class="muted">Rule: ${esc(s.rule)}</span>` : ""}` : "";
+    return `<li><span class="res ${s.status}">${icon}</span><button class="lnk" data-go="${spans.findIndex(x => x.stage === s.key)}">${esc(s.label)}</button>
+      <span>${esc(s.text)}${extra}</span></li>`;
+  }).join("");
+  const outcome = d ? `<span class="chip ${ACT[d.action][1]}">${ACT[d.action][0]}</span> ${d.card_id ? esc(num(d.card_id)) + " " + esc(r.card_after?.summary || "") : ""}`
+    : "Nothing happened: it was not extracted.";
+  return `<p class="muted small">The root span is the whole journey of this item through the pipeline. Pick a child span on the left to see exactly what went in and came out of that step.</p>
+    <div class="callout ${r.status}"><div class="ch">Outcome</div><div class="big">${outcome}</div><div class="small" style="margin-top:4px">${esc(stage(r, "result").text)}</div></div>
+    <h4>Input · what was said</h4><div class="turnlist">${said}</div>
+    <h4>How it got there</h4><ol class="story">${story}</ol>`;
+}
+
+function toolData(r, sp, su) {
+  const m = r.m, i = r.mention, exp = r.expected;
+  if (sp.id === "shortlist") {
+    const mc = su.calls.find(x => x.step === "match"), tasks = parse(mc?.input)?.tasks || [];
+    const task = tasks.find(t => t.task_index === i) || {}, nt = tasks.find(t => t.task_index === r.owner_task);
+    const list = (label, words, cands) => `<h4>${label}: “${esc(words || "–")}”</h4>${(cands || []).length
+      ? `<table class="tbl"><tr><th>#</th><th>Candidate</th><th>id</th><th>part of</th></tr>${cands.map((x, k) => `<tr><td>${k + 1}</td><td>${esc(x.name)}</td><td class="mono">${esc(x.id)}</td><td>${esc(asset(x.parent))}</td></tr>`).join("")}</table>`
+      : `<div class="muted small">No words, so no candidates.</div>`}`;
+    const miss = (stage(r, "normalise")?.fields || []).filter(f => f.shortlist === false);
+    const ids = xs => (xs || []).map(x => x.id);
+    return {
+      about: "Code, no model. Each set of words is matched against the known people, equipment and sites with rapidfuzz and OpenAI text-embedding-3-large. The best candidates go to the matcher, which never sees the whole register. The top 3 are also kept as lookup keys for Step 2.",
+      args: {owner_words: task.owner_words ?? null, component_words: task.component_words ?? null, site_words: task.site_words ?? null, ...(nt ? {new_owner_words: nt.owner_words} : {})},
+      result: {owner_candidates: ids(task.owner_candidates), component_candidates: ids(task.component_candidates), site_candidates: ids(task.site_candidates),
+        ...(nt ? {new_owner_candidates: ids(nt.owner_candidates)} : {}), step2_keys: {people: m.people_candidates || [], equipment: m.equipment_candidates || []}},
+      html: `${miss.length ? `<div class="note bad">The right ${miss.map(f => `${esc(f.field)} (${esc(f.expected)})`).join(", ")} was not on the shortlist, so the matcher could not pick it.</div>` : ""}
+        ${list("Owner", task.owner_words, task.owner_candidates)}${nt ? list("New owner", nt.owner_words, nt.owner_candidates) : ""}${list("Equipment", task.component_words, task.component_candidates)}
+        ${task.site_words ? list("Site", task.site_words, task.site_candidates) : ""}
+        <h4>Kept for Step 2 as lookup keys (top 3)</h4><div class="kv">${(m.people_candidates || []).map(p => `<span class="chip">${esc(person(p))}</span>`).join("")}
+          ${(m.equipment_candidates || []).map(a => `<span class="chip">${esc(asset(a))}</span>`).join("") || `<span class="muted small">no equipment</span>`}</div>`,
+    };
+  }
+  if (sp.id === "context") {
+    const st = stage(r, "context");
+    return {
+      about: `Code, no model. From the ${st.open_before} open cards on the board at the start of the stand-up, it pulls the cards owned by one of these people, or on the same equipment (or part of it), ranked by wording, at most 8.`,
+      args: {people: st.keys.people, name_shortlist: st.keys.people_shortlist, equipment: st.keys.equipment, include_unowned: m.said === "reassigned",
+        words: m.summary, open_cards_on_board: st.open_before},
+      result: st.cards.map(x => ({card: x.id, number: x.number, job: x.summary, owner: person(x.owner_id), status: x.status, why: x.why})),
+      html: `<div class="note ${st.status === "bad" ? "bad" : st.status === "ok" ? "ok" : ""}">${esc(st.text)}</div>
+        ${st.cards.length ? `<table class="tbl"><tr><th>#</th><th>Card</th><th>Owner</th><th>Status</th><th>Why it was pulled</th></tr>
+          ${st.cards.map(x => `<tr class="${exp.our_card && x.id === exp.our_card ? "hitrow" : ""}"><td>#${esc(x.number ?? "?")}</td><td>${esc(x.summary)}</td><td>${esc(person(x.owner_id))}</td><td>${esc(x.status)}</td><td>${esc(x.why)}</td></tr>`).join("")}</table>
+          ${exp.our_card ? `<div class="small muted" style="margin-top:4px">Green row: the card the answer key says this is about.</div>` : ""}`
+          : `<div class="note">No cards: nothing on the board for these people or equipment, so Step 3 is skipped.</div>`}`,
+    };
+  }
+  if (sp.id === "pick") {
+    return {about: "No model call: Step 2 pulled no cards, so there was nothing to pick from.", args: {cards: []}, result: {card: "none"},
+      html: `<div class="note">The mention goes straight to the rules with “no match”.</div>`};
+  }
+  if (sp.id === "rules") {
+    const d = r.decision, st = stage(r, "decide"), isNew = m.said === "new", matched = !!d.matched_card_id;
+    const rules = [["new", "no", "create a card", isNew && !matched], ["new", "yes", "comment (and update due date or owner if new ones are given)", isNew && matched],
+      ["an update", "yes", "update that card", !isNew && matched], ["an update", "no", "ignore (never creates a card)", !isNew && !matched]];
+    return {
+      about: "Code, no model. A fixed table turns what was said, plus whether it matched a card, into an action.",
+      args: {said: m.said, matched_card: d.matched_card_id ? num(d.matched_card_id) : null},
+      result: {action: d.action, rule: d.rule, card: d.card_id ? num(d.card_id) : null},
+      html: `<table class="tbl"><tr><th>Said</th><th>Matched a card?</th><th>Action</th></tr>${rules.map(([s, mt, a, on]) => `<tr class="${on ? "hitrow" : ""}"><td>${s}</td><td>${mt}</td><td>${a}</td></tr>`).join("")}</table>
+        <h4>Applied</h4><div class="note ${st.status === "bad" ? "bad" : st.status === "ok" ? "ok" : ""}">said <b>${esc(m.said)}</b> · matched <b>${esc(d.matched_card_id ? num(d.matched_card_id) : "none")}</b> → <b>${esc(d.action)}</b><br><span class="muted">${esc(d.rule)}</span></div>`,
+    };
+  }
+  if (sp.id === "write") {
+    const ev = r.events.map(e => Object.fromEntries(Object.entries(e).filter(([, v]) => v !== null && v !== undefined && v !== false)));
+    return {
+      about: "The actions become board events and are committed to the stand-in database (<code>results/board/db-context-*.json</code>) with the stand-up. The next stand-up's Step 2 reads this board.",
+      inLabel: "Input · events", outLabel: "Output · the card after this stand-up (cards table)", args: ev, result: r.card_after,
+      html: r.card_after ? `<pre>${J(r.card_after)}</pre>` : `<div class="note">Nothing written: the mention was ignored.</div>`,
+    };
+  }
+  // eval
+  const res = stage(r, "result");
+  const stages = `<table class="tbl"><tr><th>Stage</th><th>Result</th><th>Detail</th></tr>${r.stages.map(s => `<tr class="${s.status === "bad" ? "badrow" : ""}"><td>${esc(s.label)}</td>
+    <td>${s.status === "ok" ? "&#10003;" : s.status === "bad" ? "&#10007;" : s.status === "skip" ? "–" : "·"}</td><td>${esc(s.text)}</td></tr>`).join("")}</table>`;
+  return {
+    about: "Scoring, not part of the pipeline: the result is compared with the answer key the synthetic data was written from.",
+    inLabel: "Input · answer key", outLabel: "Output · verdict",
+    args: r.kind === "extra" ? {answer_key: "nothing here; the safe outcome is to change nothing (ignore, or only comment)"} : exp,
+    result: {status: r.status, failed_at: r.failed_at, stages: r.stages.map(s => ({stage: s.label, status: s.status, detail: s.text}))},
+    html: `<div class="note ${r.status}">${r.status === "ok" ? "&#10003;" : "&#10007;"} ${esc(res.text)}</div>
+      <h4>Every stage</h4>${stages}${r.kind === "new" && stage(r, "normalise")?.fields?.length ? `<h4>Fields</h4>${fieldTable(stage(r, "normalise"))}` : ""}`,
+  };
+}
+
+function fieldTable(st) {
+  if (!st?.fields?.length) return "";
+  const sl = f => f.ok || f.shortlist === null || f.shortlist === undefined ? "" : f.shortlist ? "yes (matcher chose wrong)" : "no (shortlist missed it)";
+  return `<table class="tbl"><tr><th>Field</th><th>Words said</th><th>Got</th><th>Expected</th><th>Right one on the shortlist?</th><th></th></tr>${st.fields.map(f => `<tr class="${f.ok ? "" : "badrow"}">
+    <td>${esc(f.field)}</td><td>${f.words ? `“${esc(f.words)}”` : ""}</td><td>${esc(f.got ?? "none")}</td><td>${esc(f.expected ?? "none")}</td><td>${sl(f)}</td><td>${f.ok ? "&#10003;" : "&#10007;"}</td></tr>`).join("")}</table>`;
+}
+
+// ---------------------------------------------------------------- attributes + raw span
+function attrsFor(r, sp, su) {
+  const c = sp.kind === "llm" ? su.calls[sp.call] : null, spans = spansFor(r);
+  const a = {"trace.id": r.id, "span.name": sp.name, "span.kind": KINDS[sp.kind], "standup.id": su.id, "mention.id": r.m?.mention_id, "pipeline.step": sp.step || "root",
+    "start_s": +(sp.start || 0).toFixed(3), "duration_s": +(sp.dur || 0).toFixed(3)};
+  if (c) Object.assign(a, {"gen_ai.operation.name": "chat", "gen_ai.provider.name": "azure.ai.openai", "gen_ai.request.model": c.deployment,
+    "gen_ai.output.type": "json", "gen_ai.usage.input_tokens": c.input_tokens, "gen_ai.usage.output_tokens": c.output_tokens,
+    "gen_ai.request.response_format": `json_schema ${c.name} (strict)`, "openai.api": c.api, "model.catalogue_id": c.model, "cost_usd": c.cost_usd,
+    "cache.hit": c.cached, "cache.key": c.cache_key, "batch.size": D.rows.filter(x => x.standup === su.id && x.m).length, "batch.item": r.mention});
+  else if (sp.kind === "code" || sp.kind === "skip") Object.assign(a, {"gen_ai.operation.name": "execute_tool", "gen_ai.tool.name": sp.fn, "gen_ai.tool.type": "function", "code.function": CODE_FN[sp.id]});
+  else if (sp.kind === "db") Object.assign(a, {"db.system": "json file", "db.operation.name": "commit", "db.collection.name": "standups, mentions, decisions, cards, card_history", "code.function": CODE_FN.write});
+  else if (sp.kind === "eval") Object.assign(a, {"gen_ai.evaluation.name": "answer_key", "gen_ai.evaluation.result": r.status === "ok" ? "right" : "wrong", "eval.failed_at": r.failed_at, "code.function": CODE_FN.eval});
+  else {
+    const calls = spans.filter(s => s.kind === "llm").map(s => su.calls[s.call]).filter(Boolean);
+    Object.assign(a, {"decision.action": r.decision?.action, "decision.card": r.decision?.card_id ? num(r.decision.card_id) : null, "decision.rule": r.decision?.rule,
+      "model_calls": calls.length, "gen_ai.usage.input_tokens": calls.reduce((s, x) => s + x.input_tokens, 0),
+      "gen_ai.usage.output_tokens": calls.reduce((s, x) => s + x.output_tokens, 0), "cost_usd": +calls.reduce((s, x) => s + (x.cost_usd || 0), 0).toFixed(6)});
+  }
+  return a;
+}
+
+function attrTable(a) {
+  return `<table class="tbl attrs">${Object.entries(a).filter(([, v]) => v !== undefined && v !== null && v !== "")
+    .map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(typeof v === "object" ? JSON.stringify(v) : v)}</td></tr>`).join("")}</table>
+    <p class="small muted">Names follow the OpenTelemetry GenAI conventions that Foundry traces use. Values come from what <code>llm.trace_calls()</code>
+      recorded when the pipeline ran. Model-call totals on the root are for the stand-up's shared calls.</p>`;
+}
+
+function rawSpan(r, sp, su) {
+  const c = sp.kind === "llm" ? su.calls[sp.call] : null;
+  const base = {name: sp.name, kind: KINDS[sp.kind], attributes: attrsFor(r, sp, su)};
+  if (c) return {...base, input: {instructions: D.texts[c.instructions], input: parse(c.input) ?? c.input, response_format: parse(D.texts[c.schema])}, output: c.output};
+  if (sp.id === "root") return {...base, input: stage(r, "raw").text, output: r.decision, stages: r.stages.map(s => ({stage: s.label, status: s.status, detail: s.text}))};
+  const d = toolData(r, sp, su);
+  return {...base, input: d.args, output: d.result};
+}
+
+// ---------------------------------------------------------------- boot
+function renderTheme() {
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  $("#theme").textContent = dark ? "Light mode" : "Dark mode";
+}
+
+async function boot() {
+  renderTheme();
+  const bytes = Uint8Array.from(atob($("#payload").textContent.trim()), c => c.charCodeAt(0));
+  D = JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text());
+  D.standups.forEach(s => { SU[s.id] = s; if (!TEAMS.includes(s.series)) TEAMS.push(s.series); });
+  const mm = D.meta;
+  $("#runmeta").textContent = `POC board-context pipeline · ${mm.model} · run ${String(mm.created || "").replace("T", " ")} · chained`;
+  $("#fTeam").innerHTML = `<option value="all">All</option>` + TEAMS.map((t, i) => `<option value="${t}">Team ${i + 1}</option>`).join("");
+  $("#fDay").innerHTML = `<option value="all">All</option>` + [...new Set(D.standups.map(s => s.day))].map(d => `<option value="${d}">${d}</option>`).join("");
+  $("#fFail").innerHTML += Object.entries(STAGE).map(([k, l]) => `<option value="${k}">${l}</option>`).join("");
+  ["#fTeam", "#fDay", "#fKind", "#fRes", "#fFail"].forEach(s => $(s).addEventListener("change", () => { S.statFilter = null; renderStats(); renderTable(); }));
+  $("#fText").addEventListener("input", renderTable);
+  $("#stats").addEventListener("click", e => { const b = e.target.closest("button.stat"); if (b) applyStat(b.dataset.f); });
+  $("#rows").addEventListener("click", e => { const tr = e.target.closest("tr[data-k]"); if (tr) openRow(VIEW[+tr.dataset.k].id); });
+  $("#spans").addEventListener("click", e => { const b = e.target.closest(".span"); if (b) { S.span = +b.dataset.i; moveSpan(0); } });
+  $("#detail").addEventListener("click", e => {
+    const tab = e.target.closest("[data-tab]"), ex = e.target.closest("[data-expand]"), go = e.target.closest("[data-go]");
+    if (tab) { S.tab = tab.dataset.tab; renderDetail(); }
+    else if (ex) { const m = ex.closest(".msg"); m.classList.toggle("full"); ex.textContent = m.classList.contains("full") ? "Collapse" : "Expand"; }
+    else if (go && +go.dataset.go >= 0) { S.span = +go.dataset.go; moveSpan(0); }
+  });
+  $("#lineage").addEventListener("click", e => { const b = e.target.closest(".lin"); if (b && +b.dataset.span >= 0) { S.span = +b.dataset.span; moveSpan(0); } });
+  $("#prevRow").addEventListener("click", () => moveRow(-1)); $("#nextRow").addEventListener("click", () => moveRow(1));
+  $("#prevSpan").addEventListener("click", () => moveSpan(-1)); $("#nextSpan").addEventListener("click", () => moveSpan(1));
+  $("#close").addEventListener("click", closeDrawer); $("#scrim").addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", e => {
+    if (!S.row || e.target.closest("input, select, textarea")) return;
+    if (e.key === "Escape") closeDrawer();
+    else if (e.key === "ArrowRight") { e.preventDefault(); moveSpan(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); moveSpan(-1); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); moveRow(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); moveRow(-1); }
+  });
+  $("#theme").addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("boardTheme", next); } catch (e) { /* not persisted */ }
+    renderTheme();
+  });
+  renderStats(); renderTable();
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get("row")) openRow(h.get("row"), h.get("span"));
+}
+boot();
+</script>
+</body>
+</html>

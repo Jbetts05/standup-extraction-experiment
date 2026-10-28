@@ -1,0 +1,874 @@
+{
+ "id": "m016",
+ "date": "2026-11-23",
+ "split": "test",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p07",
+  "p02",
+  "p04",
+  "p10",
+  "p05",
+  "p06"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m016-t1",
+   "summary": "Investigate the pressure drop on the Water Booster Pump",
+   "spoken_action": "investigate the pressure drop on the pump in the pit",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Mide",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "the pump in the pit",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37
+   ]
+  },
+  {
+   "id": "m016-t2",
+   "summary": "Check the guarding on the Main Outfeed Conveyor",
+   "spoken_action": "check the guarding on the outfeed conveyor",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "outfeed conveyor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-30",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    10,
+    69
+   ]
+  },
+  {
+   "id": "m016-t3",
+   "summary": "Do the lock-out tag-out sign-off on the Line 3 Chiller",
+   "spoken_action": "do the lock-out tag-out sign-off on the cold unit",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "the cold unit",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-23",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    31,
+    32,
+    35,
+    65
+   ]
+  },
+  {
+   "id": "m016-t4",
+   "summary": "Clear the jam and check the sensors on the Main Outfeed Conveyor",
+   "spoken_action": "clear the jam and check the sensors on the long belt",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "the long belt",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    7,
+    69
+   ]
+  },
+  {
+   "id": "m016-t5",
+   "summary": "Chase the purchase order for the Fire Alarm Panel",
+   "spoken_action": "chase the purchase order for the alarm box",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "the alarm box",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    24,
+    67
+   ]
+  },
+  {
+   "id": "m016-t6",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-23",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": "p05",
+   "evidence": [
+    46,
+    47,
+    48,
+    51,
+    52,
+    53,
+    65
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p02",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "already swapped the filter on the boiler safety valve yesterday",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "boiler safety valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "signed off the inspection on the arm on two on Tuesday",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "the arm on two",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p05",
+   "text_hint": "heard a slight rattle from the counterbalances, nothing to action yet",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the counterbalances",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "saw the pressure on the GT1 dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT1",
+    "text": "GT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "can't get to the cold unit until production gives us a window",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "the cold unit",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the Line 2 Pick and Place Robot until production gives us a window",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "Line 2 Pick and Place Robot",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p07",
+   "text_hint": "the shutdown on the wrapper is cancelled now, production need it running",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.31,
+   "end": 11.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, you alright? Let's get cracking, quick stand-up for Monday. Anything nasty from weekend shift before we go round?"
+  },
+  {
+   "start": 13.55,
+   "end": 18.1,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Morning. Bit slow getting in, mind, traffic on the ring road was horrendous."
+  },
+  {
+   "start": 19.8,
+   "end": 24.35,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, same here, traffic on the ring road was an absolute car park."
+  },
+  {
+   "start": 25.54,
+   "end": 32.54,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "At least you got here warm. The heating in the portakabin is still useless, feels like a fridge in there."
+  },
+  {
+   "start": 33.54,
+   "end": 36.69,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Standard, that place. Right, lines are up though, mostly."
+  },
+  {
+   "start": 37.66,
+   "end": 48.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good stuff. I'll start then. For me, just so nobody raises it again, I already swapped the filter on the boiler safety valve yesterday, so that's done, not for today."
+  },
+  {
+   "start": 50.01,
+   "end": 51.21,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Nice one."
+  },
+  {
+   "start": 52.68,
+   "end": 61.08,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We've got a jam recurring on the long belt, so I'll clear the jam and check the sensors on the long belt this morning."
+  },
+  {
+   "start": 61.51,
+   "end": 63.96,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That was sticky again on nights, yeah."
+  },
+  {
+   "start": 65.24,
+   "end": 69.44,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "It stopped us twice, only short ones but enough to annoy everybody."
+  },
+  {
+   "start": 71.57,
+   "end": 84.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah. And also, on the outfeed conveyor, the guarding wants checking. I'll check the guarding on the outfeed conveyor next week; that's holding production up so it needs doing first once we get into that slot."
+  },
+  {
+   "start": 85.16,
+   "end": 88.66,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers boss, because ops are moaning about that one already."
+  },
+  {
+   "start": 90.66,
+   "end": 95.21,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "As long as they leave it as-is till you've looked, fine by me."
+  },
+  {
+   "start": 95.82,
+   "end": 97.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly."
+  },
+  {
+   "start": 97.87,
+   "end": 110.47,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "From process side, nothing huge. I did see the pressure on the GT1 dip for a few minutes, it came back on its own, so just an observation at this stage, not asking for anything yet."
+  },
+  {
+   "start": 112.26,
+   "end": 113.46,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Any product effect?"
+  },
+  {
+   "start": 114.86,
+   "end": 119.06,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "No, trend just sagged then recovered. I'll keep an eye on it."
+  },
+  {
+   "start": 120.35,
+   "end": 122.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, log it and watch it."
+  },
+  {
+   "start": 123.79,
+   "end": 130.44,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Other one, the shutdown on the wrapper is cancelled now, production need it running, so that's not happening today."
+  },
+  {
+   "start": 132.66,
+   "end": 135.46,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, we've nicked that slot back, afraid so."
+  },
+  {
+   "start": 137.22,
+   "end": 138.97,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Saves a job, I suppose."
+  },
+  {
+   "start": 141.39,
+   "end": 142.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, wrapper cancelled, noted."
+  },
+  {
+   "start": 143.17,
+   "end": 157.17,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Mechanical-wise, no fresh breakdowns from me. The alarm box though, still no sign of the bits. I'll chase the purchase order for the alarm box today, fairly important because we're just waiting on stores and whoever's sat on the PO."
+  },
+  {
+   "start": 159.22,
+   "end": 160.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, good, thanks Davey."
+  },
+  {
+   "start": 162.73,
+   "end": 164.48,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I'll grab purchasing after this."
+  },
+  {
+   "start": 165.63,
+   "end": 168.08,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I was gonna ask about that, actually."
+  },
+  {
+   "start": 170.44,
+   "end": 176.74,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "From HSE, I signed off the inspection on the arm on two on Tuesday, so that's closed already."
+  },
+  {
+   "start": 178.19,
+   "end": 179.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely."
+  },
+  {
+   "start": 181.77,
+   "end": 190.17,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I also heard a slight rattle from the counterbalances, nothing to action yet, just worth keeping in the back pocket if it gets worse."
+  },
+  {
+   "start": 192.46,
+   "end": 195.26,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Alright, I'll listen out when I'm over there."
+  },
+  {
+   "start": 196.89,
+   "end": 206.34,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And for today, I need the permit side tidied up on the cold unit. I'll do the lock-out tag-out sign-off on the cold unit at half two."
+  },
+  {
+   "start": 206.64,
+   "end": 209.09,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "If we can get near it, yeah."
+  },
+  {
+   "start": 210.8,
+   "end": 213.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Half two works if production can free it."
+  },
+  {
+   "start": 214.55,
+   "end": 218.4,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Should be able to give you a window then, not before."
+  },
+  {
+   "start": 220.49,
+   "end": 223.29,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That's fine, I'm saying at half two anyway."
+  },
+  {
+   "start": 224.13,
+   "end": 232.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Mide, while we're on plant behaviour, can you investigate the pressure drop on the pump in the pit whenever you get a chance?"
+  },
+  {
+   "start": 233.79,
+   "end": 242.89,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, alright, I can investigate the pressure drop on the pump in the pit whenever I get a chance. I've seen the trend wobble a bit."
+  },
+  {
+   "start": 243.7,
+   "end": 244.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one."
+  },
+  {
+   "start": 245.86,
+   "end": 254.96,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Only blocker from me, I can't get to the cold unit until production gives us a window, so if anyone wants miracles before then, no chance."
+  },
+  {
+   "start": 256.81,
+   "end": 258.21,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, same story, mate."
+  },
+  {
+   "start": 260.55,
+   "end": 263.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood, cold unit only when we've got a gap."
+  },
+  {
+   "start": 265.09,
+   "end": 280.49,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Production side, we're running, but I can't get to the Line 2 Pick and Place Robot until production gives us a window, which sounds daft because I am production, but you know what I mean, there's no spare minute on Line 2 right now."
+  },
+  {
+   "start": 280.9,
+   "end": 283.0,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, everyone's production till summat stops."
+  },
+  {
+   "start": 283.77,
+   "end": 284.97,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly."
+  },
+  {
+   "start": 285.32,
+   "end": 289.17,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Cal, on the monthly fire alarm test, can you do it?"
+  },
+  {
+   "start": 290.56,
+   "end": 291.76,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "At half two?"
+  },
+  {
+   "start": 293.27,
+   "end": 295.02,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, at half two ideally."
+  },
+  {
+   "start": 295.71,
+   "end": 302.01,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I've got enough on. I won't get to that if you want me on the floor for changeover."
+  },
+  {
+   "start": 303.64,
+   "end": 304.84,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Right, fair."
+  },
+  {
+   "start": 306.13,
+   "end": 307.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Who can cover it then?"
+  },
+  {
+   "start": 310.24,
+   "end": 321.79,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "No, sorry, let me rephrase \u2014 if it's literally at half two, I can take that one, because that's after the rush. I can run the monthly fire alarm test at half two."
+  },
+  {
+   "start": 323.69,
+   "end": 325.44,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fine by me, cheers Cal."
+  },
+  {
+   "start": 327.22,
+   "end": 331.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, good, Cal's got the monthly fire alarm test at half two."
+  },
+  {
+   "start": 332.25,
+   "end": 336.8,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Was gonna say, if not I'd only be pressing buttons and upsetting everyone."
+  },
+  {
+   "start": 339.24,
+   "end": 340.99,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's basically the job, Tom."
+  },
+  {
+   "start": 342.16,
+   "end": 343.36,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I know, glamorous."
+  },
+  {
+   "start": 345.58,
+   "end": 346.98,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomasz, anything from maintenance?"
+  },
+  {
+   "start": 347.35,
+   "end": 357.5,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Mostly carry-ons. Greased up the usual offenders on nights. Nothing I'm putting in as a new job today. Long belt's the main nuisance but you've already got that, boss."
+  },
+  {
+   "start": 358.37,
+   "end": 359.57,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep."
+  },
+  {
+   "start": 360.65,
+   "end": 364.15,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "If you want a hand when you clear it, shout."
+  },
+  {
+   "start": 366.56,
+   "end": 367.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Will do."
+  },
+  {
+   "start": 369.14,
+   "end": 378.94,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Mide, on that pump in the pit, if you see anything odd electrically just ping me, because if it's actually process demand changing I'd rather know before lunch."
+  },
+  {
+   "start": 379.84,
+   "end": 387.89,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, will do. Could just be impulse line muck, could be instrument drift, I'll have a look when I can get down there."
+  },
+  {
+   "start": 388.25,
+   "end": 392.1,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "It's always that pit. Everything down there either leaks or lies."
+  },
+  {
+   "start": 392.66,
+   "end": 393.86,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Or both."
+  },
+  {
+   "start": 395.19,
+   "end": 396.39,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Usually both."
+  },
+  {
+   "start": 397.61,
+   "end": 407.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this turns into philosophy: key timings, Grace on the cold unit sign-off at half two, Cal on the monthly fire alarm test at half two."
+  },
+  {
+   "start": 407.52,
+   "end": 409.97,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Assuming we get the access window, yeah."
+  },
+  {
+   "start": 410.66,
+   "end": 411.86,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "You'll get it."
+  },
+  {
+   "start": 412.81,
+   "end": 422.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Davey's chasing the purchase order for the alarm box, fairly important. Mide's looking at the pressure drop on the pump in the pit whenever he gets a chance."
+  },
+  {
+   "start": 423.6,
+   "end": 424.8,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep."
+  },
+  {
+   "start": 426.27,
+   "end": 427.47,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep."
+  },
+  {
+   "start": 429.61,
+   "end": 442.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And for me, I'll clear the jam and check the sensors on the long belt this morning, and I'll check the guarding on the outfeed conveyor next week; that's holding production up so it needs doing first."
+  },
+  {
+   "start": 444.45,
+   "end": 445.65,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sounds good."
+  },
+  {
+   "start": 447.24,
+   "end": 449.69,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Anything else on safety before we break?"
+  },
+  {
+   "start": 450.21,
+   "end": 454.76,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No, apart from don't fiddle with that guarding till Sarah's been over it."
+  },
+  {
+   "start": 456.51,
+   "end": 457.71,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Message received."
+  },
+  {
+   "start": 459.3,
+   "end": 467.0,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And if anyone's going near the pit, take a decent torch. Last one in there came back looking like a coal miner."
+  },
+  {
+   "start": 468.91,
+   "end": 470.66,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Cheers, Davey, really selling it."
+  },
+  {
+   "start": 472.91,
+   "end": 475.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right then, crack on. Shout if anything changes."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

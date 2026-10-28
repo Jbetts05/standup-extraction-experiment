@@ -1,0 +1,888 @@
+{
+ "id": "m015",
+ "date": "2026-01-08",
+ "split": "test",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p09",
+  "p10",
+  "p03",
+  "p12",
+  "p11",
+  "p04"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m015-t1",
+   "summary": "Check the guarding on the Line 2 Pick and Place Robot",
+   "spoken_action": "check the guarding on the Line 2 Pick and Place Robot",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "Line 2 Pick and Place Robot",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-12",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    59,
+    60,
+    67
+   ]
+  },
+  {
+   "id": "m015-t2",
+   "summary": "Grease and check the bearings on the Gas Turbine 1",
+   "spoken_action": "grease and check the bearings on the old turbine",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Pricey",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "the old turbine",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-09",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    38,
+    39,
+    63,
+    67
+   ]
+  },
+  {
+   "id": "m015-t3",
+   "summary": "Take vibration readings on the GT2 Number 2 Bearing",
+   "spoken_action": "take vibration readings on the GT2 Number 2 Bearing",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 Number 2 Bearing",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-09",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    31,
+    34,
+    67
+   ]
+  },
+  {
+   "id": "m015-t4",
+   "summary": "Sort the permit to work and isolation for the Injection Moulding Line 1",
+   "spoken_action": "sort the permit to work and isolation for the Engel",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "the Engel",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-15",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    23,
+    55,
+    67
+   ]
+  },
+  {
+   "id": "m015-t5",
+   "summary": "Inspect the GT2 Inlet Water Injection Valve for leaks",
+   "spoken_action": "inspect the turbine two water valve for leaks",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "turbine two water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    41,
+    42,
+    44,
+    67
+   ]
+  },
+  {
+   "id": "m015-t6",
+   "summary": "Order spare parts for the Waste Heat Boiler",
+   "spoken_action": "order spare parts for the Waste Heat Boiler",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tommo",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "Waste Heat Boiler",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-08",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    47,
+    48,
+    67
+   ]
+  },
+  {
+   "id": "m015-t7",
+   "summary": "Write up the near miss at the Line 2 Pick and Place Robot",
+   "spoken_action": "write up the near miss at the pick and place on two",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "pick and place on two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    57,
+    58,
+    67
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "signed off the inspection on the line 2 on Tuesday",
+   "component": {
+    "entity_id": "IM2",
+    "text": "line 2",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "tested the HRSG yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "the HRSG",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p01",
+   "text_hint": "heard a slight rattle from the alarm box, nothing to action yet",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "the alarm box",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "noticed the gas valve on one was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "the gas valve on one",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "still waiting on parts for the GT1 Fuel Gas Valve, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "GT1 Fuel Gas Valve",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.82,
+   "end": 10.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, you alright? Quick one today, Thursday 08 January. Let's get round it."
+  },
+  {
+   "start": 11.66,
+   "end": 16.21,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Morning. Bit rough after the football last night, to be honest. Absolute robbery."
+  },
+  {
+   "start": 18.54,
+   "end": 19.74,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Here we go."
+  },
+  {
+   "start": 21.11,
+   "end": 23.91,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "You say that every time your lot lose."
+  },
+  {
+   "start": 24.47,
+   "end": 26.92,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, no, genuinely, that ref was shocking."
+  },
+  {
+   "start": 28.27,
+   "end": 37.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Save it for break, Jamie. Also, don't forget the charity bake sale on Friday. Bring cash, and no, I'm not accepting 'forgot my wallet' again."
+  },
+  {
+   "start": 38.12,
+   "end": 43.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I've already had three emails about brownies, so it's clearly the main production priority."
+  },
+  {
+   "start": 44.26,
+   "end": 45.66,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Critical path item, that."
+  },
+  {
+   "start": 46.81,
+   "end": 48.91,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, actual plant. Any overnight issues?"
+  },
+  {
+   "start": 49.83,
+   "end": 61.03,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Nothing major from quality. I noticed the gas valve on one was running a bit warm on nights but it settled down, so just an observation, not asking for anything on it."
+  },
+  {
+   "start": 62.88,
+   "end": 72.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, noted. Same from me, I heard a slight rattle from the alarm box, nothing to action yet, just keep an ear on it if you're passing."
+  },
+  {
+   "start": 73.01,
+   "end": 77.21,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Alarm history looked clean when I checked this morning, no weird trips."
+  },
+  {
+   "start": 77.69,
+   "end": 85.04,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And just so it's said, I tested the HRSG yesterday and it's all fine now, so that's done, not for today."
+  },
+  {
+   "start": 87.13,
+   "end": 96.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Cheers. Anything still blocked, we've still got the usual one: still waiting on parts for the GT1 Fuel Gas Valve, nothing we can do until they arrive."
+  },
+  {
+   "start": 99.35,
+   "end": 103.9,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, dead in the water on that till stores actually sees the bits."
+  },
+  {
+   "start": 104.71,
+   "end": 107.16,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Oi, not me this time. Supplier side."
+  },
+  {
+   "start": 108.35,
+   "end": 113.25,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I signed into the trend packs before this, no fresh alarms off GT1 anyway."
+  },
+  {
+   "start": 113.57,
+   "end": 115.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine. Hannah, you had line stuff?"
+  },
+  {
+   "start": 118.13,
+   "end": 124.08,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah. I signed off the inspection on the line 2 on Tuesday, so that's closed out already."
+  },
+  {
+   "start": 126.05,
+   "end": 128.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Keep that one buried then."
+  },
+  {
+   "start": 128.58,
+   "end": 134.53,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Schedule-wise today is mostly tidy apart from the Engel work if we can get the paperwork straight."
+  },
+  {
+   "start": 136.09,
+   "end": 145.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, on that, I'll sort the permit to work and isolation for the Engel by Thursday. I'll pick that up myself so nobody else chase it."
+  },
+  {
+   "start": 147.37,
+   "end": 149.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "By Thursday this week, yeah?"
+  },
+  {
+   "start": 150.66,
+   "end": 152.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, by Thursday. I'll own it."
+  },
+  {
+   "start": 154.83,
+   "end": 156.93,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I'll mark boss against that then."
+  },
+  {
+   "start": 159.03,
+   "end": 169.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Next one, Priya, can you check the guarding on the Line 2 Pick and Place Robot next week? I want a proper look, not just a glance walking past."
+  },
+  {
+   "start": 170.17,
+   "end": 178.92,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, Priya can do that. I'll check the guarding on the Line 2 Pick and Place Robot next week and feed back if anything's out."
+  },
+  {
+   "start": 179.49,
+   "end": 181.94,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Good shout after the near miss chat."
+  },
+  {
+   "start": 184.14,
+   "end": 191.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Which brings me to that, Han, can you write up the near miss at the pick and place on two?"
+  },
+  {
+   "start": 192.69,
+   "end": 201.44,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll do it. I'll write up the near miss at the pick and place on two today once I've pulled the witness notes together."
+  },
+  {
+   "start": 203.31,
+   "end": 204.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one."
+  },
+  {
+   "start": 205.81,
+   "end": 218.06,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "While we're on rotating kit, I'll take vibration readings on the GT2 Number 2 Bearing by the end of the week. I was over there yesterday and I'd rather get a baseline before it drifts."
+  },
+  {
+   "start": 219.6,
+   "end": 223.45,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Makes sense. Trend it against the last set if you can."
+  },
+  {
+   "start": 224.69,
+   "end": 226.79,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll grab the old numbers."
+  },
+  {
+   "start": 228.79,
+   "end": 229.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, thanks PR."
+  },
+  {
+   "start": 230.35,
+   "end": 235.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Pricey, can you grease and check the bearings on the old turbine tomorrow at 9:30?"
+  },
+  {
+   "start": 237.31,
+   "end": 238.51,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Me?"
+  },
+  {
+   "start": 239.32,
+   "end": 241.77,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Quality doing bearings, that's a new one."
+  },
+  {
+   "start": 242.76,
+   "end": 251.16,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I know, but yeah alright. I can grease and check the bearings on the old turbine tomorrow at 9:30 if that's what we need."
+  },
+  {
+   "start": 253.46,
+   "end": 258.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "It is, cheers. Just need it covered and you're nearest skill-wise when Tom's tied up."
+  },
+  {
+   "start": 259.7,
+   "end": 265.3,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Fine, put it in. I'll rope someone in if I need an extra pair of hands."
+  },
+  {
+   "start": 266.71,
+   "end": 272.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, whenever you get a chance, can you inspect the turbine two water valve for leaks?"
+  },
+  {
+   "start": 273.43,
+   "end": 279.38,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, no problem. I'll inspect the turbine two water valve for leaks whenever I get a chance."
+  },
+  {
+   "start": 279.7,
+   "end": 283.2,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No hard deadline on that one, just fit around stores?"
+  },
+  {
+   "start": 284.22,
+   "end": 286.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly, whenever you get a chance."
+  },
+  {
+   "start": 288.66,
+   "end": 289.86,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep, got it."
+  },
+  {
+   "start": 291.87,
+   "end": 296.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tommo, can you order spare parts for the Waste Heat Boiler today at 2pm?"
+  },
+  {
+   "start": 299.22,
+   "end": 300.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Order them, yeah?"
+  },
+  {
+   "start": 302.62,
+   "end": 308.22,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, order spare parts for the Waste Heat Boiler today at 2pm. Need the request out."
+  },
+  {
+   "start": 308.6,
+   "end": 314.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Alright, Tommo's got it. I'll order spare parts for the Waste Heat Boiler today at 2pm."
+  },
+  {
+   "start": 316.01,
+   "end": 321.26,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "If it's through the usual supplier, shout me, I've got the account ref sat there."
+  },
+  {
+   "start": 322.28,
+   "end": 324.38,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah send it over after this."
+  },
+  {
+   "start": 325.6,
+   "end": 328.75,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Anything on controls side before I disappear into cabinets?"
+  },
+  {
+   "start": 329.13,
+   "end": 336.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Not much. Just keep an eye on the alarm box noise, but again, not an action, just observation for now."
+  },
+  {
+   "start": 336.57,
+   "end": 337.77,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep."
+  },
+  {
+   "start": 339.24,
+   "end": 345.54,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I've got contractor slots free this afternoon, but if the Engel permit isn't sorted they won't touch it."
+  },
+  {
+   "start": 346.95,
+   "end": 352.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood, that's on me. I'll sort the permit to work and isolation for the Engel by Thursday."
+  },
+  {
+   "start": 354.09,
+   "end": 360.74,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "For the near miss write-up, do you want just the event summary or full corrective actions draft as well?"
+  },
+  {
+   "start": 362.06,
+   "end": 370.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Start with the event summary. Write up the near miss at the pick and place on two and we'll add actions after review."
+  },
+  {
+   "start": 371.13,
+   "end": 372.88,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, Han will do that."
+  },
+  {
+   "start": 373.59,
+   "end": 381.64,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "On the Line 2 Pick and Place Robot, do you want interlocks checked as part of the guarding review or literally physical guarding?"
+  },
+  {
+   "start": 384.1,
+   "end": 394.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Start with the physical guarding on the Line 2 Pick and Place Robot. If the interlocks look suspect, flag it, but the agreed job is the guarding check next week."
+  },
+  {
+   "start": 396.11,
+   "end": 397.31,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Understood."
+  },
+  {
+   "start": 399.53,
+   "end": 405.48,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That old turbine bearing job, Hannah, if you want a grease gun that's not ancient, nick mine."
+  },
+  {
+   "start": 407.32,
+   "end": 412.92,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Cheers. If I'm doing the old turbine tomorrow at 9:30 I'd prefer one that actually pumps."
+  },
+  {
+   "start": 415.13,
+   "end": 416.33,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Luxury."
+  },
+  {
+   "start": 418.76,
+   "end": 421.21,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "We are moving up in the world."
+  },
+  {
+   "start": 423.2,
+   "end": 427.05,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Can I just read back so I don't get grief later?"
+  },
+  {
+   "start": 428.83,
+   "end": 430.03,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Go on."
+  },
+  {
+   "start": 430.54,
+   "end": 467.29,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Boss is to sort the permit to work and isolation for the Engel by Thursday. Priya is to check the guarding on the Line 2 Pick and Place Robot next week. Pricey is to grease and check the bearings on the old turbine tomorrow at 9:30. PR will take vibration readings on the GT2 Number 2 Bearing by the end of the week. Jamie will inspect the turbine two water valve for leaks whenever you get a chance. Tommo will order spare parts for the Waste Heat Boiler today at 2pm. Han will write up the near miss at the pick and place on two."
+  },
+  {
+   "start": 467.76,
+   "end": 468.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's it, exactly."
+  },
+  {
+   "start": 470.26,
+   "end": 471.66,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "All good from me."
+  },
+  {
+   "start": 474.06,
+   "end": 475.26,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep."
+  },
+  {
+   "start": 477.1,
+   "end": 478.3,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Fine by me."
+  },
+  {
+   "start": 480.23,
+   "end": 481.43,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah."
+  },
+  {
+   "start": 482.64,
+   "end": 483.84,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorted."
+  },
+  {
+   "start": 486.08,
+   "end": 488.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything else, actual anything else, not football?"
+  },
+  {
+   "start": 491.02,
+   "end": 496.27,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, but seriously, if anyone's baking for Friday, no raisins pretending to be chocolate chips."
+  },
+  {
+   "start": 497.49,
+   "end": 499.94,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's a quality issue, to be fair."
+  },
+  {
+   "start": 501.29,
+   "end": 503.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, off you go then."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

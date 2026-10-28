@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="600" viewBox="0 0 1320 600" role="img" aria-labelledby="title description">
+  <title id="title">Agent with tools versus the pipeline we built</title>
+  <desc id="description">Left: an agent with board tools. The model calls get_board, find_equipment, update_card twice and create_card, one turn at a time, and the whole conversation is re-sent every turn, so the context bar grows to six turns. Right: the pipeline we built. The model extracts what was said and links names and machines, code pulls the matching cards from the board, the model picks the card and says why, and fixed rules write the change. Always three model calls per stand-up; 97% of updates right at $0.007 per stand-up.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071b33"/><stop offset="1" stop-color="#102d4c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#071b33" flood-opacity=".13"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0f5cc0"/></marker>
+    <marker id="arrowg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#bec7d3"/></marker>
+    <style>
+@keyframes a1 { 0% { opacity: 0 } 6.67% { opacity: 0 } 8.33% { opacity: 1 } 15.67% { opacity: 1 } 17.33% { opacity: 0 } 100% { opacity: 0 } }
+.a1 { opacity: 0; animation: a1 15.0s infinite; }
+@keyframes a2 { 0% { opacity: 0 } 17.00% { opacity: 0 } 18.67% { opacity: 1 } 26.00% { opacity: 1 } 27.67% { opacity: 0 } 100% { opacity: 0 } }
+.a2 { opacity: 0; animation: a2 15.0s infinite; }
+@keyframes a3 { 0% { opacity: 0 } 27.33% { opacity: 0 } 29.00% { opacity: 1 } 36.33% { opacity: 1 } 38.00% { opacity: 0 } 100% { opacity: 0 } }
+.a3 { opacity: 0; animation: a3 15.0s infinite; }
+@keyframes a4 { 0% { opacity: 0 } 37.67% { opacity: 0 } 39.33% { opacity: 1 } 46.67% { opacity: 1 } 48.33% { opacity: 0 } 100% { opacity: 0 } }
+.a4 { opacity: 0; animation: a4 15.0s infinite; }
+@keyframes a5 { 0% { opacity: 0 } 48.00% { opacity: 0 } 49.67% { opacity: 1 } 57.00% { opacity: 1 } 58.67% { opacity: 0 } 100% { opacity: 0 } }
+.a5 { opacity: 0; animation: a5 15.0s infinite; }
+@keyframes a6 { 0% { opacity: 0 } 58.33% { opacity: 0 } 60.00% { opacity: 1 } 97.33% { opacity: 1 } 99.00% { opacity: 0 } 100% { opacity: 0 } }
+.a6 { opacity: 0; animation: a6 15.0s infinite; }
+@keyframes a7 { 0% { opacity: 0 } 6.67% { opacity: 0 } 7.47% { opacity: 1 } 16.67% { opacity: 1 } 17.47% { opacity: 0 } 100% { opacity: 0 } }
+.a7 { opacity: 0; animation: a7 15.0s infinite; }
+@keyframes a8 { 0% { opacity: 0 } 17.00% { opacity: 0 } 17.80% { opacity: 1 } 27.00% { opacity: 1 } 27.80% { opacity: 0 } 100% { opacity: 0 } }
+.a8 { opacity: 0; animation: a8 15.0s infinite; }
+@keyframes a9 { 0% { opacity: 0 } 27.33% { opacity: 0 } 28.13% { opacity: 1 } 37.33% { opacity: 1 } 38.13% { opacity: 0 } 100% { opacity: 0 } }
+.a9 { opacity: 0; animation: a9 15.0s infinite; }
+@keyframes a10 { 0% { opacity: 0 } 37.67% { opacity: 0 } 38.47% { opacity: 1 } 47.67% { opacity: 1 } 48.47% { opacity: 0 } 100% { opacity: 0 } }
+.a10 { opacity: 0; animation: a10 15.0s infinite; }
+@keyframes a11 { 0% { opacity: 0 } 48.00% { opacity: 0 } 48.80% { opacity: 1 } 58.00% { opacity: 1 } 58.80% { opacity: 0 } 100% { opacity: 0 } }
+.a11 { opacity: 0; animation: a11 15.0s infinite; }
+@keyframes a12 { 0% { opacity: 0 } 58.33% { opacity: 0 } 59.13% { opacity: 1 } 97.33% { opacity: 1 } 98.13% { opacity: 0 } 100% { opacity: 0 } }
+.a12 { opacity: 0; animation: a12 15.0s infinite; }
+@keyframes a13 { 0% { opacity: 0 } 6.67% { opacity: 0 } 8.00% { opacity: 1 } 97.33% { opacity: 1 } 98.67% { opacity: 0 } 100% { opacity: 0 } }
+.a13 { opacity: 0; animation: a13 15.0s infinite; }
+@keyframes a14 { 0% { opacity: 0 } 17.00% { opacity: 0 } 18.33% { opacity: 1 } 97.33% { opacity: 1 } 98.67% { opacity: 0 } 100% { opacity: 0 } }
+.a14 { opacity: 0; animation: a14 15.0s infinite; }
+@keyframes a15 { 0% { opacity: 0 } 27.33% { opacity: 0 } 28.67% { opacity: 1 } 97.33% { opacity: 1 } 98.67% { opacity: 0 } 100% { opacity: 0 } }
+.a15 { opacity: 0; animation: a15 15.0s infinite; }
+@keyframes a16 { 0% { opacity: 0 } 37.67% { opacity: 0 } 39.00% { opacity: 1 } 97.33% { opacity: 1 } 98.67% { opacity: 0 } 100% { opacity: 0 } }
+.a16 { opacity: 0; animation: a16 15.0s infinite; }
+@keyframes a17 { 0% { opacity: 0 } 48.00% { opacity: 0 } 49.33% { opacity: 1 } 97.33% { opacity: 1 } 98.67% { opacity: 0 } 100% { opacity: 0 } }
+.a17 { opacity: 0; animation: a17 15.0s infinite; }
+@keyframes a18 { 0% { opacity: 0 } 58.33% { opacity: 0 } 59.67% { opacity: 1 } 97.33% { opacity: 1 } 98.67% { opacity: 0 } 100% { opacity: 0 } }
+.a18 { opacity: 0; animation: a18 15.0s infinite; }
+@keyframes a19 { 0% { opacity: 0 } 6.67% { opacity: 0 } 8.33% { opacity: 1 } 14.67% { opacity: 1 } 16.33% { opacity: 0 } 100% { opacity: 0 } }
+.a19 { opacity: 0; animation: a19 15.0s infinite; }
+@keyframes a20 { 0% { opacity: 0 } 12.67% { opacity: 0 } 14.33% { opacity: 1 } 97.33% { opacity: 1 } 99.00% { opacity: 0 } 100% { opacity: 0 } }
+.a20 { opacity: 0; animation: a20 15.0s infinite; }
+@keyframes a21 { 0% { opacity: 0 } 15.00% { opacity: 0 } 16.67% { opacity: 1 } 23.00% { opacity: 1 } 24.67% { opacity: 0 } 100% { opacity: 0 } }
+.a21 { opacity: 0; animation: a21 15.0s infinite; }
+@keyframes a22 { 0% { opacity: 0 } 21.00% { opacity: 0 } 22.67% { opacity: 1 } 97.33% { opacity: 1 } 99.00% { opacity: 0 } 100% { opacity: 0 } }
+.a22 { opacity: 0; animation: a22 15.0s infinite; }
+@keyframes a23 { 0% { opacity: 0 } 23.33% { opacity: 0 } 25.00% { opacity: 1 } 31.33% { opacity: 1 } 33.00% { opacity: 0 } 100% { opacity: 0 } }
+.a23 { opacity: 0; animation: a23 15.0s infinite; }
+@keyframes a24 { 0% { opacity: 0 } 29.33% { opacity: 0 } 31.00% { opacity: 1 } 97.33% { opacity: 1 } 99.00% { opacity: 0 } 100% { opacity: 0 } }
+.a24 { opacity: 0; animation: a24 15.0s infinite; }
+@keyframes a25 { 0% { opacity: 0 } 31.67% { opacity: 0 } 33.33% { opacity: 1 } 39.67% { opacity: 1 } 41.33% { opacity: 0 } 100% { opacity: 0 } }
+.a25 { opacity: 0; animation: a25 15.0s infinite; }
+@keyframes a26 { 0% { opacity: 0 } 37.67% { opacity: 0 } 39.33% { opacity: 1 } 97.33% { opacity: 1 } 99.00% { opacity: 0 } 100% { opacity: 0 } }
+.a26 { opacity: 0; animation: a26 15.0s infinite; }
+@keyframes a27 { 0% { opacity: 0 } 40.00% { opacity: 0 } 41.67% { opacity: 1 } 48.00% { opacity: 1 } 49.67% { opacity: 0 } 100% { opacity: 0 } }
+.a27 { opacity: 0; animation: a27 15.0s infinite; }
+@keyframes a28 { 0% { opacity: 0 } 46.00% { opacity: 0 } 47.67% { opacity: 1 } 97.33% { opacity: 1 } 99.00% { opacity: 0 } 100% { opacity: 0 } }
+.a28 { opacity: 0; animation: a28 15.0s infinite; }
+@keyframes a29 { 0% { opacity: 0 } 6.67% { opacity: 0 } 7.47% { opacity: 1 } 14.67% { opacity: 1 } 15.47% { opacity: 0 } 100% { opacity: 0 } }
+.a29 { opacity: 0; animation: a29 15.0s infinite; }
+@keyframes a30 { 0% { opacity: 0 } 15.00% { opacity: 0 } 15.80% { opacity: 1 } 31.33% { opacity: 1 } 32.13% { opacity: 0 } 100% { opacity: 0 } }
+.a30 { opacity: 0; animation: a30 15.0s infinite; }
+@keyframes a31 { 0% { opacity: 0 } 31.67% { opacity: 0 } 32.47% { opacity: 1 } 97.33% { opacity: 1 } 98.13% { opacity: 0 } 100% { opacity: 0 } }
+.a31 { opacity: 0; animation: a31 15.0s infinite; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01s !important; animation-iteration-count: 1 !important; } }
+</style>
+  </defs>
+  <rect width="1320" height="600" rx="18" fill="#f5f7fa"/>
+  <path d="M0 18Q0 0 18 0h1284q18 0 18 18v74H0z" fill="url(#header)"/>
+  <g fill="#fff" font-family="Segoe UI, Arial, sans-serif">
+    <text x="42" y="45" font-size="27" font-weight="700">Why we parked the agent</text>
+    <text x="42" y="72" font-size="14" fill="#b6c5d7">An agent would fetch the board with a tool call. But we know what it needs before it starts, so plain code can load it.</text>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif">
+<g filter="url(#shadow)"><rect x="30" y="112" width="620" height="400" rx="12" fill="#fff" stroke="#bec7d3" /></g>
+<text x="54" y="144" font-size="18" fill="#172033" font-weight="700" text-anchor="start" >Agent with tools</text>
+<rect x="452" y="126" width="176" height="24" rx="12" fill="#fff" stroke="#bec7d3" stroke-dasharray="4 4"/><text x="540.0" y="142" font-size="11" fill="#596579" font-weight="700" text-anchor="middle" >designed · not built</text>
+<text x="54" y="166" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >The model decides what to fetch, one tool call at a time.</text>
+<rect x="60" y="214" width="200" height="84" rx="10" fill="#eef4fb" stroke="#0f5cc0" stroke-width="1.4"/>
+<text x="160" y="248" font-size="15" fill="#172033" font-weight="700" text-anchor="middle" >GPT-5.6 Luna</text>
+<text x="160" y="268" font-size="12" fill="#596579" font-weight="400" text-anchor="middle" >+ 6 board tools</text>
+<line x1="262" y1="256" x2="392" y2="210" stroke="#bec7d3" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="396" y="190" width="232" height="40" rx="12" fill="#fff" stroke="#bec7d3" />
+<text x="410" y="215" font-size="12" fill="#172033" font-weight="400" text-anchor="start" font-family="Consolas, Menlo, monospace" >get_board()</text>
+<g class="a1"><line x1="262" y1="256" x2="392" y2="210" stroke="#0f5cc0" stroke-width="2.2" marker-end="url(#arrow)"/><rect x="396" y="190" width="232" height="40" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.4"/><text x="410" y="215" font-size="12" fill="#0f5cc0" font-weight="700" text-anchor="start" font-family="Consolas, Menlo, monospace" >get_board()</text></g>
+<line x1="262" y1="256" x2="392" y2="262" stroke="#bec7d3" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="396" y="242" width="232" height="40" rx="12" fill="#fff" stroke="#bec7d3" />
+<text x="410" y="267" font-size="12" fill="#172033" font-weight="400" text-anchor="start" font-family="Consolas, Menlo, monospace" >find_equipment("the Atlas")</text>
+<g class="a2"><line x1="262" y1="256" x2="392" y2="262" stroke="#0f5cc0" stroke-width="2.2" marker-end="url(#arrow)"/><rect x="396" y="242" width="232" height="40" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.4"/><text x="410" y="267" font-size="12" fill="#0f5cc0" font-weight="700" text-anchor="start" font-family="Consolas, Menlo, monospace" >find_equipment("the Atlas")</text></g>
+<line x1="262" y1="256" x2="392" y2="314" stroke="#bec7d3" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="396" y="294" width="232" height="40" rx="12" fill="#fff" stroke="#bec7d3" />
+<text x="410" y="319" font-size="12" fill="#172033" font-weight="400" text-anchor="start" font-family="Consolas, Menlo, monospace" >update_card(#3, done)</text>
+<g class="a3"><line x1="262" y1="256" x2="392" y2="314" stroke="#0f5cc0" stroke-width="2.2" marker-end="url(#arrow)"/><rect x="396" y="294" width="232" height="40" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.4"/><text x="410" y="319" font-size="12" fill="#0f5cc0" font-weight="700" text-anchor="start" font-family="Consolas, Menlo, monospace" >update_card(#3, done)</text></g>
+<line x1="262" y1="256" x2="392" y2="366" stroke="#bec7d3" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="396" y="346" width="232" height="40" rx="12" fill="#fff" stroke="#bec7d3" />
+<text x="410" y="371" font-size="12" fill="#172033" font-weight="400" text-anchor="start" font-family="Consolas, Menlo, monospace" >update_card(#5, blocked)</text>
+<g class="a4"><line x1="262" y1="256" x2="392" y2="366" stroke="#0f5cc0" stroke-width="2.2" marker-end="url(#arrow)"/><rect x="396" y="346" width="232" height="40" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.4"/><text x="410" y="371" font-size="12" fill="#0f5cc0" font-weight="700" text-anchor="start" font-family="Consolas, Menlo, monospace" >update_card(#5, blocked)</text></g>
+<line x1="262" y1="256" x2="392" y2="418" stroke="#bec7d3" stroke-width="1.2" stroke-dasharray="3 4"/>
+<rect x="396" y="398" width="232" height="40" rx="12" fill="#fff" stroke="#bec7d3" />
+<text x="410" y="423" font-size="12" fill="#172033" font-weight="400" text-anchor="start" font-family="Consolas, Menlo, monospace" >create_card("Order Atlas parts")</text>
+<g class="a5"><line x1="262" y1="256" x2="392" y2="418" stroke="#0f5cc0" stroke-width="2.2" marker-end="url(#arrow)"/><rect x="396" y="398" width="232" height="40" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.4"/><text x="410" y="423" font-size="12" fill="#0f5cc0" font-weight="700" text-anchor="start" font-family="Consolas, Menlo, monospace" >create_card("Order Atlas parts")</text></g>
+<g class="a6"><rect x="60" y="214" width="200" height="84" rx="10" fill="#e3edf9" stroke="#0f5cc0" stroke-width="2.2"/><text x="160" y="248" font-size="15" fill="#0f5cc0" font-weight="700" text-anchor="middle" >GPT-5.6 Luna</text><text x="160" y="268" font-size="12" fill="#0f5cc0" font-weight="600" text-anchor="middle" >done: final answer</text></g>
+<text x="60" y="334" font-size="12" fill="#596579" font-weight="600" text-anchor="start" >Model turns (this small example)</text>
+<g class="a7"><text x="60" y="380" font-size="40" fill="#0f5cc0" font-weight="700" text-anchor="start" >1</text></g>
+<g class="a8"><text x="60" y="380" font-size="40" fill="#0f5cc0" font-weight="700" text-anchor="start" >2</text></g>
+<g class="a9"><text x="60" y="380" font-size="40" fill="#0f5cc0" font-weight="700" text-anchor="start" >3</text></g>
+<g class="a10"><text x="60" y="380" font-size="40" fill="#0f5cc0" font-weight="700" text-anchor="start" >4</text></g>
+<g class="a11"><text x="60" y="380" font-size="40" fill="#0f5cc0" font-weight="700" text-anchor="start" >5</text></g>
+<g class="a12"><text x="60" y="380" font-size="40" fill="#0f5cc0" font-weight="700" text-anchor="start" >6</text></g>
+<text x="60" y="420" font-size="12" fill="#596579" font-weight="600" text-anchor="start" >Whole conversation re-sent every turn</text>
+<rect x="60" y="430" width="330" height="16" rx="8" fill="#e9eef5"/>
+<rect class="a13" x="60" y="430" width="55" height="16" rx="8" fill="#f39a5a"/>
+<rect class="a14" x="60" y="430" width="110" height="16" rx="8" fill="#f39a5a"/>
+<rect class="a15" x="60" y="430" width="165" height="16" rx="8" fill="#f39a5a"/>
+<rect class="a16" x="60" y="430" width="220" height="16" rx="8" fill="#f39a5a"/>
+<rect class="a17" x="60" y="430" width="275" height="16" rx="8" fill="#f39a5a"/>
+<rect class="a18" x="60" y="430" width="330" height="16" rx="8" fill="#f39a5a"/>
+<text x="60" y="474" font-size="12" fill="#596579" font-weight="400" text-anchor="start" >More turns, more tokens, and it can take a different path each run.</text>
+<text x="60" y="492" font-size="12" fill="#596579" font-weight="400" text-anchor="start" >Harder to test step by step.</text>
+<g filter="url(#shadow)"><rect x="670" y="112" width="620" height="400" rx="12" fill="#fff" stroke="#bec7d3" /></g>
+<text x="694" y="144" font-size="18" fill="#172033" font-weight="700" text-anchor="start" >Pipeline</text>
+<rect x="1092" y="126" width="176" height="24" rx="12" fill="#e7f4ec" stroke="#9fd3b3"/><text x="1180.0" y="142" font-size="11" fill="#107c41" font-weight="700" text-anchor="middle" >built · what we kept</text>
+<text x="694" y="166" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >Code loads what the model needs. The model only reads and picks.</text>
+<rect x="696" y="186" width="568" height="44" rx="12" fill="#fff" stroke="#bec7d3" />
+<rect x="708" y="198" width="54" height="20" rx="5" fill="#dfe9f8"/><text x="735" y="212" font-size="10" fill="#0f5cc0" font-weight="700" text-anchor="middle" >MODEL</text>
+<text x="774" y="206" font-size="13" fill="#172033" font-weight="700" text-anchor="start" >Extract what was said</text>
+<text x="774" y="222" font-size="11.5" fill="#596579" font-weight="400" text-anchor="start" >every job, new or update, with who and which machine</text>
+<g class="a19"><rect x="696" y="186" width="568" height="44" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.6"/><rect x="708" y="198" width="54" height="20" rx="5" fill="#dfe9f8"/><text x="735" y="212" font-size="10" fill="#0f5cc0" font-weight="700" text-anchor="middle" >MODEL</text><text x="774" y="206" font-size="13" fill="#0f5cc0" font-weight="700" text-anchor="start" >Extract what was said</text><text x="774" y="222" font-size="11.5" fill="#172033" font-weight="400" text-anchor="start" >every job, new or update, with who and which machine</text></g>
+<g class="a20"><circle cx="1244" cy="208" r="9" fill="#107c41"/><path d="M1239 208l3.5 3.5 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="696" y="240" width="568" height="44" rx="12" fill="#fff" stroke="#bec7d3" />
+<rect x="708" y="252" width="54" height="20" rx="5" fill="#dfe9f8"/><text x="735" y="266" font-size="10" fill="#0f5cc0" font-weight="700" text-anchor="middle" >MODEL</text>
+<text x="774" y="260" font-size="13" fill="#172033" font-weight="700" text-anchor="start" >Link names and machines</text>
+<text x="774" y="276" font-size="11.5" fill="#596579" font-weight="400" text-anchor="start" >pick from a shortlist: “the Atlas” → Air Compressor 1</text>
+<g class="a21"><rect x="696" y="240" width="568" height="44" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.6"/><rect x="708" y="252" width="54" height="20" rx="5" fill="#dfe9f8"/><text x="735" y="266" font-size="10" fill="#0f5cc0" font-weight="700" text-anchor="middle" >MODEL</text><text x="774" y="260" font-size="13" fill="#0f5cc0" font-weight="700" text-anchor="start" >Link names and machines</text><text x="774" y="276" font-size="11.5" fill="#172033" font-weight="400" text-anchor="start" >pick from a shortlist: “the Atlas” → Air Compressor 1</text></g>
+<g class="a22"><circle cx="1244" cy="262" r="9" fill="#107c41"/><path d="M1239 262l3.5 3.5 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="696" y="294" width="568" height="44" rx="12" fill="#fff" stroke="#bec7d3" />
+<rect x="708" y="306" width="54" height="20" rx="5" fill="#e9eef5"/><text x="735" y="320" font-size="10" fill="#596579" font-weight="700" text-anchor="middle" >CODE</text>
+<text x="774" y="314" font-size="13" fill="#172033" font-weight="700" text-anchor="start" >Pull the matching cards</text>
+<text x="774" y="330" font-size="11.5" fill="#596579" font-weight="400" text-anchor="start" >that person's open cards + same machine · about 4 cards</text>
+<g class="a23"><rect x="696" y="294" width="568" height="44" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.6"/><rect x="708" y="306" width="54" height="20" rx="5" fill="#e9eef5"/><text x="735" y="320" font-size="10" fill="#596579" font-weight="700" text-anchor="middle" >CODE</text><text x="774" y="314" font-size="13" fill="#0f5cc0" font-weight="700" text-anchor="start" >Pull the matching cards</text><text x="774" y="330" font-size="11.5" fill="#172033" font-weight="400" text-anchor="start" >that person's open cards + same machine · about 4 cards</text></g>
+<g class="a24"><circle cx="1244" cy="316" r="9" fill="#107c41"/><path d="M1239 316l3.5 3.5 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="696" y="348" width="568" height="44" rx="12" fill="#fff" stroke="#bec7d3" />
+<rect x="708" y="360" width="54" height="20" rx="5" fill="#dfe9f8"/><text x="735" y="374" font-size="10" fill="#0f5cc0" font-weight="700" text-anchor="middle" >MODEL</text>
+<text x="774" y="368" font-size="13" fill="#172033" font-weight="700" text-anchor="start" >Pick the card, and say why</text>
+<text x="774" y="384" font-size="11.5" fill="#596579" font-weight="400" text-anchor="start" >same job, or none of them</text>
+<g class="a25"><rect x="696" y="348" width="568" height="44" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.6"/><rect x="708" y="360" width="54" height="20" rx="5" fill="#dfe9f8"/><text x="735" y="374" font-size="10" fill="#0f5cc0" font-weight="700" text-anchor="middle" >MODEL</text><text x="774" y="368" font-size="13" fill="#0f5cc0" font-weight="700" text-anchor="start" >Pick the card, and say why</text><text x="774" y="384" font-size="11.5" fill="#172033" font-weight="400" text-anchor="start" >same job, or none of them</text></g>
+<g class="a26"><circle cx="1244" cy="370" r="9" fill="#107c41"/><path d="M1239 370l3.5 3.5 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="696" y="402" width="568" height="44" rx="12" fill="#fff" stroke="#bec7d3" />
+<rect x="708" y="414" width="54" height="20" rx="5" fill="#e9eef5"/><text x="735" y="428" font-size="10" fill="#596579" font-weight="700" text-anchor="middle" >CODE</text>
+<text x="774" y="422" font-size="13" fill="#172033" font-weight="700" text-anchor="start" >Rules write the change</text>
+<text x="774" y="438" font-size="11.5" fill="#596579" font-weight="400" text-anchor="start" >create · update · ignore (an update never creates)</text>
+<g class="a27"><rect x="696" y="402" width="568" height="44" rx="12" fill="#e3edf9" stroke="#0f5cc0" stroke-width="1.6"/><rect x="708" y="414" width="54" height="20" rx="5" fill="#e9eef5"/><text x="735" y="428" font-size="10" fill="#596579" font-weight="700" text-anchor="middle" >CODE</text><text x="774" y="422" font-size="13" fill="#0f5cc0" font-weight="700" text-anchor="start" >Rules write the change</text><text x="774" y="438" font-size="11.5" fill="#172033" font-weight="400" text-anchor="start" >create · update · ignore (an update never creates)</text></g>
+<g class="a28"><circle cx="1244" cy="424" r="9" fill="#107c41"/><path d="M1239 424l3.5 3.5 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="700" y="474" font-size="12" fill="#596579" font-weight="600" text-anchor="start" >Model calls per stand-up</text>
+<g class="a29"><text x="700" y="500" font-size="22" fill="#0f5cc0" font-weight="700" text-anchor="start" >1</text></g>
+<g class="a30"><text x="700" y="500" font-size="22" fill="#0f5cc0" font-weight="700" text-anchor="start" >2</text></g>
+<g class="a31"><text x="700" y="500" font-size="22" fill="#0f5cc0" font-weight="700" text-anchor="start" >3</text></g>
+<text x="730" y="499" font-size="12" fill="#172033" font-weight="600" text-anchor="start" >always 3, however long the stand-up</text>
+<text x="1264" y="499" font-size="12" fill="#107c41" font-weight="700" text-anchor="end" >97% of updates right · $0.007</text>
+<text x="660" y="548" font-size="14" fill="#172033" font-weight="600" text-anchor="middle" >Same information either way. Loading it in code means fewer calls, the same steps every run, and every step scored on its own.</text>
+<text x="660" y="574" font-size="12.5" fill="#596579" font-weight="400" text-anchor="middle" >An agent earns its keep when it can't know up front what to fetch: open questions, lots of systems, or needing to ask a person.</text>
+  </g>
+</svg>

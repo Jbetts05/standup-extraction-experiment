@@ -1,0 +1,744 @@
+{
+ "id": "a050",
+ "date": "2026-11-12",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p08",
+  "p11",
+  "p12",
+  "p09",
+  "p07",
+  "p05"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a050-t1",
+   "summary": "Grease and check the bearings on the GT2 Number 2 Bearing",
+   "spoken_action": "grease and check the bearings on the GT2 bearing",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 bearing",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-13",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    57
+   ]
+  },
+  {
+   "id": "a050-t2",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-13",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    28,
+    55,
+    56
+   ]
+  },
+  {
+   "id": "a050-t3",
+   "summary": "Book a contractor to look at the Gas Turbine 1",
+   "spoken_action": "book a contractor to look at the Gas Turbine 1",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "Gas Turbine 1",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    29,
+    30,
+    31,
+    32,
+    55,
+    56
+   ]
+  },
+  {
+   "id": "a050-t4",
+   "summary": "Do a site visit at Northfield Substation with the contractor",
+   "spoken_action": "do a site visit at Northfield with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield",
+    "split": "seen"
+   },
+   "due_date": "2026-11-12",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    59
+   ]
+  },
+  {
+   "id": "a050-t5",
+   "summary": "Do the lock-out tag-out sign-off on the 11kV Switchboard",
+   "spoken_action": "do the lock-out tag-out sign-off on the 11kV board",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-12",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44,
+    45,
+    58
+   ]
+  },
+  {
+   "id": "a050-t6",
+   "summary": "Chase the purchase order for the Air Compressor 1",
+   "spoken_action": "chase the purchase order for the AC1",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "AC1",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    54,
+    59
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "finished the repair on the fire panel last night",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "tested the GT1 compressor yesterday and it's all fine now",
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "GT1 compressor",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "signed off the inspection on the dryer on Tuesday",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "saw the pressure on the line 3 barrel dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p11",
+   "text_hint": "can't get to the number two bearing until production gives us a window",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "number two bearing",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.12,
+   "end": 7.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Thursday the twelfth. Can you all hear me?"
+  },
+  {
+   "start": 8.13,
+   "end": 13.73,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah. Thought I was on mute then. Usually am when I've got something useful to say."
+  },
+  {
+   "start": 14.15,
+   "end": 21.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "While we're waiting for everyone to settle, the heating in the portakabin — honestly, my tea's warmer than the radiator."
+  },
+  {
+   "start": 21.49,
+   "end": 29.19,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "The heating in the portakabin's purely decorative, that is. I've still got my coat on. Just moaning, not putting a job in."
+  },
+  {
+   "start": 30.37,
+   "end": 33.87,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Very smart coat, though. Really lifts the whole stores operation."
+  },
+  {
+   "start": 35.75,
+   "end": 42.75,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Sorry, I'm here. Traffic on the ring road was dreadful. Sat looking at the same brake lights for absolutely ages."
+  },
+  {
+   "start": 44.86,
+   "end": 48.36,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, you haven't missed anything technical. Just the coat review."
+  },
+  {
+   "start": 50.04,
+   "end": 54.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, enough of that. Finished bits first, then what we're actually agreeing."
+  },
+  {
+   "start": 55.36,
+   "end": 59.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah so, finished the repair on the fire panel last night. That's done."
+  },
+  {
+   "start": 60.56,
+   "end": 64.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Fi. Closed, then, not another one for today's list."
+  },
+  {
+   "start": 65.97,
+   "end": 71.92,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I tested the GT1 compressor yesterday and it's all fine now. That testing's finished as well."
+  },
+  {
+   "start": 72.5,
+   "end": 75.65,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Right, good. That's the compressor test put to bed."
+  },
+  {
+   "start": 76.6,
+   "end": 86.4,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Only other thing from me on the running side: saw the pressure on the line 3 barrel dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 88.25,
+   "end": 93.15,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Mm, a transient dip, then. You're reporting what happened, not asking for another adjustment?"
+  },
+  {
+   "start": 95.64,
+   "end": 99.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, just an observation here. No new action coming out of that."
+  },
+  {
+   "start": 100.99,
+   "end": 108.69,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I signed off the inspection on the dryer on Tuesday. That's already complete, in case it's still showing in anyone's notes."
+  },
+  {
+   "start": 109.82,
+   "end": 111.57,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, dryer inspection done. Thanks."
+  },
+  {
+   "start": 113.48,
+   "end": 119.78,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Um, my blocker hasn't changed. Can't get to the number two bearing until production gives us a window."
+  },
+  {
+   "start": 121.85,
+   "end": 126.75,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, there isn't a production window confirmed. Can't pretend there's access when there isn't."
+  },
+  {
+   "start": 128.42,
+   "end": 132.62,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Exactly. So that's blocked, not me committing to get on it today."
+  },
+  {
+   "start": 133.53,
+   "end": 139.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Keep that separate from the other bearing item, please, or we'll tie ourselves in knots."
+  },
+  {
+   "start": 140.36,
+   "end": 146.66,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "On that other one, I'll grease and check the bearings on the GT2 bearing tomorrow. It's fairly important."
+  },
+  {
+   "start": 147.81,
+   "end": 152.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Fi. That's the GT2 bearing with you, then, fairly important and tomorrow."
+  },
+  {
+   "start": 153.78,
+   "end": 155.88,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, tomorrow. I'll do that one."
+  },
+  {
+   "start": 157.07,
+   "end": 162.32,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Right, two different bearing conversations. Teams captions will still make a complete meal of it."
+  },
+  {
+   "start": 162.75,
+   "end": 169.4,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Han, can you send the shift handover report round tomorrow morning? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 169.84,
+   "end": 173.34,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll send the shift handover report round tomorrow morning."
+  },
+  {
+   "start": 173.88,
+   "end": 179.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Doesn't need everyone dropping what they're doing, just don't lose it in the shuffle."
+  },
+  {
+   "start": 181.03,
+   "end": 182.78,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No, understood. That's with me."
+  },
+  {
+   "start": 184.82,
+   "end": 190.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Han, can you book a contractor to look at the Gas Turbine 1? That's fairly important."
+  },
+  {
+   "start": 191.94,
+   "end": 197.54,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, I'll book a contractor to look at the Gas Turbine 1. Fairly important, got it."
+  },
+  {
+   "start": 199.2,
+   "end": 204.8,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Sorry, talking over you — that's the booking you're taking, not automatically going out with them?"
+  },
+  {
+   "start": 206.94,
+   "end": 211.84,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "The booking, yeah. I'm accepting that bit, not volunteering for a visit as well."
+  },
+  {
+   "start": 212.92,
+   "end": 218.87,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And the Gas Turbine 1 contractor item doesn't mean we're reopening that finished compressor test, does it?"
+  },
+  {
+   "start": 220.42,
+   "end": 224.27,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No. The GT1 compressor test I mentioned is done. Separate item."
+  },
+  {
+   "start": 225.25,
+   "end": 235.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. We also need someone to do a site visit at Northfield with the contractor after lunch. Not an emergency but don't let it slip. Anyone able to take that?"
+  },
+  {
+   "start": 237.97,
+   "end": 242.17,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I can't take the visit, sorry. Don't count me in for that."
+  },
+  {
+   "start": 243.55,
+   "end": 247.4,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Nor me. I can't offer to be off site after lunch."
+  },
+  {
+   "start": 248.95,
+   "end": 251.4,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'm not able to take it either."
+  },
+  {
+   "start": 253.55,
+   "end": 260.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, the Northfield visit after lunch is still needed, but nobody's taken it. Unowned, not agreed against someone's name."
+  },
+  {
+   "start": 262.31,
+   "end": 267.56,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And just to be absolutely clear, my contractor booking isn't an acceptance of that visit."
+  },
+  {
+   "start": 269.53,
+   "end": 271.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, understood. Keeping the two separate."
+  },
+  {
+   "start": 272.51,
+   "end": 280.21,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll do the lock-out tag-out sign-off on the 11kV board today at 2pm. Drop everything for that one — that's the priority."
+  },
+  {
+   "start": 281.53,
+   "end": 288.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace Liu. The lock-out tag-out sign-off on the 11kV board is yours, today at 2pm. Drop everything for that one."
+  },
+  {
+   "start": 290.9,
+   "end": 296.5,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Two o'clock today, yep. Heard you clearly that time; your audio went a bit watery earlier."
+  },
+  {
+   "start": 297.94,
+   "end": 303.54,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, today at 2pm. And what I'm taking is the sign-off, just so the wording's right."
+  },
+  {
+   "start": 304.38,
+   "end": 309.98,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, that's the one at the top, rather than everything on the list being called urgent."
+  },
+  {
+   "start": 310.45,
+   "end": 312.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Otherwise urgent just means absolutely nothing."
+  },
+  {
+   "start": 313.21,
+   "end": 323.71,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "There's also the purchase order for the AC1 needing a chase by the 28th. Whenever you get a chance sort of priority. I'm flagging the gap, not taking it on."
+  },
+  {
+   "start": 324.06,
+   "end": 327.91,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone able to own chasing the purchase order for the AC1?"
+  },
+  {
+   "start": 330.19,
+   "end": 335.79,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Not me, I'm afraid. I know it's a stores-shaped thing, but I can't commit to it."
+  },
+  {
+   "start": 337.4,
+   "end": 339.85,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I can't take that as well, sorry."
+  },
+  {
+   "start": 342.09,
+   "end": 349.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, nobody on the AC1 purchase order chase, then. Still by the 28th, whenever you get a chance, but no owner agreed."
+  },
+  {
+   "start": 351.36,
+   "end": 356.96,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Good to say that out loud. Silence on Teams can look an awful lot like agreement."
+  },
+  {
+   "start": 357.77,
+   "end": 361.62,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Exactly. Me mentioning it wasn't a quiet promise to do it."
+  },
+  {
+   "start": 362.4,
+   "end": 373.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Quick check before we finish. Han: shift handover report round tomorrow morning, not an emergency but don't let it slip; and book a contractor to look at the Gas Turbine 1, fairly important."
+  },
+  {
+   "start": 374.71,
+   "end": 380.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, both accepted. Report tomorrow morning, and the contractor booking. No visit attached to my name."
+  },
+  {
+   "start": 382.63,
+   "end": 388.58,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I'll grease and check the bearings on the GT2 bearing tomorrow. Fairly important. That's my one."
+  },
+  {
+   "start": 390.15,
+   "end": 396.1,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Mine's the lock-out tag-out sign-off on the 11kV board, today at 2pm. Drop everything for that one."
+  },
+  {
+   "start": 397.19,
+   "end": 412.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And still unowned: do a site visit at Northfield with the contractor after lunch — not an emergency but don't let it slip — and chase the purchase order for the AC1 by the 28th, whenever you get a chance. Neither has been picked up."
+  },
+  {
+   "start": 414.84,
+   "end": 418.34,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep. Clear enough. And the completed stuff stays completed, thankfully."
+  },
+  {
+   "start": 420.24,
+   "end": 421.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's us. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

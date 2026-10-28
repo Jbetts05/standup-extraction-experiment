@@ -1,0 +1,723 @@
+{
+ "id": "a058",
+ "date": "2026-11-02",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p02",
+  "p06",
+  "p07",
+  "p05",
+  "p04",
+  "p11"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a058-t1",
+   "summary": "Do a site visit at Harbour Road Warehouse with the contractor",
+   "spoken_action": "do a site visit at Harbour Road Warehouse with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s03",
+    "text": "Harbour Road Warehouse",
+    "split": "name"
+   },
+   "due_date": "2026-11-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46
+   ]
+  },
+  {
+   "id": "a058-t2",
+   "summary": "Update the risk assessment for work on the Gas Turbine 1",
+   "spoken_action": "update the risk assessment for work on the gas turbine one",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "gas turbine one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-03",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    57,
+    58
+   ]
+  },
+  {
+   "id": "a058-t3",
+   "summary": "Recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 Inlet Water Injection Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-06",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "id": "a058-t4",
+   "summary": "Inspect the Boiler Safety Relief Valve for leaks",
+   "spoken_action": "inspect the relief valve for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "relief valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-04",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    31,
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "id": "a058-t5",
+   "summary": "Write up the near miss at the Line 2 Safety Guard Interlock",
+   "spoken_action": "write up the near miss at the line 2 guard",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah Price",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "line 2 guard",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-09",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    17,
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "id": "a058-t6",
+   "summary": "Book a contractor to look at the Main Water Isolation Valve",
+   "spoken_action": "book a contractor to look at the main water valve",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "no rush",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    49,
+    50,
+    51,
+    52
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "tested the Palletiser yesterday and it's all fine now",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "Palletiser",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "finished the repair on the Line 3 Chiller last night",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "saw the pressure on the Main Outfeed Conveyor dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "Main Outfeed Conveyor",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p11",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the Line 3 Chiller",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.09,
+   "end": 8.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday, second of November. Can you all hear me, or am I doing the Teams mime again?"
+  },
+  {
+   "start": 10.18,
+   "end": 15.43,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, you're there. Unlike the heating in the portakabin. I'm sat here in my coat."
+  },
+  {
+   "start": 17.57,
+   "end": 21.07,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's the winter office package. Coat stays on till April."
+  },
+  {
+   "start": 21.96,
+   "end": 27.56,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Lovely. Not putting a job in through this meeting, by the way, just having a moan."
+  },
+  {
+   "start": 28.36,
+   "end": 33.26,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Could be worse. You could've sat through the football last night like I did."
+  },
+  {
+   "start": 34.41,
+   "end": 37.91,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I switched it off. Had enough disappointment for one Sunday."
+  },
+  {
+   "start": 39.8,
+   "end": 42.25,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Sensible. Ninety minutes I'm not getting back."
+  },
+  {
+   "start": 43.58,
+   "end": 47.08,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a sports podcast. What's already finished?"
+  },
+  {
+   "start": 48.55,
+   "end": 52.4,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah so, tested the Palletiser yesterday and it's all fine now."
+  },
+  {
+   "start": 54.55,
+   "end": 58.4,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's the completed one, yeah? Not another test on today's list?"
+  },
+  {
+   "start": 60.05,
+   "end": 62.85,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Correct. Done, tested, fine. Nothing new off that."
+  },
+  {
+   "start": 64.5,
+   "end": 70.1,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And finished the repair on the Line 3 Chiller last night. That repair's done as well."
+  },
+  {
+   "start": 70.98,
+   "end": 76.93,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Just on that—sorry, talking over you—the supplier still hasn't confirmed the delivery for the Line 3 Chiller."
+  },
+  {
+   "start": 79.13,
+   "end": 84.73,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, separate status points. Repair finished, delivery confirmation still blocked. Not adding a supplier chase today."
+  },
+  {
+   "start": 86.72,
+   "end": 90.57,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Exactly. It's an outstanding blocker, not me taking a new action."
+  },
+  {
+   "start": 92.81,
+   "end": 100.51,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "One other observation: saw the pressure on the Main Outfeed Conveyor dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 102.07,
+   "end": 105.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, observation only. No new job being agreed off that here."
+  },
+  {
+   "start": 108.29,
+   "end": 116.69,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah Price, can you write up the near miss at the line 2 guard? Monday, so today, and that one's safety critical, straight away."
+  },
+  {
+   "start": 117.76,
+   "end": 123.71,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, I'll write up the near miss at the line 2 guard straight away. Monday, today, understood."
+  },
+  {
+   "start": 125.83,
+   "end": 130.03,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, that needs to stay distinct from the routine bits. Safety-critical write-up."
+  },
+  {
+   "start": 131.0,
+   "end": 135.55,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Agreed. That's the write-up I'm accepting, not rolling some other job into it."
+  },
+  {
+   "start": 136.36,
+   "end": 138.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Straight away, with today's Monday deadline."
+  },
+  {
+   "start": 140.7,
+   "end": 144.55,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, clear. Sorry, there's a bit of an echo my end."
+  },
+  {
+   "start": 146.33,
+   "end": 156.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Next, the risk assessment for work on the gas turbine one needs updating for tomorrow morning. Not an emergency but don't let it slip. Anyone able to take that?"
+  },
+  {
+   "start": 158.02,
+   "end": 164.67,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Um, I can't take ownership of that one. Don't put it against me just because it's a risk assessment."
+  },
+  {
+   "start": 165.27,
+   "end": 167.37,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I'm not picking that up either."
+  },
+  {
+   "start": 169.07,
+   "end": 170.47,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Nor me, I'm afraid."
+  },
+  {
+   "start": 171.65,
+   "end": 177.25,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. It still needs doing for tomorrow morning, but nobody's taken it. That stays explicitly unowned."
+  },
+  {
+   "start": 178.62,
+   "end": 182.47,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, and no implied yes from me. I'm not accepting it."
+  },
+  {
+   "start": 184.02,
+   "end": 188.57,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Understood. Tomorrow morning is still the requirement; we're not saying it's gone away."
+  },
+  {
+   "start": 189.52,
+   "end": 194.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Needed, not an emergency but don't let it slip, and no owner agreed."
+  },
+  {
+   "start": 196.01,
+   "end": 199.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Dave, can you inspect the relief valve for leaks by Wednesday?"
+  },
+  {
+   "start": 200.37,
+   "end": 203.87,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just the inspection for leaks on the relief valve, yeah?"
+  },
+  {
+   "start": 205.03,
+   "end": 207.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, that's the job. By Wednesday."
+  },
+  {
+   "start": 208.91,
+   "end": 212.41,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, I'll inspect the relief valve for leaks by Wednesday."
+  },
+  {
+   "start": 213.55,
+   "end": 217.4,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Inspection, not a repair being promised on this call. Got you."
+  },
+  {
+   "start": 218.99,
+   "end": 223.54,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Exactly. Let's not make the sentence bigger while I'm saying yes to it."
+  },
+  {
+   "start": 225.68,
+   "end": 234.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha Begum, can you recalibrate the sensors on the GT2 Inlet Water Injection Valve by the end of the week, if you've got a spare minute?"
+  },
+  {
+   "start": 236.29,
+   "end": 240.14,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, so that's a fit-it-in one, not everything down right now?"
+  },
+  {
+   "start": 240.66,
+   "end": 246.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right. If you've got a spare minute, with by the end of the week still the deadline."
+  },
+  {
+   "start": 248.39,
+   "end": 256.09,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Okay, I'll recalibrate the sensors on the GT2 Inlet Water Injection Valve by the end of the week. I'll fit that in."
+  },
+  {
+   "start": 258.54,
+   "end": 261.34,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "A spare minute. Rare bit of equipment, that."
+  },
+  {
+   "start": 262.02,
+   "end": 264.12,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Usually missing from the toolbox, yeah."
+  },
+  {
+   "start": 264.46,
+   "end": 273.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Davey, can you do a site visit at Harbour Road Warehouse with the contractor by the 28th? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 273.62,
+   "end": 279.57,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "A visit there with the contractor, completed by the 28th, rather than just something in the diary?"
+  },
+  {
+   "start": 280.71,
+   "end": 288.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, do the site visit at Harbour Road Warehouse with the contractor by the 28th. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 291.16,
+   "end": 296.76,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Understood. I'll do the site visit at Harbour Road Warehouse with the contractor by the 28th."
+  },
+  {
+   "start": 297.22,
+   "end": 300.72,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Different nickname for each job. Keeps you on your toes."
+  },
+  {
+   "start": 301.93,
+   "end": 304.38,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Still only one pair of boots, unfortunately."
+  },
+  {
+   "start": 306.0,
+   "end": 312.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Hannah, can you book a contractor to look at the main water valve by the 28th? No rush."
+  },
+  {
+   "start": 314.76,
+   "end": 322.11,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep—just to separate those two, mine's the booking by the 28th, not saying the contractor has to have visited by then?"
+  },
+  {
+   "start": 323.47,
+   "end": 330.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Book a contractor to look at the main water valve by the 28th. No rush on that one."
+  },
+  {
+   "start": 330.55,
+   "end": 336.85,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, I'll book a contractor to look at the main water valve by the 28th. Understood, no rush."
+  },
+  {
+   "start": 337.84,
+   "end": 343.09,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That distinction helps. Easy to hear the same date twice and mash the two together."
+  },
+  {
+   "start": 344.74,
+   "end": 347.54,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, separate jobs, separate agreements. That's the list."
+  },
+  {
+   "start": 348.28,
+   "end": 353.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And my bits were completed work and that pressure observation. Nothing extra accepted on my side."
+  },
+  {
+   "start": 354.47,
+   "end": 360.77,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Same distinction on the Line 3 Chiller delivery. Still blocked on the supplier confirmation, not a new chase."
+  },
+  {
+   "start": 362.97,
+   "end": 373.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Only ownership gap is updating the risk assessment for work on the gas turbine one. Tomorrow morning, not an emergency but don't let it slip. Nobody has taken it."
+  },
+  {
+   "start": 374.4,
+   "end": 377.9,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, that's accurate. Mentioning it hasn't made me the owner."
+  },
+  {
+   "start": 379.42,
+   "end": 384.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. No names being slipped into empty boxes. Everything else is accepted as discussed."
+  },
+  {
+   "start": 386.12,
+   "end": 389.97,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "A meeting with no mystery jobs at the end. We're improving."
+  },
+  {
+   "start": 390.63,
+   "end": 393.08,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Don't sound so surprised. Right, thanks everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

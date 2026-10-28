@@ -1,0 +1,855 @@
+{
+ "id": "a023",
+ "date": "2026-06-29",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p04",
+  "p03",
+  "p01",
+  "p12",
+  "p11",
+  "p10",
+  "p06"
+ ],
+ "chair_id": "p04",
+ "gold_tasks": [
+  {
+   "id": "a023-t1",
+   "summary": "Do the lock-out tag-out sign-off on the Boiler Safety Relief Valve",
+   "spoken_action": "do the lock-out tag-out sign-off on the Boiler Safety Relief Valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    14,
+    15,
+    16,
+    17,
+    52,
+    61
+   ]
+  },
+  {
+   "id": "a023-t2",
+   "summary": "Schedule downtime for the 11kV Switchboard with production",
+   "spoken_action": "schedule downtime for the 11kV board with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    21,
+    54,
+    55
+   ]
+  },
+  {
+   "id": "a023-t3",
+   "summary": "Go to Harbour Road Warehouse to pick up the replacement parts for the Line 3 Chiller",
+   "spoken_action": "go to Harbour Road Warehouse to pick up the replacement parts for the line 3 chiller",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s03",
+    "text": "Harbour Road Warehouse",
+    "split": "name"
+   },
+   "due_date": "2026-07-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    25,
+    59
+   ]
+  },
+  {
+   "id": "a023-t4",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    29,
+    33,
+    60
+   ]
+  },
+  {
+   "id": "a023-t5",
+   "summary": "Swap the filter on the Air Compressor 1",
+   "spoken_action": "swap the filter on the compressor one",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    61
+   ]
+  },
+  {
+   "id": "a023-t6",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47
+   ]
+  },
+  {
+   "id": "a023-t7",
+   "summary": "Run a function test on the Fire Alarm Panel",
+   "spoken_action": "run a function test on the fire alarm panel",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire alarm panel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-06",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": null,
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    33,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "a023-t8",
+   "summary": "Check the guarding on the Injection Moulding Line 2",
+   "spoken_action": "check the guarding on the Injection Moulding Line 2",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "Injection Moulding Line 2",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37,
+    52,
+    53
+   ]
+  },
+  {
+   "id": "a023-t9",
+   "summary": "Grease and check the bearings on the Water Booster Pump",
+   "spoken_action": "grease and check the bearings on the booster pump",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "finished the repair on the IM3 last night",
+   "component": {
+    "entity_id": "IM3",
+    "text": "IM3",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "signed off the inspection on the WHB on Tuesday",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "WHB",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "noticed the Injection Moulding Line 1 was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM1",
+    "text": "Injection Moulding Line 1",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p01",
+   "text_hint": "heard a slight rattle from the GT2 bearing, nothing to action yet",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 bearing",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p12",
+   "text_hint": "can't get to the site water until production gives us a window",
+   "component": {
+    "entity_id": "WTR",
+    "text": "site water",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.64,
+   "end": 10.94,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Morning, everyone. Can you hear me? Right, Monday the 29th. Let's get through this before Teams decides otherwise."
+  },
+  {
+   "start": 11.27,
+   "end": 19.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, got you. Traffic on the ring road was absolutely solid. I've spent longer looking at a bus than looking at production this morning."
+  },
+  {
+   "start": 21.92,
+   "end": 24.72,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Still less painful than the football last night."
+  },
+  {
+   "start": 27.03,
+   "end": 30.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Oh, don't start. Some of us were trying to forget that."
+  },
+  {
+   "start": 32.57,
+   "end": 37.47,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, football analysis closed. Anything already finished before we get into the live stuff?"
+  },
+  {
+   "start": 39.96,
+   "end": 45.91,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, finished the repair on the IM3 last night. That's completed, not something carrying over into today."
+  },
+  {
+   "start": 46.28,
+   "end": 48.73,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good, that's off the live list then."
+  },
+  {
+   "start": 49.52,
+   "end": 55.47,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I signed off the inspection on the WHB on Tuesday. That one's already done as well."
+  },
+  {
+   "start": 57.32,
+   "end": 66.42,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Just an observation from nights: noticed the Injection Moulding Line 1 was running a bit warm, but it settled down. Nothing new coming out of that."
+  },
+  {
+   "start": 66.93,
+   "end": 74.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Similar sort of thing, I heard a slight rattle from the GT2 bearing. Nothing to action yet, just saying what I heard."
+  },
+  {
+   "start": 75.09,
+   "end": 79.64,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Okay, observations only. Neither of those is a fresh job from this meeting."
+  },
+  {
+   "start": 81.29,
+   "end": 90.04,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And I still can't get to the site water until production gives us a window. That's blocked, not something I can crack on with today."
+  },
+  {
+   "start": 91.83,
+   "end": 94.63,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, there's no window agreed. That hasn't changed."
+  },
+  {
+   "start": 96.82,
+   "end": 99.97,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Understood. Leaving that blocked, no new commitment against it."
+  },
+  {
+   "start": 101.36,
+   "end": 112.56,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "We need someone to do the lock-out tag-out sign-off on the Boiler Safety Relief Valve at half two. That's holding production up so it needs doing first. Anyone able to take it?"
+  },
+  {
+   "start": 113.12,
+   "end": 119.42,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Um, I can't take that sign-off. Don't put it against me just because I've given the electrical update."
+  },
+  {
+   "start": 121.34,
+   "end": 126.24,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, understood. Nobody's taken it, then. It stays unowned; mentioning it isn't a sign-off."
+  },
+  {
+   "start": 128.06,
+   "end": 135.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And half two is still the required time, yeah. The production hold hasn't gone away just because we haven't got a name."
+  },
+  {
+   "start": 136.89,
+   "end": 145.64,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, I'll schedule downtime for the 11kV board with production after lunch. Not an emergency but don't let it slip—that's how I'm treating it."
+  },
+  {
+   "start": 147.09,
+   "end": 151.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "You're doing the scheduling after lunch, not saying the board's coming off after lunch?"
+  },
+  {
+   "start": 154.45,
+   "end": 160.05,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Exactly. I'll agree the downtime with production after lunch. I'm not announcing an outage time here."
+  },
+  {
+   "start": 161.04,
+   "end": 163.84,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Cheers, Olu. Scheduling with production is yours, then."
+  },
+  {
+   "start": 165.3,
+   "end": 173.0,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "For me, I'll go to Harbour Road Warehouse to pick up the replacement parts for the line 3 chiller on the 3rd."
+  },
+  {
+   "start": 174.57,
+   "end": 177.37,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "On the 3rd, right? Not a collection today?"
+  },
+  {
+   "start": 179.56,
+   "end": 188.31,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "On the 3rd, yes. That one's safety critical, straight away—it's not a routine pickup to leave sitting about. The collection date is still the 3rd."
+  },
+  {
+   "start": 190.07,
+   "end": 194.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Got it, Tomasz. Safety-critical collection, on the 3rd. Those two bits are clear."
+  },
+  {
+   "start": 196.43,
+   "end": 199.58,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I'll run the monthly fire alarm test after lunch."
+  },
+  {
+   "start": 201.61,
+   "end": 205.46,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, talking over you—monthly test, not the separate panel function test?"
+  },
+  {
+   "start": 206.82,
+   "end": 211.02,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, just the monthly fire alarm test. I'll do that after lunch."
+  },
+  {
+   "start": 212.35,
+   "end": 214.1,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Thanks, Callum. Separate entries, definitely."
+  },
+  {
+   "start": 215.19,
+   "end": 221.49,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sarah, can you run a function test on the fire alarm panel next week? That's the other one."
+  },
+  {
+   "start": 223.38,
+   "end": 227.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, I'll run the function test on the fire alarm panel next week."
+  },
+  {
+   "start": 229.69,
+   "end": 235.99,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Good. I only asked because those two descriptions keep sounding like the same thing when the audio drops."
+  },
+  {
+   "start": 236.76,
+   "end": 242.71,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, fair question. Monthly test after lunch; panel function test next week. Not doubling up the owners."
+  },
+  {
+   "start": 243.55,
+   "end": 248.8,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll check the guarding on the Injection Moulding Line 2 today at 2pm. It's urgent."
+  },
+  {
+   "start": 251.1,
+   "end": 256.0,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Two o'clock, did you say? You went a bit robotic at the end there."
+  },
+  {
+   "start": 257.6,
+   "end": 263.55,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Today at 2pm, yeah. I'll take the guarding check, and it's urgent, not a routine look whenever."
+  },
+  {
+   "start": 263.99,
+   "end": 266.09,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Got you, Hannah. That's clearly yours."
+  },
+  {
+   "start": 267.18,
+   "end": 274.88,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "The other gap is we need someone to swap the filter on the compressor one by end of day. Anyone taking that?"
+  },
+  {
+   "start": 275.67,
+   "end": 281.62,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Not me. Just to be clear, being on the stores call isn't me volunteering to fit it."
+  },
+  {
+   "start": 283.52,
+   "end": 285.62,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I can't take that one either."
+  },
+  {
+   "start": 287.35,
+   "end": 292.6,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right. Nobody on the filter swap, then. Still needed by end of day, still unallocated."
+  },
+  {
+   "start": 294.96,
+   "end": 300.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, don't hide that with a vague 'maintenance' against it. We haven't agreed an owner."
+  },
+  {
+   "start": 302.44,
+   "end": 307.34,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Jamie, can you send the shift handover report round, whenever you get a chance?"
+  },
+  {
+   "start": 308.66,
+   "end": 313.56,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll send the shift handover report round. Whenever I get a chance, understood."
+  },
+  {
+   "start": 314.87,
+   "end": 319.77,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's just circulating the report, isn't it? Not another report we're all suddenly writing?"
+  },
+  {
+   "start": 320.35,
+   "end": 325.25,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Just sending it round. No extra bit of work for everyone tucked in there."
+  },
+  {
+   "start": 325.96,
+   "end": 331.91,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Lovely. Yes, I'll take sending it. Nice to have one that doesn't involve chasing a delivery wagon."
+  },
+  {
+   "start": 333.49,
+   "end": 340.49,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sarah, can you grease and check the bearings on the booster pump? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 341.75,
+   "end": 348.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, I'll grease and check the bearings on the booster pump. Not an emergency, but I won't let it slip."
+  },
+  {
+   "start": 350.79,
+   "end": 353.94,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's separate from the rattle you mentioned earlier, yeah?"
+  },
+  {
+   "start": 355.79,
+   "end": 362.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, different thing. The GT2 bearing rattle is observation only, nothing to action yet. I'm accepting the booster pump job."
+  },
+  {
+   "start": 363.55,
+   "end": 375.1,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, urgent bits haven't changed: Boiler Safety Relief Valve sign-off at half two, holding production up, needs doing first, but no owner. Guarding check today at 2pm is urgent and has an owner."
+  },
+  {
+   "start": 376.01,
+   "end": 381.26,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, I've got the Injection Moulding Line 2 guarding check. No ambiguity on that one."
+  },
+  {
+   "start": 382.64,
+   "end": 387.54,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And Olu, the 11kV board scheduling after lunch—not an emergency, but not to drift."
+  },
+  {
+   "start": 388.0,
+   "end": 391.15,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, mine. I'll schedule it with production after lunch."
+  },
+  {
+   "start": 393.55,
+   "end": 401.95,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Just so the water doesn't get swept into that conversation, the site water is still blocked by the production window. No change from me."
+  },
+  {
+   "start": 402.89,
+   "end": 406.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, agreed. We're not treating that as released work."
+  },
+  {
+   "start": 408.44,
+   "end": 416.49,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And the IM3 repair is finished. I know we've gone round a few things twice, but that one really is off the list."
+  },
+  {
+   "start": 418.13,
+   "end": 427.93,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep. Longer-dated ones: Sarah has the fire alarm panel function test next week, and I've got Harbour Road Warehouse for the line 3 chiller parts on the 3rd."
+  },
+  {
+   "start": 428.93,
+   "end": 434.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct, next week for my panel function test. Separate from Callum's monthly test after lunch."
+  },
+  {
+   "start": 435.98,
+   "end": 447.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And we're ending with two explicit gaps: nobody for the Boiler Safety Relief Valve sign-off at half two, nobody for the compressor one filter swap by end of day. Neither is magically covered."
+  },
+  {
+   "start": 448.08,
+   "end": 451.58,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right. More honest than the commentary on that match, anyway."
+  },
+  {
+   "start": 452.09,
+   "end": 457.34,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "You nearly made it to the end without mentioning it again. Cheers, everyone, that's us."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

@@ -1,0 +1,819 @@
+{
+ "id": "m007",
+ "date": "2026-03-13",
+ "split": "train",
+ "renderer": "llm",
+ "attendees": [
+  "p04",
+  "p03",
+  "p10",
+  "p05",
+  "p06",
+  "p09",
+  "p02"
+ ],
+ "chair_id": "p04",
+ "gold_tasks": [
+  {
+   "id": "m007-t1",
+   "summary": "Take vibration readings on the Gas Turbine 1",
+   "spoken_action": "take vibration readings on the Gas Turbine 1",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "Gas Turbine 1",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-14",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    25,
+    66
+   ]
+  },
+  {
+   "id": "m007-t2",
+   "summary": "Recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 Inlet Water Injection Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "needs doing this week",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    29,
+    68
+   ]
+  },
+  {
+   "id": "m007-t3",
+   "summary": "Investigate the pressure drop on the Water Booster Pump",
+   "spoken_action": "investigate the pressure drop on the booster pump",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    41,
+    70
+   ]
+  },
+  {
+   "id": "m007-t4",
+   "summary": "Chase the purchase order for the Waste Heat Boiler",
+   "spoken_action": "chase the purchase order for the big boiler",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "big boiler",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-20",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "needs doing this week",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    47,
+    72,
+    73
+   ]
+  },
+  {
+   "id": "m007-t5",
+   "summary": "Run a function test on the Line 1 Mould Temperature Controller",
+   "spoken_action": "run a function test on the line 1 mould temp",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "top priority please",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    49,
+    50,
+    53,
+    74
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "tested the water booster yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "already swapped the filter on the dryer yesterday",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "heard a slight rattle from the dryer, nothing to action yet",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "saw the pressure on the wrapper dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "still waiting on parts for the line 3 screw, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 screw",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p03",
+   "text_hint": "we were going to replace the belt on the Boiler Safety Relief Valve but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.39,
+   "end": 6.94,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Morning all, you alright? Let's get cracking, quick stand-up for Friday 13 March."
+  },
+  {
+   "start": 7.68,
+   "end": 13.98,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Morning. Barely, to be honest, traffic on the ring road was awful. Proper crawling all the way in."
+  },
+  {
+   "start": 15.39,
+   "end": 25.19,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah same sort of vibe coming in. Anyway, er, who's bringing stuff for the charity bake sale on Friday? My missus has gone a bit mad with brownies."
+  },
+  {
+   "start": 26.98,
+   "end": 31.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Brownies'll go. As long as no one leaves them in the control room again."
+  },
+  {
+   "start": 32.55,
+   "end": 36.75,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Morning all. Right, let's try and keep sugar and machinery separate, please."
+  },
+  {
+   "start": 38.17,
+   "end": 40.27,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, fair. Okay, updates first. Callum?"
+  },
+  {
+   "start": 42.77,
+   "end": 53.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Production-wise we're okay on lines 1 and 2. Line 3, still waiting on parts for the line 3 screw, nothing we can do until they arrive, so that's still just parked."
+  },
+  {
+   "start": 55.06,
+   "end": 58.56,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, blocked then, leave that where it is for now."
+  },
+  {
+   "start": 59.52,
+   "end": 73.87,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "From me, I tested the water booster yesterday and it's all fine now, so that's done. And, um, we were going to replace the belt on the Boiler Safety Relief Valve but that's been pushed to next month so ignore it."
+  },
+  {
+   "start": 75.69,
+   "end": 77.79,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good, so not for today then."
+  },
+  {
+   "start": 78.16,
+   "end": 83.76,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I already swapped the filter on the dryer yesterday, so that's off the list as well."
+  },
+  {
+   "start": 84.48,
+   "end": 85.68,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nice one, Dave."
+  },
+  {
+   "start": 87.57,
+   "end": 95.62,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "While I was over there I heard a slight rattle from the dryer, nothing to action yet, just worth keeping an ear on."
+  },
+  {
+   "start": 97.63,
+   "end": 103.23,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, I didn't feel anything nasty through the frame, so probably just a bit of chatter."
+  },
+  {
+   "start": 105.32,
+   "end": 109.17,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Okay, observation only, no job off the back of it yet."
+  },
+  {
+   "start": 109.89,
+   "end": 118.64,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I also saw the pressure on the wrapper dip for a few minutes, it came back on its own, so again I haven't touched it."
+  },
+  {
+   "start": 121.05,
+   "end": 124.2,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Didn't hit output, that one, so fine for now."
+  },
+  {
+   "start": 126.51,
+   "end": 128.96,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right. Anything urgent-urgent before we do actions?"
+  },
+  {
+   "start": 130.4,
+   "end": 133.55,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Nothing from HSE, just the usual permits look clean."
+  },
+  {
+   "start": 134.01,
+   "end": 135.41,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good. Priya, anything else?"
+  },
+  {
+   "start": 136.93,
+   "end": 140.43,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, that's me really. Electrical's quiet unless something falls over."
+  },
+  {
+   "start": 141.65,
+   "end": 142.85,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Lovely. Fiona?"
+  },
+  {
+   "start": 144.27,
+   "end": 154.07,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Planner side, I've got a couple I can pick up. If you've got a spare minute, I'll take vibration readings on the Gas Turbine 1 first thing tomorrow."
+  },
+  {
+   "start": 155.93,
+   "end": 158.03,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, okay, Fi taking that, noted."
+  },
+  {
+   "start": 159.11,
+   "end": 163.66,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "You sure you want that one? I can do it if you're stacked."
+  },
+  {
+   "start": 166.01,
+   "end": 170.21,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, it's alright, I'll do it. It's quick enough first thing tomorrow."
+  },
+  {
+   "start": 172.02,
+   "end": 173.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sound. That's agreed then."
+  },
+  {
+   "start": 175.6,
+   "end": 188.55,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And the other one, the GT2 Inlet Water Injection Valve - the sensors are still drifting a bit. That needs doing this week, I'll recalibrate the sensors on the GT2 Inlet Water Injection Valve on the 3rd."
+  },
+  {
+   "start": 189.6,
+   "end": 193.1,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Makes sense. They've been a bit ropey on the trend."
+  },
+  {
+   "start": 194.57,
+   "end": 198.07,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, Fiona Doyle to do that on the 3rd, good."
+  },
+  {
+   "start": 199.36,
+   "end": 204.61,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Just make sure if you're cracking that box open you've got the right isolation, please."
+  },
+  {
+   "start": 206.52,
+   "end": 207.72,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, of course."
+  },
+  {
+   "start": 209.37,
+   "end": 211.82,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Anything mechanical we need to call out?"
+  },
+  {
+   "start": 213.3,
+   "end": 219.25,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Um, one thing hanging around: the booster pump. We've still got that pressure drop coming and going."
+  },
+  {
+   "start": 220.12,
+   "end": 221.32,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah."
+  },
+  {
+   "start": 223.1,
+   "end": 232.2,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "It's fairly important to investigate the pressure drop on the booster pump by the 28th, but I can't honestly take it with what I've got on."
+  },
+  {
+   "start": 234.51,
+   "end": 236.26,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Can anyone pick that up?"
+  },
+  {
+   "start": 238.25,
+   "end": 241.4,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Not me, I'm tied up with the panel work."
+  },
+  {
+   "start": 242.41,
+   "end": 244.86,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I've got controls jobs backed up already."
+  },
+  {
+   "start": 245.4,
+   "end": 247.5,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, I can't this side either."
+  },
+  {
+   "start": 248.21,
+   "end": 250.66,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Production can't spare anyone to help, sorry."
+  },
+  {
+   "start": 251.73,
+   "end": 260.13,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, leave it visible then: investigate the pressure drop on the booster pump by the 28th, fairly important, but nobody's taking it right now."
+  },
+  {
+   "start": 262.3,
+   "end": 265.45,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "As long as it's being watched in the meantime."
+  },
+  {
+   "start": 266.5,
+   "end": 269.65,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "We'll keep an eye on it from the floor."
+  },
+  {
+   "start": 271.16,
+   "end": 274.66,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Dave, anything from your side we need an owner on?"
+  },
+  {
+   "start": 276.1,
+   "end": 282.05,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, the paperwork side more than spanners. The purchase order's still not landed for the big boiler."
+  },
+  {
+   "start": 282.39,
+   "end": 283.59,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Mm."
+  },
+  {
+   "start": 285.21,
+   "end": 291.16,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That needs doing this week - I'll chase the purchase order for the big boiler on Friday."
+  },
+  {
+   "start": 292.69,
+   "end": 295.14,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Good shout, because stores were asking yesterday."
+  },
+  {
+   "start": 295.87,
+   "end": 300.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Dave's got it: chase the purchase order for the big boiler on Friday."
+  },
+  {
+   "start": 302.29,
+   "end": 303.49,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep."
+  },
+  {
+   "start": 303.97,
+   "end": 311.32,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, one from me. Olu, can you run a function test on the line 1 mould temp today, top priority please?"
+  },
+  {
+   "start": 312.64,
+   "end": 317.19,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, alright. I'll run a function test on the line 1 mould temp."
+  },
+  {
+   "start": 318.47,
+   "end": 321.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Preferably before the long run starts, if you can."
+  },
+  {
+   "start": 323.42,
+   "end": 325.87,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll get on it early doors."
+  },
+  {
+   "start": 326.48,
+   "end": 328.23,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Cheers. That's top priority please."
+  },
+  {
+   "start": 328.72,
+   "end": 335.02,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "If you want a second pair of eyes on the IO while you're there, give us a shout."
+  },
+  {
+   "start": 336.14,
+   "end": 337.34,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Will do."
+  },
+  {
+   "start": 339.79,
+   "end": 344.34,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Any permits needed for that or is it just live test and verify?"
+  },
+  {
+   "start": 346.42,
+   "end": 349.22,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Just live test and verify, no intrusive stuff."
+  },
+  {
+   "start": 351.01,
+   "end": 354.16,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Fine. Anything else that's actually for today, not nice-to-knows?"
+  },
+  {
+   "start": 354.9,
+   "end": 358.4,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "No, shift cover's okay. Just don't all disappear at once."
+  },
+  {
+   "start": 360.8,
+   "end": 365.35,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I'll be mostly in the office after rounds if anyone needs plans moving."
+  },
+  {
+   "start": 366.97,
+   "end": 371.17,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I've got contractor call at ten, then I'm on the boiler bits."
+  },
+  {
+   "start": 372.77,
+   "end": 375.92,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I've got to finish those cabinet drawings this morning."
+  },
+  {
+   "start": 376.82,
+   "end": 380.32,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And apparently buy raffle tickets, by the sound of it."
+  },
+  {
+   "start": 381.68,
+   "end": 384.48,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That's not going on the maintenance plan, Olu."
+  },
+  {
+   "start": 386.35,
+   "end": 387.55,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Worth a try."
+  },
+  {
+   "start": 388.8,
+   "end": 397.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, recap before we drop. Fi will take vibration readings on the Gas Turbine 1 first thing tomorrow, if you've got a spare minute."
+  },
+  {
+   "start": 397.98,
+   "end": 399.18,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep."
+  },
+  {
+   "start": 400.29,
+   "end": 407.64,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Fiona Doyle will recalibrate the sensors on the GT2 Inlet Water Injection Valve on the 3rd; that needs doing this week."
+  },
+  {
+   "start": 408.34,
+   "end": 409.54,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Correct."
+  },
+  {
+   "start": 410.32,
+   "end": 415.22,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Booster pump pressure drop - fairly important, by the 28th, but no owner yet."
+  },
+  {
+   "start": 415.81,
+   "end": 417.01,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Sadly, yes."
+  },
+  {
+   "start": 419.2,
+   "end": 424.8,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Dave will chase the purchase order for the big boiler on Friday, needs doing this week."
+  },
+  {
+   "start": 426.47,
+   "end": 428.57,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, I'll do that on Friday."
+  },
+  {
+   "start": 431.03,
+   "end": 436.63,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And Olu will run a function test on the line 1 mould temp, top priority please."
+  },
+  {
+   "start": 438.68,
+   "end": 439.88,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Accepted."
+  },
+  {
+   "start": 441.01,
+   "end": 443.46,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nice one. Have a good one, all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 2"
+ ],
+ "writer": "gpt-5.4"
+}

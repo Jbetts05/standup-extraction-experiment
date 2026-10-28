@@ -1,0 +1,739 @@
+{
+ "id": "a099",
+ "date": "2026-05-25",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p09",
+  "p11",
+  "p08",
+  "p07",
+  "p02",
+  "p12"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a099-t1",
+   "summary": "Grease and check the bearings on the Air Compressor 1",
+   "spoken_action": "grease and check the bearings on the compressor one",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-26",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    53
+   ]
+  },
+  {
+   "id": "a099-t2",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-28",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36
+   ]
+  },
+  {
+   "id": "a099-t3",
+   "summary": "Take vibration readings on the Air Compressor 1",
+   "spoken_action": "take vibration readings on the compressor one",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "no rush",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    24,
+    25,
+    26,
+    27
+   ]
+  },
+  {
+   "id": "a099-t4",
+   "summary": "Clear the jam and check the sensors on the Palletiser",
+   "spoken_action": "clear the jam and check the sensors on the Palletiser",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "Palletiser",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    21,
+    23
+   ]
+  },
+  {
+   "id": "a099-t5",
+   "summary": "Schedule downtime for the Compressed Air Dryer with production",
+   "spoken_action": "schedule downtime for the dryer with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-26",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "id": "a099-t6",
+   "summary": "Recalibrate the sensors on the Line 3 Chiller",
+   "spoken_action": "recalibrate the sensors on the line 3 chiller",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47
+   ]
+  },
+  {
+   "id": "a099-t7",
+   "summary": "Book a contractor to look at the Stretch Wrapper",
+   "spoken_action": "book a contractor to look at the stretch wrapper",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p07",
+   "text_hint": "tested the Gas Turbine 1 yesterday and it's all fine now",
+   "component": {
+    "entity_id": "GT1",
+    "text": "Gas Turbine 1",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "already swapped the filter on the pick and place on two yesterday",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "pick and place on two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p02",
+   "text_hint": "saw the pressure on the pick and place on two dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "pick and place on two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the Main Outfeed Conveyor",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "Main Outfeed Conveyor",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.52,
+   "end": 10.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the twenty-fifth. Can you all hear me over that fan?"
+  },
+  {
+   "start": 12.31,
+   "end": 19.31,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, just. My grand weekend plans ended up being sitting indoors watching the rain. Weather forecast absolutely stitched us up."
+  },
+  {
+   "start": 20.92,
+   "end": 24.42,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Bank holiday weather, that. Comes as part of the package."
+  },
+  {
+   "start": 25.12,
+   "end": 30.37,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "On a brighter note, there's a birthday cake in the office. Under the blue lid."
+  },
+  {
+   "start": 31.04,
+   "end": 35.59,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Ah. That explains the very clean knife and the suspiciously large missing bit."
+  },
+  {
+   "start": 36.49,
+   "end": 40.34,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Not naming names. Mostly because I've still got crumbs on me."
+  },
+  {
+   "start": 41.97,
+   "end": 45.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a cake investigation. What's already finished?"
+  },
+  {
+   "start": 47.22,
+   "end": 54.57,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah so, I tested the Gas Turbine 1 yesterday and it's all fine now. That's finished, nothing outstanding from that test."
+  },
+  {
+   "start": 55.77,
+   "end": 60.32,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, it's been behaving since. Much nicer shift without that hanging over us."
+  },
+  {
+   "start": 62.03,
+   "end": 66.23,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Exactly. Just closing the loop, not putting it back on today's list."
+  },
+  {
+   "start": 67.66,
+   "end": 74.31,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I already swapped the filter on the pick and place on two yesterday. That one's done as well."
+  },
+  {
+   "start": 74.68,
+   "end": 82.38,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I saw the pressure on the pick and place on two dip for a few minutes. Came back on its own, though."
+  },
+  {
+   "start": 84.7,
+   "end": 88.2,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Was that a continuing drop, or just that little patch?"
+  },
+  {
+   "start": 90.03,
+   "end": 95.98,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just that patch. No ongoing fault to report; it recovered without anyone touching it. Only an observation."
+  },
+  {
+   "start": 97.73,
+   "end": 100.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, noted as an observation, not another job."
+  },
+  {
+   "start": 101.12,
+   "end": 107.07,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "The supplier still hasn't confirmed the delivery for the Main Outfeed Conveyor, either. Same blocker as before."
+  },
+  {
+   "start": 108.97,
+   "end": 113.52,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, there's no confirmed delivery showing on my side. Nothing new behind that."
+  },
+  {
+   "start": 115.27,
+   "end": 119.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That stays blocked, then. No fresh action out of that this morning."
+  },
+  {
+   "start": 121.14,
+   "end": 126.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Dave, can you clear the jam and check the sensors on the Palletiser, Monday? That's today."
+  },
+  {
+   "start": 127.67,
+   "end": 133.62,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, um—is that the jam itself and the sensor checks, rather than just getting it moving again?"
+  },
+  {
+   "start": 135.8,
+   "end": 140.0,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Both, please. Clear the jam and check the sensors on the Palletiser."
+  },
+  {
+   "start": 142.19,
+   "end": 145.34,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, I'll do both on the Palletiser today, Monday."
+  },
+  {
+   "start": 145.71,
+   "end": 151.66,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, your last bit went all robotic there. I heard 'both', then a sort of underwater noise."
+  },
+  {
+   "start": 153.27,
+   "end": 157.12,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That might just be my normal voice. But yes, both, today."
+  },
+  {
+   "start": 157.88,
+   "end": 164.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Dave, can you take vibration readings on the compressor one, Monday as well? No rush on that."
+  },
+  {
+   "start": 165.13,
+   "end": 169.68,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Readings only for that one, yeah? Not rolling the bearing greasing into it?"
+  },
+  {
+   "start": 170.07,
+   "end": 176.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right. This one's just the vibration readings on the compressor one. Separate from the bearing work."
+  },
+  {
+   "start": 177.46,
+   "end": 182.36,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, I'll take the vibration readings on the compressor one Monday. Understood, no rush."
+  },
+  {
+   "start": 183.61,
+   "end": 191.31,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "On that separate bit, we do need someone to grease and check the bearings on the compressor one tomorrow. No rush, though."
+  },
+  {
+   "start": 193.71,
+   "end": 196.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone able to take that bearing job?"
+  },
+  {
+   "start": 198.4,
+   "end": 204.7,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I can't commit to that as well. Don't put it against me just because I'm doing the readings."
+  },
+  {
+   "start": 205.99,
+   "end": 209.49,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No, and I'm only flagging it, not volunteering for it."
+  },
+  {
+   "start": 211.34,
+   "end": 217.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, nobody on it. Grease and check the bearings on the compressor one remains unallocated, due tomorrow, no rush."
+  },
+  {
+   "start": 218.72,
+   "end": 223.97,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Um, I'll send the shift handover report round by Thursday. It's fairly important, that one."
+  },
+  {
+   "start": 224.27,
+   "end": 229.17,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's the shift handover report we've been talking about, not a separate quality report?"
+  },
+  {
+   "start": 230.98,
+   "end": 235.18,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, that same shift handover report. I'll get it round by Thursday."
+  },
+  {
+   "start": 236.72,
+   "end": 238.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Fiona. Got that."
+  },
+  {
+   "start": 240.49,
+   "end": 244.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, can you schedule downtime for the dryer with production, tomorrow?"
+  },
+  {
+   "start": 246.08,
+   "end": 255.88,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah—just so we're saying the same thing, tomorrow is when I need to get the downtime scheduled, not a promise that the dryer will actually be down tomorrow?"
+  },
+  {
+   "start": 258.35,
+   "end": 263.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Schedule it with production tomorrow. We're not setting the shutdown date in this call."
+  },
+  {
+   "start": 264.39,
+   "end": 267.89,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Fine, I'll schedule downtime for the dryer with production tomorrow."
+  },
+  {
+   "start": 268.57,
+   "end": 275.22,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Glad you separated those. 'Scheduled tomorrow' and 'scheduled for tomorrow' get treated as the same thing far too often."
+  },
+  {
+   "start": 275.57,
+   "end": 279.77,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Usually about thirty seconds before someone asks where all their output's gone."
+  },
+  {
+   "start": 281.66,
+   "end": 286.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona, can you recalibrate the sensors on the line 3 chiller Monday? Fairly important."
+  },
+  {
+   "start": 288.08,
+   "end": 293.33,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, I'll recalibrate the sensors on the line 3 chiller Monday. Got it, fairly important."
+  },
+  {
+   "start": 294.39,
+   "end": 298.24,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, Monday as in today? Teams clipped the start for me."
+  },
+  {
+   "start": 299.78,
+   "end": 301.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Today, yes. Monday the twenty-fifth."
+  },
+  {
+   "start": 302.19,
+   "end": 306.04,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, that's what I've got for the line 3 chiller. Today."
+  },
+  {
+   "start": 308.43,
+   "end": 317.88,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And I'll book a contractor to look at the stretch wrapper. That's a whenever you get a chance one, isn't it? I'll take it on that basis."
+  },
+  {
+   "start": 319.5,
+   "end": 327.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, Davey, whenever you get a chance. Booking a contractor to look at the stretch wrapper, not promising a visit date here."
+  },
+  {
+   "start": 329.7,
+   "end": 334.25,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Exactly. I'll make the booking; no fixed date being agreed on this call."
+  },
+  {
+   "start": 335.77,
+   "end": 338.22,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Different name for the contractor jobs, then?"
+  },
+  {
+   "start": 338.98,
+   "end": 342.13,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Same bloke, unfortunately. No extra pair of hands included."
+  },
+  {
+   "start": 343.87,
+   "end": 351.57,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And to avoid any crossed wires, the bearings on the compressor one still have nobody. The readings being covered doesn't change that."
+  },
+  {
+   "start": 351.97,
+   "end": 358.62,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Likewise, that Main Outfeed Conveyor delivery is still unconfirmed. Wouldn't want the blocker to sound like a delivery promise."
+  },
+  {
+   "start": 360.97,
+   "end": 363.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Agreed. Still blocked, nothing newly assigned there."
+  },
+  {
+   "start": 364.98,
+   "end": 368.83,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "All clear from me. Nothing else to add to the list."
+  },
+  {
+   "start": 369.64,
+   "end": 374.89,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Same here. And the cake was information, by the way, not a compulsory team activity."
+  },
+  {
+   "start": 376.64,
+   "end": 379.79,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Good. I'd hate to have to record my slice."
+  },
+  {
+   "start": 381.43,
+   "end": 383.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's us. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

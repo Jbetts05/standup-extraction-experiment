@@ -1,0 +1,803 @@
+{
+ "id": "a020",
+ "date": "2026-04-20",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p10",
+  "p05",
+  "p12",
+  "p08",
+  "p04",
+  "p11"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a020-t1",
+   "summary": "Update the risk assessment for work on the Injection Moulding Line 2",
+   "spoken_action": "update the risk assessment for work on the IM2",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "IM2",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-20",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "id": "a020-t2",
+   "summary": "Replace the seals on the Main Water Isolation Valve",
+   "spoken_action": "replace the seals on the MV01",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie Brennan",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "MV01",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-27",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "id": "a020-t3",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    32
+   ]
+  },
+  {
+   "id": "a020-t4",
+   "summary": "Go to Tollgate Water Treatment Works to pick up the replacement parts for the Cooling Tower",
+   "spoken_action": "go to Tollgate Water Treatment Works to pick up the replacement parts for the cooling tower",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "cooling tower",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s05",
+    "text": "Tollgate Water Treatment Works",
+    "split": "name"
+   },
+   "due_date": "2026-04-21",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36
+   ]
+  },
+  {
+   "id": "a020-t5",
+   "summary": "Do a site visit at Harbour Road Warehouse with the contractor",
+   "spoken_action": "do a site visit at the warehouse with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s03",
+    "text": "the warehouse",
+    "split": "seen"
+   },
+   "due_date": "2026-05-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "a020-t6",
+   "summary": "Chase the purchase order for the Compressed Air Dryer",
+   "spoken_action": "chase the purchase order for the Compressed Air Dryer",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz Nowak",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "Compressed Air Dryer",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-20",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41
+   ]
+  },
+  {
+   "id": "a020-t7",
+   "summary": "Take vibration readings on the GT2 Number 2 Bearing",
+   "spoken_action": "take vibration readings on the number two bearing",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "number two bearing",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-24",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46
+   ]
+  },
+  {
+   "id": "a020-t8",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": "p05",
+   "evidence": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p04",
+   "text_hint": "finished the repair on the line 3 chiller last night",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "tested the Gas Turbine 1 yesterday and it's all fine now",
+   "component": {
+    "entity_id": "GT1",
+    "text": "Gas Turbine 1",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "already swapped the filter on the line 1 mould temp yesterday",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "noticed the wrapper was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p12",
+   "text_hint": "saw the pressure on the Compressed Air Dryer dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "Compressed Air Dryer",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "still waiting on parts for the line three, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p05",
+   "text_hint": "the shutdown on the outfeed conveyor is cancelled now, production need it running",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "outfeed conveyor",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.68,
+   "end": 11.68,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the twentieth of April. Can you all hear me, or am I doing the Teams mime again?"
+  },
+  {
+   "start": 12.11,
+   "end": 17.36,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "We can hear you. Anyone see the football last night? Honestly, that last ten minutes."
+  },
+  {
+   "start": 18.05,
+   "end": 21.2,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, unfortunately. I'd nearly recovered until you mentioned it."
+  },
+  {
+   "start": 22.59,
+   "end": 29.94,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I avoided it. Our weekend plans were a walk and a pub lunch, but the weather put paid to the walk."
+  },
+  {
+   "start": 32.08,
+   "end": 34.88,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "So just the pub lunch, then. Terrible outcome."
+  },
+  {
+   "start": 36.24,
+   "end": 41.49,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly. Next weekend we're planning the garden, weather permitting. Which probably means another pub lunch."
+  },
+  {
+   "start": 41.86,
+   "end": 47.46,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the leisure committee. Anything finished that we can get off the board?"
+  },
+  {
+   "start": 49.53,
+   "end": 54.08,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, finished the repair on the line 3 chiller last night. That's done."
+  },
+  {
+   "start": 55.13,
+   "end": 57.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Closed, not another job for this shift."
+  },
+  {
+   "start": 59.48,
+   "end": 64.03,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I tested the Gas Turbine 1 yesterday and it's all fine now."
+  },
+  {
+   "start": 65.06,
+   "end": 67.86,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "That's the one I saw marked complete, yeah?"
+  },
+  {
+   "start": 69.33,
+   "end": 72.83,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, same one. Finished, no outstanding bit hidden underneath it."
+  },
+  {
+   "start": 73.19,
+   "end": 78.79,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I already swapped the filter on the line 1 mould temp yesterday as well. That's complete."
+  },
+  {
+   "start": 79.99,
+   "end": 82.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, cheers. Anything from nights that's just information?"
+  },
+  {
+   "start": 83.81,
+   "end": 91.16,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Noticed the wrapper was running a bit warm on nights, but it settled down. Just an observation, not raising a job."
+  },
+  {
+   "start": 92.44,
+   "end": 95.24,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, understood. Not something still sitting there hot."
+  },
+  {
+   "start": 96.19,
+   "end": 105.64,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Similar sort of thing: saw the pressure on the Compressed Air Dryer dip for a few minutes. It came back on its own. Just passing that on."
+  },
+  {
+   "start": 105.96,
+   "end": 110.86,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, heard. A dip that recovered, not a new fault-finding job from this meeting."
+  },
+  {
+   "start": 112.32,
+   "end": 119.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And we're still waiting on parts for the line three. Nothing we can do until they arrive, so that remains blocked."
+  },
+  {
+   "start": 121.91,
+   "end": 125.76,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, that one's parked. Separate from the chiller repair I've finished."
+  },
+  {
+   "start": 127.69,
+   "end": 134.34,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Also, the shutdown on the outfeed conveyor is cancelled now. Production need it running, so that shutdown isn't happening."
+  },
+  {
+   "start": 135.14,
+   "end": 140.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, cancelled, not postponed onto somebody's list today. Let's get the actual commitments straight."
+  },
+  {
+   "start": 141.82,
+   "end": 146.02,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll update the risk assessment for work on the IM2 this morning."
+  },
+  {
+   "start": 148.34,
+   "end": 151.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace Liu. The IM2 risk assessment, this morning."
+  },
+  {
+   "start": 151.89,
+   "end": 153.09,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, that's mine."
+  },
+  {
+   "start": 155.44,
+   "end": 160.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We've also got the seals on the MV01 needing replacement. Who's taking that one?"
+  },
+  {
+   "start": 161.32,
+   "end": 169.02,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'll replace the seals on the MV01 next week. Drop everything for that one, yeah — that's the priority I'll give it."
+  },
+  {
+   "start": 170.55,
+   "end": 174.75,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Sorry, talking over you. Next week still, rather than bringing it forward?"
+  },
+  {
+   "start": 177.1,
+   "end": 182.0,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Next week, definitely. High urgency when we do it, not changing it to today."
+  },
+  {
+   "start": 183.82,
+   "end": 189.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Jamie Brennan has the MV01 seals next week. Drop everything for that one. Clear."
+  },
+  {
+   "start": 190.14,
+   "end": 195.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Marcus, if you've got a spare minute, can you send the shift handover report round?"
+  },
+  {
+   "start": 197.5,
+   "end": 202.4,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I'll send the shift handover report round if I've got a spare minute."
+  },
+  {
+   "start": 203.15,
+   "end": 207.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. It's a spare-minute one, no need to bump anything else for it."
+  },
+  {
+   "start": 209.27,
+   "end": 215.57,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll go to Tollgate Water Treatment Works to pick up the replacement parts for the cooling tower tomorrow."
+  },
+  {
+   "start": 215.91,
+   "end": 220.11,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Tomorrow for the collection, yeah? Sorry, your sound clipped at the end."
+  },
+  {
+   "start": 221.19,
+   "end": 226.79,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, tomorrow. And drop everything for that one — I'll treat that collection as the priority."
+  },
+  {
+   "start": 227.34,
+   "end": 233.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Hannah. Tollgate Water Treatment Works, replacement parts for the cooling tower, tomorrow. Drop everything for that one."
+  },
+  {
+   "start": 235.56,
+   "end": 240.81,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Um, I'll do a site visit at the warehouse with the contractor on the 3rd."
+  },
+  {
+   "start": 242.22,
+   "end": 246.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomasz, that's on the 3rd, with the contractor at the warehouse?"
+  },
+  {
+   "start": 248.54,
+   "end": 251.69,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's right, on the 3rd. I'll do that visit."
+  },
+  {
+   "start": 253.61,
+   "end": 259.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Tomasz Nowak, can you chase the purchase order for the Compressed Air Dryer by 11am?"
+  },
+  {
+   "start": 259.66,
+   "end": 264.21,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yes, I'll chase the purchase order for the Compressed Air Dryer by 11am."
+  },
+  {
+   "start": 265.45,
+   "end": 272.1,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Just to keep those separate, that's the purchase order chase. My pressure comment earlier was only something I saw."
+  },
+  {
+   "start": 273.15,
+   "end": 277.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Absolutely. The purchase order is the action, the pressure dip was information."
+  },
+  {
+   "start": 278.44,
+   "end": 282.99,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I'll take vibration readings on the number two bearing on Friday. Normal priority."
+  },
+  {
+   "start": 285.25,
+   "end": 288.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Olu, number two bearing readings on Friday, normal priority."
+  },
+  {
+   "start": 290.0,
+   "end": 293.5,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep. I'll take those, no rush-job label on that one."
+  },
+  {
+   "start": 294.85,
+   "end": 298.35,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Normal priority. Nice to hear those words together for once."
+  },
+  {
+   "start": 299.95,
+   "end": 305.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Don't get too comfortable. Grace Liu, can you organise the toolbox talk for the team?"
+  },
+  {
+   "start": 305.75,
+   "end": 314.85,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I can't take that one, sorry. I've got the IM2 risk assessment this morning, and I haven't got the capacity to organise the talk as well."
+  },
+  {
+   "start": 316.08,
+   "end": 320.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fair enough. Jamie, can you organise the toolbox talk for the team instead?"
+  },
+  {
+   "start": 322.99,
+   "end": 327.54,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll organise the toolbox talk for the team. That's with me instead."
+  },
+  {
+   "start": 329.43,
+   "end": 335.03,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Thanks. Definitely handed over, then, rather than both of us thinking the other one's got it."
+  },
+  {
+   "start": 337.4,
+   "end": 339.85,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep, mine. Teams has witnesses and everything."
+  },
+  {
+   "start": 341.39,
+   "end": 348.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. And the two drop-everything jobs keep the dates we've said. Urgent doesn't mean we've quietly moved them into this morning."
+  },
+  {
+   "start": 349.61,
+   "end": 355.56,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Makes sense. Otherwise everything ends up in the same red box and the box stops meaning anything."
+  },
+  {
+   "start": 357.39,
+   "end": 364.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Line three stays blocked on parts, and the outfeed conveyor shutdown is cancelled. Neither is a new action."
+  },
+  {
+   "start": 366.4,
+   "end": 371.3,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "All clear from me. At least this plan's firmer than my weekend weather forecast."
+  },
+  {
+   "start": 372.24,
+   "end": 374.69,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And less depressing than the football, hopefully."
+  },
+  {
+   "start": 375.67,
+   "end": 378.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Low bar. Right, thanks everyone. That's us."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

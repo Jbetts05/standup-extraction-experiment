@@ -1,0 +1,714 @@
+{
+ "id": "a077",
+ "date": "2026-04-13",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p06",
+  "p08",
+  "p09",
+  "p05",
+  "p11",
+  "p02",
+  "p12"
+ ],
+ "chair_id": "p06",
+ "gold_tasks": [
+  {
+   "id": "a077-t1",
+   "summary": "Replace the seals on the Water Booster Pump",
+   "spoken_action": "replace the seals on the Water Booster Pump",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "drop everything for that one",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    15,
+    16,
+    18,
+    19,
+    61
+   ]
+  },
+  {
+   "id": "a077-t2",
+   "summary": "Run a function test on the Line 1 Mould Temperature Controller",
+   "spoken_action": "run a function test on the line 1 TCU",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum Reid",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 TCU",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-17",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    45,
+    46,
+    47
+   ]
+  },
+  {
+   "id": "a077-t3",
+   "summary": "Go to Northfield Substation to pick up the replacement parts for the Injection Moulding Line 2",
+   "spoken_action": "go to Northfield Substation to pick up the replacement parts for the IM2",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "IM2",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield Substation",
+    "split": "name"
+   },
+   "due_date": "2026-04-13",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    24,
+    26,
+    61
+   ]
+  },
+  {
+   "id": "a077-t4",
+   "summary": "Schedule downtime for the Line 2 Safety Guard Interlock with production",
+   "spoken_action": "schedule downtime for the line 2 interlock with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "line 2 interlock",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-21",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55
+   ]
+  },
+  {
+   "id": "a077-t5",
+   "summary": "Swap the filter on the Air Compressor 1",
+   "spoken_action": "swap the filter on the compressor one",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-14",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    38,
+    39,
+    41
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "already swapped the filter on the CT1 yesterday",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p08",
+   "text_hint": "already swapped the filter on the HV board yesterday",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "the HV board",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p08",
+   "text_hint": "heard a slight rattle from the Air Compressor 1, nothing to action yet",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "Air Compressor 1",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p12",
+   "text_hint": "noticed the IM2 was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM2",
+    "text": "IM2",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "still waiting on parts for the PRV on the boiler, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "PRV on the boiler",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.8,
+   "end": 8.75,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Morning, everyone. Monday the thirteenth. Can you hear me all right? Teams reckons my microphone's somewhere else."
+  },
+  {
+   "start": 9.12,
+   "end": 15.07,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, you're coming through. Unlike the broken coffee machine in the canteen. Absolutely nothing coming through that."
+  },
+  {
+   "start": 16.02,
+   "end": 19.17,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Probably doing us a favour, judging by Friday's coffee."
+  },
+  {
+   "start": 19.61,
+   "end": 25.56,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Needed something after the football last night. Sat through all that and then couldn't get to sleep."
+  },
+  {
+   "start": 26.61,
+   "end": 29.76,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "You could've watched it again. That would've done it."
+  },
+  {
+   "start": 31.4,
+   "end": 35.95,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, before this becomes the sports desk. Fiona, what's already off the list?"
+  },
+  {
+   "start": 37.33,
+   "end": 43.28,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah so, already swapped the filter on the CT1 yesterday. That's finished, not something to allocate again."
+  },
+  {
+   "start": 43.78,
+   "end": 44.98,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good, CT1 closed."
+  },
+  {
+   "start": 46.45,
+   "end": 51.7,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And I already swapped the filter on the HV board yesterday. That's done as well."
+  },
+  {
+   "start": 53.9,
+   "end": 57.75,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, you clipped out after filter. HV board, did you say?"
+  },
+  {
+   "start": 59.85,
+   "end": 61.6,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "HV board, yeah. Yesterday. Finished."
+  },
+  {
+   "start": 62.65,
+   "end": 70.0,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "The other carry-over is still waiting on parts for the PRV on the boiler. Nothing we can do until they arrive."
+  },
+  {
+   "start": 72.37,
+   "end": 75.87,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, no change on the parts position. Still not here."
+  },
+  {
+   "start": 76.59,
+   "end": 81.14,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "So that stays blocked. No boiler PRV work being handed out this morning."
+  },
+  {
+   "start": 81.75,
+   "end": 84.9,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Understood. Blocked means blocked, not squeeze it in somehow."
+  },
+  {
+   "start": 86.74,
+   "end": 92.69,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Grace Liu, can you replace the seals on the Water Booster Pump? Drop everything for that one."
+  },
+  {
+   "start": 94.07,
+   "end": 98.97,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, I'll replace the seals on the Water Booster Pump. Understood on the priority."
+  },
+  {
+   "start": 99.58,
+   "end": 103.08,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just the seals, we're saying? Not a whole pump replacement?"
+  },
+  {
+   "start": 104.91,
+   "end": 109.46,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Just replace the seals on the Water Booster Pump, yes. That's the scope."
+  },
+  {
+   "start": 110.28,
+   "end": 114.48,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fine. I've got that one, and it's ahead of the routine stuff."
+  },
+  {
+   "start": 116.66,
+   "end": 120.51,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, that's clear. Not putting that down as a normal-priority job."
+  },
+  {
+   "start": 121.08,
+   "end": 129.83,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And Grace, can you go to Northfield Substation to pick up the replacement parts for the IM2 today at 2pm? Drop everything for that one."
+  },
+  {
+   "start": 130.72,
+   "end": 135.62,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Today at 2pm, at Northfield Substation? Just making sure I've heard the time properly."
+  },
+  {
+   "start": 137.24,
+   "end": 141.09,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yes, today at 2pm. That pickup is also a drop-everything one."
+  },
+  {
+   "start": 142.73,
+   "end": 149.03,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Okay, I'll go to Northfield Substation to pick up the replacement parts for the IM2 today at 2pm."
+  },
+  {
+   "start": 150.22,
+   "end": 156.17,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's collection only, isn't it? Not collecting and then fitting them as part of the same thing?"
+  },
+  {
+   "start": 156.81,
+   "end": 161.01,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Collection only, yeah. I'm accepting the pickup, not an IM2 installation job."
+  },
+  {
+   "start": 162.68,
+   "end": 169.68,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "So two top-priority items with Grace. One's got the fixed 2pm time; the seals haven't got a separate deadline stated."
+  },
+  {
+   "start": 170.58,
+   "end": 174.78,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly. Both urgent, and I'm not adding another time onto the seals."
+  },
+  {
+   "start": 176.74,
+   "end": 184.79,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While we're on equipment, I heard a slight rattle from the Air Compressor 1. Nothing to action yet, just mentioning what I heard."
+  },
+  {
+   "start": 186.72,
+   "end": 189.17,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Right, an observation, rather than another job?"
+  },
+  {
+   "start": 190.07,
+   "end": 192.17,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, exactly. Nothing to action yet."
+  },
+  {
+   "start": 194.21,
+   "end": 201.21,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Similar sort of note from me: noticed the IM2 was running a bit warm on nights but it settled down."
+  },
+  {
+   "start": 203.05,
+   "end": 205.5,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "It did settle, then? Wasn't still climbing?"
+  },
+  {
+   "start": 207.74,
+   "end": 213.69,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, it settled down. That's just the nights observation, not me asking for more work on it."
+  },
+  {
+   "start": 216.09,
+   "end": 220.99,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Okay. Neither of those becomes a new action off the back of this call."
+  },
+  {
+   "start": 221.55,
+   "end": 227.85,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Um, separately, I'll swap the filter on the compressor one tomorrow morning. It matters but it's not urgent."
+  },
+  {
+   "start": 228.51,
+   "end": 231.31,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Tomorrow morning for that filter, rather than today?"
+  },
+  {
+   "start": 233.27,
+   "end": 239.57,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, tomorrow morning. I'll take it. It matters but it's not urgent, so no drop-everything treatment on that."
+  },
+  {
+   "start": 240.87,
+   "end": 246.47,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Thanks, Jamie. The filter on the compressor one is yours for tomorrow morning, at that priority."
+  },
+  {
+   "start": 248.65,
+   "end": 252.85,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And we're not quietly turning that into a rattle investigation as well?"
+  },
+  {
+   "start": 255.05,
+   "end": 259.25,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, just the filter swap I've volunteered for. Separate from Marcus's observation."
+  },
+  {
+   "start": 260.77,
+   "end": 264.27,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Lovely. Otherwise one sentence from me turns into a strip-down."
+  },
+  {
+   "start": 264.83,
+   "end": 272.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "For the line 1 TCU, I'll run a function test on Friday. That's an 'if you've got a spare minute' one, low priority."
+  },
+  {
+   "start": 273.9,
+   "end": 277.75,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Function test only, yeah? Not changing settings as part of it?"
+  },
+  {
+   "start": 278.9,
+   "end": 283.8,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll run a function test on the line 1 TCU, nothing beyond that."
+  },
+  {
+   "start": 285.71,
+   "end": 290.26,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Callum Reid on that one, on Friday, low priority — the spare-minute job."
+  },
+  {
+   "start": 292.23,
+   "end": 293.98,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's me, yes. On Friday."
+  },
+  {
+   "start": 296.2,
+   "end": 304.25,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There's still the need to schedule downtime for the line 2 interlock with production next Tuesday. Normal priority. It hasn't got an owner."
+  },
+  {
+   "start": 304.68,
+   "end": 308.18,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Anyone able to take ownership of scheduling that with production?"
+  },
+  {
+   "start": 310.58,
+   "end": 314.78,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I can't take ownership of it. I'm raising the gap, not volunteering."
+  },
+  {
+   "start": 315.31,
+   "end": 317.41,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Can't take that one either, sorry."
+  },
+  {
+   "start": 318.57,
+   "end": 322.07,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Not me on top of the two we've just agreed."
+  },
+  {
+   "start": 324.08,
+   "end": 331.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "All right, nobody's taken it. Schedule downtime for the line 2 interlock with production next Tuesday, normal priority — still unowned."
+  },
+  {
+   "start": 333.43,
+   "end": 337.63,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "So it's not sitting against Fiona just because she read it out?"
+  },
+  {
+   "start": 339.89,
+   "end": 343.74,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Correct. No owner. Don't want that getting mistaken for an acceptance."
+  },
+  {
+   "start": 345.0,
+   "end": 349.2,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Same principle applies to me mentioning the coffee machine, by the way."
+  },
+  {
+   "start": 350.66,
+   "end": 353.46,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Don't worry, nobody mistook that for you volunteering."
+  },
+  {
+   "start": 353.81,
+   "end": 356.96,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right. Anything we've accidentally doubled up before we finish?"
+  },
+  {
+   "start": 359.15,
+   "end": 365.8,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No. CT1 and HV board filters are already finished. PRV on the boiler is still blocked, not today's work."
+  },
+  {
+   "start": 367.68,
+   "end": 371.53,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And my rattle was just information. No extra job from me."
+  },
+  {
+   "start": 372.83,
+   "end": 380.88,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'm clear: Water Booster Pump seals, drop everything; and the IM2 replacement-parts pickup at Northfield Substation today at 2pm, same urgency. Both accepted."
+  },
+  {
+   "start": 381.22,
+   "end": 383.32,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "All clear from me as well."
+  },
+  {
+   "start": 385.1,
+   "end": 386.85,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers, everyone. That's us. Bye."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

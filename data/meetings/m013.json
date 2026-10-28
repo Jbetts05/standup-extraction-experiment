@@ -1,0 +1,958 @@
+{
+ "id": "m013",
+ "date": "2026-10-26",
+ "split": "test",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p03",
+  "p02",
+  "p07",
+  "p04",
+  "p10",
+  "p09"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m013-t1",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the counterbalances",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Whitty",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the counterbalances",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-28",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    16,
+    17,
+    63
+   ]
+  },
+  {
+   "id": "m013-t2",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Mide",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-26",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": "p03",
+   "evidence": [
+    22,
+    23,
+    24,
+    25,
+    56,
+    65
+   ]
+  },
+  {
+   "id": "m013-t3",
+   "summary": "Sort the permit to work and isolation for the Line 3 Screw and Barrel",
+   "spoken_action": "sort the permit to work and isolation for the Line 3 Screw and Barrel",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "Line 3 Screw and Barrel",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-02",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    31,
+    32,
+    66
+   ]
+  },
+  {
+   "id": "m013-t4",
+   "summary": "Recalibrate the sensors on the Boiler Safety Relief Valve",
+   "spoken_action": "recalibrate the sensors on the Boiler Safety Relief Valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-29",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    67
+   ]
+  },
+  {
+   "id": "m013-t5",
+   "summary": "Book a contractor to look at the Stretch Wrapper",
+   "spoken_action": "book a contractor to look at the stretch wrapper",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-03",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    43,
+    68
+   ]
+  },
+  {
+   "id": "m013-t6",
+   "summary": "Replace the seals on the GT1 Fuel Gas Valve",
+   "spoken_action": "replace the seals on the gas valve on one",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Doyler",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "the gas valve on one",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-26",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": "p04",
+   "evidence": [
+    46,
+    47,
+    48,
+    49,
+    69
+   ]
+  },
+  {
+   "id": "m013-t7",
+   "summary": "Schedule downtime for the 11kV Switchboard with production",
+   "spoken_action": "schedule downtime for the big board with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Whitty",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "the big board",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    19,
+    20,
+    59,
+    64
+   ]
+  },
+  {
+   "id": "m013-t8",
+   "summary": "Do the lock-out tag-out sign-off on the Main Water Isolation Valve",
+   "spoken_action": "do the lock-out tag-out sign-off on the Main Water Isolation Valve",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide Adeyemi",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "Main Water Isolation Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    52,
+    53,
+    70
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "signed off the inspection on the Stretch Wrapper on Tuesday",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "Stretch Wrapper",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p04",
+   "text_hint": "tested the pump in the pit yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "the pump in the pit",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p02",
+   "text_hint": "heard a slight rattle from the stretch wrapper, nothing to action yet",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the Line 1 Mould Temperature Controller",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "Line 1 Mould Temperature Controller",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.57,
+   "end": 7.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, you alright? Let's get cracking, quick stand-up for Monday."
+  },
+  {
+   "start": 8.34,
+   "end": 12.89,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Morning. Grim out there, isn't it? Proper sideways rain. Weekend was basically cancelled."
+  },
+  {
+   "start": 14.39,
+   "end": 21.04,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Tell me about it. And the ring road was absolute carnage this morning, took me forever to get in."
+  },
+  {
+   "start": 21.88,
+   "end": 26.78,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, same here. Everyone forgot how to drive in a bit of rain again."
+  },
+  {
+   "start": 27.91,
+   "end": 32.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Standard. Right, safety, priorities, blockers. Keep it tight if we can. Priya, you first?"
+  },
+  {
+   "start": 33.44,
+   "end": 42.54,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, so, no major issues from me. Just to say I signed off the inspection on the Stretch Wrapper on Tuesday, so that's done and closed."
+  },
+  {
+   "start": 43.18,
+   "end": 44.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely, cheers. Anything live today?"
+  },
+  {
+   "start": 46.6,
+   "end": 48.7,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Nothing major-major. Electrical side's fairly steady."
+  },
+  {
+   "start": 49.46,
+   "end": 57.16,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "On maintenance, I tested the pump in the pit yesterday and it's all fine now, so that's not hanging over us anymore."
+  },
+  {
+   "start": 59.38,
+   "end": 60.58,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good stuff."
+  },
+  {
+   "start": 62.68,
+   "end": 71.43,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Only thing I noticed walking through, I heard a slight rattle from the stretch wrapper, nothing to action yet, just keeping an ear on it."
+  },
+  {
+   "start": 73.6,
+   "end": 75.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, noted, observation only for now."
+  },
+  {
+   "start": 77.87,
+   "end": 86.62,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I've got one blocker, supplier still hasn't confirmed the delivery for the Line 1 Mould Temperature Controller. I've chased them again but still nothing back."
+  },
+  {
+   "start": 87.94,
+   "end": 92.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, blocker noted. Keep poking them, but yeah, that's outside us at the minute."
+  },
+  {
+   "start": 93.23,
+   "end": 98.13,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "If they leave it much longer we'll all have retired before it turns up."
+  },
+  {
+   "start": 99.4,
+   "end": 100.6,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Honestly, yeah."
+  },
+  {
+   "start": 101.26,
+   "end": 110.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Let's go through today's bits. David\u2014Whitty\u2014can you do the pre-use checks on the counterbalances by Wednesday? It's not an emergency but don't let it slip."
+  },
+  {
+   "start": 111.72,
+   "end": 119.77,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, alright, I can do the pre-use checks on the counterbalances by Wednesday. Not an emergency but don't let it slip, got it."
+  },
+  {
+   "start": 120.29,
+   "end": 121.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one."
+  },
+  {
+   "start": 123.6,
+   "end": 129.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And while I've got you, Whitty, can you schedule downtime for the big board with production?"
+  },
+  {
+   "start": 130.49,
+   "end": 135.74,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, I'll schedule downtime for the big board with production. I'll grab them after this."
+  },
+  {
+   "start": 136.24,
+   "end": 140.79,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "They were asking about windows for that last week actually, so that'd help."
+  },
+  {
+   "start": 141.64,
+   "end": 148.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Perfect. Priya, can you sort the training records for the new starters by end of day, whenever you get a chance?"
+  },
+  {
+   "start": 150.37,
+   "end": 164.02,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Uh, today I'm a bit boxed in, to be honest. I've still got the panel fault on two and the audit follow-up. I don't think I'll get the training records for the new starters done by end of day."
+  },
+  {
+   "start": 166.16,
+   "end": 174.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Mide, can you pick that up instead\u2014sort the training records for the new starters by end of day, whenever you get a chance?"
+  },
+  {
+   "start": 175.15,
+   "end": 183.2,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I can do that. I'll sort the training records for the new starters by end of day, whenever I get a chance."
+  },
+  {
+   "start": 185.57,
+   "end": 186.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers."
+  },
+  {
+   "start": 188.22,
+   "end": 189.97,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "What else have we got?"
+  },
+  {
+   "start": 190.99,
+   "end": 196.59,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Line 3 Screw and Barrel still needs the paperwork side lining up before we touch it."
+  },
+  {
+   "start": 198.13,
+   "end": 200.23,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "That's the permit side, isn't it?"
+  },
+  {
+   "start": 201.06,
+   "end": 202.26,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah."
+  },
+  {
+   "start": 204.69,
+   "end": 216.24,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I'll sort the permit to work and isolation for the Line 3 Screw and Barrel next week. Drop everything for that one, really, because if that's not right we're not going near it."
+  },
+  {
+   "start": 217.5,
+   "end": 223.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, thanks Tomasz. So that's yours for next week, and yeah, drop everything for that one."
+  },
+  {
+   "start": 225.2,
+   "end": 231.15,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "While we're on safety kit, I'll recalibrate the sensors on the Boiler Safety Relief Valve by Thursday."
+  },
+  {
+   "start": 231.63,
+   "end": 232.83,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks Aisha, appreciated."
+  },
+  {
+   "start": 234.13,
+   "end": 238.33,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Makes sense to get that done before the end of the week."
+  },
+  {
+   "start": 240.01,
+   "end": 241.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep."
+  },
+  {
+   "start": 243.05,
+   "end": 252.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There's also the stretch wrapper. We need to book a contractor to look at the stretch wrapper next Tuesday, whenever you get a chance. Can anyone take that?"
+  },
+  {
+   "start": 253.91,
+   "end": 256.36,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Not me, I'm stacked with shutdown planning."
+  },
+  {
+   "start": 257.56,
+   "end": 259.31,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I can't, not this week."
+  },
+  {
+   "start": 260.48,
+   "end": 262.23,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, not from my side."
+  },
+  {
+   "start": 264.71,
+   "end": 265.91,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Same, no capacity."
+  },
+  {
+   "start": 268.22,
+   "end": 269.42,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Afraid not."
+  },
+  {
+   "start": 270.86,
+   "end": 284.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, fine, so we need to book a contractor to look at the stretch wrapper next Tuesday, whenever you get a chance, but nobody's picking it up right now. Fiona, can you at least flag that gap in the planner?"
+  },
+  {
+   "start": 286.14,
+   "end": 291.39,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I can note that it's unowned, but I'm not taking it as an action."
+  },
+  {
+   "start": 292.79,
+   "end": 294.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's fine, just visibility."
+  },
+  {
+   "start": 295.09,
+   "end": 302.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Next one: the gas valve on one. Tomasz, can you replace the seals on the gas valve on one at half two?"
+  },
+  {
+   "start": 304.18,
+   "end": 310.13,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "At half two I can't, I've got the contractor escort and then stores. I won't make that."
+  },
+  {
+   "start": 310.91,
+   "end": 317.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Doyler, can you take it instead\u2014replace the seals on the gas valve on one at half two?"
+  },
+  {
+   "start": 319.34,
+   "end": 328.44,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Me? Bit left field, but yeah, okay, I can replace the seals on the gas valve on one at half two if that's what we need."
+  },
+  {
+   "start": 330.03,
+   "end": 333.18,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I'll show you where the kit is before lunch."
+  },
+  {
+   "start": 334.18,
+   "end": 335.38,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Please do, yeah."
+  },
+  {
+   "start": 337.24,
+   "end": 338.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one, thanks both."
+  },
+  {
+   "start": 340.04,
+   "end": 346.69,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I've also got one I'll pick up: I'll do the lock-out tag-out sign-off on the Main Water Isolation Valve."
+  },
+  {
+   "start": 347.74,
+   "end": 349.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good man. Thanks, Olumide Adeyemi."
+  },
+  {
+   "start": 351.42,
+   "end": 355.62,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That'll help because ops were asking who had final sign-off on that."
+  },
+  {
+   "start": 357.1,
+   "end": 358.85,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, leave that with me."
+  },
+  {
+   "start": 359.34,
+   "end": 360.74,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Anything else for utilities?"
+  },
+  {
+   "start": 361.98,
+   "end": 364.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just checking we've not missed anything obvious."
+  },
+  {
+   "start": 366.69,
+   "end": 371.24,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, apart from me not touching those training records now, that's clear, yeah?"
+  },
+  {
+   "start": 373.63,
+   "end": 379.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, clear. Priya's not taking that, Mide's got it by end of day, whenever you get a chance."
+  },
+  {
+   "start": 381.51,
+   "end": 382.71,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep."
+  },
+  {
+   "start": 383.9,
+   "end": 388.45,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "For the counterbalances, do you want all trucks or just the usual pair?"
+  },
+  {
+   "start": 389.95,
+   "end": 393.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Do the full pre-use checks on the counterbalances, please. By Wednesday."
+  },
+  {
+   "start": 394.95,
+   "end": 397.05,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, all of them then. Fine."
+  },
+  {
+   "start": 398.74,
+   "end": 407.49,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And on the big board, Whitty, if you get production to give an actual slot, send it me and I'll put it into the plan."
+  },
+  {
+   "start": 409.74,
+   "end": 415.69,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, will do. I'll schedule downtime for the big board with production and pass you the window."
+  },
+  {
+   "start": 416.43,
+   "end": 417.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Perfect."
+  },
+  {
+   "start": 419.16,
+   "end": 423.71,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "By the way, if this weather keeps up I'm bringing a canoe tomorrow."
+  },
+  {
+   "start": 424.29,
+   "end": 428.49,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "You can park it next to Fiona's car after the ring road."
+  },
+  {
+   "start": 429.43,
+   "end": 432.58,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Oi, don't. I nearly turned round and went home."
+  },
+  {
+   "start": 434.82,
+   "end": 438.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No chance, not with month end coming. Right, recap then."
+  },
+  {
+   "start": 439.08,
+   "end": 445.73,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Whitty is doing the pre-use checks on the counterbalances by Wednesday, not an emergency but don't let it slip."
+  },
+  {
+   "start": 446.57,
+   "end": 451.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Whitty is also going to schedule downtime for the big board with production."
+  },
+  {
+   "start": 453.07,
+   "end": 460.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Mide is going to sort the training records for the new starters by end of day, whenever you get a chance."
+  },
+  {
+   "start": 462.42,
+   "end": 470.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomasz will sort the permit to work and isolation for the Line 3 Screw and Barrel next week, drop everything for that one."
+  },
+  {
+   "start": 471.04,
+   "end": 475.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha will recalibrate the sensors on the Boiler Safety Relief Valve by Thursday."
+  },
+  {
+   "start": 477.53,
+   "end": 486.98,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We still need to book a contractor to look at the stretch wrapper next Tuesday, whenever you get a chance, and at the moment nobody owns it."
+  },
+  {
+   "start": 487.91,
+   "end": 492.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Doyler is replacing the seals on the gas valve on one at half two."
+  },
+  {
+   "start": 494.91,
+   "end": 500.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Olumide Adeyemi will do the lock-out tag-out sign-off on the Main Water Isolation Valve."
+  },
+  {
+   "start": 500.55,
+   "end": 501.75,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sounds right."
+  },
+  {
+   "start": 504.23,
+   "end": 505.43,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep."
+  },
+  {
+   "start": 507.13,
+   "end": 508.33,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "All good."
+  },
+  {
+   "start": 509.57,
+   "end": 510.77,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, got mine."
+  },
+  {
+   "start": 511.98,
+   "end": 513.18,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Fine by me."
+  },
+  {
+   "start": 514.27,
+   "end": 515.47,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, sorted."
+  },
+  {
+   "start": 516.18,
+   "end": 518.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Brilliant. Shout if anything changes. Thanks everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

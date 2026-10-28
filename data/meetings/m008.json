@@ -1,0 +1,949 @@
+{
+ "id": "m008",
+ "date": "2026-11-25",
+ "split": "train",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p09",
+  "p02",
+  "p12",
+  "p04",
+  "p08",
+  "p03"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m008-t1",
+   "summary": "Replace the seals on the Main Water Isolation Valve",
+   "spoken_action": "replace the seals on the main water valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35
+   ]
+  },
+  {
+   "id": "m008-t2",
+   "summary": "Grease and check the bearings on the Air Compressor 1",
+   "spoken_action": "grease and check the bearings on the compressor one",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-25",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "m008-t3",
+   "summary": "Do a site visit at Northfield Substation with the contractor",
+   "spoken_action": "do a site visit at Northfield Substation with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield Substation",
+    "split": "name"
+   },
+   "due_date": "2026-11-27",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41
+   ]
+  },
+  {
+   "id": "m008-t4",
+   "summary": "Inspect the Main Water Isolation Valve for leaks",
+   "spoken_action": "inspect the MV01 for leaks",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "MV01",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-27",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    46,
+    52
+   ]
+  },
+  {
+   "id": "m008-t5",
+   "summary": "Schedule downtime for the Site Water System with production",
+   "spoken_action": "schedule downtime for the Site Water System with production",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus Hale",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "Site Water System",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-27",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    54,
+    55
+   ]
+  },
+  {
+   "id": "m008-t6",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the Forklift Fleet",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz Nowak",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "Forklift Fleet",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-27",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    57,
+    58
+   ]
+  },
+  {
+   "id": "m008-t7",
+   "summary": "Run a function test on the 11kV Switchboard",
+   "spoken_action": "run a function test on the 11kV board",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-25",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    61,
+    62
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "finished the repair on the line two last night",
+   "component": {
+    "entity_id": "IM2",
+    "text": "line two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "signed off the inspection on the Forklift Fleet on Tuesday",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "Forklift Fleet",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p08",
+   "text_hint": "saw the pressure on the gas turbine one dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT1",
+    "text": "gas turbine one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p04",
+   "text_hint": "heard a slight rattle from the Forklift Fleet, nothing to action yet",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "Forklift Fleet",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p03",
+   "text_hint": "can't get to the CT1 until production gives us a window",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the line 1",
+   "component": {
+    "entity_id": "IM1",
+    "text": "line 1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p02",
+   "text_hint": "the shutdown on the 11kV Switchboard is cancelled now, production need it running",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV Switchboard",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.32,
+   "end": 12.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, Wednesday 25 November. Let's keep it fairly tight, yeah? Quick run round, what's live, what's blocked, what needs doing today."
+  },
+  {
+   "start": 12.42,
+   "end": 19.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Morning. Freezing out there, by the way. Proper grim. Weekend's meant to be wet as well, so that's that ruined."
+  },
+  {
+   "start": 21.6,
+   "end": 27.55,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Better than standing outside at the charity bake sale on Friday in the rain, to be fair."
+  },
+  {
+   "start": 28.16,
+   "end": 31.31,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "You'll still be there buying all the brownies, Priya."
+  },
+  {
+   "start": 33.62,
+   "end": 35.02,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, course I will."
+  },
+  {
+   "start": 37.24,
+   "end": 43.54,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Speaking of suffering, the coffee machine in the canteen's still broken. Had that weird watery stuff again. Criminal."
+  },
+  {
+   "start": 46.02,
+   "end": 47.77,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's not coffee, that's punishment."
+  },
+  {
+   "start": 48.3,
+   "end": 52.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before we log a critical incident for the coffee machine\u2014Marcus, plant first?"
+  },
+  {
+   "start": 55.19,
+   "end": 69.54,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah so overnight was mostly alright. I did see the pressure on the gas turbine one dip for a few minutes, it came back on its own, so just keeping an eye on it. Not asking for anything on it yet."
+  },
+  {
+   "start": 71.65,
+   "end": 73.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, observation only, noted."
+  },
+  {
+   "start": 74.73,
+   "end": 77.53,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Other than that no trips, no alarms sticking."
+  },
+  {
+   "start": 78.12,
+   "end": 79.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. David?"
+  },
+  {
+   "start": 80.19,
+   "end": 88.24,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Morning. Mechanical side's quiet enough. I signed off the inspection on the Forklift Fleet on Tuesday, so that's already done, nothing new there."
+  },
+  {
+   "start": 89.78,
+   "end": 92.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, got it, that was Tuesday's piece closed out."
+  },
+  {
+   "start": 93.74,
+   "end": 100.74,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And just so nobody plans round it, the shutdown on the 11kV Switchboard is cancelled now, production need it running."
+  },
+  {
+   "start": 102.2,
+   "end": 103.6,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'd heard that."
+  },
+  {
+   "start": 104.87,
+   "end": 108.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, so cancelled, not for today. Priya, while we're there?"
+  },
+  {
+   "start": 110.87,
+   "end": 118.92,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Electrically, nothing dramatic. I still can't get to the CT1 until production gives us a window, so that's a blocker as it stands."
+  },
+  {
+   "start": 119.37,
+   "end": 121.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, CT1 blocked by production access."
+  },
+  {
+   "start": 122.29,
+   "end": 124.04,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Everything else is stable enough."
+  },
+  {
+   "start": 124.58,
+   "end": 125.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomasz?"
+  },
+  {
+   "start": 126.59,
+   "end": 134.29,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah. I heard a slight rattle from the Forklift Fleet, nothing to action yet, just mentioning it in case it gets worse."
+  },
+  {
+   "start": 136.53,
+   "end": 138.98,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Could just be that loose guard again."
+  },
+  {
+   "start": 140.94,
+   "end": 143.04,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Could be, yeah. Didn't sound major."
+  },
+  {
+   "start": 144.1,
+   "end": 145.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Alright, observation only."
+  },
+  {
+   "start": 145.82,
+   "end": 147.92,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Otherwise routine stuff. No fresh breakdowns."
+  },
+  {
+   "start": 148.47,
+   "end": 149.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona?"
+  },
+  {
+   "start": 151.87,
+   "end": 157.47,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Morning. I finished the repair on the line two last night, so that's out the way."
+  },
+  {
+   "start": 158.72,
+   "end": 159.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one."
+  },
+  {
+   "start": 161.93,
+   "end": 171.38,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "But the supplier still hasn't confirmed the delivery for the line 1, so that bit's still hanging there. I can't move that on till they come back."
+  },
+  {
+   "start": 173.78,
+   "end": 176.58,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I've chased them as well, nothing useful yet."
+  },
+  {
+   "start": 177.99,
+   "end": 180.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, blocker noted on the line 1 delivery."
+  },
+  {
+   "start": 181.95,
+   "end": 183.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, anything from stores?"
+  },
+  {
+   "start": 184.64,
+   "end": 189.89,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Nothing special. Consumables are alright, seals cabinet's been topped up, forklift checklist pads are in."
+  },
+  {
+   "start": 192.02,
+   "end": 194.82,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Right, actions then. What's anybody picking up?"
+  },
+  {
+   "start": 195.47,
+   "end": 201.42,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I'll replace the seals on the main water valve today. I've got what I need for that."
+  },
+  {
+   "start": 203.43,
+   "end": 207.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Fiona to replace the seals on the main water valve."
+  },
+  {
+   "start": 208.7,
+   "end": 215.0,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I'll grease and check the bearings on the compressor one this afternoon while I'm over that side."
+  },
+  {
+   "start": 216.17,
+   "end": 219.32,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "You've got the gun and the right grease, yeah?"
+  },
+  {
+   "start": 220.57,
+   "end": 223.72,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, sorted. I'll do the compressor one this afternoon."
+  },
+  {
+   "start": 225.03,
+   "end": 228.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, that's Fiona on compressor one this afternoon as well."
+  },
+  {
+   "start": 229.99,
+   "end": 239.44,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I can do a site visit at Northfield Substation with the contractor by the end of the week. I've been meaning to get eyes on it anyway."
+  },
+  {
+   "start": 239.77,
+   "end": 246.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, Tomasz to do a site visit at Northfield Substation with the contractor by the end of the week."
+  },
+  {
+   "start": 248.7,
+   "end": 252.55,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Are you going on your own or with one of theirs?"
+  },
+  {
+   "start": 253.03,
+   "end": 256.18,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "With their bloke, yeah. Just a walkdown, nothing fancy."
+  },
+  {
+   "start": 257.39,
+   "end": 266.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There is one that's nagging me: we need to inspect the MV01 for leaks by the end of the week. And, honestly, drop everything for that one."
+  },
+  {
+   "start": 267.76,
+   "end": 268.96,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Mm."
+  },
+  {
+   "start": 270.9,
+   "end": 272.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Can anyone take that?"
+  },
+  {
+   "start": 273.26,
+   "end": 279.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I can't, I'm stacked already with the water valve and compressor one, plus whatever comes back from line 1."
+  },
+  {
+   "start": 280.78,
+   "end": 287.08,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I won't get near it today if I'm waiting on CT1 access and I've got panels to clear."
+  },
+  {
+   "start": 288.21,
+   "end": 293.46,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I'm tied up on reactive stuff and that Northfield visit, so I can't promise it."
+  },
+  {
+   "start": 294.17,
+   "end": 296.97,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Not me, I'm stuck in plant all shift."
+  },
+  {
+   "start": 299.04,
+   "end": 301.49,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I can't help on inspection side."
+  },
+  {
+   "start": 302.93,
+   "end": 313.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Alright, so inspect the MV01 for leaks by the end of the week is still outstanding, drop everything for that one, but nobody's taken it yet. I'll keep chasing for cover."
+  },
+  {
+   "start": 316.09,
+   "end": 317.29,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Understood."
+  },
+  {
+   "start": 318.24,
+   "end": 325.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Marcus Hale, can you schedule downtime for the Site Water System with production on Friday, whenever you get a chance?"
+  },
+  {
+   "start": 327.58,
+   "end": 335.63,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, alright, I can do that. I'll schedule downtime for the Site Water System with production on Friday, whenever I get a chance."
+  },
+  {
+   "start": 336.35,
+   "end": 337.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers."
+  },
+  {
+   "start": 338.56,
+   "end": 346.26,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Also, I'll do the pre-use checks on the Forklift Fleet on Friday. Not an emergency but don't let it slip, I know."
+  },
+  {
+   "start": 347.56,
+   "end": 355.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, Tomasz Nowak to do the pre-use checks on the Forklift Fleet on Friday, not an emergency but don't let it slip."
+  },
+  {
+   "start": 356.67,
+   "end": 363.67,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just to avoid confusion, that's separate from the inspection I signed off on Tuesday. This is the pre-use checks only."
+  },
+  {
+   "start": 364.3,
+   "end": 365.7,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, exactly, different thing."
+  },
+  {
+   "start": 367.89,
+   "end": 375.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona Doyle, can you run a function test on the 11kV board by 11am? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 376.67,
+   "end": 385.77,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I can take that. I'll run a function test on the 11kV board by 11am. Not an emergency but don't let it slip, got it."
+  },
+  {
+   "start": 386.27,
+   "end": 392.57,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Just to be clear, that's the 11kV board, not the 11kV Switchboard shutdown thing David said was cancelled."
+  },
+  {
+   "start": 394.78,
+   "end": 397.23,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, separate. Function test only, no shutdown."
+  },
+  {
+   "start": 398.79,
+   "end": 399.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good catch."
+  },
+  {
+   "start": 400.98,
+   "end": 403.78,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Do you need any permit support on that?"
+  },
+  {
+   "start": 406.02,
+   "end": 409.52,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Should be alright, but I'll shout if ops want paperwork."
+  },
+  {
+   "start": 411.22,
+   "end": 417.87,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "If you're doing that before 11, give me ten minutes notice so I don't think you've knocked something over."
+  },
+  {
+   "start": 419.09,
+   "end": 420.29,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Will do."
+  },
+  {
+   "start": 421.0,
+   "end": 424.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything else that is actually new, not just nice-to-knows?"
+  },
+  {
+   "start": 426.2,
+   "end": 427.4,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, that's me."
+  },
+  {
+   "start": 429.03,
+   "end": 430.23,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Nothing from me."
+  },
+  {
+   "start": 431.52,
+   "end": 437.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nope. Other than if anyone fancies fixing that coffee machine, but apparently that's not top priority."
+  },
+  {
+   "start": 437.74,
+   "end": 439.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Despite popular demand, no."
+  },
+  {
+   "start": 440.72,
+   "end": 442.12,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Shame. Morale issue, that."
+  },
+  {
+   "start": 444.27,
+   "end": 447.07,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'd put it above half the plant, personally."
+  },
+  {
+   "start": 448.7,
+   "end": 469.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Alright, alright. Quick recap then: Fiona's got the main water valve seals, compressor one this afternoon, and the 11kV board by 11am. Tomasz has Northfield Substation by the end of the week and the Forklift Fleet pre-use checks on Friday. Marcus Hale will schedule downtime for the Site Water System with production on Friday whenever he gets a chance."
+  },
+  {
+   "start": 469.81,
+   "end": 484.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "MV01 leaks inspection by the end of the week is still open, drop everything for that one, but nobody assigned yet. CT1 remains blocked. Line 1 delivery still unconfirmed. Gas turbine one dip was observation only. 11kV Switchboard shutdown cancelled. Everyone happy?"
+  },
+  {
+   "start": 486.92,
+   "end": 488.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep."
+  },
+  {
+   "start": 489.79,
+   "end": 490.99,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah."
+  },
+  {
+   "start": 492.74,
+   "end": 493.94,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "All good."
+  },
+  {
+   "start": 496.2,
+   "end": 497.4,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Fine by me."
+  },
+  {
+   "start": 499.7,
+   "end": 500.9,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep."
+  },
+  {
+   "start": 502.85,
+   "end": 504.05,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Good."
+  },
+  {
+   "start": 506.19,
+   "end": 507.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one, cheers all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

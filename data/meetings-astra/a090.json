@@ -1,0 +1,675 @@
+{
+ "id": "a090",
+ "date": "2026-09-17",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p04",
+  "p02",
+  "p10",
+  "p06",
+  "p03",
+  "p12"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a090-t1",
+   "summary": "Replace the seals on the Water Booster Pump",
+   "spoken_action": "replace the seals on the booster pump",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-21",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    16,
+    17,
+    20,
+    21,
+    57
+   ]
+  },
+  {
+   "id": "a090-t2",
+   "summary": "Go to Northfield Substation to pick up the replacement parts for the Compressed Air Dryer",
+   "spoken_action": "go to Northfield to pick up the replacement parts for the air dryer",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya Raman",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "air dryer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield",
+    "split": "seen"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    29,
+    32
+   ]
+  },
+  {
+   "id": "a090-t3",
+   "summary": "Run a function test on the Fire Alarm Panel",
+   "spoken_action": "run a function test on the fire panel",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-17",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    49,
+    50,
+    51,
+    53
+   ]
+  },
+  {
+   "id": "a090-t4",
+   "summary": "Update the risk assessment for work on the Site Water System",
+   "spoken_action": "update the risk assessment for work on the Site Water System",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz Nowak",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "Site Water System",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-17",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a090-t5",
+   "summary": "Inspect the Boiler Feedwater Pump for leaks",
+   "spoken_action": "inspect the feedwater pump for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "feedwater pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-17",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    53
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "already swapped the filter on the Injection Moulding Line 2 yesterday",
+   "component": {
+    "entity_id": "IM2",
+    "text": "Injection Moulding Line 2",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "signed off the inspection on the Line 2 Pick and Place Robot on Tuesday",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "Line 2 Pick and Place Robot",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p04",
+   "text_hint": "heard a slight rattle from the CT1, nothing to action yet",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "still waiting on parts for the feedwater pump, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "feedwater pump",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.85,
+   "end": 11.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Thursday the seventeenth. Can you hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 13.44,
+   "end": 17.29,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "We can hear you. Bit tinny, but that's probably the portakabin."
+  },
+  {
+   "start": 19.43,
+   "end": 26.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "The heating in the portakabin is ridiculous. Freezing when you get in, then tropical by the time you've made a brew."
+  },
+  {
+   "start": 27.34,
+   "end": 31.19,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Good for drying your coat, though. About its only useful setting."
+  },
+  {
+   "start": 32.86,
+   "end": 37.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyway, the football last night. Honestly, ninety minutes I'm not getting back."
+  },
+  {
+   "start": 37.64,
+   "end": 40.79,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "You say that every week and still watch it."
+  },
+  {
+   "start": 42.25,
+   "end": 44.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, well. Apparently I enjoy being disappointed."
+  },
+  {
+   "start": 46.91,
+   "end": 52.86,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I've got camping booked for the weekend. Looking at the weather, I'll be joining you on that."
+  },
+  {
+   "start": 53.98,
+   "end": 55.38,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Camping? This weekend? Brave."
+  },
+  {
+   "start": 57.24,
+   "end": 60.74,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's the polite word for it. Forecast's basically sideways rain."
+  },
+  {
+   "start": 62.56,
+   "end": 65.36,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Lovely. A wet tent and no decent kettle."
+  },
+  {
+   "start": 66.01,
+   "end": 70.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the holiday complaints line, let's do the board."
+  },
+  {
+   "start": 70.69,
+   "end": 77.69,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "First, I've already swapped the filter on the Injection Moulding Line 2 yesterday. That's finished, not another job for today."
+  },
+  {
+   "start": 79.94,
+   "end": 84.14,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, that was still showing on my old view. That explains it."
+  },
+  {
+   "start": 86.63,
+   "end": 93.98,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And I signed off the inspection on the Line 2 Pick and Place Robot on Tuesday. That one's closed as well."
+  },
+  {
+   "start": 96.0,
+   "end": 98.8,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, so neither of those is outstanding. Good."
+  },
+  {
+   "start": 99.3,
+   "end": 106.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Olumide, can you replace the seals on the booster pump by Monday? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 108.77,
+   "end": 114.02,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll replace the seals on the booster pump by Monday. Understood, that comes first."
+  },
+  {
+   "start": 115.51,
+   "end": 119.71,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Definitely the one hurting us. We're not getting round that production hold."
+  },
+  {
+   "start": 121.01,
+   "end": 126.26,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just so we're clear, it's the seals we're talking about, not a whole pump replacement?"
+  },
+  {
+   "start": 127.15,
+   "end": 131.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, the seals on the booster pump. Olumide has that, Monday, first priority."
+  },
+  {
+   "start": 133.55,
+   "end": 135.3,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's clear. I've got it."
+  },
+  {
+   "start": 136.42,
+   "end": 145.17,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "While we're on noises and pumps—well, not a pump actually. I heard a slight rattle from the CT1. Nothing to action yet, just an observation."
+  },
+  {
+   "start": 146.49,
+   "end": 149.29,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "A slight rattle, rather than a proper knock?"
+  },
+  {
+   "start": 150.38,
+   "end": 153.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, slight. I'm not raising a job off it."
+  },
+  {
+   "start": 154.9,
+   "end": 158.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Observation only, not adding that to today's work."
+  },
+  {
+   "start": 158.69,
+   "end": 165.69,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Priya Raman, can you go to Northfield to pick up the replacement parts for the air dryer? That's fairly important."
+  },
+  {
+   "start": 166.12,
+   "end": 171.37,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll go to Northfield to pick up the replacement parts for the air dryer."
+  },
+  {
+   "start": 173.83,
+   "end": 176.28,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Sorry, you clipped out for me. Northfield?"
+  },
+  {
+   "start": 177.78,
+   "end": 180.93,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Northfield, yes. The replacement parts for the air dryer."
+  },
+  {
+   "start": 181.67,
+   "end": 185.52,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Not another full dryer, then. I heard about half that sentence."
+  },
+  {
+   "start": 186.45,
+   "end": 190.3,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, just the parts. Teams is doing its underwater thing again."
+  },
+  {
+   "start": 192.68,
+   "end": 198.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Priya Raman has the collection. Fairly important, but the booster pump remains the first job."
+  },
+  {
+   "start": 199.91,
+   "end": 201.66,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Got you. Audio's back now."
+  },
+  {
+   "start": 203.87,
+   "end": 210.17,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Um, I'll update the risk assessment for work on the Site Water System after lunch. That's fairly important."
+  },
+  {
+   "start": 212.41,
+   "end": 216.26,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "The assessment for the work, rather than changing the actual scope?"
+  },
+  {
+   "start": 216.72,
+   "end": 219.87,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Exactly, the risk assessment. That's what I'm taking on."
+  },
+  {
+   "start": 220.39,
+   "end": 225.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Tomasz Nowak. Risk assessment for work on the Site Water System, after lunch, fairly important."
+  },
+  {
+   "start": 226.68,
+   "end": 227.88,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, agreed."
+  },
+  {
+   "start": 229.52,
+   "end": 234.07,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Can I just get the parts blocker in before we move off water?"
+  },
+  {
+   "start": 234.61,
+   "end": 235.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, go on."
+  },
+  {
+   "start": 237.55,
+   "end": 247.35,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Still waiting on parts for the feedwater pump, nothing we can do until they arrive. The repair's still blocked; I'm not taking that as a new job today."
+  },
+  {
+   "start": 249.53,
+   "end": 252.68,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, no arrival to report from stores. Still waiting."
+  },
+  {
+   "start": 253.96,
+   "end": 261.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood on the repair. Separately, I'll inspect the feedwater pump for leaks today at 2pm. It matters but it's not urgent."
+  },
+  {
+   "start": 263.64,
+   "end": 268.19,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Just the inspection, Sarah? Not trying to do the repair without the bits?"
+  },
+  {
+   "start": 268.98,
+   "end": 274.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. I'll inspect it for leaks, that's all. The parts blocker stays against the repair."
+  },
+  {
+   "start": 274.67,
+   "end": 279.92,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, those are separate things. Looking for leaks doesn't mean we've magically got the parts."
+  },
+  {
+   "start": 280.8,
+   "end": 283.95,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "If only saying it on Teams made them appear."
+  },
+  {
+   "start": 286.29,
+   "end": 289.09,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'd have a much easier life, wouldn't I?"
+  },
+  {
+   "start": 289.76,
+   "end": 294.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I'll run a function test on the fire panel this afternoon. Normal priority."
+  },
+  {
+   "start": 296.22,
+   "end": 299.37,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "That's yours then, Saz? The fire panel function test?"
+  },
+  {
+   "start": 300.09,
+   "end": 302.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, mine. This afternoon, normal priority."
+  },
+  {
+   "start": 303.41,
+   "end": 309.01,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, I spoke over you there. I thought you'd said that was at two as well."
+  },
+  {
+   "start": 311.33,
+   "end": 320.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, today at 2pm is my feedwater pump leak inspection. The fire panel function test is this afternoon; I haven't put a particular time on that."
+  },
+  {
+   "start": 321.96,
+   "end": 324.41,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Ah, right. Two different entries. With you."
+  },
+  {
+   "start": 325.45,
+   "end": 330.0,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And the parts wait doesn't change the leak inspection. All makes sense now."
+  },
+  {
+   "start": 332.3,
+   "end": 338.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. The two finished items stay closed, CT1 is just an observation, and the feedwater pump repair stays blocked."
+  },
+  {
+   "start": 340.82,
+   "end": 345.02,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep. Nothing in that changes the booster pump being first for me."
+  },
+  {
+   "start": 345.6,
+   "end": 348.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. That's the lot, then. Thanks, everyone."
+  },
+  {
+   "start": 349.84,
+   "end": 351.59,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers. Enjoy the tropical portakabin."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

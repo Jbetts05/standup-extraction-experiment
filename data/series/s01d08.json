@@ -1,0 +1,1467 @@
+{
+ "id": "s01d08",
+ "date": "2026-03-04",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p04",
+  "p12",
+  "p03",
+  "p11",
+  "p06"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "s01d08-t1",
+   "summary": "Do a site visit at Harbour Road Warehouse with the contractor",
+   "spoken_action": "do a site visit at the warehouse with the contractor",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Reidy",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s03",
+    "text": "the warehouse",
+    "split": "seen"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    42
+   ]
+  },
+  {
+   "id": "s01d08-t2",
+   "summary": "Sort the permit to work and isolation for the 11kV Switchboard",
+   "spoken_action": "sort the permit to work and isolation for the big board",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "the big board",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-04",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    36,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "s01d08-t3",
+   "summary": "Go to Kestrel Hydraulics Leeds to pick up the replacement parts for the Stretch Wrapper",
+   "spoken_action": "go to the hydraulics lot to pick up the replacement parts for the wrapper",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Reidy",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s04",
+    "text": "the hydraulics lot",
+    "split": "heldout"
+   },
+   "due_date": "2026-03-04",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    33,
+    34
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "signed off the inspection on the GT2 Number 2 Bearing on Tuesday",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 Number 2 Bearing",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p01",
+   "text_hint": "saw the pressure on the Line 3 Chiller dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.99,
+   "end": 7.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Wednesday, fourth of March. Are we all on?"
+  },
+  {
+   "start": 9.77,
+   "end": 12.92,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, hang on, it's picked the laptop mic again."
+  },
+  {
+   "start": 13.61,
+   "end": 19.21,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "We can hear you. Bit like you're inside a biscuit tin, but we can hear you."
+  },
+  {
+   "start": 20.93,
+   "end": 24.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Before we start, the football last night. Honestly, what was that?"
+  },
+  {
+   "start": 27.19,
+   "end": 30.69,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Not a conversation I need before I've finished this tea."
+  },
+  {
+   "start": 32.55,
+   "end": 35.7,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "He's been remarkably quiet about football this morning, actually."
+  },
+  {
+   "start": 37.08,
+   "end": 40.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ha. Right, we'll spare him. Quick updates first, then today's bits."
+  },
+  {
+   "start": 41.32,
+   "end": 43.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "There. Headset now. Less biscuit tin?"
+  },
+  {
+   "start": 44.53,
+   "end": 46.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Much better. Jamie, go on."
+  },
+  {
+   "start": 47.33,
+   "end": 51.18,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah so, shift handover report's gone round. All fine with that."
+  },
+  {
+   "start": 52.17,
+   "end": 53.37,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Lovely, thanks."
+  },
+  {
+   "start": 55.42,
+   "end": 61.37,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And Reidy asked me to pass on that the pre-use checks on the trucks are all done."
+  },
+  {
+   "start": 62.41,
+   "end": 65.21,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers, Jamie. Saves me shouting over this lot."
+  },
+  {
+   "start": 65.54,
+   "end": 70.79,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Last one from me: I've finished recalibrating the sensors on the pop valve. That's sorted."
+  },
+  {
+   "start": 71.38,
+   "end": 72.58,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Nice one."
+  },
+  {
+   "start": 73.68,
+   "end": 77.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "My function test on the relief valve is done as well."
+  },
+  {
+   "start": 78.67,
+   "end": 79.87,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good, yeah."
+  },
+  {
+   "start": 82.31,
+   "end": 87.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I've done the site visit at Kestrel with the contractor. Boxed that off."
+  },
+  {
+   "start": 87.72,
+   "end": 88.92,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, lovely."
+  },
+  {
+   "start": 90.92,
+   "end": 94.42,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Reidy, how are you getting on with the near-miss write-up?"
+  },
+  {
+   "start": 94.85,
+   "end": 103.6,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "The near miss at Injection Moulding Line 1, yeah. Made a start on it. I've got the opening bit down, but there's more to write."
+  },
+  {
+   "start": 105.9,
+   "end": 107.1,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, thanks."
+  },
+  {
+   "start": 108.34,
+   "end": 114.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Oh, and I signed off the inspection on the GT2 Number 2 Bearing on Tuesday. That's already done."
+  },
+  {
+   "start": 116.45,
+   "end": 117.65,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, understood."
+  },
+  {
+   "start": 119.58,
+   "end": 128.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just an observation as well: I saw the pressure on the Line 3 Chiller dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 129.42,
+   "end": 130.82,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Without anyone touching anything?"
+  },
+  {
+   "start": 132.22,
+   "end": 138.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, no adjustment. Back where it was. Just mentioning what I saw, nothing I'm handing out off that."
+  },
+  {
+   "start": 140.02,
+   "end": 141.22,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right, got you."
+  },
+  {
+   "start": 143.51,
+   "end": 148.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, today's work. Three things, and there's a definite order to the production one."
+  },
+  {
+   "start": 148.9,
+   "end": 153.1,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep. Sorry if there's a racket my end, I'm by the door."
+  },
+  {
+   "start": 154.57,
+   "end": 164.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Reidy, can you go to the hydraulics lot to pick up the replacement parts for the wrapper by 11am? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 166.59,
+   "end": 174.29,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll go to the hydraulics lot and pick up the replacement parts for the wrapper by 11am. First thing for me."
+  },
+  {
+   "start": 175.5,
+   "end": 177.95,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, makes sense. No parts, no running."
+  },
+  {
+   "start": 179.67,
+   "end": 181.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. That collection takes precedence, Reidy."
+  },
+  {
+   "start": 184.21,
+   "end": 185.61,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Understood. That one first."
+  },
+  {
+   "start": 186.96,
+   "end": 193.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Priya, can you sort the permit to work and isolation for the big board today? That's fairly important."
+  },
+  {
+   "start": 193.57,
+   "end": 198.47,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll sort the permit to work and isolation for the big board today."
+  },
+  {
+   "start": 200.75,
+   "end": 203.55,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, I was going to speak—no, carry on."
+  },
+  {
+   "start": 204.01,
+   "end": 209.26,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Only saying, I've got both bits, the permit and the isolation. Not just the paperwork."
+  },
+  {
+   "start": 210.84,
+   "end": 212.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, that's what I meant. Thanks."
+  },
+  {
+   "start": 215.43,
+   "end": 222.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Then Reidy, if you've got a spare minute, can you do a site visit at the warehouse with the contractor?"
+  },
+  {
+   "start": 224.76,
+   "end": 232.46,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll do the site visit at the warehouse with the contractor if I've got a spare minute. Collection comes first, though."
+  },
+  {
+   "start": 234.74,
+   "end": 240.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Absolutely. The warehouse visit is the spare-minute one, not something to squeeze ahead of the parts."
+  },
+  {
+   "start": 241.43,
+   "end": 243.53,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "At least the priorities are clear."
+  },
+  {
+   "start": 245.48,
+   "end": 248.98,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah. No trying to be in two places at once."
+  },
+  {
+   "start": 249.89,
+   "end": 253.39,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Teams makes it look possible. Factory's a bit less forgiving."
+  },
+  {
+   "start": 254.82,
+   "end": 257.27,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Any questions on what we've agreed?"
+  },
+  {
+   "start": 259.06,
+   "end": 260.26,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Nothing from me."
+  },
+  {
+   "start": 260.82,
+   "end": 262.22,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, all clear here."
+  },
+  {
+   "start": 263.25,
+   "end": 264.45,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Same, yeah."
+  },
+  {
+   "start": 265.84,
+   "end": 268.29,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. We'll leave it there. Cheers, everyone."
+  },
+  {
+   "start": 269.48,
+   "end": 271.93,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers. And no more football chat, please."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "series_id": "s01",
+ "day": 8,
+ "team": [
+  "p01",
+  "p04",
+  "p12",
+  "p02",
+  "p03",
+  "p11",
+  "p08",
+  "p06"
+ ],
+ "board_before": [
+  {
+   "id": "s01d01-t1",
+   "summary": "Send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner_id": "p12",
+   "component_id": null,
+   "site_id": null,
+   "due_date": "2026-02-28",
+   "due_time": null,
+   "status": "in_progress",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d05",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p02",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d02",
+     "date": "2026-02-24",
+     "kind": "reassigned",
+     "text": "Reassigned",
+     "quote": null,
+     "speaker_id": "p02",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "progress",
+     "text": "had a first look, nothing major so far",
+     "quote": null,
+     "speaker_id": "p12",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t2",
+   "summary": "Sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner_id": "p12",
+   "component_id": null,
+   "site_id": null,
+   "due_date": "2026-02-23",
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d02",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p12",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d02",
+     "date": "2026-02-24",
+     "kind": "done",
+     "text": "all fine",
+     "quote": null,
+     "speaker_id": "p12",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t3",
+   "summary": "Run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p04",
+   "component_id": null,
+   "site_id": null,
+   "due_date": "2026-02-25",
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d04",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d02",
+     "date": "2026-02-24",
+     "kind": "blocked",
+     "text": "the contractor can't get here until the job's rescheduled",
+     "quote": null,
+     "speaker_id": "p12",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "progress",
+     "text": "made a start on it",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "done",
+     "text": "Marked done",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t4",
+   "summary": "Update the risk assessment for work on the Air Compressor 1",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p04",
+   "component_id": "AIR-C-01",
+   "site_id": null,
+   "due_date": "2026-02-24",
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d04",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d02",
+     "date": "2026-02-24",
+     "kind": "progress",
+     "text": "made a start on it",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "done",
+     "text": "all fine",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t5",
+   "summary": "Replace the seals on the GT2 Inlet Water Injection Valve",
+   "category": "operations",
+   "priority": 1,
+   "owner_id": "p04",
+   "component_id": "GT2-WV-03",
+   "site_id": null,
+   "due_date": "2026-02-23",
+   "due_time": "14:00",
+   "status": "done",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d04",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "progress",
+     "text": "about halfway through",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "done",
+     "text": "Marked done",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d02-t1",
+   "summary": "Swap the filter on the Cooling Tower",
+   "category": "operations",
+   "priority": 1,
+   "owner_id": null,
+   "component_id": "WTR-CT-01",
+   "site_id": null,
+   "due_date": "2026-02-27",
+   "due_time": null,
+   "status": "cancelled",
+   "created_in": "s01d02",
+   "created_on": "2026-02-24",
+   "updated_in": "s01d04",
+   "history": [
+    {
+     "day_id": "s01d02",
+     "date": "2026-02-24",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": null,
+     "confidence": null
+    },
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "cancelled",
+     "text": "it's been rolled into next month's shutdown",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d02-t2",
+   "summary": "Book a contractor to look at the GT2 Inlet Water Injection Valve",
+   "category": "organisation",
+   "priority": 2,
+   "owner_id": "p11",
+   "component_id": "GT2-WV-03",
+   "site_id": null,
+   "due_date": "2026-02-25",
+   "due_time": "09:30",
+   "status": "done",
+   "created_in": "s01d02",
+   "created_on": "2026-02-24",
+   "updated_in": "s01d03",
+   "history": [
+    {
+     "day_id": "s01d02",
+     "date": "2026-02-24",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "done",
+     "text": "all fine",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d03-t1",
+   "summary": "Run a function test on the Boiler Safety Relief Valve",
+   "category": "operations",
+   "priority": 2,
+   "owner_id": "p01",
+   "component_id": "WHB-01-SV",
+   "site_id": null,
+   "due_date": "2026-02-26",
+   "due_time": null,
+   "status": "blocked",
+   "created_in": "s01d03",
+   "created_on": "2026-02-25",
+   "updated_in": "s01d05",
+   "history": [
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "blocked",
+     "text": "production won't give us a window",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d03-t2",
+   "summary": "Inspect the Main Water Isolation Valve for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner_id": "p04",
+   "component_id": "WTR-MV-01",
+   "site_id": null,
+   "due_date": "2026-03-03",
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d03",
+   "created_on": "2026-02-25",
+   "updated_in": "s01d05",
+   "history": [
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "due_changed",
+     "text": "Due date changed",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "done",
+     "text": "Marked done",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d03-t3",
+   "summary": "Write up the near miss at the Palletiser",
+   "category": "safety",
+   "priority": 1,
+   "owner_id": "p08",
+   "component_id": "PCK-PAL-01",
+   "site_id": null,
+   "due_date": "2026-03-03",
+   "due_time": null,
+   "status": "in_progress",
+   "created_in": "s01d03",
+   "created_on": "2026-02-25",
+   "updated_in": "s01d07",
+   "history": [
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p06",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "progress",
+     "text": "still on it, going fine so far",
+     "quote": null,
+     "speaker_id": "p03",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d07",
+     "date": "2026-03-03",
+     "kind": "reassigned",
+     "text": "Reassigned",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d03-t4",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p08",
+   "component_id": "PCK-FLT",
+   "site_id": null,
+   "due_date": "2026-02-26",
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d03",
+   "created_on": "2026-02-25",
+   "updated_in": "s01d05",
+   "history": [
+    {
+     "day_id": "s01d03",
+     "date": "2026-02-25",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p08",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "blocked",
+     "text": "can't get hold of the supplier",
+     "quote": null,
+     "speaker_id": "p08",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "done",
+     "text": "Marked done",
+     "quote": null,
+     "speaker_id": "p06",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d04-t1",
+   "summary": "Clear the jam and check the sensors on the Stretch Wrapper",
+   "category": "operations",
+   "priority": 1,
+   "owner_id": "p11",
+   "component_id": "PCK-WRP-01",
+   "site_id": null,
+   "due_date": null,
+   "due_time": null,
+   "status": "in_progress",
+   "created_in": "s01d04",
+   "created_on": "2026-02-26",
+   "updated_in": "s01d07",
+   "history": [
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": null,
+     "confidence": null
+    },
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "reassigned",
+     "text": "Reassigned",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d07",
+     "date": "2026-03-03",
+     "kind": "progress",
+     "text": "got the first half done",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d04-t2",
+   "summary": "Schedule downtime for the Air Compressor 1 with production",
+   "category": "organisation",
+   "priority": 3,
+   "owner_id": "p08",
+   "component_id": "AIR-C-01",
+   "site_id": null,
+   "due_date": "2026-02-26",
+   "due_time": "14:30",
+   "status": "done",
+   "created_in": "s01d04",
+   "created_on": "2026-02-26",
+   "updated_in": "s01d05",
+   "history": [
+    {
+     "day_id": "s01d04",
+     "date": "2026-02-26",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p08",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "done",
+     "text": "Marked done",
+     "quote": null,
+     "speaker_id": "p08",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d05-t1",
+   "summary": "Inspect the Boiler Safety Relief Valve for leaks",
+   "category": "operations",
+   "priority": 3,
+   "owner_id": "p11",
+   "component_id": "WHB-01-SV",
+   "site_id": null,
+   "due_date": null,
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d05",
+   "created_on": "2026-02-27",
+   "updated_in": "s01d07",
+   "history": [
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "blocked",
+     "text": "need an electrician to isolate it first",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d07",
+     "date": "2026-03-03",
+     "kind": "done",
+     "text": "all signed off",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d05-t2",
+   "summary": "Check the guarding on the Injection Moulding Line 2",
+   "category": "safety",
+   "priority": 1,
+   "owner_id": "p08",
+   "component_id": "IM2",
+   "site_id": null,
+   "due_date": null,
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d05",
+   "created_on": "2026-02-27",
+   "updated_in": "s01d06",
+   "history": [
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p08",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "done",
+     "text": "Marked done",
+     "quote": null,
+     "speaker_id": "p08",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d05-t3",
+   "summary": "Write up the near miss at the Injection Moulding Line 1",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p06",
+   "component_id": "IM1",
+   "site_id": null,
+   "due_date": "2026-02-28",
+   "due_time": null,
+   "status": "in_progress",
+   "created_in": "s01d05",
+   "created_on": "2026-02-27",
+   "updated_in": "s01d06",
+   "history": [
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p06",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "progress",
+     "text": "about halfway through",
+     "quote": null,
+     "speaker_id": "p02",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d05-t4",
+   "summary": "Investigate the pressure drop on the Line 1 Hydraulic Power Unit",
+   "category": "operations",
+   "priority": 1,
+   "owner_id": "p01",
+   "component_id": "IM1-HYD",
+   "site_id": null,
+   "due_date": "2026-02-27",
+   "due_time": null,
+   "status": "done",
+   "created_in": "s01d05",
+   "created_on": "2026-02-27",
+   "updated_in": "s01d06",
+   "history": [
+    {
+     "day_id": "s01d05",
+     "date": "2026-02-27",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "done",
+     "text": "all signed off",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d06-t1",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p06",
+   "component_id": "PCK-FLT",
+   "site_id": null,
+   "due_date": "2026-03-09",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d06",
+   "created_on": "2026-03-02",
+   "updated_in": "s01d06",
+   "history": [
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p06",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d06-t2",
+   "summary": "Recalibrate the sensors on the Boiler Safety Relief Valve",
+   "category": "operations",
+   "priority": 2,
+   "owner_id": "p12",
+   "component_id": "WHB-01-SV",
+   "site_id": null,
+   "due_date": "2026-03-02",
+   "due_time": null,
+   "status": "in_progress",
+   "created_in": "s01d06",
+   "created_on": "2026-03-02",
+   "updated_in": "s01d07",
+   "history": [
+    {
+     "day_id": "s01d06",
+     "date": "2026-03-02",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p12",
+     "confidence": null
+    },
+    {
+     "day_id": "s01d07",
+     "date": "2026-03-03",
+     "kind": "progress",
+     "text": "about halfway through",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d07-t1",
+   "summary": "Do a site visit at Kestrel Hydraulics Leeds with the contractor",
+   "category": "organisation",
+   "priority": 3,
+   "owner_id": "p01",
+   "component_id": null,
+   "site_id": "s04",
+   "due_date": "2026-03-03",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d07",
+   "created_on": "2026-03-03",
+   "updated_in": "s01d07",
+   "history": [
+    {
+     "day_id": "s01d07",
+     "date": "2026-03-03",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p01",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d07-t2",
+   "summary": "Write up the near miss at the Stretch Wrapper",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p11",
+   "component_id": "PCK-WRP-01",
+   "site_id": null,
+   "due_date": "2026-03-09",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d07",
+   "created_on": "2026-03-03",
+   "updated_in": "s01d07",
+   "history": [
+    {
+     "day_id": "s01d07",
+     "date": "2026-03-03",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p11",
+     "confidence": null
+    }
+   ]
+  }
+ ],
+ "updates": [
+  {
+   "id": "s01d08-u1",
+   "kind": "done",
+   "card_id": "s01d01-t1",
+   "speaker_id": "p12",
+   "style": "activity",
+   "reference": "send the shift handover report round",
+   "component": null,
+   "owner_words": "stores Jamie",
+   "note": "all fine",
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [],
+   "evidence": [
+    9
+   ]
+  },
+  {
+   "id": "s01d08-u2",
+   "kind": "done",
+   "card_id": "s01d03-t1",
+   "speaker_id": "p01",
+   "style": "full",
+   "reference": "run a function test on the relief valve",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "relief valve",
+    "split": "seen"
+   },
+   "owner_words": "boss",
+   "note": null,
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [
+    "twin"
+   ],
+   "evidence": [
+    15
+   ]
+  },
+  {
+   "id": "s01d08-u3",
+   "kind": "progress",
+   "card_id": "s01d05-t3",
+   "speaker_id": "p06",
+   "style": "full",
+   "reference": "write up the near miss at the Injection Moulding Line 1",
+   "component": {
+    "entity_id": "IM1",
+    "text": "Injection Moulding Line 1",
+    "split": "name"
+   },
+   "owner_words": "Reidy",
+   "note": "made a start on it",
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [],
+   "evidence": [
+    20
+   ]
+  },
+  {
+   "id": "s01d08-u4",
+   "kind": "done",
+   "card_id": "s01d06-t1",
+   "speaker_id": "p12",
+   "style": "full",
+   "reference": "do the pre-use checks on the trucks",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the trucks",
+    "split": "seen"
+   },
+   "owner_words": "Reidy",
+   "note": null,
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [
+    "third_party"
+   ],
+   "evidence": [
+    11
+   ]
+  },
+  {
+   "id": "s01d08-u5",
+   "kind": "done",
+   "card_id": "s01d06-t2",
+   "speaker_id": "p12",
+   "style": "full",
+   "reference": "recalibrate the sensors on the pop valve",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "the pop valve",
+    "split": "heldout"
+   },
+   "owner_words": "stores Jamie",
+   "note": null,
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [
+    "twin",
+    "heldout"
+   ],
+   "evidence": [
+    13
+   ]
+  },
+  {
+   "id": "s01d08-u6",
+   "kind": "done",
+   "card_id": "s01d07-t1",
+   "speaker_id": "p01",
+   "style": "activity",
+   "reference": "do a site visit at Kestrel with the contractor",
+   "component": null,
+   "owner_words": "boss",
+   "note": null,
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [],
+   "evidence": [
+    17
+   ]
+  }
+ ]
+}

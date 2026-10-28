@@ -1,0 +1,789 @@
+{
+ "id": "a091",
+ "date": "2026-08-03",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p06",
+  "p03",
+  "p02",
+  "p12",
+  "p09",
+  "p11"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a091-t1",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-11",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    10,
+    11,
+    12,
+    13,
+    54,
+    55
+   ]
+  },
+  {
+   "id": "a091-t2",
+   "summary": "Run a function test on the Fire Alarm Panel",
+   "spoken_action": "run a function test on the fire alarm panel",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire alarm panel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-03",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    21,
+    56
+   ]
+  },
+  {
+   "id": "a091-t3",
+   "summary": "Grease and check the bearings on the GT1 Compressor Section",
+   "spoken_action": "grease and check the bearings on the GT1 Compressor Section",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "GT1 Compressor Section",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-03",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    61,
+    62
+   ]
+  },
+  {
+   "id": "a091-t4",
+   "summary": "Swap the filter on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "swap the filter on the IM1 hydraulic unit",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "IM1 hydraulic unit",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-04",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    58
+   ]
+  },
+  {
+   "id": "a091-t5",
+   "summary": "Chase the purchase order for the Water Booster Pump",
+   "spoken_action": "chase the purchase order for the water booster",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-10",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    42,
+    59
+   ]
+  },
+  {
+   "id": "a091-t6",
+   "summary": "Investigate the pressure drop on the Air Compressor 1",
+   "spoken_action": "investigate the pressure drop on the AC1",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah Price",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "AC1",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-07",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    58
+   ]
+  },
+  {
+   "id": "a091-t7",
+   "summary": "Update the risk assessment for work on the Water Booster Pump",
+   "spoken_action": "update the risk assessment for work on the booster pump",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-03",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "top priority please",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    60
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "tested the main isolation valve yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main isolation valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "signed off the inspection on the line 1 mould temp on Tuesday",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p02",
+   "text_hint": "heard a slight rattle from the forklifts, nothing to action yet",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "forklifts",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the line 3",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line 3",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p09",
+   "text_hint": "the shutdown on the fire panel is cancelled now, production need it running",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.35,
+   "end": 11.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the third of August. Can you all hear me, or am I doing the mime act again?"
+  },
+  {
+   "start": 12.55,
+   "end": 18.5,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, got you. Only just made it in, mind. Traffic on the ring road was absolutely solid."
+  },
+  {
+   "start": 19.43,
+   "end": 23.98,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "You sound like you're still recovering from the walk across the car park."
+  },
+  {
+   "start": 26.37,
+   "end": 34.42,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I stopped to look at someone's new car in the car park, actually. That shiny blue one. Bit smarter than our usual collection."
+  },
+  {
+   "start": 36.38,
+   "end": 39.88,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Not mine. Mine's the one held together by road dirt."
+  },
+  {
+   "start": 42.15,
+   "end": 48.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before we get onto cars properly—tested the main isolation valve yesterday and it's all fine now."
+  },
+  {
+   "start": 48.7,
+   "end": 50.8,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Lovely. So that one's closed, then?"
+  },
+  {
+   "start": 51.13,
+   "end": 53.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, finished. Nothing further on that."
+  },
+  {
+   "start": 54.75,
+   "end": 62.45,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I signed off the inspection on the line 1 mould temp on Tuesday. That's done as well, just for the record."
+  },
+  {
+   "start": 64.83,
+   "end": 68.68,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, that one's showing closed. We're not carrying it into today."
+  },
+  {
+   "start": 70.21,
+   "end": 75.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona Doyle, can you send the shift handover report round next Tuesday? Fairly important, that one."
+  },
+  {
+   "start": 76.12,
+   "end": 79.27,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "The existing handover report, yeah? Not a new format?"
+  },
+  {
+   "start": 80.96,
+   "end": 85.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right, the existing one. Just get that round next Tuesday; it's fairly important."
+  },
+  {
+   "start": 87.48,
+   "end": 90.98,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, I'll send the shift handover report round next Tuesday."
+  },
+  {
+   "start": 91.39,
+   "end": 98.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "While we're on where things stand, the supplier still hasn't confirmed the delivery for the line 3. Still blocked."
+  },
+  {
+   "start": 99.91,
+   "end": 104.81,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, there's no confirmed date in what we've had back. Same position as before."
+  },
+  {
+   "start": 106.32,
+   "end": 110.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. That's a blocker update, then, not another chase we're allocating this morning."
+  },
+  {
+   "start": 111.28,
+   "end": 117.93,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Also, the shutdown on the fire panel is cancelled now, production need it running. That shutdown's off the plan."
+  },
+  {
+   "start": 120.25,
+   "end": 125.85,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right. The shutdown, specifically—not the same thing as a function test on the fire alarm panel."
+  },
+  {
+   "start": 127.0,
+   "end": 136.45,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, so I'll run a function test on the fire alarm panel by end of day. That's the 'if you've got a spare minute' one, isn't it?"
+  },
+  {
+   "start": 138.95,
+   "end": 145.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "It is, Cal. By end of day, but keep it at that spare-minute priority. We're not bringing the shutdown back."
+  },
+  {
+   "start": 146.97,
+   "end": 150.82,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, I'll do the function test on that basis. No shutdown."
+  },
+  {
+   "start": 152.48,
+   "end": 158.78,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Got you. Two different things. Teams clipped the start of that and I thought we'd reversed the cancellation."
+  },
+  {
+   "start": 160.24,
+   "end": 166.19,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Um, just an observation from me: heard a slight rattle from the forklifts, nothing to action yet."
+  },
+  {
+   "start": 168.23,
+   "end": 171.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, observation only. Not putting a job against that."
+  },
+  {
+   "start": 173.35,
+   "end": 176.85,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Exactly. Just mentioning what I heard, not calling a fault."
+  },
+  {
+   "start": 179.08,
+   "end": 187.83,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We do still need someone to grease and check the bearings on the GT1 Compressor Section by 11am. Normal priority. Anyone got room for that?"
+  },
+  {
+   "start": 188.81,
+   "end": 191.26,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I haven't got room for it, sorry."
+  },
+  {
+   "start": 192.07,
+   "end": 194.52,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Nor me. Can't honestly take that one."
+  },
+  {
+   "start": 196.06,
+   "end": 198.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone else able to pick up those bearings?"
+  },
+  {
+   "start": 199.63,
+   "end": 202.78,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Not me, I'm afraid. I can't take that on."
+  },
+  {
+   "start": 203.48,
+   "end": 206.28,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That's still unallocated, then. No name against it."
+  },
+  {
+   "start": 208.13,
+   "end": 214.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah. GT1 Compressor Section bearings stay unowned. The requirement is still by 11am, normal priority, but nobody's accepted it."
+  },
+  {
+   "start": 215.35,
+   "end": 219.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah, can you swap the filter on the IM1 hydraulic unit tomorrow morning?"
+  },
+  {
+   "start": 222.37,
+   "end": 227.97,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I can do that. I'll swap the filter on the IM1 hydraulic unit tomorrow morning."
+  },
+  {
+   "start": 229.04,
+   "end": 233.24,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's just the filter change, rather than anything wider on the unit?"
+  },
+  {
+   "start": 233.9,
+   "end": 235.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just the filter change, yes."
+  },
+  {
+   "start": 237.49,
+   "end": 239.94,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Fine, that's what I've got. Tomorrow morning."
+  },
+  {
+   "start": 242.09,
+   "end": 248.04,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right, I'll chase the purchase order for the water booster Monday. It matters but it's not urgent."
+  },
+  {
+   "start": 248.97,
+   "end": 253.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Jamie. Monday being today, just so we're all on the same page?"
+  },
+  {
+   "start": 255.09,
+   "end": 260.34,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep, today, Monday. I'll chase the purchase order. Important enough, but not an urgent one."
+  },
+  {
+   "start": 262.35,
+   "end": 266.55,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And that's separate from the blocked line 3 delivery we just mentioned?"
+  },
+  {
+   "start": 268.98,
+   "end": 273.53,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, completely separate. The water booster purchase order is the one I'm taking."
+  },
+  {
+   "start": 275.63,
+   "end": 280.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah Price, can you investigate the pressure drop on the AC1 on Friday?"
+  },
+  {
+   "start": 280.61,
+   "end": 284.46,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, I'll investigate the pressure drop on the AC1 on Friday."
+  },
+  {
+   "start": 286.4,
+   "end": 289.2,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry—Friday, not being pulled into today's jobs, then?"
+  },
+  {
+   "start": 290.87,
+   "end": 292.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct, on Friday. Not today."
+  },
+  {
+   "start": 294.02,
+   "end": 297.17,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, that's fine. I've got Friday for that investigation."
+  },
+  {
+   "start": 297.63,
+   "end": 302.18,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I'll update the risk assessment for work on the booster pump after lunch."
+  },
+  {
+   "start": 303.31,
+   "end": 306.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Davey. Top priority please, that risk assessment."
+  },
+  {
+   "start": 308.48,
+   "end": 311.28,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Understood. I'll update it after lunch, top priority."
+  },
+  {
+   "start": 313.42,
+   "end": 318.32,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "That's the assessment for the work, yeah—not saying the physical work's happening after lunch?"
+  },
+  {
+   "start": 319.28,
+   "end": 324.18,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, just updating the risk assessment. I'm not booking in the actual pump work."
+  },
+  {
+   "start": 324.52,
+   "end": 329.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Sorry, we talked over each other there, but I think we've got that straight."
+  },
+  {
+   "start": 331.66,
+   "end": 337.96,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And mine's next Tuesday for sending the shift handover report round. I've kept your 'fairly important' against it."
+  },
+  {
+   "start": 338.42,
+   "end": 339.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, exactly."
+  },
+  {
+   "start": 342.06,
+   "end": 349.06,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I've got the fire alarm panel function test as the spare-minute one, by end of day. Not the cancelled shutdown."
+  },
+  {
+   "start": 349.61,
+   "end": 352.41,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep. Shutdown remains cancelled; production need it running."
+  },
+  {
+   "start": 353.43,
+   "end": 358.33,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Mine are clear: IM1 hydraulic unit filter tomorrow morning, AC1 pressure-drop investigation on Friday."
+  },
+  {
+   "start": 360.43,
+   "end": 365.33,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And water booster purchase order chase Monday, today. It matters but it's not urgent."
+  },
+  {
+   "start": 367.38,
+   "end": 370.88,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Booster pump risk assessment after lunch, top priority. Got it."
+  },
+  {
+   "start": 371.49,
+   "end": 375.69,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Only gap is the GT1 Compressor Section bearings. Still nobody taking that."
+  },
+  {
+   "start": 376.66,
+   "end": 382.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right. Still needed by 11am at normal priority, but unowned. Let's not pretend we've covered it."
+  },
+  {
+   "start": 384.57,
+   "end": 390.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, thanks all. That's us. And whoever owns that blue car, brave choice parking it here."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

@@ -1,0 +1,268 @@
+WEBVTT
+
+00:00:04.150 --> 00:00:09.050
+<v Tomasz Nowak>Morning all, you alright? Let's get cracking, Tuesday stand-up. Quick one if we can.</v>
+
+00:00:09.720 --> 00:00:10.919
+<v Callum Reid>Morning.</v>
+
+00:00:11.869 --> 00:00:13.070
+<v Sarah Okafor>Morning everyone.</v>
+
+00:00:13.800 --> 00:00:16.600
+<v Olumide Adeyemi>Yeah morning. Bit less freezing today, thank God.</v>
+
+00:00:17.829 --> 00:00:19.579
+<v Marcus Hale>Mm, give it an hour.</v>
+
+00:00:21.879 --> 00:00:25.730
+<v Tomasz Nowak>Right, any immediate issues from night shift before we go round?</v>
+
+00:00:27.940 --> 00:00:34.939
+<v Marcus Hale>Only same old really, still waiting on parts for the boiler safety valve, nothing we can do until they arrive.</v>
+
+00:00:36.810 --> 00:00:38.009
+<v Tomasz Nowak>Yep, parked then.</v>
+
+00:00:39.320 --> 00:00:44.920
+<v Marcus Hale>And, uh, the supplier still hasn't confirmed the delivery for the IM1, so that's still hanging.</v>
+
+00:00:46.920 --> 00:00:52.170
+<v Sarah Okafor>I've chased them once already, I'll keep prodding, but yeah that's not moving this morning.</v>
+
+00:00:53.579 --> 00:00:55.679
+<v Tomasz Nowak>Fine. Sarah, anything from production side?</v>
+
+00:00:56.609 --> 00:01:03.609
+<v Sarah Okafor>Only that the shutdown on the GT2 bearing is cancelled now, production need it running, so don't plan round that.</v>
+
+00:01:05.739 --> 00:01:06.939
+<v Tomasz Nowak>Right, cancelled, noted.</v>
+
+00:01:08.459 --> 00:01:14.060
+<v Jamie Brennan>On the done stuff, I tested the Site Water System yesterday and it's all fine now.</v>
+
+00:01:16.510 --> 00:01:17.709
+<v Tomasz Nowak>Good, cheers Jamie.</v>
+
+00:01:18.500 --> 00:01:24.450
+<v Olumide Adeyemi>And just so nobody doubles up, I already swapped the filter on the line 3 screw yesterday.</v>
+
+00:01:26.209 --> 00:01:27.409
+<v Callum Reid>Ah, nice one.</v>
+
+00:01:29.340 --> 00:01:35.640
+<v Olumide Adeyemi>Also already swapped the filter on the turbine one compressor yesterday, so that's off the list as well.</v>
+
+00:01:36.659 --> 00:01:37.859
+<v Tomasz Nowak>Lovely.</v>
+
+00:01:38.700 --> 00:01:48.150
+<v Priya Raman>I had a walk round after that outage, heard a slight rattle from the fire alarm panel, nothing to action yet, just keeping an ear on it.</v>
+
+00:01:50.209 --> 00:01:51.609
+<v Tomasz Nowak>Yeah, monitor only then.</v>
+
+00:01:53.890 --> 00:02:00.189
+<v Priya Raman>And same sort of thing, heard a slight rattle from the line 1 hydraulics, nothing to action yet.</v>
+
+00:02:01.519 --> 00:02:04.319
+<v Callum Reid>Line 1 always likes a bit of drama.</v>
+
+00:02:06.409 --> 00:02:07.609
+<v Priya Raman>It does, yeah.</v>
+
+00:02:09.650 --> 00:02:14.199
+<v Olumide Adeyemi>Speaking of drama, who's baking for the charity bake sale on Friday then?</v>
+
+00:02:16.580 --> 00:02:20.430
+<v Sarah Okafor>Not me, after last year. Mine came back untouched, honestly rude.</v>
+
+00:02:22.580 --> 00:02:24.330
+<v Callum Reid>Was that the rock-hard brownies?</v>
+
+00:02:25.900 --> 00:02:28.349
+<v Sarah Okafor>They were meant to be flapjacks, thanks.</v>
+
+00:02:29.039 --> 00:02:35.340
+<v Olumide Adeyemi>I'd still eat them. Charity bake sale on Friday, I'm just saying, don't all bring shop-bought and pretend.</v>
+
+00:02:36.370 --> 00:02:44.069
+<v Tomasz Nowak>Right, Bake Off later, maintenance now. Jamie, can you check the guarding on the outfeed conveyor today at 2pm, top priority please?</v>
+
+00:02:44.620 --> 00:02:51.270
+<v Jamie Brennan>Yeah, alright, I can check the guarding on the outfeed conveyor today at 2pm. Top priority please, got it.</v>
+
+00:02:53.530 --> 00:02:54.729
+<v Tomasz Nowak>Cheers.</v>
+
+00:02:56.300 --> 00:03:04.699
+<v Tomasz Nowak>And while I've got you, Jamie Brennan, can you take vibration readings on the GT1 compressor by Thursday? No rush, just want a baseline.</v>
+
+00:03:05.050 --> 00:03:10.300
+<v Jamie Brennan>Yeah that's fine, I'll take vibration readings on the GT1 compressor by Thursday. No rush.</v>
+
+00:03:11.069 --> 00:03:14.219
+<v Jamie Brennan>I've got the meter booked out this afternoon anyway.</v>
+
+00:03:14.699 --> 00:03:15.900
+<v Tomasz Nowak>Perfect.</v>
+
+00:03:16.379 --> 00:03:25.129
+<v Tomasz Nowak>Fire panel - two bits there. We need to run a function test on the fire panel first thing tomorrow, no rush. Anyone taking that?</v>
+
+00:03:27.479 --> 00:03:30.629
+<v Olumide Adeyemi>Not me tomorrow first thing, I've got calibrations stacked.</v>
+
+00:03:31.810 --> 00:03:34.960
+<v Priya Raman>I'm tied up with line work in the morning.</v>
+
+00:03:37.400 --> 00:03:39.150
+<v Callum Reid>I won't get near it.</v>
+
+00:03:41.639 --> 00:03:43.389
+<v Jamie Brennan>I've got stores delivery in.</v>
+
+00:03:44.219 --> 00:03:51.569
+<v Tomasz Nowak>Alright, so run a function test on the fire panel first thing tomorrow, no rush, but nobody's picked it up yet.</v>
+
+00:03:53.919 --> 00:03:58.469
+<v Sarah Okafor>Leave it visible then, maybe afternoon if something frees, but nobody commit now.</v>
+
+00:03:58.979 --> 00:04:04.930
+<v Tomasz Nowak>Fine. Separate to that, I'll do the lock-out tag-out sign-off on the fire panel on the 3rd.</v>
+
+00:04:06.469 --> 00:04:07.669
+<v Priya Raman>Nice one.</v>
+
+00:04:08.219 --> 00:04:10.319
+<v Tomasz Nowak>Priya, what are you on today?</v>
+
+00:04:11.560 --> 00:04:21.009
+<v Priya Raman>Main one, I'll sort the permit to work and isolation for the line 3 barrel today at 2pm, normal priority. That needs doing before we touch it.</v>
+
+00:04:22.110 --> 00:04:23.860
+<v Sarah Okafor>Yeah that's the right order.</v>
+
+00:04:26.259 --> 00:04:32.910
+<v Priya Raman>And I'll send the shift handover report round as well, no rush, just after I've cleaned up the notes.</v>
+
+00:04:34.980 --> 00:04:36.180
+<v Tomasz Nowak>Good stuff.</v>
+
+00:04:38.300 --> 00:04:46.000
+<v Callum Reid>On ops side, I'll swap the filter on the Cooling Tower today, no rush. Better I just get that out the way.</v>
+
+00:04:47.259 --> 00:04:51.110
+<v Marcus Hale>You sure? I can help if you need a hand later.</v>
+
+00:04:51.649 --> 00:04:55.149
+<v Callum Reid>Should be alright, mate, it's only the access that's annoying.</v>
+
+00:04:56.829 --> 00:04:58.029
+<v Tomasz Nowak>Fine by me.</v>
+
+00:04:59.480 --> 00:05:01.930
+<v Sarah Okafor>Anything else safety-wise before we move on?</v>
+
+00:05:02.300 --> 00:05:06.850
+<v Olumide Adeyemi>Nothing new from me. Just the bake sale risk assessment, loads of sugar.</v>
+
+00:05:09.199 --> 00:05:10.399
+<v Callum Reid>High hazard, that.</v>
+
+00:05:12.329 --> 00:05:15.129
+<v Sarah Okafor>Marcus on CHP, other than the waiting game?</v>
+
+00:05:16.750 --> 00:05:23.050
+<v Marcus Hale>No, plant ran alright overnight. A couple of nuisance alarms but they cleared. Nothing I'm asking for today.</v>
+
+00:05:25.310 --> 00:05:26.509
+<v Tomasz Nowak>Okay.</v>
+
+00:05:27.939 --> 00:05:38.790
+<v Priya Raman>Just on the fire panel thing, the slight rattle I mentioned from the fire alarm panel, I'm not linking it to a fault, just mentioning it in case anyone hears worse.</v>
+
+00:05:39.500 --> 00:05:40.699
+<v Tomasz Nowak>Yep, observation only.</v>
+
+00:05:41.990 --> 00:05:49.339
+<v Olumide Adeyemi>Same with the turbine one compressor filter - that's already swapped, so if anyone's got old paperwork floating around, bin it.</v>
+
+00:05:51.139 --> 00:05:53.589
+<v Jamie Brennan>I'll clear the paper copy in stores.</v>
+
+00:05:55.550 --> 00:05:58.000
+<v Sarah Okafor>Can we just recap the timed items?</v>
+
+00:05:59.680 --> 00:06:05.629
+<v Tomasz Nowak>Yeah. Jamie is to check the guarding on the outfeed conveyor today at 2pm, top priority please.</v>
+
+00:06:07.420 --> 00:06:08.620
+<v Jamie Brennan>Yep.</v>
+
+00:06:09.959 --> 00:06:16.959
+<v Tomasz Nowak>Priya is to sort the permit to work and isolation for the line 3 barrel today at 2pm, normal priority.</v>
+
+00:06:18.209 --> 00:06:19.410
+<v Priya Raman>Yep, that's mine.</v>
+
+00:06:21.519 --> 00:06:26.769
+<v Tomasz Nowak>Jamie Brennan is to take vibration readings on the GT1 compressor by Thursday, no rush.</v>
+
+00:06:27.959 --> 00:06:29.160
+<v Jamie Brennan>Yep.</v>
+
+00:06:31.449 --> 00:06:35.649
+<v Tomasz Nowak>Callum will swap the filter on the Cooling Tower today, no rush.</v>
+
+00:06:35.959 --> 00:06:37.160
+<v Callum Reid>Yep.</v>
+
+00:06:38.870 --> 00:06:43.420
+<v Tomasz Nowak>I'll do the lock-out tag-out sign-off on the fire panel on the 3rd.</v>
+
+00:06:44.620 --> 00:06:50.920
+<v Tomasz Nowak>And run a function test on the fire panel first thing tomorrow, no rush, still unowned for now.</v>
+
+00:06:51.720 --> 00:06:52.920
+<v Sarah Okafor>That's clear.</v>
+
+00:06:55.100 --> 00:07:00.699
+<v Olumide Adeyemi>If I get a gap later today I'll shout, but don't put me on it now.</v>
+
+00:07:01.300 --> 00:07:04.449
+<v Tomasz Nowak>Yeah, not assigning it, just noting it needs doing.</v>
+
+00:07:06.050 --> 00:07:09.199
+<v Callum Reid>Anything from stores apart from your glamorous guarding inspection?</v>
+
+00:07:11.019 --> 00:07:15.220
+<v Jamie Brennan>Ha. Just deliveries and chasing PO numbers. Nothing else for the floor.</v>
+
+00:07:16.209 --> 00:07:22.160
+<v Priya Raman>I'll get the handover report round before lunch if I can, but like I said, no rush.</v>
+
+00:07:22.810 --> 00:07:24.009
+<v Sarah Okafor>Fine.</v>
+
+00:07:26.269 --> 00:07:31.870
+<v Olumide Adeyemi>Seriously though, Friday, charity bake sale - if someone brings sausage rolls that still counts, yeah?</v>
+
+00:07:32.620 --> 00:07:34.019
+<v Sarah Okafor>That's not baking, Olumide.</v>
+
+00:07:36.139 --> 00:07:38.240
+<v Callum Reid>Depends if he burns them first.</v>
+
+00:07:39.980 --> 00:07:46.279
+<v Tomasz Nowak>Right, enough. If nothing else, let's go. Shout me if the fire panel test gets an owner later.</v>
+
+00:07:46.750 --> 00:07:47.949
+<v Marcus Hale>Will do.</v>
+
+00:07:50.300 --> 00:07:51.500
+<v Jamie Brennan>Cheers.</v>
+
+00:07:53.269 --> 00:07:54.470
+<v Priya Raman>Thanks.</v>

@@ -1,0 +1,934 @@
+{
+ "id": "m010",
+ "date": "2026-06-26",
+ "split": "train",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p08",
+  "p11",
+  "p02",
+  "p06",
+  "p03",
+  "p12"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m010-t1",
+   "summary": "Order spare parts for the Injection Moulding Line 3",
+   "spoken_action": "order spare parts for the line three",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "needs doing this week",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    13,
+    14,
+    48
+   ]
+  },
+  {
+   "id": "m010-t2",
+   "summary": "Swap the filter on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "swap the filter on the IM1 hydraulic unit",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "IM1 hydraulic unit",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "needs doing this week",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    15,
+    16,
+    50
+   ]
+  },
+  {
+   "id": "m010-t3",
+   "summary": "Recalibrate the sensors on the Boiler Safety Relief Valve",
+   "spoken_action": "recalibrate the sensors on the PRV on the boiler",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marc",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "PRV on the boiler",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-26",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    68
+   ]
+  },
+  {
+   "id": "m010-t4",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-26",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "no rush",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    60
+   ]
+  },
+  {
+   "id": "m010-t5",
+   "summary": "Book a contractor to look at the 11kV Switchboard",
+   "spoken_action": "book a contractor to look at the 11kV board",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-26",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    53,
+    54
+   ]
+  },
+  {
+   "id": "m010-t6",
+   "summary": "Write up the near miss at the Injection Moulding Line 3",
+   "spoken_action": "write up the near miss at the Injection Moulding Line 3",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3",
+    "text": "Injection Moulding Line 3",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-26",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    19,
+    20,
+    58
+   ]
+  },
+  {
+   "id": "m010-t7",
+   "summary": "Do a site visit at Kestrel Hydraulics Leeds with the contractor",
+   "spoken_action": "do a site visit at Kestrel in Leeds with the contractor",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s04",
+    "text": "Kestrel in Leeds",
+    "split": "seen"
+   },
+   "due_date": "2026-06-27",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    62
+   ]
+  },
+  {
+   "id": "m010-t8",
+   "summary": "Do the lock-out tag-out sign-off on the Line 2 Safety Guard Interlock",
+   "spoken_action": "do the lock-out tag-out sign-off on the Line 2 Safety Guard Interlock",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "Line 2 Safety Guard Interlock",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-27",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    65
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "signed off the inspection on the HV switchboard on Tuesday",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "HV switchboard",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "already swapped the filter on the turbine one gas valve yesterday",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "turbine one gas valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p01",
+   "text_hint": "noticed the line 1 mould temp was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p03",
+   "text_hint": "saw the pressure on the line one HPU dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line one HPU",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the water system",
+   "component": {
+    "entity_id": "WTR",
+    "text": "water system",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.99,
+   "end": 14.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, you alright? Friday already. Before we start, is it just me or is the heating in the portakabin still being daft?"
+  },
+  {
+   "start": 14.97,
+   "end": 20.92,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, it's either sauna or fridge in there, no middle ground. I was sweating doing labels yesterday."
+  },
+  {
+   "start": 22.55,
+   "end": 27.45,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Luxury, that. On the floor it's like standing in a hairdryer by line three."
+  },
+  {
+   "start": 29.54,
+   "end": 34.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, let's get cracking. Quick run round. Safety, production, maintenance, anything that'll bite us today."
+  },
+  {
+   "start": 35.09,
+   "end": 45.94,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Production-wise we're mostly okay. And just so no one picks it up again, I already swapped the filter on the turbine one gas valve yesterday, so that's done, no action there."
+  },
+  {
+   "start": 46.65,
+   "end": 59.25,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one. Also, just an observation from nights, I noticed the line 1 mould temp was running a bit warm on nights but it settled down, so just keep an eye, nothing to do right now."
+  },
+  {
+   "start": 59.84,
+   "end": 65.79,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Quality's quiet-ish. I've just got a couple of checks to close from the late shift, nothing major."
+  },
+  {
+   "start": 66.77,
+   "end": 77.97,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Electrically, no trips. I did see the pressure on the line one HPU dip for a few minutes, it came back on its own, so again more of an observation than anything."
+  },
+  {
+   "start": 78.84,
+   "end": 82.34,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "CHP side was steady enough overnight. Boiler behaving for once."
+  },
+  {
+   "start": 83.84,
+   "end": 89.09,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Mechanical, no fresh breakdowns from me. Couple of bits pending from stores, that's about it."
+  },
+  {
+   "start": 89.96,
+   "end": 97.66,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "On stores, I signed off the inspection on the HV switchboard on Tuesday, so if anyone's waiting on that, it's already done."
+  },
+  {
+   "start": 99.84,
+   "end": 108.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. One blocker from me before tasks: the supplier still hasn't confirmed the delivery for the water system, so we're still stuck waiting there."
+  },
+  {
+   "start": 109.55,
+   "end": 110.75,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Typical."
+  },
+  {
+   "start": 112.65,
+   "end": 123.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep. Right, jobs for today and into the weekend. Davey, can you order spare parts for the line three? It needs doing this week, so can you get that sorted by Monday?"
+  },
+  {
+   "start": 125.46,
+   "end": 131.06,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, alright. I'll order spare parts for the line three and have it moving by Monday."
+  },
+  {
+   "start": 131.53,
+   "end": 139.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ta. And Marcus, can you swap the filter on the IM1 hydraulic unit? Same thing, needs doing this week, ideally by Monday."
+  },
+  {
+   "start": 140.59,
+   "end": 145.49,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, no problem, I'll swap the filter on the IM1 hydraulic unit by Monday."
+  },
+  {
+   "start": 147.61,
+   "end": 151.81,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Was that the one showing a bit of contamination on the sample?"
+  },
+  {
+   "start": 153.11,
+   "end": 156.61,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, that one. It's not horrific but it wants doing."
+  },
+  {
+   "start": 156.98,
+   "end": 167.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Also Marcus, on the safety side, can you write up the near miss at the Injection Moulding Line 3? Fairly important, and I need that by end of day."
+  },
+  {
+   "start": 168.85,
+   "end": 176.2,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I can do that. I'll write up the near miss at the Injection Moulding Line 3 by end of day."
+  },
+  {
+   "start": 177.16,
+   "end": 179.96,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That was the pallet corner catch, wasn't it?"
+  },
+  {
+   "start": 180.3,
+   "end": 184.85,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, operator stepped back and clipped it, no injury, just a near one."
+  },
+  {
+   "start": 186.81,
+   "end": 189.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Just get the write-up in today please."
+  },
+  {
+   "start": 191.42,
+   "end": 192.62,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Will do."
+  },
+  {
+   "start": 193.41,
+   "end": 201.46,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, can you sort the training records for the new starters? No rush, but can you get it done by end of day?"
+  },
+  {
+   "start": 203.41,
+   "end": 209.36,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, Jamie's got it. I'll sort the training records for the new starters by end of day."
+  },
+  {
+   "start": 211.26,
+   "end": 219.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. PR, can you book a contractor to look at the 11kV board? Normal priority, but I do need that lined up by 11am."
+  },
+  {
+   "start": 220.29,
+   "end": 224.84,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, I'll book a contractor to look at the 11kV board by 11am."
+  },
+  {
+   "start": 226.69,
+   "end": 230.19,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Use the usual lot or do you want someone different?"
+  },
+  {
+   "start": 230.79,
+   "end": 236.04,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'll try the usual first, if they can't do it I'll go down the list."
+  },
+  {
+   "start": 237.17,
+   "end": 247.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine by me. Dave, can you do a site visit at Kestrel in Leeds with the contractor? Whenever you get a chance, but I need that first thing tomorrow."
+  },
+  {
+   "start": 249.72,
+   "end": 256.02,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Tomorrow's alright, yeah. I'll do a site visit at Kestrel in Leeds with the contractor first thing tomorrow."
+  },
+  {
+   "start": 257.61,
+   "end": 267.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And one more for you, Dave. Do the lock-out tag-out sign-off on the Line 2 Safety Guard Interlock. Drop everything for that one, I need it tomorrow morning."
+  },
+  {
+   "start": 268.2,
+   "end": 274.15,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, understood. I'll do the lock-out tag-out sign-off on the Line 2 Safety Guard Interlock tomorrow morning."
+  },
+  {
+   "start": 276.22,
+   "end": 280.07,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good, because ops are twitchy about restarting that without the sign-off."
+  },
+  {
+   "start": 282.19,
+   "end": 285.34,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, I'll get eyes on it before anything else."
+  },
+  {
+   "start": 287.28,
+   "end": 290.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one. Anything else people need to pick up?"
+  },
+  {
+   "start": 291.83,
+   "end": 303.38,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Um, I've got one I can take. Whenever you get a chance, I'll recalibrate the sensors on the PRV on the boiler, and I'll get that done by the end of the week."
+  },
+  {
+   "start": 304.36,
+   "end": 307.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, good shout. Thanks Marc, let's log that as yours."
+  },
+  {
+   "start": 309.93,
+   "end": 313.43,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Makes sense, readings were a bit noisy last sample check."
+  },
+  {
+   "start": 314.89,
+   "end": 317.34,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Exactly, it's drifting rather than failing outright."
+  },
+  {
+   "start": 319.2,
+   "end": 321.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything from quality while we're all here?"
+  },
+  {
+   "start": 322.76,
+   "end": 327.66,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Just a reminder on traceability sheets, but that's general housekeeping, not a new ask."
+  },
+  {
+   "start": 328.33,
+   "end": 331.48,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I've got the folders ready for that lot anyway."
+  },
+  {
+   "start": 332.42,
+   "end": 336.97,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Line two staffing's a bit skinny on the late, but we'll cover it."
+  },
+  {
+   "start": 337.88,
+   "end": 345.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Davey, on the line three spares, is that all available or are we going to end up chasing weird part numbers again?"
+  },
+  {
+   "start": 346.82,
+   "end": 360.12,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Bit of both, probably. The common bits I'll get straight off, any oddballs I might need Jamie to help source, but I'll still get the order spare parts for the line three action underway and sorted by Monday."
+  },
+  {
+   "start": 361.5,
+   "end": 365.7,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, if you ping me the numbers I'll check stock and alternates."
+  },
+  {
+   "start": 367.9,
+   "end": 374.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine. Marcus, timing-wise, are you comfortable doing both the IM1 hydraulic unit filter and the near miss write-up?"
+  },
+  {
+   "start": 374.71,
+   "end": 385.21,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah. The write-up won't take long. I'll do that this morning, then swap the filter on the IM1 hydraulic unit after, still by Monday obviously, probably today if I'm honest."
+  },
+  {
+   "start": 386.31,
+   "end": 387.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Perfect."
+  },
+  {
+   "start": 388.83,
+   "end": 395.13,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "On that contractor for the 11kV board, if they ask whether it's urgent, what am I telling them?"
+  },
+  {
+   "start": 395.98,
+   "end": 400.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tell them normal priority. Not emergency call-out, just we want someone booked by 11am."
+  },
+  {
+   "start": 401.32,
+   "end": 406.92,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Got it, PR will get a contractor booked to look at the 11kV board by 11am."
+  },
+  {
+   "start": 408.06,
+   "end": 413.31,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "If they're coming next week, can they glance at the panel room door as well?"
+  },
+  {
+   "start": 415.64,
+   "end": 420.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Not as a task for today, just mention it if they're on site."
+  },
+  {
+   "start": 421.37,
+   "end": 422.57,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, fair."
+  },
+  {
+   "start": 423.77,
+   "end": 428.67,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Marcus, when you do the near miss, chuck me in on the email, yeah?"
+  },
+  {
+   "start": 430.71,
+   "end": 438.76,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, course. Once I've written up the near miss at the Injection Moulding Line 3 by end of day, I'll copy you in."
+  },
+  {
+   "start": 441.07,
+   "end": 442.27,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Cheers."
+  },
+  {
+   "start": 443.35,
+   "end": 448.25,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, any issue getting the training records for the new starters tied up today?"
+  },
+  {
+   "start": 450.55,
+   "end": 459.3,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, should be straightforward. Couple of signatures to chase but nothing dramatic. I'll sort the training records for the new starters by end of day."
+  },
+  {
+   "start": 460.15,
+   "end": 464.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. And Dave, just confirm travel for Kestrel in Leeds is all fine?"
+  },
+  {
+   "start": 465.51,
+   "end": 474.26,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, I'll head over early. So, do a site visit at Kestrel in Leeds with the contractor first thing tomorrow, then back here if needed."
+  },
+  {
+   "start": 474.65,
+   "end": 475.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good man."
+  },
+  {
+   "start": 477.63,
+   "end": 480.78,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Who's isolating line two before Dave does the sign-off?"
+  },
+  {
+   "start": 481.41,
+   "end": 485.96,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Ops will have it ready. We'll make sure it's dead and paperwork's there."
+  },
+  {
+   "start": 487.57,
+   "end": 494.92,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Fine by me. Then I'll do the lock-out tag-out sign-off on the Line 2 Safety Guard Interlock tomorrow morning, first job."
+  },
+  {
+   "start": 495.41,
+   "end": 497.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's the big one, yeah."
+  },
+  {
+   "start": 498.58,
+   "end": 501.38,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Anything on boiler water chem or leave it?"
+  },
+  {
+   "start": 503.22,
+   "end": 510.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Leave it for now, unless it changes. Main boiler thing is your PRV on the boiler sensors when you get a minute."
+  },
+  {
+   "start": 511.48,
+   "end": 520.58,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep, I'll recalibrate the sensors on the PRV on the boiler by the end of the week, whenever I get a chance around the other bits."
+  },
+  {
+   "start": 521.72,
+   "end": 522.92,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Works for me."
+  },
+  {
+   "start": 523.47,
+   "end": 528.37,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Anyone after stores access this morning, shout now because I've got deliveries first half."
+  },
+  {
+   "start": 530.0,
+   "end": 532.8,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I might need ten minutes later, that's all."
+  },
+  {
+   "start": 533.97,
+   "end": 570.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Recap then: Davey's ordering spare parts for the line three by Monday, Marcus is swapping the filter on the IM1 hydraulic unit by Monday and writing up the near miss at the Injection Moulding Line 3 by end of day, Jamie's sorting the training records for the new starters by end of day, PR's booking a contractor for the 11kV board by 11am, Dave's doing Kestrel in Leeds first thing tomorrow and the Line 2 Safety Guard Interlock lock-out tag-out sign-off tomorrow morning, and Marc's got the PRV on the boiler sensors by the end of the week when he gets a chance."
+  },
+  {
+   "start": 572.5,
+   "end": 573.7,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sounds about right."
+  },
+  {
+   "start": 575.21,
+   "end": 576.41,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep."
+  },
+  {
+   "start": 576.89,
+   "end": 578.09,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "All good."
+  },
+  {
+   "start": 579.52,
+   "end": 580.72,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep, sorted."
+  },
+  {
+   "start": 581.86,
+   "end": 583.06,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Fine by me."
+  },
+  {
+   "start": 584.96,
+   "end": 587.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Brilliant. Shout if anything goes sideways. Cheers everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 2"
+ ],
+ "writer": "gpt-5.4"
+}

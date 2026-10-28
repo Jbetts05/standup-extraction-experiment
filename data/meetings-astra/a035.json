@@ -1,0 +1,779 @@
+{
+ "id": "a035",
+ "date": "2026-10-06",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p06",
+  "p07",
+  "p03",
+  "p04",
+  "p10",
+  "p05"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a035-t1",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-07",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37,
+    38,
+    60
+   ]
+  },
+  {
+   "id": "a035-t2",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41
+   ]
+  },
+  {
+   "id": "a035-t3",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48
+   ]
+  },
+  {
+   "id": "a035-t4",
+   "summary": "Order spare parts for the Fire Alarm Panel",
+   "spoken_action": "order spare parts for the Fire Alarm Panel",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya Raman",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "Fire Alarm Panel",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-07",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    49,
+    50,
+    51
+   ]
+  },
+  {
+   "id": "a035-t5",
+   "summary": "Update the risk assessment for work on the Waste Heat Boiler",
+   "spoken_action": "update the risk assessment for work on the Waste Heat Boiler",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "Waste Heat Boiler",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "a035-t6",
+   "summary": "Do a site visit at Kestrel Hydraulics Leeds with the contractor",
+   "spoken_action": "do a site visit at Kestrel in Leeds with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s04",
+    "text": "Kestrel in Leeds",
+    "split": "seen"
+   },
+   "due_date": "2026-10-12",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    54,
+    55,
+    56
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "finished the repair on the line 3 chiller last night",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "tested the line 2 yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM2",
+    "text": "line 2",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "finished the repair on the outfeed conveyor last night",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "outfeed conveyor",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "saw the pressure on the 11kV Switchboard dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV Switchboard",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "heard a slight rattle from the line three, nothing to action yet",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p05",
+   "text_hint": "still waiting on parts for the dryer, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the Compressed Air Dryer",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "Compressed Air Dryer",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p01",
+   "text_hint": "we were going to replace the belt on the big boiler but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "big boiler",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.51,
+   "end": 9.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Tuesday the sixth. Are we all on? I can hear somebody's radio through Teams."
+  },
+  {
+   "start": 10.79,
+   "end": 16.39,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Might be mine. Sorry. Did anyone see the football last night? Absolute nonsense, that last decision."
+  },
+  {
+   "start": 18.68,
+   "end": 22.53,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I switched it off. Blood pressure's high enough coming in here."
+  },
+  {
+   "start": 24.23,
+   "end": 29.83,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "You should've tried the traffic on the ring road. Twenty minutes looking at the same bumper."
+  },
+  {
+   "start": 31.8,
+   "end": 33.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "You sound remarkably cheerful about it."
+  },
+  {
+   "start": 34.64,
+   "end": 43.39,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Oh, lovely start. Then someone's new car in the car park taking up about a space and a half. Who's got the shiny blue one?"
+  },
+  {
+   "start": 45.46,
+   "end": 48.96,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Not me. Mine's the one held together by road dirt."
+  },
+  {
+   "start": 49.35,
+   "end": 51.45,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Structural road dirt. Don't wash it."
+  },
+  {
+   "start": 52.76,
+   "end": 57.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the motoring channel. What's already cleared from last night?"
+  },
+  {
+   "start": 58.69,
+   "end": 63.59,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, finished the repair on the line 3 chiller last night. That's done."
+  },
+  {
+   "start": 64.02,
+   "end": 67.17,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good. That was the one confusing the handover list."
+  },
+  {
+   "start": 67.61,
+   "end": 74.26,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I tested the line 2 yesterday and it's all fine now. Finished item, not another test for today."
+  },
+  {
+   "start": 75.67,
+   "end": 77.42,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, understood. That one's closed."
+  },
+  {
+   "start": 78.92,
+   "end": 84.52,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Also finished the repair on the outfeed conveyor last night. All three of those are completed."
+  },
+  {
+   "start": 86.15,
+   "end": 89.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Completed work, nothing new against any of those."
+  },
+  {
+   "start": 89.98,
+   "end": 95.23,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "One observation, though. Heard a slight rattle from the line three, nothing to action yet."
+  },
+  {
+   "start": 96.11,
+   "end": 99.61,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, just an observation. Not a repair being handed out."
+  },
+  {
+   "start": 100.04,
+   "end": 108.44,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Same sort of thing from me. Saw the pressure on the 11kV Switchboard dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 110.76,
+   "end": 114.26,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Pressure on the 11kV Switchboard? That's the wording you've got?"
+  },
+  {
+   "start": 115.74,
+   "end": 124.84,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, that's how it was described. I'm not calling it a diagnosed fault. It recovered on its own; just reporting what I saw, no action proposed."
+  },
+  {
+   "start": 127.25,
+   "end": 130.4,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Keep that separate from the agreed jobs, then."
+  },
+  {
+   "start": 132.44,
+   "end": 139.09,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And we're still waiting on parts for the dryer, nothing we can do until they arrive. That's still blocked."
+  },
+  {
+   "start": 141.38,
+   "end": 146.28,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, the supplier still hasn't confirmed the delivery for the Compressed Air Dryer either."
+  },
+  {
+   "start": 148.08,
+   "end": 149.83,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "So no change there, basically."
+  },
+  {
+   "start": 150.38,
+   "end": 153.53,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No change. Nothing we can progress on that today."
+  },
+  {
+   "start": 154.5,
+   "end": 163.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "One other bit of housekeeping: we were going to replace the belt on the big boiler but that's been pushed to next month so ignore it."
+  },
+  {
+   "start": 164.29,
+   "end": 166.74,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, off today's list. Fine by me."
+  },
+  {
+   "start": 168.42,
+   "end": 174.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Actual work, then. We've got the risk assessment for work on the Waste Heat Boiler outstanding."
+  },
+  {
+   "start": 175.8,
+   "end": 183.5,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I'll update the risk assessment for work on the Waste Heat Boiler today. That's holding production up so it needs doing first."
+  },
+  {
+   "start": 185.09,
+   "end": 189.64,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, absolutely. That's the production hold, so first means first on that one."
+  },
+  {
+   "start": 191.34,
+   "end": 195.19,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Agreed. I'll do that before the other bits we've got here."
+  },
+  {
+   "start": 196.28,
+   "end": 200.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Aisha Begum. Today, and first because it's holding production up."
+  },
+  {
+   "start": 201.96,
+   "end": 207.91,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That's the distinction I wanted clear. The assessment is the outstanding bit, not a fresh maintenance job."
+  },
+  {
+   "start": 208.39,
+   "end": 211.19,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Exactly, yeah. Not widening it into anything else."
+  },
+  {
+   "start": 213.47,
+   "end": 217.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And the shift handover report going round—where are we with that?"
+  },
+  {
+   "start": 219.62,
+   "end": 223.12,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I'll send the shift handover report round tomorrow at 9:30."
+  },
+  {
+   "start": 224.14,
+   "end": 228.34,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Tomorrow at 9:30, not this morning? Sorry, you clipped a bit there."
+  },
+  {
+   "start": 229.34,
+   "end": 232.14,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Tomorrow at 9:30, yeah. I'll send it then."
+  },
+  {
+   "start": 233.73,
+   "end": 236.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Got it, Aisha Begum. Separate from today's assessment."
+  },
+  {
+   "start": 238.91,
+   "end": 244.16,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Um, I'll organise the toolbox talk for the team this afternoon. No rush on that."
+  },
+  {
+   "start": 246.59,
+   "end": 249.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Grace. This afternoon, but no rush."
+  },
+  {
+   "start": 251.48,
+   "end": 257.43,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, I'll organise it this afternoon. It's not something that needs jumping ahead of the production hold."
+  },
+  {
+   "start": 258.99,
+   "end": 263.19,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "As long as the talk isn't a replay of last night's refereeing."
+  },
+  {
+   "start": 264.49,
+   "end": 267.99,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Could do a whole session on poor decisions, couldn't we?"
+  },
+  {
+   "start": 268.36,
+   "end": 274.31,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Anyway—sorry, talking over you. I'll run the monthly fire alarm test at half two. That's fairly important."
+  },
+  {
+   "start": 275.81,
+   "end": 279.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Priya. Monthly fire alarm test at half two, fairly important."
+  },
+  {
+   "start": 280.07,
+   "end": 281.82,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll do it then."
+  },
+  {
+   "start": 283.35,
+   "end": 287.55,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Half two this afternoon, yeah? Not an alarm we're expecting this morning."
+  },
+  {
+   "start": 287.94,
+   "end": 290.74,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Correct, half two this afternoon is the test."
+  },
+  {
+   "start": 292.93,
+   "end": 298.88,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I'll order spare parts for the Fire Alarm Panel by Wednesday. Normal priority on that one."
+  },
+  {
+   "start": 300.17,
+   "end": 306.82,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Priya Raman. Spare parts for the Fire Alarm Panel by Wednesday, normal priority. Separate entry from the test."
+  },
+  {
+   "start": 307.38,
+   "end": 311.58,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, I'll get the order in by Wednesday. Normal priority, no escalation."
+  },
+  {
+   "start": 312.24,
+   "end": 316.09,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's ordering spares, then, not saying there's another panel repair today?"
+  },
+  {
+   "start": 317.26,
+   "end": 320.06,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Exactly. Just the spare-parts order. No extra repair."
+  },
+  {
+   "start": 321.93,
+   "end": 327.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And mine: I'll do a site visit at Kestrel in Leeds with the contractor next week."
+  },
+  {
+   "start": 328.69,
+   "end": 333.24,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, Saz, that's you with the contractor at Kestrel in Leeds next week."
+  },
+  {
+   "start": 334.74,
+   "end": 338.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, I'll do that. Next week, not part of today's floor work."
+  },
+  {
+   "start": 340.73,
+   "end": 344.23,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Enjoy the roads. Apparently we've got enough traffic for everyone."
+  },
+  {
+   "start": 345.7,
+   "end": 349.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Can't wait. Right, that's the agreed list, unless someone's heard something differently."
+  },
+  {
+   "start": 351.48,
+   "end": 357.78,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "No, clear from production. The Waste Heat Boiler risk assessment today is the one that needs doing first."
+  },
+  {
+   "start": 359.07,
+   "end": 363.97,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, I've got that first. Handover report tomorrow at 9:30, so those aren't competing."
+  },
+  {
+   "start": 366.03,
+   "end": 371.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And the dryer stays blocked. Haven't quietly acquired a job on that while we've been talking."
+  },
+  {
+   "start": 372.05,
+   "end": 376.25,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Same here. Completed repairs stay completed; the rattle was only an observation."
+  },
+  {
+   "start": 377.85,
+   "end": 379.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Nothing else added. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

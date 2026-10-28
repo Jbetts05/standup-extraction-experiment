@@ -1,0 +1,726 @@
+{
+ "id": "a010",
+ "date": "2026-07-24",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p02",
+  "p06",
+  "p10",
+  "p03",
+  "p04",
+  "p01",
+  "p05"
+ ],
+ "chair_id": "p02",
+ "gold_tasks": [
+  {
+   "id": "a010-t1",
+   "summary": "Do the lock-out tag-out sign-off on the Line 1 Mould Temperature Controller",
+   "spoken_action": "do the lock-out tag-out sign-off on the Line 1 Mould Temperature Controller",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "Line 1 Mould Temperature Controller",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "id": "a010-t2",
+   "summary": "Go to Kestrel Hydraulics Leeds to pick up the replacement parts for the Line 2 Pick and Place Robot",
+   "spoken_action": "go to Kestrel to pick up the replacement parts for the pick and place on two",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "pick and place on two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s04",
+    "text": "Kestrel",
+    "split": "seen"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "id": "a010-t3",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the forklifts",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "forklifts",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "fairly important",
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a010-t4",
+   "summary": "Recalibrate the sensors on the Line 3 Chiller",
+   "spoken_action": "recalibrate the sensors on the Line 3 Chiller",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-24",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "top priority please",
+   "assigned_by": null,
+   "reassigned_from": "p10",
+   "evidence": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "id": "a010-t5",
+   "summary": "Chase the purchase order for the Gas Turbine 1",
+   "spoken_action": "chase the purchase order for the turbine one",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "turbine one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    55,
+    56,
+    57,
+    58,
+    59
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p02",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p04",
+   "text_hint": "finished the repair on the GT1 last night",
+   "component": {
+    "entity_id": "GT1",
+    "text": "GT1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "signed off the inspection on the GT2 Number 2 Bearing on Tuesday",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 Number 2 Bearing",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "saw the pressure on the WHB dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "WHB",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p05",
+   "text_hint": "saw the pressure on the GT2 bearing dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 bearing",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the Line 3 Chiller until production gives us a window",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p10",
+   "text_hint": "the shutdown on the IM1 is cancelled now, production need it running",
+   "component": {
+    "entity_id": "IM1",
+    "text": "IM1",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.15,
+   "end": 9.45,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Morning, everyone. Friday the twenty-fourth. Can you all hear me, or am I doing the Teams mime again?"
+  },
+  {
+   "start": 11.44,
+   "end": 17.39,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, got you. Only just made it in, mind. Traffic on the ring road was absolutely solid."
+  },
+  {
+   "start": 19.49,
+   "end": 24.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Standard Friday, then. Everyone trying to start the weekend before they've started work."
+  },
+  {
+   "start": 25.7,
+   "end": 30.25,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I was mostly trying to get past the same bus for twenty minutes."
+  },
+  {
+   "start": 30.71,
+   "end": 37.01,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Well, the heating in the portakabin thinks it's November. Lovely coming in here in July and getting slow-roasted."
+  },
+  {
+   "start": 39.11,
+   "end": 42.96,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "That explains the red face. Thought your camera had gone funny."
+  },
+  {
+   "start": 44.12,
+   "end": 49.37,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "No, that's genuinely me. Just having a moan, not adding the heating to the jobs."
+  },
+  {
+   "start": 50.8,
+   "end": 54.65,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Good. We haven't got a column for lightly cooked mechanical engineer."
+  },
+  {
+   "start": 56.23,
+   "end": 61.13,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, before we get onto the actions, anything already finished that needs taking off?"
+  },
+  {
+   "start": 62.56,
+   "end": 66.41,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, finished the repair on the GT1 last night. That's done."
+  },
+  {
+   "start": 68.64,
+   "end": 72.14,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "All closed, rather than something you're bringing into this morning?"
+  },
+  {
+   "start": 72.64,
+   "end": 76.14,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "All closed. Just reporting it back, no new job there."
+  },
+  {
+   "start": 78.0,
+   "end": 84.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I signed off the inspection on the GT2 Number 2 Bearing on Tuesday. That one's finished as well."
+  },
+  {
+   "start": 86.3,
+   "end": 88.75,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right, so that isn't a carry-over inspection?"
+  },
+  {
+   "start": 90.24,
+   "end": 93.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, already signed off. It just keeps getting mentioned."
+  },
+  {
+   "start": 94.16,
+   "end": 101.86,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "While we're on updates, I saw the pressure on the WHB dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 102.25,
+   "end": 104.0,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Recovered without anyone doing anything?"
+  },
+  {
+   "start": 105.48,
+   "end": 109.33,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah. Just an observation, I'm not raising a job for it."
+  },
+  {
+   "start": 110.88,
+   "end": 119.28,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Similar sort of thing here: saw the pressure on the GT2 bearing dip for a few minutes, then it came back on its own."
+  },
+  {
+   "start": 120.64,
+   "end": 125.54,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's separate from the inspection I mentioned, just so we don't muddle those together."
+  },
+  {
+   "start": 127.47,
+   "end": 131.32,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly. Only passing on what I saw, not another inspection request."
+  },
+  {
+   "start": 133.0,
+   "end": 137.2,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay, actual actions now. Let's keep the closed stuff out of them."
+  },
+  {
+   "start": 139.27,
+   "end": 148.02,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I'll do the lock-out tag-out sign-off on the Line 1 Mould Temperature Controller on the 3rd. That's holding production up so it needs doing first."
+  },
+  {
+   "start": 149.03,
+   "end": 153.58,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, just the lock-out tag-out sign-off you're taking there, not a separate repair?"
+  },
+  {
+   "start": 155.44,
+   "end": 157.89,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, just that sign-off. I'll take it."
+  },
+  {
+   "start": 158.91,
+   "end": 165.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Davey on that, on the 3rd. And keep the production hold against it so the priority's clear."
+  },
+  {
+   "start": 165.83,
+   "end": 169.33,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Exactly. Needs doing first, not disappearing halfway down the list."
+  },
+  {
+   "start": 171.08,
+   "end": 178.08,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Grace Liu, can you go to Kestrel to pick up the replacement parts for the pick and place on two?"
+  },
+  {
+   "start": 178.48,
+   "end": 181.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, I'll do that. I can take the collection."
+  },
+  {
+   "start": 182.99,
+   "end": 187.54,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's collecting the parts, yeah? Not putting the fitting against the same action?"
+  },
+  {
+   "start": 188.46,
+   "end": 191.96,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Correct, collection only. We're not adding a fitting job here."
+  },
+  {
+   "start": 193.54,
+   "end": 199.84,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fine. I'll go to Kestrel and pick up the replacement parts for the pick and place on two."
+  },
+  {
+   "start": 200.92,
+   "end": 204.07,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "We really do have some wonderfully short equipment names."
+  },
+  {
+   "start": 205.49,
+   "end": 210.74,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Still better than 'the thing beside the other thing', which is what I normally get."
+  },
+  {
+   "start": 211.35,
+   "end": 217.3,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And Grace, can you do the pre-use checks on the forklifts by the 28th? That's fairly important."
+  },
+  {
+   "start": 218.46,
+   "end": 220.21,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, accepted. By the 28th."
+  },
+  {
+   "start": 222.7,
+   "end": 225.15,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Separate entry from the parts run, presumably?"
+  },
+  {
+   "start": 226.34,
+   "end": 231.24,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, separate. The date and the fairly important bit are for the pre-use checks."
+  },
+  {
+   "start": 233.45,
+   "end": 239.75,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Got it. I'll do the pre-use checks on the forklifts by the 28th. Two separate actions for me."
+  },
+  {
+   "start": 241.34,
+   "end": 242.74,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, the chiller next—"
+  },
+  {
+   "start": 244.95,
+   "end": 253.35,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, before you get into that, we can't get to the Line 3 Chiller until production gives us a window. That's still the blocker."
+  },
+  {
+   "start": 254.65,
+   "end": 259.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, after lunch is the intended slot, but we haven't got that access released yet."
+  },
+  {
+   "start": 261.38,
+   "end": 267.33,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Olumide Adeyemi, can you recalibrate the sensors on the Line 3 Chiller after lunch? Top priority please."
+  },
+  {
+   "start": 268.41,
+   "end": 274.36,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Um, no, sorry, I can't take that one on. You'll need to give it to somebody else."
+  },
+  {
+   "start": 275.78,
+   "end": 282.78,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay. Sarah, can you take that instead? Recalibrate the sensors on the Line 3 Chiller after lunch, top priority please."
+  },
+  {
+   "start": 284.3,
+   "end": 292.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, I'll take it instead. I'll recalibrate the sensors on the Line 3 Chiller after lunch, top priority, subject to getting that production window."
+  },
+  {
+   "start": 295.06,
+   "end": 299.61,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's the distinction, yeah. Having an owner doesn't mean we've suddenly got access."
+  },
+  {
+   "start": 301.36,
+   "end": 305.91,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. After lunch stays the timing. I won't start before production releases it."
+  },
+  {
+   "start": 307.94,
+   "end": 312.84,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "So the blocker is the access, not a separate piece of work we're assigning?"
+  },
+  {
+   "start": 313.39,
+   "end": 316.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. I'm taking the recalibration, with that blocker still visible."
+  },
+  {
+   "start": 317.31,
+   "end": 324.31,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Oh, and before it gets mixed into this, the shutdown on the IM1 is cancelled now. Production need it running."
+  },
+  {
+   "start": 324.67,
+   "end": 328.17,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, cancelled. Not something we're carrying on today's action list."
+  },
+  {
+   "start": 329.92,
+   "end": 331.67,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Correct. No shutdown to do."
+  },
+  {
+   "start": 333.04,
+   "end": 338.64,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good to be clear. Hearing 'window' and 'shutdown' back-to-back makes it sound like the same conversation."
+  },
+  {
+   "start": 340.68,
+   "end": 343.48,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, different things. The IM1 shutdown is off."
+  },
+  {
+   "start": 344.69,
+   "end": 352.74,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I'll chase the purchase order for the turbine one. Not an emergency but don't let it slip — that's how I'm treating it."
+  },
+  {
+   "start": 353.78,
+   "end": 356.93,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Cheers, Cal. The purchase order chase is yours, then?"
+  },
+  {
+   "start": 358.93,
+   "end": 363.83,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, mine. It doesn't need the emergency treatment, but I'm not letting it drift."
+  },
+  {
+   "start": 365.9,
+   "end": 370.8,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And that's the order we're talking about, not an action on the equipment itself?"
+  },
+  {
+   "start": 371.29,
+   "end": 375.49,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Just chasing the purchase order for the turbine one. Nothing else added."
+  },
+  {
+   "start": 377.16,
+   "end": 382.41,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Lovely. That's the actions agreed. Anything we've accidentally left sounding open that should be closed?"
+  },
+  {
+   "start": 383.74,
+   "end": 387.59,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nothing from me. GT1 repair stays in the finished pile, please."
+  },
+  {
+   "start": 389.32,
+   "end": 395.27,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And the pressure dip I mentioned stays as an observation. Not another job hiding in the notes."
+  },
+  {
+   "start": 396.51,
+   "end": 401.06,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, clear. Thanks, everyone. I'll stop baking in here and let you go."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

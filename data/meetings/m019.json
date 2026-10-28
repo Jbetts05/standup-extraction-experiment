@@ -1,0 +1,901 @@
+{
+ "id": "m019",
+ "date": "2026-02-11",
+ "split": "test",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p02",
+  "p03",
+  "p07",
+  "p09",
+  "p04",
+  "p10"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m019-t1",
+   "summary": "Recalibrate the sensors on the Compressed Air Dryer",
+   "spoken_action": "recalibrate the sensors on the desiccant unit",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Pri",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the desiccant unit",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-12",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    53,
+    78
+   ]
+  },
+  {
+   "id": "m019-t2",
+   "summary": "Go to Northfield Substation to pick up the replacement parts for the Line 2 Safety Guard Interlock",
+   "spoken_action": "go to the substation to pick up the replacement parts for the line 2 guard",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Mide",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "line 2 guard",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "the substation",
+    "split": "seen"
+   },
+   "due_date": "2026-02-11",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "top priority please",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    46,
+    47,
+    48,
+    71,
+    78
+   ]
+  },
+  {
+   "id": "m019-t3",
+   "summary": "Investigate the pressure drop on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "investigate the pressure drop on the turbine two water valve",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "turbine two water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-16",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    30,
+    49,
+    50,
+    53,
+    78
+   ]
+  },
+  {
+   "id": "m019-t4",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Pri",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    36,
+    37,
+    62,
+    64,
+    78
+   ]
+  },
+  {
+   "id": "m019-t5",
+   "summary": "Order spare parts for the Line 1 Hydraulic Power Unit",
+   "spoken_action": "order spare parts for the power pack on one",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "the power pack on one",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-12",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    54,
+    78
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p02",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "tested the Fire Alarm Panel yesterday and it's all fine now",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "Fire Alarm Panel",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "already swapped the filter on the Atlas yesterday",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "saw the pressure on the newer turbine dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT2",
+    "text": "the newer turbine",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "noticed the door switch on two was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "the door switch on two",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the pump in the pit",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "the pump in the pit",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the barrel on three",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "the barrel on three",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.19,
+   "end": 13.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all. You alright? Quick one today if we can. Also, can someone sort the heating in the portakabin with the universe, because it's freezing in there again."
+  },
+  {
+   "start": 14.9,
+   "end": 21.9,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, nah, it's grim. I was in there first thing and the heating in the portakabin is doing absolutely nothing."
+  },
+  {
+   "start": 24.39,
+   "end": 25.59,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Morning."
+  },
+  {
+   "start": 27.27,
+   "end": 28.47,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Morning, all."
+  },
+  {
+   "start": 30.39,
+   "end": 31.59,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Hiya."
+  },
+  {
+   "start": 33.06,
+   "end": 34.26,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Morning."
+  },
+  {
+   "start": 34.91,
+   "end": 36.11,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Morning team."
+  },
+  {
+   "start": 37.42,
+   "end": 46.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before we get into today, just so nobody doubles up, I tested the Fire Alarm Panel yesterday and it's all fine now, so that's done."
+  },
+  {
+   "start": 47.49,
+   "end": 54.14,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And I already swapped the filter on the Atlas yesterday, so don't need to put that anywhere for today."
+  },
+  {
+   "start": 56.06,
+   "end": 63.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Cheers. Also, seriously, the heating in the portakabin, if it gets any colder we'll all be doing the stand-up in coats."
+  },
+  {
+   "start": 64.51,
+   "end": 67.31,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I've already got mine on, to be fair."
+  },
+  {
+   "start": 69.59,
+   "end": 74.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right then, line walk highlights, blockers, actual jobs for today. Fiona, you wanna go first?"
+  },
+  {
+   "start": 76.93,
+   "end": 89.88,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah so, planning-wise, just an observation really, I saw the pressure on the newer turbine dip for a few minutes, it came back on its own, so I'm not raising that as a job, just flagging it."
+  },
+  {
+   "start": 91.97,
+   "end": 93.17,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay, yep."
+  },
+  {
+   "start": 95.67,
+   "end": 105.82,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And another one from nights, noticed the door switch on two was running a bit warm on nights but it settled down. Again, not a task, just worth knowing."
+  },
+  {
+   "start": 107.64,
+   "end": 109.39,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Could've just been load then."
+  },
+  {
+   "start": 111.42,
+   "end": 120.87,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Maybe, yeah. Then blockers, the supplier still hasn't confirmed the delivery for the pump in the pit, so I'm stuck on that one till they come back."
+  },
+  {
+   "start": 122.91,
+   "end": 124.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Mm, still waiting then."
+  },
+  {
+   "start": 126.69,
+   "end": 136.84,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah. And same story, the supplier still hasn't confirmed the delivery for the barrel on three, so that's blocked as well, nothing new for the floor today, just waiting."
+  },
+  {
+   "start": 137.95,
+   "end": 142.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine. Keep chasing but yeah, that's not a fresh task for this group."
+  },
+  {
+   "start": 143.93,
+   "end": 148.83,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Process side's mostly alright. Dryer trend was a bit noisy overnight but not horrendous."
+  },
+  {
+   "start": 150.72,
+   "end": 157.37,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "On that, I'll recalibrate the sensors on the desiccant unit tomorrow. Normal priority, nothing dramatic, but it wants doing."
+  },
+  {
+   "start": 158.21,
+   "end": 163.46,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, good. Pri, you've got recalibrate the sensors on the desiccant unit tomorrow, normal priority."
+  },
+  {
+   "start": 165.57,
+   "end": 166.97,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll take that."
+  },
+  {
+   "start": 168.83,
+   "end": 170.03,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one."
+  },
+  {
+   "start": 172.18,
+   "end": 184.08,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "While we're on bits to fetch, I'll go to the substation to pick up the replacement parts for the line 2 guard by 11am, top priority please, otherwise we lose half the morning waiting."
+  },
+  {
+   "start": 186.13,
+   "end": 193.83,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Perfect. Mide's going to the substation to pick up the replacement parts for the line 2 guard by 11am, top priority please."
+  },
+  {
+   "start": 194.97,
+   "end": 196.17,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep."
+  },
+  {
+   "start": 198.36,
+   "end": 207.81,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And from me, I'll investigate the pressure drop on the turbine two water valve. It's urgent, but realistically Monday to get to the bottom of it properly."
+  },
+  {
+   "start": 209.47,
+   "end": 215.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Davey will investigate the pressure drop on the turbine two water valve, Monday, it's urgent."
+  },
+  {
+   "start": 217.48,
+   "end": 218.68,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah."
+  },
+  {
+   "start": 220.94,
+   "end": 223.74,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Was that the one that dipped on trend?"
+  },
+  {
+   "start": 225.35,
+   "end": 228.5,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "No, different thing. Similar symptom, different bit of kit."
+  },
+  {
+   "start": 229.95,
+   "end": 234.85,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, mine was the newer turbine only for a few minutes. This sounds separate."
+  },
+  {
+   "start": 235.64,
+   "end": 237.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, keep them separate then."
+  },
+  {
+   "start": 238.46,
+   "end": 243.71,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I've also got compliance stuff anyway, so I'll run the monthly fire alarm test today."
+  },
+  {
+   "start": 245.03,
+   "end": 250.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, cheers Pri. Just to be clear, separate from what I did yesterday on the panel."
+  },
+  {
+   "start": 252.19,
+   "end": 257.44,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, different thing. Yesterday's panel check is done. I'll run the monthly fire alarm test."
+  },
+  {
+   "start": 258.12,
+   "end": 259.32,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Good shout."
+  },
+  {
+   "start": 260.47,
+   "end": 268.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomasz, one for you if you've got a spare minute: can you order spare parts for the power pack on one by Thursday?"
+  },
+  {
+   "start": 269.75,
+   "end": 271.85,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, alright, I can do that."
+  },
+  {
+   "start": 274.33,
+   "end": 281.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice. Tomasz to order spare parts for the power pack on one by Thursday, if you've got a spare minute."
+  },
+  {
+   "start": 282.52,
+   "end": 284.27,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, I'll get it raised."
+  },
+  {
+   "start": 286.55,
+   "end": 291.1,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Do we know exactly what's needed on the line 2 guard pack, sorry?"
+  },
+  {
+   "start": 291.9,
+   "end": 293.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "For yours, Mide?"
+  },
+  {
+   "start": 293.79,
+   "end": 294.99,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah."
+  },
+  {
+   "start": 295.85,
+   "end": 300.05,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "It's the replacement parts list from stores, I sent it late yesterday."
+  },
+  {
+   "start": 302.16,
+   "end": 306.71,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Ah right, got it. I'll pick those up from the substation by 11am."
+  },
+  {
+   "start": 307.83,
+   "end": 309.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Top priority please, yeah."
+  },
+  {
+   "start": 310.45,
+   "end": 311.85,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Top priority please, understood."
+  },
+  {
+   "start": 312.55,
+   "end": 329.7,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "If you want, once I'm over by utilities I can have a quick look at the valve history as well before Monday, but the proper investigate the pressure drop on the turbine two water valve bit is still for Monday because it's urgent and I want the data together."
+  },
+  {
+   "start": 330.1,
+   "end": 335.0,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's fine, as long as we're agreed the task is with you for Monday."
+  },
+  {
+   "start": 336.63,
+   "end": 337.83,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, absolutely."
+  },
+  {
+   "start": 339.05,
+   "end": 342.2,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Any production impact from the desiccant unit sensors, Pri?"
+  },
+  {
+   "start": 343.42,
+   "end": 351.47,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Not really. That's why I said normal priority. I'll recalibrate the sensors on the desiccant unit tomorrow and just tidy the readings up."
+  },
+  {
+   "start": 353.01,
+   "end": 354.21,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, fair."
+  },
+  {
+   "start": 356.62,
+   "end": 368.52,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "For planning, if Tomasz orders spare parts for the power pack on one by Thursday, if you've got a spare minute, copy me in and I'll make sure it's linked to the shutdown list."
+  },
+  {
+   "start": 370.99,
+   "end": 373.09,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah no problem, I'll copy you."
+  },
+  {
+   "start": 374.32,
+   "end": 378.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything else that is actually for today, not things already done or blocked?"
+  },
+  {
+   "start": 379.5,
+   "end": 383.7,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Nope. Just to repeat, the Atlas filter is already swapped, done yesterday."
+  },
+  {
+   "start": 385.36,
+   "end": 386.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep."
+  },
+  {
+   "start": 388.42,
+   "end": 393.67,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And my supplier bits are still blocked, so nothing I can hand over from those."
+  },
+  {
+   "start": 395.14,
+   "end": 396.34,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Same here really."
+  },
+  {
+   "start": 396.79,
+   "end": 403.79,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'll probably do the monthly fire alarm test after first break, if that helps people with noise and all that."
+  },
+  {
+   "start": 404.74,
+   "end": 405.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Works for me."
+  },
+  {
+   "start": 406.5,
+   "end": 413.15,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Can you just ping us before you set it off? Last month half the lads nearly hit the roof."
+  },
+  {
+   "start": 414.52,
+   "end": 418.37,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll message before I run the monthly fire alarm test."
+  },
+  {
+   "start": 418.77,
+   "end": 419.97,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good plan."
+  },
+  {
+   "start": 421.27,
+   "end": 427.22,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And if anyone's near turbine two before me, just don't tweak anything on that water valve, yeah?"
+  },
+  {
+   "start": 428.03,
+   "end": 429.23,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No worries."
+  },
+  {
+   "start": 431.03,
+   "end": 432.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything from maintenance bench?"
+  },
+  {
+   "start": 434.55,
+   "end": 441.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nothing major. Just the usual backlog bits. The only specific one is the spare parts order, which I'll do."
+  },
+  {
+   "start": 441.96,
+   "end": 443.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Spot on."
+  },
+  {
+   "start": 443.63,
+   "end": 453.43,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I'll head off straight after this then. Need to get to the substation early doors if I'm doing the replacement parts for the line 2 guard by 11am."
+  },
+  {
+   "start": 455.65,
+   "end": 456.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, crack on."
+  },
+  {
+   "start": 457.62,
+   "end": 464.27,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I can update the board to show that one as top priority please, so nobody sends you somewhere else."
+  },
+  {
+   "start": 464.95,
+   "end": 466.15,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Cheers."
+  },
+  {
+   "start": 467.67,
+   "end": 471.87,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Are we expecting the portakabin to thaw out by lunch or nah?"
+  },
+  {
+   "start": 472.38,
+   "end": 475.18,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Only if Sarah glares at it hard enough."
+  },
+  {
+   "start": 477.16,
+   "end": 483.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Honestly, at this point I might. But no, that's not becoming a job off this meeting either."
+  },
+  {
+   "start": 484.2,
+   "end": 486.65,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Shame, would've been a nice easy win."
+  },
+  {
+   "start": 488.17,
+   "end": 516.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, recap then. Pri's got recalibrate the sensors on the desiccant unit tomorrow, normal priority, and Pri will run the monthly fire alarm test. Mide will go to the substation to pick up the replacement parts for the line 2 guard by 11am, top priority please. Davey will investigate the pressure drop on the turbine two water valve, Monday, it's urgent. Tomasz will order spare parts for the power pack on one by Thursday, if you've got a spare minute."
+  },
+  {
+   "start": 516.94,
+   "end": 518.14,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep."
+  },
+  {
+   "start": 518.93,
+   "end": 520.13,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep."
+  },
+  {
+   "start": 521.14,
+   "end": 522.34,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep."
+  },
+  {
+   "start": 524.11,
+   "end": 525.31,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "All good."
+  },
+  {
+   "start": 527.21,
+   "end": 528.41,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Fine by me."
+  },
+  {
+   "start": 529.79,
+   "end": 531.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Let's get on with it."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

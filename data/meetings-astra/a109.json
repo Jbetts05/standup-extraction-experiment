@@ -1,0 +1,690 @@
+{
+ "id": "a109",
+ "date": "2026-01-30",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p07",
+  "p02",
+  "p12",
+  "p08",
+  "p09",
+  "p04"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a109-t1",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-04",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    29,
+    30
+   ]
+  },
+  {
+   "id": "a109-t2",
+   "summary": "Replace the seals on the Main Water Isolation Valve",
+   "spoken_action": "replace the seals on the big valve by the gate",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Ash",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "the big valve by the gate",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-02",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a109-t3",
+   "summary": "Schedule downtime for the Site Water System with production",
+   "spoken_action": "schedule downtime for the water ring with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "the water ring",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-30",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    42,
+    43
+   ]
+  },
+  {
+   "id": "a109-t4",
+   "summary": "Run a function test on the Compressed Air Dryer",
+   "spoken_action": "run a function test on the desiccant unit",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Ash",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the desiccant unit",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-30",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "id": "a109-t5",
+   "summary": "Check the guarding on the Main Outfeed Conveyor",
+   "spoken_action": "check the guarding on the main conveyor",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus Hale",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "main conveyor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-31",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52,
+    53,
+    54
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "already swapped the filter on the spinner yesterday",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the spinner",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "tested the newer turbine yesterday and it's all fine now",
+   "component": {
+    "entity_id": "GT2",
+    "text": "the newer turbine",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "saw the pressure on the site water dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "WTR",
+    "text": "site water",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p12",
+   "text_hint": "saw the pressure on the line 2 robot dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "line 2 robot",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "still waiting on parts for the Line 3 Screw and Barrel, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "Line 3 Screw and Barrel",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.95,
+   "end": 9.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Friday the thirtieth of January. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 10.66,
+   "end": 15.91,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, got you. Sorry, only just sat down. Traffic on the ring road was ridiculous."
+  },
+  {
+   "start": 16.56,
+   "end": 20.06,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "You and half the shift, by the sound of it."
+  },
+  {
+   "start": 20.49,
+   "end": 23.64,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Twenty minutes looking at the same van. Lovely start."
+  },
+  {
+   "start": 26.07,
+   "end": 30.27,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "There is a birthday cake in the office, if that improves things."
+  },
+  {
+   "start": 32.36,
+   "end": 37.96,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There is, yeah. A birthday cake in the office and already a suspiciously large bit missing."
+  },
+  {
+   "start": 40.23,
+   "end": 41.43,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Define large."
+  },
+  {
+   "start": 43.35,
+   "end": 44.75,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Ah. Found the culprit."
+  },
+  {
+   "start": 46.3,
+   "end": 50.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes an investigation into cake losses—where are we with yesterday?"
+  },
+  {
+   "start": 51.78,
+   "end": 55.98,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah so, already swapped the filter on the spinner yesterday. That's done."
+  },
+  {
+   "start": 57.78,
+   "end": 60.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "All finished, nothing left hanging on that?"
+  },
+  {
+   "start": 60.57,
+   "end": 63.37,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "No, all finished. Not carrying it into today."
+  },
+  {
+   "start": 64.5,
+   "end": 68.35,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And tested the newer turbine yesterday and it's all fine now."
+  },
+  {
+   "start": 70.59,
+   "end": 75.14,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Oh, good. That's the one you had on test when I went past?"
+  },
+  {
+   "start": 77.19,
+   "end": 81.74,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's it. Finished yesterday, behaved itself. Both of those are off my list."
+  },
+  {
+   "start": 84.15,
+   "end": 87.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Useful to have some things actually off the list."
+  },
+  {
+   "start": 89.54,
+   "end": 97.59,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Just an observation from me: saw the pressure on the site water dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 100.06,
+   "end": 102.16,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Back up without anyone touching anything?"
+  },
+  {
+   "start": 102.85,
+   "end": 107.75,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, exactly. A brief dip, then back. Not putting a job forward for that."
+  },
+  {
+   "start": 110.07,
+   "end": 118.47,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Similar sort of thing here—I saw the pressure on the line 2 robot dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 120.48,
+   "end": 123.63,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Was that still down when you left it, or—"
+  },
+  {
+   "start": 124.96,
+   "end": 130.56,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, sorry, talking over you. Back on its own before I left. Just something I noticed."
+  },
+  {
+   "start": 132.99,
+   "end": 136.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, both observations, not new work we're allocating this morning."
+  },
+  {
+   "start": 136.83,
+   "end": 143.83,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And we're still waiting on parts for the Line 3 Screw and Barrel. Nothing we can do until they arrive."
+  },
+  {
+   "start": 145.3,
+   "end": 147.4,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, that's still held on parts."
+  },
+  {
+   "start": 148.59,
+   "end": 151.74,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "So that isn't available to get on with, then."
+  },
+  {
+   "start": 154.15,
+   "end": 158.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No. Still blocked, not a job for today. Right, the actual work."
+  },
+  {
+   "start": 159.93,
+   "end": 164.83,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona, can you organise the toolbox talk for the team by Wednesday? Normal priority."
+  },
+  {
+   "start": 165.65,
+   "end": 170.2,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah. Wednesday coming, just so I've got the right week in my head?"
+  },
+  {
+   "start": 171.38,
+   "end": 175.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right, by Wednesday. Normal priority, no rush job on it."
+  },
+  {
+   "start": 177.54,
+   "end": 181.39,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Okay, I'll organise the toolbox talk for the team by Wednesday."
+  },
+  {
+   "start": 182.04,
+   "end": 184.49,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Less controversial subject than cake portions, hopefully."
+  },
+  {
+   "start": 186.65,
+   "end": 189.1,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Wouldn't count on it with this lot."
+  },
+  {
+   "start": 190.49,
+   "end": 197.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ash, can you replace the seals on the big valve by the gate? Monday for that, and it's fairly important."
+  },
+  {
+   "start": 199.05,
+   "end": 202.2,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Monday, yeah? Not something you're wanting squeezed into today?"
+  },
+  {
+   "start": 202.52,
+   "end": 207.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Monday, yes. Fairly important, so I do want that one kept in view."
+  },
+  {
+   "start": 209.39,
+   "end": 214.29,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Understood. I'll replace the seals on the big valve by the gate on Monday."
+  },
+  {
+   "start": 215.67,
+   "end": 219.87,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's the seals only we're talking about, not replacing the whole thing?"
+  },
+  {
+   "start": 220.6,
+   "end": 225.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, just the seals on the big valve by the gate. That's the scope."
+  },
+  {
+   "start": 226.64,
+   "end": 231.54,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll schedule downtime for the water ring with production after lunch. That's normal priority."
+  },
+  {
+   "start": 232.22,
+   "end": 236.42,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, boss. After lunch is when you're sorting the slot with production?"
+  },
+  {
+   "start": 237.45,
+   "end": 241.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, I'll do the scheduling with production after lunch. Normal priority."
+  },
+  {
+   "start": 242.52,
+   "end": 247.77,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Sorry, nearly jumped in there. We're not saying the water ring actually stops after lunch?"
+  },
+  {
+   "start": 248.79,
+   "end": 252.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. That's when I'm scheduling it, not an agreed shutdown time."
+  },
+  {
+   "start": 252.98,
+   "end": 260.68,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ash, the other one for you: can you run a function test on the desiccant unit today, whenever you get a chance?"
+  },
+  {
+   "start": 262.27,
+   "end": 266.12,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, so that one's a fit-it-in today rather than drop everything?"
+  },
+  {
+   "start": 268.12,
+   "end": 270.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Whenever you get a chance, but today."
+  },
+  {
+   "start": 273.3,
+   "end": 278.9,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Fine, I'll run a function test on the desiccant unit today, whenever I get a chance."
+  },
+  {
+   "start": 280.63,
+   "end": 284.13,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Just the function test, then? Nothing bigger wrapped into that?"
+  },
+  {
+   "start": 285.48,
+   "end": 288.63,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "No, just the function test. That's what I'm taking."
+  },
+  {
+   "start": 289.85,
+   "end": 295.1,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And I'll check the guarding on the main conveyor first thing tomorrow. That's fairly important."
+  },
+  {
+   "start": 296.66,
+   "end": 299.81,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Marcus Hale. Tomorrow being Saturday—you do mean tomorrow?"
+  },
+  {
+   "start": 302.11,
+   "end": 308.06,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep, first thing tomorrow. I'll check the guarding on the main conveyor then. Fairly important, that one."
+  },
+  {
+   "start": 309.39,
+   "end": 311.84,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, tomorrow rather than Monday. Got it."
+  },
+  {
+   "start": 313.52,
+   "end": 316.67,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah. My week doesn't end just because yours does."
+  },
+  {
+   "start": 318.94,
+   "end": 325.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "All right, that's the agreed list. The parts job stays blocked and the two pressure dips were observations only."
+  },
+  {
+   "start": 327.69,
+   "end": 329.79,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And the cake losses remain unproven."
+  },
+  {
+   "start": 331.84,
+   "end": 334.29,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "You've got icing on your sleeve, mate."
+  },
+  {
+   "start": 335.65,
+   "end": 338.45,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Still a better morning than the ring road."
+  },
+  {
+   "start": 340.83,
+   "end": 345.03,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, on that very technical note, thanks everyone. See you out there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

@@ -1,0 +1,770 @@
+{
+ "id": "a030",
+ "date": "2026-07-28",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p03",
+  "p08",
+  "p05",
+  "p06",
+  "p09",
+  "p02"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a030-t1",
+   "summary": "Chase the purchase order for the Line 2 Pick and Place Robot",
+   "spoken_action": "chase the purchase order for the pick and place on two",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "pick and place on two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "a030-t2",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-28",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "no rush",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    13,
+    14,
+    15,
+    16,
+    55
+   ]
+  },
+  {
+   "id": "a030-t3",
+   "summary": "Write up the near miss at the Injection Moulding Line 1",
+   "spoken_action": "write up the near miss at the line one",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "line one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-29",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    56
+   ]
+  },
+  {
+   "id": "a030-t4",
+   "summary": "Recalibrate the sensors on the Line 3 Chiller",
+   "spoken_action": "recalibrate the sensors on the line 3 chiller",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus Hale",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-29",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    57
+   ]
+  },
+  {
+   "id": "a030-t5",
+   "summary": "Inspect the Water Booster Pump for leaks",
+   "spoken_action": "inspect the booster pump for leaks",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-04",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    58
+   ]
+  },
+  {
+   "id": "a030-t6",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-31",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    58
+   ]
+  },
+  {
+   "id": "a030-t7",
+   "summary": "Clear the jam and check the sensors on the Line 2 Pick and Place Robot",
+   "spoken_action": "clear the jam and check the sensors on the Line 2 Pick and Place Robot",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "Line 2 Pick and Place Robot",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    54
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "already swapped the filter on the line 3 screw yesterday",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 screw",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "already swapped the filter on the dryer yesterday",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "noticed the Fire Alarm Panel was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "Fire Alarm Panel",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the line 3 screw",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 screw",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.0,
+   "end": 9.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Tuesday the twenty-eighth. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 10.93,
+   "end": 15.83,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, we can hear you. More importantly, there's a birthday cake in the office."
+  },
+  {
+   "start": 16.65,
+   "end": 22.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There is a birthday cake in the office, and apparently that's the main production news this morning."
+  },
+  {
+   "start": 24.48,
+   "end": 27.63,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Depends how many slices you're counting as a batch."
+  },
+  {
+   "start": 29.6,
+   "end": 34.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a cake allocation meeting. What's already out of the way?"
+  },
+  {
+   "start": 34.99,
+   "end": 41.29,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I already swapped the filter on the line 3 screw yesterday. That's finished, not another one for today."
+  },
+  {
+   "start": 41.95,
+   "end": 45.1,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Ah, right. I was looking at yesterday's note, then."
+  },
+  {
+   "start": 46.67,
+   "end": 53.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah. Separate issue, though: the supplier still hasn't confirmed the delivery for the line 3 screw. That's still blocked."
+  },
+  {
+   "start": 53.82,
+   "end": 58.37,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "So the delivery's unresolved, but the filter work is done. Two separate bits."
+  },
+  {
+   "start": 59.08,
+   "end": 62.93,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Exactly. Don't want the filter swap following me round all week."
+  },
+  {
+   "start": 64.02,
+   "end": 69.27,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I already swapped the filter on the dryer yesterday. That one's finished as well."
+  },
+  {
+   "start": 71.61,
+   "end": 73.36,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, saw that marked complete."
+  },
+  {
+   "start": 75.43,
+   "end": 79.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Lovely. Just making sure it doesn't get read back as new work."
+  },
+  {
+   "start": 80.1,
+   "end": 85.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "PR, can you sort the training records for the new starters this morning? No rush."
+  },
+  {
+   "start": 87.22,
+   "end": 92.12,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Um, yeah. No rush as in not an immediate interruption, but still this morning?"
+  },
+  {
+   "start": 93.34,
+   "end": 96.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. This morning, just not a drop-everything job."
+  },
+  {
+   "start": 96.67,
+   "end": 100.87,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Fine, I'll sort the training records for the new starters this morning."
+  },
+  {
+   "start": 102.13,
+   "end": 104.93,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Got you. Morning deadline, without the panic attached."
+  },
+  {
+   "start": 106.74,
+   "end": 114.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fi, can you write up the near miss at the line one? Due tomorrow, but that one's safety critical, straight away."
+  },
+  {
+   "start": 114.53,
+   "end": 118.73,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I'll start straight away and have the write-up done by tomorrow."
+  },
+  {
+   "start": 120.06,
+   "end": 124.96,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, the safety-critical bit matters there. Tomorrow isn't a reason to leave it sitting."
+  },
+  {
+   "start": 126.21,
+   "end": 129.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's what I mean. Immediate attention, write-up due tomorrow."
+  },
+  {
+   "start": 130.62,
+   "end": 133.42,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Understood. I've got the line one near miss."
+  },
+  {
+   "start": 134.86,
+   "end": 140.11,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "While we're on the lines—sorry, were you finished? What's the scope on the robot jam?"
+  },
+  {
+   "start": 140.59,
+   "end": 149.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep. Callum, can you clear the jam and check the sensors on the Line 2 Pick and Place Robot? It matters but it's not urgent."
+  },
+  {
+   "start": 150.4,
+   "end": 157.4,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll clear the jam and check the sensors on the Line 2 Pick and Place Robot. Both bits, understood."
+  },
+  {
+   "start": 157.75,
+   "end": 161.25,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's the physical job, not the purchase order discussion, yeah?"
+  },
+  {
+   "start": 161.58,
+   "end": 165.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Callum's taking the jam and sensor check, not the purchasing bit."
+  },
+  {
+   "start": 167.36,
+   "end": 176.81,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That purchasing bit does still need someone to chase the purchase order for the pick and place on two. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 179.08,
+   "end": 181.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone able to take that one?"
+  },
+  {
+   "start": 182.57,
+   "end": 188.87,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Not me, sorry. I can take the records, but I'm not taking the purchase order chase as well."
+  },
+  {
+   "start": 191.27,
+   "end": 196.87,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I haven't got room for it either. Raising it isn't me volunteering, just to be clear."
+  },
+  {
+   "start": 199.35,
+   "end": 204.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fair enough. Nobody's taken it, then. It's still needed and unowned; let's not pretend it's covered."
+  },
+  {
+   "start": 206.87,
+   "end": 215.27,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, so, on mine: I'll recalibrate the sensors on the line 3 chiller by tomorrow morning. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 217.48,
+   "end": 221.33,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Sorry, sensors on the chiller? Teams clipped the middle of that."
+  },
+  {
+   "start": 222.98,
+   "end": 225.78,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "The line 3 chiller, yeah. Recalibrating the sensors."
+  },
+  {
+   "start": 227.13,
+   "end": 233.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Marcus Hale has that, due tomorrow morning. Not an emergency, but it needs to stay on track."
+  },
+  {
+   "start": 235.3,
+   "end": 236.5,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep, that's mine."
+  },
+  {
+   "start": 237.58,
+   "end": 241.78,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll inspect the booster pump for leaks as well. By next Tuesday."
+  },
+  {
+   "start": 243.84,
+   "end": 250.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace. Drop everything for that one. The due point is next Tuesday, but it's the top-priority one."
+  },
+  {
+   "start": 251.91,
+   "end": 257.86,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Understood. I'll treat the booster pump inspection as drop-everything priority and get it done by next Tuesday."
+  },
+  {
+   "start": 258.85,
+   "end": 262.35,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry—next Tuesday, not today? Just checking I heard the date."
+  },
+  {
+   "start": 263.43,
+   "end": 267.28,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Next Tuesday is the deadline, yes. The priority doesn't change that."
+  },
+  {
+   "start": 269.56,
+   "end": 272.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Urgency and due date both captured, then."
+  },
+  {
+   "start": 274.07,
+   "end": 277.57,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I'll run the monthly fire alarm test on Friday."
+  },
+  {
+   "start": 279.03,
+   "end": 282.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Grace Liu for the monthly fire alarm test on Friday."
+  },
+  {
+   "start": 283.52,
+   "end": 284.92,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, I'll do that."
+  },
+  {
+   "start": 285.73,
+   "end": 293.08,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "On alarms, just an observation: noticed the Fire Alarm Panel was running a bit warm on nights but it settled down."
+  },
+  {
+   "start": 294.79,
+   "end": 298.99,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "It settled down, yeah? You're not raising a separate job off that?"
+  },
+  {
+   "start": 300.79,
+   "end": 306.39,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, just passing on what was noticed. It settled down. Not asking for another job today."
+  },
+  {
+   "start": 308.06,
+   "end": 312.96,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Good to distinguish it. Otherwise the word 'alarm' gets said and everyone stops breathing."
+  },
+  {
+   "start": 315.13,
+   "end": 319.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, quick check of what's actually agreed, rather than everything we've mentioned."
+  },
+  {
+   "start": 321.5,
+   "end": 326.05,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Nothing new against me. The line 3 screw filter was yesterday's finished work."
+  },
+  {
+   "start": 328.03,
+   "end": 333.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, and the supplier delivery is still a blocker, not a fresh action we've allocated here."
+  },
+  {
+   "start": 335.15,
+   "end": 342.5,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I've got the Line 2 Pick and Place Robot jam and sensors. Matters, not urgent. No purchase order attached to me."
+  },
+  {
+   "start": 342.86,
+   "end": 347.06,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Training records for the new starters, this morning, no rush. That's mine."
+  },
+  {
+   "start": 347.86,
+   "end": 353.11,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And mine's the line one near miss write-up. Safety critical, starting straight away, due tomorrow."
+  },
+  {
+   "start": 353.99,
+   "end": 360.99,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Line 3—sorry, the line 3 chiller sensors for me. Recalibrated by tomorrow morning. Not an emergency, won't let it slip."
+  },
+  {
+   "start": 362.71,
+   "end": 368.66,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Booster pump leak inspection, drop-everything priority, by next Tuesday. And the monthly fire alarm test on Friday."
+  },
+  {
+   "start": 369.02,
+   "end": 378.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Only loose one is chasing the purchase order for the pick and place on two. Not an emergency but don't let it slip; still nobody owning it."
+  },
+  {
+   "start": 378.92,
+   "end": 382.77,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, leave that visibly unowned. We haven't agreed someone for it."
+  },
+  {
+   "start": 385.02,
+   "end": 387.82,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right. At least the cake's got universal support."
+  },
+  {
+   "start": 389.7,
+   "end": 393.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "First unanimous decision of the morning. Cheers, everyone, we'll leave it there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

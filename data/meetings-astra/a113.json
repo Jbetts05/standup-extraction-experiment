@@ -1,0 +1,838 @@
+{
+ "id": "a113",
+ "date": "2026-01-26",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p06",
+  "p07",
+  "p08",
+  "p10",
+  "p09",
+  "p04"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a113-t1",
+   "summary": "Inspect the Main Water Isolation Valve for leaks",
+   "spoken_action": "inspect the big valve by the gate for leaks",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Doyler",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "the big valve by the gate",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-27",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": "p10",
+   "evidence": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    56
+   ]
+  },
+  {
+   "id": "a113-t2",
+   "summary": "Do a site visit at Tollgate Water Treatment Works with the contractor",
+   "spoken_action": "do a site visit at the treatment plant with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Haley",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s05",
+    "text": "the treatment plant",
+    "split": "heldout"
+   },
+   "due_date": "2026-01-26",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    54,
+    55
+   ]
+  },
+  {
+   "id": "a113-t3",
+   "summary": "Order spare parts for the Injection Moulding Line 3",
+   "spoken_action": "order spare parts for the Injection Moulding Line 3",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM3",
+    "text": "Injection Moulding Line 3",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-27",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    56
+   ]
+  },
+  {
+   "id": "a113-t4",
+   "summary": "Do the lock-out tag-out sign-off on the Line 1 Mould Temperature Controller",
+   "spoken_action": "do the lock-out tag-out sign-off on the heater box on one",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Ash",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "the heater box on one",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-26",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "it's urgent",
+   "assigned_by": "p01",
+   "reassigned_from": "p09",
+   "evidence": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    57
+   ]
+  },
+  {
+   "id": "a113-t5",
+   "summary": "Run a function test on the Line 1 Mould Temperature Controller",
+   "spoken_action": "run a function test on the line 1 TCU",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum Reid",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 TCU",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-26",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "id": "a113-t6",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "a113-t7",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-30",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    58
+   ]
+  },
+  {
+   "id": "a113-t8",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    48,
+    57
+   ]
+  },
+  {
+   "id": "a113-t9",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-01-26",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52,
+    53,
+    59
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "signed off the inspection on the Line 1 Hydraulic Power Unit on Tuesday",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "Line 1 Hydraulic Power Unit",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "signed off the inspection on the line 1 mould temp on Tuesday",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "tested the line three yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p04",
+   "text_hint": "saw the pressure on the newer turbine dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT2",
+    "text": "the newer turbine",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "still waiting on parts for the heater box on one, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "the heater box on one",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.27,
+   "end": 9.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the 26th. Can you hear me all right? Teams is showing half of you as little grey circles."
+  },
+  {
+   "start": 10.97,
+   "end": 18.32,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, got you. Anyone actually get their weekend plans done? We were going walking, then the weather did that sideways-rain thing."
+  },
+  {
+   "start": 19.05,
+   "end": 23.6,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I got as far as opening the back door. That was enough outdoors."
+  },
+  {
+   "start": 24.75,
+   "end": 33.5,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sensible. Oh, and the charity bake sale on Friday — apparently there was proper competition over the lemon cake. More tension than a shutdown meeting."
+  },
+  {
+   "start": 35.71,
+   "end": 45.51,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cake's no use without coffee. That broken coffee machine in the canteen's still just an expensive flashing light. Not putting it on this meeting, before anyone says it."
+  },
+  {
+   "start": 46.77,
+   "end": 50.62,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Good, because I haven't got a planning code for emotional damage."
+  },
+  {
+   "start": 50.95,
+   "end": 56.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before we disappear down that hole. Finished stuff first, then what actually needs agreeing."
+  },
+  {
+   "start": 57.6,
+   "end": 64.95,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, I signed off the inspection on the Line 1 Hydraulic Power Unit on Tuesday. That's closed, not something outstanding."
+  },
+  {
+   "start": 65.89,
+   "end": 72.19,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I signed off the inspection on the line 1 mould temp on Tuesday as well. Both done."
+  },
+  {
+   "start": 73.26,
+   "end": 79.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. I tested the line three yesterday and it's all fine now. Nothing new coming out of that."
+  },
+  {
+   "start": 81.04,
+   "end": 89.09,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Only an observation from me: saw the pressure on the newer turbine dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 89.76,
+   "end": 92.91,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Back where it was, yeah? Not still sitting low?"
+  },
+  {
+   "start": 94.01,
+   "end": 99.61,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, back where it was. Just saying what I saw, not raising a job for today."
+  },
+  {
+   "start": 102.05,
+   "end": 108.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Olu, can you inspect the big valve by the gate for leaks, tomorrow at 9:30? It's urgent."
+  },
+  {
+   "start": 110.31,
+   "end": 116.61,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, I can't take that one. I'm not available for that slot, so don't put it against me."
+  },
+  {
+   "start": 118.92,
+   "end": 126.97,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Doyler, can I hand that to you instead? Inspect the big valve by the gate for leaks, tomorrow at 9:30. It's urgent."
+  },
+  {
+   "start": 128.29,
+   "end": 133.19,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I'll take it. The big valve by the gate, leaks, tomorrow at 9:30."
+  },
+  {
+   "start": 134.77,
+   "end": 137.57,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Doyler. That's yours rather than Olu's, then."
+  },
+  {
+   "start": 137.97,
+   "end": 145.67,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While we're on going out and about, I'll do a site visit at the treatment plant with the contractor today at 2pm."
+  },
+  {
+   "start": 147.8,
+   "end": 150.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Haley. Today at 2pm with the contractor, agreed."
+  },
+  {
+   "start": 152.35,
+   "end": 154.45,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep. That's the visit I'm taking."
+  },
+  {
+   "start": 155.43,
+   "end": 159.63,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Your sound went a bit underwater there, but I got two o'clock."
+  },
+  {
+   "start": 161.58,
+   "end": 168.93,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Um, I'll order spare parts for the Injection Moulding Line 3 tomorrow morning as well. It matters but it's not urgent."
+  },
+  {
+   "start": 170.85,
+   "end": 176.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Fi, spare parts for the Injection Moulding Line 3, tomorrow morning. Not in the urgent pile."
+  },
+  {
+   "start": 177.48,
+   "end": 183.43,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. And those aren't the parts holding up the other job, just so we don't muddle them."
+  },
+  {
+   "start": 183.92,
+   "end": 193.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Still waiting on parts for the heater box on one, nothing we can do until they arrive. The repair's blocked; I'm not promising that for today."
+  },
+  {
+   "start": 195.51,
+   "end": 204.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood, repair stays blocked. Separate from the repair, Fi, can you do the lock-out tag-out sign-off on the heater box on one today? It's urgent."
+  },
+  {
+   "start": 206.06,
+   "end": 211.66,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, sorry, I can't take that sign-off. You'll need to hand that one to someone else."
+  },
+  {
+   "start": 212.58,
+   "end": 219.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ash, can you take it instead? Do the lock-out tag-out sign-off on the heater box on one today — it's urgent."
+  },
+  {
+   "start": 220.74,
+   "end": 227.04,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, I'll take the lock-out tag-out sign-off on the heater box on one today. Understood on the urgency."
+  },
+  {
+   "start": 228.74,
+   "end": 235.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks. To be clear, that's the isolation sign-off, not declaring the repair finished or releasing it to run."
+  },
+  {
+   "start": 235.72,
+   "end": 238.17,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Absolutely. Parts blocker hasn't magically gone away."
+  },
+  {
+   "start": 238.72,
+   "end": 243.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah so, I'll run a function test on the line 1 TCU this afternoon."
+  },
+  {
+   "start": 245.71,
+   "end": 251.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Callum Reid. That's an 'if you've got a spare minute' one, not an urgent job."
+  },
+  {
+   "start": 253.49,
+   "end": 258.39,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, low priority understood. I'll do the line 1 TCU function test this afternoon."
+  },
+  {
+   "start": 259.61,
+   "end": 266.26,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And that's separate from those inspections I said were closed. Just in case my sound chopped the names up."
+  },
+  {
+   "start": 266.73,
+   "end": 269.18,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, separate. Not reopening either of yours."
+  },
+  {
+   "start": 269.92,
+   "end": 273.77,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Also, I'll send the shift handover report round by the 28th."
+  },
+  {
+   "start": 275.79,
+   "end": 281.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Cal. Same sort of priority on that — if you've got a spare minute."
+  },
+  {
+   "start": 282.56,
+   "end": 286.41,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fine, not a rush job, but by the 28th. Got it."
+  },
+  {
+   "start": 287.49,
+   "end": 295.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Olu, can you sort the training records for the new starters by the end of the week? Again, if you've got a spare minute."
+  },
+  {
+   "start": 297.41,
+   "end": 306.51,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll sort the training records for the new starters by the end of the week. I can take that, just couldn't take the valve slot."
+  },
+  {
+   "start": 307.85,
+   "end": 309.95,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, understood. Different sort of commitment."
+  },
+  {
+   "start": 311.91,
+   "end": 316.11,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Exactly. Records don't generally require me to stand outside in horizontal rain."
+  },
+  {
+   "start": 317.17,
+   "end": 324.52,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Before we move off the people bits, I'll organise the toolbox talk for the team by the 28th. That's fairly important."
+  },
+  {
+   "start": 325.19,
+   "end": 328.69,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Aisha. Toolbox talk organised by the 28th, fairly important."
+  },
+  {
+   "start": 329.64,
+   "end": 331.04,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, I'll take that."
+  },
+  {
+   "start": 332.8,
+   "end": 334.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, did you say—"
+  },
+  {
+   "start": 334.84,
+   "end": 336.94,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "The 28th. Sorry, talked over you."
+  },
+  {
+   "start": 338.31,
+   "end": 342.51,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, that's what I missed. My headset did a little robot impression."
+  },
+  {
+   "start": 343.06,
+   "end": 352.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There's also the monthly fire alarm test. Someone needs to run the monthly fire alarm test by 11am. It matters but it's not urgent. Anyone taking that?"
+  },
+  {
+   "start": 354.95,
+   "end": 360.55,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Not volunteering there, sorry. I don't want a silence to get read as me saying yes."
+  },
+  {
+   "start": 361.25,
+   "end": 363.7,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Same here, I haven't taken that one."
+  },
+  {
+   "start": 364.51,
+   "end": 373.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. No takers, then. The monthly fire alarm test is still needed by 11am, but nobody owns it. I'm not putting a name against it."
+  },
+  {
+   "start": 374.04,
+   "end": 381.74,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, don't roll that into mine either. Mine's just the site visit at the treatment plant with the contractor today at 2pm."
+  },
+  {
+   "start": 382.49,
+   "end": 384.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood, Haley. No extras attached."
+  },
+  {
+   "start": 386.11,
+   "end": 394.51,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I've got the urgent leak inspection tomorrow at 9:30, plus the spare parts order tomorrow morning, which isn't urgent. Those two are clear."
+  },
+  {
+   "start": 395.96,
+   "end": 404.36,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Same here — urgent lock-out tag-out sign-off today, and organising the toolbox talk by the 28th. No claim that the blocked repair is done."
+  },
+  {
+   "start": 406.22,
+   "end": 410.42,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Training records by the end of the week is clear for me."
+  },
+  {
+   "start": 412.9,
+   "end": 417.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. And the fire alarm test remains unclaimed, not quietly agreed by the group."
+  },
+  {
+   "start": 419.68,
+   "end": 422.48,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right. Back to the flashing coffee monument, then."
+  },
+  {
+   "start": 424.91,
+   "end": 427.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Enjoy the light show. Thanks, everyone, that's us."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

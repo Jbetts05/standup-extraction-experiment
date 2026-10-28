@@ -1,0 +1,853 @@
+{
+ "id": "a043",
+ "date": "2026-06-01",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p05",
+  "p04",
+  "p10",
+  "p09",
+  "p06",
+  "p11",
+  "p07"
+ ],
+ "chair_id": "p05",
+ "gold_tasks": [
+  {
+   "id": "a043-t1",
+   "summary": "Take vibration readings on the Gas Turbine 1",
+   "spoken_action": "take vibration readings on the GT1",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "GT1",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-02",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": "p09",
+   "evidence": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ]
+  },
+  {
+   "id": "a043-t2",
+   "summary": "Investigate the pressure drop on the Water Booster Pump",
+   "spoken_action": "investigate the pressure drop on the Water Booster Pump",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz Nowak",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    24,
+    25
+   ]
+  },
+  {
+   "id": "a043-t3",
+   "summary": "Recalibrate the sensors on the Line 1 Mould Temperature Controller",
+   "spoken_action": "recalibrate the sensors on the line 1 mould temp",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide Adeyemi",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "fairly important",
+   "assigned_by": "p05",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    32,
+    33,
+    35
+   ]
+  },
+  {
+   "id": "a043-t4",
+   "summary": "Swap the filter on the Water Booster Pump",
+   "spoken_action": "swap the filter on the water booster",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    29,
+    57
+   ]
+  },
+  {
+   "id": "a043-t5",
+   "summary": "Go to Northfield Substation to pick up the replacement parts for the Forklift Fleet",
+   "spoken_action": "go to Northfield Substation to pick up the replacement parts for the Forklift Fleet",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "Forklift Fleet",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield Substation",
+    "split": "name"
+   },
+   "due_date": "2026-06-02",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p05",
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    58,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "a043-t6",
+   "summary": "Inspect the Boiler Feedwater Pump for leaks",
+   "spoken_action": "inspect the Boiler Feedwater Pump for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "Boiler Feedwater Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-02",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    47,
+    48,
+    49,
+    53,
+    57
+   ]
+  },
+  {
+   "id": "a043-t7",
+   "summary": "Check the guarding on the Injection Moulding Line 1",
+   "spoken_action": "check the guarding on the IM1",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah Price",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "IM1",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44,
+    46,
+    58,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "a043-t8",
+   "summary": "Sort the permit to work and isolation for the Boiler Feedwater Pump",
+   "spoken_action": "sort the permit to work and isolation for the Boiler Feedwater Pump",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "Boiler Feedwater Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52,
+    57
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "tested the fire panel yesterday and it's all fine now",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p07",
+   "text_hint": "tested the line 2 yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM2",
+    "text": "line 2",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p05",
+   "text_hint": "noticed the turbine one was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "GT1",
+    "text": "turbine one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p05",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the cooling tower",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "cooling tower",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the GT2 until production gives us a window",
+   "component": {
+    "entity_id": "GT2",
+    "text": "GT2",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.66,
+   "end": 10.66,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Morning, everyone. Monday the first of June. Everyone on? I won't ask how you feel about the football last night."
+  },
+  {
+   "start": 12.39,
+   "end": 17.99,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Probably safer not to. Better subject: the charity bake sale on Friday. Those brownies were decent."
+  },
+  {
+   "start": 19.26,
+   "end": 25.56,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "The charity bake sale on Friday has ruined shop-bought cake for me. Although yours needed a bandsaw, Callum."
+  },
+  {
+   "start": 26.96,
+   "end": 29.41,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Structural flapjack. There's a market for that."
+  },
+  {
+   "start": 30.96,
+   "end": 36.56,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Right, before this becomes a materials review. Finished bits first, then what we're actually taking on."
+  },
+  {
+   "start": 37.75,
+   "end": 44.05,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, tested the fire panel yesterday and it's all fine now. That's closed, nothing new off that."
+  },
+  {
+   "start": 45.26,
+   "end": 48.06,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Lovely. Nice to have one that's actually finished."
+  },
+  {
+   "start": 48.88,
+   "end": 56.23,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And I tested the line 2 yesterday and it's all fine now. Same thing, done rather than something for today's list."
+  },
+  {
+   "start": 57.8,
+   "end": 59.9,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, understood. Not carrying that over."
+  },
+  {
+   "start": 60.95,
+   "end": 69.0,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I noticed the turbine one was running a bit warm on nights but it settled down. Just an observation, not raising another job."
+  },
+  {
+   "start": 70.2,
+   "end": 73.0,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "It settled while they were still running, yeah?"
+  },
+  {
+   "start": 73.68,
+   "end": 77.88,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, it came back down. Nothing further coming out of that here."
+  },
+  {
+   "start": 78.65,
+   "end": 86.35,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Other bit: the supplier still hasn't confirmed the delivery for the cooling tower. That's still blocked, not a fresh action this morning."
+  },
+  {
+   "start": 87.61,
+   "end": 91.46,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right. No confirmed delivery to build anything round, then. Still blocked."
+  },
+  {
+   "start": 92.29,
+   "end": 98.59,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And we can't get to the GT2 until production gives us a window. We haven't got that window."
+  },
+  {
+   "start": 99.87,
+   "end": 103.37,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Understood. GT2 stays blocked; we're not pretending we've agreed access."
+  },
+  {
+   "start": 105.85,
+   "end": 110.4,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fiona Doyle, can you take vibration readings on the GT1 tomorrow? Normal priority."
+  },
+  {
+   "start": 110.83,
+   "end": 116.43,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Sorry, no, I can't take that one on. I haven't got the capacity for the readings."
+  },
+  {
+   "start": 117.95,
+   "end": 121.8,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Grace, could you take that instead? The GT1 readings, same timing."
+  },
+  {
+   "start": 123.2,
+   "end": 129.5,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, I'll take vibration readings on the GT1 tomorrow. Normal priority. That's with me instead of Fiona Doyle."
+  },
+  {
+   "start": 130.71,
+   "end": 134.21,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Thanks. Grace on that one, tomorrow, normal priority. Got it."
+  },
+  {
+   "start": 136.61,
+   "end": 141.16,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Then there's the pressure drop on the Water Booster Pump. That needs investigating."
+  },
+  {
+   "start": 141.55,
+   "end": 146.45,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I'll investigate the pressure drop on the Water Booster Pump. It's urgent, that one."
+  },
+  {
+   "start": 148.26,
+   "end": 151.41,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Is that being lumped in with the filter, or—"
+  },
+  {
+   "start": 153.17,
+   "end": 158.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, sorry, separate. I'm investigating the pressure drop, not assuming the filter is the cause."
+  },
+  {
+   "start": 160.53,
+   "end": 165.08,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Okay, Tomasz Nowak has the Water Booster Pump pressure-drop investigation, and it's urgent."
+  },
+  {
+   "start": 167.57,
+   "end": 174.92,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "On the filter itself, I'll swap the filter on the water booster today. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 175.76,
+   "end": 180.66,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "So that one's definitely today, just not the same urgency as the pressure drop?"
+  },
+  {
+   "start": 182.55,
+   "end": 184.65,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly. Today, but not an emergency."
+  },
+  {
+   "start": 185.94,
+   "end": 191.19,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, Grace Liu for the water booster filter. Two separate jobs, not one duplicated line."
+  },
+  {
+   "start": 192.17,
+   "end": 198.47,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Olumide Adeyemi, can you recalibrate the sensors on the line 1 mould temp on the 3rd? Fairly important."
+  },
+  {
+   "start": 198.92,
+   "end": 203.12,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "On the 3rd, so Wednesday, yeah? Not pulling that into this morning?"
+  },
+  {
+   "start": 204.33,
+   "end": 208.53,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, on the 3rd. Fairly important, but that is the agreed timing."
+  },
+  {
+   "start": 208.85,
+   "end": 214.1,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, accepted. I'll recalibrate the sensors on the line 1 mould temp on the 3rd."
+  },
+  {
+   "start": 216.05,
+   "end": 220.25,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And that's a recalibration, rather than just checking what the display says?"
+  },
+  {
+   "start": 222.38,
+   "end": 225.18,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, recalibrate the sensors. That's what I'm taking."
+  },
+  {
+   "start": 225.82,
+   "end": 235.27,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Hannah, can you go to Northfield Substation to pick up the replacement parts for the Forklift Fleet tomorrow? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 236.13,
+   "end": 241.38,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, just to be clear, that's the collection we're agreeing, not fitting them as well?"
+  },
+  {
+   "start": 243.6,
+   "end": 249.55,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Just collection. Northfield Substation, replacement parts for the Forklift Fleet. Tomorrow, first because it's holding production up."
+  },
+  {
+   "start": 250.19,
+   "end": 257.54,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, I'll go to Northfield Substation to pick up the replacement parts for the Forklift Fleet tomorrow. I'll do that first."
+  },
+  {
+   "start": 259.62,
+   "end": 262.77,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Collection only against Hannah, then. No fitting job implied."
+  },
+  {
+   "start": 264.35,
+   "end": 268.2,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, the production hold is why that one's right up there."
+  },
+  {
+   "start": 270.35,
+   "end": 277.0,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I'll check the guarding on the IM1 after lunch. That's holding production up so it needs doing first."
+  },
+  {
+   "start": 278.76,
+   "end": 284.71,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Thanks, Hannah Price. IM1 guarding check after lunch, first in that slot because it's holding production up."
+  },
+  {
+   "start": 286.26,
+   "end": 289.76,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, that's what I mean. After lunch, that comes first."
+  },
+  {
+   "start": 290.14,
+   "end": 296.09,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right. And a check on the list isn't the same as saying it's already okay to run."
+  },
+  {
+   "start": 298.55,
+   "end": 302.75,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Absolutely. We've agreed the guarding check, not a result before it's happened."
+  },
+  {
+   "start": 305.05,
+   "end": 310.3,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I'll inspect the Boiler Feedwater Pump for leaks tomorrow as well. Normal priority for that."
+  },
+  {
+   "start": 310.87,
+   "end": 314.72,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Tomasz for the Boiler Feedwater Pump leak inspection, tomorrow, normal priority?"
+  },
+  {
+   "start": 315.7,
+   "end": 318.5,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's right. Separate from the urgent pressure-drop investigation."
+  },
+  {
+   "start": 319.18,
+   "end": 325.48,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I'll sort the permit to work and isolation for the Boiler Feedwater Pump by 11am. That's fairly important."
+  },
+  {
+   "start": 327.8,
+   "end": 333.4,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Thanks, Aisha. Permit to work and isolation for the Boiler Feedwater Pump by 11am, fairly important."
+  },
+  {
+   "start": 334.13,
+   "end": 338.33,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, both parts of that are mine. Not just the permit paperwork."
+  },
+  {
+   "start": 340.79,
+   "end": 343.94,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Understood. That doesn't change my leak inspection from tomorrow."
+  },
+  {
+   "start": 345.68,
+   "end": 349.18,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. Different timing for the two. The permit and isolation—"
+  },
+  {
+   "start": 351.5,
+   "end": 355.35,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, talking over you. You went all robot for a second."
+  },
+  {
+   "start": 357.24,
+   "end": 360.39,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "We lost half that sentence here too. Go again?"
+  },
+  {
+   "start": 362.61,
+   "end": 370.66,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Just the timings: Aisha's permit and isolation by 11am, Grace Liu's water booster filter today. The Boiler Feedwater Pump leak inspection is tomorrow."
+  },
+  {
+   "start": 372.36,
+   "end": 379.36,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And my two aren't competing in the same slot: IM1 guarding after lunch, Forklift Fleet parts from Northfield Substation tomorrow."
+  },
+  {
+   "start": 381.86,
+   "end": 388.86,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Both production holds, so first after lunch for the guarding, first tomorrow for the collection. That's how I've heard it."
+  },
+  {
+   "start": 390.54,
+   "end": 391.74,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, exactly."
+  },
+  {
+   "start": 393.63,
+   "end": 400.98,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Good. And just so the blocked bits don't creep into the agreed work: still no supplier confirmation for the cooling tower."
+  },
+  {
+   "start": 402.24,
+   "end": 406.79,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Same with GT2. No production window, still blocked. Nothing taken on against it."
+  },
+  {
+   "start": 408.9,
+   "end": 413.45,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And the fire panel stays in the finished column. Yesterday's test was fine."
+  },
+  {
+   "start": 415.69,
+   "end": 419.19,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Same for line 2. Finished yesterday, not another job today."
+  },
+  {
+   "start": 419.97,
+   "end": 424.52,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Right, that's the agreed list. Thanks, everyone. Teams has mostly behaved for once."
+  },
+  {
+   "start": 426.59,
+   "end": 427.99,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Unlike the flapjack, apparently."
+  },
+  {
+   "start": 429.36,
+   "end": 431.81,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "It had excellent load-bearing properties. Cheers, all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

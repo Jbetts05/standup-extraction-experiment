@@ -1,0 +1,736 @@
+{
+ "id": "a025",
+ "date": "2026-07-20",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p04",
+  "p07",
+  "p02",
+  "p10",
+  "p03",
+  "p06",
+  "p01"
+ ],
+ "chair_id": "p04",
+ "gold_tasks": [
+  {
+   "id": "a025-t1",
+   "summary": "Check the guarding on the Line 2 Pick and Place Robot",
+   "spoken_action": "check the guarding on the line 2 robot",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "line 2 robot",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-20",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "normal priority",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    16,
+    17,
+    18,
+    19,
+    34
+   ]
+  },
+  {
+   "id": "a025-t2",
+   "summary": "Book a contractor to look at the Stretch Wrapper",
+   "spoken_action": "book a contractor to look at the wrapper",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-27",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "low priority",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    48
+   ]
+  },
+  {
+   "id": "a025-t3",
+   "summary": "Chase the purchase order for the Forklift Fleet",
+   "spoken_action": "chase the purchase order for the forklifts",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "forklifts",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-20",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "normal priority",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    31,
+    32,
+    34
+   ]
+  },
+  {
+   "id": "a025-t4",
+   "summary": "Do the lock-out tag-out sign-off on the Boiler Safety Relief Valve",
+   "spoken_action": "do the lock-out tag-out sign-off on the Boiler Safety Relief Valve",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-20",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": "p07",
+   "evidence": [
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a025-t5",
+   "summary": "Order spare parts for the Palletiser",
+   "spoken_action": "order spare parts for the palletizer",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the palletizer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    46,
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "id": "a025-t6",
+   "summary": "Replace the seals on the Boiler Safety Relief Valve",
+   "spoken_action": "replace the seals on the relief valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "relief valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-20",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    42,
+    43
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "already swapped the filter on the Stretch Wrapper yesterday",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "Stretch Wrapper",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "signed off the inspection on the turbine one on Tuesday",
+   "component": {
+    "entity_id": "GT1",
+    "text": "turbine one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "heard a slight rattle from the line 2 interlock, nothing to action yet",
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "line 2 interlock",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the Fire Alarm Panel until production gives us a window",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "Fire Alarm Panel",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p03",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the Main Water Isolation Valve",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "Main Water Isolation Valve",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.32,
+   "end": 11.27,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Morning, everyone. Monday the twentieth. Can you hear me, or am I doing the Teams mime again?"
+  },
+  {
+   "start": 12.69,
+   "end": 19.34,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, you're there. Better than my weekend, anyway. Had plans for a barbecue and the weather absolutely did us."
+  },
+  {
+   "start": 20.88,
+   "end": 25.08,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's because you announced it. Never tell the British weather your intentions."
+  },
+  {
+   "start": 27.53,
+   "end": 32.08,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Next weekend's plans are indoors. Not falling for that little sunshine symbol again."
+  },
+  {
+   "start": 33.08,
+   "end": 40.08,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Talking of shiny things, whose new car is that in the car park? Very brave parking it under those trees."
+  },
+  {
+   "start": 41.03,
+   "end": 44.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Not mine. Mine's the one with more biscuit crumbs than upholstery."
+  },
+  {
+   "start": 46.22,
+   "end": 49.37,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Ah, factory specification. Mine's got that package as well."
+  },
+  {
+   "start": 50.92,
+   "end": 54.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, before we get onto finance options. Finished bits first?"
+  },
+  {
+   "start": 56.84,
+   "end": 61.39,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I already swapped the filter on the Stretch Wrapper yesterday. That's done."
+  },
+  {
+   "start": 61.99,
+   "end": 65.49,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Oh, right. I was looking at the old entry, then."
+  },
+  {
+   "start": 66.82,
+   "end": 69.97,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "You were, yeah. Nothing left on that filter change."
+  },
+  {
+   "start": 70.72,
+   "end": 77.37,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And I signed off the inspection on the turbine one on Tuesday. Last Tuesday, obviously. That's finished as well."
+  },
+  {
+   "start": 78.87,
+   "end": 82.02,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Lovely. Both historical, not more work for this morning."
+  },
+  {
+   "start": 83.64,
+   "end": 89.94,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Just an observation from me: heard a slight rattle from the line 2 interlock. Nothing to action yet."
+  },
+  {
+   "start": 90.88,
+   "end": 95.43,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just a little chatter, was it? Not calling for a job on it?"
+  },
+  {
+   "start": 96.05,
+   "end": 101.65,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Exactly. A slight rattle, that's all I'm reporting. No action off the back of that yet."
+  },
+  {
+   "start": 102.68,
+   "end": 107.93,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Separately, Sarah, can you check the guarding on the line 2 robot at half two?"
+  },
+  {
+   "start": 109.31,
+   "end": 113.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, I'll check the guarding on the line 2 robot at half two."
+  },
+  {
+   "start": 116.12,
+   "end": 120.32,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Normal priority on that. It's not an escalation from the rattle observation."
+  },
+  {
+   "start": 121.31,
+   "end": 123.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Normal priority, half two."
+  },
+  {
+   "start": 123.57,
+   "end": 130.57,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Before I forget, that charity bake sale on Friday was brilliant. Last Friday, I mean. Whoever did the lemon cake—"
+  },
+  {
+   "start": 131.44,
+   "end": 134.59,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "—accounted for most of your lunch? Yeah, we noticed."
+  },
+  {
+   "start": 136.19,
+   "end": 144.24,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Back to machinery, cake-powered or otherwise. Callum, can you book a contractor to look at the wrapper? Monday for the booking, low priority."
+  },
+  {
+   "start": 146.03,
+   "end": 151.63,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll book a contractor to look at the wrapper Monday, so today. Low priority, understood."
+  },
+  {
+   "start": 152.5,
+   "end": 156.7,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's the booking today, not expecting a contractor through the gate today?"
+  },
+  {
+   "start": 158.69,
+   "end": 163.59,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Correct. Monday is for making the booking. We're not agreeing an arrival time here."
+  },
+  {
+   "start": 164.23,
+   "end": 168.78,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fine, I've got the booking. And that's separate from the finished filter change."
+  },
+  {
+   "start": 170.2,
+   "end": 176.85,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "While we're on suppliers, the supplier still hasn't confirmed the delivery for the Main Water Isolation Valve. Still blocked."
+  },
+  {
+   "start": 178.24,
+   "end": 181.39,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "So that hasn't actually moved since the last update?"
+  },
+  {
+   "start": 182.64,
+   "end": 188.24,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No. No confirmed delivery. Just reporting the same blocker, not putting another job on today's list."
+  },
+  {
+   "start": 189.1,
+   "end": 191.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Okay, that stays as a blocker."
+  },
+  {
+   "start": 192.61,
+   "end": 197.86,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Saz, can you chase the purchase order for the forklifts today at 2pm? Normal priority."
+  },
+  {
+   "start": 199.71,
+   "end": 204.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, I'll chase the purchase order for the forklifts today at 2pm. Normal priority."
+  },
+  {
+   "start": 207.08,
+   "end": 210.58,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "You've got the afternoon in nice little slices, haven't you?"
+  },
+  {
+   "start": 211.97,
+   "end": 216.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Apparently. Purchase order at two, guarding at half two. Different things, both clear."
+  },
+  {
+   "start": 216.88,
+   "end": 222.83,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Aisha, can you do the lock-out tag-out sign-off on the Boiler Safety Relief Valve today at 2pm?"
+  },
+  {
+   "start": 224.94,
+   "end": 231.24,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, no, I can't take that sign-off. I'm not available at two, so don't put that against me."
+  },
+  {
+   "start": 233.48,
+   "end": 241.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, Callum, can you take that instead of Aisha: do the lock-out tag-out sign-off on the Boiler Safety Relief Valve today at 2pm?"
+  },
+  {
+   "start": 242.04,
+   "end": 249.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I can take it. I'll do the lock-out tag-out sign-off on the Boiler Safety Relief Valve today at 2pm."
+  },
+  {
+   "start": 250.21,
+   "end": 254.76,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And the relief valve seals—those are a separate item from that sign-off, yeah?"
+  },
+  {
+   "start": 256.51,
+   "end": 261.41,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, separate items. Don't merge them just because both have valve in the name."
+  },
+  {
+   "start": 263.66,
+   "end": 267.51,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, I'll replace the seals on the relief valve today."
+  },
+  {
+   "start": 268.62,
+   "end": 272.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Thanks, Olu. The relief valve seals are yours today, then."
+  },
+  {
+   "start": 272.83,
+   "end": 274.58,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, I'll do those today."
+  },
+  {
+   "start": 275.92,
+   "end": 282.22,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Got you. That's the distinction I was after; the short names can sound the same over this audio."
+  },
+  {
+   "start": 283.79,
+   "end": 288.69,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Cal, can you order spare parts for the palletizer as well? That's fairly important."
+  },
+  {
+   "start": 289.89,
+   "end": 294.09,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll order spare parts for the palletizer. Fairly important, got it."
+  },
+  {
+   "start": 296.47,
+   "end": 301.37,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, you clipped slightly. Was that the important one, rather than the contractor booking?"
+  },
+  {
+   "start": 302.51,
+   "end": 306.71,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yes. Spare parts for the palletizer: fairly important. Contractor booking: low priority."
+  },
+  {
+   "start": 308.74,
+   "end": 312.59,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's how I've got them. Parts order is mine as well."
+  },
+  {
+   "start": 314.96,
+   "end": 321.61,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "One blocker before we finish: I can't get to the Fire Alarm Panel until production gives us a window."
+  },
+  {
+   "start": 323.95,
+   "end": 329.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There isn't an agreed window at the moment. I can't give you a time on this call."
+  },
+  {
+   "start": 331.43,
+   "end": 336.33,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, so that stays parked. Not saying I'm doing the Fire Alarm Panel today."
+  },
+  {
+   "start": 338.69,
+   "end": 340.44,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Understood. Blocked, not another allocation."
+  },
+  {
+   "start": 342.56,
+   "end": 348.51,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Is anyone else getting every third word through a tin can, or is that just my headset?"
+  },
+  {
+   "start": 349.48,
+   "end": 353.33,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Bit of both, I reckon. Teams has decided we're all underwater."
+  },
+  {
+   "start": 355.6,
+   "end": 360.15,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "There's quite a lot of background noise at my end. Probably not helping."
+  },
+  {
+   "start": 361.05,
+   "end": 366.3,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "The actual decisions came through, anyway. It was mostly the cake discussion that broke up."
+  },
+  {
+   "start": 367.33,
+   "end": 372.93,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Probably for the best. Everyone clear on what they've accepted, and what's just blocked or finished?"
+  },
+  {
+   "start": 374.56,
+   "end": 375.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, all clear here."
+  },
+  {
+   "start": 376.47,
+   "end": 379.97,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Same here. No mystery jobs hiding in the cake chat."
+  },
+  {
+   "start": 380.82,
+   "end": 382.92,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good. That's us, then. Cheers, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

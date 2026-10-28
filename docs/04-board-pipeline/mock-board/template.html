@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stand-up task board</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    let stored = null;
+    try { stored = localStorage.getItem("boardTheme"); } catch (e) { /* storage blocked on file:// in some browsers */ }
+    const theme =
+      param || stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+:root, html[data-theme="dark"] {
+  --fs-s: 12px; --fs-m: 15px; --fs-l: 19px;
+  --ok-soft: color-mix(in srgb, var(--cp-success) 16%, transparent);
+  --bad-soft: color-mix(in srgb, var(--cp-danger) 14%, transparent);
+  --warn-soft: color-mix(in srgb, var(--cp-warning) 18%, transparent);
+  --card-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--cp-bg); color: var(--cp-text); font: var(--fs-m)/1.45 "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+.mono { font-family: Consolas, "Courier New", Courier, monospace; font-size: var(--fs-s); }
+.muted { color: var(--cp-text-muted); } .small { font-size: var(--fs-s); } .tiny { font-size: var(--fs-s); }
+button, select { font: inherit; }
+
+header.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 10px 20px; background: var(--cp-bg-elevated); border-bottom: 1px solid var(--cp-border); }
+.brand { font-weight: 700; display: flex; align-items: center; gap: 9px; white-space: nowrap; }
+.brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--cp-accent); display: inline-block; }
+.ctl { display: flex; align-items: center; gap: 6px; font-size: var(--fs-m); color: var(--cp-text-muted); }
+select { font-size: var(--fs-m); padding: 5px 9px; border-radius: 10px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); }
+.btn { border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); font-size: var(--fs-m); padding: 5px 11px; border-radius: 10px; cursor: pointer; }
+.btn:hover:not(:disabled) { border-color: var(--cp-border-strong); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn.on { background: var(--cp-accent); border-color: var(--cp-accent); color: var(--cp-accent-fg); }
+.btn.small { font-size: var(--fs-s); padding: 4px 10px; width: 100%; }
+.spacer { flex: 1; }
+
+.intro { padding: 12px 20px 0; max-width: 1500px; margin: 0 auto; }
+.intro p { margin: 0; color: var(--cp-text-muted); font-size: var(--fs-m); }
+.stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.stat { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 10px; padding: 6px 11px; font-size: var(--fs-s); }
+.stat b { font-size: var(--fs-l); margin-right: 4px; font-variant-numeric: tabular-nums; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; padding: 14px 20px 60px; max-width: 1500px; margin: 0 auto; align-items: start; }
+@media (max-width: 1150px) { .layout { grid-template-columns: 1fr; } }
+.board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 820px) { .board { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.col { background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 16px; padding: 10px; min-height: 240px; }
+.col h2 { font-size: var(--fs-s); text-transform: uppercase; letter-spacing: .07em; margin: 2px 4px 10px; display: flex; justify-content: space-between; align-items: center; }
+.col h2 span { color: var(--cp-text-muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.empty { color: var(--cp-text-soft); font-size: var(--fs-s); padding: 6px 4px; }
+
+.kcard { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 12px; box-shadow: var(--card-shadow); margin-bottom: 8px; overflow: hidden; }
+.kcard.today { border-color: var(--cp-accent); }
+.kcard.old { opacity: .62; }
+.kcard.ghost { background: transparent; box-shadow: none; border: 1.5px dashed var(--cp-danger); }
+.kcard.extra { border: 1.5px dashed var(--cp-warning); }
+.khead { display: block; width: 100%; text-align: left; background: none; border: 0; color: inherit; padding: 9px 11px; cursor: pointer; }
+.khead:focus-visible { outline: 2px solid var(--cp-accent); outline-offset: -2px; border-radius: 12px; }
+.krow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ksum { font-weight: 600; margin: 5px 0 6px; line-height: 1.3; }
+.kcard.cancelled .ksum { text-decoration: line-through; color: var(--cp-text-muted); }
+.kmeta { font-size: var(--fs-s); color: var(--cp-text-muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.who { display: inline-flex; align-items: center; gap: 5px; color: var(--cp-text); }
+.av { width: 22px; height: 22px; border-radius: 50%; background: var(--cp-accent-soft); color: var(--cp-accent); font-size: var(--fs-s); font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+.av.none { background: var(--cp-surface-soft); color: var(--cp-text-soft); border: 1px dashed var(--cp-border-strong); }
+.chip { display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border-radius: 999px; font-size: var(--fs-s); background: var(--cp-surface-soft); border: 1px solid var(--cp-border); color: var(--cp-text-muted); white-space: nowrap; }
+.chip.p1 { background: var(--bad-soft); border-color: transparent; color: var(--cp-text); }
+.chip.p2 { background: var(--warn-soft); border-color: transparent; color: var(--cp-text); }
+.chip.acc { background: var(--cp-accent-soft); border-color: transparent; color: var(--cp-accent); font-weight: 600; }
+.chip.ok { background: var(--ok-soft); border-color: transparent; color: var(--cp-text); }
+.chip.bad { background: var(--bad-soft); border-color: transparent; color: var(--cp-text); }
+.chip.warn { background: var(--warn-soft); border-color: transparent; color: var(--cp-text); }
+.check { font-size: var(--fs-s); padding: 6px 11px; border-top: 1px solid var(--cp-border); }
+.check.ok { background: var(--ok-soft); } .check.bad { background: var(--bad-soft); } .check.warn { background: var(--warn-soft); }
+.kmore { border-top: 1px solid var(--cp-border); padding: 9px 11px; font-size: var(--fs-s); }
+.kmore dl { display: grid; grid-template-columns: 82px 1fr; gap: 3px 8px; margin: 0 0 10px; }
+.kmore dt { color: var(--cp-text-muted); } .kmore dd { margin: 0; }
+.hist { list-style: none; margin: 0; padding: 0; }
+.hist li { padding: 6px 0 6px 12px; border-left: 2px solid var(--cp-border); position: relative; }
+.hist li::before { content: ""; position: absolute; left: -5px; top: 11px; width: 8px; height: 8px; border-radius: 50%; background: var(--cp-accent); }
+.hist q { display: block; color: var(--cp-text-muted); margin-top: 2px; font-style: italic; }
+.hist q::before, .hist q::after { content: ""; }
+
+aside .panel { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; padding: 14px 16px; box-shadow: var(--card-shadow); margin-bottom: 12px; }
+aside h2 { font-size: var(--fs-l); margin: 0 0 4px; }
+.changes { list-style: none; margin: 10px 0 0; padding: 0; }
+.changes li { padding: 8px 0; border-top: 1px solid var(--cp-border); }
+.changes li:first-child { border-top: 0; }
+.changes .what { display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; }
+.changes .note { color: var(--cp-text-muted); font-size: var(--fs-s); margin-top: 2px; }
+.linkish { background: none; border: 0; padding: 0; color: var(--cp-link); cursor: pointer; text-align: left; font-size: inherit; }
+.linkish:hover { text-decoration: underline; }
+details.tx > summary { cursor: pointer; font-weight: 600; }
+details.why { margin-top: 14px; border-top: 1px solid var(--cp-border); padding-top: 10px; }
+details.why > summary { cursor: pointer; font-weight: 600; margin-bottom: 4px; }
+.whylist { list-style: none; margin: 8px 0 0; padding: 0; }
+.whylist li { padding: 8px 0; border-top: 1px solid var(--cp-border); font-size: var(--fs-s); }
+.whylist .what { display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; }
+.whylist q { display: block; color: var(--cp-text-muted); font-style: italic; margin: 3px 0; }
+.whylist q::before, .whylist q::after { content: ""; }
+.whylist .step { margin-top: 3px; }
+.whylist .lbl { display: inline-block; min-width: 64px; color: var(--cp-text-muted); font-weight: 600; }
+.whylist li.why-ignore { opacity: .72; }
+.turns { max-height: 520px; overflow: auto; margin-top: 10px; font-size: var(--fs-s); }
+.turn { padding: 4px 6px; border-radius: 8px; }
+.turn.ev { background: var(--cp-highlight); }
+.turn .tag { font-size: var(--fs-s); color: var(--cp-accent); font-weight: 600; margin-left: 4px; }
+.legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; font-size: var(--fs-s); color: var(--cp-text-muted); }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><i></i>Stand-up task board</div>
+  <label class="ctl">Team <select id="series" aria-label="Team"></select></label>
+  <div class="ctl">
+    <button class="btn" id="prev" aria-label="Previous stand-up">&larr;</button>
+    <select id="day" aria-label="Stand-up"></select>
+    <button class="btn" id="next" aria-label="Next stand-up">&rarr;</button>
+  </div>
+  <label class="ctl">Person <select id="person" aria-label="Filter by person"></select></label>
+  <button class="btn" id="compare" aria-pressed="false">Compare with answer key</button>
+  <div class="spacer"></div>
+  <div class="tiny muted" id="pipeline"></div>
+  <a class="small" href="../trace-explorer/index.html">Dataset &amp; traces</a>
+  <button class="btn" id="theme"></button>
+</header>
+
+<div class="intro">
+  <p id="introText">The board the pipeline built from the stand-ups so far. Each stand-up, Step&nbsp;1 pulls out everything that was said,
+    Step&nbsp;2 pulls each person's open cards from the board, Step&nbsp;3 picks the matching card, and fixed rules create, update or ignore.
+    The next stand-up starts from this board. Open <b>How it decided</b> in the side panel to see why each change was made.</p>
+  <div class="stats" id="stats"></div>
+</div>
+
+<div class="layout">
+  <section class="board" id="board" aria-label="Task board"></section>
+  <aside>
+    <div class="panel" id="today"></div>
+    <div class="panel"><details class="tx" id="tx"><summary>Transcript</summary><div class="turns" id="turns"></div></details></div>
+  </aside>
+</div>
+
+<script id="payload" type="application/octet-stream">__DATA_GZ_B64__</script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const pct = x => x == null ? "–" : `${Math.round(100 * x)}%`;
+const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtDate = iso => { if (!iso) return ""; const d = new Date(iso + "T12:00:00"); return `${DOW[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`; };
+const COLS = [["todo", "To do"], ["in_progress", "In progress"], ["blocked", "Blocked"], ["done", "Done"]];
+const KIND = {create: "New card", progress: "Progress", blocked: "Blocked", done: "Done", cancelled: "Cancelled",
+  reassigned: "Reassigned", due_changed: "New due date", comment: "Comment"};
+const FIELD = {owner_id: "owner", component_id: "equipment", site_id: "site", due_date: "due date", priority: "priority", category: "category",
+  owner: "owner", component: "equipment", site: "site"};
+let D, S = {s: 0, d: 0, person: "all", compare: false, showOld: false, open: new Set()};
+
+const person = id => id ? (D.people[id] || id) : "Unassigned";
+const initials = id => id ? person(id).split(/\s+/).map(w => w[0]).join("").slice(0, 2) : "?";
+const asset = id => id ? (D.assets[id]?.name || id) : null;
+const colOf = status => status === "cancelled" ? "done" : status;
+const series = () => D.series[S.s];
+const day = () => series().days[S.d];
+const dayNo = id => { const d = series().days.find(x => x.id === id); return d ? d.day : "?"; };
+
+function who(id) {
+  return `<span class="who"><span class="av ${id ? "" : "none"}" aria-hidden="true">${esc(initials(id))}</span>${esc(person(id))}</span>`;
+}
+
+function fieldValue(card, f) {
+  const v = card[f];
+  if (f === "owner_id") return person(v);
+  if (f === "component_id") return asset(v) || "none";
+  if (f === "site_id") return v ? D.sites[v] : "none";
+  if (f === "due_date") return v ? fmtDate(v) + (card.due_time ? ` ${card.due_time}` : "") : "none";
+  if (f === "priority") return v ? `P${v}` : "none";
+  return v || "none";
+}
+
+// ---------------------------------------------------------------- overlay
+function overlayFor(card, ctx) {
+  if (!S.compare || !ctx) return "";
+  const gid = ctx.score.mapping[card.id];
+  if (!gid) return `<div class="check warn"><b>Extra card.</b> Not in the answer key (for example a job split in two, or not really a new job).</div>`;
+  const c = ctx.score.cards[gid], g = ctx.gold[gid];
+  if (!c || !g) return "";
+  if (c.ok) return `<div class="check ok">&#10003; Matches the answer key</div>`;
+  const bits = [];
+  if (!c.status_ok) bits.push(`status should be <b>${esc(labelStatus(g.status))}</b>`);
+  for (const f of c.wrong) bits.push(`${FIELD[f]} should be <b>${esc(fieldValue(g, f))}</b>`);
+  return `<div class="check bad">&#10007; ${bits.join("; ")}</div>`;
+}
+const labelStatus = s => ({todo: "To do", in_progress: "In progress", blocked: "Blocked", done: "Done", cancelled: "Cancelled"}[s] || s);
+
+// ------------------------------------------------------------------- cards
+function cardHtml(card, ctx, {ghost = false} = {}) {
+  const d = day();
+  const today = card.updated_in === d.id;
+  const isNew = card.created_in === d.id;
+  const cls = ["kcard", card.status === "cancelled" ? "cancelled" : "", ghost ? "ghost" : "",
+    !ghost && S.compare && ctx && !ctx.score.mapping[card.id] ? "extra" : "",
+    today && !ghost ? "today" : "", colOf(card.status) === "done" && !today && !ghost ? "old" : ""].join(" ");
+  const key = (ghost ? "g:" : "p:") + card.id;
+  const open = S.open.has(key);
+  const badge = ghost ? `<span class="chip bad">Missed by the pipeline</span>`
+    : isNew ? `<span class="chip acc">New today</span>` : today ? `<span class="chip acc">Updated today</span>` : "";
+  const status = card.status === "cancelled" ? `<span class="chip">Cancelled</span>` : "";
+  const meta = [NUM[card.id] && !ghost && `<span class="mono">${esc(num(card.id))}</span>`, who(card.owner_id),
+    asset(card.component_id) && `<span>${esc(asset(card.component_id))}</span>`,
+    card.due_date && `<span>Due ${esc(fmtDate(card.due_date))}${card.due_time ? " " + esc(card.due_time) : ""}</span>`].filter(Boolean).join("");
+  let more = "";
+  if (open) {
+    const hist = (card.history || []).map(h => `<li><b>${esc(KIND[h.kind] || h.kind)}</b> · day ${esc(dayNo(h.day_id))}, ${esc(fmtDate(h.date))}
+        ${h.speaker_id ? ` · ${esc(person(h.speaker_id))}` : ""}${h.confidence != null && !ghost ? ` · confidence ${Math.round(100 * h.confidence)}%` : ""}
+        <div>${esc(h.text)}</div>${h.quote ? `<q>“${esc(h.quote)}”</q>` : ""}</li>`).join("");
+    more = `<div class="kmore"><dl>
+        <dt>Status</dt><dd>${esc(labelStatus(card.status))}</dd>
+        <dt>Owner</dt><dd>${esc(person(card.owner_id))}</dd>
+        <dt>Equipment</dt><dd>${esc(fieldValue(card, "component_id"))}${card.component_id && D.assets[card.component_id]?.parent ? ` <span class="muted">(${esc(asset(D.assets[card.component_id].parent))})</span>` : ""}</dd>
+        <dt>Site</dt><dd>${esc(fieldValue(card, "site_id"))}</dd>
+        <dt>Due</dt><dd>${esc(fieldValue(card, "due_date"))}</dd>
+        <dt>Priority</dt><dd>${esc(fieldValue(card, "priority"))} · ${esc(card.category || "")}</dd>
+        <dt>Card</dt><dd class="mono">${esc(card.id)}</dd></dl>
+      <div class="tiny muted" style="margin-bottom:4px">History${ghost ? " (answer key)" : ""}</div><ul class="hist">${hist}</ul></div>`;
+  }
+  return `<article class="${cls}" id="card-${esc(key)}">
+    <button class="khead" data-key="${esc(key)}" aria-expanded="${open}">
+      <div class="krow"><span class="chip ${card.priority === 1 ? "p1" : card.priority === 2 ? "p2" : ""}">P${esc(card.priority ?? "?")}</span>
+        <span class="chip">${esc(card.category || "?")}</span>${status}${badge}</div>
+      <div class="ksum">${esc(card.summary)}</div>
+      <div class="kmeta">${meta}</div>
+    </button>${ghost ? "" : overlayFor(card, ctx)}${more}</article>`;
+}
+
+function ctxFor(d) {
+  if (!d.pred) return null;
+  return {score: d.pred.score, gold: Object.fromEntries(d.gold.board.map(c => [c.id, c]))};
+}
+
+function matchesPerson(card) {
+  if (S.person === "all") return true;
+  if (S.person === "none") return !card.owner_id;
+  return card.owner_id === S.person;
+}
+
+function renderBoard() {
+  const d = day(), ctx = ctxFor(d);
+  const cards = (d.pred ? d.pred.board : []).filter(matchesPerson);
+  const ghosts = S.compare && ctx ? d.gold.board.filter(g => !ctx.score.cards[g.id]?.pred).filter(matchesPerson) : [];
+  const sort = list => list.slice().sort((a, b) => {
+    const ta = a.updated_in === d.id ? 0 : 1, tb = b.updated_in === d.id ? 0 : 1;
+    return ta - tb || (b.updated_in || "").localeCompare(a.updated_in || "") || a.id.localeCompare(b.id);
+  });
+  $("#board").innerHTML = COLS.map(([key, label]) => {
+    let mine = sort(cards.filter(c => colOf(c.status) === key));
+    const miss = ghosts.filter(g => colOf(g.status) === key);
+    let more = "";
+    if (key === "done") {
+      const older = mine.filter(c => c.updated_in !== d.id);
+      if (older.length && !S.showOld) {
+        mine = mine.filter(c => c.updated_in === d.id);
+        more = `<button class="btn small" id="old">Show ${older.length} done earlier</button>`;
+      } else if (older.length) {
+        more = `<button class="btn small" id="old">Hide ${older.length} done earlier</button>`;
+      }
+    }
+    const count = cards.filter(c => colOf(c.status) === key).length;
+    const body = mine.map(c => cardHtml(c, ctx)).join("") + miss.map(g => cardHtml(g, ctx, {ghost: true})).join("") + more;
+    return `<div class="col"><h2>${label}<span>${count}${miss.length ? ` +${miss.length} missed` : ""}</span></h2>${body || `<div class="empty">Nothing here.</div>`}</div>`;
+  }).join("");
+}
+
+// ----------------------------------------------------------- today's changes
+function outcomeChip(k, ctx) {
+  if (!S.compare || !ctx) return "";
+  const u = ctx.score.updates.find(x => x.event === k);
+  if (u) {
+    if (u.outcome === "exact") return `<span class="chip ok">&#10003; right</span>`;
+    if (u.outcome === "wrong_change") return `<span class="chip bad">&#10007; should be ${esc(KIND[u.kind].toLowerCase())}</span>`;
+    return `<span class="chip warn">right card, wrong ${u.kind === "reassigned" ? "person" : "date"}</span>`;
+  }
+  const x = ctx.score.extra_events.find(x => x.event === k);
+  if (x) return x.false_close ? `<span class="chip bad">&#10007; false close</span>` : `<span class="chip warn">not in answer key</span>`;
+  return "";
+}
+
+function createChip(cardId, ctx) {
+  if (!S.compare || !ctx) return "";
+  const c = ctx.score.creates.find(x => x.pred === cardId);
+  if (!c) return "";
+  if (c.outcome === "matched") return c.wrong.length ? `<span class="chip warn">wrong ${esc(c.wrong.map(f => FIELD[f] || f).join(", "))}</span>` : `<span class="chip ok">&#10003; right</span>`;
+  return c.outcome === "duplicate" ? `<span class="chip bad">&#10007; duplicate of an existing card</span>` : `<span class="chip warn">extra card</span>`;
+}
+
+function cardName(id, d) {
+  const all = [...(d.pred?.board || [])];
+  return all.find(c => c.id === id)?.summary || id;
+}
+
+// ------------------------------------------------------ how it decided (context pipeline)
+const SAID_CLS = {new: "acc", done: "ok", blocked: "bad", reassigned: "warn", due_changed: "warn"};
+const ACTION = {create: "Created", update: "Updated", comment: "Commented on", ignore: "Ignored"};
+
+function renderWhy(why, d) {
+  const byId = Object.fromEntries((d.pred.board || []).map(c => [c.id, c]));
+  const cardBtn = id => `<button class="linkish" data-jump="p:${esc(id)}">${esc(num(id))} ${esc(byId[id]?.summary || id)}</button>`;
+  const rows = why.decisions.map(dec => {
+    const m = why.mentions[dec.mention];
+    const ctx = dec.context_card_ids.length
+      ? dec.context_card_ids.map(id => id === dec.matched_card_id ? `<b>${cardBtn(id)} &#10003;</b>` : cardBtn(id)).join(", ")
+      : `<span class="muted">none on the board</span>`;
+    return `<li class="why-${esc(dec.action)}">
+      <div class="what"><span class="chip ${SAID_CLS[m.said] || ""}">said: ${esc(m.said.replace("_", " "))}</span>
+        <b>${esc(person(m.speaker_id))}</b> · ${esc(m.summary)}</div>
+      <q>“${esc(m.quote)}”</q>
+      <div class="step"><span class="lbl">Context</span>${ctx}</div>
+      <div class="step"><span class="lbl">Decision</span><b>${esc(ACTION[dec.action] || dec.action)}</b> ${dec.card_id ? cardBtn(dec.card_id) : ""}
+        ${dec.pick_reason ? `<div>Model's reason: “${esc(dec.pick_reason)}”</div>` : ""}
+        <div class="muted">${esc(dec.rule)}</div></div></li>`;
+  });
+  return `<details class="why" open><summary>How it decided · ${why.decisions.length} things said</summary>
+    <div class="small muted">Step 1 extracted what was said. Step 2 pulled that person's open cards and cards on the same equipment
+      from the board. Step 3 picked the match (&#10003;), and a fixed rule decided what to do.</div>
+    <ol class="whylist">${rows.join("")}</ol></details>`;
+}
+
+function renderToday() {
+  const d = day(), ctx = ctxFor(d), p = d.pred;
+  const team = series().team, absent = team.filter(t => !d.attendees.includes(t));
+  const head = `<h2>Stand-up ${d.day} · ${esc(fmtDate(d.date))}</h2>
+    <div class="small muted">Chaired by ${esc(person(d.chair))}. ${absent.length ? `Off today: ${absent.map(a => esc(person(a))).join(", ")}.` : "Everyone there."}</div>`;
+  if (!p) { $("#today").innerHTML = head + `<p class="small">No pipeline run for this stand-up.</p>`; return; }
+  if (p.error) { $("#today").innerHTML = head + `<p class="small">The pipeline failed on this stand-up: ${esc(p.error)}</p>`; return; }
+  const counts = {};
+  p.events.forEach(e => { counts[e.kind] = (counts[e.kind] || 0) + 1; });
+  const SHORT = {create: "new", progress: "progress", blocked: "blocked", done: "done", cancelled: "cancelled",
+    reassigned: "reassigned", due_changed: "re-dated", comment: "comment"};
+  const summary = Object.entries(counts).map(([k, n]) => `${n} ${SHORT[k]}${k === "comment" && n > 1 ? "s" : ""}`).join(" · ") || "no changes";
+  const items = p.events.map((e, k) => {
+    const title = e.kind === "create" ? e.summary : cardName(e.card_id, d);
+    const extra = e.kind === "reassigned" ? ` → ${esc(person(e.owner_id))}` : e.kind === "due_changed" ? ` → ${esc(fmtDate(e.due_date))}` : "";
+    const chip = e.kind === "create" ? createChip(e.card_id, ctx) : e.kind === "comment" ? "" : outcomeChip(k, ctx);
+    return `<li><div class="what"><b>${esc(KIND[e.kind])}${extra}</b> ${chip}</div>
+      <button class="linkish" data-jump="p:${esc(e.card_id)}">${esc(title)}</button>
+      ${e.note ? `<div class="note">${esc(e.note)}</div>` : ""}
+      ${e.kind === "create" && e.owner_id !== undefined ? `<div class="note">Owner: ${esc(person(e.owner_id))}</div>` : ""}</li>`;
+  });
+  if (S.compare && ctx) {
+    const goldCards = Object.fromEntries(d.gold.board.map(c => [c.id, c]));
+    for (const u of ctx.score.updates.filter(x => x.outcome === "missed")) {
+      const g = d.gold.updates.find(x => x.id === u.gold);
+      items.push(`<li><div class="what"><b>Missed: ${esc(KIND[u.kind].toLowerCase())}</b> <span class="chip bad">&#10007; missed</span></div>
+        <div>${esc(goldCards[u.card]?.summary || u.card)}</div>${g?.note ? `<div class="note">${esc(g.note)}</div>` : ""}</li>`);
+    }
+    for (const c of ctx.score.creates.filter(x => x.outcome === "missed")) {
+      const g = d.gold.creates.find(x => x.id === c.gold);
+      items.push(`<li><div class="what"><b>Missed new job</b> <span class="chip bad">&#10007; missed</span></div><div>${esc(g?.summary || c.gold)}</div></li>`);
+    }
+  }
+  const acc = ctx ? `<div class="legend"><span><b>${pct(ctx.score.board_accuracy)}</b> of cards match the answer key after this stand-up.</span></div>` : "";
+  $("#today").innerHTML = head + `<div class="small" style="margin-top:8px"><b>Changes:</b> ${esc(summary)}</div>${S.compare ? acc : ""}<ul class="changes">${items.join("")}</ul>`
+    + (p.why ? renderWhy(p.why, d) : "");
+}
+
+function renderTranscript() {
+  const d = day();
+  const tags = {};
+  if (S.compare) {
+    d.gold.creates.forEach((t, i) => t.evidence.forEach(n => (tags[n] = tags[n] || new Set()).add("new job")));
+    d.gold.updates.forEach(u => u.evidence.forEach(n => (tags[n] = tags[n] || new Set()).add(KIND[u.kind].toLowerCase())));
+  }
+  $("#turns").innerHTML = d.transcript.map((u, i) => {
+    const t = tags[i];
+    const mm = String(Math.floor(u.t / 60)).padStart(2, "0"), ss = String(u.t % 60).padStart(2, "0");
+    return `<div class="turn ${t ? "ev" : ""}"><span class="mono muted">${mm}:${ss}</span> <b>${esc(person(u.who))}:</b> ${esc(u.text)}${t ? `<span class="tag">${esc([...t].join(", "))}</span>` : ""}</div>`;
+  }).join("") + (S.compare ? `<div class="legend">Highlighted turns are where the answer key says a new job or an update was said.</div>` : "");
+}
+
+function renderStats() {
+  const m = D.meta.metrics, st = m.steps;
+  const stats = [
+    [pct(m.update_recall), "of updates exactly right"],
+    [pct(m.update_right_card), "linked to the right card"],
+    [`${m.false_closes}/${m.pred_closes}`, "closes were wrong"],
+    [pct(m.create_dashboard_ready), "of new jobs with every field right (step 1)"],
+    [pct(m.board_accuracy_final), "of cards right after the last stand-up"],
+    [`$${(m.cost_per_stand_up || 0).toFixed(4)}`, "per stand-up"],
+    ...(st ? [[pct(st.step2_context_recall), "right card in context (step 2)"], [pct(st.step3_pick_accuracy), "right pick (step 3)"]] : []),
+  ];
+  $("#stats").innerHTML = stats.map(([v, l]) => `<div class="stat"><b>${esc(v)}</b>${esc(l)}</div>`).join("")
+    + `<div class="stat muted">${esc(D.series.length)} teams × ${esc(D.series[0].days.length)} stand-ups, all teams pooled</div>`;
+  $("#pipeline").textContent = `${D.meta.pipeline === "whole-board" ? "v0: whole-board update check" : "POC: board-context pipeline"} · ${D.meta.model}`;
+  if (D.meta.pipeline === "whole-board") $("#introText").textContent = "The board the v0 pipeline built from the stand-ups so far. Each stand-up, "
+    + "step 1 (the existing extractor and matcher) adds new jobs, and step 2 checks the transcript against the open cards to close, comment on, "
+    + "block, reassign or re-date them. The next stand-up starts from this board.";
+}
+
+let NUM = {};
+function numberCards() {
+  for (const s of D.series) {
+    const last = [...s.days].reverse().find(x => x.pred)?.pred.board || [];
+    [...last].sort((a, b) => (a.created_in || "").localeCompare(b.created_in || "") || a.id.localeCompare(b.id))
+      .forEach((c, i) => { NUM[c.id] = i + 1; });
+  }
+}
+const num = id => NUM[id] ? `#${NUM[id]}` : "";
+
+function renderControls() {
+  const s = series();
+  $("#series").innerHTML = D.series.map((x, i) => `<option value="${i}" ${i === S.s ? "selected" : ""}>Team ${i + 1} · ${esc(fmtDate(x.days[0].date))} to ${esc(fmtDate(x.days[x.days.length - 1].date))}</option>`).join("");
+  $("#day").innerHTML = s.days.map((x, i) => `<option value="${i}" ${i === S.d ? "selected" : ""}>Stand-up ${x.day} · ${esc(fmtDate(x.date))}</option>`).join("");
+  $("#person").innerHTML = [`<option value="all">Everyone</option>`, ...s.team.map(p => `<option value="${p}">${esc(person(p))}</option>`), `<option value="none">Unassigned</option>`]
+    .map(o => o.replace(`value="${S.person}"`, `value="${S.person}" selected`)).join("");
+  $("#prev").disabled = S.d === 0;
+  $("#next").disabled = S.d === s.days.length - 1;
+  $("#compare").classList.toggle("on", S.compare);
+  $("#compare").setAttribute("aria-pressed", S.compare);
+}
+
+function render() { renderControls(); renderBoard(); renderToday(); renderTranscript(); }
+
+function go(delta) {
+  const n = series().days.length;
+  S.d = Math.max(0, Math.min(n - 1, S.d + delta));
+  render();
+}
+
+function jump(key) {
+  S.open.add(key);
+  render();
+  const el = document.getElementById(`card-${key}`);
+  if (el) { el.scrollIntoView({behavior: "smooth", block: "center"}); el.querySelector(".khead")?.focus({preventScroll: true}); }
+}
+
+function renderTheme() {
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  $("#theme").textContent = dark ? "Light mode" : "Dark mode";
+  $("#theme").setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+}
+
+async function boot() {
+  renderTheme();
+  $("#theme").addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("boardTheme", next); } catch (e) { /* not persisted; still switches */ }
+    renderTheme();
+  });
+  const bytes = Uint8Array.from(atob($("#payload").textContent.trim()), c => c.charCodeAt(0));
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+  D = JSON.parse(await new Response(stream).text());
+  $("#series").addEventListener("change", e => { S.s = +e.target.value; S.d = 0; S.person = "all"; S.open.clear(); render(); });
+  $("#day").addEventListener("change", e => { S.d = +e.target.value; render(); });
+  $("#person").addEventListener("change", e => { S.person = e.target.value; render(); });
+  $("#prev").addEventListener("click", () => go(-1));
+  $("#next").addEventListener("click", () => go(1));
+  $("#compare").addEventListener("click", () => { S.compare = !S.compare; render(); });
+  $("#board").addEventListener("click", e => {
+    if (e.target.closest("#old")) { S.showOld = !S.showOld; renderBoard(); $("#old")?.focus(); return; }
+    const b = e.target.closest(".khead"); if (!b) return;
+    const k = b.dataset.key; S.open.has(k) ? S.open.delete(k) : S.open.add(k);
+    renderBoard();
+    document.querySelector(`[data-key="${CSS.escape(k)}"]`)?.focus();
+  });
+  $("#today").addEventListener("click", e => { const b = e.target.closest("[data-jump]"); if (b) jump(b.dataset.jump); });
+  document.addEventListener("keydown", e => {
+    if (e.target.closest("select")) return;
+    if (e.key === "ArrowLeft") go(-1);
+    if (e.key === "ArrowRight") go(1);
+  });
+  numberCards();
+  renderStats();
+  render();
+}
+boot();
+</script>
+</body>
+</html>

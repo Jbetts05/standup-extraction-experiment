@@ -1,0 +1,784 @@
+{
+ "id": "a068",
+ "date": "2026-05-01",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p08",
+  "p02",
+  "p09",
+  "p05",
+  "p10",
+  "p07"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a068-t1",
+   "summary": "Take vibration readings on the Line 3 Screw and Barrel",
+   "spoken_action": "take vibration readings on the line 3 barrel",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah Okafor",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-06",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": "p05",
+   "evidence": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+   ]
+  },
+  {
+   "id": "a068-t2",
+   "summary": "Order spare parts for the Water Booster Pump",
+   "spoken_action": "order spare parts for the Water Booster Pump",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marc",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-02",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a068-t3",
+   "summary": "Run a function test on the 11kV Switchboard",
+   "spoken_action": "run a function test on the 11kV board",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-01",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "id": "a068-t4",
+   "summary": "Sort the permit to work and isolation for the Injection Moulding Line 2",
+   "spoken_action": "sort the permit to work and isolation for the line 2",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "line 2",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-04",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "id": "a068-t5",
+   "summary": "Clear the jam and check the sensors on the Palletiser",
+   "spoken_action": "clear the jam and check the sensors on the palletizer",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the palletizer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-02",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    42,
+    43,
+    47,
+    48
+   ]
+  },
+  {
+   "id": "a068-t6",
+   "summary": "Do the lock-out tag-out sign-off on the Boiler Safety Relief Valve",
+   "spoken_action": "do the lock-out tag-out sign-off on the Boiler Safety Relief Valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-01",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "it's urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "id": "a068-t7",
+   "summary": "Update the risk assessment for work on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "update the risk assessment for work on the GT2 inlet valve",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 inlet valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-02",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    16,
+    44,
+    45,
+    46,
+    47,
+    48
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p07",
+   "text_hint": "already swapped the filter on the outfeed conveyor yesterday",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "outfeed conveyor",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "already swapped the filter on the relief valve yesterday",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "relief valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p09",
+   "text_hint": "heard a slight rattle from the GT2 bearing, nothing to action yet",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 bearing",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p07",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the GT2 Inlet Water Injection Valve",
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 Inlet Water Injection Valve",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p01",
+   "text_hint": "the shutdown on the line 2 guard is cancelled now, production need it running",
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "line 2 guard",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.28,
+   "end": 9.23,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, all. Friday, first of May. Everyone on? I've got seven little squares and about three ceilings."
+  },
+  {
+   "start": 9.87,
+   "end": 15.82,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, here. The heating in the portakabin is having a laugh. It's either tropical or absolutely Baltic."
+  },
+  {
+   "start": 16.75,
+   "end": 20.95,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "That's the temperature control: open the door, regret it, shut the door."
+  },
+  {
+   "start": 21.96,
+   "end": 25.46,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Pretty much. Anyway, that's a moan, not a maintenance request."
+  },
+  {
+   "start": 26.53,
+   "end": 33.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Before we start, the charity bake sale on Friday—that's today, despite what my brain says. Purely a reminder, no baking assignments."
+  },
+  {
+   "start": 35.78,
+   "end": 38.58,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Good. My contribution would need a COSHH sheet."
+  },
+  {
+   "start": 39.7,
+   "end": 42.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Quite. Right, yesterday's bits first, then the actual work."
+  },
+  {
+   "start": 43.31,
+   "end": 49.61,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I've already swapped the filter on the outfeed conveyor yesterday. That's finished, not something still hanging over today."
+  },
+  {
+   "start": 51.46,
+   "end": 52.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely, closed off then."
+  },
+  {
+   "start": 54.17,
+   "end": 59.42,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I've already swapped the filter on the relief valve yesterday. Mine's done as well."
+  },
+  {
+   "start": 60.41,
+   "end": 63.56,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, you clipped there. That was completed yesterday, yeah?"
+  },
+  {
+   "start": 65.12,
+   "end": 69.32,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, completed. Just reporting it, not asking for another go at it."
+  },
+  {
+   "start": 71.77,
+   "end": 76.67,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "One observation: heard a slight rattle from the GT2 bearing, nothing to action yet."
+  },
+  {
+   "start": 77.01,
+   "end": 81.21,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, just an observation, rather than another job going on the board?"
+  },
+  {
+   "start": 83.22,
+   "end": 84.97,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. Nothing to action yet."
+  },
+  {
+   "start": 87.21,
+   "end": 93.86,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And the supplier still hasn't confirmed the delivery for the GT2 Inlet Water Injection Valve. That one's still blocked."
+  },
+  {
+   "start": 95.64,
+   "end": 102.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. That's the delivery blocker, separate from the risk assessment for work on the GT2 inlet valve we'll come to."
+  },
+  {
+   "start": 104.41,
+   "end": 110.01,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah. No delivery confirmation, so no change there. I'm not adding a chasing job this morning."
+  },
+  {
+   "start": 110.53,
+   "end": 115.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Also, the shutdown on the line 2 guard is cancelled now, production need it running."
+  },
+  {
+   "start": 116.22,
+   "end": 120.42,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "The guard shutdown specifically, yeah? Not wiping every line 2 item off?"
+  },
+  {
+   "start": 122.2,
+   "end": 126.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly, just that shutdown. Cancelled, not parked as a job for later today."
+  },
+  {
+   "start": 128.5,
+   "end": 136.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha Begum, can you sort the permit to work and isolation for the line 2 next week? That one's safety critical, straight away."
+  },
+  {
+   "start": 138.2,
+   "end": 146.95,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Just so I don't muddle that with the cancelled shutdown—next week is the due point, but you want that treated as an immediate safety priority?"
+  },
+  {
+   "start": 148.57,
+   "end": 155.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes. Next week remains the due point. Straight away on priority; it doesn't mean isolate a running line right this second."
+  },
+  {
+   "start": 157.88,
+   "end": 165.58,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Understood. I'll sort the permit to work and isolation for the line 2 next week. Safety critical, straight away on that basis."
+  },
+  {
+   "start": 167.5,
+   "end": 172.4,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, that distinction matters. A cancelled shutdown isn't permission to blur the permit boundaries."
+  },
+  {
+   "start": 173.6,
+   "end": 180.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Aisha Begum, can you do the lock-out tag-out sign-off on the Boiler Safety Relief Valve after lunch? It's urgent."
+  },
+  {
+   "start": 180.93,
+   "end": 187.23,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yes, I'll do the lock-out tag-out sign-off on the Boiler Safety Relief Valve after lunch. Understood it's urgent."
+  },
+  {
+   "start": 188.29,
+   "end": 192.14,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Sorry, I was talking over you—did that move to before lunch?"
+  },
+  {
+   "start": 192.58,
+   "end": 196.43,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "No, after lunch. Urgent, but the agreed timing is after lunch."
+  },
+  {
+   "start": 197.74,
+   "end": 203.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Davey, can you run a function test on the 11kV board this morning? Normal priority."
+  },
+  {
+   "start": 205.06,
+   "end": 209.61,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, accepted. I'll run a function test on the 11kV board this morning."
+  },
+  {
+   "start": 211.91,
+   "end": 216.46,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Um, normal priority, did you say? Audio went all underwater for a second."
+  },
+  {
+   "start": 217.06,
+   "end": 219.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Normal priority, yes. Not an emergency call-out."
+  },
+  {
+   "start": 221.22,
+   "end": 224.02,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's what I've got. This morning, normal priority."
+  },
+  {
+   "start": 225.23,
+   "end": 230.13,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While we're on spares, I'll order spare parts for the Water Booster Pump tomorrow."
+  },
+  {
+   "start": 232.2,
+   "end": 236.05,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Tomorrow as in Saturday? Sorry, bank holiday weekend's scrambled everyone's calendar."
+  },
+  {
+   "start": 238.52,
+   "end": 243.42,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, tomorrow, Saturday. I'll order them then. Not promising delivery tomorrow, just the order."
+  },
+  {
+   "start": 244.6,
+   "end": 248.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Marc. Ordering spare parts for the Water Booster Pump tomorrow, agreed."
+  },
+  {
+   "start": 250.22,
+   "end": 256.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona Doyle, can you clear the jam and check the sensors on the palletizer tomorrow at 9:30?"
+  },
+  {
+   "start": 258.47,
+   "end": 264.42,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yes, I'll take that. Clear the jam and check the sensors on the palletizer tomorrow at 9:30."
+  },
+  {
+   "start": 265.56,
+   "end": 269.41,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, was that just the sensors? Teams swallowed the first half."
+  },
+  {
+   "start": 269.99,
+   "end": 273.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Both: clear the jam and check the sensors on the palletizer."
+  },
+  {
+   "start": 274.34,
+   "end": 277.49,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, both parts accepted. I've got tomorrow at 9:30."
+  },
+  {
+   "start": 279.03,
+   "end": 284.63,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I'll update the risk assessment for work on the GT2 inlet valve tomorrow at 9:30."
+  },
+  {
+   "start": 287.1,
+   "end": 291.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Fiona. That risk assessment's not an emergency but don't let it slip."
+  },
+  {
+   "start": 293.94,
+   "end": 302.69,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Agreed. I'll update the risk assessment for work on the GT2 inlet valve tomorrow at 9:30. Not an emergency, but I won't let it slip."
+  },
+  {
+   "start": 304.33,
+   "end": 309.58,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "You've got two against 9:30 there. Just checking that's deliberate, not me hearing an echo."
+  },
+  {
+   "start": 310.69,
+   "end": 315.94,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, deliberate. Both are mine at the agreed time. I'm not asking to move either."
+  },
+  {
+   "start": 318.32,
+   "end": 326.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Last one: Grace Liu, can you take vibration readings on the line 3 barrel by Wednesday? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 328.42,
+   "end": 337.52,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I can't take that one, sorry. I haven't got the capacity to commit to it by Wednesday. Better say no now than nod and miss it."
+  },
+  {
+   "start": 339.71,
+   "end": 342.16,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Sarah Okafor, could you take that instead?"
+  },
+  {
+   "start": 343.91,
+   "end": 351.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, I'll take vibration readings on the line 3 barrel by Wednesday. Reassigned to me. Not an emergency but don't let it slip—understood."
+  },
+  {
+   "start": 353.13,
+   "end": 356.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Thanks. So that's off me and with Sarah Okafor, definitely?"
+  },
+  {
+   "start": 358.72,
+   "end": 360.82,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Definitely. I'll own it, not you."
+  },
+  {
+   "start": 361.55,
+   "end": 365.75,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "The line 3 barrel, yeah? I'm getting every third noun this morning."
+  },
+  {
+   "start": 367.05,
+   "end": 370.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "The line 3 barrel, yes. By Wednesday, with me."
+  },
+  {
+   "start": 372.1,
+   "end": 378.4,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's the agreed work. Anything I've mistaken for a live job that was only a status update?"
+  },
+  {
+   "start": 379.52,
+   "end": 386.87,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Just keep the GT2 Inlet Water Injection Valve delivery marked blocked. Still no supplier confirmation, no new action agreed on that."
+  },
+  {
+   "start": 388.15,
+   "end": 391.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep. Blocker only, not quietly allocating a chase to someone."
+  },
+  {
+   "start": 391.95,
+   "end": 396.15,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And the GT2 bearing rattle stays an observation. Nothing to action yet."
+  },
+  {
+   "start": 396.99,
+   "end": 401.19,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Both yesterday's filter swaps are finished as well. No leftovers from those."
+  },
+  {
+   "start": 403.55,
+   "end": 408.1,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Good. A list that gets shorter as well as longer. Rare Friday treat."
+  },
+  {
+   "start": 410.07,
+   "end": 415.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Don't jinx it. Thanks, everyone. That's us—enjoy the cakes if there's anything left beyond crumbs."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

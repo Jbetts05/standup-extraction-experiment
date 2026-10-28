@@ -1,0 +1,770 @@
+{
+ "id": "a018",
+ "date": "2026-03-09",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p10",
+  "p05",
+  "p03",
+  "p11",
+  "p07",
+  "p08"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a018-t1",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-13",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51,
+    53
+   ]
+  },
+  {
+   "id": "a018-t2",
+   "summary": "Clear the jam and check the sensors on the Stretch Wrapper",
+   "spoken_action": "clear the jam and check the sensors on the wrapper",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-17",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    62
+   ]
+  },
+  {
+   "id": "a018-t3",
+   "summary": "Inspect the Boiler Feedwater Pump for leaks",
+   "spoken_action": "inspect the boiler feed pump for leaks",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya Raman",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "boiler feed pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-09",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    59
+   ]
+  },
+  {
+   "id": "a018-t4",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah Okafor",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "id": "a018-t5",
+   "summary": "Sort the permit to work and isolation for the Fire Alarm Panel",
+   "spoken_action": "sort the permit to work and isolation for the fire panel",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-11",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    19,
+    20,
+    25,
+    53,
+    57
+   ]
+  },
+  {
+   "id": "a018-t6",
+   "summary": "Do the lock-out tag-out sign-off on the Fire Alarm Panel",
+   "spoken_action": "do the lock-out tag-out sign-off on the fire alarm panel",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire alarm panel",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "it's urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    21,
+    23,
+    24,
+    58
+   ]
+  },
+  {
+   "id": "a018-t7",
+   "summary": "Swap the filter on the Air Compressor 1",
+   "spoken_action": "swap the filter on the compressor one",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "compressor one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-10",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    45,
+    46,
+    47
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "finished the repair on the IM1 last night",
+   "component": {
+    "entity_id": "IM1",
+    "text": "IM1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "already swapped the filter on the Water Booster Pump yesterday",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "saw the pressure on the turbine one compressor dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "turbine one compressor",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "can't get to the dryer until production gives us a window",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.72,
+   "end": 8.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the ninth. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 10.02,
+   "end": 13.87,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, got you. Bit tinny, but that might be this headset."
+  },
+  {
+   "start": 15.06,
+   "end": 21.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. There's a birthday cake in the office, by the way. Before anyone mistakes it for their breakfast."
+  },
+  {
+   "start": 21.84,
+   "end": 25.34,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "That's a very narrow view of what counts as breakfast."
+  },
+  {
+   "start": 25.88,
+   "end": 31.13,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Especially with the broken coffee machine in the canteen. Cake and cold water, lovely start."
+  },
+  {
+   "start": 32.37,
+   "end": 33.77,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "The full Monday experience."
+  },
+  {
+   "start": 34.76,
+   "end": 39.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Indeed. Right, finished bits first, so we don't put them back on the list."
+  },
+  {
+   "start": 41.34,
+   "end": 44.84,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, so, finished the repair on the IM1 last night."
+  },
+  {
+   "start": 45.17,
+   "end": 48.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's closed, then? Not something you're carrying into this morning?"
+  },
+  {
+   "start": 50.31,
+   "end": 52.76,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Closed. Just reporting it, not another job."
+  },
+  {
+   "start": 55.15,
+   "end": 60.75,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I already swapped the filter on the Water Booster Pump yesterday. That's done as well."
+  },
+  {
+   "start": 61.5,
+   "end": 66.4,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Ah, right. I'd seen the old entry, wondered why that was still hanging about."
+  },
+  {
+   "start": 67.95,
+   "end": 71.45,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, old news. Definitely not another filter change on that."
+  },
+  {
+   "start": 72.58,
+   "end": 80.98,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Just an observation from me: saw the pressure on the turbine one compressor dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 82.97,
+   "end": 85.42,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, came back without anyone touching anything?"
+  },
+  {
+   "start": 87.8,
+   "end": 93.4,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, on its own. Only flagging what I saw, not putting a job up for it."
+  },
+  {
+   "start": 93.79,
+   "end": 98.69,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And the dryer—still can't get to the dryer until production gives us a window."
+  },
+  {
+   "start": 100.62,
+   "end": 104.82,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Blocked, then. We're not allocating work on that in this meeting."
+  },
+  {
+   "start": 106.75,
+   "end": 109.9,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Exactly. Nothing I can get into at the minute."
+  },
+  {
+   "start": 111.64,
+   "end": 120.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha Begum, can you sort the permit to work and isolation for the fire panel by Wednesday? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 122.17,
+   "end": 128.47,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, I'll sort the permit to work and isolation for the fire panel by Wednesday. First priority, understood."
+  },
+  {
+   "start": 129.32,
+   "end": 135.27,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Just—sorry, talking over you. That's the permit and isolation bit, not the lock-out tag-out sign-off as well?"
+  },
+  {
+   "start": 136.41,
+   "end": 141.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, keeping those as separate entries. Don't want the sign-off disappearing inside the permit wording."
+  },
+  {
+   "start": 142.31,
+   "end": 147.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Grace, can you do the lock-out tag-out sign-off on the fire alarm panel? It's urgent."
+  },
+  {
+   "start": 148.03,
+   "end": 153.28,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, I'll do the lock-out tag-out sign-off on the fire alarm panel. Understood, it's urgent."
+  },
+  {
+   "start": 154.05,
+   "end": 160.0,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Fine, that keeps my bit clear. Permit to work and isolation, rather than claiming the whole lot."
+  },
+  {
+   "start": 160.87,
+   "end": 162.62,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep. Clear enough for me."
+  },
+  {
+   "start": 164.02,
+   "end": 171.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "While we're on fire alarms, I'll run the monthly fire alarm test on the 3rd. It matters but it's not urgent."
+  },
+  {
+   "start": 173.54,
+   "end": 178.09,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "So that entry is Sarah Okafor, monthly fire alarm test, on the 3rd?"
+  },
+  {
+   "start": 178.95,
+   "end": 183.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right. Separate from those panel jobs, and not an urgent one."
+  },
+  {
+   "start": 185.06,
+   "end": 190.31,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Good, because I heard 'test' and thought we'd suddenly changed what the isolation was for."
+  },
+  {
+   "start": 190.8,
+   "end": 195.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, no change. Just three separate lines rather than one enormous fire-alarm sentence."
+  },
+  {
+   "start": 195.85,
+   "end": 200.4,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Um, I'll inspect the boiler feed pump for leaks this afternoon. It's urgent."
+  },
+  {
+   "start": 201.22,
+   "end": 205.42,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "An inspection for leaks, yeah? Not a repair being bundled into that?"
+  },
+  {
+   "start": 206.87,
+   "end": 212.12,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, inspect the boiler feed pump for leaks. That's the scope I'm taking, this afternoon."
+  },
+  {
+   "start": 213.99,
+   "end": 217.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Priya Raman has that inspection. Urgent, this afternoon."
+  },
+  {
+   "start": 217.65,
+   "end": 218.85,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, that's mine."
+  },
+  {
+   "start": 219.5,
+   "end": 230.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "The other one needing doing is clear the jam and check the sensors on the wrapper, next Tuesday. Not an emergency but don't let it slip. Anyone able to take that?"
+  },
+  {
+   "start": 232.44,
+   "end": 238.39,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I can't take the wrapper one. Don't put my name against it just because sensors got mentioned."
+  },
+  {
+   "start": 240.08,
+   "end": 242.53,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No, I can't own that either, sorry."
+  },
+  {
+   "start": 243.65,
+   "end": 253.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, nobody taking it. Still needs the jam cleared and the sensors checked on the wrapper next Tuesday. Not an emergency but don't let it slip; it's unallocated."
+  },
+  {
+   "start": 254.35,
+   "end": 258.2,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, leave the owner blank rather than making it look covered."
+  },
+  {
+   "start": 258.65,
+   "end": 261.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Agreed. It isn't covered by anyone here."
+  },
+  {
+   "start": 261.79,
+   "end": 268.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll swap the filter on the compressor one first thing tomorrow. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 268.83,
+   "end": 274.43,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's separate from the Water Booster Pump filter I mentioned, just so those don't get muddled."
+  },
+  {
+   "start": 276.67,
+   "end": 280.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, compressor one. Different job; your completed one stays completed."
+  },
+  {
+   "start": 280.74,
+   "end": 285.29,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Got it. Sarah for the filter on the compressor one, first thing tomorrow."
+  },
+  {
+   "start": 287.17,
+   "end": 291.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, mine. Not an emergency, but I don't want it slipping."
+  },
+  {
+   "start": 293.2,
+   "end": 298.8,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "What about the training records for the new starters? That's still on the list, isn't it?"
+  },
+  {
+   "start": 300.4,
+   "end": 308.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, I'll sort the training records for the new starters on Friday. That's a 'whenever you get a chance' one, so low priority."
+  },
+  {
+   "start": 308.95,
+   "end": 313.15,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sarah against the training records, on Friday. Not in the urgent pile."
+  },
+  {
+   "start": 315.55,
+   "end": 320.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. I'll do that one; it doesn't need the same fuss as the panel work."
+  },
+  {
+   "start": 321.8,
+   "end": 327.4,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Friday is the records, then. I briefly heard Friday and thought you'd moved my permit date."
+  },
+  {
+   "start": 328.85,
+   "end": 333.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, yours stays by Wednesday and needs doing first. Friday was just the records."
+  },
+  {
+   "start": 334.63,
+   "end": 339.18,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "This is why the coffee machine being broken is a serious conversational disadvantage."
+  },
+  {
+   "start": 341.23,
+   "end": 345.08,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "You've blamed that for three things already and we're barely started."
+  },
+  {
+   "start": 345.38,
+   "end": 352.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And none of them are a coffee-machine job on this list. Right, quick check we've all heard the same thing?"
+  },
+  {
+   "start": 353.41,
+   "end": 361.11,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah. I've got the permit to work and isolation for the fire panel by Wednesday, first priority because it's holding production up."
+  },
+  {
+   "start": 363.33,
+   "end": 369.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I've accepted the lock-out tag-out sign-off on the fire alarm panel. Urgent, separate from that permit entry."
+  },
+  {
+   "start": 370.86,
+   "end": 375.41,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Boiler feed pump inspection for leaks is mine this afternoon. Urgent. All clear."
+  },
+  {
+   "start": 376.16,
+   "end": 379.66,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And the IM1 repair stays closed. Nothing new from me."
+  },
+  {
+   "start": 381.48,
+   "end": 386.38,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Same here. Water Booster Pump filter done; dryer still blocked on that production window."
+  },
+  {
+   "start": 387.41,
+   "end": 397.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. The wrapper is the gap: next Tuesday, no owner agreed. Not an emergency but don't let it slip—that remains the priority, not a claim that someone's taken it."
+  },
+  {
+   "start": 397.91,
+   "end": 402.46,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's us. Thanks, everyone. And yes, cake does apparently count as breakfast."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

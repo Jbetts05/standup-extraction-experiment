@@ -1,0 +1,721 @@
+{
+ "id": "a064",
+ "date": "2026-10-02",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p04",
+  "p11",
+  "p06",
+  "p07",
+  "p09",
+  "p08"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a064-t1",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-02",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "id": "a064-t2",
+   "summary": "Swap the filter on the Water Booster Pump",
+   "spoken_action": "swap the filter on the water booster",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a064-t3",
+   "summary": "Sort the permit to work and isolation for the Injection Moulding Line 2",
+   "spoken_action": "sort the permit to work and isolation for the IM2",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus Hale",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "IM2",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-02",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    29,
+    30,
+    31,
+    32,
+    33
+   ]
+  },
+  {
+   "id": "a064-t4",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the FLTs",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "FLTs",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "id": "a064-t5",
+   "summary": "Replace the seals on the Main Water Isolation Valve",
+   "spoken_action": "replace the seals on the main water valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus Hale",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-05",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    42,
+    43
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "tested the line 1 TCU yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 TCU",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "already swapped the filter on the waste heat boiler yesterday",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "waste heat boiler",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "tested the turbine two yesterday and it's all fine now",
+   "component": {
+    "entity_id": "GT2",
+    "text": "turbine two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p04",
+   "text_hint": "saw the pressure on the line one HPU dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line one HPU",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "saw the pressure on the Boiler Feedwater Pump dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "Boiler Feedwater Pump",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "can't get to the Injection Moulding Line 3 until production gives us a window",
+   "component": {
+    "entity_id": "IM3",
+    "text": "Injection Moulding Line 3",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "can't get to the Line 1 Mould Temperature Controller until production gives us a window",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "Line 1 Mould Temperature Controller",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.26,
+   "end": 7.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Friday the second of October. Can you all hear me? Right, let's get going."
+  },
+  {
+   "start": 9.75,
+   "end": 15.35,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah. Before we start, there's a birthday cake in the office. Under the enormous plastic lid."
+  },
+  {
+   "start": 15.89,
+   "end": 20.09,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Ah, that's what that is. Thought someone had brought a sample in."
+  },
+  {
+   "start": 22.49,
+   "end": 25.64,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Please don't put a sample label on my cake."
+  },
+  {
+   "start": 27.28,
+   "end": 32.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Anyone doing anything this weekend? We were going walking, but the weather looks properly miserable."
+  },
+  {
+   "start": 34.81,
+   "end": 39.01,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "October walking. That's just getting wet somewhere with no roof, isn't it?"
+  },
+  {
+   "start": 41.47,
+   "end": 46.02,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, apparently it's a hobby. An expensive one if you count the waterproofs."
+  },
+  {
+   "start": 47.95,
+   "end": 53.55,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I'd settle for a coffee. The broken coffee machine in the canteen has defeated me again."
+  },
+  {
+   "start": 55.93,
+   "end": 59.08,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Still giving you half a cup of warm disappointment?"
+  },
+  {
+   "start": 59.81,
+   "end": 65.41,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Not even half now. That's just me moaning, by the way, not offering to fix it."
+  },
+  {
+   "start": 66.38,
+   "end": 72.68,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fair enough. Couple of things already closed: tested the line 1 TCU yesterday and it's all fine now."
+  },
+  {
+   "start": 74.18,
+   "end": 77.68,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good, that was still showing in the old handover notes."
+  },
+  {
+   "start": 78.54,
+   "end": 83.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And already swapped the filter on the waste heat boiler yesterday. That's finished as well."
+  },
+  {
+   "start": 85.62,
+   "end": 89.12,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, that one's done. No outstanding filter change on that."
+  },
+  {
+   "start": 90.46,
+   "end": 95.71,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "While we're on finished stuff, tested the turbine two yesterday and it's all fine now."
+  },
+  {
+   "start": 97.21,
+   "end": 101.06,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "That's the result you had at the end of the shift?"
+  },
+  {
+   "start": 103.04,
+   "end": 105.84,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, same result. Closed, not another test request."
+  },
+  {
+   "start": 106.58,
+   "end": 109.03,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. What's actually stopping us this morning?"
+  },
+  {
+   "start": 110.7,
+   "end": 115.25,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "The pre-use checks on the FLTs haven't been done. Production's waiting on those."
+  },
+  {
+   "start": 116.63,
+   "end": 122.58,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll do the pre-use checks on the FLTs. That's holding production up so it needs doing first."
+  },
+  {
+   "start": 123.88,
+   "end": 125.98,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Hannah. Agreed, those checks first."
+  },
+  {
+   "start": 126.57,
+   "end": 131.47,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll take those. Don't want that disappearing underneath the rest of the list."
+  },
+  {
+   "start": 132.84,
+   "end": 135.64,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers. That's the immediate hold-up from our side."
+  },
+  {
+   "start": 137.19,
+   "end": 144.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fiona Doyle, can you organise the toolbox talk for the team by the end of the week? It's fairly important."
+  },
+  {
+   "start": 146.12,
+   "end": 151.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Um, yes. Organise it, rather than me being down to deliver it as well?"
+  },
+  {
+   "start": 151.74,
+   "end": 155.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right, just organise the toolbox talk for the team."
+  },
+  {
+   "start": 155.61,
+   "end": 160.16,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Okay, I'll organise it by the end of the week. Fairly important, understood."
+  },
+  {
+   "start": 162.38,
+   "end": 164.83,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Friday already. This week's gone ridiculously quickly."
+  },
+  {
+   "start": 166.47,
+   "end": 168.57,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "The calendar's been quite aggressive, yeah."
+  },
+  {
+   "start": 169.6,
+   "end": 175.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Marcus Hale, can you sort the permit to work and isolation for the IM2 today? Normal priority."
+  },
+  {
+   "start": 176.1,
+   "end": 180.65,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I'll sort the permit to work and isolation for the IM2 today."
+  },
+  {
+   "start": 182.6,
+   "end": 186.1,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, you clipped out for me. Was that normal priority?"
+  },
+  {
+   "start": 188.27,
+   "end": 190.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Normal priority, yes. Still today."
+  },
+  {
+   "start": 190.94,
+   "end": 194.79,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Got it. Both the permit and the isolation are with me."
+  },
+  {
+   "start": 196.68,
+   "end": 201.93,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And I'll swap the filter on the water booster by the 28th. That's fairly important."
+  },
+  {
+   "start": 203.72,
+   "end": 206.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Marcus. The water booster filter, by the 28th."
+  },
+  {
+   "start": 208.68,
+   "end": 212.18,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep. Fairly important, but that is the date for it."
+  },
+  {
+   "start": 213.11,
+   "end": 218.01,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, talking over you—different filter from the waste heat boiler one we just closed?"
+  },
+  {
+   "start": 218.58,
+   "end": 224.18,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Different one, yeah. Water booster is the one I'm taking on. Waste heat boiler was yesterday."
+  },
+  {
+   "start": 226.21,
+   "end": 233.21,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While I've got the mic, I'll replace the seals on the main water valve next week. Normal priority for that."
+  },
+  {
+   "start": 234.05,
+   "end": 239.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Marcus Hale for the seals on the main water valve, next week, normal priority."
+  },
+  {
+   "start": 240.79,
+   "end": 241.99,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, that's mine."
+  },
+  {
+   "start": 242.55,
+   "end": 246.75,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Okay, so the seals aren't part of what's holding us this morning."
+  },
+  {
+   "start": 248.86,
+   "end": 251.66,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No, separate job. Next week, as I said."
+  },
+  {
+   "start": 253.46,
+   "end": 261.86,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Just an observation from me: saw the pressure on the line one HPU dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 263.98,
+   "end": 266.08,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Came back without anyone touching it?"
+  },
+  {
+   "start": 267.97,
+   "end": 273.57,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, on its own. Only mentioning what I saw, not putting a repair on today's list."
+  },
+  {
+   "start": 274.17,
+   "end": 281.87,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Similar observation here. Saw the pressure on the Boiler Feedwater Pump dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 282.74,
+   "end": 287.29,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, both transient observations, then. Neither's being raised as a new job here."
+  },
+  {
+   "start": 289.37,
+   "end": 293.57,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Exactly. And I'm not saying they're connected, just that mine recovered too."
+  },
+  {
+   "start": 295.37,
+   "end": 302.37,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "On the blocked list, we still can't get to the Injection Moulding Line 3 until production gives us a window."
+  },
+  {
+   "start": 302.89,
+   "end": 307.79,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, there's no window agreed. I haven't got one to offer in this meeting."
+  },
+  {
+   "start": 308.79,
+   "end": 312.64,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Okay. That stays blocked, then, not going into today's committed work."
+  },
+  {
+   "start": 313.88,
+   "end": 320.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Same story for mine. Can't get to the Line 1 Mould Temperature Controller until production gives us a window."
+  },
+  {
+   "start": 321.73,
+   "end": 326.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. That remains blocked as well; we're not promising access we haven't got."
+  },
+  {
+   "start": 328.46,
+   "end": 333.36,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Exactly. It's on there for visibility, not because I can suddenly get at it."
+  },
+  {
+   "start": 335.37,
+   "end": 341.32,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, that makes sense. The old handover had the finished bits and blocked bits all mixed together."
+  },
+  {
+   "start": 343.08,
+   "end": 348.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, easy to read it as one giant live list. Anything else we haven't covered?"
+  },
+  {
+   "start": 350.57,
+   "end": 351.97,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Nothing else from production."
+  },
+  {
+   "start": 354.05,
+   "end": 359.3,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Nothing from me. Apart from the cake being actual cake, for the avoidance of doubt."
+  },
+  {
+   "start": 359.65,
+   "end": 362.8,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Best bit of quality assurance we've had all morning."
+  },
+  {
+   "start": 364.86,
+   "end": 368.01,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, on that technical note, we're done. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

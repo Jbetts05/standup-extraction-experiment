@@ -1,0 +1,709 @@
+{
+ "id": "a110",
+ "date": "2026-02-10",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p12",
+  "p05",
+  "p08",
+  "p10",
+  "p11",
+  "p06"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a110-t1",
+   "summary": "Schedule downtime for the Line 2 Pick and Place Robot with production",
+   "spoken_action": "schedule downtime for the arm on two with production",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "the arm on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-10",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "low priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    59
+   ]
+  },
+  {
+   "id": "a110-t2",
+   "summary": "Inspect the Boiler Safety Relief Valve for leaks",
+   "spoken_action": "inspect the Boiler Safety Relief Valve for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    29,
+    30,
+    31,
+    33,
+    56
+   ]
+  },
+  {
+   "id": "a110-t3",
+   "summary": "Recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "recalibrate the sensors on the little water valve on two",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Mide",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "the little water valve on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-10",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    27,
+    28,
+    57
+   ]
+  },
+  {
+   "id": "a110-t4",
+   "summary": "Do the lock-out tag-out sign-off on the 11kV Switchboard",
+   "spoken_action": "do the lock-out tag-out sign-off on the HV board",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p12",
+    "text": "stores Jamie",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "the HV board",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-10",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "top priority please",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    38,
+    58
+   ]
+  },
+  {
+   "id": "a110-t5",
+   "summary": "Do a site visit at Harbour Road Warehouse with the contractor",
+   "spoken_action": "do a site visit at the warehouse with the contractor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie Brennan",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s03",
+    "text": "the warehouse",
+    "split": "seen"
+   },
+   "due_date": "2026-02-11",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    42,
+    58
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "already swapped the filter on the turbine two yesterday",
+   "component": {
+    "entity_id": "GT2",
+    "text": "turbine two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "signed off the inspection on the heater box on one on Tuesday",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "the heater box on one",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p08",
+   "text_hint": "saw the pressure on the tower dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "the tower",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "saw the pressure on the gas turbine one dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT1",
+    "text": "gas turbine one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p11",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the little water valve on two",
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "the little water valve on two",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p08",
+   "text_hint": "we were going to replace the belt on the alarm box but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "the alarm box",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.52,
+   "end": 6.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Tuesday the tenth, let's get going. Can everyone hear me?"
+  },
+  {
+   "start": 7.89,
+   "end": 12.09,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, loud and clear. Anyone watch the football last night? Absolute shambles."
+  },
+  {
+   "start": 14.31,
+   "end": 17.46,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Knew you'd get that in before we'd even started."
+  },
+  {
+   "start": 17.96,
+   "end": 20.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And that's the sports report concluded, cheers."
+  },
+  {
+   "start": 20.96,
+   "end": 27.96,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While we're off topic, the charity bake sale on Friday looks good. Saw the pictures of what people are bringing."
+  },
+  {
+   "start": 28.99,
+   "end": 32.84,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "More reliable supply of cake than most of our parts, that."
+  },
+  {
+   "start": 34.02,
+   "end": 37.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before that becomes a procurement presentation. Anything already finished?"
+  },
+  {
+   "start": 38.46,
+   "end": 43.01,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah so, already swapped the filter on the turbine two yesterday. That's done."
+  },
+  {
+   "start": 45.04,
+   "end": 47.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, so that's off the outstanding list?"
+  },
+  {
+   "start": 49.37,
+   "end": 52.52,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep. Just reporting it, not another job for today."
+  },
+  {
+   "start": 52.87,
+   "end": 59.17,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Same from me: signed off the inspection on the heater box on one on Tuesday. That's already complete."
+  },
+  {
+   "start": 59.84,
+   "end": 62.99,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I've got that showing as closed as well."
+  },
+  {
+   "start": 63.71,
+   "end": 65.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Plant observations, Marcus?"
+  },
+  {
+   "start": 67.25,
+   "end": 74.25,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I saw the pressure on the tower dip for a few minutes, it came back on its own. Nothing sustained."
+  },
+  {
+   "start": 75.21,
+   "end": 79.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just an observation, then, not putting a new job against it?"
+  },
+  {
+   "start": 80.81,
+   "end": 83.26,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Exactly. It recovered without us touching anything."
+  },
+  {
+   "start": 84.64,
+   "end": 94.44,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I saw the pressure on the gas turbine one dip for a few minutes, it came back on its own. Similar sort of thing, but separate observation."
+  },
+  {
+   "start": 96.79,
+   "end": 99.59,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, talking over you—it's back at normal now?"
+  },
+  {
+   "start": 100.01,
+   "end": 103.51,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, back on its own. No outstanding work from that."
+  },
+  {
+   "start": 105.1,
+   "end": 106.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, both observations only. Hannah?"
+  },
+  {
+   "start": 107.91,
+   "end": 114.56,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "The supplier still hasn't confirmed the delivery for the little water valve on two. That's still blocked, I'm afraid."
+  },
+  {
+   "start": 116.51,
+   "end": 120.71,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, there's no confirmed delivery showing. Same position, not a fresh action."
+  },
+  {
+   "start": 122.15,
+   "end": 125.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And that's separate from the sensor calibration, isn't it?"
+  },
+  {
+   "start": 125.92,
+   "end": 131.87,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "It is. The sensors on the existing valve can be recalibrated; that doesn't need the incoming valve."
+  },
+  {
+   "start": 133.91,
+   "end": 141.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Mide, if you've got a spare minute, can you recalibrate the sensors on the little water valve on two by 11am?"
+  },
+  {
+   "start": 142.35,
+   "end": 145.85,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll recalibrate those by 11am. Can fit that in."
+  },
+  {
+   "start": 146.56,
+   "end": 149.71,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, so we're not saying the replacement's suddenly available?"
+  },
+  {
+   "start": 150.35,
+   "end": 153.85,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "No, definitely not. Just recalibrating what's fitted. Delivery's still unconfirmed."
+  },
+  {
+   "start": 155.53,
+   "end": 159.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, Mide has the calibration. No change to the supplier blocker."
+  },
+  {
+   "start": 160.39,
+   "end": 166.34,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Um, I'll inspect the Boiler Safety Relief Valve for leaks on the 3rd. That one's fairly important."
+  },
+  {
+   "start": 168.1,
+   "end": 173.0,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace Liu. Boiler Safety Relief Valve leak inspection, on the 3rd, fairly important."
+  },
+  {
+   "start": 175.47,
+   "end": 177.57,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, that's the commitment from me."
+  },
+  {
+   "start": 179.86,
+   "end": 183.71,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Right, and that's separate from the heater box inspection you mentioned?"
+  },
+  {
+   "start": 184.06,
+   "end": 189.66,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah. Heater box is finished. This is the leak inspection on the Boiler Safety Relief Valve."
+  },
+  {
+   "start": 190.65,
+   "end": 194.85,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'll do the lock-out tag-out sign-off on the HV board by 11am."
+  },
+  {
+   "start": 196.79,
+   "end": 200.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, stores Jamie. That sign-off is top priority please, by 11am."
+  },
+  {
+   "start": 202.3,
+   "end": 205.45,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Understood. Top priority, I'll do the sign-off by 11am."
+  },
+  {
+   "start": 207.48,
+   "end": 212.38,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Just keeping the wording straight: the sign-off, not adding any electrical work to that."
+  },
+  {
+   "start": 212.94,
+   "end": 215.04,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Exactly, the lock-out tag-out sign-off only."
+  },
+  {
+   "start": 216.92,
+   "end": 219.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "All right. Anything else from stores?"
+  },
+  {
+   "start": 219.87,
+   "end": 224.77,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll do a site visit at the warehouse with the contractor by Wednesday."
+  },
+  {
+   "start": 226.26,
+   "end": 231.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Jamie Brennan for the site visit at the warehouse with the contractor, by Wednesday."
+  },
+  {
+   "start": 233.91,
+   "end": 235.66,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's right, I've got that."
+  },
+  {
+   "start": 236.33,
+   "end": 240.18,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, is that connected to the delivery Hannah was talking about?"
+  },
+  {
+   "start": 240.52,
+   "end": 245.07,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No, separate thing. The visit isn't a promise that the valve's turning up."
+  },
+  {
+   "start": 245.99,
+   "end": 254.39,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There's also downtime for the arm on two that needs scheduling with production this afternoon. Low priority. We haven't got anyone taking that yet."
+  },
+  {
+   "start": 255.72,
+   "end": 260.62,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I know the one. I can't commit to taking the scheduling on, though."
+  },
+  {
+   "start": 261.08,
+   "end": 266.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone able to pick that up? Scheduling the downtime, not doing work on the arm."
+  },
+  {
+   "start": 266.74,
+   "end": 271.64,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Not me, sorry. I can commit to the calibration, but not that as well."
+  },
+  {
+   "start": 273.17,
+   "end": 279.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, no taker. Scheduling downtime for the arm on two with production this afternoon stays unowned, low priority."
+  },
+  {
+   "start": 280.44,
+   "end": 282.89,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Understood. So no downtime booking agreed here."
+  },
+  {
+   "start": 285.33,
+   "end": 295.48,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Oh, and before it gets read out again: we were going to replace the belt on the alarm box but that's been pushed to next month so ignore it."
+  },
+  {
+   "start": 296.16,
+   "end": 298.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, not today's work. Deferred to next month."
+  },
+  {
+   "start": 299.44,
+   "end": 303.29,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Exactly. Just didn't want someone thinking we'd missed it this morning."
+  },
+  {
+   "start": 305.65,
+   "end": 310.9,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And the valve delivery remains a blocker only. Nothing newly agreed against that from me."
+  },
+  {
+   "start": 311.63,
+   "end": 315.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, quick check of what people have actually taken. Any corrections?"
+  },
+  {
+   "start": 316.74,
+   "end": 322.69,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "None from me. I'll inspect the Boiler Safety Relief Valve for leaks on the 3rd, fairly important."
+  },
+  {
+   "start": 323.57,
+   "end": 329.17,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I'll recalibrate the sensors on the little water valve on two by 11am. That's mine."
+  },
+  {
+   "start": 330.82,
+   "end": 339.92,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I've got the lock-out tag-out sign-off on the HV board, top priority, by 11am. And the site visit at the warehouse with the contractor by Wednesday."
+  },
+  {
+   "start": 340.95,
+   "end": 349.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. The arm on two downtime scheduling with production is still needed this afternoon, low priority, but nobody's taken it. Not recording it as allocated."
+  },
+  {
+   "start": 351.77,
+   "end": 356.67,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fair enough. And no action on my football club, then. Probably beyond engineering anyway."
+  },
+  {
+   "start": 357.68,
+   "end": 359.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Well beyond. Cheers, everyone, that's us."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

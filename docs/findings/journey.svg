@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="430" viewBox="0 0 1320 430" role="img" aria-labelledby="title description">
+  <title id="title">The four approaches, in order</title>
+  <desc id="description">Four stations on a line. 1, pick a model: 163 ways tried, two small model calls beat one big one, GPT-5.6 Luna twice gets 72% fully right for half a cent. 2, show the working: a click-through report. 3, try an agent: designed, then parked, because code can load the board. 4, keep the board up to date: extract, pull the cards, pick, rules write it; 97% of updates right for $0.007 a stand-up.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071b33"/><stop offset="1" stop-color="#102d4c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#071b33" flood-opacity=".13"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0f5cc0"/></marker>
+    <marker id="arrowg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#bec7d3"/></marker>
+    <style>
+@keyframes a1 { 0% { opacity: 0 } 25.71% { opacity: 0 } 27.86% { opacity: 1 } 97.14% { opacity: 1 } 99.29% { opacity: 0 } 100% { opacity: 0 } }
+.a1 { opacity: 0; animation: a1 14.0s infinite; }
+@keyframes a2 { 0% { opacity: 0 } 48.57% { opacity: 0 } 50.71% { opacity: 1 } 97.14% { opacity: 1 } 99.29% { opacity: 0 } 100% { opacity: 0 } }
+.a2 { opacity: 0; animation: a2 14.0s infinite; }
+@keyframes a3 { 0% { opacity: 0 } 71.43% { opacity: 0 } 73.57% { opacity: 1 } 97.14% { opacity: 1 } 99.29% { opacity: 0 } 100% { opacity: 0 } }
+.a3 { opacity: 0; animation: a3 14.0s infinite; }
+@keyframes a4 { 0% { opacity: 0 } 4.29% { opacity: 0 } 6.07% { opacity: 1 } 97.14% { opacity: 1 } 98.93% { opacity: 0 } 100% { opacity: 0 } }
+.a4 { opacity: 0; animation: a4 14.0s infinite; }
+@keyframes a5 { 0% { opacity: 0 } 5.00% { opacity: 0 } 7.86% { opacity: 1 } 97.14% { opacity: 1 } 100.00% { opacity: 0 } 100% { opacity: 0 } }
+.a5 { opacity: 0; animation: a5 14.0s infinite; }
+@keyframes a6 { 0% { opacity: 0 } 27.14% { opacity: 0 } 28.93% { opacity: 1 } 97.14% { opacity: 1 } 98.93% { opacity: 0 } 100% { opacity: 0 } }
+.a6 { opacity: 0; animation: a6 14.0s infinite; }
+@keyframes a7 { 0% { opacity: 0 } 27.86% { opacity: 0 } 30.71% { opacity: 1 } 97.14% { opacity: 1 } 100.00% { opacity: 0 } 100% { opacity: 0 } }
+.a7 { opacity: 0; animation: a7 14.0s infinite; }
+@keyframes a8 { 0% { opacity: 0 } 50.00% { opacity: 0 } 51.79% { opacity: 1 } 97.14% { opacity: 1 } 98.93% { opacity: 0 } 100% { opacity: 0 } }
+.a8 { opacity: 0; animation: a8 14.0s infinite; }
+@keyframes a9 { 0% { opacity: 0 } 50.71% { opacity: 0 } 53.57% { opacity: 1 } 97.14% { opacity: 1 } 100.00% { opacity: 0 } 100% { opacity: 0 } }
+.a9 { opacity: 0; animation: a9 14.0s infinite; }
+@keyframes a10 { 0% { opacity: 0 } 72.86% { opacity: 0 } 74.64% { opacity: 1 } 97.14% { opacity: 1 } 98.93% { opacity: 0 } 100% { opacity: 0 } }
+.a10 { opacity: 0; animation: a10 14.0s infinite; }
+@keyframes a11 { 0% { opacity: 0 } 73.57% { opacity: 0 } 76.43% { opacity: 1 } 97.14% { opacity: 1 } 100.00% { opacity: 0 } 100% { opacity: 0 } }
+.a11 { opacity: 0; animation: a11 14.0s infinite; }
+@keyframes a12 { 0% { opacity: 0 } 58.57% { opacity: 0 } 60.00% { opacity: 1 } 97.14% { opacity: 1 } 98.57% { opacity: 0 } 100% { opacity: 0 } }
+.a12 { opacity: 0; animation: a12 14.0s infinite; }
+@keyframes m13 { 0.00% { transform: translate(165px, 138px) } 19.29% { transform: translate(165px, 138px) } 25.71% { transform: translate(495px, 138px) } 42.14% { transform: translate(495px, 138px) } 48.57% { transform: translate(825px, 138px) } 65.00% { transform: translate(825px, 138px) } 71.43% { transform: translate(1155px, 138px) } 96.79% { transform: translate(1155px, 138px) } 96.86% { transform: translate(165px, 138px) } 100.00% { transform: translate(165px, 138px) } }
+.m13 { animation: m13 14.0s infinite; }
+@keyframes a14 { 0% { opacity: 0 } 78.57% { opacity: 0 } 80.36% { opacity: 1 } 97.14% { opacity: 1 } 98.93% { opacity: 0 } 100% { opacity: 0 } }
+.a14 { opacity: 0; animation: a14 14.0s infinite; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01s !important; animation-iteration-count: 1 !important; } }
+</style>
+  </defs>
+  <rect width="1320" height="430" rx="18" fill="#f5f7fa"/>
+  <path d="M0 18Q0 0 18 0h1284q18 0 18 18v74H0z" fill="url(#header)"/>
+  <g fill="#fff" font-family="Segoe UI, Arial, sans-serif">
+    <text x="42" y="45" font-size="27" font-weight="700">What we tried, and what we kept</text>
+    <text x="42" y="72" font-size="14" fill="#b6c5d7">Four approaches to one problem: turn stand-up transcripts into a task board that keeps itself up to date.</text>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif">
+<line x1="165" y1="138" x2="1155" y2="138" stroke="#bec7d3" stroke-width="4" stroke-linecap="round"/>
+<line class="a1" x1="165" y1="138" x2="495" y2="138" stroke="#0f5cc0" stroke-width="4" stroke-linecap="round"/>
+<line class="a2" x1="495" y1="138" x2="825" y2="138" stroke="#0f5cc0" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
+<line class="a3" x1="825" y1="138" x2="1155" y2="138" stroke="#0f5cc0" stroke-width="4" stroke-linecap="round"/>
+<circle cx="165" cy="138" r="15" fill="#fff" stroke="#bec7d3" stroke-width="3"/>
+<text x="165" y="143" font-size="13" fill="#596579" font-weight="700" text-anchor="middle" >1</text>
+<g class="a4"><circle cx="165" cy="138" r="15" fill="#0f5cc0"/><text x="165" y="143" font-size="13" fill="#fff" font-weight="700" text-anchor="middle" >1</text></g>
+<g class="a5"><g filter="url(#shadow)"><rect x="15" y="172" width="300" height="196" rx="12" fill="#fff" stroke="#bec7d3" /></g><text x="35" y="204" font-size="17" fill="#172033" font-weight="700" text-anchor="start" >Pick a model</text><text x="35" y="234" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >Tried 163 ways to pull jobs out</text><text x="35" y="254" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >of a transcript. Two small model</text><text x="35" y="274" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >calls beat one big one.</text><rect x="35" y="318" width="260" height="24" rx="12" fill="#eef4fb" stroke="#0f5cc0"/><text x="165.0" y="334" font-size="11.5" fill="#0f5cc0" font-weight="700" text-anchor="middle" >GPT-5.6 Luna ×2 · 72% right · $0.005</text></g>
+<circle cx="495" cy="138" r="15" fill="#fff" stroke="#bec7d3" stroke-width="3"/>
+<text x="495" y="143" font-size="13" fill="#596579" font-weight="700" text-anchor="middle" >2</text>
+<g class="a6"><circle cx="495" cy="138" r="15" fill="#0f5cc0"/><text x="495" y="143" font-size="13" fill="#fff" font-weight="700" text-anchor="middle" >2</text></g>
+<g class="a7"><g filter="url(#shadow)"><rect x="345" y="172" width="300" height="196" rx="12" fill="#fff" stroke="#bec7d3" /></g><text x="365" y="204" font-size="17" fill="#172033" font-weight="700" text-anchor="start" >Show the working</text><text x="365" y="234" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >A click-through report: every</text><text x="365" y="254" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >meeting, prompt and result, so</text><text x="365" y="274" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >people can check it, not trust it.</text><rect x="365" y="318" width="260" height="24" rx="12" fill="#eef4fb" stroke="#0f5cc0"/><text x="495.0" y="334" font-size="11.5" fill="#0f5cc0" font-weight="700" text-anchor="middle" >report + slide deck</text></g>
+<circle cx="825" cy="138" r="15" fill="#fff" stroke="#bec7d3" stroke-width="3"/>
+<text x="825" y="143" font-size="13" fill="#596579" font-weight="700" text-anchor="middle" >3</text>
+<g class="a8"><circle cx="825" cy="138" r="15" fill="#596579"/><text x="825" y="143" font-size="13" fill="#fff" font-weight="700" text-anchor="middle" >3</text></g>
+<g class="a9"><g filter="url(#shadow)"><rect x="675" y="172" width="300" height="196" rx="12" fill="#fff" stroke="#bec7d3" /></g><text x="695" y="204" font-size="17" fill="#172033" font-weight="700" text-anchor="start" >Try an agent?</text><text x="695" y="234" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >Designed an agent that fetches</text><text x="695" y="254" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >the board with tools. Then parked</text><text x="695" y="274" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >it: code can load the board.</text><rect x="695" y="318" width="260" height="24" rx="12" fill="#fff" stroke="#bec7d3" stroke-dasharray="4 4"/><text x="825.0" y="334" font-size="11.5" fill="#596579" font-weight="700" text-anchor="middle" >parked · not needed</text></g>
+<circle cx="1155" cy="138" r="15" fill="#fff" stroke="#bec7d3" stroke-width="3"/>
+<text x="1155" y="143" font-size="13" fill="#596579" font-weight="700" text-anchor="middle" >4</text>
+<g class="a10"><circle cx="1155" cy="138" r="15" fill="#107c41"/><text x="1155" y="143" font-size="13" fill="#fff" font-weight="700" text-anchor="middle" >4</text></g>
+<g class="a11"><g filter="url(#shadow)"><rect x="1005" y="172" width="300" height="196" rx="12" fill="#fff" stroke="#bec7d3" /></g><text x="1025" y="204" font-size="17" fill="#172033" font-weight="700" text-anchor="start" >Keep the board up to date</text><text x="1025" y="234" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >Extract, pull the cards, pick,</text><text x="1025" y="254" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >rules write it. Scored on 24</text><text x="1025" y="274" font-size="12.5" fill="#596579" font-weight="400" text-anchor="start" >synthetic stand-ups.</text><rect x="1025" y="318" width="260" height="24" rx="12" fill="#e7f4ec" stroke="#9fd3b3"/><text x="1155.0" y="334" font-size="11.5" fill="#107c41" font-weight="700" text-anchor="middle" >97% of updates right · $0.007</text></g>
+<g class="a12" transform="rotate(-8 913 202)"><rect x="861" y="186" width="104" height="30" rx="6" fill="#fff" stroke="#f7630c" stroke-width="2"/><text x="913" y="207" font-size="14" fill="#f7630c" font-weight="800" text-anchor="middle" >PARKED</text></g>
+<g class="m13"><circle r="7" fill="#f7630c"/><circle r="12" fill="none" stroke="#f7630c" stroke-opacity=".35" stroke-width="3"/></g>
+<g class="a14"><text x="660" y="408" font-size="13.5" fill="#172033" font-weight="600" text-anchor="middle" >What we're sharing: the model experiment, the synthetic data with its answer key, the board pipeline, and the traces that show how every decision was made.</text></g>
+  </g>
+</svg>

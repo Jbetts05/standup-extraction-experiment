@@ -1,0 +1,672 @@
+{
+ "id": "a065",
+ "date": "2026-05-18",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p02",
+  "p07",
+  "p06",
+  "p12",
+  "p08",
+  "p09"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a065-t1",
+   "summary": "Do a site visit at Tollgate Water Treatment Works with the contractor",
+   "spoken_action": "do a site visit at Tollgate with the contractor",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s05",
+    "text": "Tollgate",
+    "split": "seen"
+   },
+   "due_date": "2026-05-18",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37
+   ]
+  },
+  {
+   "id": "a065-t2",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Cal",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-18",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p01",
+   "reassigned_from": "p02",
+   "evidence": [
+    27,
+    28,
+    29,
+    30,
+    53,
+    54
+   ]
+  },
+  {
+   "id": "a065-t3",
+   "summary": "Sort the permit to work and isolation for the Injection Moulding Line 1",
+   "spoken_action": "sort the permit to work and isolation for the Injection Moulding Line 1",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "Injection Moulding Line 1",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-18",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    26,
+    51,
+    52
+   ]
+  },
+  {
+   "id": "a065-t4",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48
+   ]
+  },
+  {
+   "id": "a065-t5",
+   "summary": "Recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "recalibrate the sensors on the GT2 inlet valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 inlet valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-22",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    41,
+    42,
+    43,
+    48,
+    49
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "signed off the inspection on the AC1 on Tuesday",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "AC1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "already swapped the filter on the IM2 yesterday",
+   "component": {
+    "entity_id": "IM2",
+    "text": "IM2",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "finished the repair on the boiler last night",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "the boiler",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p02",
+   "text_hint": "noticed the stretch wrapper was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p02",
+   "text_hint": "still waiting on parts for the big boiler, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "big boiler",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.83,
+   "end": 8.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. You all there? Before we start — the football last night. Honestly, what was that?"
+  },
+  {
+   "start": 9.86,
+   "end": 12.66,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Depends which bit of it you slept through."
+  },
+  {
+   "start": 13.01,
+   "end": 14.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Unfortunately, none of it."
+  },
+  {
+   "start": 16.07,
+   "end": 18.52,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That explains the cheerful Monday face, then."
+  },
+  {
+   "start": 18.95,
+   "end": 22.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheeky. It's Teams, that's just what the camera does."
+  },
+  {
+   "start": 22.94,
+   "end": 30.64,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I was making weekend plans instead. Thought we'd get out for a walk next weekend, but the weather forecast's already looking miserable."
+  },
+  {
+   "start": 31.26,
+   "end": 35.11,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "It's Monday, Marcus. It'll have changed about eight times by then."
+  },
+  {
+   "start": 36.22,
+   "end": 39.02,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, and seven of those will be rain."
+  },
+  {
+   "start": 40.97,
+   "end": 44.82,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Sorry, am I coming through? My headset did that thing again."
+  },
+  {
+   "start": 46.09,
+   "end": 52.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, got you, Fiona. Right, Monday the eighteenth. Let's separate what's finished from what actually needs doing."
+  },
+  {
+   "start": 52.83,
+   "end": 59.83,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah so, I signed off the inspection on the AC1 on Tuesday. That's finished, not something hanging over for today."
+  },
+  {
+   "start": 62.19,
+   "end": 63.39,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Last Tuesday, yeah?"
+  },
+  {
+   "start": 65.26,
+   "end": 69.81,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, last Tuesday. Just closing the loop, not volunteering to inspect it twice."
+  },
+  {
+   "start": 71.12,
+   "end": 76.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I already swapped the filter on the IM2 yesterday. That one's done as well."
+  },
+  {
+   "start": 78.35,
+   "end": 81.85,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, so the IM2 filter isn't part of today's list."
+  },
+  {
+   "start": 83.05,
+   "end": 84.25,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly."
+  },
+  {
+   "start": 86.15,
+   "end": 90.35,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I finished the repair on the boiler last night, too. That's complete."
+  },
+  {
+   "start": 92.39,
+   "end": 101.14,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just so we don't mix the two up — I'm still waiting on parts for the big boiler. Nothing we can do until they arrive."
+  },
+  {
+   "start": 103.54,
+   "end": 107.04,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, different one. I'm not saying the big boiler's repaired."
+  },
+  {
+   "start": 108.78,
+   "end": 112.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Big boiler stays blocked, no new action against it today."
+  },
+  {
+   "start": 113.36,
+   "end": 123.16,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "While I'm on, I noticed the stretch wrapper was running a bit warm on nights, but it settled down. Just an observation, not asking for work on it."
+  },
+  {
+   "start": 125.21,
+   "end": 127.31,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Settled back down on its own?"
+  },
+  {
+   "start": 127.96,
+   "end": 129.71,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah. Nothing outstanding from that."
+  },
+  {
+   "start": 132.09,
+   "end": 141.54,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Fiona, can you sort the permit to work and isolation for the Injection Moulding Line 1 today? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 142.8,
+   "end": 149.1,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I'll sort the permit to work and isolation for the Injection Moulding Line 1 today. First priority."
+  },
+  {
+   "start": 150.05,
+   "end": 154.6,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's the important bit for us. Not just having the paperwork sat there."
+  },
+  {
+   "start": 156.58,
+   "end": 160.78,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, understood — the permit and isolation, both. That's what I'm taking."
+  },
+  {
+   "start": 161.74,
+   "end": 168.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. David Whitfield, can you send the shift handover report round this morning, whenever you get a chance?"
+  },
+  {
+   "start": 168.8,
+   "end": 174.75,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Um, I can't take that, sorry. I've only got the engineering notes, not the full shift handover."
+  },
+  {
+   "start": 175.22,
+   "end": 182.57,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Cal, can you take that instead — send the shift handover report round this morning, whenever you get a chance?"
+  },
+  {
+   "start": 184.63,
+   "end": 189.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll send it round this morning. I've got the full report, so that's fine."
+  },
+  {
+   "start": 191.78,
+   "end": 196.68,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Cheers. Otherwise it'd be a very short report with most of the shift missing."
+  },
+  {
+   "start": 198.29,
+   "end": 201.09,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Some of us would appreciate a shorter report."
+  },
+  {
+   "start": 203.38,
+   "end": 209.68,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Ha. On the other thing, I'll do a site visit at Tollgate with the contractor at half two."
+  },
+  {
+   "start": 211.18,
+   "end": 217.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Cal. That one's if you've got a spare minute, rather than a priority over the production hold."
+  },
+  {
+   "start": 218.7,
+   "end": 225.0,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I've got room for it. I'll do Tollgate at half two with the contractor. Low priority, understood."
+  },
+  {
+   "start": 225.8,
+   "end": 229.65,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Half two, not twelve thirty? You clipped out a bit there."
+  },
+  {
+   "start": 231.26,
+   "end": 235.11,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Half two. This headset's nearly as reliable as the weather forecast."
+  },
+  {
+   "start": 236.25,
+   "end": 239.75,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Leave the weather out of this, it's doing its best."
+  },
+  {
+   "start": 240.82,
+   "end": 248.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, can you recalibrate the sensors on the GT2 inlet valve by the end of the week? It matters but it's not urgent."
+  },
+  {
+   "start": 250.87,
+   "end": 256.47,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll recalibrate the sensors on the GT2 inlet valve by the end of the week."
+  },
+  {
+   "start": 258.76,
+   "end": 263.31,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Sorry, talked over you there — did you say end of the week?"
+  },
+  {
+   "start": 264.5,
+   "end": 269.4,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, by the end of the week. Not treating it as an urgent one."
+  },
+  {
+   "start": 269.99,
+   "end": 274.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right. It still matters, just not ahead of what's holding production."
+  },
+  {
+   "start": 275.6,
+   "end": 284.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I'll organise the toolbox talk for the team when I've got a spare minute. That's one for me, not another urgent job for everyone else."
+  },
+  {
+   "start": 287.13,
+   "end": 289.58,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Cheers, Saz. Toolbox talk's with you, then."
+  },
+  {
+   "start": 290.1,
+   "end": 291.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, I'll organise it."
+  },
+  {
+   "start": 291.98,
+   "end": 297.93,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Sorry, was there a date on that? Or am I hearing the end-of-week bit from Jamie's job?"
+  },
+  {
+   "start": 300.25,
+   "end": 305.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No date for the toolbox talk. End of the week was the GT2 inlet valve sensors."
+  },
+  {
+   "start": 307.93,
+   "end": 309.13,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep, that's mine."
+  },
+  {
+   "start": 310.72,
+   "end": 317.02,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Okay. And the production hold is still the top one, rather than all of these being labelled urgent?"
+  },
+  {
+   "start": 318.21,
+   "end": 328.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Fiona's permit to work and isolation for the Injection Moulding Line 1 needs doing first today. The others have the timings we've just agreed, but they're not all emergencies."
+  },
+  {
+   "start": 330.9,
+   "end": 333.0,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Understood. That one's first for me."
+  },
+  {
+   "start": 335.21,
+   "end": 339.76,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And handover's moved to me, not still sitting against David Whitfield as well."
+  },
+  {
+   "start": 341.49,
+   "end": 347.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, Cal, just you on sending the shift handover report round this morning. Whenever you get a chance."
+  },
+  {
+   "start": 348.84,
+   "end": 351.29,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Lovely. No mystery duplicate version from me."
+  },
+  {
+   "start": 352.36,
+   "end": 354.81,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Two versions, both called final-final. Factory standard."
+  },
+  {
+   "start": 357.0,
+   "end": 361.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before we get onto file names — that's us. Thanks, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

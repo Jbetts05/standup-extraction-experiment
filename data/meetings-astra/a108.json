@@ -1,0 +1,739 @@
+{
+ "id": "a108",
+ "date": "2026-05-25",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p11",
+  "p06",
+  "p08",
+  "p10",
+  "p09",
+  "p03"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a108-t1",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-25",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    17,
+    18,
+    19
+   ]
+  },
+  {
+   "id": "a108-t2",
+   "summary": "Update the risk assessment for work on the Gas Turbine 1",
+   "spoken_action": "update the risk assessment for work on the Gas Turbine 1",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Reidy",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "Gas Turbine 1",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-25",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37
+   ]
+  },
+  {
+   "id": "a108-t3",
+   "summary": "Write up the near miss at the Stretch Wrapper",
+   "spoken_action": "write up the near miss at the wrapper",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-05-25",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    24,
+    25,
+    26,
+    27,
+    28
+   ]
+  },
+  {
+   "id": "a108-t4",
+   "summary": "Chase the purchase order for the Line 1 Mould Temperature Controller",
+   "spoken_action": "chase the purchase order for the line 1 mould temp",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Pricey",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-01",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    41,
+    42
+   ]
+  },
+  {
+   "id": "a108-t5",
+   "summary": "Inspect the Water Booster Pump for leaks",
+   "spoken_action": "inspect the pump in the pit for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "the pump in the pit",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47
+   ]
+  },
+  {
+   "id": "a108-t6",
+   "summary": "Sort the permit to work and isolation for the Line 2 Safety Guard Interlock",
+   "spoken_action": "sort the permit to work and isolation for the door switch on two",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "the door switch on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "tested the water system yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WTR",
+    "text": "water system",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "already swapped the filter on the line one yesterday",
+   "component": {
+    "entity_id": "IM1",
+    "text": "line one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "saw the pressure on the stacker dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the stacker",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "saw the pressure on the heater box on one dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "the heater box on one",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "can't get to the gas valve on one until production gives us a window",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "the gas valve on one",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p08",
+   "text_hint": "still waiting on parts for the wrapper, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the wrapper",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p01",
+   "text_hint": "the shutdown on the boiler is cancelled now, production need it running",
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "the boiler",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.37,
+   "end": 10.27,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Bank holiday or not, here we are. Can you all hear me?"
+  },
+  {
+   "start": 10.64,
+   "end": 16.59,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah. Before we start, whose new car's that in the car park? Very shiny for this place."
+  },
+  {
+   "start": 17.57,
+   "end": 21.07,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Not mine. Mine's the one with more dust than paint."
+  },
+  {
+   "start": 21.51,
+   "end": 30.26,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Someone's doing all right, then. Also, the heating in the portakabin — honestly, it's tropical in here. Just having a moan, not reporting a job."
+  },
+  {
+   "start": 31.35,
+   "end": 34.85,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Luxury. Normally you can see your breath on these calls."
+  },
+  {
+   "start": 36.09,
+   "end": 39.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the accommodation review. What's already finished?"
+  },
+  {
+   "start": 40.29,
+   "end": 44.14,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I tested the water system yesterday and it's all fine now."
+  },
+  {
+   "start": 45.61,
+   "end": 48.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's complete, then, rather than something carried into today?"
+  },
+  {
+   "start": 50.97,
+   "end": 53.42,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, complete. Nothing outstanding from that test."
+  },
+  {
+   "start": 54.76,
+   "end": 60.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I already swapped the filter on the line one yesterday. That's done as well."
+  },
+  {
+   "start": 61.09,
+   "end": 63.54,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, saw that on the handover. Cheers."
+  },
+  {
+   "start": 64.44,
+   "end": 73.19,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Only other thing from me on running conditions: saw the pressure on the stacker dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 73.96,
+   "end": 76.76,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, did you say it's still down, or—?"
+  },
+  {
+   "start": 78.58,
+   "end": 84.88,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No, back on its own. Just an observation, not asking for a job off the back of it."
+  },
+  {
+   "start": 85.43,
+   "end": 94.88,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Similar here. Saw the pressure on the heater box on one dip for a few minutes, then it came back on its own. Just passing that on."
+  },
+  {
+   "start": 96.4,
+   "end": 99.9,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Right, two brief dips, neither still sitting low. Got you."
+  },
+  {
+   "start": 101.09,
+   "end": 105.64,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, observations only. We're not turning those into new actions in this meeting."
+  },
+  {
+   "start": 106.55,
+   "end": 109.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll run the monthly fire alarm test this morning."
+  },
+  {
+   "start": 110.6,
+   "end": 112.7,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "That's you doing it, boss, yeah?"
+  },
+  {
+   "start": 115.04,
+   "end": 116.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, me. This morning."
+  },
+  {
+   "start": 117.48,
+   "end": 124.13,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "On the blocked stuff, I can't get to the gas valve on one until production gives us a window."
+  },
+  {
+   "start": 126.14,
+   "end": 130.69,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And there's no window agreed. I can't give you one on this call."
+  },
+  {
+   "start": 133.07,
+   "end": 136.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Still blocked, not a commitment to get at it today."
+  },
+  {
+   "start": 137.9,
+   "end": 143.5,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Still waiting on parts for the wrapper as well. Nothing we can do until they arrive."
+  },
+  {
+   "start": 145.14,
+   "end": 148.99,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, that's the physical work. The near-miss write-up is separate, though."
+  },
+  {
+   "start": 150.85,
+   "end": 156.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Olumide, can you write up the near miss at the wrapper after lunch? Normal priority."
+  },
+  {
+   "start": 157.24,
+   "end": 161.44,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, I'll write up the near miss at the wrapper after lunch."
+  },
+  {
+   "start": 162.08,
+   "end": 166.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. Normal priority, no need to treat the paperwork as an emergency."
+  },
+  {
+   "start": 167.29,
+   "end": 170.09,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Understood. That's mine, separate from the parts hold."
+  },
+  {
+   "start": 170.6,
+   "end": 175.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And the shutdown on the boiler is cancelled now. Production need it running."
+  },
+  {
+   "start": 177.64,
+   "end": 180.09,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Right, cancelled, not just shifted a bit."
+  },
+  {
+   "start": 182.05,
+   "end": 186.25,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Good distinction. So there's no boiler shutdown going ahead under that plan."
+  },
+  {
+   "start": 187.72,
+   "end": 188.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. It's off."
+  },
+  {
+   "start": 191.22,
+   "end": 197.17,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah so, I'll update the risk assessment for work on the Gas Turbine 1, at half two."
+  },
+  {
+   "start": 197.85,
+   "end": 200.3,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, you clipped slightly there. Half two?"
+  },
+  {
+   "start": 201.75,
+   "end": 206.3,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "At half two, yeah. The risk assessment update, not the turbine work itself."
+  },
+  {
+   "start": 206.91,
+   "end": 210.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Reidy. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 212.8,
+   "end": 215.95,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, understood. I'll have that update at half two."
+  },
+  {
+   "start": 218.4,
+   "end": 224.0,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll chase the purchase order for the line 1 mould temp next week. It's fairly important."
+  },
+  {
+   "start": 225.11,
+   "end": 230.36,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Next week for the chase, then? Not saying the kit will be here next week?"
+  },
+  {
+   "start": 230.76,
+   "end": 236.36,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Exactly. Chasing the purchase order, no delivery promise. Fairly important, but the chase is next week."
+  },
+  {
+   "start": 237.6,
+   "end": 240.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Pricey, that's yours for next week."
+  },
+  {
+   "start": 241.91,
+   "end": 243.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, I'll take it."
+  },
+  {
+   "start": 245.71,
+   "end": 250.26,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I'll inspect the pump in the pit for leaks on the 3rd."
+  },
+  {
+   "start": 251.58,
+   "end": 255.78,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "On the 3rd, right. I nearly heard that as one for today."
+  },
+  {
+   "start": 257.72,
+   "end": 264.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, on the 3rd. Not an emergency but don't let it slip — that's how I'm treating it."
+  },
+  {
+   "start": 265.25,
+   "end": 269.1,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Agreed, Fiona. The leak inspection on the 3rd is with you."
+  },
+  {
+   "start": 269.82,
+   "end": 271.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, mine."
+  },
+  {
+   "start": 272.61,
+   "end": 278.91,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Um, there's still the permit to work and isolation for the door switch on two. That needs sorting."
+  },
+  {
+   "start": 279.59,
+   "end": 290.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, someone needs to sort the permit to work and isolation for the door switch on two. Not an emergency but don't let it slip. Anyone able to own that?"
+  },
+  {
+   "start": 290.71,
+   "end": 295.61,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'm raising the gap, rather than volunteering. I can't take ownership of that package."
+  },
+  {
+   "start": 296.54,
+   "end": 300.39,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "No, I can't take the whole permit and isolation package either."
+  },
+  {
+   "start": 301.61,
+   "end": 304.76,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anyone else? Sorry, thought someone was coming in there."
+  },
+  {
+   "start": 307.16,
+   "end": 310.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Only me moving the headset. Not an offer, sorry."
+  },
+  {
+   "start": 312.61,
+   "end": 316.46,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That one's still got no owner, then. No date agreed either."
+  },
+  {
+   "start": 317.63,
+   "end": 323.58,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. It needs doing, but nobody's taken it. Leave it explicitly unallocated, not against anyone by assumption."
+  },
+  {
+   "start": 325.49,
+   "end": 329.69,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Heard that. Teams makes every silence sound like someone's about to volunteer."
+  },
+  {
+   "start": 330.72,
+   "end": 332.82,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Dangerous game, breathing near your microphone."
+  },
+  {
+   "start": 333.92,
+   "end": 335.67,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll stay very still."
+  },
+  {
+   "start": 336.24,
+   "end": 341.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's us. Agreed actions as discussed; blocked and cancelled work stays separate. Cheers, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

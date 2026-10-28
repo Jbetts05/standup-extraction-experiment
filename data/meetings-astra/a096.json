@@ -1,0 +1,709 @@
+{
+ "id": "a096",
+ "date": "2026-07-20",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p02",
+  "p03",
+  "p08",
+  "p10",
+  "p05",
+  "p09",
+  "p01"
+ ],
+ "chair_id": "p02",
+ "gold_tasks": [
+  {
+   "id": "a096-t1",
+   "summary": "Schedule downtime for the GT1 Fuel Gas Valve with production",
+   "spoken_action": "schedule downtime for the GT1 fuel valve with production",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "GT1 fuel valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    50,
+    56
+   ]
+  },
+  {
+   "id": "a096-t2",
+   "summary": "Recalibrate the sensors on the Boiler Safety Relief Valve",
+   "spoken_action": "recalibrate the sensors on the Boiler Safety Relief Valve",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    49,
+    58
+   ]
+  },
+  {
+   "id": "a096-t3",
+   "summary": "Inspect the GT2 Inlet Water Injection Valve for leaks",
+   "spoken_action": "inspect the GT2 inlet valve for leaks",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 inlet valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-28",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    29,
+    30,
+    32,
+    33,
+    56
+   ]
+  },
+  {
+   "id": "a096-t4",
+   "summary": "Update the risk assessment for work on the Boiler Safety Relief Valve",
+   "spoken_action": "update the risk assessment for work on the Boiler Safety Relief Valve",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-20",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "fairly important",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    42,
+    43,
+    58
+   ]
+  },
+  {
+   "id": "a096-t5",
+   "summary": "Investigate the pressure drop on the Main Water Isolation Valve",
+   "spoken_action": "investigate the pressure drop on the main water valve",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    44,
+    45,
+    46,
+    47,
+    48,
+    58
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p08",
+   "text_hint": "finished the repair on the pick and place on two last night",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "pick and place on two",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "tested the line one yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM1",
+    "text": "line one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p05",
+   "text_hint": "saw the pressure on the line 1 mould temp dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p01",
+   "text_hint": "noticed the Line 2 Pick and Place Robot was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "Line 2 Pick and Place Robot",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "can't get to the Main Outfeed Conveyor until production gives us a window",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "Main Outfeed Conveyor",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.39,
+   "end": 8.69,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Morning, everyone. Monday the twentieth. Can you all hear me, or am I doing the Teams mime again?"
+  },
+  {
+   "start": 9.08,
+   "end": 16.78,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "We can hear you. Probably over the heating in the portakabin as well. July and it's like a drying cupboard in here."
+  },
+  {
+   "start": 17.44,
+   "end": 20.94,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Lovely. We've finally got summer and you're making your own."
+  },
+  {
+   "start": 23.34,
+   "end": 27.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, luxury accommodation. Not reporting a job, before anyone opens anything."
+  },
+  {
+   "start": 27.99,
+   "end": 33.94,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "There's a birthday cake in the office, incidentally. No idea whose birthday, but that hasn't stopped anyone."
+  },
+  {
+   "start": 34.5,
+   "end": 41.15,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Between that and the charity bake sale on Friday, we're doing well for cake. Friday's brownies were ridiculously good."
+  },
+  {
+   "start": 42.02,
+   "end": 45.17,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I got the empty tin. Excellent timing, as usual."
+  },
+  {
+   "start": 45.98,
+   "end": 49.48,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, before this becomes a catering review. What's already finished?"
+  },
+  {
+   "start": 50.85,
+   "end": 56.45,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah so, finished the repair on the pick and place on two last night. That's done."
+  },
+  {
+   "start": 58.71,
+   "end": 60.81,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Properly finished, not the nearly-finished version?"
+  },
+  {
+   "start": 62.84,
+   "end": 67.74,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Properly. Nothing left on that repair. You can stop looking at me like that."
+  },
+  {
+   "start": 69.7,
+   "end": 75.3,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I tested the line one yesterday and it's all fine now. That's completed as well."
+  },
+  {
+   "start": 76.42,
+   "end": 80.62,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Good. That was the one hanging around in the handover, wasn't it?"
+  },
+  {
+   "start": 81.44,
+   "end": 83.89,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's the one. Old news now, thankfully."
+  },
+  {
+   "start": 84.27,
+   "end": 92.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just an observation from nights: noticed the Line 2 Pick and Place Robot was running a bit warm on nights but it settled down."
+  },
+  {
+   "start": 94.24,
+   "end": 95.99,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Settled during the run, yeah?"
+  },
+  {
+   "start": 96.4,
+   "end": 102.35,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah. Not asking for another job on it, just passing on what was in the shift notes."
+  },
+  {
+   "start": 103.63,
+   "end": 112.38,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Similar sort of thing, I saw the pressure on the line 1 mould temp dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 114.75,
+   "end": 118.6,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, you clipped there. It came back without anyone touching it?"
+  },
+  {
+   "start": 120.13,
+   "end": 124.68,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Without anyone touching it, yeah. Only an observation, no outstanding action from that."
+  },
+  {
+   "start": 125.66,
+   "end": 128.81,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, both observations, not new work. Anything still blocked?"
+  },
+  {
+   "start": 130.46,
+   "end": 136.76,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I can't get to the Main Outfeed Conveyor until production gives us a window. Same blocker as before."
+  },
+  {
+   "start": 139.0,
+   "end": 144.6,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There's no confirmed window in the plan. That's still blocked, not something we're committing to today."
+  },
+  {
+   "start": 146.21,
+   "end": 150.06,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Exactly. Can't magic an empty conveyor out of a full one."
+  },
+  {
+   "start": 151.98,
+   "end": 158.98,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay. Separate to that, we need to schedule downtime for the GT1 fuel valve with production. Fairly important, that one."
+  },
+  {
+   "start": 160.51,
+   "end": 165.41,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'll schedule downtime for the GT1 fuel valve with production. Yeah, agreed, fairly important."
+  },
+  {
+   "start": 166.95,
+   "end": 172.9,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That's arranging the downtime, just so we're clear, rather than saying the valve work itself is booked?"
+  },
+  {
+   "start": 175.24,
+   "end": 180.49,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Exactly. I'll agree the downtime with production; I'm not claiming we've already got a slot."
+  },
+  {
+   "start": 181.03,
+   "end": 182.43,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Thanks, Priya. That's yours."
+  },
+  {
+   "start": 182.88,
+   "end": 190.58,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And Priya, can you inspect the GT2 inlet valve for leaks next Tuesday? Whenever you get a chance, that level of priority."
+  },
+  {
+   "start": 192.88,
+   "end": 196.73,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, I'll inspect the GT2 inlet valve for leaks next Tuesday."
+  },
+  {
+   "start": 198.29,
+   "end": 202.49,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Sorry, talked over the end there. GT2, not the GT1 fuel valve?"
+  },
+  {
+   "start": 204.75,
+   "end": 211.4,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "GT2 inlet valve for the leak inspection, next Tuesday. GT1 fuel valve is the downtime discussion. Two separate things."
+  },
+  {
+   "start": 212.24,
+   "end": 217.49,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's it. And the inspection is whenever you get a chance, not a drop-everything job."
+  },
+  {
+   "start": 218.59,
+   "end": 224.19,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "While we're on the valve bits, I'll recalibrate the sensors on the Boiler Safety Relief Valve."
+  },
+  {
+   "start": 224.82,
+   "end": 227.62,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "What timing are you putting against that, Grace?"
+  },
+  {
+   "start": 227.98,
+   "end": 232.88,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "By the 28th. It's a whenever you get a chance one, within that deadline."
+  },
+  {
+   "start": 234.82,
+   "end": 240.07,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay, Grace has the sensor recalibration on the Boiler Safety Relief Valve, by the 28th."
+  },
+  {
+   "start": 241.4,
+   "end": 247.0,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "The sensors, yeah? Not changing the valve set pressure. Just making sure I've heard it properly."
+  },
+  {
+   "start": 248.47,
+   "end": 252.67,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, the sensors only. Recalibration, not a change to the valve setting."
+  },
+  {
+   "start": 255.09,
+   "end": 262.09,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I'll update the risk assessment for work on the Boiler Safety Relief Valve at half two. That's fairly important."
+  },
+  {
+   "start": 262.53,
+   "end": 265.68,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Sorry, at half two, rather than sometime this afternoon?"
+  },
+  {
+   "start": 268.18,
+   "end": 273.08,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "At half two, yes. The risk assessment update. Separate from the sensor recalibration deadline."
+  },
+  {
+   "start": 275.56,
+   "end": 279.06,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Got you, Grace. Fairly important, risk assessment at half two."
+  },
+  {
+   "start": 281.01,
+   "end": 290.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "There's also the pressure drop on the main water valve. Not the little mould temp dip we mentioned earlier; this is separate and does need investigating."
+  },
+  {
+   "start": 291.03,
+   "end": 296.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll investigate the pressure drop on the main water valve. I'll drop everything for that one."
+  },
+  {
+   "start": 296.99,
+   "end": 302.59,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, Grace Liu taking the main water valve pressure-drop investigation. Drop everything for that one, agreed."
+  },
+  {
+   "start": 303.57,
+   "end": 307.07,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, that's mine. That goes ahead of the other bits."
+  },
+  {
+   "start": 308.12,
+   "end": 314.42,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Okay, so the pressure-drop investigation is the urgent one. The sensor recalibration hasn't suddenly become the same priority."
+  },
+  {
+   "start": 316.61,
+   "end": 321.86,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Correct. Sensors are still whenever you get a chance, by the 28th. Different urgency entirely."
+  },
+  {
+   "start": 323.95,
+   "end": 332.35,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And just to avoid crossed wires on mine, the GT1 fuel valve downtime still needs agreeing with production. No slot promised in this call."
+  },
+  {
+   "start": 334.58,
+   "end": 337.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, understood. Arranging it, not announcing an outage."
+  },
+  {
+   "start": 338.49,
+   "end": 341.99,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And none of that changes the Main Outfeed Conveyor situation."
+  },
+  {
+   "start": 342.45,
+   "end": 346.65,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "No. Still blocked by the production window. Nothing new agreed on that."
+  },
+  {
+   "start": 347.89,
+   "end": 353.14,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Nothing else from me. My repair's finished; I'm not sneaking another one onto the end."
+  },
+  {
+   "start": 355.27,
+   "end": 358.42,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Lovely. Quick check of what we've actually agreed. Priya?"
+  },
+  {
+   "start": 360.86,
+   "end": 370.66,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'll schedule downtime for the GT1 fuel valve with production, fairly important. And I'll inspect the GT2 inlet valve for leaks next Tuesday, whenever I get a chance."
+  },
+  {
+   "start": 371.46,
+   "end": 372.66,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep. Grace?"
+  },
+  {
+   "start": 373.23,
+   "end": 391.43,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll investigate the pressure drop on the main water valve, drop everything for that one. I'll update the risk assessment for work on the Boiler Safety Relief Valve at half two, fairly important. And I'll recalibrate the sensors on the Boiler Safety Relief Valve by the 28th, whenever I get a chance."
+  },
+  {
+   "start": 391.94,
+   "end": 396.84,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That matches what I've got. Finished work and observations kept separate, conveyor still blocked."
+  },
+  {
+   "start": 398.19,
+   "end": 403.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good stuff. I'm slowly becoming part of this portakabin, so that's quite enough sitting here."
+  },
+  {
+   "start": 404.15,
+   "end": 406.6,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, we'll leave it there. Cheers, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

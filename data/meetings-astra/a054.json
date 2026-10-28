@@ -1,0 +1,827 @@
+{
+ "id": "a054",
+ "date": "2026-11-18",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p10",
+  "p12",
+  "p08",
+  "p05",
+  "p09",
+  "p04"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a054-t1",
+   "summary": "Replace the seals on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "replace the seals on the Line 1 Hydraulic Power Unit",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "Line 1 Hydraulic Power Unit",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-18",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    33,
+    56,
+    57
+   ]
+  },
+  {
+   "id": "a054-t2",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the forklifts",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "forklifts",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-18",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    25,
+    58
+   ]
+  },
+  {
+   "id": "a054-t3",
+   "summary": "Update the risk assessment for work on the Main Water Isolation Valve",
+   "spoken_action": "update the risk assessment for work on the main water valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tom",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-18",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    10,
+    26,
+    27,
+    28,
+    29,
+    58
+   ]
+  },
+  {
+   "id": "a054-t4",
+   "summary": "Swap the filter on the Water Booster Pump",
+   "spoken_action": "swap the filter on the water booster",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-18",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    31,
+    32,
+    33,
+    34,
+    60
+   ]
+  },
+  {
+   "id": "a054-t5",
+   "summary": "Go to Kestrel Hydraulics Leeds to pick up the replacement parts for the Boiler Feedwater Pump",
+   "spoken_action": "go to Kestrel Hydraulics Leeds to pick up the replacement parts for the feedwater pump",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "feedwater pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s04",
+    "text": "Kestrel Hydraulics Leeds",
+    "split": "name"
+   },
+   "due_date": "2026-11-20",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": null,
+   "reassigned_from": "p08",
+   "evidence": [
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    59
+   ]
+  },
+  {
+   "id": "a054-t6",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah Okafor",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-18",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44,
+    60
+   ]
+  },
+  {
+   "id": "a054-t7",
+   "summary": "Recalibrate the sensors on the Compressed Air Dryer",
+   "spoken_action": "recalibrate the sensors on the air dryer",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "air dryer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-11-18",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    47,
+    48,
+    49,
+    59
+   ]
+  },
+  {
+   "id": "a054-t8",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace Liu",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    51,
+    52,
+    53,
+    55
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "signed off the inspection on the Line 3 Screw and Barrel on Tuesday",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "Line 3 Screw and Barrel",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "already swapped the filter on the main water valve yesterday",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "noticed the Forklift Fleet was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "Forklift Fleet",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "can't get to the line 1 hydraulics until production gives us a window",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line 1 hydraulics",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p08",
+   "text_hint": "still waiting on parts for the Compressed Air Dryer, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "Compressed Air Dryer",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 3.95,
+   "end": 9.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Wednesday the eighteenth. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 12.28,
+   "end": 22.43,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, got you. I was just saying, my weekend plans involve a long walk, apparently. Looking at the weather, it might be a very short walk to the pub."
+  },
+  {
+   "start": 23.42,
+   "end": 29.72,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Same here. We'd planned football at the weekend, but with this rain it'll be water polo. November, innit."
+  },
+  {
+   "start": 31.28,
+   "end": 34.43,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Lovely view of sideways rain from here. Very scenic."
+  },
+  {
+   "start": 36.69,
+   "end": 44.39,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Oh, and the charity bake sale on Friday. Just mentioning it, not volunteering anyone. Last year's brownies nearly needed a lifting plan."
+  },
+  {
+   "start": 46.81,
+   "end": 49.26,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Those were mine. Structurally sound, those brownies."
+  },
+  {
+   "start": 50.26,
+   "end": 56.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a structural engineering review of cake. Quick look back, then today's actual jobs."
+  },
+  {
+   "start": 57.78,
+   "end": 65.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I signed off the inspection on the Line 3 Screw and Barrel on Tuesday. That's finished, not something we're carrying into today."
+  },
+  {
+   "start": 66.11,
+   "end": 69.26,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, saw the sign-off. Nothing outstanding on that one."
+  },
+  {
+   "start": 69.68,
+   "end": 77.38,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I already swapped the filter on the main water valve yesterday. That's done as well, before it gets read out twice."
+  },
+  {
+   "start": 79.13,
+   "end": 84.73,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. Finished filter job, understood. There's a risk assessment item for that valve, but that's separate."
+  },
+  {
+   "start": 85.63,
+   "end": 91.93,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Just an observation from nights: noticed the Forklift Fleet was running a bit warm, but it settled down."
+  },
+  {
+   "start": 93.87,
+   "end": 97.37,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Settled back to normal, you mean, or just stopped climbing?"
+  },
+  {
+   "start": 98.19,
+   "end": 105.19,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Back to normal. No fault left on it. I'm not raising a repair job, just passing on what I saw."
+  },
+  {
+   "start": 107.02,
+   "end": 115.07,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While we're on things that aren't moving, still waiting on parts for the Compressed Air Dryer. Nothing we can do until they arrive."
+  },
+  {
+   "start": 117.36,
+   "end": 122.26,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, that's the parts hold. No repair happening on that today as it stands."
+  },
+  {
+   "start": 124.23,
+   "end": 130.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, blocked, not an extra job for someone to magic away. What have we got on the hydraulics?"
+  },
+  {
+   "start": 131.05,
+   "end": 136.3,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'll replace the seals on the Line 1 Hydraulic Power Unit by end of day."
+  },
+  {
+   "start": 138.05,
+   "end": 144.7,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Hang on, though—can't get to the line 1 hydraulics until production gives us a window. That bit hasn't changed."
+  },
+  {
+   "start": 146.03,
+   "end": 155.13,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, understood. I'll take the seal replacement, but I can't physically do it without that window. End of day is still what I'm aiming to deliver."
+  },
+  {
+   "start": 156.63,
+   "end": 165.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Jamie, agreed as yours by end of day, with production access still blocking the start. We're not saying you've got access when you haven't."
+  },
+  {
+   "start": 167.66,
+   "end": 172.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That's how it reads, then. A commitment with an access dependency, not a booked stoppage."
+  },
+  {
+   "start": 173.29,
+   "end": 177.84,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And I'll do the pre-use checks on the forklifts by end of day."
+  },
+  {
+   "start": 178.56,
+   "end": 184.51,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Just so we're clear, end of day doesn't mean they can be used first and checked afterwards."
+  },
+  {
+   "start": 185.01,
+   "end": 192.01,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, no. Checks before use, obviously. They're stood until they're checked. I'll have the checks done by end of day."
+  },
+  {
+   "start": 193.18,
+   "end": 194.58,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Tomasz. Got that."
+  },
+  {
+   "start": 196.72,
+   "end": 205.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tom, can you update the risk assessment for work on the main water valve by end of day? That one's safety critical, straight away."
+  },
+  {
+   "start": 207.6,
+   "end": 216.0,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, I'll update the risk assessment for work on the main water valve. Straight away on that one, and completed by end of day."
+  },
+  {
+   "start": 217.57,
+   "end": 221.77,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That's the assessment for the work, yeah. Not reopening yesterday's filter replacement."
+  },
+  {
+   "start": 223.06,
+   "end": 226.91,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Exactly. The risk assessment is what I'm taking. Safety critical, understood."
+  },
+  {
+   "start": 227.21,
+   "end": 229.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. That's the distinction I wanted."
+  },
+  {
+   "start": 231.49,
+   "end": 238.14,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And the water booster filter? That's still on the list, isn't it? Not the one that was done yesterday."
+  },
+  {
+   "start": 238.62,
+   "end": 244.22,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "It is. I'll swap the filter on the water booster by end of day. It's urgent."
+  },
+  {
+   "start": 246.02,
+   "end": 252.32,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right, Saz has the water booster, I've got the seals. Two different things, before my scribble merges them."
+  },
+  {
+   "start": 252.95,
+   "end": 256.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, exactly. Your handwriting's doing its own resource planning again."
+  },
+  {
+   "start": 257.29,
+   "end": 268.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Marcus Hale, can you go to Kestrel Hydraulics Leeds to pick up the replacement parts for the feedwater pump by the end of the week? That one's safety critical, straight away."
+  },
+  {
+   "start": 268.62,
+   "end": 275.62,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I can't take that, sorry. I can't leave the CHP plant for the collection. It'll need to be someone else."
+  },
+  {
+   "start": 276.88,
+   "end": 289.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Fiona, can you take that instead—go to Kestrel Hydraulics Leeds to pick up the replacement parts for the feedwater pump by the end of the week? Same priority: that one's safety critical, straight away."
+  },
+  {
+   "start": 290.59,
+   "end": 301.79,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I'll take it instead. I'll go to Kestrel Hydraulics Leeds and pick up the replacement parts for the feedwater pump by the end of the week. Safety critical, straight away, understood."
+  },
+  {
+   "start": 303.89,
+   "end": 310.89,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "So end of the week is the completion limit, not a reason to leave the safety-critical one sitting until Friday?"
+  },
+  {
+   "start": 311.67,
+   "end": 317.27,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. Treat it as straight away, with the collection completed by the end of the week."
+  },
+  {
+   "start": 317.6,
+   "end": 322.85,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Thanks. Definitely handed over, then, rather than both of us thinking the other one's going."
+  },
+  {
+   "start": 324.58,
+   "end": 329.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, I'll run the monthly fire alarm test by 11am. Normal priority on that."
+  },
+  {
+   "start": 329.87,
+   "end": 334.77,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Sarah Okafor for the monthly fire alarm test, by 11am, normal priority. Got you."
+  },
+  {
+   "start": 336.8,
+   "end": 338.0,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, that's mine."
+  },
+  {
+   "start": 338.42,
+   "end": 341.57,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Full name. Official now. Can't wriggle out of it."
+  },
+  {
+   "start": 341.93,
+   "end": 347.53,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Never could. Fiona, can you recalibrate the sensors on the air dryer by 11am? Normal priority."
+  },
+  {
+   "start": 349.32,
+   "end": 354.22,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, I'll recalibrate the sensors on the air dryer by 11am. Normal priority, accepted."
+  },
+  {
+   "start": 355.4,
+   "end": 361.7,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Just separating those out—the sensor recalibration isn't the parts-dependent repair on the Compressed Air Dryer we mentioned earlier."
+  },
+  {
+   "start": 362.05,
+   "end": 367.65,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep. I'm taking the recalibration, not claiming I can do the repair that's waiting on parts."
+  },
+  {
+   "start": 368.63,
+   "end": 373.88,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Correct. My blocked item stays blocked. No mystery delivery's turned up while we've been talking."
+  },
+  {
+   "start": 375.02,
+   "end": 379.22,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Um, I'll sort the training records for the new starters as well."
+  },
+  {
+   "start": 381.56,
+   "end": 387.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace Liu. That's in the 'if you've got a spare minute' category, rather than another urgent one."
+  },
+  {
+   "start": 390.22,
+   "end": 396.87,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, I'll take it on that basis, if I've got a spare minute. No fixed deadline on the records."
+  },
+  {
+   "start": 397.61,
+   "end": 401.81,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "A spare minute. Heard of those. Never seen one in the wild."
+  },
+  {
+   "start": 403.88,
+   "end": 408.08,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Quite. Still, it's mine, just not jumping ahead of the safety-critical stuff."
+  },
+  {
+   "start": 409.05,
+   "end": 416.4,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Quick check before we finish: the production window is still the blocker on the seal replacement. Nothing said here removes that."
+  },
+  {
+   "start": 417.0,
+   "end": 424.35,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep. I've accepted the Line 1 Hydraulic Power Unit seals by end of day, subject to getting access. Not pretending otherwise."
+  },
+  {
+   "start": 425.18,
+   "end": 435.33,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And I've got the main water valve risk assessment, safety critical, straight away, by end of day. Plus the forklifts pre-use checks by end of day, before they're used."
+  },
+  {
+   "start": 435.63,
+   "end": 445.43,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I've got the air dryer sensors by 11am, normal priority, and the feedwater pump parts collection by the end of the week, safety critical, straight away. Both accepted."
+  },
+  {
+   "start": 447.25,
+   "end": 456.0,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And mine are the urgent water booster filter by end of day and the monthly fire alarm test by 11am, normal priority. That's the lot."
+  },
+  {
+   "start": 458.09,
+   "end": 462.29,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Nothing else from me. Even the rain's stopped for about four seconds."
+  },
+  {
+   "start": 464.05,
+   "end": 467.55,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There you go. That's our weekend weather allocation used up."
+  },
+  {
+   "start": 468.91,
+   "end": 471.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Brilliant. Thanks, everyone. We'll leave it there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

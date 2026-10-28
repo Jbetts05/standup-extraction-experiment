@@ -1,0 +1,827 @@
+{
+ "id": "m009",
+ "date": "2026-09-29",
+ "split": "train",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p04",
+  "p07",
+  "p09",
+  "p12",
+  "p05",
+  "p06"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m009-t1",
+   "summary": "Check the guarding on the Injection Moulding Line 1",
+   "spoken_action": "check the guarding on the line one",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "line one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-02",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    9,
+    10,
+    11,
+    59
+   ]
+  },
+  {
+   "id": "m009-t2",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    13,
+    14,
+    57
+   ]
+  },
+  {
+   "id": "m009-t3",
+   "summary": "Chase the purchase order for the GT1 Compressor Section",
+   "spoken_action": "chase the purchase order for the turbine one compressor",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "turbine one compressor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-29",
+   "due_time": null,
+   "due_mention": "by end of day",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    64
+   ]
+  },
+  {
+   "id": "m009-t4",
+   "summary": "Take vibration readings on the Gas Turbine 1",
+   "spoken_action": "take vibration readings on the GT1",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha Begum",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "GT1",
+    "text": "GT1",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "low priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    41,
+    42,
+    65
+   ]
+  },
+  {
+   "id": "m009-t5",
+   "summary": "Update the risk assessment for work on the Site Water System",
+   "spoken_action": "update the risk assessment for work on the water system",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "water system",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-29",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    39,
+    40,
+    66
+   ]
+  },
+  {
+   "id": "m009-t6",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the trucks",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the trucks",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-01",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    20,
+    67
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "finished the repair on the chiller on three last night",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "chiller on three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "already swapped the filter on the line 1 yesterday",
+   "component": {
+    "entity_id": "IM1",
+    "text": "line 1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p04",
+   "text_hint": "tested the line 2 interlock yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "line 2 interlock",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "saw the pressure on the Line 1 Mould Temperature Controller dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "Line 1 Mould Temperature Controller",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "can't get to the number two bearing until production gives us a window",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "number two bearing",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p12",
+   "text_hint": "still waiting on parts for the Line 3 Chiller, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "Line 3 Chiller",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.12,
+   "end": 6.32,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, quick one. Tuesday 29th, let's get through stand-up. Everyone alright?"
+  },
+  {
+   "start": 7.72,
+   "end": 16.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, not bad. Bit grim out though, isn't it? Proper autumn now. Weekend's meant to be a washout as well, if the forecast's right."
+  },
+  {
+   "start": 16.79,
+   "end": 21.69,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "You say that every week, Tom, then you're out doing barbecue in a hoodie."
+  },
+  {
+   "start": 23.84,
+   "end": 25.94,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah well, optimistic engineering judgement, that."
+  },
+  {
+   "start": 27.36,
+   "end": 34.01,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Speaking of important matters, there's still birthday cake in the office fridge from yesterday, if nobody's nicked it yet."
+  },
+  {
+   "start": 35.16,
+   "end": 36.91,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right, that's breakfast sorted then."
+  },
+  {
+   "start": 38.81,
+   "end": 42.31,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, priorities in order. Safety first, cake second. Callum, production?"
+  },
+  {
+   "start": 43.87,
+   "end": 58.92,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Line-wise, mostly okay. I did see the pressure on the Line 1 Mould Temperature Controller dip for a few minutes, it came back on its own, so just keeping an eye on it. Not asking for anything off the back of it yet."
+  },
+  {
+   "start": 60.02,
+   "end": 62.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, noted, just an observation for now."
+  },
+  {
+   "start": 63.77,
+   "end": 69.72,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah. Apart from that we're running, but line one's still being a pain with the guarding situation."
+  },
+  {
+   "start": 70.92,
+   "end": 79.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, on that one, Jamie, can you check the guarding on the line one on Friday? That's holding production up so it needs doing first."
+  },
+  {
+   "start": 81.83,
+   "end": 87.43,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, alright, Jamie can do that. I'll check the guarding on the line one on Friday."
+  },
+  {
+   "start": 88.72,
+   "end": 94.67,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers. If we can get that squared away it'll stop the operators moaning at me, so appreciated."
+  },
+  {
+   "start": 96.01,
+   "end": 99.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. And Callum, can you send the shift handover report round?"
+  },
+  {
+   "start": 102.06,
+   "end": 105.56,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, no problem, I'll send the shift handover report round."
+  },
+  {
+   "start": 107.97,
+   "end": 109.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one. Fi, planning side?"
+  },
+  {
+   "start": 112.01,
+   "end": 120.06,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Um, couple of bits. I finished the repair on the chiller on three last night, so that's done, no action needed there today."
+  },
+  {
+   "start": 121.09,
+   "end": 122.29,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good stuff."
+  },
+  {
+   "start": 123.38,
+   "end": 131.08,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "But I still can't get to the number two bearing until production gives us a window, so that's blocked at the minute."
+  },
+  {
+   "start": 133.39,
+   "end": 139.34,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, not today I don't think. Maybe later in the week if we get some breathing space."
+  },
+  {
+   "start": 141.55,
+   "end": 146.45,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "That's fine. Separate one, I'll do the pre-use checks on the trucks by Thursday."
+  },
+  {
+   "start": 147.96,
+   "end": 149.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Fi."
+  },
+  {
+   "start": 149.69,
+   "end": 155.64,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Were those the ones parked by dispatch? One of them looked like it'd had a rough night."
+  },
+  {
+   "start": 156.08,
+   "end": 157.83,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Probably has, to be fair."
+  },
+  {
+   "start": 160.2,
+   "end": 161.4,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Jamie, stores?"
+  },
+  {
+   "start": 162.76,
+   "end": 169.06,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah. I've already swapped the filter on the line 1 yesterday, so that's done and out the way."
+  },
+  {
+   "start": 170.29,
+   "end": 175.89,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Still waiting on parts for the Line 3 Chiller, nothing we can do until they arrive."
+  },
+  {
+   "start": 176.37,
+   "end": 178.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood, that's just waiting then."
+  },
+  {
+   "start": 179.38,
+   "end": 186.73,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And, um, whenever you get a chance, I'll chase the purchase order for the turbine one compressor by end of day."
+  },
+  {
+   "start": 188.08,
+   "end": 189.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, good, thanks Jamie."
+  },
+  {
+   "start": 190.35,
+   "end": 194.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Worth chasing, that one's been floating about a bit too long."
+  },
+  {
+   "start": 195.69,
+   "end": 196.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tom, maintenance?"
+  },
+  {
+   "start": 198.02,
+   "end": 203.97,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah. I tested the line 2 interlock yesterday and it's all fine now, so that's closed off."
+  },
+  {
+   "start": 204.74,
+   "end": 205.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good."
+  },
+  {
+   "start": 206.71,
+   "end": 215.11,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Nothing massive from me otherwise. Just normal checks. And, er, if the rain holds off I might actually get the garden sorted for once."
+  },
+  {
+   "start": 215.8,
+   "end": 217.0,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "It won't."
+  },
+  {
+   "start": 219.13,
+   "end": 220.53,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, I know, mate."
+  },
+  {
+   "start": 222.31,
+   "end": 223.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha?"
+  },
+  {
+   "start": 224.29,
+   "end": 229.54,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Morning. Process side's fairly steady. I've got the water system paperwork still open from yesterday."
+  },
+  {
+   "start": 231.88,
+   "end": 237.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Aisha, can you update the risk assessment for work on the water system today?"
+  },
+  {
+   "start": 238.38,
+   "end": 244.33,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, I can do that. I'll update the risk assessment for work on the water system today."
+  },
+  {
+   "start": 245.97,
+   "end": 250.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks. And can you also take vibration readings on the GT1? Low priority."
+  },
+  {
+   "start": 251.34,
+   "end": 259.74,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, okay. I'll take vibration readings on the GT1. If I don't get to it first thing that's why, but low priority is fine."
+  },
+  {
+   "start": 261.17,
+   "end": 262.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's fine."
+  },
+  {
+   "start": 263.47,
+   "end": 273.27,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "On the water system one, just send me the latest version after, Aisha, and I'll have a look. Not a task for stand-up, just so I've seen it."
+  },
+  {
+   "start": 274.75,
+   "end": 275.95,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, will do."
+  },
+  {
+   "start": 276.91,
+   "end": 278.11,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Grace, anything HSE-wise?"
+  },
+  {
+   "start": 279.96,
+   "end": 288.01,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Nothing major. Just keep the access clear by line one while you're sorting that guarding, because it was getting a bit cluttered yesterday."
+  },
+  {
+   "start": 289.39,
+   "end": 292.54,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, fair. Half of that wasn't even ours, mind."
+  },
+  {
+   "start": 294.3,
+   "end": 295.7,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "It never is, apparently."
+  },
+  {
+   "start": 297.67,
+   "end": 302.22,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything else we need to raise, but only if it's actually for today."
+  },
+  {
+   "start": 303.51,
+   "end": 308.41,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "No, main thing from me was the blocked bearing job, and that's still blocked."
+  },
+  {
+   "start": 308.9,
+   "end": 313.1,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Same here, nothing new. The interlock's done, so that's one less headache."
+  },
+  {
+   "start": 315.51,
+   "end": 321.46,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And just to be clear, Line 3 Chiller stays parked till parts land. No point pretending otherwise."
+  },
+  {
+   "start": 323.63,
+   "end": 324.83,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep."
+  },
+  {
+   "start": 326.41,
+   "end": 333.76,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "For line one, once Jamie's checked the guarding on Friday, we'll know if we can get it fully back to normal."
+  },
+  {
+   "start": 335.68,
+   "end": 336.88,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah."
+  },
+  {
+   "start": 339.24,
+   "end": 344.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Callum, the handover report round this morning please, because yesterday's got a few gaps."
+  },
+  {
+   "start": 346.47,
+   "end": 350.32,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, understood, I'll send the shift handover report round after this."
+  },
+  {
+   "start": 352.62,
+   "end": 355.42,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Who's on cake disposal then? Critical path item."
+  },
+  {
+   "start": 357.39,
+   "end": 358.59,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Low priority."
+  },
+  {
+   "start": 360.88,
+   "end": 364.73,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "No, no, that's holding morale up so it needs doing first."
+  },
+  {
+   "start": 365.8,
+   "end": 367.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Alright, enough. Quick recap then."
+  },
+  {
+   "start": 368.7,
+   "end": 375.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie to check the guarding on the line one on Friday, that's holding production up so it needs doing first."
+  },
+  {
+   "start": 378.02,
+   "end": 380.82,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Callum to send the shift handover report round."
+  },
+  {
+   "start": 381.99,
+   "end": 388.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie will chase the purchase order for the turbine one compressor by end of day, whenever you get a chance."
+  },
+  {
+   "start": 390.88,
+   "end": 394.73,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha Begum to take vibration readings on the GT1, low priority."
+  },
+  {
+   "start": 395.22,
+   "end": 399.77,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Aisha to update the risk assessment for work on the water system today."
+  },
+  {
+   "start": 401.31,
+   "end": 405.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fi to do the pre-use checks on the trucks by Thursday."
+  },
+  {
+   "start": 405.89,
+   "end": 407.09,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep."
+  },
+  {
+   "start": 408.3,
+   "end": 409.5,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "All good."
+  },
+  {
+   "start": 410.21,
+   "end": 411.41,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep."
+  },
+  {
+   "start": 412.33,
+   "end": 413.53,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, got it."
+  },
+  {
+   "start": 415.48,
+   "end": 416.68,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sound."
+  },
+  {
+   "start": 417.79,
+   "end": 418.99,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fine by me."
+  },
+  {
+   "start": 420.54,
+   "end": 421.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one, thanks all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

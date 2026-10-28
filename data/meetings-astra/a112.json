@@ -1,0 +1,851 @@
+{
+ "id": "a112",
+ "date": "2026-09-28",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p06",
+  "p09",
+  "p05",
+  "p11",
+  "p03",
+  "p02",
+  "p08"
+ ],
+ "chair_id": "p06",
+ "gold_tasks": [
+  {
+   "id": "a112-t1",
+   "summary": "Take vibration readings on the Gas Turbine 2",
+   "spoken_action": "take vibration readings on the turbine two",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2",
+    "text": "turbine two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-05",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "it's urgent",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "id": "a112-t2",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-28",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    41,
+    42,
+    43
+   ]
+  },
+  {
+   "id": "a112-t3",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona Doyle",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    47
+   ]
+  },
+  {
+   "id": "a112-t4",
+   "summary": "Grease and check the bearings on the GT2 Number 2 Bearing",
+   "spoken_action": "grease and check the bearings on the hot bearing",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "the hot bearing",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-28",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "id": "a112-t5",
+   "summary": "Do the lock-out tag-out sign-off on the Line 2 Safety Guard Interlock",
+   "spoken_action": "do the lock-out tag-out sign-off on the door switch on two",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2-GRD",
+    "text": "the door switch on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-28",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    20,
+    21,
+    23
+   ]
+  },
+  {
+   "id": "a112-t6",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Doyler",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52
+   ]
+  },
+  {
+   "id": "a112-t7",
+   "summary": "Update the risk assessment for work on the GT2 Number 2 Bearing",
+   "spoken_action": "update the risk assessment for work on the hot bearing",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Whitty",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "the hot bearing",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-05",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "it's urgent",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    36,
+    37
+   ]
+  },
+  {
+   "id": "a112-t8",
+   "summary": "Recalibrate the sensors on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "recalibrate the sensors on the little water valve on two",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Haley",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "the little water valve on two",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "top priority please",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    24,
+    25,
+    26,
+    27
+   ]
+  },
+  {
+   "id": "a112-t9",
+   "summary": "Check the guarding on the Palletiser",
+   "spoken_action": "check the guarding on the palletiser",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marc",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "palletiser",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    53,
+    54,
+    55
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p08",
+   "text_hint": "finished the repair on the line 3 barrel last night",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "already swapped the filter on the hot bearing yesterday",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "the hot bearing",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "noticed the pop valve was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "the pop valve",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "can't get to the HV board until production gives us a window",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "the HV board",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p03",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the hot bearing",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "the hot bearing",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p08",
+   "text_hint": "we were going to replace the belt on the line three but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.84,
+   "end": 10.79,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Morning, everyone. Monday the twenty-eighth. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 11.65,
+   "end": 18.3,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "We can hear you. I'm more concerned about the broken coffee machine in the canteen. That's a grim start."
+  },
+  {
+   "start": 20.74,
+   "end": 24.24,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That coffee was grim when it worked, to be fair."
+  },
+  {
+   "start": 24.87,
+   "end": 32.57,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, and the heating in the portakabin's either tropical or off. Just having a moan, before that goes on your action list."
+  },
+  {
+   "start": 35.07,
+   "end": 41.37,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "There's a birthday cake in the office, if that improves things. No idea whose birthday, but it's there."
+  },
+  {
+   "start": 42.85,
+   "end": 44.6,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Good enough provenance for me."
+  },
+  {
+   "start": 45.22,
+   "end": 48.72,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, before we all disappear for cake, what's already cleared?"
+  },
+  {
+   "start": 49.96,
+   "end": 56.61,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I finished the repair on the line 3 barrel last night. That's done, not carrying anything over on that."
+  },
+  {
+   "start": 58.91,
+   "end": 61.71,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Lovely. Keeping that in the completed bit, then."
+  },
+  {
+   "start": 62.54,
+   "end": 71.29,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "And we were going to replace the belt on the line three but that's been pushed to next month so ignore it. Not happening today."
+  },
+  {
+   "start": 73.52,
+   "end": 77.37,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, that's off today's schedule. The old entry isn't another job."
+  },
+  {
+   "start": 79.81,
+   "end": 85.06,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "While we're on completed stuff, I already swapped the filter on the hot bearing yesterday."
+  },
+  {
+   "start": 86.78,
+   "end": 91.33,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Right, filter swap's finished. Useful to keep that separate from the bearing work."
+  },
+  {
+   "start": 93.71,
+   "end": 102.11,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I noticed the pop valve was running a bit warm on nights but it settled down. Just an observation, nothing I'm allocating off that."
+  },
+  {
+   "start": 104.1,
+   "end": 107.25,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, understood. Settled down, rather than an ongoing fault."
+  },
+  {
+   "start": 108.6,
+   "end": 115.25,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "The other thing is we can't get to the HV board until production gives us a window. Still blocked."
+  },
+  {
+   "start": 115.98,
+   "end": 120.53,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Understood. It stays blocked; we're not giving anyone that work in this meeting."
+  },
+  {
+   "start": 122.91,
+   "end": 128.86,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And the supplier still hasn't confirmed the delivery for the hot bearing. Same position as before, unfortunately."
+  },
+  {
+   "start": 130.32,
+   "end": 135.22,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's the incoming replacement, yeah? Not saying we can't do anything on what's installed."
+  },
+  {
+   "start": 136.3,
+   "end": 140.15,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, exactly. Delivery's the blocker. I'm not announcing a replacement job."
+  },
+  {
+   "start": 142.08,
+   "end": 149.78,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "PR, can you do the lock-out tag-out sign-off on the door switch on two this morning? That one's safety critical, straight away."
+  },
+  {
+   "start": 151.86,
+   "end": 157.81,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, I'll do the lock-out tag-out sign-off on the door switch on two straight away this morning."
+  },
+  {
+   "start": 158.96,
+   "end": 163.16,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, the sign-off, not just somebody saying the switch looks all right."
+  },
+  {
+   "start": 164.36,
+   "end": 167.16,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Absolutely. Proper isolation sign-off is what I'm accepting."
+  },
+  {
+   "start": 167.52,
+   "end": 173.12,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Haley, can you recalibrate the sensors on the little water valve on two? Top priority please."
+  },
+  {
+   "start": 174.41,
+   "end": 180.36,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I'll recalibrate the sensors on the little water valve on two. Got it as top priority."
+  },
+  {
+   "start": 182.14,
+   "end": 186.69,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, talking over you there—sensors, rather than changing anything on the valve itself?"
+  },
+  {
+   "start": 188.51,
+   "end": 192.01,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "That's it, calibration on the sensors. Not a valve replacement."
+  },
+  {
+   "start": 192.77,
+   "end": 197.67,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fiona, can you take vibration readings on the turbine two next week? It's urgent."
+  },
+  {
+   "start": 199.09,
+   "end": 203.64,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Me taking the readings, rather than just putting someone else in the planner?"
+  },
+  {
+   "start": 204.63,
+   "end": 210.58,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yes, you taking them, please. Next week is the timing, but it's urgent, not a spare-time one."
+  },
+  {
+   "start": 211.18,
+   "end": 217.13,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, understood. I'll take vibration readings on the turbine two next week and keep it marked urgent."
+  },
+  {
+   "start": 218.25,
+   "end": 223.15,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Easy to lose that distinction when everything on the sheet says 'arrange', isn't it."
+  },
+  {
+   "start": 223.86,
+   "end": 228.06,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. Otherwise I come away thinking I've only got a scheduling job."
+  },
+  {
+   "start": 228.48,
+   "end": 234.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Whitty, can you update the risk assessment for work on the hot bearing for Monday? It's urgent."
+  },
+  {
+   "start": 236.6,
+   "end": 242.2,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Monday as in today, yeah? Just making sure I'm not mentally sticking it a week out."
+  },
+  {
+   "start": 243.08,
+   "end": 244.83,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, Monday, today. It's urgent."
+  },
+  {
+   "start": 245.87,
+   "end": 252.17,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay, I'll update the risk assessment for work on the hot bearing for Monday. Understood on the urgency."
+  },
+  {
+   "start": 253.62,
+   "end": 263.07,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I'll grease and check the bearings on the hot bearing at half two. Not an emergency but don't let it slip—that's how I've got that one."
+  },
+  {
+   "start": 263.55,
+   "end": 269.85,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Thanks, Grace. Agreed, at half two, and that priority's right: not an emergency but don't let it slip."
+  },
+  {
+   "start": 271.83,
+   "end": 276.38,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep. Grease and bearing checks, separate from the filter that's already been swapped."
+  },
+  {
+   "start": 277.9,
+   "end": 287.7,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll organise the toolbox talk for the team at half two as well. That's a whenever you get a chance one, rather than something to drop everything for."
+  },
+  {
+   "start": 289.04,
+   "end": 295.69,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers, Han. At half two for organising that, then. Yeah, whenever you get a chance in terms of priority."
+  },
+  {
+   "start": 297.82,
+   "end": 304.47,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, that's what I mean. I'll organise it; I'm not trying to pull everyone off the floor right now."
+  },
+  {
+   "start": 305.66,
+   "end": 312.31,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I heard half two twice and thought I'd volunteered to be in two places. Different jobs, different people. Fine."
+  },
+  {
+   "start": 314.11,
+   "end": 316.56,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, no double booking hidden in that."
+  },
+  {
+   "start": 317.66,
+   "end": 323.26,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fiona Doyle, can you run the monthly fire alarm test as well? Fairly important, that one."
+  },
+  {
+   "start": 325.47,
+   "end": 330.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yes, I'll run the monthly fire alarm test. Got that as fairly important."
+  },
+  {
+   "start": 330.64,
+   "end": 334.84,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's separate from my toolbox talk, just so nobody's bundled them together."
+  },
+  {
+   "start": 335.84,
+   "end": 340.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, two separate things. Not making the talk into an alarm test."
+  },
+  {
+   "start": 342.48,
+   "end": 345.98,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I'll send the shift handover report round next Tuesday."
+  },
+  {
+   "start": 347.77,
+   "end": 350.92,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Thanks, Doyler. Shift handover report round next Tuesday, agreed."
+  },
+  {
+   "start": 352.21,
+   "end": 357.46,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, next Tuesday. That's the report circulation, not another bit of work on the equipment."
+  },
+  {
+   "start": 358.54,
+   "end": 364.49,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I'll check the guarding on the palletiser as well. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 365.12,
+   "end": 368.97,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers, Marc. Guarding on the palletiser is yours, with that priority."
+  },
+  {
+   "start": 371.2,
+   "end": 375.05,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yep, I'll do the guarding check. That's what I'm taking on."
+  },
+  {
+   "start": 377.44,
+   "end": 382.34,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Not the belt job sneaking back onto the list under a different name, then."
+  },
+  {
+   "start": 383.48,
+   "end": 389.78,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No, definitely not. The belt on the line three is still pushed to next month. Different thing entirely."
+  },
+  {
+   "start": 390.22,
+   "end": 396.87,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right. And the HV board access and the unconfirmed delivery stay as blockers, not fresh actions we've handed out."
+  },
+  {
+   "start": 399.13,
+   "end": 402.63,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Correct. Neither's suddenly become available because we've talked about it."
+  },
+  {
+   "start": 403.8,
+   "end": 408.35,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "If only Teams worked like that. Half our problems would disappear on mute."
+  },
+  {
+   "start": 410.13,
+   "end": 415.03,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Unlike the coffee machine. Still broken when I unmute. Cake might have to do."
+  },
+  {
+   "start": 415.76,
+   "end": 420.66,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, that's the lot. Thanks, all. Clear enough despite us talking over each other."
+  },
+  {
+   "start": 422.21,
+   "end": 423.61,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, all clear. Cheers."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

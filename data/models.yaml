@@ -1,0 +1,88 @@
+# LLM catalogue for the experiment.
+#
+# This is our catalogue, kept as an example. To use your own models, change each `deployment` to your
+# deployment name and set the endpoint variables in .env (see .env.example). Prices only feed the cost numbers.
+#
+# Every LLM-backed method can be pinned to one of these ids, e.g. `llm@gpt-6-sol`,
+# `llm_direct@grok-4.6`, and the normaliser `llm@mistral-large-3`.
+# `standup-exp run --models all` expands every LLM method across the whole list.
+#
+# endpoint: name of the .env variable holding the base URL (OpenAI v1 surface).
+# api:      responses  - Responses API with a strict JSON schema (OpenAI models)
+#           chat_json  - Chat Completions with json_object; the schema goes in the prompt and
+#                        the reply is validated + retried (Grok / Mistral on Foundry do not
+#                        support strict schemas)
+# price:    USD per million tokens [input, output]; null = unknown (cost shown as "?").
+#           Sweden Central retail prices captured 2026-08-31; GPT-6 list
+#           prices from public launch coverage, September 2026.
+# timeout:  optional per-call timeout in seconds (default 240)
+
+default: gpt-5.4   # used by plain `llm` / `llm_direct` and for transcript generation
+
+models:
+  - id: gpt-5.4
+    deployment: gpt-5.4
+    endpoint: FOUNDRY_ENDPOINT
+    api: responses
+    price: [2.50, 15.0]   # default Foundry resource, Global Standard list price
+
+  # --- second Foundry resource (Sweden Central): BENCH_OPENAI_ENDPOINT / BENCH_MODELS_ENDPOINT ---
+  - id: gpt-6-astra
+    deployment: gpt-6-astra
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [10.0, 50.0]
+  - id: gpt-6-sol
+    deployment: gpt-6-sol
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [2.0, 10.0]
+  - id: gpt-6-luna
+    deployment: gpt-6-luna
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [0.10, 0.50]
+  - id: gpt-5.6-sol
+    deployment: receipt-gpt-56-sol
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [5.0, 30.0]
+  - id: gpt-5.6-terra
+    deployment: receipt-gpt-56-terra
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [2.0, 12.0]
+  - id: gpt-5.6-luna
+    deployment: receipt-gpt-56-luna
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [0.20, 1.20]
+  - id: gpt-5.4-mini
+    deployment: receipt-gpt-54-mini
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [0.75, 4.50]
+  - id: gpt-5.2
+    deployment: receipt-gpt-52-cu
+    endpoint: BENCH_OPENAI_ENDPOINT
+    api: responses
+    price: [1.75, 14.0]
+  - id: grok-4.6
+    deployment: receipt-grok-46
+    endpoint: BENCH_MODELS_ENDPOINT
+    api: chat_json
+    price: [2.0, 6.0]
+    timeout: 1800  # reasoning model: typical extraction ~9 min on this deployment; 600 s cut off ~half the calls
+  - id: mistral-large-3
+    deployment: receipt-mistral-large-3
+    endpoint: BENCH_MODELS_ENDPOINT
+    api: chat_json
+    price: [0.50, 1.50]
+
+# Embedding models (used by the embedding matcher and to build candidate shortlists)
+embeddings:
+  - id: text-embedding-3-large
+    deployment: receipt-embedding-3-large
+    endpoint: BENCH_OPENAI_ENDPOINT
+    price: 0.13          # USD per million input tokens
+    dimensions: 3072

@@ -1,0 +1,819 @@
+{
+ "id": "m014",
+ "date": "2026-07-24",
+ "split": "test",
+ "renderer": "llm",
+ "attendees": [
+  "p01",
+  "p06",
+  "p07",
+  "p09",
+  "p10",
+  "p03",
+  "p05"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "m014-t1",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Ash",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-25",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "needs doing this week",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29
+   ]
+  },
+  {
+   "id": "m014-t2",
+   "summary": "Clear the jam and check the sensors on the Palletiser",
+   "spoken_action": "clear the jam and check the sensors on the palletiser",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "palletiser",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-08-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "top priority please",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    34,
+    35,
+    36
+   ]
+  },
+  {
+   "id": "m014-t3",
+   "summary": "Replace the seals on the Boiler Feedwater Pump",
+   "spoken_action": "replace the seals on the BFP",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum Reid",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "BFP",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-24",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "id": "m014-t4",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p06",
+    "text": "Callum",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-07-29",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "no rush",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44
+   ]
+  },
+  {
+   "id": "m014-t5",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    47
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "someone's new car in the car park",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "tested the line 1 hydraulics yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line 1 hydraulics",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "tested the long belt yesterday and it's all fine now",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "the long belt",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "heard a slight rattle from the 11kV board, nothing to action yet",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p05",
+   "text_hint": "still waiting on parts for the turbine one compressor, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "turbine one compressor",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "still waiting on parts for the Atlas, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.09,
+   "end": 8.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning all, happy Friday. You alright? Let's get cracking, quick stand-up before everyone disappears onto the floor."
+  },
+  {
+   "start": 9.98,
+   "end": 13.83,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Morning. Bit rough after the football last night, not gonna lie."
+  },
+  {
+   "start": 15.19,
+   "end": 17.29,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, don't start. Absolute robbery, that."
+  },
+  {
+   "start": 18.67,
+   "end": 22.17,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I turned it off, mate. Better for the blood pressure."
+  },
+  {
+   "start": 22.73,
+   "end": 27.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, save VAR for later. Safety, production, maintenance, then actions. Grace, you go."
+  },
+  {
+   "start": 29.71,
+   "end": 38.11,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, cheers. Safety-wise nothing major. I tested the long belt yesterday and it's all fine now, so that's closed out, not one for today."
+  },
+  {
+   "start": 39.58,
+   "end": 46.93,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Only blocker from me, we're still waiting on parts for the turbine one compressor, nothing we can do until they arrive."
+  },
+  {
+   "start": 47.62,
+   "end": 50.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, noted, blocked not active. Anything else?"
+  },
+  {
+   "start": 52.45,
+   "end": 53.65,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No, that's me."
+  },
+  {
+   "start": 54.89,
+   "end": 56.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one. Fiona?"
+  },
+  {
+   "start": 57.7,
+   "end": 65.4,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Morning. Planning side, tested the line 1 hydraulics yesterday and it's all fine now, so again that's done, no follow-up needed today."
+  },
+  {
+   "start": 66.35,
+   "end": 71.25,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Schedules are mostly alright, just a bit tight this afternoon if line 2 slips."
+  },
+  {
+   "start": 71.87,
+   "end": 73.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Ash?"
+  },
+  {
+   "start": 75.55,
+   "end": 85.0,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah so, process side okay-ish. I did hear a slight rattle from the 11kV board, nothing to action yet, just clocking it in case it gets worse."
+  },
+  {
+   "start": 85.5,
+   "end": 87.6,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Mm, keep an ear on it."
+  },
+  {
+   "start": 88.4,
+   "end": 91.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, observation only for now. Olu, how're you?"
+  },
+  {
+   "start": 91.7,
+   "end": 98.35,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "All good. Bit humid already. If this weather keeps up I'll be welding myself to a panel by lunch."
+  },
+  {
+   "start": 100.23,
+   "end": 104.78,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Weekend plans sorted then, just stand in front of a fan and complain?"
+  },
+  {
+   "start": 106.48,
+   "end": 113.83,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's basically it, yeah. Maybe barbecue if it doesn't chuck it down, because obviously the forecast can't make its mind up."
+  },
+  {
+   "start": 114.2,
+   "end": 116.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Very good. Back in the room. Callum?"
+  },
+  {
+   "start": 118.02,
+   "end": 126.07,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Production's stable enough. Atlas is still the same story, still waiting on parts for the Atlas, nothing we can do until they arrive."
+  },
+  {
+   "start": 126.91,
+   "end": 129.01,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, blocked. Not for today then."
+  },
+  {
+   "start": 129.45,
+   "end": 134.0,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Other than that, changeover was a bit messy but we got through it."
+  },
+  {
+   "start": 135.78,
+   "end": 143.48,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Whose new car is that in the car park by the way? White electric thing. Looks far too clean for this place."
+  },
+  {
+   "start": 145.42,
+   "end": 148.92,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Not mine, mine's held together with zip ties and hope."
+  },
+  {
+   "start": 151.26,
+   "end": 157.91,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Thought it was a visitor at first. If it's one of ours it'll have dust on it by dinner."
+  },
+  {
+   "start": 158.84,
+   "end": 161.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, Top Gear later. Priya, anything urgent from electrical?"
+  },
+  {
+   "start": 164.39,
+   "end": 168.24,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Nothing screaming. Couple of nuisance trips overnight but they've reset cleanly."
+  },
+  {
+   "start": 168.81,
+   "end": 179.66,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, good. I've got a few actions we need to pin down. First one, Ash, can you run the monthly fire alarm test? It needs doing this week, ideally tomorrow morning."
+  },
+  {
+   "start": 182.04,
+   "end": 186.94,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, Ash can do that. I'll run the monthly fire alarm test tomorrow morning."
+  },
+  {
+   "start": 188.29,
+   "end": 194.94,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Give me a shout when you do it and I'll make sure the wardens know, but yeah that's fine."
+  },
+  {
+   "start": 196.8,
+   "end": 198.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Nice one, that's agreed."
+  },
+  {
+   "start": 198.65,
+   "end": 209.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Next, Olu, the palletiser's still being a pain. Can you clear the jam and check the sensors on the palletiser? Top priority please, and I need that on the 3rd."
+  },
+  {
+   "start": 211.12,
+   "end": 217.42,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, alright. I'll get onto the palletiser and clear the jam and check the sensors on the palletiser."
+  },
+  {
+   "start": 219.28,
+   "end": 229.08,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "On the 3rd is fine. If it's just product build-up it'll be quick, if a sensor bracket's bent I might need a bit longer, but I'll cover it."
+  },
+  {
+   "start": 230.46,
+   "end": 232.21,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, but top priority please."
+  },
+  {
+   "start": 233.11,
+   "end": 234.51,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, understood, top priority."
+  },
+  {
+   "start": 235.35,
+   "end": 238.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. Anything else from maintenance side while we're there?"
+  },
+  {
+   "start": 239.86,
+   "end": 247.91,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Actually, I'll replace the seals on the BFP by 11am. Better I just grab that myself before the shift gets away from us."
+  },
+  {
+   "start": 250.29,
+   "end": 252.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "You're happy taking that, yeah?"
+  },
+  {
+   "start": 253.71,
+   "end": 257.21,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I'll replace the seals on the BFP by 11am."
+  },
+  {
+   "start": 259.16,
+   "end": 261.96,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Good shout, that one's been weeping a bit."
+  },
+  {
+   "start": 262.55,
+   "end": 270.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Sorted. And Callum, separate one, can you sort the training records for the new starters? No rush, but I do want that by Wednesday."
+  },
+  {
+   "start": 272.06,
+   "end": 278.01,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah alright, Callum can do that. I'll sort the training records for the new starters by Wednesday."
+  },
+  {
+   "start": 279.24,
+   "end": 283.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ta. No rush, just want it cleaned up before audit prep."
+  },
+  {
+   "start": 285.37,
+   "end": 286.57,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, understood."
+  },
+  {
+   "start": 287.15,
+   "end": 294.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Priya, one for you as well, if you've got a spare minute, can you organise the toolbox talk for the team?"
+  },
+  {
+   "start": 296.6,
+   "end": 301.15,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, Priya can do that. I'll organise the toolbox talk for the team."
+  },
+  {
+   "start": 302.22,
+   "end": 306.07,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Can you swing it around manual isolation, maybe? Keep it practical."
+  },
+  {
+   "start": 308.12,
+   "end": 311.97,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, happy to. I'll keep it short so nobody falls asleep."
+  },
+  {
+   "start": 314.45,
+   "end": 316.9,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Too late for me, to be fair."
+  },
+  {
+   "start": 317.47,
+   "end": 323.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That'd be a first. Right, anything likely to trip us up today that we haven't said?"
+  },
+  {
+   "start": 325.39,
+   "end": 332.04,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Only dispatch timing, but that's not an action, just a heads-up. If the afternoon wagon's early we'll be juggling."
+  },
+  {
+   "start": 333.39,
+   "end": 334.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, noted."
+  },
+  {
+   "start": 336.43,
+   "end": 342.03,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "On the fire alarm test, I'll do the usual route and radio through as I go."
+  },
+  {
+   "start": 343.42,
+   "end": 348.67,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Perfect, just because of the contractors near blending, they jump out their skin every time."
+  },
+  {
+   "start": 350.0,
+   "end": 351.2,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, fair."
+  },
+  {
+   "start": 352.49,
+   "end": 361.59,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "For the palletiser, I might isolate the infeed for a bit while I clear it, so just tell ops not to keep lobbing product at me."
+  },
+  {
+   "start": 362.54,
+   "end": 364.64,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "We've tried shouting, doesn't always work."
+  },
+  {
+   "start": 366.7,
+   "end": 371.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll brief the line leads. But yes, Olu's on the palletiser, leave him space."
+  },
+  {
+   "start": 373.22,
+   "end": 379.52,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "If you find the sensor's actually gone, give me a bell and I'll help with the wiring side."
+  },
+  {
+   "start": 380.83,
+   "end": 382.03,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep, cheers."
+  },
+  {
+   "start": 384.32,
+   "end": 387.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Anything from HSE beyond the compressor parts delay?"
+  },
+  {
+   "start": 389.17,
+   "end": 397.57,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No, that's it. And just to be clear, the turbine one compressor stays blocked till the bits turn up, so nobody's chasing that today."
+  },
+  {
+   "start": 398.43,
+   "end": 399.63,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, understood."
+  },
+  {
+   "start": 400.66,
+   "end": 408.71,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Same with the Atlas from me, before anyone asks. Still waiting on parts for the Atlas, nothing we can do until they arrive."
+  },
+  {
+   "start": 410.25,
+   "end": 413.75,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I've got both of those flagged in the plan anyway."
+  },
+  {
+   "start": 414.65,
+   "end": 415.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good stuff."
+  },
+  {
+   "start": 417.49,
+   "end": 421.69,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "What colour was that car actually? White or that weird pearl thing?"
+  },
+  {
+   "start": 423.49,
+   "end": 424.89,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Here we go again."
+  },
+  {
+   "start": 426.53,
+   "end": 429.68,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Priya's more interested in that than the nuisance trips."
+  },
+  {
+   "start": 430.09,
+   "end": 432.19,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "No, no, I can multitask. Barely."
+  },
+  {
+   "start": 433.51,
+   "end": 456.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this fully derails: recap. Ash on the monthly fire alarm test tomorrow morning, needs doing this week. Olu on the palletiser, top priority please, on the 3rd. Callum replacing the seals on the BFP by 11am and sorting the training records for the new starters by Wednesday, no rush. Priya organising the toolbox talk for the team if you've got a spare minute."
+  },
+  {
+   "start": 458.51,
+   "end": 459.71,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep."
+  },
+  {
+   "start": 461.02,
+   "end": 462.22,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, got it."
+  },
+  {
+   "start": 463.34,
+   "end": 464.54,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "All good."
+  },
+  {
+   "start": 465.52,
+   "end": 466.72,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yep, fine."
+  },
+  {
+   "start": 467.35,
+   "end": 468.55,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Sounds good."
+  },
+  {
+   "start": 470.06,
+   "end": 472.16,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "I'll update the board after this."
+  },
+  {
+   "start": 473.72,
+   "end": 478.62,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Brilliant. Stay safe, shout if anything changes, and try not to melt out there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

@@ -1,0 +1,876 @@
+{
+ "id": "a087",
+ "date": "2026-10-23",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p02",
+  "p08",
+  "p07",
+  "p01",
+  "p04",
+  "p10",
+  "p09"
+ ],
+ "chair_id": "p02",
+ "gold_tasks": [
+  {
+   "id": "a087-t1",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marc",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-26",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    59
+   ]
+  },
+  {
+   "id": "a087-t2",
+   "summary": "Recalibrate the sensors on the Line 1 Mould Temperature Controller",
+   "spoken_action": "recalibrate the sensors on the line 1 mould temp",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-24",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    56
+   ]
+  },
+  {
+   "id": "a087-t3",
+   "summary": "Schedule downtime for the Palletiser with production",
+   "spoken_action": "schedule downtime for the palletiser with production",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "palletiser",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-23",
+   "due_time": null,
+   "due_mention": "after lunch",
+   "priority_cue": "low priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    56
+   ]
+  },
+  {
+   "id": "a087-t4",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    30,
+    60
+   ]
+  },
+  {
+   "id": "a087-t5",
+   "summary": "Check the guarding on the Palletiser",
+   "spoken_action": "check the guarding on the Palletiser",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "Palletiser",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-23",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    15,
+    16,
+    17,
+    59
+   ]
+  },
+  {
+   "id": "a087-t6",
+   "summary": "Swap the filter on the Compressed Air Dryer",
+   "spoken_action": "swap the filter on the dryer",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tomasz Nowak",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-23",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "it's urgent",
+   "assigned_by": "p02",
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    21,
+    58
+   ]
+  },
+  {
+   "id": "a087-t7",
+   "summary": "Write up the near miss at the Boiler Safety Relief Valve",
+   "spoken_action": "write up the near miss at the Boiler Safety Relief Valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Dave",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "Boiler Safety Relief Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-23",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    61
+   ]
+  },
+  {
+   "id": "a087-t8",
+   "summary": "Clear the jam and check the sensors on the Main Outfeed Conveyor",
+   "spoken_action": "clear the jam and check the sensors on the outfeed conveyor",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Davey",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "outfeed conveyor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-29",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    46,
+    47,
+    61
+   ]
+  },
+  {
+   "id": "a087-t9",
+   "summary": "Take vibration readings on the Gas Turbine 2",
+   "spoken_action": "take vibration readings on the GT2",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT2",
+    "text": "GT2",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-23",
+   "due_time": "11:00",
+   "due_mention": "by 11am",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p02",
+   "text_hint": "already swapped the filter on the fire panel yesterday",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire panel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p07",
+   "text_hint": "tested the IM3 yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM3",
+    "text": "IM3",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "signed off the inspection on the fire alarm panel on Tuesday",
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "fire alarm panel",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p02",
+   "text_hint": "noticed the palletiser was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "palletiser",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "still waiting on parts for the line 3 chiller, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "still waiting on parts for the 11kV board, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.3,
+   "end": 9.65,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Morning, everyone. Friday the 23rd of October. Can you hear me, or am I talking to the little spinning wheel again?"
+  },
+  {
+   "start": 10.54,
+   "end": 15.44,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "We can hear you. Important opening observation: there's a birthday cake in the office."
+  },
+  {
+   "start": 17.13,
+   "end": 23.08,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "That's my weekend plans sorted, then. Was going walking, but have you seen the weather? Rain sideways."
+  },
+  {
+   "start": 24.62,
+   "end": 28.47,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "So you're walking as far as the cake. Sensible risk assessment."
+  },
+  {
+   "start": 29.9,
+   "end": 38.3,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Warmer there than this portakabin. The heating in here is either tropical or absolutely nothing. Just moaning, not asking for a job on it."
+  },
+  {
+   "start": 40.62,
+   "end": 46.57,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right, before this becomes the cake and heating meeting. Finished bits first, then what actually needs doing."
+  },
+  {
+   "start": 48.36,
+   "end": 54.66,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I already swapped the filter on the fire panel yesterday. That's finished, not another filter job for today."
+  },
+  {
+   "start": 56.63,
+   "end": 62.58,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, and I tested the IM3 yesterday and it's all fine now. Nothing outstanding from that test."
+  },
+  {
+   "start": 63.22,
+   "end": 69.17,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I signed off the inspection on the fire alarm panel on Tuesday as well. That one's closed."
+  },
+  {
+   "start": 70.95,
+   "end": 74.45,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Lovely. Three things we don't need to go round again."
+  },
+  {
+   "start": 74.84,
+   "end": 81.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Less lovely, we're still waiting on parts for the line 3 chiller. Nothing we can do until they arrive."
+  },
+  {
+   "start": 83.73,
+   "end": 90.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And same story on the 11kV board, still waiting on parts. Nothing we can do until they arrive either."
+  },
+  {
+   "start": 92.06,
+   "end": 95.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Both still blocked, then. Not fresh actions for anyone this morning."
+  },
+  {
+   "start": 98.1,
+   "end": 106.5,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Correct. Also, I noticed the palletiser was running a bit warm on nights, but it settled down. That's just an observation, not another job."
+  },
+  {
+   "start": 108.15,
+   "end": 112.0,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, settled down. Keep that separate from anything we're actually agreeing."
+  },
+  {
+   "start": 113.47,
+   "end": 119.42,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Marcus, can you check the guarding on the Palletiser this afternoon? That one's safety critical, straight away."
+  },
+  {
+   "start": 119.97,
+   "end": 127.67,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I'll check the guarding on the Palletiser this afternoon. Straight away when we get into that afternoon work, safety-critical one first."
+  },
+  {
+   "start": 128.25,
+   "end": 131.4,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Exactly. Not bundled in with that low-level warm-running observation."
+  },
+  {
+   "start": 133.25,
+   "end": 137.8,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Tomasz Nowak, can you swap the filter on the dryer today? It's urgent."
+  },
+  {
+   "start": 138.26,
+   "end": 142.11,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, I'll swap the filter on the dryer today. Understood, urgent."
+  },
+  {
+   "start": 143.02,
+   "end": 147.57,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, you clipped there—different filter from the fire panel one you just mentioned?"
+  },
+  {
+   "start": 149.56,
+   "end": 154.81,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, completely separate. Fire panel was yesterday and done. The dryer is the live job."
+  },
+  {
+   "start": 155.46,
+   "end": 162.81,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And I'll write up the near miss at the Boiler Safety Relief Valve this morning. That one's safety critical, straight away."
+  },
+  {
+   "start": 165.27,
+   "end": 169.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Dave. The near-miss write-up is with you this morning, then."
+  },
+  {
+   "start": 169.79,
+   "end": 172.94,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yes, mine. Definitely not leaving that floating between us."
+  },
+  {
+   "start": 175.11,
+   "end": 180.71,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "While we're on the team stuff, I'll organise the toolbox talk for the team next week."
+  },
+  {
+   "start": 182.45,
+   "end": 185.95,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Cheers, Marc. Next week for organising the toolbox talk, yeah?"
+  },
+  {
+   "start": 187.14,
+   "end": 189.24,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, next week. I'll take that."
+  },
+  {
+   "start": 190.33,
+   "end": 200.48,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll sort the training records for the new starters by the 28th. That's a whenever you get a chance one, rather than drop everything, but still by the 28th."
+  },
+  {
+   "start": 201.1,
+   "end": 206.0,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Got you, Saz. Training records with you, by the 28th, around the higher-priority stuff."
+  },
+  {
+   "start": 206.7,
+   "end": 209.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. It's mine, just not a stop-the-world job."
+  },
+  {
+   "start": 211.78,
+   "end": 222.98,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Um, the sensors on the line 1 mould temp need recalibrating first thing tomorrow. The priority wording on that is whenever you get a chance. I haven't got an owner for it."
+  },
+  {
+   "start": 223.83,
+   "end": 226.63,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, first thing tomorrow, despite the whenever-you-get-a-chance bit?"
+  },
+  {
+   "start": 229.13,
+   "end": 236.83,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah. Recalibrate the sensors on the line 1 mould temp, first thing tomorrow. That's the requested timing; it hasn't been marked urgent."
+  },
+  {
+   "start": 238.46,
+   "end": 243.01,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Right. Does anyone here actually have that, rather than us assuming somebody does?"
+  },
+  {
+   "start": 244.32,
+   "end": 247.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Not me. I can't take that one on."
+  },
+  {
+   "start": 247.93,
+   "end": 254.58,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And I'm raising it, not volunteering for it. Don't put my name against it just because I mentioned sensors."
+  },
+  {
+   "start": 255.73,
+   "end": 260.63,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Fair point. Agreed it needs doing first thing tomorrow, but the recalibration is unassigned."
+  },
+  {
+   "start": 262.58,
+   "end": 269.58,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Another gap: someone needs to schedule downtime for the palletiser with production after lunch. Low priority. That's not allocated either."
+  },
+  {
+   "start": 271.74,
+   "end": 278.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Low priority for the scheduling, yes. Not saying the guarding check is low priority—before those get mixed up."
+  },
+  {
+   "start": 280.31,
+   "end": 286.26,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Exactly. After lunch is when the scheduling needs doing, not me declaring a downtime slot after lunch."
+  },
+  {
+   "start": 288.7,
+   "end": 291.15,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Understood. Anyone taking the production scheduling bit?"
+  },
+  {
+   "start": 292.65,
+   "end": 297.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I can't take it. Please don't assume shift management means it's automatically mine."
+  },
+  {
+   "start": 297.72,
+   "end": 301.22,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Nor am I accepting it here. I'm flagging the gap."
+  },
+  {
+   "start": 303.7,
+   "end": 308.95,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Okay. Scheduling downtime for the palletiser with production, after lunch, low priority, still no owner."
+  },
+  {
+   "start": 309.34,
+   "end": 317.04,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "I will take the other conveyor one, though. I'll clear the jam and check the sensors on the outfeed conveyor by Thursday."
+  },
+  {
+   "start": 319.22,
+   "end": 323.42,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Davey, that's both clearing the jam and checking the sensors, by Thursday?"
+  },
+  {
+   "start": 324.24,
+   "end": 326.34,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, both with me, by Thursday."
+  },
+  {
+   "start": 328.67,
+   "end": 331.82,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, outfeed conveyor. Separate entry from the palletiser discussion."
+  },
+  {
+   "start": 332.75,
+   "end": 336.6,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah. Too many things ending in conveyor and panel this morning."
+  },
+  {
+   "start": 337.63,
+   "end": 347.43,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "One more, and this isn't a casual one. We need someone to take vibration readings on the GT2 by 11am. Drop everything for that one. Nobody's taken it."
+  },
+  {
+   "start": 348.72,
+   "end": 352.92,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "By 11am, highest urgency, but no name. That's a fairly big hole."
+  },
+  {
+   "start": 353.82,
+   "end": 356.97,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "It is. Can anyone actually accept the GT2 readings?"
+  },
+  {
+   "start": 357.55,
+   "end": 363.5,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I can't commit to it. I know I'm the one saying it, but I'm not taking ownership."
+  },
+  {
+   "start": 364.76,
+   "end": 367.91,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I can't take it either. Sorry—talked over you there."
+  },
+  {
+   "start": 370.07,
+   "end": 379.17,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "No, you're all right. The GT2 vibration readings remain unowned. By 11am, drop everything for that one; the urgency hasn't gone away because there's no taker."
+  },
+  {
+   "start": 381.12,
+   "end": 388.82,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "So the three gaps are the line 1 mould temp recalibration, the palletiser downtime scheduling, and the GT2 vibration readings. None accepted."
+  },
+  {
+   "start": 389.59,
+   "end": 394.49,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's right. Quick check on the things people have actually accepted, then we'll finish."
+  },
+  {
+   "start": 394.87,
+   "end": 400.12,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "The dryer filter is mine today, urgent. No confusion with yesterday's fire panel filter now."
+  },
+  {
+   "start": 401.37,
+   "end": 408.72,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I've got the Palletiser guarding this afternoon, safety critical, straight away. And organising the toolbox talk for the team next week."
+  },
+  {
+   "start": 409.9,
+   "end": 417.6,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Training records for the new starters with me by the 28th, whenever I get a chance. The two parts-blocked items stay blocked."
+  },
+  {
+   "start": 419.55,
+   "end": 428.65,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "And mine are the Boiler Safety Relief Valve near-miss write-up this morning, safety critical, straight away; then the outfeed conveyor jam and sensor check by Thursday."
+  },
+  {
+   "start": 430.14,
+   "end": 435.04,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Nothing else from me. IM3 was the completed update, not something to carry forward."
+  },
+  {
+   "start": 437.1,
+   "end": 442.0,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Good. And the cake was information only. Although it may not survive this meeting."
+  },
+  {
+   "start": 442.87,
+   "end": 447.77,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Probably the clearest status we've had all morning. Thanks, everyone. We'll leave it there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

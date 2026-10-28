@@ -1,0 +1,712 @@
+{
+ "id": "a103",
+ "date": "2026-09-21",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p04",
+  "p07",
+  "p03",
+  "p12",
+  "p11",
+  "p10",
+  "p01"
+ ],
+ "chair_id": "p04",
+ "gold_tasks": [
+  {
+   "id": "a103-t1",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-28",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    47,
+    48,
+    57
+   ]
+  },
+  {
+   "id": "a103-t2",
+   "summary": "Chase the purchase order for the Main Outfeed Conveyor",
+   "spoken_action": "chase the purchase order for the CV01",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "CV01",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-21",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "low priority",
+   "assigned_by": null,
+   "reassigned_from": "p12",
+   "evidence": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    54
+   ]
+  },
+  {
+   "id": "a103-t3",
+   "summary": "Go to Tollgate Water Treatment Works to pick up the replacement parts for the Line 1 Hydraulic Power Unit",
+   "spoken_action": "go to the treatment plant to pick up the replacement parts for the IM1 hydraulic unit",
+   "category": "organisation",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olu",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "IM1 hydraulic unit",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": "s05",
+    "text": "the treatment plant",
+    "split": "heldout"
+   },
+   "due_date": "2026-09-23",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    30,
+    31,
+    55
+   ]
+  },
+  {
+   "id": "a103-t4",
+   "summary": "Order spare parts for the Palletiser",
+   "spoken_action": "order spare parts for the stacker",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Pricey",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the stacker",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-22",
+   "due_time": null,
+   "due_mention": "tomorrow morning",
+   "priority_cue": "no rush",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    35,
+    36,
+    37,
+    39,
+    56
+   ]
+  },
+  {
+   "id": "a103-t5",
+   "summary": "Clear the jam and check the sensors on the Stretch Wrapper",
+   "spoken_action": "clear the jam and check the sensors on the spinner",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Pricey",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "the spinner",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p04",
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    56
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p12",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "finished the repair on the GT1 fuel valve last night",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "GT1 fuel valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p07",
+   "text_hint": "finished the repair on the GT1 compressor last night",
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "GT1 compressor",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p12",
+   "text_hint": "noticed the desiccant unit was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the desiccant unit",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "still waiting on parts for the booster pump, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.3,
+   "end": 12.3,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Morning, everyone. Monday again. Can you all hear me? Right, let's do nights first, then what's actually on the list."
+  },
+  {
+   "start": 13.12,
+   "end": 21.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, got you. Traffic on the ring road was absolutely solid. I've spent longer looking at the same van than I have at this screen."
+  },
+  {
+   "start": 22.33,
+   "end": 30.73,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Lovely start. We were making weekend plans yesterday, thinking we'd get out walking next weekend. Seen the weather now, though. Probably another weekend indoors."
+  },
+  {
+   "start": 32.86,
+   "end": 40.91,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "At least indoors might have coffee. The broken coffee machine in the canteen is still doing its impression of a very expensive cupboard."
+  },
+  {
+   "start": 42.32,
+   "end": 43.72,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "So morale's excellent, then."
+  },
+  {
+   "start": 45.91,
+   "end": 49.76,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Outstanding. And that's a complaint, not me volunteering to repair it."
+  },
+  {
+   "start": 50.21,
+   "end": 53.01,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Noted. Olu, anything carried over from last night?"
+  },
+  {
+   "start": 54.34,
+   "end": 59.24,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, so, finished the repair on the GT1 fuel valve last night. That's done."
+  },
+  {
+   "start": 61.25,
+   "end": 64.75,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Fully finished, not one of those 'done apart from' ones?"
+  },
+  {
+   "start": 66.96,
+   "end": 69.41,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Fully finished. Nothing left on that repair."
+  },
+  {
+   "start": 70.28,
+   "end": 75.88,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Same from me: finished the repair on the GT1 compressor last night. That's closed as well."
+  },
+  {
+   "start": 77.5,
+   "end": 80.65,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good. Neither of those needs carrying onto today's list."
+  },
+  {
+   "start": 83.04,
+   "end": 84.79,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Exactly, just reporting it back."
+  },
+  {
+   "start": 87.16,
+   "end": 93.46,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "One thing from nights, I noticed the desiccant unit was running a bit warm, but it settled down."
+  },
+  {
+   "start": 94.86,
+   "end": 99.41,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Settled while you were there, you mean? Not still warm when you left?"
+  },
+  {
+   "start": 100.48,
+   "end": 105.73,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, settled while I was there. Just an observation, not raising a job for it."
+  },
+  {
+   "start": 107.66,
+   "end": 113.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And we're still waiting on parts for the booster pump. Nothing we can do until they arrive."
+  },
+  {
+   "start": 115.1,
+   "end": 118.6,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, that stays blocked, then. No new action against it."
+  },
+  {
+   "start": 120.82,
+   "end": 122.57,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's it. Same position, unfortunately."
+  },
+  {
+   "start": 124.17,
+   "end": 129.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Jamie, can you chase the purchase order for the CV01 today? Low priority, but today."
+  },
+  {
+   "start": 130.15,
+   "end": 136.45,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Sorry, I can't take that today. I'm not going to promise it and then leave it sitting there."
+  },
+  {
+   "start": 138.09,
+   "end": 144.39,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Fair enough. Boss, can you take that instead—chase the purchase order for the CV01 today? Still low priority."
+  },
+  {
+   "start": 146.01,
+   "end": 151.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, I'll take it off Jamie. I'll chase the purchase order for the CV01 today, low priority."
+  },
+  {
+   "start": 153.98,
+   "end": 158.18,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Cheers, boss. So I haven't got a parallel chase on that, then."
+  },
+  {
+   "start": 160.07,
+   "end": 163.92,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Correct, just boss on the CV01 purchase order. Today, low priority."
+  },
+  {
+   "start": 165.23,
+   "end": 166.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, mine."
+  },
+  {
+   "start": 168.73,
+   "end": 177.48,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "While we're on parts, I'll go to the treatment plant to pick up the replacement parts for the IM1 hydraulic unit by Wednesday. It's urgent."
+  },
+  {
+   "start": 179.6,
+   "end": 182.4,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Thanks, Olu. By Wednesday for the collection, yeah?"
+  },
+  {
+   "start": 184.38,
+   "end": 190.68,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah. I'll pick them up from the treatment plant by Wednesday. I'm not including fitting them in that."
+  },
+  {
+   "start": 191.22,
+   "end": 195.07,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right, useful distinction. Replacement parts coming back, not a completed repair."
+  },
+  {
+   "start": 196.11,
+   "end": 200.31,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Exactly. It's urgent, but by Wednesday is the deadline for that pickup."
+  },
+  {
+   "start": 201.56,
+   "end": 202.96,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Understood. That's with Olu."
+  },
+  {
+   "start": 203.71,
+   "end": 207.21,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, someone's gone a bit Dalek. Is it just me?"
+  },
+  {
+   "start": 209.44,
+   "end": 211.54,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Might be my headset. How's that?"
+  },
+  {
+   "start": 213.88,
+   "end": 215.98,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, you're back. Much less threatening."
+  },
+  {
+   "start": 216.99,
+   "end": 222.24,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Um, I'll order spare parts for the stacker tomorrow morning. No rush on that one."
+  },
+  {
+   "start": 223.03,
+   "end": 228.63,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Cheers, Pricey. That's the spare parts order, just to keep it separate from the other bits."
+  },
+  {
+   "start": 230.4,
+   "end": 233.9,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, the order. I'll do that tomorrow morning, no rush."
+  },
+  {
+   "start": 235.48,
+   "end": 241.43,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And that's separate from the CV01 purchase order chase. Two different things, before we muddle them together."
+  },
+  {
+   "start": 243.89,
+   "end": 246.34,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, mine's spare parts for the stacker."
+  },
+  {
+   "start": 248.35,
+   "end": 255.35,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Pricey, can you also clear the jam and check the sensors on the spinner? It matters but it's not urgent."
+  },
+  {
+   "start": 256.41,
+   "end": 261.66,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll clear the jam and check the sensors on the spinner. I'll take that."
+  },
+  {
+   "start": 263.76,
+   "end": 267.61,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, talking over you—both bits, the jam and the sensor checks?"
+  },
+  {
+   "start": 269.51,
+   "end": 273.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Both, yeah. Not just clear it and call it finished."
+  },
+  {
+   "start": 274.12,
+   "end": 279.37,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Exactly. It matters but it's not urgent, so don't read that as an emergency call-out."
+  },
+  {
+   "start": 280.27,
+   "end": 281.67,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Understood. Important, not urgent."
+  },
+  {
+   "start": 283.29,
+   "end": 288.54,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And I'll organise the toolbox talk for the team next week. No rush on that."
+  },
+  {
+   "start": 290.33,
+   "end": 293.83,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Thanks, Aisha. Next week for the toolbox talk, no rush."
+  },
+  {
+   "start": 294.94,
+   "end": 297.04,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, I'll organise it. That's mine."
+  },
+  {
+   "start": 298.04,
+   "end": 302.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "A toolbox talk where Teams doesn't eat every third word would be a novelty."
+  },
+  {
+   "start": 304.88,
+   "end": 307.33,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Let's not set expectations too high, boss."
+  },
+  {
+   "start": 309.5,
+   "end": 314.05,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Same approach I'm taking with those weekend plans. Expect rain, be pleasantly surprised."
+  },
+  {
+   "start": 314.65,
+   "end": 318.85,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I expected coffee and was unpleasantly surprised, so your system's probably better."
+  },
+  {
+   "start": 319.72,
+   "end": 324.97,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, before this becomes the breakfast complaints channel, quick check of what we've actually agreed."
+  },
+  {
+   "start": 325.3,
+   "end": 329.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I've got the CV01 purchase order chase instead of Jamie. Today, low priority."
+  },
+  {
+   "start": 330.7,
+   "end": 338.05,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I'll go to the treatment plant for the replacement parts for the IM1 hydraulic unit by Wednesday. It's urgent. Collection only."
+  },
+  {
+   "start": 339.53,
+   "end": 349.33,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I'll order spare parts for the stacker tomorrow morning, no rush. And I'll clear the jam and check the sensors on the spinner—it matters but it's not urgent."
+  },
+  {
+   "start": 349.91,
+   "end": 354.11,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I'll organise the toolbox talk for the team next week. No rush."
+  },
+  {
+   "start": 356.01,
+   "end": 361.96,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good. The booster pump hasn't suddenly become another action in that lot; it's still waiting on parts."
+  },
+  {
+   "start": 363.2,
+   "end": 367.4,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Blocked until they arrive, nothing we can do in the meantime."
+  },
+  {
+   "start": 367.98,
+   "end": 373.58,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And the GT1 fuel valve and GT1 compressor repairs are finished, not being handed out again."
+  },
+  {
+   "start": 375.7,
+   "end": 381.65,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Desiccant unit was only an observation as well. It settled down, so nothing new from me there."
+  },
+  {
+   "start": 383.21,
+   "end": 387.06,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And no coffee machine job. Just a factory-wide sense of loss."
+  },
+  {
+   "start": 389.45,
+   "end": 391.55,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Tragic. Right, that's us. Cheers, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

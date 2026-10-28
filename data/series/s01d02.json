@@ -1,0 +1,740 @@
+{
+ "id": "s01d02",
+ "date": "2026-02-24",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p04",
+  "p12",
+  "p02",
+  "p03",
+  "p11",
+  "p08"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "s01d02-t1",
+   "summary": "Swap the filter on the Cooling Tower",
+   "spoken_action": "swap the filter on the CT1",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "WTR-CT-01",
+    "text": "CT1",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-27",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41
+   ]
+  },
+  {
+   "id": "s01d02-t2",
+   "summary": "Book a contractor to look at the GT2 Inlet Water Injection Valve",
+   "spoken_action": "book a contractor to look at the GT2 water valve",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-25",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    43,
+    44,
+    45,
+    46
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p08",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "finished the repair on the Water Booster Pump last night",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "Water Booster Pump",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p03",
+   "text_hint": "heard a slight rattle from the long belt, nothing to action yet",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "the long belt",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.95,
+   "end": 11.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Tuesday the twenty-fourth. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 13.21,
+   "end": 15.31,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Bit tinny, but yeah, you're there."
+  },
+  {
+   "start": 17.09,
+   "end": 19.89,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Fine this end. Think it's your speaker, Marcus."
+  },
+  {
+   "start": 22.37,
+   "end": 27.62,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Before we start, did anyone watch the football last night? Honestly, that last ten minutes."
+  },
+  {
+   "start": 27.96,
+   "end": 31.11,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Turned it off. Apparently that was the sensible decision."
+  },
+  {
+   "start": 32.22,
+   "end": 37.12,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Wish I had. Sat there arguing with the telly like it could hear me."
+  },
+  {
+   "start": 38.59,
+   "end": 41.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "So, much like a Teams call, then."
+  },
+  {
+   "start": 43.14,
+   "end": 49.09,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I'm supposed to be going walking at the weekend. Looking at the weather, it'll be swimming instead."
+  },
+  {
+   "start": 49.79,
+   "end": 52.59,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "It's only Tuesday. Forecast will change six times."
+  },
+  {
+   "start": 54.82,
+   "end": 58.67,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, from rain to heavy rain. We've booked somewhere now, anyway."
+  },
+  {
+   "start": 59.2,
+   "end": 60.6,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Optimistic. Very unlike you."
+  },
+  {
+   "start": 62.11,
+   "end": 67.01,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the weather forecast—Callum Reid's absent today. Everyone else is on."
+  },
+  {
+   "start": 68.57,
+   "end": 72.07,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, I'm here. Camera's off, but I am actually here."
+  },
+  {
+   "start": 73.66,
+   "end": 75.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Updates from yesterday first?"
+  },
+  {
+   "start": 76.5,
+   "end": 85.25,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, the shift handover report I was going to send round—can that move to stores Jamie? Jamie, can you take the sending round off me?"
+  },
+  {
+   "start": 86.39,
+   "end": 91.29,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll take that over from you and send the shift handover report round."
+  },
+  {
+   "start": 93.27,
+   "end": 94.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine, thanks both."
+  },
+  {
+   "start": 95.94,
+   "end": 100.49,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And the new starters' training records, I've sorted those. All fine, that's done."
+  },
+  {
+   "start": 102.72,
+   "end": 105.52,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Lovely. Nice to hear 'all fine' for once."
+  },
+  {
+   "start": 106.73,
+   "end": 114.43,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Tomasz asked me to pass on the monthly fire alarm test as well. That's stuck—the contractor can't get here until it's rescheduled."
+  },
+  {
+   "start": 114.93,
+   "end": 116.13,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Ah, right. Understood."
+  },
+  {
+   "start": 116.74,
+   "end": 124.79,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And, um, I've made a start on the risk assessment update. Got into it, but there's a fair bit left to work through."
+  },
+  {
+   "start": 125.79,
+   "end": 129.29,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Always more boxes than space to write in, those forms."
+  },
+  {
+   "start": 130.21,
+   "end": 132.31,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Paperwork doesn't have a bypass, unfortunately."
+  },
+  {
+   "start": 134.24,
+   "end": 137.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "If only. Anything else before the new stuff?"
+  },
+  {
+   "start": 139.01,
+   "end": 144.61,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Just a finished one: finished the repair on the Water Booster Pump last night. That's sorted."
+  },
+  {
+   "start": 146.26,
+   "end": 150.11,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Lovely. Not the most generous corner for getting your hands into."
+  },
+  {
+   "start": 150.72,
+   "end": 153.87,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Designed by someone with much smaller knuckles than mine."
+  },
+  {
+   "start": 154.8,
+   "end": 161.1,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Oh, and I heard a slight rattle from the long belt. Just an observation, nothing to action yet."
+  },
+  {
+   "start": 163.21,
+   "end": 167.41,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Could you hear it over the general racket, or only close up?"
+  },
+  {
+   "start": 168.92,
+   "end": 172.07,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Only close up. Very faint, no more than that."
+  },
+  {
+   "start": 173.02,
+   "end": 175.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, just an observation for now."
+  },
+  {
+   "start": 176.91,
+   "end": 181.11,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Half the trick in there is knowing which rattle you're listening to."
+  },
+  {
+   "start": 182.92,
+   "end": 191.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, new work. We need to swap the filter on the CT1 by the end of the week. And that one's safety critical, straight away."
+  },
+  {
+   "start": 193.25,
+   "end": 196.4,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Have we actually got anyone available to take that?"
+  },
+  {
+   "start": 197.7,
+   "end": 201.2,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I can't take it on, sorry. Haven't got the capacity."
+  },
+  {
+   "start": 201.54,
+   "end": 206.44,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "No, nor me. Don't want to say yes and then leave it sitting there."
+  },
+  {
+   "start": 206.91,
+   "end": 209.36,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I can't pick that one up either."
+  },
+  {
+   "start": 210.97,
+   "end": 215.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. It needs doing, but we've got nobody taking it at the moment."
+  },
+  {
+   "start": 215.83,
+   "end": 219.33,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I can't offer to do that from stores, I'm afraid."
+  },
+  {
+   "start": 221.13,
+   "end": 224.28,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, understood. I'm not going to pretend it's covered."
+  },
+  {
+   "start": 226.39,
+   "end": 228.14,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah. That's a gap, then."
+  },
+  {
+   "start": 229.45,
+   "end": 231.9,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "It is. Okay, the other new one."
+  },
+  {
+   "start": 233.33,
+   "end": 242.43,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah, can you book a contractor to look at the GT2 water valve? Need that booked by tomorrow at 9:30. It matters but it's not urgent."
+  },
+  {
+   "start": 243.26,
+   "end": 250.61,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah—sorry, just checking, tomorrow at 9:30 is when you need the booking sorted, not when they need to be standing here?"
+  },
+  {
+   "start": 252.9,
+   "end": 256.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes, the booking sorted by tomorrow at 9:30. That's the deadline."
+  },
+  {
+   "start": 257.7,
+   "end": 264.35,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Fine, I'll book a contractor to look at the GT2 water valve and have the booking sorted by then."
+  },
+  {
+   "start": 265.63,
+   "end": 266.83,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yep, makes sense."
+  },
+  {
+   "start": 267.95,
+   "end": 271.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Hannah. That's the new work covered in the discussion, then."
+  },
+  {
+   "start": 273.89,
+   "end": 279.84,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Sorry if there's a load of banging coming through. It's the door behind me, not anything exciting."
+  },
+  {
+   "start": 281.57,
+   "end": 284.37,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I thought someone was applauding the meeting finishing."
+  },
+  {
+   "start": 285.59,
+   "end": 287.34,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Wouldn't put it past them."
+  },
+  {
+   "start": 288.08,
+   "end": 290.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheeky. Right, thanks everyone. We'll leave it there."
+  },
+  {
+   "start": 292.29,
+   "end": 293.49,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Cheers, all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "series_id": "s01",
+ "day": 2,
+ "team": [
+  "p01",
+  "p04",
+  "p12",
+  "p02",
+  "p03",
+  "p11",
+  "p08",
+  "p06"
+ ],
+ "board_before": [
+  {
+   "id": "s01d01-t1",
+   "summary": "Send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner_id": "p02",
+   "component_id": null,
+   "site_id": null,
+   "due_date": "2026-02-28",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d01",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p02",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t2",
+   "summary": "Sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner_id": "p12",
+   "component_id": null,
+   "site_id": null,
+   "due_date": "2026-02-23",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d01",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p12",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t3",
+   "summary": "Run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p04",
+   "component_id": null,
+   "site_id": null,
+   "due_date": "2026-02-25",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d01",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t4",
+   "summary": "Update the risk assessment for work on the Air Compressor 1",
+   "category": "safety",
+   "priority": 2,
+   "owner_id": "p04",
+   "component_id": "AIR-C-01",
+   "site_id": null,
+   "due_date": "2026-02-24",
+   "due_time": null,
+   "status": "todo",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d01",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    }
+   ]
+  },
+  {
+   "id": "s01d01-t5",
+   "summary": "Replace the seals on the GT2 Inlet Water Injection Valve",
+   "category": "operations",
+   "priority": 1,
+   "owner_id": "p04",
+   "component_id": "GT2-WV-03",
+   "site_id": null,
+   "due_date": "2026-02-23",
+   "due_time": "14:00",
+   "status": "todo",
+   "created_in": "s01d01",
+   "created_on": "2026-02-23",
+   "updated_in": "s01d01",
+   "history": [
+    {
+     "day_id": "s01d01",
+     "date": "2026-02-23",
+     "kind": "create",
+     "text": "Added from the stand-up",
+     "quote": null,
+     "speaker_id": "p04",
+     "confidence": null
+    }
+   ]
+  }
+ ],
+ "updates": [
+  {
+   "id": "s01d02-u1",
+   "kind": "reassigned",
+   "card_id": "s01d01-t1",
+   "speaker_id": "p02",
+   "style": "activity",
+   "reference": "send the shift handover report round",
+   "component": null,
+   "owner_words": "Whitty",
+   "note": null,
+   "new_owner": {
+    "entity_id": "p12",
+    "text": "stores Jamie",
+    "split": "heldout"
+   },
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [],
+   "evidence": [
+    14,
+    15
+   ]
+  },
+  {
+   "id": "s01d02-u2",
+   "kind": "done",
+   "card_id": "s01d01-t2",
+   "speaker_id": "p12",
+   "style": "activity",
+   "reference": "sort the training records for the new starters",
+   "component": null,
+   "owner_words": "Jamie",
+   "note": "all fine",
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [],
+   "evidence": [
+    17
+   ]
+  },
+  {
+   "id": "s01d02-u3",
+   "kind": "blocked",
+   "card_id": "s01d01-t3",
+   "speaker_id": "p12",
+   "style": "activity",
+   "reference": "run the monthly fire alarm test",
+   "component": null,
+   "owner_words": "Tomasz",
+   "note": "the contractor can't get here until the job's rescheduled",
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [
+    "third_party"
+   ],
+   "evidence": [
+    19
+   ]
+  },
+  {
+   "id": "s01d02-u4",
+   "kind": "progress",
+   "card_id": "s01d01-t4",
+   "speaker_id": "p04",
+   "style": "activity",
+   "reference": "update the risk assessment for work",
+   "component": null,
+   "owner_words": "Tomasz",
+   "note": "made a start on it",
+   "new_owner": null,
+   "due_mention": null,
+   "due_date": null,
+   "due_time": null,
+   "tags": [
+    "activity_only"
+   ],
+   "evidence": [
+    21
+   ]
+  }
+ ]
+}

@@ -1,0 +1,250 @@
+WEBVTT
+
+00:00:04.440 --> 00:00:12.839
+<v Sarah Okafor>Morning all. You alright? Quick one today, yeah? Before we start, whoever left a birthday cake in the office is now my favourite person.</v>
+
+00:00:13.830 --> 00:00:17.679
+<v Callum Reid>Wasn't me, but I've had a slice already, for quality purposes.</v>
+
+00:00:18.410 --> 00:00:24.359
+<v Jamie Brennan>Lucky you. I couldn't even get a brew, the broken coffee machine in the canteen's still dead.</v>
+
+00:00:25.300 --> 00:00:28.800
+<v Grace Liu>That machine's got less uptime than some of our kit.</v>
+
+00:00:29.170 --> 00:00:30.370
+<v Marcus Hale>Steady on, Grace.</v>
+
+00:00:31.800 --> 00:00:36.000
+<v Sarah Okafor>Right, stand-up. Safety first, then production, then maintenance bits. Any incidents overnight?</v>
+
+00:00:37.119 --> 00:00:46.920
+<v Grace Liu>No incidents. I did notice the 11kV board was running a bit warm on nights but it settled down, so just an observation, not a job for today.</v>
+
+00:00:49.020 --> 00:00:56.020
+<v Jamie Brennan>Yeah, and just on that, I tested the 11kV board yesterday and it's all fine now, so that's done already.</v>
+
+00:00:57.729 --> 00:00:58.929
+<v Sarah Okafor>Good. Cheers. Production?</v>
+
+00:01:01.409 --> 00:01:11.209
+<v Callum Reid>Line one held okay after the wobble. Also, just so nobody plans around it, the shutdown on the line 3 barrel is cancelled now, production need it running.</v>
+
+00:01:13.599 --> 00:01:16.049
+<v Tomasz Nowak>Fine by me, I've got enough on.</v>
+
+00:01:17.340 --> 00:01:26.439
+<v Callum Reid>And I noticed the compressor one was running a bit warm on nights but it settled down. Just keeping an eye, not asking for anything today.</v>
+
+00:01:27.879 --> 00:01:29.629
+<v Sarah Okafor>Yep, noted. Maintenance update, Tom?</v>
+
+00:01:31.010 --> 00:01:39.409
+<v Tomasz Nowak>Finished the repair on the Injection Moulding Line 1 last night, so that's off the board. It was the feed issue in the end.</v>
+
+00:01:41.349 --> 00:01:42.549
+<v Sarah Okafor>Nice one, Tom.</v>
+
+00:01:45.040 --> 00:01:51.340
+<v Marcus Hale>From CHP side, I've already swapped the filter on the GT1 Compressor Section yesterday, so don't duplicate that.</v>
+
+00:01:51.640 --> 00:01:53.040
+<v Sarah Okafor>Good catch. Hannah, quality?</v>
+
+00:01:54.200 --> 00:02:02.250
+<v Hannah Price>Nothing dramatic. Only blocker is I can't get to the turbine one compressor until production gives us a window, so that's still stuck.</v>
+
+00:02:02.950 --> 00:02:06.450
+<v Callum Reid>Yeah, not today, Hannah. We're flat out on that area.</v>
+
+00:02:07.510 --> 00:02:09.960
+<v Sarah Okafor>Okay, leave that parked then. Jamie, stores?</v>
+
+00:02:10.870 --> 00:02:18.919
+<v Jamie Brennan>Bit of a pain, the supplier still hasn't confirmed the delivery for the FLTs. I've chased again, but that's blocked waiting on them.</v>
+
+00:02:19.740 --> 00:02:22.539
+<v Sarah Okafor>Right, thanks. Let's go through today's actions then.</v>
+
+00:02:25.020 --> 00:02:36.219
+<v Sarah Okafor>First one, I'll replace the seals on the Line 1 Hydraulic Power Unit on the 3rd. It's not an emergency but don't let it slip, so I'll just keep that with me.</v>
+
+00:02:36.770 --> 00:02:40.270
+<v Tomasz Nowak>Yeah, fair. It's weeping but it's not pouring out yet.</v>
+
+00:02:42.289 --> 00:02:44.740
+<v Grace Liu>As long as it's tracked, that's fine.</v>
+
+00:02:46.550 --> 00:02:54.599
+<v Sarah Okafor>And I'll send the shift handover report round by the 28th. I didn't get that distribution cleaned up yesterday, so I'll do it.</v>
+
+00:02:55.560 --> 00:02:59.759
+<v Jamie Brennan>Please copy me this time, I got the last one second hand.</v>
+
+00:03:00.639 --> 00:03:01.840
+<v Sarah Okafor>Yeah, will do.</v>
+
+00:03:02.449 --> 00:03:10.150
+<v Sarah Okafor>Forklifts as well — I'll do the pre-use checks on the forklifts first thing tomorrow, normal priority. Saz can pick that up.</v>
+
+00:03:11.819 --> 00:03:13.919
+<v Callum Reid>Cheers, that'll help days get moving.</v>
+
+00:03:15.620 --> 00:03:24.020
+<v Grace Liu>On safety, I'll do the lock-out tag-out sign-off on the boiler safety valve today. It's urgent, so I'll get on that straight after this.</v>
+
+00:03:24.490 --> 00:03:25.689
+<v Sarah Okafor>Perfect, thanks Grace.</v>
+
+00:03:26.830 --> 00:03:29.979
+<v Marcus Hale>On the dryer sensors, was that still me or...?</v>
+
+00:03:32.349 --> 00:03:41.099
+<v Sarah Okafor>Well, we need to recalibrate the sensors on the dryer next Tuesday, and that one's safety critical, straight away in terms of planning it in.</v>
+
+00:03:43.469 --> 00:03:51.169
+<v Marcus Hale>I can't take that, to be honest. I'm tied up on CHP inspections and I haven't got the calibration kit free then.</v>
+
+00:03:53.169 --> 00:04:04.370
+<v Sarah Okafor>Okay, no problem — I'll take it. Sarah Okafor will recalibrate the sensors on the dryer next Tuesday. That one's safety critical, straight away, so I'll own it and sort the kit.</v>
+
+00:04:04.830 --> 00:04:08.330
+<v Hannah Price>Good, because the drift was outside where I'd like it.</v>
+
+00:04:10.000 --> 00:04:17.699
+<v Sarah Okafor>Jamie Brennan, can you schedule downtime for the line two with production by the end of the week? Needs doing this week.</v>
+
+00:04:18.759 --> 00:04:25.759
+<v Jamie Brennan>Yeah, I can do that. I'll schedule downtime for the line two with production by the end of the week.</v>
+
+00:04:27.560 --> 00:04:31.060
+<v Callum Reid>Grab me after this and we'll line up a slot.</v>
+
+00:04:32.790 --> 00:04:34.189
+<v Jamie Brennan>Yep, works for me.</v>
+
+00:04:34.639 --> 00:04:43.040
+<v Sarah Okafor>Callum, can you book a contractor to look at the Compressed Air Dryer at half two? Not an emergency but don't let it slip.</v>
+
+00:04:45.089 --> 00:04:50.689
+<v Callum Reid>Yeah, alright, I'll book a contractor to look at the Compressed Air Dryer at half two.</v>
+
+00:04:52.639 --> 00:04:54.040
+<v Marcus Hale>Half two today, yeah?</v>
+
+00:04:56.300 --> 00:05:00.149
+<v Callum Reid>Yeah, I'll get the call out sorted for at half two.</v>
+
+00:05:02.329 --> 00:05:10.029
+<v Sarah Okafor>Nice. Tom, can you check the guarding on the line 2 guard next week? Not an emergency but don't let it slip.</v>
+
+00:05:11.750 --> 00:05:17.350
+<v Tomasz Nowak>Yeah, Tom can do that. I'll check the guarding on the line 2 guard next week.</v>
+
+00:05:18.560 --> 00:05:23.810
+<v Grace Liu>Can you just make sure it's the full guarding condition, not just a visual glance?</v>
+
+00:05:25.829 --> 00:05:29.329
+<v Tomasz Nowak>Yeah yeah, proper check, fixings and interlock alignment, the lot.</v>
+
+00:05:31.180 --> 00:05:33.980
+<v Sarah Okafor>Good. Anything else that actually needs assigning today?</v>
+
+00:05:36.019 --> 00:05:44.069
+<v Hannah Price>Not from me. The turbine one compressor thing is still blocked, so until production gives us a window there's nothing to assign there.</v>
+
+00:05:45.629 --> 00:05:52.629
+<v Callum Reid>Yeah, same on line 3 barrel, just to repeat, that's cancelled, so nobody go setting up isolation packs for that.</v>
+
+00:05:54.540 --> 00:05:56.290
+<v Tomasz Nowak>Already crossed it off, mate.</v>
+
+00:05:56.819 --> 00:06:02.420
+<v Jamie Brennan>I've got procurement bits, but no fresh actions for today beyond the line two downtime one.</v>
+
+00:06:02.980 --> 00:06:05.430
+<v Marcus Hale>CHP's steady. No new jobs from me.</v>
+
+00:06:06.589 --> 00:06:14.290
+<v Grace Liu>Just a reminder, if anyone's near that boiler safety valve area before me, leave the tags alone till I've done the sign-off.</v>
+
+00:06:15.470 --> 00:06:16.670
+<v Sarah Okafor>Yep.</v>
+
+00:06:18.189 --> 00:06:26.939
+<v Callum Reid>Saz, on the Line 1 Hydraulic Power Unit seals, do you want me to free up an operator on the 3rd or are you alright?</v>
+
+00:06:29.399 --> 00:06:37.800
+<v Sarah Okafor>I should be alright, but if line one's hectic I'll shout. It's not an emergency but don't let it slip, that's the main thing.</v>
+
+00:06:39.389 --> 00:06:43.589
+<v Tomasz Nowak>I've got the seal kit in the cage still, by the way.</v>
+
+00:06:44.620 --> 00:06:45.819
+<v Sarah Okafor>Even better.</v>
+
+00:06:48.209 --> 00:06:56.259
+<v Jamie Brennan>And Sarah, on the handover report, by the 28th means today obviously, so if you ping it before lunch that'll save me chasing.</v>
+
+00:06:57.319 --> 00:06:59.069
+<v Sarah Okafor>Yep, by the 28th, understood.</v>
+
+00:06:59.779 --> 00:07:04.329
+<v Hannah Price>For the dryer recalibration next Tuesday, do you need me there for verification?</v>
+
+00:07:05.310 --> 00:07:09.509
+<v Sarah Okafor>Probably for sign-off, yeah. I'll set it up, but the action's mine.</v>
+
+00:07:11.699 --> 00:07:14.850
+<v Marcus Hale>Sorry I can't take that one, just no capacity.</v>
+
+00:07:17.069 --> 00:07:19.870
+<v Sarah Okafor>No, that's fine. Better to be clear now.</v>
+
+00:07:21.740 --> 00:07:22.939
+<v Grace Liu>Exactly.</v>
+
+00:07:24.529 --> 00:07:32.230
+<v Callum Reid>Jamie, once you've scheduled downtime for the line two with production by the end of the week, shove it in Teams, yeah?</v>
+
+00:07:34.439 --> 00:07:38.990
+<v Jamie Brennan>Will do. Needs doing this week anyway, so I'll get it nailed down.</v>
+
+00:07:40.459 --> 00:07:48.860
+<v Tomasz Nowak>And if you're carving out next week, give me a rough day for that line 2 guard check so I'm not pulled three ways.</v>
+
+00:07:50.740 --> 00:07:53.540
+<v Jamie Brennan>Yeah, I'll try and line it up sensibly.</v>
+
+00:07:54.300 --> 00:07:56.050
+<v Sarah Okafor>Good stuff. Quick recap then.</v>
+
+00:07:58.209 --> 00:08:16.759
+<v Sarah Okafor>I've got replace the seals on the Line 1 Hydraulic Power Unit on the 3rd; send the shift handover report round by the 28th; do the pre-use checks on the forklifts first thing tomorrow, normal priority; and I'll take recalibrate the sensors on the dryer next Tuesday, that one's safety critical, straight away.</v>
+
+00:08:17.540 --> 00:08:22.790
+<v Grace Liu>I've got do the lock-out tag-out sign-off on the boiler safety valve today. It's urgent.</v>
+
+00:08:24.139 --> 00:08:31.139
+<v Jamie Brennan>I've got schedule downtime for the line two with production by the end of the week. Needs doing this week.</v>
+
+00:08:32.789 --> 00:08:41.190
+<v Callum Reid>And I've got book a contractor to look at the Compressed Air Dryer at half two. Not an emergency but don't let it slip.</v>
+
+00:08:42.970 --> 00:08:49.970
+<v Tomasz Nowak>And me, check the guarding on the line 2 guard next week. Not an emergency but don't let it slip.</v>
+
+00:08:50.860 --> 00:08:57.860
+<v Sarah Okafor>Perfect. No other new actions, and the blocked and cancelled bits stay blocked and cancelled. Anything urgent before we break?</v>
+
+00:08:59.240 --> 00:09:02.389
+<v Marcus Hale>Only urgent thing is someone fix that coffee machine.</v>
+
+00:09:03.519 --> 00:09:05.620
+<v Jamie Brennan>That's not going on my list.</v>
+
+00:09:07.100 --> 00:09:10.600
+<v Grace Liu>Put the birthday cake next to it, maybe it'll recover.</v>
+
+00:09:12.220 --> 00:09:15.019
+<v Sarah Okafor>Right, on that highly technical note, thanks all.</v>

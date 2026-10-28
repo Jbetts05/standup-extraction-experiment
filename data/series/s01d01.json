@@ -1,0 +1,589 @@
+{
+ "id": "s01d01",
+ "date": "2026-02-23",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p04",
+  "p12",
+  "p02",
+  "p03",
+  "p11",
+  "p08",
+  "p06"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "s01d01-t1",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p02",
+    "text": "Whitty",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "id": "s01d01-t2",
+   "summary": "Sort the training records for the new starters",
+   "spoken_action": "sort the training records for the new starters",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-23",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": "low priority",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    17,
+    18,
+    19,
+    20
+   ]
+  },
+  {
+   "id": "s01d01-t3",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tommo",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-25",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    26,
+    27
+   ]
+  },
+  {
+   "id": "s01d01-t4",
+   "summary": "Update the risk assessment for work on the Air Compressor 1",
+   "spoken_action": "update the risk assessment for work on the Atlas",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tommo",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-24",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31
+   ]
+  },
+  {
+   "id": "s01d01-t5",
+   "summary": "Replace the seals on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "replace the seals on the GT2 inlet valve",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tom",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 inlet valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-23",
+   "due_time": "14:00",
+   "due_mention": "today at 2pm",
+   "priority_cue": "top priority please",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    38,
+    40
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "already swapped the filter on the Stretch Wrapper yesterday",
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "Stretch Wrapper",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.46,
+   "end": 8.96,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the 23rd. Have we got everybody on?"
+  },
+  {
+   "start": 10.69,
+   "end": 16.64,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, morning. The heating in the portakabin has apparently decided it's spring already. Absolutely Baltic in here."
+  },
+  {
+   "start": 17.83,
+   "end": 22.03,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's why you've got the coat zipped up to your eyebrows, then."
+  },
+  {
+   "start": 24.5,
+   "end": 28.7,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly. Just having a moan, before anyone puts it on a list."
+  },
+  {
+   "start": 31.11,
+   "end": 36.01,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Morning. Am I coming through all right? Teams has picked a different microphone again."
+  },
+  {
+   "start": 37.69,
+   "end": 38.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, you're clear."
+  },
+  {
+   "start": 41.14,
+   "end": 43.94,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Louder than the rest of us, if anything."
+  },
+  {
+   "start": 45.95,
+   "end": 50.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, let's get into it. A few things to agree this morning."
+  },
+  {
+   "start": 50.66,
+   "end": 55.56,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Just before that, already swapped the filter on the Stretch Wrapper yesterday. That's done."
+  },
+  {
+   "start": 57.04,
+   "end": 60.54,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Ah, lovely. I wasn't sure whether that had actually happened."
+  },
+  {
+   "start": 62.03,
+   "end": 65.18,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, all sorted yesterday. Nothing needed on that today."
+  },
+  {
+   "start": 67.02,
+   "end": 73.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. Whitty, can you send the shift handover report round by the 28th? It matters but it's not urgent."
+  },
+  {
+   "start": 75.06,
+   "end": 79.96,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, so, the report itself? We're not talking about a new format as well?"
+  },
+  {
+   "start": 82.44,
+   "end": 85.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, just send the shift handover report round. No redesign."
+  },
+  {
+   "start": 88.16,
+   "end": 92.71,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Fine, I'll send it round by the 28th. Understood, important rather than urgent."
+  },
+  {
+   "start": 94.11,
+   "end": 97.61,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "You looked worried there. Nearly had to choose a font."
+  },
+  {
+   "start": 98.98,
+   "end": 102.83,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's how it starts, mate. Then suddenly you've got twelve tabs."
+  },
+  {
+   "start": 104.55,
+   "end": 109.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, can you sort the training records for the new starters today? Low priority."
+  },
+  {
+   "start": 110.97,
+   "end": 114.12,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Today, yeah? Just checking because you said low priority."
+  },
+  {
+   "start": 115.81,
+   "end": 121.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, still today. Low priority within today, not one to push everything else out for."
+  },
+  {
+   "start": 121.63,
+   "end": 125.83,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Got you. I'll sort the training records for the new starters today."
+  },
+  {
+   "start": 126.71,
+   "end": 130.91,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, the records side can look tiny until you actually open it."
+  },
+  {
+   "start": 133.21,
+   "end": 136.01,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Don't say that. I'm choosing to remain optimistic."
+  },
+  {
+   "start": 137.43,
+   "end": 144.08,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tommo, can you run the monthly fire alarm test by Wednesday? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 145.35,
+   "end": 148.85,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yep, I'll run the monthly fire alarm test by Wednesday."
+  },
+  {
+   "start": 150.9,
+   "end": 153.7,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Monthly already? Feels like February's only just started."
+  },
+  {
+   "start": 155.79,
+   "end": 161.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I know. But Wednesday's the limit on that one, even though it's not an emergency."
+  },
+  {
+   "start": 162.96,
+   "end": 165.76,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Understood. It won't get lost at the bottom."
+  },
+  {
+   "start": 167.59,
+   "end": 170.39,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "February cheats. Same amount of stuff, fewer days."
+  },
+  {
+   "start": 172.44,
+   "end": 174.89,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Doesn't seem to mean fewer meetings, though."
+  },
+  {
+   "start": 176.04,
+   "end": 183.04,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "While I've got the mic, I'll update the risk assessment for work on the Atlas tomorrow. Normal priority for that."
+  },
+  {
+   "start": 185.49,
+   "end": 187.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Tommo. Tomorrow, normal priority, agreed."
+  },
+  {
+   "start": 189.24,
+   "end": 196.24,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Mm, the wording on those matters. Everyone thinks they mean the same thing until they're stood in front of it."
+  },
+  {
+   "start": 197.54,
+   "end": 204.89,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah, exactly. Needs to make sense to the person doing the work, not just the person reading it at a desk."
+  },
+  {
+   "start": 205.99,
+   "end": 211.59,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Especially when it's a wall of text. You lose the actual risk in all the words."
+  },
+  {
+   "start": 212.36,
+   "end": 216.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. There's one more, and this is the one that comes first."
+  },
+  {
+   "start": 217.38,
+   "end": 223.33,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tom, can you replace the seals on the GT2 inlet valve today at 2pm? Top priority please."
+  },
+  {
+   "start": 224.53,
+   "end": 228.38,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Sorry, you broke up just on the time. Today at two?"
+  },
+  {
+   "start": 228.82,
+   "end": 234.07,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Today at 2pm, yes. Replace the seals on the GT2 inlet valve. Top priority please."
+  },
+  {
+   "start": 234.93,
+   "end": 238.43,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, that one's the main concern from the plant side."
+  },
+  {
+   "start": 239.04,
+   "end": 246.39,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Right, I've got you now. I'll replace the seals on the GT2 inlet valve today at 2pm. That's my top priority."
+  },
+  {
+   "start": 247.25,
+   "end": 250.75,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, makes sense to put that ahead of the paperwork."
+  },
+  {
+   "start": 252.6,
+   "end": 257.15,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. The other dates we've agreed still stand, but that gets first call."
+  },
+  {
+   "start": 259.46,
+   "end": 262.96,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Definitely not going to argue that training records outrank that."
+  },
+  {
+   "start": 265.04,
+   "end": 269.59,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Good, because I've only got the one pair of hands, despite popular belief."
+  },
+  {
+   "start": 269.94,
+   "end": 275.54,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "You were clear that time, by the way. Think it was just a little Teams wobble."
+  },
+  {
+   "start": 277.18,
+   "end": 280.68,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Same here. Lost half a second, then it came back."
+  },
+  {
+   "start": 281.89,
+   "end": 284.34,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Anything unclear about what we've agreed?"
+  },
+  {
+   "start": 286.56,
+   "end": 288.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No, all clear from me."
+  },
+  {
+   "start": 289.44,
+   "end": 291.89,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Same. Nothing else from production this morning."
+  },
+  {
+   "start": 292.19,
+   "end": 295.69,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. Thanks, everyone. I'll let you get back to it."
+  },
+  {
+   "start": 297.04,
+   "end": 298.24,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Cheers, all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "series_id": "s01",
+ "day": 1,
+ "team": [
+  "p01",
+  "p04",
+  "p12",
+  "p02",
+  "p03",
+  "p11",
+  "p08",
+  "p06"
+ ],
+ "board_before": [],
+ "updates": []
+}

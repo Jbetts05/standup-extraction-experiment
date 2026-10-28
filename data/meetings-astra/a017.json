@@ -1,0 +1,699 @@
+{
+ "id": "a017",
+ "date": "2026-03-23",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p05",
+  "p01",
+  "p06",
+  "p09",
+  "p11",
+  "p12",
+  "p03"
+ ],
+ "chair_id": "p05",
+ "gold_tasks": [
+  {
+   "id": "a017-t1",
+   "summary": "Order spare parts for the Injection Moulding Line 1",
+   "spoken_action": "order spare parts for the line one",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1",
+    "text": "line one",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-30",
+   "due_time": null,
+   "due_mention": "next week",
+   "priority_cue": "it matters but it's not urgent",
+   "assigned_by": "p05",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    26,
+    28,
+    29
+   ]
+  },
+  {
+   "id": "a017-t2",
+   "summary": "Write up the near miss at the Boiler Safety Relief Valve",
+   "spoken_action": "write up the near miss at the boiler safety valve",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya Raman",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "boiler safety valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-23",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p05",
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    32,
+    33
+   ]
+  },
+  {
+   "id": "a017-t3",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-03-23",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "a017-t4",
+   "summary": "Do the lock-out tag-out sign-off on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "do the lock-out tag-out sign-off on the IM1 hydraulic unit",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "IM1 hydraulic unit",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-04-03",
+   "due_time": null,
+   "due_mention": "on the 3rd",
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    40,
+    41,
+    42,
+    44
+   ]
+  },
+  {
+   "id": "a017-t5",
+   "summary": "Update the risk assessment for work on the Stretch Wrapper",
+   "spoken_action": "update the risk assessment for work on the stretch wrapper",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "PCK-WRP-01",
+    "text": "stretch wrapper",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "drop everything for that one",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p03",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "already swapped the filter on the GT2 Number 2 Bearing yesterday",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 Number 2 Bearing",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "tested the line three yesterday and it's all fine now",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p11",
+   "text_hint": "noticed the IM1 was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM1",
+    "text": "IM1",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "saw the pressure on the line three dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM3",
+    "text": "line three",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p06",
+   "text_hint": "can't get to the line 3 chiller until production gives us a window",
+   "component": {
+    "entity_id": "IM3-CHL",
+    "text": "line 3 chiller",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p05",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the Palletiser",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "Palletiser",
+    "split": "name"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.13,
+   "end": 11.78,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Morning, everyone. Monday the 23rd of March. Have we got everyone on, or is Teams doing its Monday thing?"
+  },
+  {
+   "start": 13.41,
+   "end": 15.51,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'm here. Can hear you, Grace."
+  },
+  {
+   "start": 16.28,
+   "end": 18.73,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, here. Sorry, that clattering's my end."
+  },
+  {
+   "start": 21.19,
+   "end": 27.14,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Before we start properly, the charity bake sale on Friday was brilliant. Whoever did those brownies, honestly."
+  },
+  {
+   "start": 28.53,
+   "end": 32.03,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "You mean the ones you hid behind the quality folders?"
+  },
+  {
+   "start": 32.77,
+   "end": 40.12,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That was stock control. But yeah, the charity bake sale on Friday went really well. Just saying, not organising another one."
+  },
+  {
+   "start": 41.99,
+   "end": 45.84,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Good, because we're not turning this into a cake planning meeting."
+  },
+  {
+   "start": 46.79,
+   "end": 53.44,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "My weekend plans were mostly walking, until the weather got involved. Next weekend I'm thinking somewhere with a roof."
+  },
+  {
+   "start": 54.05,
+   "end": 58.25,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Very sensible. March in Britain, bring all four seasons in a bag."
+  },
+  {
+   "start": 59.8,
+   "end": 62.6,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah, my waterproof apparently only works in theory."
+  },
+  {
+   "start": 63.38,
+   "end": 67.58,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Right, um, what's already cleared before we get onto the actual actions?"
+  },
+  {
+   "start": 69.61,
+   "end": 74.51,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I already swapped the filter on the GT2 Number 2 Bearing yesterday. That's done."
+  },
+  {
+   "start": 76.58,
+   "end": 79.73,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Cheers, Jamie. Completed, then, not another one for today."
+  },
+  {
+   "start": 81.68,
+   "end": 86.93,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And I tested the line three yesterday and it's all fine now. That one's finished."
+  },
+  {
+   "start": 89.29,
+   "end": 98.39,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, I saw the pressure on the line three dip for a few minutes, it came back on its own. Just passing on what I saw."
+  },
+  {
+   "start": 99.4,
+   "end": 105.7,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Mine was the completed test, yours is the brief dip. We're not adding another test off that."
+  },
+  {
+   "start": 107.83,
+   "end": 115.53,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Similar sort of thing, I noticed the IM1 was running a bit warm on nights but it settled down. Just an observation."
+  },
+  {
+   "start": 115.94,
+   "end": 119.79,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Understood. Settled down, no new action coming out of that here."
+  },
+  {
+   "start": 121.9,
+   "end": 128.55,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "The other thing hasn't moved. I can't get to the line 3 chiller until production gives us a window."
+  },
+  {
+   "start": 129.99,
+   "end": 134.19,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, that's still blocked. There's no access window to put against it."
+  },
+  {
+   "start": 136.69,
+   "end": 142.29,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And the supplier still hasn't confirmed the delivery for the Palletiser. That's the other outstanding blocker."
+  },
+  {
+   "start": 142.88,
+   "end": 146.03,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "No confirmation my side either. Nothing definite on delivery."
+  },
+  {
+   "start": 147.73,
+   "end": 151.93,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Okay. Both stay as blockers, not jobs we're pretending can happen today."
+  },
+  {
+   "start": 152.41,
+   "end": 158.71,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fi, can you order spare parts for the line one next week? It matters but it's not urgent."
+  },
+  {
+   "start": 160.36,
+   "end": 166.31,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Next week for placing the order, you mean, rather than saying they'll actually be here next week?"
+  },
+  {
+   "start": 168.45,
+   "end": 174.05,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly, placing the order next week. No promise on arrival. It matters but it's not urgent."
+  },
+  {
+   "start": 174.37,
+   "end": 178.22,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, I'll order spare parts for the line one next week."
+  },
+  {
+   "start": 178.63,
+   "end": 182.83,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Sorry, talked over the start there. That was for Fi, not me?"
+  },
+  {
+   "start": 184.47,
+   "end": 186.57,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "That's right, Fi owns that order."
+  },
+  {
+   "start": 187.61,
+   "end": 189.01,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, mine. All clear."
+  },
+  {
+   "start": 190.11,
+   "end": 198.86,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Priya Raman, can you write up the near miss at the boiler safety valve at half two? Not an emergency but don't let it slip."
+  },
+  {
+   "start": 200.3,
+   "end": 204.85,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yeah. Just checking I heard you—at half two, not some time this afternoon?"
+  },
+  {
+   "start": 207.11,
+   "end": 211.31,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "At half two, yes. Not an emergency but don't let it slip."
+  },
+  {
+   "start": 212.62,
+   "end": 217.87,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Understood. I'll write up the near miss at the boiler safety valve at half two."
+  },
+  {
+   "start": 218.78,
+   "end": 222.28,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "That's the write-up we're talking about, rather than another inspection?"
+  },
+  {
+   "start": 223.48,
+   "end": 226.98,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Just the write-up. I'm not adding an inspection to it."
+  },
+  {
+   "start": 228.6,
+   "end": 232.8,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I'll run the monthly fire alarm test this afternoon. Normal priority."
+  },
+  {
+   "start": 234.21,
+   "end": 238.76,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, someone started a pallet truck right beside me. Monthly test, normal priority?"
+  },
+  {
+   "start": 239.12,
+   "end": 241.92,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep. I'll run it this afternoon, normal priority."
+  },
+  {
+   "start": 243.44,
+   "end": 245.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Got you, Grace. The usual monthly test."
+  },
+  {
+   "start": 247.91,
+   "end": 255.26,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Separate one: I'll do the lock-out tag-out sign-off on the IM1 hydraulic unit on the 3rd. Drop everything for that one."
+  },
+  {
+   "start": 255.88,
+   "end": 260.08,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "On the 3rd, Grace? Just making sure I didn't hear 'at three'."
+  },
+  {
+   "start": 261.34,
+   "end": 266.24,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "On the 3rd. And yes, drop everything for that one. I'll take the sign-off."
+  },
+  {
+   "start": 266.74,
+   "end": 270.94,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right, separate from my boiler safety valve write-up. Different urgency as well."
+  },
+  {
+   "start": 272.8,
+   "end": 278.05,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Exactly. Your write-up isn't an emergency; the IM1 hydraulic unit sign-off gets that top priority."
+  },
+  {
+   "start": 279.26,
+   "end": 284.86,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I'll update the risk assessment for work on the stretch wrapper. Drop everything for that one."
+  },
+  {
+   "start": 287.06,
+   "end": 291.61,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Thanks, Jamie. You're taking the risk assessment update for the stretch wrapper, then?"
+  },
+  {
+   "start": 293.85,
+   "end": 299.8,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I'll take it. The assessment update, not signing myself up for the work on the machine."
+  },
+  {
+   "start": 300.52,
+   "end": 304.37,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Did we have a date against that? I didn't hear one."
+  },
+  {
+   "start": 306.48,
+   "end": 311.03,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No date stated for that one. Don't put an invented date against it."
+  },
+  {
+   "start": 311.39,
+   "end": 313.49,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Fine. Still top priority though, Jamie?"
+  },
+  {
+   "start": 315.28,
+   "end": 317.38,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Definitely. Drop everything for that one."
+  },
+  {
+   "start": 319.26,
+   "end": 326.26,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And just so the blocked stuff doesn't disappear under all that, the line 3 chiller still has no production window."
+  },
+  {
+   "start": 327.25,
+   "end": 331.8,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, still blocked. Same with the unconfirmed Palletiser delivery. No change to either."
+  },
+  {
+   "start": 332.91,
+   "end": 341.66,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "And my filter swap stays in the done pile, please. Don't fancy getting credit for it twice and then being asked why it's not done."
+  },
+  {
+   "start": 343.12,
+   "end": 346.97,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Same for the line three test. Done yesterday, all fine now."
+  },
+  {
+   "start": 347.48,
+   "end": 350.98,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Very protective of the done pile this morning, aren't we?"
+  },
+  {
+   "start": 352.9,
+   "end": 355.35,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "It's Monday. We've only just built it."
+  },
+  {
+   "start": 357.39,
+   "end": 362.64,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Fair point. Right, the agreed actions are clear, and the blockers stay blocked. Thanks, everyone."
+  },
+  {
+   "start": 363.98,
+   "end": 365.18,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

@@ -1,0 +1,96 @@
+# Reference data ("ontology") for the fictional Riverside Works factory.
+#
+# This is the "known business vocabulary" that normalisers map raw mentions onto.
+#
+#   aliases           - nicknames the business already knows. Normalisers MAY use these.
+#   heldout_aliases   - realistic nicknames that are deliberately NOT given to any
+#                       normaliser. Test-split transcripts use them so we can measure
+#                       whether a method generalises beyond its lookup table.
+#
+# Assets form a hierarchy (area -> system -> component). Linking a mention to the
+# right parent when the exact component is ambiguous earns partial credit.
+
+plant:
+  name: Riverside Works
+  description: >
+    A mid-sized manufacturing plant making moulded plastic packaging. It runs three
+    injection-moulding lines, a packing hall, and an on-site combined heat and power
+    (CHP) plant with two small gas turbines, a waste-heat boiler and a site water system.
+
+categories:
+  - id: operations
+    description: Running, maintaining, inspecting or repairing plant and production equipment.
+  - id: safety
+    description: Hazards, permits, isolations, PPE, incidents, near misses, risk assessments and compliance checks.
+  - id: organisation
+    description: Scheduling, staffing, training, ordering parts, contractors, site visits, paperwork and meetings.
+
+priorities:
+  - id: 1
+    description: Urgent. Must happen today or is safety-critical or stops production.
+  - id: 2
+    description: Normal. Should happen this week.
+  - id: 3
+    description: Low. Nice to have, whenever there is time.
+
+people:
+  - {id: p01, name: Sarah Okafor,     email: sarah.okafor@riverside.example,     role: Shift Manager,             aliases: [Sarah, Saz],      heldout_aliases: [boss]}
+  - {id: p02, name: David Whitfield,  email: david.whitfield@riverside.example,  role: Mechanical Engineer,       aliases: [Dave, Davey],     heldout_aliases: [Whitty]}
+  - {id: p03, name: Priya Raman,      email: priya.raman@riverside.example,      role: Electrical Engineer,       aliases: [Priya, PR],       heldout_aliases: [Pri]}
+  - {id: p04, name: Tomasz Nowak,     email: tomasz.nowak@riverside.example,     role: Maintenance Technician,    aliases: [Tomasz, Tom],     heldout_aliases: [Tommo]}
+  - {id: p05, name: Grace Liu,        email: grace.liu@riverside.example,        role: HSE Advisor,               aliases: [Grace],           heldout_aliases: [safety Grace]}
+  - {id: p06, name: Callum Reid,      email: callum.reid@riverside.example,      role: Production Supervisor,     aliases: [Callum, Cal],     heldout_aliases: [Reidy]}
+  - {id: p07, name: Aisha Begum,      email: aisha.begum@riverside.example,      role: Process Engineer,          aliases: [Aisha],           heldout_aliases: [Ash]}
+  - {id: p08, name: Marcus Hale,      email: marcus.hale@riverside.example,      role: CHP Plant Operator,        aliases: [Marcus, Marc],    heldout_aliases: [Haley]}
+  - {id: p09, name: Fiona Doyle,      email: fiona.doyle@riverside.example,      role: Planner and Scheduler,     aliases: [Fiona, Fi],       heldout_aliases: [Doyler]}
+  - {id: p10, name: Olumide Adeyemi,  email: olumide.adeyemi@riverside.example,  role: Controls and Instrumentation Technician, aliases: [Olu, Olumide], heldout_aliases: [Mide]}
+  - {id: p11, name: Hannah Price,     email: hannah.price@riverside.example,     role: Quality Engineer,          aliases: [Hannah, Han],     heldout_aliases: [Pricey]}
+  - {id: p12, name: Jamie Brennan,    email: jamie.brennan@riverside.example,    role: Stores and Procurement,    aliases: [Jamie],           heldout_aliases: [stores Jamie]}
+
+sites:
+  - {id: s01, name: Riverside Works Main Site,     aliases: [site, main site, the works],         heldout_aliases: [down here]}
+  - {id: s02, name: Northfield Substation,         aliases: [Northfield, the substation],         heldout_aliases: [the sub]}
+  - {id: s03, name: Harbour Road Warehouse,        aliases: [Harbour Road, the warehouse],        heldout_aliases: [the overflow store]}
+  - {id: s04, name: Kestrel Hydraulics Leeds,      aliases: [Kestrel, Kestrel in Leeds],          heldout_aliases: [the hydraulics lot]}
+  - {id: s05, name: Tollgate Water Treatment Works, aliases: [Tollgate, the water works],         heldout_aliases: [the treatment plant]}
+
+assets:
+  # ---------------------------------------------------------------- CHP plant
+  - {id: CHP,         kind: area,      name: Combined Heat and Power Plant, parent: null,  aliases: [CHP, the power plant, energy centre], heldout_aliases: [the powerhouse]}
+  - {id: GT1,         kind: system,    name: Gas Turbine 1,                 parent: CHP,   aliases: [GT1, turbine one, gas turbine one], heldout_aliases: [the old turbine]}
+  - {id: GT1-CMP,     kind: component, name: GT1 Compressor Section,        parent: GT1,   aliases: [GT1 compressor, turbine one compressor], heldout_aliases: [front end of one]}
+  - {id: GT1-FV-01,   kind: component, name: GT1 Fuel Gas Valve,            parent: GT1,   aliases: [GT1 fuel valve, turbine one gas valve], heldout_aliases: [the gas valve on one]}
+  - {id: GT2,         kind: system,    name: Gas Turbine 2,                 parent: CHP,   aliases: [GT2, turbine two, gas turbine two], heldout_aliases: [the newer turbine]}
+  - {id: GT2-WV-03,   kind: component, name: GT2 Inlet Water Injection Valve, parent: GT2, aliases: [GT2 water valve, turbine two water valve, GT2 inlet valve], heldout_aliases: [the little water valve on two]}
+  - {id: GT2-BRG-02,  kind: component, name: GT2 Number 2 Bearing,          parent: GT2,   aliases: [GT2 bearing, number two bearing], heldout_aliases: [the hot bearing]}
+  - {id: WHB-01,      kind: system,    name: Waste Heat Boiler,             parent: CHP,   aliases: [waste heat boiler, WHB, the boiler, big boiler], heldout_aliases: [the HRSG]}
+  - {id: WHB-01-FWP,  kind: component, name: Boiler Feedwater Pump,         parent: WHB-01, aliases: [feedwater pump, boiler feed pump, BFP], heldout_aliases: [the feed pump]}
+  - {id: WHB-01-SV,   kind: component, name: Boiler Safety Relief Valve,    parent: WHB-01, aliases: [boiler safety valve, relief valve, PRV on the boiler], heldout_aliases: [the pop valve]}
+  # ------------------------------------------------------------ Site water
+  - {id: WTR,         kind: system,    name: Site Water System,             parent: CHP,   aliases: [site water, water system], heldout_aliases: [the water ring]}
+  - {id: WTR-MV-01,   kind: component, name: Main Water Isolation Valve,    parent: WTR,   aliases: [main water valve, main isolation valve, MV01], heldout_aliases: [the big valve by the gate]}
+  - {id: WTR-P-01,    kind: component, name: Water Booster Pump,            parent: WTR,   aliases: [booster pump, water booster], heldout_aliases: [the pump in the pit]}
+  - {id: WTR-CT-01,   kind: component, name: Cooling Tower,                 parent: WTR,   aliases: [cooling tower, CT1], heldout_aliases: [the tower]}
+  # ------------------------------------------------------ Moulding hall
+  - {id: MLD,         kind: area,      name: Moulding Hall,                 parent: null,  aliases: [moulding hall, the hall, moulding], heldout_aliases: [upstairs]}
+  - {id: IM1,         kind: system,    name: Injection Moulding Line 1,     parent: MLD,   aliases: [line 1, line one, IM1], heldout_aliases: [the Engel]}
+  - {id: IM1-HYD,     kind: component, name: Line 1 Hydraulic Power Unit,   parent: IM1,   aliases: [line 1 hydraulics, line one HPU, IM1 hydraulic unit], heldout_aliases: [the power pack on one]}
+  - {id: IM1-MLD-T,   kind: component, name: Line 1 Mould Temperature Controller, parent: IM1, aliases: [line 1 mould temp, line 1 TCU], heldout_aliases: [the heater box on one]}
+  - {id: IM2,         kind: system,    name: Injection Moulding Line 2,     parent: MLD,   aliases: [line 2, line two, IM2], heldout_aliases: [the Arburg]}
+  - {id: IM2-ROB,     kind: component, name: Line 2 Pick and Place Robot,   parent: IM2,   aliases: [line 2 robot, pick and place on two], heldout_aliases: [the arm on two]}
+  - {id: IM2-GRD,     kind: component, name: Line 2 Safety Guard Interlock, parent: IM2,   aliases: [line 2 guard, line 2 interlock, guard switch on two], heldout_aliases: [the door switch on two]}
+  - {id: IM3,         kind: system,    name: Injection Moulding Line 3,     parent: MLD,   aliases: [line 3, line three, IM3], heldout_aliases: [the new line]}
+  - {id: IM3-SCR,     kind: component, name: Line 3 Screw and Barrel,       parent: IM3,   aliases: [line 3 screw, line 3 barrel], heldout_aliases: [the barrel on three]}
+  - {id: IM3-CHL,     kind: component, name: Line 3 Chiller,                parent: IM3,   aliases: [line 3 chiller, chiller on three], heldout_aliases: [the cold unit]}
+  # --------------------------------------------------------- Packing hall
+  - {id: PCK,         kind: area,      name: Packing Hall,                  parent: null,  aliases: [packing hall, packing, dispatch], heldout_aliases: [the back end]}
+  - {id: PCK-CV-01,   kind: component, name: Main Outfeed Conveyor,         parent: PCK,   aliases: [outfeed conveyor, main conveyor, CV01], heldout_aliases: [the long belt]}
+  - {id: PCK-PAL-01,  kind: component, name: Palletiser,                    parent: PCK,   aliases: [palletiser, the palletizer], heldout_aliases: [the stacker]}
+  - {id: PCK-WRP-01,  kind: component, name: Stretch Wrapper,               parent: PCK,   aliases: [stretch wrapper, the wrapper], heldout_aliases: [the spinner]}
+  - {id: PCK-FLT,     kind: component, name: Forklift Fleet,                parent: PCK,   aliases: [forklifts, FLTs, the trucks], heldout_aliases: [the counterbalances]}
+  # ------------------------------------------------------------ Utilities
+  - {id: UTL,         kind: area,      name: Site Utilities,                parent: null,  aliases: [utilities], heldout_aliases: [plant room]}
+  - {id: AIR-C-01,    kind: component, name: Air Compressor 1,              parent: UTL,   aliases: [air compressor, compressor one, AC1], heldout_aliases: [the Atlas]}
+  - {id: AIR-DRY-01,  kind: component, name: Compressed Air Dryer,          parent: UTL,   aliases: [air dryer, the dryer], heldout_aliases: [the desiccant unit]}
+  - {id: HV-SW-01,    kind: component, name: 11kV Switchboard,              parent: UTL,   aliases: [11kV board, HV switchboard, the HV board], heldout_aliases: [the big board]}
+  - {id: FIRE-01,     kind: component, name: Fire Alarm Panel,              parent: UTL,   aliases: [fire panel, fire alarm panel], heldout_aliases: [the alarm box]}

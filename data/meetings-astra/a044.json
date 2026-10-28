@@ -1,0 +1,802 @@
+{
+ "id": "a044",
+ "date": "2026-10-06",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p03",
+  "p01",
+  "p07",
+  "p04",
+  "p10",
+  "p09",
+  "p08"
+ ],
+ "chair_id": "p03",
+ "gold_tasks": [
+  {
+   "id": "a044-t1",
+   "summary": "Do a site visit at Northfield Substation with the contractor",
+   "spoken_action": "do a site visit at Northfield with the contractor",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide Adeyemi",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s02",
+    "text": "Northfield",
+    "split": "seen"
+   },
+   "due_date": "2026-10-09",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": "low priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44,
+    45
+   ]
+  },
+  {
+   "id": "a044-t2",
+   "summary": "Inspect the Main Water Isolation Valve for leaks",
+   "spoken_action": "inspect the MV01 for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p03",
+    "text": "Priya Raman",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "MV01",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    19,
+    20,
+    21,
+    22
+   ]
+  },
+  {
+   "id": "a044-t3",
+   "summary": "Take vibration readings on the Boiler Feedwater Pump",
+   "spoken_action": "take vibration readings on the feedwater pump",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-FWP",
+    "text": "feedwater pump",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-07",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "top priority please",
+   "assigned_by": "p03",
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "id": "a044-t4",
+   "summary": "Investigate the pressure drop on the GT2 Inlet Water Injection Valve",
+   "spoken_action": "investigate the pressure drop on the GT2 Inlet Water Injection Valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 Inlet Water Injection Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    52,
+    53,
+    54,
+    55,
+    56,
+    57
+   ]
+  },
+  {
+   "id": "a044-t5",
+   "summary": "Write up the near miss at the Injection Moulding Line 2",
+   "spoken_action": "write up the near miss at the line two",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p08",
+    "text": "Marcus",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "line two",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-12",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "fairly important",
+   "assigned_by": "p03",
+   "reassigned_from": "p01",
+   "evidence": [
+    35,
+    36,
+    37,
+    38,
+    41
+   ]
+  },
+  {
+   "id": "a044-t6",
+   "summary": "Update the risk assessment for work on the Waste Heat Boiler",
+   "spoken_action": "update the risk assessment for work on the waste heat boiler",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p04",
+    "text": "Tom",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01",
+    "text": "waste heat boiler",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-08",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": "top priority please",
+   "assigned_by": "p03",
+   "reassigned_from": null,
+   "evidence": [
+    29,
+    30,
+    31,
+    32
+   ]
+  },
+  {
+   "id": "a044-t7",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Aisha",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-10-06",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p09",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "traffic on the ring road",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p04",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p03",
+   "text_hint": "finished the repair on the trucks last night",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the trucks",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "already swapped the filter on the 11kV board yesterday",
+   "component": {
+    "entity_id": "HV-SW-01",
+    "text": "11kV board",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p04",
+   "text_hint": "finished the repair on the line 1 mould temp last night",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p08",
+   "text_hint": "heard a slight rattle from the Line 3 Screw and Barrel, nothing to action yet",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "Line 3 Screw and Barrel",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "heard a slight rattle from the line 1 hydraulics, nothing to action yet",
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "line 1 hydraulics",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p04",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the main water valve",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main water valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p07",
+   "text_hint": "we were going to replace the belt on the PRV on the boiler but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "PRV on the boiler",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.45,
+   "end": 10.0,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Morning, everyone. Can you hear me? Teams has picked the wrong microphone again."
+  },
+  {
+   "start": 11.58,
+   "end": 20.33,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, you're coming through. I was just looking at the weather for the weekend. Had plans for a walk, but apparently we're getting properly soaked."
+  },
+  {
+   "start": 21.03,
+   "end": 28.03,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "We got that this morning. Traffic on the ring road was barely moving. Twenty minutes looking at the same van."
+  },
+  {
+   "start": 28.77,
+   "end": 31.22,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. A scenic tour, without the scenery."
+  },
+  {
+   "start": 32.83,
+   "end": 41.58,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "And now the heating in the portakabin is roasting me. Not asking anyone to fix it, before that becomes a job. Just having a moan."
+  },
+  {
+   "start": 42.15,
+   "end": 44.95,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's your temperature compensation. Cold outside, tropical inside."
+  },
+  {
+   "start": 46.26,
+   "end": 52.91,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right, Tuesday, sixth of October. Let's get through the actual list before we lose everyone to the portakabin sauna."
+  },
+  {
+   "start": 55.23,
+   "end": 61.53,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "First, I finished the repair on the trucks last night. That's done, not something we're carrying into today."
+  },
+  {
+   "start": 63.31,
+   "end": 68.91,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And I already swapped the filter on the 11kV board yesterday. That one's finished as well."
+  },
+  {
+   "start": 69.62,
+   "end": 74.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Those were still showing in the chat history, so worth saying they're closed."
+  },
+  {
+   "start": 76.11,
+   "end": 81.71,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Same for mine: finished the repair on the line 1 mould temp last night. All done."
+  },
+  {
+   "start": 82.62,
+   "end": 85.77,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Cheers. Three completed bits, then, no repeat jobs there."
+  },
+  {
+   "start": 87.84,
+   "end": 94.84,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Just an observation from me. Heard a slight rattle from the Line 3 Screw and Barrel, nothing to action yet."
+  },
+  {
+   "start": 95.99,
+   "end": 104.04,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, and I heard a slight rattle from the line 1 hydraulics. Same thing, nothing to action yet. Just mentioning what I heard."
+  },
+  {
+   "start": 104.98,
+   "end": 109.53,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Understood. Observations only, neither of those is becoming a new job this morning."
+  },
+  {
+   "start": 110.92,
+   "end": 117.22,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "The other thing, the supplier still hasn't confirmed the delivery for the main water valve. That's still blocked."
+  },
+  {
+   "start": 117.74,
+   "end": 122.99,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, there's no confirmed delivery against it. Still a blocker, not fresh work for today."
+  },
+  {
+   "start": 125.44,
+   "end": 133.84,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And we were going to replace the belt on the PRV on the boiler, but that's been pushed to next month, so ignore it."
+  },
+  {
+   "start": 134.16,
+   "end": 138.71,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Fine, that replacement is off this round. Right, onto what we are agreeing."
+  },
+  {
+   "start": 140.13,
+   "end": 144.33,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "I'll inspect the MV01 for leaks today. I'll take that one myself."
+  },
+  {
+   "start": 145.59,
+   "end": 151.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Just the leak inspection, yeah? Not agreeing a replacement off the back of the old note?"
+  },
+  {
+   "start": 152.11,
+   "end": 156.66,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Exactly. Inspect the MV01 for leaks today, nothing beyond that being agreed here."
+  },
+  {
+   "start": 157.04,
+   "end": 159.84,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Got it, Priya Raman against that inspection today."
+  },
+  {
+   "start": 162.24,
+   "end": 167.84,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Aisha, can you take vibration readings on the feedwater pump tomorrow at 9:30? Top priority please."
+  },
+  {
+   "start": 169.87,
+   "end": 173.37,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Sorry, you clipped slightly. Tomorrow at 9:30, not this morning?"
+  },
+  {
+   "start": 175.64,
+   "end": 179.14,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Tomorrow at 9:30, yes. And that is top priority please."
+  },
+  {
+   "start": 181.05,
+   "end": 187.0,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, accepted. I'll take vibration readings on the feedwater pump tomorrow at 9:30. Top of my list."
+  },
+  {
+   "start": 187.68,
+   "end": 192.58,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I heard this morning as well, to be fair. The audio went all underwater."
+  },
+  {
+   "start": 193.99,
+   "end": 196.79,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Good, not just me needing another coffee, then."
+  },
+  {
+   "start": 198.43,
+   "end": 205.08,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Tom, can you update the risk assessment for work on the waste heat boiler by Thursday? Top priority please."
+  },
+  {
+   "start": 206.88,
+   "end": 212.13,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Yeah. We're talking the risk assessment for the work, not rewriting the whole operating document?"
+  },
+  {
+   "start": 213.52,
+   "end": 219.12,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "That's right, the risk assessment for work on the waste heat boiler. Keeping it to that."
+  },
+  {
+   "start": 219.97,
+   "end": 224.17,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Okay, I'll update that risk assessment by Thursday. Understood on top priority."
+  },
+  {
+   "start": 224.92,
+   "end": 231.22,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Thursday for that, and tomorrow at 9:30 for the readings. Two separate dates; I've got them straight now."
+  },
+  {
+   "start": 231.79,
+   "end": 234.94,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Yes, exactly. Both with the priority we've just said."
+  },
+  {
+   "start": 235.64,
+   "end": 241.94,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sarah Okafor, can you write up the near miss at the line two for Monday? It's fairly important."
+  },
+  {
+   "start": 243.74,
+   "end": 251.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I can't take that on, sorry. I haven't got the capacity to give the write-up proper attention. Better to say no now."
+  },
+  {
+   "start": 251.97,
+   "end": 260.02,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Okay. Marcus, can I hand that to you instead? Write up the near miss at the line two for Monday. Still fairly important."
+  },
+  {
+   "start": 261.49,
+   "end": 267.44,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Yeah, I'll take it instead. I'll write up the near miss at the line two for Monday."
+  },
+  {
+   "start": 268.25,
+   "end": 273.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks. Sorry to bounce it, but I don't want my name against something I can't do."
+  },
+  {
+   "start": 274.93,
+   "end": 281.23,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "No, fair enough. I've already got my notes from it, so I'm not starting with a blank page."
+  },
+  {
+   "start": 282.03,
+   "end": 285.53,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Thanks, Marcus. That's yours, then, for Monday, and fairly important."
+  },
+  {
+   "start": 287.97,
+   "end": 294.62,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Um, on Northfield, I'll do a site visit at Northfield with the contractor on Friday. Low priority, that one."
+  },
+  {
+   "start": 295.17,
+   "end": 299.37,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Friday, with the contractor. And low priority, rather than being pulled forward?"
+  },
+  {
+   "start": 300.37,
+   "end": 306.32,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Exactly. I'll do the site visit at Northfield with the contractor on Friday. It stays low priority."
+  },
+  {
+   "start": 307.95,
+   "end": 312.15,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Thanks, Olumide Adeyemi. Agreed as you've said it: on Friday, low priority."
+  },
+  {
+   "start": 314.24,
+   "end": 318.09,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Take the portakabin weather with you. You'll have sunshine all day."
+  },
+  {
+   "start": 319.39,
+   "end": 322.89,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Think that's just the heater and a fluorescent tube, mate."
+  },
+  {
+   "start": 324.6,
+   "end": 333.7,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "I'll organise the toolbox talk for the team this afternoon as well. That's in the 'if you've got a spare minute' category, not another top-priority one."
+  },
+  {
+   "start": 334.97,
+   "end": 341.62,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Thanks, Aisha. Yes, if you've got a spare minute; we're not giving that the same urgency as the readings."
+  },
+  {
+   "start": 343.49,
+   "end": 348.39,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep. I'll organise it this afternoon on that basis. Just keeping the urgency clear."
+  },
+  {
+   "start": 349.69,
+   "end": 353.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fine by me. No need to turn everything into a red flag."
+  },
+  {
+   "start": 354.83,
+   "end": 362.53,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "There's also the pressure drop on the GT2 Inlet Water Injection Valve. That needs investigating, normal priority. Anyone able to take it?"
+  },
+  {
+   "start": 364.7,
+   "end": 369.25,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "I can't take that investigation as well, sorry. Don't put it against me."
+  },
+  {
+   "start": 370.32,
+   "end": 376.62,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I can't commit to that one either. Don't want a vague 'I'll have a look' turning into ownership."
+  },
+  {
+   "start": 378.45,
+   "end": 381.6,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "Same here, no capacity for that on top. Sorry."
+  },
+  {
+   "start": 381.9,
+   "end": 389.6,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Right. Investigate the pressure drop on the GT2 Inlet Water Injection Valve stays unassigned, normal priority. No owner and no date agreed."
+  },
+  {
+   "start": 392.05,
+   "end": 394.85,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yes, unallocated. Not tucked under somebody else's name."
+  },
+  {
+   "start": 396.28,
+   "end": 402.23,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Okay, that's the list. Anything we've just discussed that I've misunderstood? Not opening a second list, mind."
+  },
+  {
+   "start": 403.36,
+   "end": 407.56,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, all clear. And we nearly managed that without everyone talking over—"
+  },
+  {
+   "start": 408.16,
+   "end": 414.11,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "—each other. Sorry! No, nothing from me. Back to deciding whether my weekend walk needs a canoe."
+  },
+  {
+   "start": 416.17,
+   "end": 421.42,
+   "speaker_id": "p04",
+   "speaker": "Tomasz Nowak",
+   "text": "I'll be here slowly turning into a baked potato. Again, commentary, not a maintenance request."
+  },
+  {
+   "start": 423.55,
+   "end": 427.75,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Very clearly recorded as a moan. Cheers, everyone, we'll leave it there."
+  },
+  {
+   "start": 428.37,
+   "end": 429.57,
+   "speaker_id": "p08",
+   "speaker": "Marcus Hale",
+   "text": "Cheers. Bye."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

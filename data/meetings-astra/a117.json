@@ -1,0 +1,892 @@
+{
+ "id": "a117",
+ "date": "2026-09-14",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p07",
+  "p06",
+  "p11",
+  "p10",
+  "p12",
+  "p03"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a117-t1",
+   "summary": "Swap the filter on the Line 1 Hydraulic Power Unit",
+   "spoken_action": "swap the filter on the power pack on one",
+   "category": "operations",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "the power pack on one",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-16",
+   "due_time": null,
+   "due_mention": "by Wednesday",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    12,
+    13,
+    14,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "a117-t2",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Pricey",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-14",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "low priority",
+   "assigned_by": "p01",
+   "reassigned_from": "p12",
+   "evidence": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "id": "a117-t3",
+   "summary": "Inspect the Water Booster Pump for leaks",
+   "spoken_action": "inspect the water booster for leaks",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-14",
+   "due_time": null,
+   "due_mention": "today",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    32,
+    33,
+    34,
+    35
+   ]
+  },
+  {
+   "id": "a117-t4",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Saz",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-17",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    52,
+    53,
+    54
+   ]
+  },
+  {
+   "id": "a117-t5",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the counterbalances",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "boss",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the counterbalances",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-15",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    23,
+    24,
+    25
+   ]
+  },
+  {
+   "id": "a117-t6",
+   "summary": "Grease and check the bearings on the Gas Turbine 2",
+   "spoken_action": "grease and check the bearings on the newer turbine",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "component": {
+    "entity_id": "GT2",
+    "text": "the newer turbine",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-15",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+   ]
+  },
+  {
+   "id": "a117-t7",
+   "summary": "Send the shift handover report round",
+   "spoken_action": "send the shift handover report round",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "if you've got a spare minute",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    48,
+    49,
+    50,
+    51
+   ]
+  },
+  {
+   "id": "a117-t8",
+   "summary": "Chase the purchase order for the Fire Alarm Panel",
+   "spoken_action": "chase the purchase order for the Fire Alarm Panel",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah Price",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "FIRE-01",
+    "text": "Fire Alarm Panel",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-15",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": null,
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "id": "a117-t9",
+   "summary": "Update the risk assessment for work on the GT1 Fuel Gas Valve",
+   "spoken_action": "update the risk assessment for work on the GT1 Fuel Gas Valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p03",
+    "text": "PR",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "GT1 Fuel Gas Valve",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-14",
+   "due_time": "14:30",
+   "due_mention": "at half two",
+   "priority_cue": "that's holding production up so it needs doing first",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    55,
+    56,
+    57,
+    58
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p07",
+   "text_hint": "the broken coffee machine in the canteen",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "finished the repair on the heater box on one last night",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "the heater box on one",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "tested the trucks yesterday and it's all fine now",
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "the trucks",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p06",
+   "text_hint": "already swapped the filter on the Injection Moulding Line 3 yesterday",
+   "component": {
+    "entity_id": "IM3",
+    "text": "Injection Moulding Line 3",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "noticed the Atlas was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "the Atlas",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p06",
+   "text_hint": "saw the pressure on the Arburg dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM2",
+    "text": "the Arburg",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p11",
+   "text_hint": "still waiting on parts for the long belt, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "the long belt",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p12",
+   "text_hint": "still waiting on parts for the MV01, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "MV01",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.75,
+   "end": 12.05,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Monday the fourteenth, September. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 14.17,
+   "end": 19.07,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, you're there. Anyone watch the football last night? Honestly, that last ten minutes."
+  },
+  {
+   "start": 20.53,
+   "end": 24.03,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Unfortunately. Ten minutes of my life I'm not getting back."
+  },
+  {
+   "start": 25.75,
+   "end": 31.0,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Oh, come on, you were probably shouting at the telly like the rest of us."
+  },
+  {
+   "start": 32.07,
+   "end": 40.47,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Never mind that, the broken coffee machine in the canteen has properly ruined my morning. Just having a moan, not putting a job in."
+  },
+  {
+   "start": 41.0,
+   "end": 44.5,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That explains the atmosphere. Seven people running on residual caffeine."
+  },
+  {
+   "start": 45.25,
+   "end": 49.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a support group. Where did nights leave us?"
+  },
+  {
+   "start": 50.49,
+   "end": 55.74,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah so, finished the repair on the heater box on one last night. That's done."
+  },
+  {
+   "start": 57.22,
+   "end": 60.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good. Closed off, then, not another one for today."
+  },
+  {
+   "start": 61.54,
+   "end": 67.84,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And I already swapped the filter on the Injection Moulding Line 3 yesterday. That one's finished as well."
+  },
+  {
+   "start": 69.45,
+   "end": 74.7,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "That's the line filter you're talking about, yeah? Not the other filter we've been discussing?"
+  },
+  {
+   "start": 75.64,
+   "end": 79.14,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, the Injection Moulding Line 3. Separate job, already done."
+  },
+  {
+   "start": 79.92,
+   "end": 86.22,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "On the outstanding one, I'll swap the filter on the power pack on one by Wednesday. It's urgent."
+  },
+  {
+   "start": 87.99,
+   "end": 91.84,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Okay, boss, you've got the power pack on one filter, then?"
+  },
+  {
+   "start": 92.65,
+   "end": 95.8,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, mine. By Wednesday, and keep it marked urgent."
+  },
+  {
+   "start": 97.91,
+   "end": 103.51,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Just on nights, I noticed the Atlas was running a bit warm, but it settled down."
+  },
+  {
+   "start": 104.18,
+   "end": 106.63,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Settled right back, or just stopped climbing?"
+  },
+  {
+   "start": 107.31,
+   "end": 110.46,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Right back. Just an observation, nothing outstanding from that."
+  },
+  {
+   "start": 112.89,
+   "end": 120.24,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Similar sort of thing, saw the pressure on the Arburg dip for a few minutes. It came back on its own."
+  },
+  {
+   "start": 121.21,
+   "end": 124.01,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, both observations, no new jobs off those."
+  },
+  {
+   "start": 125.9,
+   "end": 130.45,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I tested the trucks yesterday and it's all fine now. That's finished."
+  },
+  {
+   "start": 131.02,
+   "end": 134.17,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, you said yesterday? You broke up a bit."
+  },
+  {
+   "start": 135.97,
+   "end": 138.07,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yesterday, yeah. Testing's done, all fine."
+  },
+  {
+   "start": 138.71,
+   "end": 143.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Separate from that completed testing, I'll do the pre-use checks on the counterbalances tomorrow."
+  },
+  {
+   "start": 145.51,
+   "end": 148.66,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers, boss. The counterbalances pre-use checks tomorrow, got you."
+  },
+  {
+   "start": 149.96,
+   "end": 151.71,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep. Not reopening yesterday's testing."
+  },
+  {
+   "start": 153.42,
+   "end": 159.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, can you organise the toolbox talk for the team this morning? Low priority, that one."
+  },
+  {
+   "start": 159.89,
+   "end": 165.49,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Um, sorry, I can't take the toolbox talk. I can't commit to organising it this morning."
+  },
+  {
+   "start": 167.49,
+   "end": 174.49,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fair enough. Pricey, can you take it instead? Organise the toolbox talk for the team this morning. Still low priority."
+  },
+  {
+   "start": 175.83,
+   "end": 181.43,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, I'll take that off Jamie. I'll organise the toolbox talk for the team this morning."
+  },
+  {
+   "start": 181.91,
+   "end": 186.81,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Low priority, but still this morning, just so we're not hearing two different things?"
+  },
+  {
+   "start": 189.27,
+   "end": 193.47,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. This morning is still the timing; it's not an urgent one."
+  },
+  {
+   "start": 195.55,
+   "end": 199.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah, can you inspect the water booster for leaks today as well?"
+  },
+  {
+   "start": 200.22,
+   "end": 203.37,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep, I'll inspect the water booster for leaks today."
+  },
+  {
+   "start": 205.55,
+   "end": 209.4,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "That's an inspection, yeah? We're not saying there's a repair agreed?"
+  },
+  {
+   "start": 211.16,
+   "end": 214.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Correct, just inspecting for leaks. No repair being added."
+  },
+  {
+   "start": 216.55,
+   "end": 222.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Hannah Price, can you chase the purchase order for the Fire Alarm Panel first thing tomorrow?"
+  },
+  {
+   "start": 224.14,
+   "end": 229.04,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yes, I'll chase the purchase order for the Fire Alarm Panel first thing tomorrow."
+  },
+  {
+   "start": 231.3,
+   "end": 236.55,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Right, that's the purchase order chase. Separate from the parts we're still stuck waiting for."
+  },
+  {
+   "start": 238.74,
+   "end": 245.74,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah. I'm still waiting on parts for the long belt, nothing we can do until they arrive. That remains blocked."
+  },
+  {
+   "start": 247.21,
+   "end": 253.51,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Same with the MV01. Still waiting on parts for the MV01, nothing we can do until they arrive."
+  },
+  {
+   "start": 254.67,
+   "end": 258.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Both stay blocked, then. We're not assigning any work on those today."
+  },
+  {
+   "start": 259.47,
+   "end": 269.97,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "There's also the need to grease and check the bearings on the newer turbine first thing tomorrow. Not an emergency but don't let it slip. Anyone able to take that?"
+  },
+  {
+   "start": 271.61,
+   "end": 274.41,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I can't put my name against that, sorry."
+  },
+  {
+   "start": 274.81,
+   "end": 277.26,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "No, I can't commit to it either."
+  },
+  {
+   "start": 279.02,
+   "end": 288.12,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, grease and check the bearings on the newer turbine, first thing tomorrow. Not an emergency but don't let it slip. That's still needing an owner."
+  },
+  {
+   "start": 289.0,
+   "end": 291.45,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Sorry, not one I can take on."
+  },
+  {
+   "start": 293.62,
+   "end": 298.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Nobody's taken it. Leave it visibly unowned, not against someone just because they've spoken."
+  },
+  {
+   "start": 299.74,
+   "end": 304.99,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie, can you send the shift handover report round, if you've got a spare minute?"
+  },
+  {
+   "start": 306.29,
+   "end": 312.59,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, that I can take. I'll send the shift handover report round if I've got a spare minute."
+  },
+  {
+   "start": 314.88,
+   "end": 317.68,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "The existing report, we're talking? Not another version?"
+  },
+  {
+   "start": 318.28,
+   "end": 321.43,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, just sending the existing one round. No rewrite."
+  },
+  {
+   "start": 323.39,
+   "end": 327.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'll run the monthly fire alarm test by Thursday as well."
+  },
+  {
+   "start": 327.97,
+   "end": 331.47,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Thanks, Saz. Monthly fire alarm test with you, by Thursday."
+  },
+  {
+   "start": 333.03,
+   "end": 336.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "That's right. Separate from the Fire Alarm Panel purchase order chase."
+  },
+  {
+   "start": 339.14,
+   "end": 348.24,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "And I'll update the risk assessment for work on the GT1 Fuel Gas Valve at half two. That's holding production up so it needs doing first."
+  },
+  {
+   "start": 349.54,
+   "end": 353.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, that's the production hold-up. It does need doing first."
+  },
+  {
+   "start": 353.92,
+   "end": 358.12,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Understood. At half two, and that update comes first. I'm taking it."
+  },
+  {
+   "start": 359.04,
+   "end": 366.74,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, PR. The risk assessment for work on the GT1 Fuel Gas Valve is yours at half two, with that production priority."
+  },
+  {
+   "start": 368.19,
+   "end": 371.69,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And that doesn't change the urgent filter timing, does it?"
+  },
+  {
+   "start": 372.43,
+   "end": 377.68,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No. The power pack on one filter is still urgent, by Wednesday. Neither timing's moved."
+  },
+  {
+   "start": 379.23,
+   "end": 384.48,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Sorry, someone came over you then— Teams has decided we only get one syllable each."
+  },
+  {
+   "start": 385.57,
+   "end": 390.47,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I heard it. Neither timing's moved. Very economical meeting if we only get syllables."
+  },
+  {
+   "start": 391.72,
+   "end": 394.52,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Nothing else from me beyond what we've covered."
+  },
+  {
+   "start": 394.95,
+   "end": 399.15,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Same here. Just glad the finished stuff isn't getting rolled over again."
+  },
+  {
+   "start": 401.14,
+   "end": 404.99,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "And the coffee complaint remains a complaint, before anyone gets clever."
+  },
+  {
+   "start": 407.45,
+   "end": 408.85,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Wouldn't dream of it."
+  },
+  {
+   "start": 411.12,
+   "end": 412.87,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's us. Cheers, everyone."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

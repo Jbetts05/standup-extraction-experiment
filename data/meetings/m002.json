@@ -1,0 +1,834 @@
+{
+ "id": "m002",
+ "date": "2026-02-03",
+ "split": "train",
+ "renderer": "llm",
+ "attendees": [
+  "p06",
+  "p11",
+  "p12",
+  "p03",
+  "p05",
+  "p09",
+  "p01"
+ ],
+ "chair_id": "p06",
+ "gold_tasks": [
+  {
+   "id": "m002-t1",
+   "summary": "Take vibration readings on the Water Booster Pump",
+   "spoken_action": "take vibration readings on the water booster",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-06",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "needs doing this week",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    34,
+    35,
+    60,
+    61
+   ]
+  },
+  {
+   "id": "m002-t2",
+   "summary": "Swap the filter on the Compressed Air Dryer",
+   "spoken_action": "swap the filter on the air dryer",
+   "category": "operations",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "air dryer",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-04",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": "low priority",
+   "assigned_by": "p06",
+   "reassigned_from": "p11",
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    67,
+    68
+   ]
+  },
+  {
+   "id": "m002-t3",
+   "summary": "Update the risk assessment for work on the Main Water Isolation Valve",
+   "spoken_action": "update the risk assessment for work on the main isolation valve",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "main isolation valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-03",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": "needs doing this week",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    36,
+    37,
+    60,
+    61
+   ]
+  },
+  {
+   "id": "m002-t4",
+   "summary": "Run a function test on the Boiler Safety Relief Valve",
+   "spoken_action": "run a function test on the boiler safety valve",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Han",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "boiler safety valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-04",
+   "due_time": null,
+   "due_mention": "first thing tomorrow",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    19,
+    20,
+    58,
+    59
+   ]
+  },
+  {
+   "id": "m002-t5",
+   "summary": "Sort the permit to work and isolation for the GT2 Inlet Water Injection Valve",
+   "spoken_action": "sort the permit to work and isolation for the turbine two water valve",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie Brennan",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "turbine two water valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-02-04",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    62,
+    63
+   ]
+  },
+  {
+   "id": "m002-t6",
+   "summary": "Go to Tollgate Water Treatment Works to pick up the replacement parts for the Line 1 Hydraulic Power Unit",
+   "spoken_action": "go to Tollgate Water Treatment Works to pick up the replacement parts for the Line 1 Hydraulic Power Unit",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p12",
+    "text": "Jamie",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM1-HYD",
+    "text": "Line 1 Hydraulic Power Unit",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": "s05",
+    "text": "Tollgate Water Treatment Works",
+    "split": "name"
+   },
+   "due_date": "2026-02-03",
+   "due_time": null,
+   "due_mention": "this afternoon",
+   "priority_cue": null,
+   "assigned_by": "p06",
+   "reassigned_from": null,
+   "evidence": [
+    28,
+    29,
+    64,
+    65
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "weekend plans and the weather",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p11",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p12",
+   "text_hint": "tested the booster pump yesterday and it's all fine now",
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "booster pump",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "signed off the inspection on the GT2 bearing on Tuesday",
+   "component": {
+    "entity_id": "GT2-BRG-02",
+    "text": "GT2 bearing",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p01",
+   "text_hint": "noticed the line 3 screw was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 screw",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p11",
+   "text_hint": "still waiting on parts for the GT1 fuel valve, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "GT1-FV-01",
+    "text": "GT1 fuel valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p09",
+   "text_hint": "can't get to the line 3 barrel until production gives us a window",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "line 3 barrel",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 5.18,
+   "end": 10.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Morning all. Tuesday third, quick stand-up and then I'll let you crack on. Everyone alright?"
+  },
+  {
+   "start": 11.36,
+   "end": 16.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, not bad. Bit grim out there though, isn't it. Proper sideways rain again."
+  },
+  {
+   "start": 18.49,
+   "end": 19.69,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Standard February."
+  },
+  {
+   "start": 20.78,
+   "end": 23.93,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I got soaked just from car park to door."
+  },
+  {
+   "start": 24.79,
+   "end": 32.84,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Mm. Weekend's meant to be a bit brighter though, so if it holds I might actually get out in the garden for once."
+  },
+  {
+   "start": 34.19,
+   "end": 35.39,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Brave."
+  },
+  {
+   "start": 37.02,
+   "end": 39.12,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "You'll need waders, not gardening gloves."
+  },
+  {
+   "start": 40.23,
+   "end": 43.38,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, before we become the Met Office. Sarah, nights?"
+  },
+  {
+   "start": 44.52,
+   "end": 55.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Quiet enough overall. Just an observation really, noticed the line 3 screw was running a bit warm on nights but it settled down, so nothing for today off the back of that."
+  },
+  {
+   "start": 56.31,
+   "end": 61.56,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Okay, noted. Keep an eye on it, but yeah, not a job from this meeting."
+  },
+  {
+   "start": 63.02,
+   "end": 64.22,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Han, you next."
+  },
+  {
+   "start": 65.7,
+   "end": 74.45,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Er, quality-wise all fine on the morning samples. And before I forget, that football last night was awful. Well, unless you support them, I suppose."
+  },
+  {
+   "start": 75.83,
+   "end": 78.63,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Oh it was brilliant, what you on about?"
+  },
+  {
+   "start": 80.63,
+   "end": 84.13,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Rubbish. They were hanging on for dear life second half."
+  },
+  {
+   "start": 85.73,
+   "end": 89.23,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Can we not do VAR at eight in the morning?"
+  },
+  {
+   "start": 90.43,
+   "end": 92.53,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Please, spare me. Anything real, Han?"
+  },
+  {
+   "start": 93.53,
+   "end": 103.68,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah. Blocker on the GT1 fuel valve still, still waiting on parts for the GT1 fuel valve, nothing we can do until they arrive, so that's not moving today."
+  },
+  {
+   "start": 105.33,
+   "end": 108.48,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep, parked till stores gets something through. Anything else?"
+  },
+  {
+   "start": 109.52,
+   "end": 115.47,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I can run a function test on the boiler safety valve. I'll do that first thing tomorrow."
+  },
+  {
+   "start": 117.49,
+   "end": 119.24,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good. Get that booked in."
+  },
+  {
+   "start": 121.29,
+   "end": 122.49,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Will do."
+  },
+  {
+   "start": 123.4,
+   "end": 124.6,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Jamie?"
+  },
+  {
+   "start": 125.72,
+   "end": 131.67,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yesterday, I tested the booster pump yesterday and it's all fine now, so that's done and gone."
+  },
+  {
+   "start": 132.27,
+   "end": 133.47,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Nice one."
+  },
+  {
+   "start": 134.72,
+   "end": 138.22,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Procurement side, couple of deliveries due before lunch. Nothing dramatic."
+  },
+  {
+   "start": 140.07,
+   "end": 152.32,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I need you on something though, Jamie Brennan \u2014 sort the permit to work and isolation for the turbine two water valve. That one's safety critical, straight away. I need it ready tomorrow at 9:30."
+  },
+  {
+   "start": 153.95,
+   "end": 162.7,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, okay. I'll sort the permit to work and isolation for the turbine two water valve, tomorrow at 9:30. I'll get on that straight away."
+  },
+  {
+   "start": 164.06,
+   "end": 174.21,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheers. And second one, Jamie \u2014 can you go to Tollgate Water Treatment Works to pick up the replacement parts for the Line 1 Hydraulic Power Unit this afternoon?"
+  },
+  {
+   "start": 174.6,
+   "end": 184.05,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, I can do that. I'll go to Tollgate Water Treatment Works to pick up the replacement parts for the Line 1 Hydraulic Power Unit this afternoon."
+  },
+  {
+   "start": 185.78,
+   "end": 186.98,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Spot on."
+  },
+  {
+   "start": 188.86,
+   "end": 190.06,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Priya?"
+  },
+  {
+   "start": 191.82,
+   "end": 201.97,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Nothing major from me. Panels all behaving. I still want a look at that nuisance trip on line two when we get chance, but not today, no immediate action."
+  },
+  {
+   "start": 204.37,
+   "end": 205.57,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fine."
+  },
+  {
+   "start": 207.29,
+   "end": 208.49,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Grace?"
+  },
+  {
+   "start": 210.74,
+   "end": 224.39,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Two from me. The water booster's been a bit noisy on and off, not enough to panic about but it needs doing this week \u2014 I'll take vibration readings on the water booster by the end of the week."
+  },
+  {
+   "start": 226.21,
+   "end": 227.41,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep."
+  },
+  {
+   "start": 229.44,
+   "end": 238.89,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And also, because of the planned job there, it needs doing this week, I'll update the risk assessment for work on the main isolation valve this morning."
+  },
+  {
+   "start": 239.24,
+   "end": 240.44,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good, thanks Grace."
+  },
+  {
+   "start": 242.7,
+   "end": 243.9,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fi?"
+  },
+  {
+   "start": 244.62,
+   "end": 251.62,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Scheduling-wise, just so you know, I signed off the inspection on the GT2 bearing on Tuesday, so that's already complete."
+  },
+  {
+   "start": 252.13,
+   "end": 253.33,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good."
+  },
+  {
+   "start": 255.07,
+   "end": 262.07,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "And blocker-wise, can't get to the line 3 barrel until production gives us a window, so that's stuck for now."
+  },
+  {
+   "start": 263.16,
+   "end": 268.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, not today on that, we've got no gap till at least late shift."
+  },
+  {
+   "start": 270.35,
+   "end": 273.5,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, leave line 3 barrel where it is then."
+  },
+  {
+   "start": 274.3,
+   "end": 282.7,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "One small one on utilities: swap the filter on the air dryer. It's low priority, first thing tomorrow. Han, can you pick that up?"
+  },
+  {
+   "start": 283.97,
+   "end": 292.02,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Uh, not really. I've got the boiler safety valve first thing tomorrow and then audits stacked after that. I won't get near it."
+  },
+  {
+   "start": 292.98,
+   "end": 295.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fair. Fi, can you take it instead?"
+  },
+  {
+   "start": 296.71,
+   "end": 304.41,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yeah, alright. I'll swap the filter on the air dryer first thing tomorrow. Low priority, so if nothing falls over before then."
+  },
+  {
+   "start": 306.6,
+   "end": 309.05,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "That's fine, as long as it's done."
+  },
+  {
+   "start": 310.51,
+   "end": 311.71,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep."
+  },
+  {
+   "start": 313.36,
+   "end": 316.51,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Anything else knocking about that actually needs agreeing today?"
+  },
+  {
+   "start": 317.44,
+   "end": 324.44,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, that's me. Just the weather, again. If it snows on top of this lot I'm working from my bed."
+  },
+  {
+   "start": 326.61,
+   "end": 328.01,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Production supervisor'll love that."
+  },
+  {
+   "start": 328.86,
+   "end": 330.06,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Absolutely not."
+  },
+  {
+   "start": 331.52,
+   "end": 334.32,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "He says that, but he'd do the same."
+  },
+  {
+   "start": 336.57,
+   "end": 337.77,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "I would not."
+  },
+  {
+   "start": 338.41,
+   "end": 340.86,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Mic off, camera off, \"sorry bad connection\"."
+  },
+  {
+   "start": 342.87,
+   "end": 346.02,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Cheek. Right, recapping so nobody wriggles out of it."
+  },
+  {
+   "start": 348.09,
+   "end": 352.64,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Han's got the function test on the boiler safety valve first thing tomorrow."
+  },
+  {
+   "start": 354.87,
+   "end": 356.07,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yep."
+  },
+  {
+   "start": 356.93,
+   "end": 367.08,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Grace is taking vibration readings on the water booster by the end of the week, and updating the risk assessment for work on the main isolation valve this morning."
+  },
+  {
+   "start": 367.4,
+   "end": 368.6,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Correct."
+  },
+  {
+   "start": 371.0,
+   "end": 380.8,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Jamie Brennan is sorting the permit to work and isolation for the turbine two water valve \u2014 that one's safety critical, straight away \u2014 for tomorrow at 9:30."
+  },
+  {
+   "start": 382.36,
+   "end": 383.56,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yep, on it."
+  },
+  {
+   "start": 385.15,
+   "end": 393.2,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And Jamie's going to Tollgate Water Treatment Works to pick up the replacement parts for the Line 1 Hydraulic Power Unit this afternoon."
+  },
+  {
+   "start": 394.99,
+   "end": 396.19,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's me, yeah."
+  },
+  {
+   "start": 397.49,
+   "end": 402.04,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fi's swapping the filter on the air dryer first thing tomorrow, low priority."
+  },
+  {
+   "start": 402.58,
+   "end": 403.78,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep."
+  },
+  {
+   "start": 406.2,
+   "end": 416.7,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Blocked stuff stays blocked: GT1 fuel valve waiting on parts, line 3 barrel waiting on a production window. Done stuff stays done: booster pump tested, GT2 bearing inspection signed off."
+  },
+  {
+   "start": 418.27,
+   "end": 423.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And line 3 screw was just a watch item on nights, not a fresh job."
+  },
+  {
+   "start": 424.98,
+   "end": 427.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Exactly that. Anything urgent before we break?"
+  },
+  {
+   "start": 428.05,
+   "end": 429.25,
+   "speaker_id": "p03",
+   "speaker": "Priya Raman",
+   "text": "Nope."
+  },
+  {
+   "start": 430.12,
+   "end": 431.32,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "All good."
+  },
+  {
+   "start": 431.85,
+   "end": 433.05,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Fine by me."
+  },
+  {
+   "start": 434.83,
+   "end": 436.03,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep."
+  },
+  {
+   "start": 437.72,
+   "end": 438.92,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "All set."
+  },
+  {
+   "start": 440.23,
+   "end": 441.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Right, thanks all."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ],
+ "writer": "gpt-5.4"
+}

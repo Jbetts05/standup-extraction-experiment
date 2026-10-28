@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live stand-up demo · board pipeline</title>
+<link rel="icon" href="data:,">
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    let stored = null;
+    try { stored = localStorage.getItem("boardTheme"); } catch (e) { /* storage blocked */ }
+    const theme =
+      param || stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+:root, html[data-theme="dark"] {
+  --fs-s: 12px; --fs-m: 15px; --fs-l: 19px;
+  --ok-soft: color-mix(in srgb, var(--cp-success) 16%, transparent);
+  --bad-soft: color-mix(in srgb, var(--cp-danger) 14%, transparent);
+  --warn-soft: color-mix(in srgb, var(--cp-warning) 18%, transparent);
+  --card-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--cp-bg); color: var(--cp-text); font: var(--fs-m)/1.45 "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+.mono { font-family: Consolas, "Courier New", Courier, monospace; font-size: var(--fs-s); }
+.muted { color: var(--cp-text-muted); } .small { font-size: var(--fs-s); }
+button, select { font: inherit; }
+header.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 20px; background: var(--cp-bg-elevated); border-bottom: 1px solid var(--cp-border); }
+.brand { font-weight: 700; display: flex; align-items: center; gap: 9px; white-space: nowrap; }
+.brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--cp-accent); display: inline-block; }
+.group { display: flex; align-items: center; gap: 6px; }
+.group + .group { padding-left: 10px; border-left: 1px solid var(--cp-border); }
+select { padding: 5px 9px; border-radius: 10px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); }
+.btn { border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); padding: 5px 12px; border-radius: 10px; cursor: pointer; }
+.btn:hover:not(:disabled) { border-color: var(--cp-border-strong); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn.primary { background: var(--cp-accent); border-color: var(--cp-accent); color: var(--cp-accent-fg); font-weight: 600; }
+.btn.small { font-size: var(--fs-s); padding: 4px 10px; width: 100%; }
+.spacer { flex: 1; }
+.status { font-size: var(--fs-s); color: var(--cp-text-muted); max-width: 520px; }
+.status b { color: var(--cp-text); }
+.intro { max-width: 1600px; margin: 0 auto; padding: 10px 20px 0; font-size: var(--fs-s); color: var(--cp-text-muted); }
+.layout { display: grid; grid-template-columns: 320px 400px minmax(0, 1fr); gap: 14px; padding: 12px 20px 60px; max-width: 1600px; margin: 0 auto; align-items: start; }
+@media (max-width: 1250px) { .layout { grid-template-columns: 1fr 1fr; } .boardwrap { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .layout { grid-template-columns: 1fr; } }
+.panel { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; padding: 14px 16px; box-shadow: var(--card-shadow); }
+.panel h2 { font-size: var(--fs-l); margin: 0 0 2px; }
+.panel h3 { font-size: var(--fs-s); text-transform: uppercase; letter-spacing: .07em; color: var(--cp-text-muted); margin: 0 0 8px; }
+.panel h4 { font-size: var(--fs-s); color: var(--cp-text-muted); margin: 12px 0 4px; font-weight: 600; }
+.turns { position: relative; max-height: 72vh; overflow: auto; margin-top: 8px; font-size: var(--fs-s); }
+.turn { padding: 4px 6px; border-radius: 8px; transition: opacity .25s; }
+.turns.dim .turn:not(.focus) { opacity: .4; }
+.turn.focus { background: var(--cp-highlight); outline: 2px solid var(--cp-accent); font-size: var(--fs-m); }
+.turn .tag { display: block; margin-top: 3px; font-size: var(--fs-s); font-weight: 600; color: var(--cp-accent); }
+.steps .step { border: 1px solid var(--cp-border); border-radius: 12px; padding: 10px 12px; margin-top: 10px; transition: border-color .2s, box-shadow .2s; }
+.steps .step.on { border-color: var(--cp-accent); box-shadow: 0 0 0 1px var(--cp-accent); }
+.xbox { border: 1px solid var(--cp-border); background: var(--cp-surface-soft); border-radius: 10px; padding: 10px 12px; }
+.xbox.wait { color: var(--cp-text-soft); font-style: italic; }
+.xbox q { display: block; font-style: italic; color: var(--cp-text-muted); margin: 6px 0 8px; }
+.xbox q::before, .xbox q::after { content: ""; }
+.xbox dl { display: grid; grid-template-columns: 84px 1fr; gap: 4px 10px; margin: 0; }
+.xbox dt { color: var(--cp-text-muted); font-size: var(--fs-s); padding-top: 2px; }
+.xbox dd { margin: 0; }
+.reveal { animation: reveal .45s ease-out; }
+@keyframes reveal { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.mlist { list-style: none; margin: 0; padding: 0; font-size: var(--fs-s); max-height: 230px; overflow: auto; }
+.mrow { display: flex; gap: 6px; align-items: baseline; width: 100%; text-align: left; border: 0; background: none; color: inherit;
+  padding: 5px 6px; border-radius: 8px; font-size: var(--fs-s); }
+button.mrow { cursor: pointer; }
+button.mrow:hover { background: var(--cp-surface-soft); }
+.mrow.focus { background: var(--cp-highlight); }
+.mrow .act { margin-left: auto; }
+.chip { display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border-radius: 999px; font-size: var(--fs-s); background: var(--cp-surface); border: 1px solid var(--cp-border); color: var(--cp-text-muted); white-space: nowrap; }
+.chip.acc { background: var(--cp-accent-soft); border-color: transparent; color: var(--cp-accent); font-weight: 600; }
+.chip.ok { background: var(--ok-soft); border-color: transparent; color: var(--cp-text); }
+.chip.bad { background: var(--bad-soft); border-color: transparent; color: var(--cp-text); }
+.chip.warn { background: var(--warn-soft); border-color: transparent; color: var(--cp-text); }
+.ctxlist { list-style: none; margin: 6px 0 0; padding: 0; font-size: var(--fs-s); }
+.ctxlist li { padding: 5px 8px; border: 1px solid var(--cp-border); border-radius: 8px; margin-top: 4px; }
+.ctxlist li.match { border-color: var(--cp-success); background: var(--ok-soft); font-weight: 600; }
+.empty { color: var(--cp-text-soft); font-size: var(--fs-s); padding: 4px 2px; }
+.decision { font-size: var(--fs-m); font-weight: 600; }
+.board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+@media (max-width: 760px) { .board { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.col { background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 14px; padding: 8px; min-height: 200px; }
+.col h3 { margin: 2px 4px 8px; display: flex; justify-content: space-between; }
+.kcard { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 10px; padding: 8px 10px; margin-bottom: 7px; box-shadow: var(--card-shadow); font-size: var(--fs-s); }
+.kcard .t { font-weight: 600; font-size: var(--fs-m); line-height: 1.3; margin: 2px 0 4px; }
+.kcard.cancelled .t { text-decoration: line-through; color: var(--cp-text-muted); }
+.kcard.old { opacity: .6; }
+.kcard.ctx { border: 1.5px dashed var(--cp-link); opacity: 1; }
+.kcard.hit { border: 2px solid var(--cp-success); box-shadow: 0 0 0 3px var(--ok-soft); opacity: 1; animation: reveal .45s ease-out; }
+.kcard .m { color: var(--cp-text-muted); display: flex; gap: 8px; flex-wrap: wrap; }
+.kcard .note { color: var(--cp-text); margin-top: 3px; font-style: italic; }
+.err { color: var(--cp-danger); }
+@media (prefers-reduced-motion: reduce) { .reveal, .kcard.hit { animation: none; } .turn, .steps .step { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><i></i>Live stand-up demo</div>
+  <div class="group">
+    <label class="small muted">Team <select id="team" aria-label="Team"></select></label>
+    <button class="btn primary" id="run">Run next stand-up</button>
+    <button class="btn" id="rest">Run the rest</button>
+    <button class="btn" id="reset">Reset team</button>
+  </div>
+  <div class="group">
+    <label class="small muted">Speed <select id="speed" aria-label="Playback speed">
+      <option value="step">Step by step</option><option value="slow">Slow</option>
+      <option value="normal" selected>Normal</option><option value="fast">Fast</option></select></label>
+    <button class="btn" id="pause">Pause</button>
+    <button class="btn" id="next" title="Next step (→ key)">Next ›</button>
+  </div>
+  <div class="spacer"></div>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+  <button class="btn" id="theme"></button>
+</header>
+<div class="intro" id="intro"></div>
+
+<div class="layout">
+  <section class="panel" aria-label="Transcript"><h2 id="txTitle">Transcript</h2><div class="small muted" id="txSub"></div><div class="turns" id="turns"></div></section>
+  <section class="panel steps" aria-label="Pipeline steps">
+    <h2>The pipeline</h2><div class="small muted">For each thing said: extract it, pull the matching cards from the board, then update or create.</div>
+    <div class="step" id="s1"><h3>Step 1 · Extract what was said</h3><div id="extract"></div><div id="soFar"></div></div>
+    <div class="step" id="s2"><h3>Step 2 · Pull cards from the board</h3><div id="context"></div></div>
+    <div class="step" id="s3"><h3>Step 3 · Update or create</h3><div id="decision"></div></div>
+  </section>
+  <section class="panel boardwrap" aria-label="Task board"><h2>Task board</h2>
+    <div class="small muted">Read from the JSON database. Step 2 reads it; Step 3 writes it.
+      <span style="border:1.5px dashed var(--cp-link);border-radius:4px;padding:0 4px">pulled by Step 2</span>
+      <span style="border:2px solid var(--cp-success);border-radius:4px;padding:0 4px">changed by Step 3</span></div>
+    <div class="board" id="board"></div></section>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtDate = iso => { if (!iso) return ""; const d = new Date(String(iso).slice(0, 10) + "T12:00:00"); return `${DOW[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`; };
+const COLS = [["todo", "To do"], ["in_progress", "In progress"], ["blocked", "Blocked"], ["done", "Done"]];
+const SAID_CLS = {new: "acc", done: "ok", blocked: "bad", cancelled: "bad", reassigned: "warn", due_changed: "warn"};
+const ACT = {create: ["Created", "acc"], update: ["Updated", "ok"], comment: ["Commented", "warn"], ignore: ["Ignored", ""]};
+// Playback: the server sends every step at once; the page plays them back at the viewer's pace.
+const MULT = {step: 1, slow: 1.8, normal: 1, fast: 0.35};
+const STEPPED = new Set(["line", "extract", "context", "decision"]);  // the phases "Step by step" stops on
+const DWELL = {standup: 1000, line: 1800, extract: 3200, context: 2600, decision: 3000, committed: 1500};
+const PHASE = {standup: ["s1", "Step 1 · reading the transcript"], line: ["s1", "Step 1 · reading the highlighted line"],
+  extract: ["s1", "Step 1 · extracted from the line"], context: ["s2", "Step 2 · pulling cards from the board"],
+  decision: ["s3", "Step 3 · deciding"]};
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let M, S = {sid: null, db: null, running: false, live: null, last: null, showOld: false, error: null,
+  speed: "normal", paused: false, txDay: null, txFocus: null};
+const Q = [];
+let busy = false, wake = null, timer = null, manual = false;
+
+const person = id => id ? (M.people[id] || id) : "Unassigned";
+const asset = id => id ? (M.assets[id]?.name || id) : "";
+const site = id => id ? (M.sites?.[id] || id) : "";
+const team = () => M.series.find(s => s.id === S.sid);
+const runIds = () => new Set(S.db.standups.filter(r => r.series_id === S.sid).map(r => r.standup_id));
+const nextDay = () => team().days.find(d => !runIds().has(d.id));
+const playing = () => busy || Q.length > 0;
+const view = () => S.live || S.last;
+
+// ---------------------------------------------------------------- playback queue
+function expand(ev) {
+  return ev.type === "mention" ? [{type: "line", index: ev.index}, {type: "extract", index: ev.index}] : [ev];
+}
+function enqueue(ev) { Q.push(...expand(ev)); pump(); }
+function dwell(ev) {
+  if (["line", "extract", "context", "decision"].includes(ev.type) && !S.live) return 0;
+  if (ev.type === "context" && !ev.cards.length) return DWELL.context * 0.6;
+  return DWELL[ev.type] || 0;
+}
+function stops() { return S.paused || (S.speed === "step" && manual); }
+function wait(ms, isStepped) {
+  return new Promise(res => {
+    wake = res; manual = isStepped;
+    if (!stops()) timer = setTimeout(advance, ms * MULT[S.speed]);
+  });
+}
+function advance() { clearTimeout(timer); timer = null; const w = wake; wake = null; if (w) w(); }
+async function pump() {
+  if (busy) return;
+  busy = true;
+  try {
+    while (Q.length) {
+      const ev = Q.shift();
+      play(ev); render();
+      const ms = dwell(ev);
+      if (ms) await wait(ms, STEPPED.has(ev.type));
+    }
+  } finally { busy = false; wake = null; manual = false; render(); }
+}
+function play(ev) {
+  const L = S.live;
+  switch (ev.type) {
+    case "standup": {
+      const d = team().days.find(x => x.id === ev.standup_id);
+      S.running = true; S.last = null;
+      S.live = {standup_id: ev.standup_id, day: d?.day, mentions: [], decisions: {}, cards: {}, notes: {}, focus: null, ctx: null, phase: "standup"};
+      break;
+    }
+    case "mentions": if (L) L.mentions = ev.mentions; break;
+    case "line": if (L) Object.assign(L, {focus: ev.index, ctx: null, phase: "line"}); break;
+    case "extract": if (L) L.phase = "extract"; break;
+    case "context": if (L) Object.assign(L, {ctx: ev.cards, phase: "context"}); break;
+    case "decision":
+      if (!L) break;
+      L.decisions[ev.index] = ev.decision; L.phase = "decision";
+      for (const c of ev.cards) { L.cards[c.card_id] = c; if (ev.decision.action !== "ignore") L.notes[c.card_id] = L.mentions[ev.index]?.note || ""; }
+      break;
+    case "committed":
+      S.db = ev.db;
+      if (L) { S.last = {...L, cards: {}, notes: {}, phase: null, focus: null, ctx: null}; S.live = null; } else S.last = lastFromDb();
+      break;
+    case "reset": S.db = ev.db; S.last = lastFromDb(); S.txDay = null; break;
+    case "error": S.error = ev.message; break;
+    case "idle": S.running = false; break;
+  }
+}
+
+// ---------------------------------------------------------------- data helpers
+function boardCards() {
+  const cards = Object.fromEntries(S.db.cards.filter(c => c.series_id === S.sid).map(c => [c.card_id, {...c}]));
+  if (S.live) {
+    let n = Math.max(0, ...Object.values(cards).map(c => c.number || 0));
+    for (const c of Object.values(S.live.cards)) cards[c.card_id] = {...c, number: cards[c.card_id]?.number || c.number || ++n};
+  }
+  return cards;
+}
+function lastFromDb() {
+  // After a reload or team change, rebuild the last stand-up's steps from the database's own tables.
+  const runs = S.db.standups.filter(r => r.series_id === S.sid).sort((a, b) => a.day - b.day);
+  if (!runs.length) return null;
+  const id = runs[runs.length - 1].standup_id;
+  const mentions = S.db.mentions.filter(m => m.standup_id === id).sort((a, b) => a.index - b.index);
+  const pos = Object.fromEntries(mentions.map((m, i) => [m.mention_id, i]));
+  const decisions = {};
+  S.db.decisions.filter(d => d.standup_id === id).forEach(d => { decisions[pos[d.mention_id]] = d; });
+  return {standup_id: id, day: runs[runs.length - 1].day, mentions, decisions, cards: {}, notes: {}, focus: null, ctx: null};
+}
+function currentDay() {
+  const id = view()?.standup_id;
+  return (id && team().days.find(d => d.id === id)) || nextDay() || team().days[team().days.length - 1];
+}
+const norm = s => String(s || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+function findTurn(d, quote) {
+  const q = norm(quote); if (!q) return -1;
+  const words = new Set(q.split(" ").filter(w => w.length > 2));
+  let best = -1, score = 0;
+  d.transcript.forEach((u, i) => {
+    const t = norm(u.text);
+    const s = t && (t.includes(q) || (t.length > q.length * 0.5 && q.includes(t))) ? 1000 : t.split(" ").filter(w => words.has(w)).length;
+    if (s > score) { score = s; best = i; }
+  });
+  return score >= Math.min(3, words.size) ? best : -1;
+}
+function focusCards() {
+  const v = view(), none = {ctx: new Set(), hit: new Set()};
+  if (!v || v.focus == null) return none;
+  const dec = v.decisions[v.focus], phase = S.live?.phase;
+  const showCtx = !S.live || phase === "context" || phase === "decision";
+  const ctx = S.live ? (v.ctx || []) : (dec?.context_card_ids || []);
+  const showHit = dec && dec.card_id && (!S.live || phase === "decision");
+  return {ctx: new Set(showCtx ? ctx : []), hit: new Set(showHit ? [dec.card_id] : [])};
+}
+
+// ---------------------------------------------------------------- rendering
+function renderControls() {
+  const nd = nextDay(), done = runIds().size, total = team().days.length, p = playing() || S.running;
+  $("#team").innerHTML = M.series.map((s, i) => `<option value="${s.id}" ${s.id === S.sid ? "selected" : ""}>Team ${i + 1}</option>`).join("");
+  $("#run").textContent = nd ? `Run stand-up ${nd.day} of ${total}` : "All stand-ups run";
+  $("#run").disabled = p || !nd;
+  $("#rest").disabled = p || !nd;
+  $("#reset").disabled = p || !done;
+  $("#team").disabled = p;
+  $("#pause").disabled = !playing();
+  $("#pause").textContent = S.paused ? "Resume" : "Pause";
+  $("#next").disabled = !playing();
+  const L = S.live;
+  let status;
+  if (S.error) status = `<span class="err">${esc(S.error)}</span>`;
+  else if (L) {
+    const n = L.mentions.length, where = L.focus != null && n ? ` · thing ${L.focus + 1} of ${n}` : "";
+    status = `<b>Stand-up ${esc(L.day)}</b>${where} · ${esc(PHASE[L.phase]?.[1] || "")}`
+      + (S.paused ? " · <b>paused</b>" : S.speed === "step" && manual && wake ? " · press <b>Next</b>" : "");
+  } else status = `${done} of ${total} stand-ups in the database`;
+  $("#status").innerHTML = status;
+}
+
+function renderTranscript() {
+  const d = currentDay(), v = view(), box = $("#turns");
+  if (S.txDay !== d.id) {
+    box.innerHTML = d.transcript.map(u => {
+      const mm = String(Math.floor(u.t / 60)).padStart(2, "0"), ss = String(u.t % 60).padStart(2, "0");
+      return `<div class="turn"><span class="mono muted">${mm}:${ss}</span> <b>${esc(person(u.who))}:</b> ${esc(u.text)}</div>`;
+    }).join("");
+    S.txDay = d.id; S.txFocus = null; box.scrollTop = 0;
+  }
+  $("#txTitle").textContent = `Stand-up ${d.day} · ${fmtDate(d.date)}`;
+  $("#txSub").textContent = S.live ? "running now" : runIds().has(d.id) ? "in the database · click a line in Step 1 to inspect it" : "next to run";
+  const m = v && v.focus != null ? v.mentions[v.focus] : null;
+  const i = m ? findTurn(d, m.quote) : -1;
+  box.classList.toggle("dim", i >= 0);
+  box.querySelectorAll(".turn.focus").forEach(el => { el.classList.remove("focus"); el.querySelector(".tag")?.remove(); });
+  if (i < 0) return;
+  const el = box.children[i];
+  el.classList.add("focus");
+  const tag = S.live?.phase === "line" ? "Step 1 is reading this line…" : "Step 1 extracted this";
+  el.insertAdjacentHTML("beforeend", `<span class="tag">${esc(tag)}</span>`);
+  const key = `${d.id}:${i}`;
+  if (S.txFocus !== key) {
+    S.txFocus = key;
+    box.scrollTo({top: Math.max(0, el.offsetTop - box.clientHeight / 2 + el.offsetHeight / 2), behavior: reduceMotion ? "auto" : "smooth"});
+  }
+}
+
+function extractBox(m, animate) {
+  const rows = [];
+  const add = (label, html) => { if (html) rows.push(`<dt>${label}</dt><dd>${html}</dd>`); };
+  const words = w => w ? `“${esc(w)}” → ` : "";
+  add("Job", `<b>${esc(m.summary)}</b>`);
+  add("Said by", esc(person(m.speaker_id)));
+  if (m.owner_words || (m.owner_id && m.owner_id !== m.speaker_id)) add("Owner", words(m.owner_words) + esc(person(m.owner_id)));
+  if (m.new_owner_id || m.new_owner_words) add("New owner", words(m.new_owner_words) + esc(person(m.new_owner_id)));
+  if (m.component_words || m.component_id) add("Equipment", words(m.component_words) + (m.component_id ? esc(asset(m.component_id)) : `<span class="muted">not matched</span>`));
+  if (m.site_id) add("Site", esc(site(m.site_id)));
+  if (m.due_words || m.due_date) add("Due", words(m.due_words) + (m.due_date ? esc(fmtDate(m.due_date)) + (m.due_time ? ` ${esc(m.due_time)}` : "") : "–"));
+  if (m.said === "new" && m.priority) add("Priority", `P${esc(m.priority)}${m.category ? ` · ${esc(m.category)}` : ""}`);
+  if (m.note) add("Note", esc(m.note));
+  const kind = m.said === "new" ? "a new job" : "an update to an existing job";
+  return `<div class="xbox ${animate ? "reveal" : ""}"><span class="chip ${SAID_CLS[m.said] || ""}">said: ${esc(m.said.replace("_", " "))}</span>
+    <span class="small muted">Step 1 read this as ${esc(kind)}</span><q>“${esc(m.quote)}”</q><dl>${rows.join("")}</dl></div>`;
+}
+
+function renderSteps() {
+  const v = view(), cards = boardCards(), L = S.live, phase = L?.phase;
+  ["s1", "s2", "s3"].forEach(id => $("#" + id).classList.toggle("on", !!L && PHASE[phase]?.[0] === id));
+  if (!v) {
+    $("#extract").innerHTML = `<div class="empty">Press <b>Run stand-up</b>. Step 1 reads the transcript and pulls out every job mention:
+      who said it, the job, the equipment, the deadline, and whether it is new or an update.</div>`;
+    $("#soFar").innerHTML = "";
+    $("#context").innerHTML = `<div class="empty">For each mention, the person's open cards and cards on the same equipment are pulled from the board.</div>`;
+    $("#decision").innerHTML = `<div class="empty">Match → update that card. Said new with no match → create. Update with no match → ignore.</div>`;
+    return;
+  }
+  const i = v.focus, m = i != null ? v.mentions[i] : null, dec = i != null ? v.decisions[i] : null;
+  // Step 1
+  let x;
+  if (L && !L.mentions.length) x = `<div class="xbox wait">Step 1 is reading the whole transcript…</div>`;
+  else if (!m && L) x = `<div class="xbox wait">Starting…</div>`;
+  else if (!m) {
+    const n = {create: 0, update: 0, comment: 0, ignore: 0};
+    Object.values(v.decisions).forEach(d => { n[d.action] = (n[d.action] || 0) + 1; });
+    x = `<div class="xbox"><b>Stand-up ${esc(v.day)} is in the database.</b> ${n.create} created · ${n.update} updated · ${n.comment} commented · ${n.ignore} ignored.
+      <div class="small muted" style="margin-top:4px">Click any line below to see what was extracted, the cards pulled and the decision.</div></div>`;
+  } else if (L && phase === "line") x = `<div class="xbox wait">Reading the highlighted line in the transcript…</div>`;
+  else x = extractBox(m, L && phase === "extract");
+  $("#extract").innerHTML = x;
+  const upto = L ? (i == null ? 0 : phase === "line" ? i : i + 1) : v.mentions.length;
+  const rows = v.mentions.slice(0, upto).map((mm, k) => {
+    const d = v.decisions[k], a = d && (L ? k < i || phase === "decision" : true) ? ACT[d.action] : null;
+    const inner = `<span class="chip ${SAID_CLS[mm.said] || ""}">${esc(mm.said.replace("_", " "))}</span>
+      <span><b>${esc(person(mm.speaker_id))}</b> · ${esc(mm.summary)}</span>${a ? `<span class="chip ${a[1]} act">${a[0]}</span>` : ""}`;
+    return `<li>${L ? `<div class="mrow ${k === i ? "focus" : ""}">${inner}</div>` : `<button class="mrow ${k === i ? "focus" : ""}" data-i="${k}" aria-pressed="${k === i}">${inner}</button>`}</li>`;
+  });
+  $("#soFar").innerHTML = rows.length ? `<h4>${L ? "So far in this stand-up" : "Everything said · click one to inspect it"}</h4><ul class="mlist">${rows.join("")}</ul>` : "";
+  // Step 2
+  if (!m) { $("#context").innerHTML = `<div class="empty">${L ? "Waiting for Step 1…" : "Pick a line in Step 1."}</div>`; $("#decision").innerHTML = ""; return; }
+  if (L && (phase === "line" || phase === "extract")) {
+    $("#context").innerHTML = `<div class="empty">Waiting for Step 1…</div>`;
+    $("#decision").innerHTML = `<div class="empty">Waiting for Step 2…</div>`;
+    return;
+  }
+  const ctx = L ? (L.ctx || []) : (dec?.context_card_ids || []);
+  const showTick = dec && (!L || phase === "decision");
+  const who = [m.speaker_id, m.owner_id].filter((p, k, a) => p && a.indexOf(p) === k).map(person).join(" / ");
+  $("#context").innerHTML = `<div class="small muted">Open cards for ${esc(who || "them")}${m.component_id ? `, plus cards on ${esc(asset(m.component_id))}` : ""}:</div>`
+    + (ctx.length ? `<ul class="ctxlist">${ctx.map(id => {
+      const c = cards[id], hit = showTick && dec.matched_card_id === id;
+      return `<li class="${hit ? "match" : ""}">#${esc(c?.number ?? "?")} ${esc(c?.summary || id)} · ${esc(person(c?.owner_id))}${hit ? " &#10003; match" : ""}</li>`;
+    }).join("")}</ul>` : `<div class="xbox wait" style="margin-top:6px">No cards on the board for this person or equipment.</div>`);
+  // Step 3
+  if (!dec || (L && phase !== "decision")) { $("#decision").innerHTML = `<div class="empty">Waiting for Step 2…</div>`; return; }
+  const c = dec.card_id && cards[dec.card_id];
+  $("#decision").innerHTML = `<div class="${L ? "reveal" : ""}"><div class="decision">${esc(ACT[dec.action]?.[0] || dec.action)}${c ? ` #${esc(c.number ?? "")} ${esc(c.summary)}` : ""}</div>
+    ${dec.pick_reason ? `<div class="small">Model's reason: “${esc(dec.pick_reason)}”</div>` : ""}
+    <div class="small muted">Rule: ${esc(dec.rule)}</div></div>`;
+}
+
+function renderBoard() {
+  const cards = Object.values(boardCards()), v = view(), {ctx, hit} = focusCards();
+  const today = v?.standup_id;
+  $("#board").innerHTML = COLS.map(([key, label]) => {
+    let list = cards.filter(c => (c.status === "cancelled" ? "done" : c.status) === key)
+      .sort((a, b) => ((b.updated_in === today) - (a.updated_in === today)) || (b.number || 0) - (a.number || 0));
+    const total = list.length;
+    let more = "";
+    if (key === "done") {
+      const older = list.filter(c => c.updated_in !== today && !hit.has(c.card_id) && !ctx.has(c.card_id));
+      if (older.length && !S.showOld) { list = list.filter(c => !older.includes(c)); more = `<button class="btn small" id="old">Show ${older.length} done earlier</button>`; }
+      else if (older.length) more = `<button class="btn small" id="old">Hide ${older.length} done earlier</button>`;
+    }
+    const body = list.map(c => {
+      const note = S.live?.notes?.[c.card_id];
+      return `<div class="kcard ${c.status === "cancelled" ? "cancelled" : ""} ${hit.has(c.card_id) ? "hit" : ctx.has(c.card_id) ? "ctx" : ""} ${key === "done" && c.updated_in !== today ? "old" : ""}">
+        <div class="m"><span class="mono">#${esc(c.number ?? "?")}</span><span>P${esc(c.priority ?? "?")}</span>${c.created_in === today ? `<span class="chip acc">New</span>` : c.updated_in === today ? `<span class="chip">Updated</span>` : ""}</div>
+        <div class="t">${esc(c.summary)}</div>
+        <div class="m"><span>${esc(person(c.owner_id))}</span>${c.component_id ? `<span>${esc(asset(c.component_id))}</span>` : ""}${c.due_date ? `<span>Due ${esc(fmtDate(c.due_date))}</span>` : ""}</div>
+        ${note ? `<div class="note">${esc(note)}</div>` : ""}</div>`;
+    }).join("") + more;
+    return `<div class="col"><h3>${label}<span>${total}</span></h3>${body || `<div class="empty">Nothing here.</div>`}</div>`;
+  }).join("");
+}
+
+function render() { renderControls(); renderTranscript(); renderSteps(); renderBoard(); }
+
+function renderTheme() {
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  $("#theme").textContent = dark ? "Light mode" : "Dark mode";
+}
+
+async function post(url) {
+  S.error = null;
+  const r = await fetch(url, {method: "POST"});
+  if (!r.ok) { S.error = (await r.json()).detail || r.statusText; render(); }
+}
+
+function togglePause() {
+  S.paused = !S.paused;
+  clearTimeout(timer); timer = null;
+  if (!S.paused && wake && !stops()) timer = setTimeout(advance, 500);
+  render();
+}
+
+function connect() {
+  const es = new EventSource("/api/events");
+  for (const t of ["standup", "mentions", "mention", "context", "decision", "committed", "reset", "error", "idle"])
+    es.addEventListener(t, e => enqueue(JSON.parse(e.data)));
+}
+
+async function boot() {
+  renderTheme();
+  M = await (await fetch("/api/state")).json();
+  S.db = M.db; S.sid = M.series[0].id; S.running = !!M.running; S.last = lastFromDb();
+  $("#intro").textContent = `Runs locally against the JSON database. Step 1 (extract + match) and Step 3 (pick) use ${M.model}; Step 2 is plain code. `
+    + `Use Speed, Pause and Next (or the → key) to take it one step at a time. Model replies are cached, so a stand-up that has run before replays instantly.`;
+  $("#team").addEventListener("change", e => { S.sid = e.target.value; S.last = lastFromDb(); S.showOld = false; render(); });
+  $("#run").addEventListener("click", () => post(`/api/run/${S.sid}`));
+  $("#rest").addEventListener("click", () => post(`/api/run/${S.sid}?rest=true`));
+  $("#reset").addEventListener("click", () => post(`/api/reset/${S.sid}`));
+  $("#pause").addEventListener("click", togglePause);
+  $("#next").addEventListener("click", advance);
+  $("#speed").addEventListener("change", e => {
+    S.speed = e.target.value;
+    clearTimeout(timer); timer = null;
+    if (wake && !stops()) timer = setTimeout(advance, 400);
+    render();
+  });
+  $("#soFar").addEventListener("click", e => {
+    const b = e.target.closest("button.mrow"); if (!b || S.live || !S.last) return;
+    const i = +b.dataset.i; S.last.focus = S.last.focus === i ? null : i; render();
+  });
+  $("#board").addEventListener("click", e => { if (e.target.closest("#old")) { S.showOld = !S.showOld; renderBoard(); } });
+  document.addEventListener("keydown", e => {
+    if (e.target.closest("select, input, textarea")) return;
+    if (e.key === "ArrowRight" && playing()) { e.preventDefault(); advance(); }
+  });
+  $("#theme").addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("boardTheme", next); } catch (e) { /* not persisted */ }
+    renderTheme();
+  });
+  connect();
+  render();
+}
+boot();
+</script>
+</body>
+</html>

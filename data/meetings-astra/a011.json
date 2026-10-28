@@ -1,0 +1,873 @@
+{
+ "id": "a011",
+ "date": "2026-09-08",
+ "split": "train",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p09",
+  "p11",
+  "p02",
+  "p06",
+  "p10",
+  "p05"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a011-t1",
+   "summary": "Take vibration readings on the Air Compressor 1",
+   "spoken_action": "take vibration readings on the air compressor",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-C-01",
+    "text": "air compressor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-10",
+   "due_time": null,
+   "due_mention": "by Thursday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "id": "a011-t2",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the FLTs",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p02",
+    "text": "David Whitfield",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "FLTs",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-09",
+   "due_time": "09:30",
+   "due_mention": "tomorrow at 9:30",
+   "priority_cue": "top priority please",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "id": "a011-t3",
+   "summary": "Run a function test on the Compressed Air Dryer",
+   "spoken_action": "run a function test on the Compressed Air Dryer",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "Compressed Air Dryer",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-11",
+   "due_time": null,
+   "due_mention": "on Friday",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    30,
+    31,
+    32,
+    33
+   ]
+  },
+  {
+   "id": "a011-t4",
+   "summary": "Chase the purchase order for the Boiler Safety Relief Valve",
+   "spoken_action": "chase the purchase order for the boiler safety valve",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WHB-01-SV",
+    "text": "boiler safety valve",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "fairly important",
+   "assigned_by": "p01",
+   "reassigned_from": "p11",
+   "evidence": [
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "id": "a011-t5",
+   "summary": "Book a contractor to look at the GT1 Compressor Section",
+   "spoken_action": "book a contractor to look at the GT1 compressor",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p11",
+    "text": "Hannah",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "GT1-CMP",
+    "text": "GT1 compressor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "normal priority",
+   "assigned_by": null,
+   "reassigned_from": "p10",
+   "evidence": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+   ]
+  },
+  {
+   "id": "a011-t6",
+   "summary": "Organise the toolbox talk for the team",
+   "spoken_action": "organise the toolbox talk for the team",
+   "category": "organisation",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fi",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-08",
+   "due_time": null,
+   "due_mention": "this morning",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    46,
+    47,
+    48
+   ]
+  },
+  {
+   "id": "a011-t7",
+   "summary": "Sort the permit to work and isolation for the Site Water System",
+   "spoken_action": "sort the permit to work and isolation for the site water",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p09",
+    "text": "Fiona",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR",
+    "text": "site water",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-09-09",
+   "due_time": null,
+   "due_mention": "tomorrow",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    50,
+    51,
+    52,
+    53,
+    54
+   ]
+  },
+  {
+   "id": "a011-t8",
+   "summary": "Check the guarding on the Injection Moulding Line 2",
+   "spoken_action": "check the guarding on the Injection Moulding Line 2",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p10",
+    "text": "Olumide",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "IM2",
+    "text": "Injection Moulding Line 2",
+    "split": "name"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "that one's safety critical, straight away",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    18,
+    19,
+    20,
+    21,
+    23,
+    60
+   ]
+  },
+  {
+   "id": "a011-t9",
+   "summary": "Do a site visit at Harbour Road Warehouse with the contractor",
+   "spoken_action": "do a site visit at Harbour Road with the contractor",
+   "category": "organisation",
+   "priority": 3,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": "s03",
+    "text": "Harbour Road",
+    "split": "seen"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": "whenever you get a chance",
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    55,
+    56,
+    57,
+    58,
+    59
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p05",
+   "text_hint": "the charity bake sale on Friday",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p01",
+   "text_hint": "the football last night",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p01",
+   "text_hint": "signed off the inspection on the air dryer on Tuesday",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "air dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "signed off the inspection on the dryer on Tuesday",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p09",
+   "text_hint": "finished the repair on the Line 2 Pick and Place Robot last night",
+   "component": {
+    "entity_id": "IM2-ROB",
+    "text": "Line 2 Pick and Place Robot",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p10",
+   "text_hint": "saw the pressure on the GT2 inlet valve dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "GT2-WV-03",
+    "text": "GT2 inlet valve",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p01",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the line 1 mould temp",
+   "component": {
+    "entity_id": "IM1-MLD-T",
+    "text": "line 1 mould temp",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p11",
+   "text_hint": "the supplier still hasn't confirmed the delivery for the dryer",
+   "component": {
+    "entity_id": "AIR-DRY-01",
+    "text": "the dryer",
+    "split": "seen"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 4.43,
+   "end": 10.38,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Tuesday the eighth. Can you all hear me, or am I talking to myself again?"
+  },
+  {
+   "start": 12.55,
+   "end": 16.4,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, you're through. Bit of a delay on Teams, that's all."
+  },
+  {
+   "start": 17.71,
+   "end": 22.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Probably a blessing if we're discussing the football last night. What a finish."
+  },
+  {
+   "start": 23.4,
+   "end": 26.55,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Don't. Turned it off five minutes early, didn't I."
+  },
+  {
+   "start": 28.01,
+   "end": 33.96,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Safer subject — the charity bake sale on Friday. Apparently there's actual competition over the brownies now."
+  },
+  {
+   "start": 35.24,
+   "end": 38.39,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Factory runs on tea and competitive baking. Always has."
+  },
+  {
+   "start": 40.6,
+   "end": 45.5,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes the cake meeting. Finished bits first, then what we're agreeing."
+  },
+  {
+   "start": 47.01,
+   "end": 55.41,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I've signed off the inspection on the air dryer on Tuesday — that's this morning, for anyone reading the notes later. That one's done."
+  },
+  {
+   "start": 57.9,
+   "end": 63.85,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And I've signed off the inspection on the dryer on Tuesday, this morning as well. Mine's closed."
+  },
+  {
+   "start": 65.82,
+   "end": 69.67,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers. Both completed inspections, nothing new coming out of those here."
+  },
+  {
+   "start": 70.48,
+   "end": 77.83,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Also, finished the repair on the Line 2 Pick and Place Robot last night. That's finished, not something I'm carrying forward."
+  },
+  {
+   "start": 78.61,
+   "end": 82.81,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah, got that. Nice to have a finished one for a change."
+  },
+  {
+   "start": 84.02,
+   "end": 92.77,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Um, just an observation from me: saw the pressure on the GT2 inlet valve dip for a few minutes, it came back on its own."
+  },
+  {
+   "start": 94.43,
+   "end": 97.58,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Came right back, rather than sitting a bit low?"
+  },
+  {
+   "start": 99.51,
+   "end": 105.46,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yeah, right back. Just passing on what I saw, not putting a new job up for it."
+  },
+  {
+   "start": 107.84,
+   "end": 115.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And the supplier still hasn't confirmed the delivery for the line 1 mould temp. Still blocked; no change to report there."
+  },
+  {
+   "start": 117.01,
+   "end": 123.31,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Same position here: the supplier still hasn't confirmed the delivery for the dryer. That remains blocked as well."
+  },
+  {
+   "start": 125.72,
+   "end": 129.92,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, both still waiting on confirmation. Nothing newly released from those, then."
+  },
+  {
+   "start": 132.15,
+   "end": 138.45,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Olumide, can you check the guarding on the Injection Moulding Line 2? That one's safety critical, straight away."
+  },
+  {
+   "start": 139.51,
+   "end": 144.06,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yes, I'll check the guarding on the Injection Moulding Line 2 straight away."
+  },
+  {
+   "start": 145.82,
+   "end": 149.32,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, that isn't one to disappear halfway down the list."
+  },
+  {
+   "start": 151.39,
+   "end": 154.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. Safety critical, straight away, as we've said."
+  },
+  {
+   "start": 155.94,
+   "end": 162.24,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And separately, I'll take vibration readings on the air compressor by Thursday. That's me volunteering for that one."
+  },
+  {
+   "start": 163.1,
+   "end": 167.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Olumide. Air compressor readings by Thursday, separate from the immediate guarding check."
+  },
+  {
+   "start": 169.45,
+   "end": 171.2,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Yep. Two different items, understood."
+  },
+  {
+   "start": 172.93,
+   "end": 178.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "David Whitfield, can you do the pre-use checks on the FLTs tomorrow at 9:30? Top priority please."
+  },
+  {
+   "start": 179.55,
+   "end": 185.15,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Yeah, I'll do the pre-use checks on the FLTs tomorrow at 9:30. Top priority, got it."
+  },
+  {
+   "start": 186.39,
+   "end": 190.24,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, you clipped out slightly. Nine thirty tomorrow, not this morning?"
+  },
+  {
+   "start": 192.22,
+   "end": 195.37,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Tomorrow at 9:30. That's the timing for those checks."
+  },
+  {
+   "start": 197.5,
+   "end": 200.3,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "That's what I've got as well. No problem."
+  },
+  {
+   "start": 202.22,
+   "end": 206.42,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll run a function test on the Compressed Air Dryer on Friday."
+  },
+  {
+   "start": 207.06,
+   "end": 213.36,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Just so the wording doesn't get muddled with the completed inspections — that's the function test you're taking?"
+  },
+  {
+   "start": 215.61,
+   "end": 221.56,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, function test on the Compressed Air Dryer, on Friday. Not reopening either of the inspection sign-offs."
+  },
+  {
+   "start": 222.58,
+   "end": 223.98,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely, Grace. That's clear."
+  },
+  {
+   "start": 224.89,
+   "end": 230.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Hannah, can you chase the purchase order for the boiler safety valve? It's fairly important."
+  },
+  {
+   "start": 231.06,
+   "end": 237.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Sorry, I can't take that chase on. Haven't got the capacity for the back-and-forth on that one."
+  },
+  {
+   "start": 237.66,
+   "end": 245.36,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Grace, can I hand that to you instead — chase the purchase order for the boiler safety valve? Still fairly important."
+  },
+  {
+   "start": 247.2,
+   "end": 253.15,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, I'll take it instead of Hannah. I'll chase the purchase order for the boiler safety valve."
+  },
+  {
+   "start": 255.02,
+   "end": 258.87,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Fairly important, you said? Sorry, two people came through together there."
+  },
+  {
+   "start": 261.06,
+   "end": 265.26,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yeah, fairly important. I haven't put a specific deadline on that one."
+  },
+  {
+   "start": 266.47,
+   "end": 271.37,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Olumide, could you book a contractor to look at the GT1 compressor? Normal priority."
+  },
+  {
+   "start": 273.26,
+   "end": 281.66,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I can't take the booking as well, sorry. With the guarding and the readings, I'd rather not say yes and then sit on it."
+  },
+  {
+   "start": 282.06,
+   "end": 289.06,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Fair enough. Hannah, could you take that instead — book a contractor to look at the GT1 compressor? Normal priority."
+  },
+  {
+   "start": 290.89,
+   "end": 297.54,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Yeah, that booking I can take. I'll book a contractor to look at the GT1 compressor instead of Olumide."
+  },
+  {
+   "start": 298.85,
+   "end": 303.75,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Hannah. Normal priority for that booking, not the same urgency as the guarding."
+  },
+  {
+   "start": 305.81,
+   "end": 307.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Understood. Normal priority."
+  },
+  {
+   "start": 308.29,
+   "end": 312.14,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Right, I'll organise the toolbox talk for the team this morning."
+  },
+  {
+   "start": 313.57,
+   "end": 316.72,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Fi. Toolbox talk organisation with you this morning."
+  },
+  {
+   "start": 318.52,
+   "end": 319.92,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yep, I'll take that."
+  },
+  {
+   "start": 321.95,
+   "end": 328.6,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Good. Sorry, wasn't trying to talk over you — the delay's making us sound even less organised than usual."
+  },
+  {
+   "start": 329.36,
+   "end": 335.66,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "We're doing our best. And I'll sort the permit to work and isolation for the site water tomorrow."
+  },
+  {
+   "start": 337.69,
+   "end": 342.24,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay, Fiona. The permit to work and isolation for the site water, tomorrow."
+  },
+  {
+   "start": 343.92,
+   "end": 346.02,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Yes, tomorrow. That's mine as well."
+  },
+  {
+   "start": 347.29,
+   "end": 352.19,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Just the permit and isolation we're agreeing here, not adding a repair onto that?"
+  },
+  {
+   "start": 352.66,
+   "end": 357.56,
+   "speaker_id": "p09",
+   "speaker": "Fiona Doyle",
+   "text": "Correct. Permit to work and isolation for the site water. No extra repair job."
+  },
+  {
+   "start": 359.64,
+   "end": 363.84,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I'll do a site visit at Harbour Road with the contractor."
+  },
+  {
+   "start": 366.18,
+   "end": 370.03,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace — whenever you get a chance for that one."
+  },
+  {
+   "start": 370.57,
+   "end": 375.82,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yep, whenever I get a chance. I'll take the Harbour Road visit on that basis."
+  },
+  {
+   "start": 376.21,
+   "end": 381.81,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, the contractor mention — that's the visit item, not more of the GT1 compressor booking?"
+  },
+  {
+   "start": 382.67,
+   "end": 389.32,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Mine's the site visit at Harbour Road with the contractor. Hannah's got the GT1 compressor booking. Two separate actions."
+  },
+  {
+   "start": 390.55,
+   "end": 396.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's all the new work covered. The reassignments are clear, and the safety-critical guarding stays straight away."
+  },
+  {
+   "start": 398.23,
+   "end": 404.18,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "And my dryer delivery note is still just a blocker, yeah? Not another purchase-order chase against me."
+  },
+  {
+   "start": 404.62,
+   "end": 409.52,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Neither supplier update became a new chase in this meeting. They're still blocked."
+  },
+  {
+   "start": 409.91,
+   "end": 414.11,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Good. Back to the truly contentious subject, then: whether bought brownies count."
+  },
+  {
+   "start": 416.06,
+   "end": 419.56,
+   "speaker_id": "p02",
+   "speaker": "David Whitfield",
+   "text": "Only if you take the price sticker off. Engineering judgement."
+  },
+  {
+   "start": 420.35,
+   "end": 424.2,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "I'm not signing that off. Cheers, everyone, we'll leave it there."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}

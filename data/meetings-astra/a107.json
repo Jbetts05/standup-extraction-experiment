@@ -1,0 +1,737 @@
+{
+ "id": "a107",
+ "date": "2026-06-25",
+ "split": "test",
+ "renderer": "llm",
+ "writer": "gpt-6-astra",
+ "attendees": [
+  "p01",
+  "p07",
+  "p12",
+  "p06",
+  "p11",
+  "p05",
+  "p10"
+ ],
+ "chair_id": "p01",
+ "gold_tasks": [
+  {
+   "id": "a107-t1",
+   "summary": "Take vibration readings on the Water Booster Pump",
+   "spoken_action": "take vibration readings on the water booster",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-P-01",
+    "text": "water booster",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": null,
+   "due_time": null,
+   "due_mention": null,
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    22,
+    23,
+    24,
+    25,
+    55
+   ]
+  },
+  {
+   "id": "a107-t2",
+   "summary": "Check the guarding on the Main Outfeed Conveyor",
+   "spoken_action": "check the guarding on the outfeed conveyor",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p01",
+    "text": "Sarah Okafor",
+    "split": "name"
+   },
+   "component": {
+    "entity_id": "PCK-CV-01",
+    "text": "outfeed conveyor",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-28",
+   "due_time": null,
+   "due_mention": "by the 28th",
+   "priority_cue": null,
+   "assigned_by": null,
+   "reassigned_from": null,
+   "evidence": [
+    26,
+    27,
+    28,
+    29,
+    55
+   ]
+  },
+  {
+   "id": "a107-t3",
+   "summary": "Do the pre-use checks on the Forklift Fleet",
+   "spoken_action": "do the pre-use checks on the FLTs",
+   "category": "safety",
+   "priority": 1,
+   "owner": {
+    "entity_id": "p07",
+    "text": "Ash",
+    "split": "heldout"
+   },
+   "component": {
+    "entity_id": "PCK-FLT",
+    "text": "FLTs",
+    "split": "seen"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-30",
+   "due_time": null,
+   "due_mention": "next Tuesday",
+   "priority_cue": "it's urgent",
+   "assigned_by": null,
+   "reassigned_from": "p05",
+   "evidence": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    57,
+    58
+   ]
+  },
+  {
+   "id": "a107-t4",
+   "summary": "Investigate the pressure drop on the Main Water Isolation Valve",
+   "spoken_action": "investigate the pressure drop on the big valve by the gate",
+   "category": "operations",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": "WTR-MV-01",
+    "text": "the big valve by the gate",
+    "split": "heldout"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-26",
+   "due_time": null,
+   "due_mention": "by the end of the week",
+   "priority_cue": "not an emergency but don't let it slip",
+   "assigned_by": "p01",
+   "reassigned_from": null,
+   "evidence": [
+    37,
+    38,
+    40,
+    42,
+    56
+   ]
+  },
+  {
+   "id": "a107-t5",
+   "summary": "Run the monthly fire alarm test",
+   "spoken_action": "run the monthly fire alarm test",
+   "category": "safety",
+   "priority": 2,
+   "owner": {
+    "entity_id": "p05",
+    "text": "Grace",
+    "split": "seen"
+   },
+   "component": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "site": {
+    "entity_id": null,
+    "text": null,
+    "split": "none"
+   },
+   "due_date": "2026-06-29",
+   "due_time": null,
+   "due_mention": "Monday",
+   "priority_cue": "normal priority",
+   "assigned_by": "p01",
+   "reassigned_from": "p12",
+   "evidence": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    56
+   ]
+  }
+ ],
+ "distractors": [
+  {
+   "kind": "chitchat",
+   "speaker_id": "p06",
+   "text_hint": "a birthday cake in the office",
+   "component": null
+  },
+  {
+   "kind": "chitchat",
+   "speaker_id": "p10",
+   "text_hint": "the heating in the portakabin",
+   "component": null
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p11",
+   "text_hint": "tested the stacker yesterday and it's all fine now",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the stacker",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p05",
+   "text_hint": "finished the repair on the turbine one last night",
+   "component": {
+    "entity_id": "GT1",
+    "text": "turbine one",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "done",
+   "speaker_id": "p10",
+   "text_hint": "tested the stacker yesterday and it's all fine now",
+   "component": {
+    "entity_id": "PCK-PAL-01",
+    "text": "the stacker",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p05",
+   "text_hint": "saw the pressure on the Engel dip for a few minutes, it came back on its own",
+   "component": {
+    "entity_id": "IM1",
+    "text": "the Engel",
+    "split": "heldout"
+   }
+  },
+  {
+   "kind": "observation",
+   "speaker_id": "p07",
+   "text_hint": "noticed the line 2 was running a bit warm on nights but it settled down",
+   "component": {
+    "entity_id": "IM2",
+    "text": "line 2",
+    "split": "seen"
+   }
+  },
+  {
+   "kind": "blocker",
+   "speaker_id": "p10",
+   "text_hint": "still waiting on parts for the Line 3 Screw and Barrel, nothing we can do until they arrive",
+   "component": {
+    "entity_id": "IM3-SCR",
+    "text": "Line 3 Screw and Barrel",
+    "split": "name"
+   }
+  },
+  {
+   "kind": "cancelled",
+   "speaker_id": "p06",
+   "text_hint": "we were going to replace the belt on the old turbine but that's been pushed to next month so ignore it",
+   "component": {
+    "entity_id": "GT1",
+    "text": "the old turbine",
+    "split": "heldout"
+   }
+  }
+ ],
+ "utterances": [
+  {
+   "start": 2.3,
+   "end": 7.55,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Morning, everyone. Thursday, 25 June. Can you all hear me? Teams reckons we've got everyone."
+  },
+  {
+   "start": 9.16,
+   "end": 14.76,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yeah. Before we start, there's a birthday cake in the office. Quite a substantial one, actually."
+  },
+  {
+   "start": 17.25,
+   "end": 21.45,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "That's a very stores way of saying you've already measured your slice."
+  },
+  {
+   "start": 23.82,
+   "end": 32.92,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Never mind cake, the heating in the portakabin is still making it feel like November indoors. In June. Just having a moan, nothing for the list."
+  },
+  {
+   "start": 34.72,
+   "end": 37.17,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Lovely. Factory sauna, without the nice towels."
+  },
+  {
+   "start": 37.73,
+   "end": 40.88,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, before this becomes a facilities podcast—what's already closed?"
+  },
+  {
+   "start": 42.47,
+   "end": 47.72,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "I tested the stacker yesterday and it's all fine now. That's finished from my side."
+  },
+  {
+   "start": 49.5,
+   "end": 51.95,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Good, so that isn't another test outstanding?"
+  },
+  {
+   "start": 54.45,
+   "end": 56.9,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "No, closed. Just giving you the result."
+  },
+  {
+   "start": 57.32,
+   "end": 65.02,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Same here, I tested the stacker yesterday and it's all fine now. We were on it together, not two separate outstanding jobs."
+  },
+  {
+   "start": 65.4,
+   "end": 68.9,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "One stacker, two people saying it's fine. I'll take that."
+  },
+  {
+   "start": 70.38,
+   "end": 75.63,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "And I finished the repair on the turbine one last night. That's done as well."
+  },
+  {
+   "start": 76.76,
+   "end": 78.86,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Cheers, Grace. Finished, not carried over."
+  },
+  {
+   "start": 80.04,
+   "end": 90.89,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "While I've got the mic, I saw the pressure on the Engel dip for a few minutes. It came back on its own. Just an observation, no ongoing issue from that."
+  },
+  {
+   "start": 92.02,
+   "end": 99.72,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, similarly, I noticed the line 2 was running a bit warm on nights but it settled down. Nothing outstanding there either."
+  },
+  {
+   "start": 102.14,
+   "end": 107.74,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Both settled without anything being changed, then? Just so I don't confuse those with open jobs."
+  },
+  {
+   "start": 108.04,
+   "end": 110.14,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Exactly. Mine's just a handover comment."
+  },
+  {
+   "start": 111.34,
+   "end": 120.09,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "The one that is still blocked: we're still waiting on parts for the Line 3 Screw and Barrel. Nothing we can do until they arrive."
+  },
+  {
+   "start": 120.58,
+   "end": 124.08,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Yeah, still waiting. No change to that position, I'm afraid."
+  },
+  {
+   "start": 125.04,
+   "end": 128.89,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Understood. Blocked, no new action coming out of that this morning."
+  },
+  {
+   "start": 131.24,
+   "end": 139.99,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And we were going to replace the belt on the old turbine, but that's been pushed to next month, so ignore it. Not happening today."
+  },
+  {
+   "start": 142.26,
+   "end": 146.46,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right, that's off today's list. Separate from the repair that's already finished."
+  },
+  {
+   "start": 148.37,
+   "end": 155.02,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Onto the actual open bits. We've got taking vibration readings on the water booster. Who's able to take that?"
+  },
+  {
+   "start": 156.25,
+   "end": 159.05,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "I'll take vibration readings on the water booster."
+  },
+  {
+   "start": 159.84,
+   "end": 161.59,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Thanks, Grace. That's yours, then."
+  },
+  {
+   "start": 162.46,
+   "end": 166.31,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yeah, happy with that. Readings on the water booster, got it."
+  },
+  {
+   "start": 168.7,
+   "end": 175.35,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "And the guarding on the outfeed conveyor—checking that was the other one, wasn't it? Sorry, nearly spoke over you."
+  },
+  {
+   "start": 176.04,
+   "end": 180.94,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "No, you're right. I'll check the guarding on the outfeed conveyor by the 28th."
+  },
+  {
+   "start": 181.76,
+   "end": 186.66,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Okay, I've got Sarah Okafor against that one, by the 28th. Not against me."
+  },
+  {
+   "start": 187.85,
+   "end": 190.65,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yep, that's me. No accidental volunteering for you."
+  },
+  {
+   "start": 191.71,
+   "end": 196.61,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Grace, can you do the pre-use checks on the FLTs next Tuesday? It's urgent."
+  },
+  {
+   "start": 198.16,
+   "end": 207.26,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Um, no, sorry, I can't take that one. I haven't got the capacity next Tuesday, and I don't want to say yes then leave it hanging."
+  },
+  {
+   "start": 207.62,
+   "end": 214.27,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Fair enough. Ash, can you take the pre-use checks on the FLTs instead? Still next Tuesday, and it's urgent."
+  },
+  {
+   "start": 214.98,
+   "end": 220.23,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yeah, I'll do the pre-use checks on the FLTs next Tuesday. Understood that it's urgent."
+  },
+  {
+   "start": 222.58,
+   "end": 226.43,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Sorry, you clipped out a bit there. That was next Tuesday?"
+  },
+  {
+   "start": 227.66,
+   "end": 231.16,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Next Tuesday, yes. The urgency stands; that's the agreed timing."
+  },
+  {
+   "start": 233.01,
+   "end": 235.46,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Yep, accepted. That's with me, not Grace."
+  },
+  {
+   "start": 235.99,
+   "end": 246.14,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Grace, can you investigate the pressure drop on the big valve by the gate by the end of the week? It's not an emergency but don't let it slip."
+  },
+  {
+   "start": 247.66,
+   "end": 254.31,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, I'll investigate the pressure drop on the big valve by the gate by the end of the week."
+  },
+  {
+   "start": 255.28,
+   "end": 259.83,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "Just separating those in my head—that isn't the Engel dip you mentioned earlier?"
+  },
+  {
+   "start": 262.33,
+   "end": 270.38,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No, separate thing. This is the big valve by the gate. The Engel came back on its own; that was just an observation."
+  },
+  {
+   "start": 271.19,
+   "end": 275.04,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Exactly. No extra investigation on the Engel coming out of this."
+  },
+  {
+   "start": 275.73,
+   "end": 283.08,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Got you. The big valve by the gate, end of the week. Not an emergency, but I won't let it slip."
+  },
+  {
+   "start": 284.64,
+   "end": 289.19,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Jamie Brennan, can you run the monthly fire alarm test Monday? Normal priority."
+  },
+  {
+   "start": 289.96,
+   "end": 296.26,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "I can't cover Monday, sorry. Better give that to someone else rather than leave my name on it."
+  },
+  {
+   "start": 296.67,
+   "end": 301.92,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Okay. Grace, can you run the monthly fire alarm test instead, Monday? Normal priority still."
+  },
+  {
+   "start": 302.25,
+   "end": 307.15,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Yes, Monday works for me. I'll run the monthly fire alarm test, normal priority."
+  },
+  {
+   "start": 307.88,
+   "end": 312.78,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "Monday for that, not next Tuesday with the FLTs? Sorry, the audio jumped again."
+  },
+  {
+   "start": 315.24,
+   "end": 319.09,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Correct. Fire alarm test Monday with Grace, normal priority. Different item."
+  },
+  {
+   "start": 319.99,
+   "end": 324.54,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Teams is doing a lovely job of making five things sound like fifteen."
+  },
+  {
+   "start": 327.03,
+   "end": 331.58,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "At least nobody's accidentally assigned me the cake. That's already a shared resource."
+  },
+  {
+   "start": 332.89,
+   "end": 337.79,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Right. Any other bits of that lost in the audio, before we wrap up?"
+  },
+  {
+   "start": 338.96,
+   "end": 345.96,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "I think it's my end making the noise. The mic's rubbing on my collar. Not a mysterious new bearing fault."
+  },
+  {
+   "start": 347.88,
+   "end": 352.78,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "Ah, that explains it. Sounded like someone was dragging a pallet through the call."
+  },
+  {
+   "start": 353.36,
+   "end": 360.01,
+   "speaker_id": "p11",
+   "speaker": "Hannah Price",
+   "text": "All clear for me now. And the stacker stays closed, just to avoid that getting mixed into the recap."
+  },
+  {
+   "start": 360.5,
+   "end": 367.85,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Yes. So, Grace has the water booster readings, and I've got the guarding check on the outfeed conveyor by the 28th."
+  },
+  {
+   "start": 369.73,
+   "end": 382.33,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "Agreed. I've also got investigating the pressure drop on the big valve by the gate by the end of the week—not an emergency but don't let it slip—and the monthly fire alarm test Monday, normal priority."
+  },
+  {
+   "start": 383.3,
+   "end": 390.3,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "And Ash has the pre-use checks on the FLTs next Tuesday. It's urgent. Nothing left against Grace for that one."
+  },
+  {
+   "start": 390.73,
+   "end": 394.58,
+   "speaker_id": "p07",
+   "speaker": "Aisha Begum",
+   "text": "That's right, I'll do those. Clear on the timing and urgency."
+  },
+  {
+   "start": 396.23,
+   "end": 403.93,
+   "speaker_id": "p10",
+   "speaker": "Olumide Adeyemi",
+   "text": "And no movement on the Line 3 Screw and Barrel until the parts arrive. Still blocked, not something we've picked up today."
+  },
+  {
+   "start": 404.6,
+   "end": 411.25,
+   "speaker_id": "p06",
+   "speaker": "Callum Reid",
+   "text": "Yep. Belt replacement on the old turbine stays pushed to next month as well. Not sneaking that back in."
+  },
+  {
+   "start": 412.26,
+   "end": 415.06,
+   "speaker_id": "p01",
+   "speaker": "Sarah Okafor",
+   "text": "Lovely. That's the list agreed, then. Thanks, everyone."
+  },
+  {
+   "start": 417.35,
+   "end": 421.55,
+   "speaker_id": "p12",
+   "speaker": "Jamie Brennan",
+   "text": "Cheers. May the cake survive until the rest of us get there."
+  },
+  {
+   "start": 422.2,
+   "end": 423.4,
+   "speaker_id": "p05",
+   "speaker": "Grace Liu",
+   "text": "No guarantees. Bye."
+  }
+ ],
+ "generation_notes": [
+  "accepted on attempt 1"
+ ]
+}
